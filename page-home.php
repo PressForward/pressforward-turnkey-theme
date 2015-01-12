@@ -7,16 +7,23 @@ Template Name: Home Page Template
 <?php get_header(); ?>
 
 <div class="slider">
-  <div class="container">
+  <div  class="container" >
     
-      <div class="row text-center">
-        <div class="sl-test">
-     <?php $feat_posts = get_posts('category=66'); ?>
-    <div class="liquid-slider col-md-8" id ="slider2" style="width=100%;">
+    <div class="sl-test">
+     <?php $feat_posts = get_posts('category=2'); ?>
+    <div class="liquid-slider" id ="slider2" style="width: 100%;">
        <?php foreach($feat_posts as $post) { ?>
         <div>
         <h2 class="title"><?php echo $post->post_title; ?></h2>
-        <p><?php echo $post->post_excerpt; ?></p>
+    	<?php 
+	
+			$trimtitle = get_post_field('post_content', $id);
+	
+			$shorttitle = wp_trim_words( $trimtitle, $num_words = 150, $more = '… ' );
+	
+				echo '<p class="info-title">' .  $shorttitle . '</p>';
+    	 ?>
+    	 <a href="<?php echo get_permalink(); ?>"> Read More...</a>
         <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail') ?>
         </div>
       
@@ -24,7 +31,6 @@ Template Name: Home Page Template
        <?php } ?>
        </div>
       </div>
-    </div><!-- end .row-->
   </div> <!-- end .container-->
 </div> <!-- end #banner-->
 

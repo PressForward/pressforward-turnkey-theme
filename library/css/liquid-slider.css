@@ -4,7 +4,10 @@
  *  http://liquidslider.com
  *  MIT license
  */
-
+.ls-nav a {
+  width: 24.5%;
+  height: 75px;
+}
 .no-js .liquid-slider {
   height:350px;
   overflow:scroll;

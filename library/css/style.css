@@ -1,14 +1,14 @@
-/*
- Theme Name:   Brew Child
- Theme URI:    http://yourwebsite.com/twentyfourteen-child/
- Description:  My first child theme, based on Twenty Fourteen
- Author:       Daniel Pataki
- Author URI:   http://danielpataki.com
- Template:     brew-master
- Version:      1.0.0
- Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready, responsive-layout, infinite-scroll, post-slider, design, food, journal, magazine, news, photography, portfolio, clean, contemporary, dark, elegant, modern, professional, sophisticated
+/******************************************************************
+Site Name: BrewChildTheme
+Author: Dan Brown
 
-*/
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. First we are calling the bootstrap
+LESS files.  Then we'll load Font Awesome.  Any customizations 
+should be placed in either custom-variables.less, a new less file,
+or the proper file inside less/brew
+******************************************************************/
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

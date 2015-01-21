@@ -51,7 +51,7 @@ Template Name: Home Page Template
     
     <!--Section 2-->
     <div class="col-sm-4 about">
-      <i class="fa fa-university fa-4x light-gray"></i>
+      <i class="fa fa-bullhorn fa-4x light-gray"></i>
       <h3>CFPs & Conferences</h3>
       <p>BREW pulls together some of the best open source projects in to one awesome starter theme.  Feel free to fork, edit and contribute.</p>
     </div>

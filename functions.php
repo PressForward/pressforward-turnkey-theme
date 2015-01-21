@@ -36,6 +36,13 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
 
 // }
 // add_action('wp_enqueue_style', 'bones_scripts_and_styles_child' );
-
+  register_sidebar(array(
+    'id' => 'content1',
+    'name' => __( 'Content Widget 1', 'bonestheme' ),
+    'description' => __( 'The first content area widget.', 'bonestheme' ),
+    'before_widget' => '<i class="fa fa-bullhorn fa-4x light-gray"></i>',
+    'before_title' => '<h3>',
+    'after_title' => '</h3>',
+  ));
 
 ?>

@@ -9,6 +9,19 @@
  Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready, responsive-layout, infinite-scroll, post-slider, design, food, journal, magazine, news, photography, portfolio, clean, contemporary, dark, elegant, modern, professional, sophisticated
 
 */
+/******************************************************************
+Site Name: BREW Child Styles
+Author: 
+
+Stylesheet: Tables
+
+This is just for the sample BREW site.  Feel free to delete
+
+******************************************************************/
+.about ul {
+  text-align: left;
+  line-height: 1.5;
+}
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

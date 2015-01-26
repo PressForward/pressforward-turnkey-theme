@@ -44,7 +44,7 @@ Template Name: Archive Test
 			    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
 			      <div class="panel-body">
 			         <ul>
-			         <?php $feat_posts = get_posts('category=170&&55'); ?>
+			         <?php $feat_posts = get_posts('category=170&&55posts_per_page=5000'); ?>
 			         <?php foreach($feat_posts as $post) { ?>
 						<li><?php echo $post->post_title; ?></li>
 					<?php } ?>

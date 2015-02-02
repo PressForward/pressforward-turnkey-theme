@@ -5,17 +5,17 @@
  *  MIT license
  */
  .slider .container {
-  background-color: #fff;
+  background-color: #3887be;
   margin-top: 5%;
 
  }
- .panel-wrapper img {
+/* .panel-wrapper img {
   float: left;
   margin-right: 20px;
  }
  .panel-wrapper, .btn {
   float: right;
- }
+ }*/
 .ls-nav {
   padding: 30px 0 0px 0;
 }
@@ -45,7 +45,7 @@
   position: relative;
 }
 .liquid-slider {
-  background: #fff;
+  background: #3887be;
   width: 100%;
   margin: 0 auto;
   float: left;
@@ -82,30 +82,34 @@
   float: left;
 }
 .panel-wrapper {  
-  padding: 15px 40px;
   position:relative;
+  padding-left: 10px;
 }
 
 /*** Tabbed Navigation ***/
 .ls-nav {
   overflow:hidden;
   clear:both;
+  padding-top: 30px;
 }
 .ls-nav a {
-  background: #fff;
-  color: #333333;
-  margin-right: 1px;
+  background: #3887be;
+  color: #f8f8f8;
+  /*margin-right: 1px;*/
   padding: 10px 15px;  
   outline:0;
+  border: solid 2px #f8f8f8;
+
 }
 .ls-nav a:hover {
-  background: #eee;
+  background: #3887be;
   color: #333333;
   text-shadow: none;
 }
 .ls-nav .current a {
-  background: #eee;
-  border-top: dotted #114b99 1px;
+  background: #f8f8f8;
+  border: solid 2px #f8f8f8;
+  color: black;
 }
 .currentCrossLink {
   font-weight: bold;

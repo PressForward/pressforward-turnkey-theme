@@ -7,25 +7,29 @@ Template Name: Home Page Template
 <?php get_header(); ?>
 
 <div class="slider">
-  <div  class="container">
+ <div  class="container">
     
     <div class="sl-test">
-     <?php $feat_posts = get_posts('category=170&posts_per_page=4'); ?>
+     <?php $feat_posts = get_posts('category=66&posts_per_page=4'); ?>
     <div class="liquid-slider" id ="slider2">
        <?php foreach($feat_posts as $post) { ?>
         <div id="slider-content">
-        <h2 class="title"><?php echo $post->post_title; ?></h2>
-         <?php echo get_the_post_thumbnail( $post->ID, 'thumbnail') ?>
-
+        <div id="slidertitle"><h1 class="title"><?php echo $post->post_title; ?></h1><br><h2>By: <?php echo get_post_field('item_author') ?></h2></div>
+      
       <?php 
   
       $trimtitle = get_post_field('post_content', $id);
   
-      $shorttitle = wp_trim_words( $trimtitle, $num_words = 50, $more = '… ' );
+      $shorttitle = wp_trim_words( $trimtitle, $num_words = 75, $more = '… ' );
   
-        echo '<p class="info-title">' .  $shorttitle . '</p>';
+        echo '<div id="slidertext"><p class="info-title">' .  $shorttitle . '</p>';
        ?>
-       <a href="<?php echo get_permalink(); ?>" class="btn btn-default"> Read More...</a>
+       <a href="<?php echo get_permalink(); ?>" class="btn btn-default"> Read More...</a></div>
+       <div id="sliderimg">
+         <?php echo get_the_post_thumbnail( $post->ID, 'large') ?>
+          </div>
+        
+       
        
         </div>
       
@@ -33,11 +37,20 @@ Template Name: Home Page Template
        <?php } ?>
        </div>
       </div>
-  </div> <!-- end .container-->
+  </div>  <!-- end .container -->
 </div> <!-- end .slider-->
-
+<section class="aboutlarge">
 <div class="container">
-  <div class="row text-center" id="content">
+<div class="row">
+<div class="col-md-12 center" id="info">
+<h1>About Digital Humanities Now</h1>
+</div>
+</div>
+</div>
+</section>
+<main class="categorieshome" role="main">
+<div class="container" id="categories">
+  <div class="row text-center">
    <!--  <div class="row text-center"> -->
     
        <!-- </div> -->
@@ -82,6 +95,9 @@ Template Name: Home Page Template
     </div>
     
   </div> <!--end row-->
+  </div>
+</main>
+
 </div>
 </div>
 <?php get_footer(); ?>

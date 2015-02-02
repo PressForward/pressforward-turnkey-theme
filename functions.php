@@ -41,8 +41,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'name' => __( 'Content Widget 1', 'bonestheme' ),
     'description' => __( 'The first content area widget.', 'bonestheme' ),
     'before_widget' => '<i class="fa fa-briefcase fa-4x light-gray"></i>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    // 'before_title' => '<h3>',
+    // 'after_title' => '</h3>',
   ));
 
    register_sidebar(array(
@@ -68,8 +68,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'name' => __( 'Content Widget 4', 'bonestheme' ),
     'description' => __( 'The fourth content area widget.', 'bonestheme' ),
     'before_widget' => '<i class="fa fa-laptop fa-4x light-gray"></i>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    // 'before_title' => '<h3>',
+    // 'after_title' => '</h3>',
   ));
 
      register_sidebar(array(

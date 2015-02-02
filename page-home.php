@@ -14,7 +14,7 @@ Template Name: Home Page Template
     <div class="liquid-slider" id ="slider2">
        <?php foreach($feat_posts as $post) { ?>
         <div id="slider-content">
-        <div id="slidertitle"><h1 class="title"><?php echo $post->post_title; ?></h1><br><h2>By: <?php echo get_post_field('item_author') ?></h2></div>
+        <div id="slidertitle"><h1 class="title"><?php echo $post->post_title; ?></h1><br><h2>By: <?php echo get_post_field('item_author') ?></h2></div> <!-- close #slidertitle -->
       
       <?php 
   
@@ -24,19 +24,19 @@ Template Name: Home Page Template
   
         echo '<div id="slidertext"><p class="info-title">' .  $shorttitle . '</p>';
        ?>
-       <a href="<?php echo get_permalink(); ?>" class="btn btn-default"> Read More...</a></div>
+       <a href="<?php echo get_permalink(); ?>" class="btn btn-default"> Read More...</a></div> <!--close #slidertext -->
        <div id="sliderimg">
          <?php echo get_the_post_thumbnail( $post->ID, 'large') ?>
-          </div>
+          </div> <!-- close #sliderimg -->
         
        
        
-        </div>
+        </div> <!-- close .liquid-slider #slider2 -->
       
       
        <?php } ?>
-       </div>
-      </div>
+       </div> <!-- close .sl-test -->
+      </div> <!-- close .container .homepage -->
   </div>  <!-- end .container -->
 </div> <!-- end .slider-->
 <section class="aboutlarge">

@@ -47,15 +47,21 @@ h6 {
 }
 #sliderimg {
   float: right;
-  margin: 40px 25px 0 0;
+  padding: 40px 0 0 0;
 }
-#slider-content {
-  height: 580px;
+.container.homepage {
+  margin-top: 0px;
+  padding: 72px;
+}
+@media screen and (min-width: 960px) {
+  #slider-content {
+    height: 500px;
+  }
 }
 #slider-content h1 {
   color: #f8f8f8;
-  font-size: 50px;
   margin: 0px;
+  font-size: 50px;
   letter-spacing: 1px;
 }
 #slider-content img {
@@ -343,7 +349,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
-  background-color: #3887be;
+  background-color: #fafafa;
 }
 input,
 button,
@@ -384,7 +390,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #3887be;
+  background-color: #fafafa;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1502,7 +1508,7 @@ th {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: #3887be;
+  background-color: #fafafa;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -3582,7 +3588,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #3887be;
+  background-color: #fafafa;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -3628,7 +3634,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #3887be;
+    border-bottom-color: #fafafa;
   }
 }
 .nav-pills > li {
@@ -3696,7 +3702,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #3887be;
+    border-bottom-color: #fafafa;
   }
 }
 .tab-content > .tab-pane {
@@ -4474,7 +4480,7 @@ a.list-group-item.active > .badge,
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #3887be;
+  background-color: #fafafa;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;

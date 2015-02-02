@@ -7,7 +7,7 @@ Template Name: Home Page Template
 <?php get_header(); ?>
 
 <div class="slider">
- <div  class="container">
+ <div  class="container homepage">
     
     <div class="sl-test">
      <?php $feat_posts = get_posts('category=66&posts_per_page=4'); ?>

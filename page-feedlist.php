@@ -22,8 +22,11 @@ $query = new WP_Query( array( 'post_type' => pressforward()->pf_feeds->post_type
 if ( $query->have_posts() ) : ?>
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
 		<div class="entry">
-			
-			<?php echo '<a href="' . get_the_guid() . '">' ?><?php echo the_title() . '</a>' ?>
+			<?php 
+				echo '<a href="' . get_the_guid() . '">'; 
+				the_title(); 
+				echo '</a>'; 
+			?>
 		</div>
 	<?php endwhile; wp_reset_postdata(); ?>
 <?php endif; ?>

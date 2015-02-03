@@ -17,14 +17,13 @@ Template Name: PressForward Feed List
 
 
 <?php
-$query = new WP_Query( array( 'post_type' => 'pf_feed' ) );
+$query = new WP_Query( array( 'post_type' => pressforward()->pf_feeds->post_type, 'nopaging' => true ) );
 				
-
 if ( $query->have_posts() ) : ?>
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
 		<div class="entry">
 			
-			<?php echo '<a href="' . $post->feedUrl . '">' ?><?php echo the_title() . '</a>' ?>
+			<?php echo '<a href="' . get_the_guid() . '">' ?><?php echo the_title() . '</a>' ?>
 		</div>
 	<?php endwhile; wp_reset_postdata(); ?>
 <?php endif; ?>

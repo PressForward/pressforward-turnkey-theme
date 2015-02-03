@@ -34,9 +34,6 @@ h6 {
 #categories {
   padding: 50px;
 }
-#info {
-  height: 250px;
-}
 .slider {
   background-color: #3887be;
 }
@@ -84,21 +81,34 @@ h6 {
 .categorieshome {
   background-color: #142736;
 }
-#info h2 {
+#text-4 h1 {
   font-size: 50px;
+  margin: 0px 0 40px 0;
 }
 #text-4 {
-  list-style-type: none;
+  padding: 72px;
 }
 .widgettitle {
-  border-bottom: 0px solid #f8f8f8 !important;
-  text-align: center;
-  padding: 20px 0 10px 0;
+  border: none !important;
 }
-.textwidget {
+#text-4 {
   font-size: large;
-  text-align: center;
-  padding: 10px 0 20px 0;
+}
+.homeinnercontent {
+  background-color: #f8f8f8;
+  padding: 10px;
+  font-size: large;
+  height: 420px;
+  overflow: hidden;
+}
+.homeinnercontent li {
+  padding-bottom: 5px;
+}
+.homecategories {
+  height: 450px;
+}
+i {
+  color: #142736 !important;
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {

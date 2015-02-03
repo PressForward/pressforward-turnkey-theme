@@ -40,7 +40,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'id' => 'content1',
     'name' => __( 'Content Widget 1', 'bonestheme' ),
     'description' => __( 'The first content area widget.', 'bonestheme' ),
-    'before_widget' => '<i class="fa fa-briefcase fa-4x light-gray"></i>',
+    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-briefcase fa-4x light-gray"></i>',
+    'after_widget' => '</div>',
     // 'before_title' => '<h3>',
     // 'after_title' => '</h3>',
   ));
@@ -49,7 +50,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'id' => 'content2',
     'name' => __( 'Content Widget 2', 'bonestheme' ),
     'description' => __( 'The second content area widget.', 'bonestheme' ),
-    'before_widget' => '<i class="fa fa-bullhorn fa-4x light-gray"></i>',
+    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-bullhorn fa-4x light-gray"></i>',
+     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
@@ -58,7 +60,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'id' => 'content3',
     'name' => __( 'Content Widget 3', 'bonestheme' ),
     'description' => __( 'The third content area widget.', 'bonestheme' ),
-    'before_widget' => '<i class="fa fa-info fa-4x light-gray"></i>',
+    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-info fa-4x light-gray"></i>',
+     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
@@ -67,7 +70,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'id' => 'content4',
     'name' => __( 'Content Widget 4', 'bonestheme' ),
     'description' => __( 'The fourth content area widget.', 'bonestheme' ),
-    'before_widget' => '<i class="fa fa-laptop fa-4x light-gray"></i>',
+    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-laptop fa-4x light-gray"></i>',
+     'after_widget' => '</div>',
     // 'before_title' => '<h3>',
     // 'after_title' => '</h3>',
   ));
@@ -76,7 +80,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'id' => 'content5',
     'name' => __( 'Content Widget 5', 'bonestheme' ),
     'description' => __( 'The fifth content area widget.', 'bonestheme' ),
-    'before_widget' => '<i class="fa fa-money fa-4x light-gray"></i>',
+    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-money fa-4x light-gray"></i>',
+     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
@@ -85,7 +90,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'id' => 'content6',
     'name' => __( 'Content Widget 6', 'bonestheme' ),
     'description' => __( 'The sixth content area widget.', 'bonestheme' ),
-    'before_widget' => '<i class="fa fa-flag fa-4x light-gray"></i>',
+    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-flag fa-4x light-gray"></i>',
+     'after_widget' => '</div>',
     'before_title' => '<h3>',
     'after_title' => '</h3>',
   ));
@@ -94,6 +100,10 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'id' => 'homepageabout',
     'name' => __( 'About Section Widget', 'bonestheme' ),
     'description' => __( 'The homepage about widget.', 'bonestheme' ),
+    'before_widget' => '<div id="%1$s" class="widget widgetFooter %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h1 class="widgettitle">',
+    'after_title' => '</h1>',
   ));
 
 

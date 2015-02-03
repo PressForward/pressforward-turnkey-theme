@@ -55,7 +55,7 @@ Template Name: Home Page Template
    <!--  <div class="row text-center"> -->
     
        <!-- </div> -->
-       <div class="row">
+       <div class="row homecategories">
     <!--Section 1-->
     <div class="col-sm-4 about" id="content1">
       <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content1') ) : ?>
@@ -76,7 +76,7 @@ Template Name: Home Page Template
     
   </div> <!--end row-->
 
-     <div class="row">
+     <div class="row homecategories">
     <!--Section 1-->
     <div class="col-sm-4 about content4">
        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content4') ) : ?>

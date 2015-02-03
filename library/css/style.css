@@ -25,14 +25,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Arvo, serif !important;
+  letter-spacing: 1px;
 }
-.about ul {
-  text-align: left;
-  line-height: 1.5;
-}
-#categories {
-  padding: 50px;
+.widgettitle {
+  border: none !important;
 }
 .slider {
   background-color: #3887be;
@@ -44,7 +40,7 @@ h6 {
 }
 #sliderimg {
   float: right;
-  padding: 40px 0 0 0;
+  padding: 40px 3px 0 0;
 }
 .container.homepage {
   margin-top: 0px;
@@ -69,46 +65,82 @@ h6 {
   margin: 5px 0 0 0;
   color: #f8f8f8;
   letter-spacing: 1px;
-  font-size: 24px;
+  font-size: 20px !important;
+}
+@media (min-width: 992px) {
+  #slider-content h2 {
+    font-size: 24px !important;
+  }
 }
 #slider-content p {
   font-size: large;
   color: #f8f8f8;
 }
+.title {
+  font-size: 30px !important;
+  margin: 0px 0 40px 0;
+}
+@media (min-width: 992px) {
+  .title {
+    font-size: 50px !important;
+  }
+}
+/******* About Section *******/
 .aboutlarge {
   background-color: #f8f8f8;
 }
-.categorieshome {
-  background-color: #142736;
+.info {
+  font-size: 18px;
 }
-#text-4 h1 {
-  font-size: 50px;
-  margin: 0px 0 40px 0;
-}
-#text-4 {
+.info .infowidget {
   padding: 72px;
 }
-.widgettitle {
-  border: none !important;
+.info h1 {
+  font-size: 30px;
+  padding-bottom: 30px;
 }
-#text-4 {
-  font-size: large;
+@media (min-width: 992px) {
+  .info h1 {
+    font-size: 50px !important;
+  }
 }
-.homeinnercontent {
+/******* Category Widgets *******/
+.categorieshome {
+  background-color: #142736;
+  padding: 50px 0 50px 0;
+}
+.about i {
+  color: #142736 !important;
+}
+.about ul {
+  text-align: left;
+  line-height: 1.5;
+}
+.about .homeinnercontent {
   background-color: #f8f8f8;
-  padding: 10px;
+  padding: 25px 20px 15px 10px;
   font-size: large;
-  height: 420px;
   overflow: hidden;
 }
-.homeinnercontent li {
+.about h1 {
+  font-size: 30px;
+}
+@media (min-width: 992px) {
+  .homeinnercontent {
+    height: 430px;
+  }
+}
+li {
   padding-bottom: 5px;
 }
-.homecategories {
-  height: 450px;
+@media (min-width: 992px) {
+  .homecategories {
+    height: 450px;
+  }
 }
-i {
-  color: #142736 !important;
+.about:hover i {
+  color: #1b3449 !important;
+  transition: all 0.35s ease;
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
@@ -462,7 +494,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: inherit;
+  font-family: 'Arvo', "Times New Roman", Times, serif;
   font-weight: 500;
   line-height: 1.1;
   color: inherit;

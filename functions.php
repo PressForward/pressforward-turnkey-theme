@@ -42,8 +42,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'description' => __( 'The first content area widget.', 'bonestheme' ),
     'before_widget' => '<div class="homeinnercontent"><i class="fa fa-briefcase fa-4x light-gray"></i>',
     'after_widget' => '</div>',
-    // 'before_title' => '<h3>',
-    // 'after_title' => '</h3>',
+    'before_title' => '<h1>',
+    'after_title' => '</h1>',
   ));
 
    register_sidebar(array(
@@ -52,8 +52,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'description' => __( 'The second content area widget.', 'bonestheme' ),
     'before_widget' => '<div class="homeinnercontent"><i class="fa fa-bullhorn fa-4x light-gray"></i>',
      'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    'before_title' => '<h1>',
+    'after_title' => '</h1>',
   ));
 
    register_sidebar(array(
@@ -62,8 +62,8 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'description' => __( 'The third content area widget.', 'bonestheme' ),
     'before_widget' => '<div class="homeinnercontent"><i class="fa fa-info fa-4x light-gray"></i>',
      'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    'before_title' => '<h1>',
+    'after_title' => '</h1>',
   ));
 
     register_sidebar(array(
@@ -72,18 +72,18 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'description' => __( 'The fourth content area widget.', 'bonestheme' ),
     'before_widget' => '<div class="homeinnercontent"><i class="fa fa-laptop fa-4x light-gray"></i>',
      'after_widget' => '</div>',
-    // 'before_title' => '<h3>',
-    // 'after_title' => '</h3>',
+     'before_title' => '<h1>',
+    'after_title' => '</h1>',
   ));
 
      register_sidebar(array(
     'id' => 'content5',
     'name' => __( 'Content Widget 5', 'bonestheme' ),
     'description' => __( 'The fifth content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-money fa-4x light-gray"></i>',
-     'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    'before_widget' => '<div class="homeinnercontent"><a href="http://localhost:8888/2014/category/job/"><i class="fa fa-money fa-4x light-gray"></i></a>',
+    'after_widget' => '</div>',
+    'before_title' => '<h1>',
+    'after_title' => '</h1>',
   ));
 
       register_sidebar(array(
@@ -92,15 +92,15 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'description' => __( 'The sixth content area widget.', 'bonestheme' ),
     'before_widget' => '<div class="homeinnercontent"><i class="fa fa-flag fa-4x light-gray"></i>',
      'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    'before_title' => '<h1>',
+    'after_title' => '</h1>',
   ));
 
        register_sidebar(array(
     'id' => 'homepageabout',
     'name' => __( 'About Section Widget', 'bonestheme' ),
     'description' => __( 'The homepage about widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget widgetFooter %2$s">',
+    'before_widget' => '<div id="%1$s" class="widget infowidget %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h1 class="widgettitle">',
     'after_title' => '</h1>',

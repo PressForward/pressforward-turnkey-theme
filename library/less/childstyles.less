@@ -7,27 +7,18 @@ Stylesheet: Tables
 This is just for the sample BREW site.  Feel free to delete
 
 ******************************************************************/
-@import url(http://fonts.googleapis.com/css?family=Arvo);
 h1, h2, h3, h4, h5, h6 {
-	font-family: Arvo, serif !important;
+	letter-spacing: 1px;
 }
-.about { ul {
-	
-	text-align: left;
-	line-height: 1.5;
-} }
-
-
-#categories {
-  padding: 50px;
+.widgettitle{
+	border: none !important;
 }
 
-#info {
-	// height: 250px;	
 
-}
+
+
 .slider {
-	background-color: #3887be;
+	background-color: @dhnow-blue;
 }
 #slidertext {
 	width: 60%;
@@ -36,7 +27,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #sliderimg {
 	float: right;
-	padding: 40px 0 0 0;
+	padding: 40px 3px 0 0;
 }
 
 .container.homepage {
@@ -49,7 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 }
 #slider-content h1 {
-	color: #f8f8f8;
+	color: @dhnow-gray;
 	margin: 0px;
 	font-size: 50px;
 	letter-spacing:1px;
@@ -60,52 +51,92 @@ h1, h2, h3, h4, h5, h6 {
 }
 #slider-content h2 {
 	margin: 5px 0 0 0;
-	color: #f8f8f8;
+	color: @dhnow-gray;
 	letter-spacing:1px;
-	font-size: 24px;
+	font-size: 20px !important;
+	@media (min-width: @screen-md) {
+		font-size: 24px !important;
+	}
 }
 
 #slider-content p {
 	font-size: large;
-	color: #f8f8f8;
+	color: @dhnow-gray;
+}
+.title {
+	font-size: @font-size-h2 !important;
+	margin: 0px 0 40px 0;
+	@media (min-width: @screen-md) {
+		font-size: @font-size-h1-home !important;
+	}
 }
 
+/******* About Section *******/
 .aboutlarge {
-	background-color: #f8f8f8;
+	background-color: @dhnow-gray;
 }
+
+
+.info {
+	.infowidget {
+		padding: 72px;
+	}
+	h1 {
+		font-size: @font-size-h2;
+		padding-bottom: 30px;
+		@media (min-width: @screen-md){
+			font-size: @font-size-h1-home !important;
+		}
+	}
+	font-size: @font-size-large;
+
+}
+
+
+
+
+
+/******* Category Widgets *******/
+
 .categorieshome {
-	background-color: #142736;
+	background-color: @dhnow-darkblue;
+	padding: 50px 0 50px 0;
 }
-#text-4 h1 {
-font-size: 50px;
-margin: 0px 0 40px 0;
+.about {
+ 	i {
+	    color: @dhnow-darkblue !important;
+	 }
+  	ul {
+		text-align: left;
+		line-height: 1.5;
+	} 
+	.homeinnercontent {
+		background-color: @dhnow-gray;
+		padding: 25px 20px 15px 10px;
+		font-size: large;
+		overflow: hidden;
+	}
+	h1 {
+		font-size: @font-size-h2;
+	}
 }
-#text-4 {
-	padding: 72px;
-}
-.widgettitle {
-	border: none !important;
-
-}
-#text-4 {
-font-size: large;
-}
-
 .homeinnercontent {
-	background-color: #f8f8f8;
-	padding: 10px;
-	font-size: large;
-	height:420px;
-	overflow: hidden;
-}
-.homeinnercontent li {
-	padding-bottom: 5px;
-}
-.homecategories {
-	height: 450px;
-}
+		@media (min-width: @screen-md) {
+			height: 430px; }
+		}	
+		li {
+			padding-bottom: 5px;
+		}
 
-i {
-	color: #142736 !important;
+.homecategories {
+		@media (min-width: @screen-md) {
+			height: 450px;
+		}
+	}
+	
+
+.about:hover i {
+  color: @dhnow-darkblue-lighter !important;
+  transition: all 0.35s ease;
 }
 

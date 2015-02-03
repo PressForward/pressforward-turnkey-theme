@@ -1,11 +1,16 @@
 //
 // Variables
 // --------------------------------------------------
-
+@import url(http://fonts.googleapis.com/css?family=Arvo);
 
 //== Colors
 //
 //## Gray and brand colors for use across Bootstrap.
+@dhnow-blue: 				#3887be;
+@dhnow-darkblue: 			#142736;
+@dhnow-darkblue-lighter: 	lighten(#142736, 5%);
+@dhnow-gray: 				#f8f8f8;
+@dhnow-white: 				#fafafa;
 
 @gray-darker:            lighten(#000, 13.5%); // #222
 @gray-dark:              lighten(#000, 20%);   // #333
@@ -40,7 +45,7 @@
 //## Font, line-height, and color for body text, headings, and more.
 
 @font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif;
-@font-family-serif:       Georgia, "Times New Roman", Times, serif;
+@font-family-serif:       'Arvo', "Times New Roman", Times, serif;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 @font-family-base:        @font-family-sans-serif;
@@ -48,7 +53,7 @@
 @font-size-base:          14px;
 @font-size-large:         ceil((@font-size-base * 1.25)); // ~18px
 @font-size-small:         ceil((@font-size-base * 0.85)); // ~12px
-
+@font-size-h1-home:       ceil((@font-size-base * 3.57));
 @font-size-h1:            floor((@font-size-base * 2.6)); // ~36px
 @font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
 @font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
@@ -62,7 +67,7 @@
 @line-height-computed:    floor((@font-size-base * @line-height-base)); // ~20px
 
 //** By default, this inherits from the `<body>`.
-@headings-font-family:    inherit;
+@headings-font-family:    @font-family-serif;
 @headings-font-weight:    500;
 @headings-line-height:    1.1;
 @headings-color:          inherit;

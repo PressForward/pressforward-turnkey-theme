@@ -35,5 +35,3 @@ if ( $query->have_posts() ) : ?>
 			</div>
 </div>
 <?php get_footer(); ?>
-
-<a href="wwww">title</a>

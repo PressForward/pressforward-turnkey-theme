@@ -23,7 +23,7 @@ if ( $query->have_posts() ) : ?>
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
 		<div class="entry">
 			<?php 
-				echo '<a href="' . get_the_guid() . '">'; 
+				echo '<a href="' . get_post_meta(get_the_ID(), 'feedUrl', true) . '">'; 
 				the_title(); 
 				echo '</a>'; 
 			?>

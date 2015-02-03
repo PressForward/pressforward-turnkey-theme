@@ -43,7 +43,8 @@ Template Name: Home Page Template
 <div class="container">
 <div class="row">
 <div class="col-md-12 center" id="info">
-<h1>About Digital Humanities Now</h1>
+ <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('homepageabout') ) : ?>
+      <?php endif; ?>
 </div>
 </div>
 </div>

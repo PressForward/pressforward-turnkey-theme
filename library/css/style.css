@@ -78,6 +78,28 @@ h6 {
   font-size: large;
   color: #f8f8f8;
 }
+.aboutlarge {
+  background-color: #f8f8f8;
+}
+.categorieshome {
+  background-color: #142736;
+}
+#info h2 {
+  font-size: 50px;
+}
+#text-4 {
+  list-style-type: none;
+}
+.widgettitle {
+  border-bottom: 0px solid #f8f8f8 !important;
+  text-align: center;
+  padding: 20px 0 10px 0;
+}
+.textwidget {
+  font-size: large;
+  text-align: center;
+  padding: 10px 0 20px 0;
+}
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

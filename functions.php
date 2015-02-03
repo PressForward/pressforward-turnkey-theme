@@ -90,4 +90,11 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
     'after_title' => '</h3>',
   ));
 
+       register_sidebar(array(
+    'id' => 'homepageabout',
+    'name' => __( 'About Section Widget', 'bonestheme' ),
+    'description' => __( 'The homepage about widget.', 'bonestheme' ),
+  ));
+
+
 ?>

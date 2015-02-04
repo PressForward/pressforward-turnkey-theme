@@ -19,6 +19,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .slider {
 	background-color: @dhnow-blue;
+	a:hover {
+		color: @gray-darker;
+	}
+	.current a{
+		color: @dhnow-darkblue;
+	}
+	
 }
 #slidertext {
 	width: 60%;
@@ -126,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .homeinnercontent {
 		@media (min-width: @screen-md) {
-			height: 430px; }
+			height: 395px; }
 		}	
 		li {
 			padding-bottom: 5px;
@@ -134,7 +141,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .homecategories {
 		@media (min-width: @screen-md) {
-			height: 450px;
+			height: 415px;
 		}
 	}
 	
@@ -153,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
 	    color: @dhnow-darkblue !important;
 	}
 	p {
-		text-align: left;
+		text-align: center;
 		font-size: @font-size-large;
 	}
 	h1 {
@@ -177,7 +184,7 @@ h1, h2, h3, h4, h5, h6 {
 		color: @dhnow-gray;
 	}
 	a:hover {
-		color: @dhnow-darkblue;
+		color: @gray-darker;
 	}
 	.rpwe-summary {
 		padding-top: 15px;
@@ -193,3 +200,11 @@ h1, h2, h3, h4, h5, h6 {
 	
 }
 
+/** Footer **/
+#footer {
+	margin-top: 0px !important;
+	background-color: @dhnow-gray !important;
+	img {
+
+	}
+}

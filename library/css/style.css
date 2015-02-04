@@ -34,6 +34,12 @@ h6 {
 .slider {
   background-color: #3887be;
 }
+.slider a:hover {
+  color: #e2e2e2;
+}
+.slider .current a {
+  color: #142736;
+}
 #slidertext {
   width: 60%;
   float: left;
@@ -132,7 +138,7 @@ h6 {
 }
 @media (min-width: 992px) {
   .homeinnercontent {
-    height: 430px;
+    height: 395px;
   }
 }
 li {
@@ -140,7 +146,7 @@ li {
 }
 @media (min-width: 992px) {
   .homecategories {
-    height: 450px;
+    height: 415px;
   }
 }
 .about:hover i {
@@ -155,7 +161,7 @@ li {
   color: #142736 !important;
 }
 .participatehome p {
-  text-align: left;
+  text-align: center;
   font-size: 18px;
 }
 .participatehome h1 {
@@ -176,7 +182,7 @@ li {
   color: #f8f8f8;
 }
 .bloghome a:hover {
-  color: #142736;
+  color: #e2e2e2;
 }
 .bloghome .rpwe-summary {
   padding-top: 15px;
@@ -189,6 +195,11 @@ li {
   .bloghome h1 {
     font-size: 50px !important;
   }
+}
+/** Footer **/
+#footer {
+  margin-top: 0px !important;
+  background-color: #f8f8f8 !important;
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {

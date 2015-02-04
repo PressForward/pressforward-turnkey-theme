@@ -109,12 +109,16 @@ h1, h2, h3, h4, h5, h6 {
   	ul {
 		text-align: left;
 		line-height: 1.5;
+		font-size: 17px;
 	} 
+	a {
+		color: @dhnow-blue;
+	}
 	.homeinnercontent {
 		background-color: @dhnow-gray;
 		padding: 25px 20px 15px 10px;
 		font-size: large;
-		overflow: hidden;
+		overflow-y: scroll;
 	}
 	h1 {
 		font-size: @font-size-h2;
@@ -138,5 +142,54 @@ h1, h2, h3, h4, h5, h6 {
 .about:hover i {
   color: @dhnow-darkblue-lighter !important;
   transition: all 0.35s ease;
+}
+
+
+
+/**Participate**/
+.participatehome {
+
+	i {
+	    color: @dhnow-darkblue !important;
+	}
+	p {
+		text-align: left;
+		font-size: @font-size-large;
+	}
+	h1 {
+		font-size: @font-size-h3;
+	}
+	padding: 50px 0 50px 0;
+}
+
+.participatehome:hover i {
+  color: @dhnow-darkblue-lighter !important;
+  transition: all 0.35s ease;
+}
+
+/** Blog **/
+.bloghome {
+	background-color: @dhnow-blue;
+	color: @dhnow-gray;
+	padding: 50px 0px 50px 0;
+	font-size: @font-size-large;
+	a {
+		color: @dhnow-gray;
+	}
+	a:hover {
+		color: @dhnow-darkblue;
+	}
+	.rpwe-summary {
+		padding-top: 15px;
+	}
+	
+	h1 {
+		font-size: @font-size-h2;
+		padding-bottom: 30px;
+		@media (min-width: @screen-md){
+			font-size: @font-size-h1-home !important;
+		}
+	}
+	
 }
 

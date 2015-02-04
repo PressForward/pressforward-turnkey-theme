@@ -18,7 +18,7 @@ Template Name: Home Page Template
         <?php
         $trim_title = get_post_field('post_title', $id);
   
-      $short_title = wp_trim_words( $trim_title, $num_words = 15, $more = '… ' );
+      $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
              echo '<div id="slidertitle"><h1 class="title">' . $short_title . '</h1>';
              echo '<br><h2>By: ' . get_post_field('item_author') . '</h2></div>';
        ?>
@@ -105,6 +105,40 @@ Template Name: Home Page Template
     
   </div> <!--end row-->
   </div>
+</main>
+
+
+<main class="participatehome" role="main">
+<div class="container" id="participate">
+  <div class="row text-center">
+  <div class="col-md-3">
+  <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate1') ) : ?>
+      <?php endif; ?>
+  </div>
+  <div class="col-md-3">
+   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate2') ) : ?>
+      <?php endif; ?>
+  </div>
+  <div class="col-md-3">
+   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate3') ) : ?>
+      <?php endif; ?>
+  </div>
+  <div class="col-md-3">
+   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate4') ) : ?>
+      <?php endif; ?>
+  </div>
+  </div>
+  </div>
+  </main>
+<main class="bloghome" role="main">
+<div class="container" id="blog">
+<div class="row">
+<div class="col-md-12">
+ <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blog') ) : ?>
+      <?php endif; ?>
+</div>
+</div>
+</div>
 </main>
 
 </div>

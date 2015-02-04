@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo);
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro|Noto+Sans|Droid+Sans|PT+Sans|Open+Sans|Oxygen);
 /*
  Theme Name:   Brew Child
  Theme URI:    http://yourwebsite.com/twentyfourteen-child/
@@ -115,12 +116,16 @@ h6 {
 .about ul {
   text-align: left;
   line-height: 1.5;
+  font-size: 17px;
+}
+.about a {
+  color: #3887be;
 }
 .about .homeinnercontent {
   background-color: #f8f8f8;
   padding: 25px 20px 15px 10px;
   font-size: large;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 .about h1 {
   font-size: 30px;
@@ -141,6 +146,49 @@ li {
 .about:hover i {
   color: #1b3449 !important;
   transition: all 0.35s ease;
+}
+/**Participate**/
+.participatehome {
+  padding: 50px 0 50px 0;
+}
+.participatehome i {
+  color: #142736 !important;
+}
+.participatehome p {
+  text-align: left;
+  font-size: 18px;
+}
+.participatehome h1 {
+  font-size: 24px;
+}
+.participatehome:hover i {
+  color: #1b3449 !important;
+  transition: all 0.35s ease;
+}
+/** Blog **/
+.bloghome {
+  background-color: #3887be;
+  color: #f8f8f8;
+  padding: 50px 0px 50px 0;
+  font-size: 18px;
+}
+.bloghome a {
+  color: #f8f8f8;
+}
+.bloghome a:hover {
+  color: #142736;
+}
+.bloghome .rpwe-summary {
+  padding-top: 15px;
+}
+.bloghome h1 {
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+@media (min-width: 992px) {
+  .bloghome h1 {
+    font-size: 50px !important;
+  }
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
@@ -409,7 +457,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;

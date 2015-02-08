@@ -20,7 +20,7 @@ Template Name: Home Page Template
   
       $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
              echo '<div id="slidertitle"><h1 class="title">' . $short_title . '</h1>';
-             echo '<br><h2>By: ' . get_post_field('item_author') . '</h2></div>';
+             echo '<br><h2>By: ' . get_the_author() . '</h2></div>';
        ?>
         <!-- <div id="slidertitle"><h1 class="title"><?php echo $post->post_title; ?></h1><br><h2>By: <?php echo get_post_field('item_author') ?></h2></div>  --><!-- close #slidertitle -->
       

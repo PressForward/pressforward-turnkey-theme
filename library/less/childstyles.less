@@ -7,16 +7,22 @@ Stylesheet: Tables
 This is just for the sample BREW site.  Feel free to delete
 
 ******************************************************************/
+
+/******* General Section *******/
 h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 1px;
 }
 .widgettitle{
 	border: none !important;
 }
+.container.homepage {
+	margin-top: 0px;
+	padding: 72px;
+}
 
 
 
-
+/******* Slider Section *******/
 .slider {
 	background-color: @dhnow-blue;
 	a:hover {
@@ -25,58 +31,61 @@ h1, h2, h3, h4, h5, h6 {
 	.current a{
 		color: @dhnow-darkblue;
 	}
-	
-}
-#slidertext {
-	width: 60%;
-	float: left;
+	#slidertext {
 	margin-top: 40px;
-}
-#sliderimg {
-	float: right;
-	padding: 40px 3px 0 0;
-}
+	float: left;
+	width: 60%;
+		@media (max-width: @screen-sm){
+			width: 100%;
+		}
+	}
 
-.container.homepage {
-	margin-top: 0px;
-	padding: 72px;
-}
-@media screen and (min-width: 960px) {
-#slider-content {
-	height: 500px;
-}
-}
-#slider-content h1 {
+	h1 {
+	font-size: @font-size-h2 !important;
+	margin: 0px 0 40px 0;
 	color: @dhnow-gray;
 	margin: 0px;
 	font-size: 50px;
 	letter-spacing:1px;
-}
-#slider-content img{
-	height: auto;
-	width: 400px;
-}
-#slider-content h2 {
+	@media (min-width: @screen-md) {
+		font-size: @font-size-h1-home !important;
+		}
+	}
+	h2 {
 	margin: 5px 0 0 0;
 	color: @dhnow-gray;
 	letter-spacing:1px;
 	font-size: 20px !important;
-	@media (min-width: @screen-md) {
-		font-size: 24px !important;
+		@media (min-width: @screen-md) {
+			font-size: 24px !important;
+		}
+	}
+	p {
+	font-size: @font-size-large;
+	color: @dhnow-gray;
+	}
+	img{
+	height: auto;
+	float: right;
+	width: 400px;
+	padding: 40px 3px 0 0;
+
+		@media (max-width: @screen-sm) {
+			width: 400px;
+			margin-top: 25px;
+			height: auto;
+			float: left;	
+		 }
+	}
+	#slider-content {
+		@media (min-width: @screen-md){
+			height: 500px;
+		}
 	}
 }
 
-#slider-content p {
-	font-size: large;
-	color: @dhnow-gray;
-}
-.title {
-	font-size: @font-size-h2 !important;
-	margin: 0px 0 40px 0;
-	@media (min-width: @screen-md) {
-		font-size: @font-size-h1-home !important;
-	}
-}
+
+
 
 /******* About Section *******/
 .aboutlarge {
@@ -98,9 +107,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: @font-size-large;
 
 }
-
-
-
 
 
 /******* Category Widgets *******/

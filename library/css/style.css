@@ -40,48 +40,61 @@ h6 {
 .slider .current a {
   color: #142736;
 }
-#slidertext {
-  width: 60%;
-  float: left;
+.slider #slidertext {
   margin-top: 40px;
+  float: left;
+  width: 60%;
 }
-#sliderimg {
-  float: right;
-  padding: 40px 3px 0 0;
-}
-.container.homepage {
-  margin-top: 0px;
-  padding: 72px;
-}
-@media screen and (min-width: 960px) {
-  #slider-content {
-    height: 500px;
+@media (max-width: 768px) {
+  .slider #slidertext {
+    width: 100%;
   }
 }
-#slider-content h1 {
+.slider #sliderimg {
+  padding: 40px 3px 0 0;
+}
+.slider h1 {
   color: #f8f8f8;
   margin: 0px;
   font-size: 50px;
   letter-spacing: 1px;
 }
-#slider-content img {
-  height: auto;
-  width: 400px;
-}
-#slider-content h2 {
+.slider h2 {
   margin: 5px 0 0 0;
   color: #f8f8f8;
   letter-spacing: 1px;
   font-size: 20px !important;
 }
 @media (min-width: 992px) {
-  #slider-content h2 {
+  .slider h2 {
     font-size: 24px !important;
   }
 }
-#slider-content p {
-  font-size: large;
+.slider p {
+  font-size: 18px;
   color: #f8f8f8;
+}
+.slider img {
+  height: auto;
+  float: right;
+  width: 400px;
+}
+@media (max-width: 768px) {
+  .slider img {
+    width: 400px;
+    margin-top: 25px;
+    height: auto;
+    float: left;
+  }
+}
+@media (min-width: 992px) {
+  .slider #slider-content {
+    height: 500px;
+  }
+}
+.container.homepage {
+  margin-top: 0px;
+  padding: 72px;
 }
 .title {
   font-size: 30px !important;

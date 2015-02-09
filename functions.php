@@ -151,8 +151,17 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
   ));
 
              register_sidebar(array(
-    'id' => 'blog',
-    'name' => __( 'Blog Widget', 'bonestheme' ),
+    'id' => 'blogexcerpt',
+    'name' => __( 'Blog Widget 1', 'bonestheme' ),
+    'description' => __( 'The blog widget.', 'bonestheme' ),
+    'before_widget' => '<div id="%1$s" class="widget blogwidget %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h1 class="widgettitle">',
+    'after_title' => '</h1>',
+  ));
+             register_sidebar(array(
+    'id' => 'bloglist',
+    'name' => __( 'Blog Widget 2', 'bonestheme' ),
     'description' => __( 'The blog widget.', 'bonestheme' ),
     'before_widget' => '<div id="%1$s" class="widget blogwidget %2$s">',
     'after_widget' => '</div>',

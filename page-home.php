@@ -133,8 +133,12 @@ Template Name: Home Page Template
 <main class="bloghome" role="main">
 <div class="container" id="blog">
 <div class="row">
-<div class="col-md-12">
- <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blog') ) : ?>
+<div class="col-md-7">
+ <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blogexcerpt') ) : ?>
+      <?php endif; ?>
+</div>
+<div class="col-md-5" id="bloglist">
+ <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('bloglist') ) : ?>
       <?php endif; ?>
 </div>
 </div>

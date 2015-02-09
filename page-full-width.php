@@ -1,11 +1,12 @@
 <?php
 /*
-Template Name: PressForward Feed List
+Template Name: Page - Full Width
 */
 ?>
 
 <?php get_header(); ?>
-<div class="container">
+
+      <div class="container">
 
         <div id="content" class="clearfix row">
         
@@ -14,7 +15,9 @@ Template Name: PressForward Feed List
             
             <?php if ( function_exists('custom_breadcrumb') ) { custom_breadcrumb(); } ?> 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+            <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            
+            <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
               
               <header class="page-head article-header">
                 
@@ -23,23 +26,9 @@ Template Name: PressForward Feed List
               </header> <!-- end article header -->
             
               <section class="page-content entry-content clearfix" itemprop="articleBody">
-
-
-<?php
-$query = new WP_Query( array( 'post_type' => pressforward()->pf_feeds->post_type, 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC') );
-				
-if ( $query->have_posts() ) : ?>
-	<?php while ( $query->have_posts() ) : $query->the_post(); ?>	
-		<div class="entry">
-			<?php 
-				echo '<p class="feedlistitem"><a href="' . get_post_meta(get_the_ID(), 'feedUrl', true) . '">'; 
-				the_title(); 
-				echo '</a></p>'; 
-			?>
-		</div>
-	<?php endwhile; wp_reset_postdata(); ?>
-<?php endif; ?>
-</section> <!-- end article section -->
+                <?php the_content(); ?>
+            
+              </section> <!-- end article section -->
               
               <footer>
         
@@ -50,9 +39,28 @@ if ( $query->have_posts() ) : ?>
             </article> <!-- end article -->
             
             <?php //comments_template('',true); ?>
-            </div> <!-- end #main -->
+            
+            <?php endwhile; ?>    
+            
+            <?php else : ?>
+            
+            <article id="post-not-found">
+                <header>
+                  <h1><?php _e("Not Found", "bonestheme"); ?></h1>
+                </header>
+                <section class="post_content">
+                  <p><?php _e("Sorry, but the requested resource was not found on this site.", "bonestheme"); ?></p>
+                </section>
+                <footer>
+                </footer>
+            </article>
+            
+            <?php endif; ?>
+        
+          </div> <!-- end #main -->
             
         </div> <!-- end #content -->
 
       </div> <!-- end .container -->
+
 <?php get_footer(); ?>

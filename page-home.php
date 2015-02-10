@@ -22,7 +22,7 @@ Template Name: Home Page Template
               <?php $trimexcerpt = get_post_field('post_content', $id);
                     $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 75, $more = '… ' );
                     echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>';  ?>
-              <a href="<?php echo get_permalink(); ?>" class="btn btn-default"> Read More...</a>
+              <a href="<?php echo get_permalink(); ?>" alt="<?php echo get_the_title() ?>" class="btn btn-default">Read More</a>
               </div> <!-- Close #slider-content -->
                
               <div id="sliderimg">

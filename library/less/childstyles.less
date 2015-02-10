@@ -50,10 +50,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /******* Slider Section *******/
 .slider {
-	background-color: @dhnow-blue;
+	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
 	a:hover {
 		color: @gray-darker;
 	}
+
 	.current a{
 		color: @dhnow-darkblue;
 	}
@@ -63,6 +64,12 @@ h1, h2, h3, h4, h5, h6 {
 	width: 60%;
 		@media (max-width: @screen-sm){
 			width: 100%;
+		}
+		a:hover {
+			color: @dhnow-darkblue;
+		}
+		a {
+			color: @dhnow-darkblue;
 		}
 	}
 
@@ -94,7 +101,7 @@ h1, h2, h3, h4, h5, h6 {
 	height: auto;
 	float: right;
 	width: 400px;
-	padding: 40px 3px 0 0;
+	padding: 40px 24px 0 0;
 
 		@media (max-width: @screen-sm) {
 			width: 400px;
@@ -108,6 +115,10 @@ h1, h2, h3, h4, h5, h6 {
 			height: 500px;
 		}
 	}
+	.homepage {
+		padding: 50px 0 25px 0;
+	}
+
 }
 
 
@@ -121,7 +132,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .info {
 	.infowidget {
-		padding: 72px;
+		padding: 25px 0px 25px 0;
 	}
 	h1 {
 		font-size: @font-size-h2;
@@ -198,7 +209,7 @@ h1, h2, h3, h4, h5, h6 {
 	h1 {
 		font-size: @font-size-h3;
 	}
-	padding: 50px 0 50px 0;
+	padding: 25px 0 25px 0;
 }
 
 .participatehome:hover i {
@@ -208,9 +219,9 @@ h1, h2, h3, h4, h5, h6 {
 
 /** Blog **/
 .bloghome {
-	background-color: @dhnow-blue;
+	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
 	color: @dhnow-gray;
-	padding: 50px 0px 50px 0;
+	padding: 25px 0px 25px 0;
 	font-size: @font-size-large;
 	a {
 		color: @dhnow-gray;
@@ -240,6 +251,7 @@ h1, h2, h3, h4, h5, h6 {
 #footer {
 	margin-top: 0px !important;
 	background-color: @dhnow-gray !important;
+	border: 0px !important;
 	img {
 
 	}

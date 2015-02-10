@@ -51,7 +51,10 @@ h6 {
 }
 /******* Slider Section *******/
 .slider {
-  background-color: #3887be;
+  background-image: -webkit-linear-gradient(top, #3887be 0%, 50%, #2f719e 100%);
+  background-image: linear-gradient(to bottom, #3887be 0%, 50%, #2f719e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3887be', endColorstr='#ff2f719e', GradientType=0);
 }
 .slider a:hover {
   color: #e2e2e2;
@@ -68,6 +71,12 @@ h6 {
   .slider #slidertext {
     width: 100%;
   }
+}
+.slider #slidertext a:hover {
+  color: #142736;
+}
+.slider #slidertext a {
+  color: #142736;
 }
 .slider h1 {
   font-size: 30px !important;
@@ -101,7 +110,7 @@ h6 {
   height: auto;
   float: right;
   width: 400px;
-  padding: 40px 3px 0 0;
+  padding: 40px 24px 0 0;
 }
 @media (max-width: 768px) {
   .slider img {
@@ -116,6 +125,9 @@ h6 {
     height: 500px;
   }
 }
+.slider .homepage {
+  padding: 50px 0 25px 0;
+}
 /******* About Section *******/
 .aboutlarge {
   background-color: #f8f8f8;
@@ -124,7 +136,7 @@ h6 {
   font-size: 18px;
 }
 .info .infowidget {
-  padding: 72px;
+  padding: 25px 0px 25px 0;
 }
 .info h1 {
   font-size: 30px;
@@ -179,7 +191,7 @@ li {
 }
 /**Participate**/
 .participatehome {
-  padding: 50px 0 50px 0;
+  padding: 25px 0 25px 0;
 }
 .participatehome i {
   color: #142736 !important;
@@ -197,9 +209,12 @@ li {
 }
 /** Blog **/
 .bloghome {
-  background-color: #3887be;
+  background-image: -webkit-linear-gradient(top, #3887be 0%, 50%, #2f719e 100%);
+  background-image: linear-gradient(to bottom, #3887be 0%, 50%, #2f719e 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3887be', endColorstr='#ff2f719e', GradientType=0);
   color: #f8f8f8;
-  padding: 50px 0px 50px 0;
+  padding: 25px 0px 25px 0;
   font-size: 18px;
 }
 .bloghome a {
@@ -228,6 +243,7 @@ li {
 #footer {
   margin-top: 0px !important;
   background-color: #f8f8f8 !important;
+  border: 0px !important;
 }
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {

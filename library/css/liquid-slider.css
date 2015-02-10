@@ -4,18 +4,7 @@
  *  http://liquidslider.com
  *  MIT license
  */
- .slider .container {
-  background-color: #3887be;
-  margin-top: 5%;
 
- }
-/* .panel-wrapper img {
-  float: left;
-  margin-right: 20px;
- }
- .panel-wrapper, .btn {
-  float: right;
- }*/
 .ls-nav {
   padding: 30px 0 0px 0;
 }
@@ -45,7 +34,7 @@
   position: relative;
 }
 .liquid-slider {
-  background: #3887be;
+  /*background: #3887be;*/
   width: 100%;
   margin: 0 auto;
   float: left;
@@ -93,9 +82,7 @@
   padding-top: 30px;
 }
 .ls-nav a {
-  background: #3887be;
   color: #f8f8f8;
-  /*margin-right: 1px;*/
   padding: 5px 15px 10px 15px;  
   outline:0;
   border: solid 2px #f8f8f8;

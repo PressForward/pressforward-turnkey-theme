@@ -26,7 +26,7 @@ Template Name: PressForward Feed List
 
 
 <?php
-$query = new WP_Query( array( 'post_type' => pressforward()->pf_feeds->post_type, 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC') );
+$query = new WP_Query( array( 'post_type' => pressforward()->pf_feeds->post_type, 'nopaging' => false, 'orderby' => 'title', 'order' => 'ASC') );
 				
 if ( $query->have_posts() ) : ?>
 	<?php while ( $query->have_posts() ) : $query->the_post(); ?>	

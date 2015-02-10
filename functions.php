@@ -63,7 +63,7 @@ add_action('after_setup_theme', 'remove_ahoy_actions');
 function child_bones_excerpt_more($more) {
   global $post;
   // edit here if you like
-  return '...&nbsp</p>';
+  return '... </p>';
 }
 add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 

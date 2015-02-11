@@ -50,6 +50,12 @@
 								  <i class="fa fa-flag fa-5x"></i>
 								  </div> <!--close col-md-2 featimg-->
 								  <div class="col-md-10" id="postcontent">';
+								} else if (in_category('87')) {
+								//BLOG--PENCIL ICON
+								echo '<div class="col-md-2 featimg text-center">
+								  <i class="fa fa-pencil fa-5x"></i>
+								  </div> <!--close col-md-2 featimg-->
+								  <div class="col-md-10" id="postcontent">';
 								} else if (in_category('66')) {
 								//EDITORS CHOICE -- FEATURED IMAGE NO ICON
 								echo '<div class="col-md-3 featimg">' . get_the_post_thumbnail( $post->ID, array(250,250)) . '</div> <!--close col-md-3 featimg-->
@@ -64,7 +70,7 @@
 									
 									<p class="byline vcard">
 										<!-- by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -  -->
-										<?php if (in_category('66')) {
+										<?php if (in_category(array(66, 87))) {
 										echo 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
 										} else {
 										echo 'by <span class="author"><em>the Editors</em></span> -'; 
@@ -82,6 +88,7 @@
 
 							<section class="entry-content single-content clearfix" itemprop="articleBody">
 								<?php the_content(); ?>
+								
 								<?php wp_link_pages(
                                 	array(
 
@@ -92,21 +99,25 @@
 							</section> <?php // end article section ?>
 							</div>
 							<footer class="article-footer single-footer clearfix">
-								<div class="col-md-3 metadata-footer">
-								<span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>
-								</div>
-              					<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span> -->
-              					<div class="col-md-9 ec-customfields metadata-footer">
-              					<?php if ( is_single() ) : 
+								<?php if (in_category('66')) {
+									echo '<div class="col-md-3 ec-customfields"><span class="tags pull-left">';
+									printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );
+									echo  '</span></div>';
 									$chief = get_post_meta($post->ID, 'editor-in-chief', true);
-									$large = get_post_meta($post->ID, 'editors-at-large', true);
-										if (!empty($chief)) : ?>
-											<div class="editors">
-											<p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief <?php echo $chief ?> based on nominations by Editors-at-Large <?php echo $large ?>. </p>
-											</div>
-									<?php endif; ?>
-									<?php endif; ?>
-								</div>	
+									$large = get_post_meta($post->ID, 'editors-at-large', true);	
+									echo '<div class=" col-md-9 editors">
+											<p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief ' . $chief . 'based on nominations by Editors-at-Large' . $large . '</p>
+											</div>';
+								} else {
+									echo '<span class="tags pull-left">';
+									printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );
+									echo '</span>';
+								} ?>
+								
+								<!-- </div> -->
+              					<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span> -->
+              				
+								<!-- </div>	 -->
             				</footer> <?php // end article footer ?>
 						</article> <?php // end article ?>
 

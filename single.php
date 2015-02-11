@@ -9,18 +9,66 @@
         		<?php get_template_part( 'breadcrumb' ); ?>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
+						
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						<div class="col-md-3 featimg">
-						<?php echo get_the_post_thumbnail( $post->ID, array(250,250)) ?>
-							</div>
-							<div class="col-md-9" id="postcontent">
+
+						
+						
+							<?php if ( in_category('77')) {
+							//JOBS--BRIEFCASE ICON
+							echo '<div class="col-md-2 featimg text-center">
+								  <i class="fa fa-briefcase fa-5x"></i>
+								  </div> <!--close col-md-2 featimg-->
+								  <div class="col-md-10" id="postcontent">';
+							} else if (in_category('74')) {
+							//CFPS--LAPTOP ICON	
+								echo '<div class="col-md-2 featimg text-center">
+								  <i class="fa fa-info fa-5x"></i>
+								  </div> <!--close col-md-2 featimg-->
+								  <div class="col-md-10" id="postcontent">';
+								 } else if (in_category('81')) {
+								//ANNOUNCEMENTS--BULLHORN ICON
+								echo '<div class="col-md-2 featimg text-center">
+								  <i class="fa fa-bullhorn fa-5x"></i>
+								  </div> <!--close col-md-2 featimg-->
+								  <div class="col-md-10" id="postcontent">';
+								} else if (in_category('75')) {
+								//RESOURCES--INFO ICON
+								echo '<div class="col-md-2 featimg text-center">
+								  <i class="fa fa-info fa-5x"></i>
+								  </div> <!--close col-md-2 featimg-->
+								  <div class="col-md-10" id="postcontent">';
+								} else if (in_category('79')) {
+								//FUNDING & OPPS--MONEY ICON
+									echo '<div class="col-md-2 featimg text-center">
+								  <i class="fa fa-money fa-5x"></i>
+								  </div> <!--close col-md-2 featimg-->
+								  <div class="col-md-10" id="postcontent">';
+								} else if (in_category('78')) {
+								//REPORTS--FLAG ICON
+								echo '<div class="col-md-2 featimg text-center">
+								  <i class="fa fa-flag fa-5x"></i>
+								  </div> <!--close col-md-2 featimg-->
+								  <div class="col-md-10" id="postcontent">';
+								} else if (in_category('66')) {
+								//EDITORS CHOICE -- FEATURED IMAGE NO ICON
+								echo '<div class="col-md-3 featimg">' . get_the_post_thumbnail( $post->ID, array(250,250)) . '</div> <!--close col-md-3 featimg-->
+								<div class="col-md-9" id="postcontent">';
+								} ?>
+							
+
+							
 							<header class="article-header">
 								<div class="titlewrap clearfix">
 									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									
 									<p class="byline vcard">
-										by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> - 
+										<!-- by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -  -->
+										<?php if (in_category('66')) {
+										echo 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
+										} else {
+										echo 'by <span class="author"><em>the Editors</em></span> -'; 
+										} ?>
 										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
 										<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 									</p>
@@ -44,12 +92,25 @@
 							</section> <?php // end article section ?>
 							</div>
 							<footer class="article-footer single-footer clearfix">
+								<div class="col-md-3 metadata-footer">
 								<span class="tags pull-left"><?php printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' ); ?></span>
+								</div>
               					<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span> -->
+              					<div class="col-md-9 ec-customfields metadata-footer">
+              					<?php if ( is_single() ) : 
+									$chief = get_post_meta($post->ID, 'editor-in-chief', true);
+									$large = get_post_meta($post->ID, 'editors-at-large', true);
+										if (!empty($chief)) : ?>
+											<div class="editors">
+											<p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief <?php echo $chief ?> based on nominations by Editors-at-Large <?php echo $large ?>. </p>
+											</div>
+									<?php endif; ?>
+									<?php endif; ?>
+								</div>	
             				</footer> <?php // end article footer ?>
-
-
 						</article> <?php // end article ?>
+
+						
 
 					 <?php // get_template_part( 'author-info' ); ?> 
 

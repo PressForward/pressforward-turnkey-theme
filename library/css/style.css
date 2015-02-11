@@ -49,6 +49,12 @@ h6 {
 .featimg {
   padding: 20px 0 0 0;
 }
+.ec-customfields {
+  padding: 0 0 0 20px !important;
+}
+.ec-customfields p {
+  margin-bottom: 0px;
+}
 /******* Slider Section *******/
 .slider {
   background-image: -webkit-linear-gradient(top, #3887be 0%, 50%, #2f719e 100%);

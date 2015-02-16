@@ -27,6 +27,69 @@ function ls_scripts() {
 }
 add_action('wp_enqueue_scripts', 'ls_scripts');
 
+//REDUX FRAMEWORK TEST
+function add_another_section_bl($sections){
+    $sections = array();
+    $sections[] = array(
+        'title' => __('Theme Colors', 'Redux_Framework_sample_config'),
+        'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'Redux_Framework_sample_config'),
+        // Redux ships with the glyphicons free icon pack, included in the options folder.
+        // Feel free to use them, add your own icons, or leave this blank for the default.
+        'icon' => trailingslashit(get_template_directory_uri()) . 'options/img/icons/glyphicons_062_attach.png',
+        // Leave this as a blank section, no options just some intro text set above.
+        'fields' => array (
+          array (
+            'id' => 'breadcrumb',
+            'type' => 'switch',
+            'title' => __('Breadcrumbs', 'brew-framework'),
+            'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
+            'default' => 1,
+          ),
+          array (           
+            'id' => 'author_profile',
+            'type' => 'switch',
+            'title' => __('Author Profiles', 'brew-framework'),
+            'desc' => 'Display an author profile after a post',
+            'default' => 1,
+          ),
+        array (
+             'id'        => 'logo_uploader',
+             'type'      => 'media',
+             'url'       => true,
+            'title'     => __('Logo Uploader'),
+            'compiler'  => 'true',
+            //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
+            'desc'      => __('Basic media uploader with disabled URL input field.', 'brew-framework'),
+              'subtitle'  => __('Upload any media using the WordPress native uploader', 'brew-framework'),
+             'default'   => array('url' => 'http://s.wordpress.org/style/images/codeispoetry.png'),
+             //'hint'      => array(
+            //    'title'     => 'Hint Title',
+            //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
+             //)
+             ),                   
+          array (
+            'id'=>'featured',
+            'type' => 'select',
+            'title' => __('Display Featured Images', 'brew-framework'), 
+            'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+            'options' => array(
+              '1' => 'Never',
+              '2' => 'Always',
+              '3' => 'Index only',
+              '4' => 'Single post only',
+              ),
+            'default' => '1'
+          ),
+        ),
+    );
+
+    return $sections;
+}
+add_filter("redux/options/brew_options/sections", 'add_another_section_bl');
+
+
+
+
 //This removes all the actions from the bones_ahoy function and then readds all of them EXCEPT for the excerpt_more. Instead this function removes the 'bones_excerpt_more' function.  Child_bones_excerpt_more re-adds the read more ellipses.
 function remove_ahoy_actions() {
   remove_action('after_setup_theme', 'bones_ahoy', 16);

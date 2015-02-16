@@ -59,6 +59,10 @@ h1, h2, h3, h4, h5, h6 {
 /******* Slider Section *******/
 .slider {
 	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
+	background-image: -webkit-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Opera 12
+    background-image: linear-gradient(to bottom, @dhnow-blue 0%, @dhnow-blue-darkened 50%); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
 	a:hover {
 		color: @gray-darker;
 	}
@@ -228,6 +232,10 @@ h1, h2, h3, h4, h5, h6 {
 /** Blog **/
 .bloghome {
 	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
+	background-image: -webkit-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Opera 12
+    background-image: linear-gradient(to bottom, @dhnow-blue 0%, @dhnow-blue-darkened 50%); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
 	color: @dhnow-gray;
 	padding: 25px 0px 25px 0;
 	font-size: @font-size-large;

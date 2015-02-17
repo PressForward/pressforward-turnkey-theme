@@ -45,7 +45,7 @@
 
       <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
         
-          <div class="container-fluid">
+          <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -59,24 +59,37 @@
 				$themelogo = $brew_options['logo_uploader']['url'];
 				$banner = $brew_options['banner_uploader']['url']; ?>
 
-			<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-				<img height:  src="<?php echo $themelogo ;?> " alt ="logo" /></a>
+			
             </div> <!--close navbar-header -->
 			<div class="navbar-collapse collapse navbar-responsive-collapse">
-				<!-- <form class="navbar-form navbar-right" role="search">
-        			<div class="form-group">
-          			<input type="text" class="form-control" placeholder="Search">
-        		</div>
-        			<button type="submit" class="btn btn-default">Submit</button>
-      			</form> -->
-
-              <?php bones_main_nav(); ?>
-             <!--  <img style="padding: 15px;" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="50px" width="auto"/> -->
-		</div>
+				<div class="row">
+					<div class="col-md-12 topbar">
+						<div class="logo">
+							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
+							<img  src="<?php echo $themelogo ;?> " alt ="logo" /></a>
+						</div>
+					<div class="menu-container">
+						<div class="nav-container">
+	              			<?php bones_main_nav(); ?>
+	              		</div><!--close menu container-->
+	              		
+	              		<div class="search-container">
+	              			<ul class="nav navbar-nav">
+		              			<li><a href="#" id="example" rel="popover" data-content='<?php get_search_form() ?>' data-original-title="search">
+				              				<i class="fa fa-1x fa-search"></i>
+				              				</a>
+		              			</li>
+	              			</ul>
+	              		</div>	
+              		</div><!--menu container-->
+             		</div><!--close topbar-->
+             	</div> <!--CLOSE ROW-->
+			</div>
           </div>
-
-      
-        
       </nav>
-		
+ <!--      <a href="#" id="example" class="btn btn-primary" rel="popover"
+   data-content="This is the body of Popover"
+   data-original-title="Creativity Tuts">pop
+</a> -->
+
 		</header> <?php // end header ?>

@@ -61,9 +61,9 @@
 
 			
             </div> <!--close navbar-header -->
-			<div class="navbar-collapse collapse navbar-responsive-collapse">
-				<div class="row">
-					<div class="col-md-12 topbar">
+		<div class="navbar-collapse collapse navbar-responsive-collapse">
+			<div class="row">
+				<div class="col-md-12 topbar">
 						<div class="logo">
 							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
 							<img  src="<?php echo $themelogo ;?> " alt ="logo" /></a>
@@ -71,25 +71,36 @@
 					<div class="menu-container">
 						<div class="nav-container">
 	              			<?php bones_main_nav(); ?>
-	              		</div><!--close menu container-->
+	              		</div><!--close nav container-->
 	              		
-	              		<div class="search-container">
-	              			<ul class="nav navbar-nav">
-		              			<li><a href="#" id="example" rel="popover" data-content='<?php get_search_form() ?>' data-original-title="search">
-				              				<i class="fa fa-1x fa-search"></i>
-				              				</a>
-		              			</li>
-	              			</ul>
-	              		</div>	
+		              	<div class="search-container">
+		              			<ul class="nav navbar-nav navbar-right">
+						        <li class="dropdown" id="menu1">
+							             <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+							               <i class="fa fa-search"></i>
+							                <b class="caret"></b>
+							             </a>
+							             <div class="dropdown-menu">
+							                <div id="search">
+							                	<form action="<?php echo home_url( '/' ); ?>" method="get" class="form-inline">
+							    					<fieldset>
+							    						<div class="input-group">
+							      							<input type="text" name="s" id="search" placeholder="Search for ..." value="<?php the_search_query(); ?>" class="form-control" />
+							      							<span class="input-group-btn">
+							        							<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+							      							</span>
+							    						</div> <!--close input group-->
+							    					</fieldset>
+												</form><!--close nav form-->
+								             </div>    
+							             </div> <!--close .dropdown-menu-->
+	           					</li><!-- close .drowpdown-->
+	           					</ul>
+			            </div> <!--close search-container--> 			
               		</div><!--menu container-->
-             		</div><!--close topbar-->
-             	</div> <!--CLOSE ROW-->
-			</div>
-          </div>
-      </nav>
- <!--      <a href="#" id="example" class="btn btn-primary" rel="popover"
-   data-content="This is the body of Popover"
-   data-original-title="Creativity Tuts">pop
-</a> -->
-
+             	</div><!--close topbar-->
+            </div> <!--CLOSE ROW-->
+		</div>
+    </div>
+</nav>
 		</header> <?php // end header ?>

@@ -20,6 +20,17 @@ Stylesheet: Tables
 This is just for the sample BREW site.  Feel free to delete
 
 ******************************************************************/
+#search form .input-group {
+  width: 225px;
+  margin: 10px;
+}
+#search form button {
+  border-radius: 0px;
+  margin-left: 8px;
+}
+#search form input {
+  border-radius: 0px;
+}
 .logo {
   float: left;
 }

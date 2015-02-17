@@ -73,14 +73,45 @@
 	              			<?php bones_main_nav(); ?>
 	              		</div><!--close menu container-->
 	              		
-	              		<div class="search-container">
-	              			<ul class="nav navbar-nav">
-		              			<li><a href="#" id="example" rel="popover" data-content='<?php get_search_form() ?>' data-original-title="search">
+	              	<div class="search-container">
+	              			<ul class="nav navbar-nav navbar-right">
+					         <li class="dropdown" id="menu1">
+             <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+               <i class="fa fa-search"></i>
+                <b class="caret"></b>
+             </a>
+             <div class="dropdown-menu">
+               <!-- <form style="margin: 0px" accept-charset="UTF-8" action="/sessions" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="4L/A2ZMYkhTD3IiNDMTuB/fhPRvyCNGEsaZocUUpw40=" /></div>
+                 <fieldset class='textbox' style="padding:10px">
+                   <input style="margin-top: 8px" type="text" placeholder="Username" />
+                   <input style="margin-top: 8px" type="password" placeholder="Passsword" />
+                   <input class="btn-primary" name="commit" type="submit" value="Log In" />
+                 </fieldset> -->
+                 <div id="search">
+                 <form action="<?php echo home_url( '/' ); ?>" method="get" class="form-inline">
+    <fieldset>
+    <div class="input-group">
+      <input type="text" name="s" id="search" placeholder="Search for ..." value="<?php the_search_query(); ?>" class="form-control" />
+      <span class="input-group-btn">
+        <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+      </span>
+    </div>
+    </fieldset>
+</form>
+	             </div>  
+	               <!-- </form> -->
+             </div>
+           </li>
+
+
+
+
+		              			<!--<li><a href="#" id="example" rel="popover" data-content='<p>what does this do</p>' data-original-title="search">
 				              				<i class="fa fa-1x fa-search"></i>
 				              				</a>
 		              			</li>
 	              			</ul>
-	              		</div>	
+	              		</div>	 -->
               		</div><!--menu container-->
              		</div><!--close topbar-->
              	</div> <!--CLOSE ROW-->

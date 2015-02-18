@@ -11,7 +11,7 @@ Template Name: Home Page Template
 <div class="slider">
  <div  class="container homepage">
     <div class="sl-test">
-          <?php $feat_posts = get_posts('category=2&posts_per_page=4'); ?>
+          <?php $feat_posts = get_posts('category=66&posts_per_page=4'); ?>
         <div class="liquid-slider" id ="slider2">
           <?php foreach($feat_posts as $post) { ?>
               <div id="slider-content">

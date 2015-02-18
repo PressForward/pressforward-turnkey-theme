@@ -43,7 +43,10 @@ This is just for the sample BREW site.  Feel free to delete
 	}
 }
 nav.navbar.shrink {
-  min-height: 35px;
+  min-height: 55px;
+  @media (max-width: 768px){
+  	height: 75px;
+  }
 }
 
 nav.shrink a {
@@ -55,8 +58,9 @@ nav.shrink a {
 nav.shrink .navbar-brand {
 	padding: 5px !important;
 	img {
-		height: 35px;
+		height: 50px;
 		width: auto;
+		padding-bottom: 10px;
 	}
 }
 
@@ -359,4 +363,7 @@ h1, h2, h3, h4, h5, h6 {
 	img {
 
 	}
+}
+#sub-floor {
+	background-color: @dhnow-darkblue !important;
 }

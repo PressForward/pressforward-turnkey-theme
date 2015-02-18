@@ -12,6 +12,13 @@ This is just for the sample BREW site.  Feel free to delete
 		margin-left: 15px;
 	}
 }
+.navbar-header {
+	@media (min-width: 768px) {
+		.logo-nav {
+			display: none;
+		}
+	}
+}
 .nav {
 	a {
 		text-transform: uppercase;
@@ -19,6 +26,21 @@ This is just for the sample BREW site.  Feel free to delete
 		letter-spacing: .5px;
 	}
 	
+}
+.topbar {
+	.logo {
+		@media (max-width: 768px){
+			display: none;
+		}
+	}
+	.menu-container {
+		@media (max-width: 768px){
+			float: none;
+		}
+		.nav-container {
+
+		}
+	}
 }
 nav.navbar.shrink {
   min-height: 35px;

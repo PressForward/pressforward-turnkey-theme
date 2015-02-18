@@ -23,10 +23,25 @@ This is just for the sample BREW site.  Feel free to delete
 .search-container ul {
   margin-left: 15px;
 }
+@media (min-width: 768px) {
+  .navbar-header .logo-nav {
+    display: none;
+  }
+}
 .nav a {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: .5px;
+}
+@media (max-width: 768px) {
+  .topbar .logo {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .topbar .menu-container {
+    float: none;
+  }
 }
 nav.navbar.shrink {
   min-height: 35px;

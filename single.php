@@ -69,7 +69,9 @@
 									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									
 									<p class="byline vcard">
-										<!-- by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -  -->
+										<!-- UNCOMMENT THIS SECTION AND COMMENT OUT LINES 73-77 TO RESTORE AUTHOR FUNCTIONALITY TO ALL PAGES --> 
+										by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -  -->
+										<!--CONTROLS AND LIMITS THE DISPLAY OF THE AUTHOR TO ONLY TWO CATEGORIES (Editor's Choice & the DHNow Blog-->
 										<?php if (in_category(array(66, 87))) {
 										echo 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
 										} else {

@@ -1,16 +1,54 @@
-#Brew Child Theme--Set Up--DRAFT
-##Installation
+#PressForward Turnkey Theme 
+This repository contains a Turnkey Wordpress theme optimized for use with the [PressForward Plugin](http://www.pressforward.org). This theme is currently in development.
 
-###Areas the Category ID must be adjusted: 
-*`page-home.php`: To get posts to show up on the slider the category id number on line 14: `<?php $feat_posts = get_posts('category=66&posts_per_page=4'); ?>` must be changed.  Accordingly, the number of posts per page can be adjusted. 
+##Installation Requirements
+This theme is based on [Brew](https://github.com/slightlyoffbeat/brew) a Bootstrap, HTML5 Wordpress theme by Dan Wild. In order for the Brew Child theme to work properly you must first install [Brew](https://github.com/slightlyoffbeat/brew) and then this child theme.  
 
-*`single.php`: Categories are hard coded on this page to do several things. 
-**The if statement on lines 15-61 controls the icons for each post category. The categories will need to be adjusted or nothing will show up in the space next to the post. Currently there are 8 different categories. 7 of these contain varying font-awesome icons.  The 8th block displays the post featured image on the editors choice (slider) category. The last block within the if statement controls all posts that do not fit one of the above categories.
+Several areas in the child theme that display specific categories or icons are currently hardcoded.  In a future release these will be included in the theme options but for now must be changed by hand.  Below is a list of the files and lines where categories or icons need to be changed and a description of what these areas do. 
 
-**The if statement on lines 71-75 controls where the author is displayed. The default is for the author to display on any editors choice or blog pieces but not on any of the news categories.  Change the category ids on line 71 for each post category an author should appear on.
+1. `page-home.php`
+- **Slider** Line 14
+    + Add the id number for the category that should appear in the slider.
+    + The slider pulls the most recent four posts.  This can be changed to include more or less but may require edits to the navigation styling. 
+2. `functions.php`
+- **Homepage Content Areas** Lines 116-174
+    + The code in this section creates widgetized areas on the home page.  
+    + The icons for each category are currently hard coded in. To change the icon change the `<i>` class for each widget.  
+    + To learn more about the icons available see the [Font Awesome references](#FontAwesome) below. 
+- **Homepage Participate Widgets** Lines 186-224
+    + The code in this section generates the participation excerpts and icons.
+    + The icons for each category are currently hard coded in. To change the icon change the `<i>` class for each widget.
+    + To learn more about the icons available see the [Font Awesome references](#FontAwesome) below. 
+3. `single.php`
+- **Featured Icons/Images for Individual Post Pages**
+    + On lines 17-63 of `single.php` there is an *If* statement that controls whether a featured image or an icon appears for each category.  Currently the if statement sets up a particular icon for each category.
+    + Category ids will need to be adjusted to match the categories on your particular site.
+    + The icons for each category are also currently hard coded.  To change the icon for a particular category change the `<i>`. 
+- **Author Display**
+    + Currently the Author is set to only display for two particular categories.  If you would like to display a default author name on all but a few categories change the categories in the array in the if statement on line 73.
+    ```
+    <?php if (in_category(array(66, 87))) {
+    echo 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
+    } else {
+    echo 'by <span class="author"><em>the Editors</em></span> -'; 
+    } ?>
+    ```
+    + If not, comment out lines 73-77 and uncomment line 72.
+    ```
+    <!-- by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -  -->
+    ```
+-**Features Currently Inactive on `Single.php`**
+    + Author Info -- uncomment this to display a short author bio.  Pulls from the user profile in wordpress. 
+    ```
+    <?php // get_template_part( 'author-info' ); ?> 
+    ```
+    + Comments Template -- uncomment this to display the comment form on individual pages. 
+    ``` 
+    <?php comments_template(); ?>
+    ```
+    + Sidebar -- the side bar is disabled by default in this child theme.  To restore the sidebar uncomment `<?php comments_template(); ?>` and change the size of the grid on the main div: `<div id="main" class="col-md-12" role="main">` at the top of `single.php`.  Be sure the column numbers in `single.php` and in `sidebar.php` add to 12.  For more information on the grid see the Bootstrap documentation.
+ 
+#FontAwesome
++ To learn more about available icons see the [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/) site.
++ To learn more about the html markup for icons see the [Font Awesome examples](http://fortawesome.github.io/Font-Awesome/examples/) page.
 
-**The final if statement in this file is on lines 100-113. It controls the layout of the footer on individual post pages. It is currently set to default to a grid layout and display a set of custom fields only on editors choice pieces. 
-
-###Default category icons can be edited in two places: 
-*`single.php`: the if statement on lines 15-61 controls which icons appear for which post categories.
-*`functions.php`: the icons for each category widget on the home page can be found in the register_sidebar functions in the `before_widget` section on lines 79-137 and 149-187.

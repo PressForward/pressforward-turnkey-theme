@@ -17,7 +17,7 @@ function ls_scripts() {
 }
 add_action('wp_enqueue_scripts', 'ls_scripts');
 
-//REDUX FRAMEWORK TEST
+//REDUX FRAMEWORK
 function add_another_section_bl($sections){
     $sections = array();
     $sections[] = array(
@@ -48,15 +48,9 @@ function add_another_section_bl($sections){
              'url'       => true,
             'title'     => __('Logo Uploader'),
             'compiler'  => 'true',
-            //'mode'      => false, // Can be set to false to allow any media type, or can also be set to any mime type.
             'desc'      => __('Basic media uploader with disabled URL input field.', 'brew-framework'),
               'subtitle'  => __('Upload any media using the WordPress native uploader', 'brew-framework'),
-             'default'   => array('url' => 'http://s.wordpress.org/style/images/codeispoetry.png'),
-             //'hint'      => array(
-            //    'title'     => 'Hint Title',
-            //    'content'   => 'This is a <b>hint</b> for the media field with a Title.',
-             //)
-             ),                   
+             'default'   => array('url' => 'http://s.wordpress.org/style/images/codeispoetry.png'),             ),                   
           array (
             'id'=>'featured',
             'type' => 'select',

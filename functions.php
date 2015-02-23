@@ -243,8 +243,8 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
   ));
 
 ?>
-//OPEN GRAPH METADATA
 <?php
+//OPEN GRAPH METADATA
 function add_opengraph_markup() {
   if (is_single()) {
     global $post;

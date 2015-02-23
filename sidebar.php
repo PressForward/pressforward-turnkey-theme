@@ -8,9 +8,9 @@
 
             <!-- This content shows up if there are no widgets defined in the backend. -->
 
-            <!-- <div class="alert alert-danger">
+            <!-- <div class="alert alert-danger"> -->
               <p><?php _e( //'Please activate some Widgets.', 'bonestheme' );  ?></p>
-            </div> -->
+            <!-- </div> -->
 
           <?php endif; ?>
 

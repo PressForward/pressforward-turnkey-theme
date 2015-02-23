@@ -85,47 +85,6 @@ function add_another_section_bl($sections){
 }
 add_filter("redux/options/brew_options/sections", 'add_another_section_bl');
 
-
-//OPEN GRAPH META DATA
-function doctype_opengraph($output) {
-    return $output . '
-    xmlns:og="http://opengraphprotocol.org/schema/"
-    xmlns:fb="http://www.facebook.com/2008/fbml"';
-}
-add_filter('language_attributes', 'doctype_opengraph');
-function fb_opengraph() {
-    global $post;
-    global $brew_options ;
-    $themelogo = $brew_options['logo_uploader']['url'];
-    if(is_single()) {
-        if(has_post_thumbnail($post->ID)) {
-            $img_src = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'medium');
-        } else {
-            $img_src = $themelogo;
-        }
-        if($excerpt = $post->post_excerpt) {
-            $excerpt = strip_tags($post->post_excerpt);
-            $excerpt = str_replace("", "'", $excerpt);
-        } else {
-            $excerpt = get_bloginfo('description');
-        }
-        ?>
- 
-    <meta property="og:title" content="<?php echo the_title(); ?>"/>
-    <meta property="og:description" content="<?php echo $excerpt; ?>"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:url" content="<?php echo the_permalink(); ?>"/>
-    <meta property="og:site_name" content="<?php echo get_bloginfo(); ?>"/>
-    <meta property="og:image" content="<?php echo $img_src; ?>"/>
- 
-<?php
-    } else {
-        return;
-    }
-}
-add_action('wp_head', 'fb_opengraph', 5);
-
-
 //This removes all the actions from the bones_ahoy function and then readds all of them EXCEPT for the excerpt_more. Instead this function removes the 'bones_excerpt_more' function.  Child_bones_excerpt_more re-adds the read more ellipses.
 function remove_ahoy_actions() {
   remove_action('after_setup_theme', 'bones_ahoy', 16);
@@ -304,4 +263,34 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'after_title' => '</h1>',
   ));
 
+?>
+//OPEN GRAPH METADATA
+<?php
+function add_opengraph_markup() {
+  if (is_single()) {
+    global $post;
+    global $brew_options ;
+    // $themelogo = $brew_options['logo_uploader']['url'];
+    if(get_the_post_thumbnail($post->ID, 'thumbnail')) {
+      $thumbnail_id = get_post_thumbnail_id($post->ID);
+      $thumbnail_object = get_post($thumbnail_id);
+      $image = $thumbnail_object->guid;
+    } else {
+      // set default image
+      $image =  $brew_options['logo_uploader']['url'];
+    }
+    //$description = get_bloginfo('description');
+    $description = substr(strip_tags($post->post_content),0,200) . '...';
+?>
+<meta property="og:title" content="<?php the_title(); ?>" />
+<meta property="og:type" content="article" />
+<meta property="og:image" content="<?=$image?>" />
+<meta property="og:url" content="<?php the_permalink(); ?>" />
+<meta property="og:description" content="<?=$description?>" />
+<meta property="og:site_name" content="<?=get_bloginfo('name')?>" />
+ 
+<?php
+  }
+}
+add_action('wp_head', 'add_opengraph_markup');
 ?>

@@ -1,13 +1,5 @@
 <?php
 
-// add_action( 'wp_enqueue_scripts', 'remove_default_stylesheet', 25 );
-
-// function remove_default_stylesheet() {
-    
-//     wp_dequeue_style( 'bones-stylesheet' );
-//     wp_deregister_style( 'bones-stylesheet' );
-
-// }
 add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
 function my_deregister_styles() {

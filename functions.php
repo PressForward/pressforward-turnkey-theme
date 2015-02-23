@@ -117,15 +117,8 @@ function child_bones_excerpt_more($more) {
 }
 add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 
-// function bones_scripts_and_styles_child() {
-//   // global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 add_image_size( 'brew-child-thumbnail', 200, 200, true );  
     
-//     // register main stylesheet
-//     wp_enqueue_style( 'bones-child-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
-
-// }
-// add_action('wp_enqueue_style', 'bones_scripts_and_styles_child' );
   register_sidebar(array(
     'id' => 'content1',
     'name' => __( 'Content Widget 1', 'bonestheme' ),

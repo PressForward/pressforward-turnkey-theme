@@ -12,13 +12,7 @@ This is just for the sample BREW site.  Feel free to delete
 		margin-left: 15px;
 	}
 }
-.navbar-header {
-	@media (min-width: 768px) {
-		.logo-nav {
-			display: none;
-		}
-	}
-}
+
 .nav {
 	a {
 		text-transform: uppercase;
@@ -27,7 +21,17 @@ This is just for the sample BREW site.  Feel free to delete
 	}
 	
 }
-.topbar {
+.navbar{
+	.navbar-brand {
+	padding: 0 0 0 15px !important;
+	}
+	.navbar-header {
+		@media (min-width: 768px) {
+			.logo-nav {
+				display: none;
+			}
+		}
+	}
 	.logo {
 		@media (max-width: 768px){
 			display: none;
@@ -36,9 +40,6 @@ This is just for the sample BREW site.  Feel free to delete
 	.menu-container {
 		@media (max-width: 768px){
 			float: none;
-		}
-		.nav-container {
-
 		}
 	}
 }
@@ -49,56 +50,58 @@ nav.navbar.shrink {
   }
 }
 
-nav.shrink a {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  font-size: @font-size-small;
-}
 
-nav.shrink .navbar-brand {
-	padding: 5px !important;
-	img {
-		height: 50px;
-		width: auto;
-		padding-bottom: 10px;
+
+nav.shrink { 
+	.navbar-brand {
+		padding: 5px !important;
+			img {
+				height: 50px;
+				width: auto;
+				padding-bottom: 10px;
+			}
+		}
+	a {
+  		padding-top: 10px !important;
+  		padding-bottom: 10px !important;
+  		font-size: @font-size-small;
+	}
+	.navbar-toggle {
+  		padding: 4px 5px;
+  		margin: 8px 15px 8px 0;
 	}
 }
-
-nav.shrink .navbar-toggle {
-  padding: 4px 5px;
-  margin: 8px 15px 8px 0;
-}
+ 
 #search {
-form {
-	.input-group {
-		width: 225px;
-		margin: 10px;
-	}
-	button {
-		border-radius: 0px;
-		margin-left: 8px;
-	}
-	input {
-		border-radius: 0px;
-	}
-
-}
+	form {
+		.input-group {
+			width: 225px;
+			margin: 10px;
+			}
+		button {
+			border-radius: 0px;
+			margin-left: 8px;
+			}
+		input {
+			border-radius: 0px;
+			}
+		}
 }
 .logo {
 	float: left;
 }
 .menu-container{
 	float: right;
+	.nav-container {
+		float: left;
+	}
+	.search-container {
+		float: right;
+	}
 }
-.nav-container {
-	float: left;
-}
-.search-container {
-	float: right;
-}
-.navbar-brand {
-	padding: 0 0 0 15px !important;
-}
+
+
+
 .nav-tabs {
 	li.active {
 		a {
@@ -106,6 +109,7 @@ form {
 		}
 	}
 	} 
+/******* Archive ********/	
 .tab-content {
 	padding-top: 10px;
 } 
@@ -120,9 +124,9 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 0px;
 	padding: 72px;
 }
-.feedlistitem {
+.feedlist {
 	
-	margin-bottom: 0px !important;
+	list-style-type: none;
 	
 }
 

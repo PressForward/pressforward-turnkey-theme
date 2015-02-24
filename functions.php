@@ -102,6 +102,31 @@ function remove_ahoy_actions() {
     
 }
 add_action('after_setup_theme', 'remove_ahoy_actions');
+// <!-- SHORTCODES -->
+
+function active_feeds_function($atts) {
+  extract(shortcode_atts(array(
+      'status' => 'publish',
+    ), $atts));
+
+
+  $return_string = '<ul class="feedlist">';
+  query_posts(array('post_type' => pressforward()->pf_feeds->post_type, 'post_status' => 
+    $status, 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC'));
+
+  if (have_posts()) :
+    while (have_posts())  : the_post();
+      $return_string .= '<li class="feeditem"><a href="'.get_post_meta(get_the_ID(), 'feedUrl', true).'"target="_blank">'.get_the_title().'</a></li>'; 
+    endwhile;
+  endif;
+  $return_string .= '</ul>';
+wp_reset_query();
+return $return_string;      
+}
+function register_shortcodes() {
+  add_shortcode('feeds', 'active_feeds_function');
+}
+add_action('init', 'register_shortcodes');
 
 
 function child_bones_excerpt_more($more) {

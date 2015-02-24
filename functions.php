@@ -102,6 +102,25 @@ function remove_ahoy_actions() {
     
 }
 add_action('after_setup_theme', 'remove_ahoy_actions');
+// <!-- SHORTCODES -->
+
+function active_feeds_function() {
+  $return_string = '<ul>';
+  query_posts(array('post_type' => pressforward()->pf_feeds->post_type, 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC'));
+
+  if (have_posts()) :
+    while (have_posts())  : the_post();
+      $return_string .= '<li class="feeditem"><a href="'.get_permalink().'">'.get_the_title().'</a></li>'; 
+    endwhile;
+  endif;
+  $return_string .= '</ul>';
+wp_reset_query();
+return $return_string;      
+}
+function register_shortcodes() {
+  add_shortcode('recent-feeds', 'active_feeds_function');
+}
+add_action('init', 'register_shortcodes');
 
 
 function child_bones_excerpt_more($more) {

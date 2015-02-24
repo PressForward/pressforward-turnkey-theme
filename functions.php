@@ -104,10 +104,15 @@ function remove_ahoy_actions() {
 add_action('after_setup_theme', 'remove_ahoy_actions');
 // <!-- SHORTCODES -->
 
-function active_feeds_function() {
+function active_feeds_function($atts) {
+  extract(shortcode_atts(array(
+      'status' => 'publish',
+    ), $atts));
+
+
   $return_string = '<ul class="feedlist">';
   query_posts(array('post_type' => pressforward()->pf_feeds->post_type, 'post_status' => 
-    'publish', 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC'));
+    $status, 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC'));
 
   if (have_posts()) :
     while (have_posts())  : the_post();
@@ -119,7 +124,7 @@ wp_reset_query();
 return $return_string;      
 }
 function register_shortcodes() {
-  add_shortcode('recent-feeds', 'active_feeds_function');
+  add_shortcode('feeds', 'active_feeds_function');
 }
 add_action('init', 'register_shortcodes');
 

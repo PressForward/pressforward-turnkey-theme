@@ -105,12 +105,13 @@ add_action('after_setup_theme', 'remove_ahoy_actions');
 // <!-- SHORTCODES -->
 
 function active_feeds_function() {
-  $return_string = '<ul>';
-  query_posts(array('post_type' => pressforward()->pf_feeds->post_type, 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC'));
+  $return_string = '<ul class="feedlist">';
+  query_posts(array('post_type' => pressforward()->pf_feeds->post_type, 'post_status' => 
+    'publish', 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC'));
 
   if (have_posts()) :
     while (have_posts())  : the_post();
-      $return_string .= '<li class="feeditem"><a href="'.get_permalink().'">'.get_the_title().'</a></li>'; 
+      $return_string .= '<li class="feeditem"><a href="'.get_post_meta(get_the_ID(), 'feedUrl', true).'"target="_blank">'.get_the_title().'</a></li>'; 
     endwhile;
   endif;
   $return_string .= '</ul>';

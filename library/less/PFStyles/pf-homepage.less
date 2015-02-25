@@ -16,14 +16,190 @@ These are the styles for the homepage.
 05. BLOG
 06. FOOTER
 ******************************************************************/
+/*******************************
+01. LIQUID SLIDER
+The slider is adjusted to fit bootstrap and this theme here.  The default slider css is located in library/css/liquid-slider.css
+
+The slider is initialized at the end of the javascript file jquery.liquid-slider.min.js
+The slider is defined #slider 1 in the javascript.  To add more sliders to subsequent pages add a new jquery call, change the id, and duplicate the html on page-home.php
+
+These styles will apply to all sliders.
+********************************/
+.slider {
+	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
+	background-image: -webkit-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Opera 12
+    background-image: linear-gradient(to bottom, @dhnow-blue 0%, @dhnow-blue-darkened 50%); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+	a:hover {
+		color: @gray-darker;
+	}
+
+	.current a{
+		color: @dhnow-darkblue;
+	}
+	#slidertext {
+	margin-top: 40px;
+	float: left;
+	width: 60%;
+		@media (max-width: @screen-sm){
+			width: 100%;
+		}
+		a:hover {
+			color: @dhnow-darkblue;
+		}
+		a {
+			color: @dhnow-darkblue;
+		}
+	}
+
+	h1 {
+	font-size: @font-size-h2 !important;
+	margin: 0px 0 40px 0;
+	color: @dhnow-gray;
+	margin: 0px;
+	font-size: 50px;
+	letter-spacing:1px;
+	@media (min-width: @screen-md) {
+		font-size: @font-size-h1-home !important;
+		}
+	}
+	h2 {
+	margin: 5px 0 0 0;
+	color: @dhnow-gray;
+	letter-spacing:1px;
+	font-size: 20px !important;
+		@media (min-width: @screen-md) {
+			font-size: 24px !important;
+		}
+	}
+	p {
+	font-size: @font-size-large;
+	color: @dhnow-gray;
+	}
+	img{
+	height: auto;
+	float: right;
+	width: 400px;
+	padding: 40px 24px 0 0;
+
+		@media (max-width: @screen-sm) {
+			width: 400px;
+			margin-top: 25px;
+			height: auto;
+			float: left;	
+		 }
+	}
+	#slider-content {
+		@media (min-width: @screen-md){
+			height: 500px;
+		}
+	}
+	.homepage {
+		padding: 50px 0 25px 0;
+	}
+
+}
+
+/*******************************
+02. ABOUT
+The about section is the fourth block on the homepage.  It contains one widgetized area in a full width (12 column) container. 
+********************************/
+.aboutlarge {
+	background-color: @dhnow-gray;
+}
 
 
+.info {
+	.infowidget {
+		padding: 25px 0px 25px 0;
+	}
+	h1 {
+		font-size: @font-size-h2;
+		padding-bottom: 30px;
+		@media (min-width: @screen-md){
+			font-size: @font-size-h1-home !important;
+		}
+	}
+	font-size: @font-size-large;
 
+}
+/*******************************
+03. CATEGORIES 
+The category section is the third block on the homepage.  This block is designed to contain several widgets (two rows of three) that contain a list of recent posts in several categories using a recent post widget in each block.  The number of widget areas can be adjusted by changing the grid.  The block, by default, is composed of a container with two rows of columns each containing 3 sets of col-sm-4.  
 
+The icons for each category will appear once content is placed in the widget from the Wordpress dashboard.  The function creating each widget and controlling the icons can be found in functions.php.  For more information on icon markup see the fontawesome website. http://fortawesome.github.io
+********************************/
 
+.categorieshome {
+	background-color: @dhnow-darkblue;
+	padding: 50px 0 50px 0;
+}
+.about {
+ 	i {
+	    color: @dhnow-darkblue !important;
+	 }
+  	ul {
+		text-align: left;
+		line-height: 1.5;
+		font-size: 17px;
+	} 
+	a {
+		color: @dhnow-blue;
+	}
+	.homeinnercontent {
+		background-color: @dhnow-gray;
+		padding: 25px 20px 15px 10px;
+		font-size: large;
+		overflow-y: scroll;
+	}
+	h1 {
+		font-size: @font-size-h2;
+	}
+}
+.homeinnercontent {
+		@media (min-width: @screen-md) {
+			height: 395px; }
+		}	
+		li {
+			padding-bottom: 5px;
+		}
 
+.homecategories {
+		@media (min-width: @screen-md) {
+			height: 415px;
+		}
+	}
+	
 
+.about:hover i {
+  color: @dhnow-darkblue-lighter !important;
+  transition: all 0.35s ease;
+}
 
+/*******************************
+03. PARTICIPATE 
+The participate section is the second block on the home page. This block, much like the categories block, is composed of four widgetized areas.  These sections are contained in page-home.php in a container made up of four col-sm-3 sections.  
+********************************/
+.participatehome {
+
+	i {
+	    color: @dhnow-darkblue !important;
+	}
+	p {
+		text-align: center;
+		font-size: @font-size-large;
+	}
+	h1 {
+		font-size: @font-size-h3;
+	}
+	padding: 25px 0 25px 0;
+}
+
+.participatehome:hover i {
+  color: @dhnow-darkblue-lighter !important;
+  transition: all 0.35s ease;
+}
 
 
 /*******************************

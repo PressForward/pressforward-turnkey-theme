@@ -1,3 +1,12 @@
+<!-- 
+Features on this page: 
+01. Category Featured Images 
+02. Author Display Conditional by Category
+03. Author Info (off by default)
+04. Comment Template (off by default)
+05. Sidebar (off by default) 
+-->
+
 <?php get_header(); ?>
       
     <div class="container">  
@@ -12,8 +21,8 @@
 						
 						<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
-						
-						
+						<!-- 01. CATEGORY FEATURED IMAGES -->
+						<!-- This if statement determines the icon (or featured image) that displays on the individual post page.  -->
 							<?php if ( in_category('77')) {
 							//JOBS--BRIEFCASE ICON
 							echo '<div class="col-md-2 featimg text-center">
@@ -69,7 +78,9 @@
 									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
 									
 									<p class="byline vcard">
-										<!-- UNCOMMENT THIS SECTION AND COMMENT OUT LINES 73-77 TO RESTORE AUTHOR FUNCTIONALITY TO ALL PAGES --> 
+										<!-- 02. AUTHOR DISPLAY CONDITIONAL BY CATEGORY 
+
+										UNCOMMENT THIS SECTION AND COMMENT OUT LINES 73-77 TO RESTORE AUTHOR FUNCTIONALITY TO ALL PAGES --> 
 										by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -  -->
 										<!--CONTROLS AND LIMITS THE DISPLAY OF THE AUTHOR TO ONLY TWO CATEGORIES (Editor's Choice & the DHNow Blog-->
 										<?php if (in_category(array(66, 87))) {
@@ -124,7 +135,7 @@
 						</article> <?php // end article ?>
 
 						
-
+					<!-- 03. AUTHOR INFO  -->
 					 <?php // get_template_part( 'author-info' ); ?> 
 
 					<?php if ( is_single() ) {?>
@@ -148,7 +159,7 @@
 					    </ul>
 					  </div><!-- /#single-post-nav -->
 					<?php } ?>
-
+		<!-- 04. COMMENT TEMPLATE -->
          <!--  <?php comments_template(); ?> -->
 
 					<?php endwhile; ?>
@@ -170,7 +181,7 @@
 					<?php endif; ?>
 
 				</div> <?php // end #main ?>
-
+				<!-- 05. SIDEBAR -->
 				<!-- <?php get_sidebar(); ?> -->
 
 			</div> <?php // end #content ?>

@@ -10,9 +10,9 @@
 
             <!-- <div class="alert alert-danger"> -->
 
-              <!--<p><?//php _e( //'Please activate some Widgets.', 'bonestheme' );  ?></p>
+              <!--<p><?//php _e( //'Please activate some Widgets.', 'bonestheme' );  ?></p>-->
 
-              <p><?//php _e( 'Please activate some Widgets.', 'bonestheme' );  ?></p>-->
+             <!-- <p><?//php _e( 'Please activate some Widgets.', 'bonestheme' );  ?></p>-->
 
             <!-- </div> -->
 

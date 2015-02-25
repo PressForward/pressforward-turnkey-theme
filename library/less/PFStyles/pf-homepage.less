@@ -201,6 +201,43 @@ The participate section is the second block on the home page. This block, much l
   transition: all 0.35s ease;
 }
 
+/*******************************
+05. BLOG
+The blog section is the last block on the homepage. The block is made up of a contain with two col-md-6 widgetized sections.  The section was originally intended to house a brief excerpt and link to the most recent post as well as a list of the most recent posts using two seperate widgets.  This section can contain any widget and the styles below can be adjusted as necessary.
+********************************/
+.bloghome {
+	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
+	background-image: -webkit-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Safari 5.1-6, Chrome 10+
+    background-image: -o-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Opera 12
+    background-image: linear-gradient(to bottom, @dhnow-blue 0%, @dhnow-blue-darkened 50%); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+    background-repeat: repeat-x;
+	color: @dhnow-gray;
+	padding: 25px 0px 25px 0;
+	font-size: @font-size-large;
+	a {
+		color: @dhnow-gray;
+	}
+	a:hover {
+		color: @gray-darker;
+	}
+	.rpwe-summary {
+		padding-top: 15px;
+	}
+	
+	h1 {
+		font-size: @font-size-h2;
+		padding-bottom: 30px;
+		@media (min-width: @screen-md){
+			font-size: @font-size-h1-home !important;
+		}
+	}
+	#bloglist {
+		margin: 100px 0 0 0px;
+		padding-left: 35px;
+	}
+	
+}
+
 
 /*******************************
 06. FOOTER

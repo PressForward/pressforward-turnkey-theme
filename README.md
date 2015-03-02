@@ -10,6 +10,7 @@ Several areas in the child theme that display specific categories or icons are c
 - **Slider** Line 14
     + Add the id number for the category that should appear in the slider.
     + The slider pulls the most recent four posts.  This can be changed to include more or less but may require edits to the navigation styling. 
+
 ### `functions.php`
 - **Homepage Content Areas** Lines 116-174
     + The code in this section creates widgetized areas on the home page.  
@@ -18,7 +19,8 @@ Several areas in the child theme that display specific categories or icons are c
 - **Homepage Participate Widgets** Lines 186-224
     + The code in this section generates the participation excerpts and icons.
     + The icons for each category are currently hard coded in. To change the icon change the `<i>` class for each widget.
-    + To learn more about the icons available see the [Font Awesome references](#FontAwesome) below. 
+    + To learn more about the icons available see the [Font Awesome references](#FontAwesome) below. ]
+
 ###`single.php`
 - **Featured Icons/Images for Individual Post Pages**
     + On lines 17-63 of `single.php` there is an *If* statement that controls whether a featured image or an icon appears for each category.  Currently the if statement sets up a particular icon for each category.

@@ -6,11 +6,11 @@ This theme is based on [Brew](https://github.com/slightlyoffbeat/brew) a Bootstr
 
 Several areas in the child theme that display specific categories or icons are currently hardcoded.  In a future release these will be included in the theme options but for now must be changed by hand.  Below is a list of the files and lines where categories or icons need to be changed and a description of what these areas do. 
 
-1. `page-home.php`
+### `page-home.php`
 - **Slider** Line 14
     + Add the id number for the category that should appear in the slider.
     + The slider pulls the most recent four posts.  This can be changed to include more or less but may require edits to the navigation styling. 
-2. `functions.php`
+### `functions.php`
 - **Homepage Content Areas** Lines 116-174
     + The code in this section creates widgetized areas on the home page.  
     + The icons for each category are currently hard coded in. To change the icon change the `<i>` class for each widget.  
@@ -19,7 +19,7 @@ Several areas in the child theme that display specific categories or icons are c
     + The code in this section generates the participation excerpts and icons.
     + The icons for each category are currently hard coded in. To change the icon change the `<i>` class for each widget.
     + To learn more about the icons available see the [Font Awesome references](#FontAwesome) below. 
-3. `single.php`
+###`single.php`
 - **Featured Icons/Images for Individual Post Pages**
     + On lines 17-63 of `single.php` there is an *If* statement that controls whether a featured image or an icon appears for each category.  Currently the if statement sets up a particular icon for each category.
     + Category ids will need to be adjusted to match the categories on your particular site.
@@ -48,7 +48,7 @@ Several areas in the child theme that display specific categories or icons are c
     ```
     + Sidebar -- the side bar is disabled by default in this child theme.  To restore the sidebar uncomment `<?php comments_template(); ?>` and change the size of the grid on the main div: `<div id="main" class="col-md-12" role="main">` at the top of `single.php`.  Be sure the column numbers in `single.php` and in `sidebar.php` add to 12.  For more information on the grid see the Bootstrap documentation.
  
-#FontAwesome
+##FontAwesome
 + To learn more about available icons see the [Font Awesome](http://fortawesome.github.io/Font-Awesome/icons/) site.
 + To learn more about the html markup for icons see the [Font Awesome examples](http://fortawesome.github.io/Font-Awesome/examples/) page.
 

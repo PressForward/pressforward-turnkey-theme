@@ -49,9 +49,40 @@ nav.navbar.shrink {
   min-height: 55px;
   @media (max-width: 768px){
   	height: auto;
+
   }
 }
+.nav {
+	@media(max-width: 768px){
+		display: none;
+	}
+}
+#simple-menu, #sidr {
+	@media(min-width: 768px){
+		display: none;
+	}
+}
 
+#sidr {
+	a{
+		padding-top: 10px !important;
+		padding-bottom: 10px !important;
+		color: @dhnow-blue;
+	}
+	li.active, li.hover {
+		a {
+			background-color: #f8f8f8;
+		}
+	}
+	.dropdown-toggle {
+		span{
+			display: none;
+		}
+	}
+	.nav > li {
+		position: inherit;
+	}
+}
 
 
 nav.shrink { 
@@ -73,7 +104,7 @@ nav.shrink {
   		margin: 8px 15px 8px 0;
 	}
 }
- 
+
 #search {
 	form {
 		.input-group {

@@ -51,11 +51,7 @@
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+             
 				<div class="logo-nav">
 							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
 							<img  src="<?php echo $themelogo ;?> " alt ="logo" /></a>
@@ -63,7 +59,27 @@
               <!-- <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php // bloginfo( 'name' ) ?>" rel="homepage"><?php //bloginfo('name'); ?></a> -->
             
 
-			
+			<a id="simple-menu" href="#sidr">Toggle menu</a>
+ 
+						<div id="sidr">
+						  <!-- Your content -->
+						  <?php bones_main_nav(); ?>
+							<div id="search">
+		                	
+		                	<form action="<?php echo home_url( '/' ); ?>" method="get" class="form-inline">
+		    					<fieldset>
+		    						<div class="input-group">
+		      							<input type="text" name="s" id="search" placeholder="Search for ..." value="<?php the_search_query(); ?>" class="form-control" />
+		      							<span class="input-group-btn">
+		        							<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
+		      							</span>
+		    						</div> <!--close input group-->
+		    					</fieldset>
+							</form><!--close nav form-->
+			             </div>
+			             <li><a href="https://pressforward.org"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="20" width="20"/></li></a>    
+						</div>
+
             </div> <!--close navbar-header -->
 		<div class="navbar-collapse collapse navbar-responsive-collapse">
 			<div class="row">
@@ -75,6 +91,7 @@
 					<div class="menu-container">
 						<div class="nav-container">
 	              			<?php bones_main_nav(); ?>
+							
 	              		</div><!--close nav container-->
 	              		
 		              	<div class="search-container">

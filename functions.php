@@ -20,6 +20,10 @@ function ls_scripts() {
 add_action('wp_enqueue_scripts', 'ls_scripts');
 
 //REDUX FRAMEWORK
+
+
+
+
 function add_another_section_bl($sections){
     $sections = array();
     $sections[] = array(
@@ -27,7 +31,8 @@ function add_another_section_bl($sections){
         'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'Redux_Framework_sample_config'),
         // Redux ships with the glyphicons free icon pack, included in the options folder.
         // Feel free to use them, add your own icons, or leave this blank for the default.
-        'icon' => trailingslashit(get_template_directory_uri()) . 'options/img/icons/glyphicons_062_attach.png',
+        // 'icon' => trailingslashit(get_template_directory_uri()) . 'options/img/icons/glyphicons_062_attach.png',
+        'icon' => 'fa fa-bell-o',
         // Leave this as a blank section, no options just some intro text set above.
         'fields' => array (
           array (
@@ -37,6 +42,14 @@ function add_another_section_bl($sections){
             'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
             'default' => 1,
           ),
+          array (
+              'id'=>'icon_select_field',
+              'type' => 'icon_select', 
+              //'required' => array('switch-fold','equals','0'),   
+              'title' => __('Icon Select', 'brew-framework'),
+              'subtitle'  => __('Select an icon.', 'brew-framework'),
+
+              ),
           array (           
             'id' => 'author_profile',
             'type' => 'switch',
@@ -53,19 +66,44 @@ function add_another_section_bl($sections){
             'desc'      => __('Basic media uploader with disabled URL input field.', 'brew-framework'),
               'subtitle'  => __('Upload any media using the WordPress native uploader', 'brew-framework'),
              'default'   => array('url' => 'http://s.wordpress.org/style/images/codeispoetry.png'),             ),                   
-          array (
-            'id'=>'featured',
-            'type' => 'select',
-            'title' => __('Display Featured Images', 'brew-framework'), 
-            'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
-            'options' => array(
-              '1' => 'Never',
-              '2' => 'Always',
-              '3' => 'Index only',
-              '4' => 'Single post only',
-              ),
-            'default' => '1'
-          ),
+                 array (
+            'id'        => 'participate-opt-color',
+            'type'      => 'color',
+            'title'     => __('Participate Background Color', 'brew-framework'),
+            'subtitle'  => __('Pick a background color.', 'brew-framework'),
+            'output'    => array('background-color' => '.participatehome')
+),
+                  array (
+            'id'        => 'categories-opt-color',
+            'type'      => 'color',
+            'title'     => __('Categories Background Color', 'brew-framework'),
+            'subtitle'  => __('Pick a background color.', 'brew-framework'),
+            'output'    => array('background-color' => '.categorieshome')
+),
+                  array (
+    'id'       => 'opt-text',
+    'type'     => 'text',
+    'title'    => __('Text Option', 'brew-framework'),
+    'subtitle' => __('This is a little space under the Field Title in the Options table, additional info is good in here.', 'brew-framework'),
+    'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+),
+
+                  array(
+    'id'=>'icon_select_field',
+    'type' => 'icon_select', 
+    //'required' => array('switch-fold','equals','0'),   
+    'title' => __('Icon Select', 'brew-framework'),
+    'subtitle'  => __('Select an icon.', 'brew-framework'),
+    'default'     => '',
+    'options' => array(), // key/value pair, value is the title
+    'enqueue' => false, // Disable auto-enqueue of stylesheet if present in the panel
+    'enqueue_frontend' => false, // Disable auto-enqueue of stylesheet on the front-end
+    'stylesheet' => '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', // full path OR url to stylesheet
+    'prefix' => 'fa', // If needed to initialize the icon
+    'selector' => 'fa-', // How each icons begins for this given font
+    'height' => 300 // Change the height of the container. defaults to 300px;
+),
+
         ),
     );
 
@@ -164,7 +202,7 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content3',
     'name' => __( 'Content Widget 3', 'bonestheme' ),
     'description' => __( 'The third content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-info fa-3x light-gray"></i>',
+    'before_widget' => '<div class="homeinnercontent">',
      'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',

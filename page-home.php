@@ -83,8 +83,15 @@ Template Name: Home Page Template
     
         <!--Section 3-->
           <div class="col-sm-4 about content3">
+            
+            <div class="homeinnercontent">
+             <?php global $brew_options ?>
+             <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
+              
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content3') ) : ?>
+
               <?php endif; ?>
+              </div>
           </div>
           
       </div> <!--end row-->

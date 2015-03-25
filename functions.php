@@ -81,29 +81,12 @@ function add_another_section_bl($sections){
             'output'    => array('background-color' => '.categorieshome')
 ),
                   array (
-    'id'       => 'opt-text',
+    'id'       => 'b3-c3-icon',
     'type'     => 'text',
-    'title'    => __('Text Option', 'brew-framework'),
-    'subtitle' => __('This is a little space under the Field Title in the Options table, additional info is good in here.', 'brew-framework'),
+    'title'    => __('Content Area 3 Icon', 'brew-framework'),
+    'subtitle' => __('Icon for Content Area 3', 'brew-framework'),
     'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
 ),
-
-                  array(
-    'id'=>'icon_select_field',
-    'type' => 'icon_select', 
-    //'required' => array('switch-fold','equals','0'),   
-    'title' => __('Icon Select', 'brew-framework'),
-    'subtitle'  => __('Select an icon.', 'brew-framework'),
-    'default'     => '',
-    'options' => array(), // key/value pair, value is the title
-    'enqueue' => false, // Disable auto-enqueue of stylesheet if present in the panel
-    'enqueue_frontend' => false, // Disable auto-enqueue of stylesheet on the front-end
-    'stylesheet' => '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', // full path OR url to stylesheet
-    'prefix' => 'fa', // If needed to initialize the icon
-    'selector' => 'fa-', // How each icons begins for this given font
-    'height' => 300 // Change the height of the container. defaults to 300px;
-),
-
         ),
     );
 
@@ -177,7 +160,7 @@ function child_bones_excerpt_more($more) {
 add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 
 add_image_size( 'brew-child-thumbnail', 200, 200, true );  
-    
+   
   register_sidebar(array(
     'id' => 'content1',
     'name' => __( 'Content Widget 1', 'bonestheme' ),
@@ -202,8 +185,6 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content3',
     'name' => __( 'Content Widget 3', 'bonestheme' ),
     'description' => __( 'The third content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent">',
-     'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));

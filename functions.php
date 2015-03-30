@@ -80,13 +80,49 @@ function add_another_section_bl($sections){
             'subtitle'  => __('Pick a background color.', 'brew-framework'),
             'output'    => array('background-color' => '.categorieshome')
 ),
-                  array (
-    'id'       => 'b3-c3-icon',
-    'type'     => 'text',
-    'title'    => __('Content Area 3 Icon', 'brew-framework'),
-    'subtitle' => __('Icon for Content Area 3', 'brew-framework'),
-    'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-),
+            array (
+            'id'       => 'b3-c1-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 1 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 1', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            'id'       => 'b3-c2-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 2 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 2', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            'id'       => 'b3-c3-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 3 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 3', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+             array (
+            'id'       => 'b3-c4-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 4 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 4', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+              array (
+            'id'       => 'b3-c5-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 5 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 5', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+               array (
+            'id'       => 'b3-c6-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 6 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 6', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+
         ),
     );
 
@@ -165,8 +201,6 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content1',
     'name' => __( 'Content Widget 1', 'bonestheme' ),
     'description' => __( 'The first content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-briefcase fa-3x light-gray"></i>',
-    'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -175,8 +209,6 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content2',
     'name' => __( 'Content Widget 2', 'bonestheme' ),
     'description' => __( 'The second content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-bullhorn fa-3x light-gray"></i>',
-     'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -193,8 +225,6 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content4',
     'name' => __( 'Content Widget 4', 'bonestheme' ),
     'description' => __( 'The fourth content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-laptop fa-3x light-gray"></i>',
-     'after_widget' => '</div>',
      'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -203,8 +233,6 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content5',
     'name' => __( 'Content Widget 5', 'bonestheme' ),
     'description' => __( 'The fifth content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent"><a href="http://localhost:8888/2014/category/job/"><i class="fa fa-money fa-3x light-gray"></i></a>',
-    'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -213,8 +241,6 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content6',
     'name' => __( 'Content Widget 6', 'bonestheme' ),
     'description' => __( 'The sixth content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent"><i class="fa fa-flag fa-3x light-gray"></i>',
-     'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));

@@ -65,33 +65,36 @@ Template Name: Home Page Template
 </main>
 
 <!-- BLOCK 3: CATEGORIES -->
+<?php global $brew_options ?>
 <main class="categorieshome" role="main">
   <div class="container" id="categories">
     <div class="row text-center">
       <div class="row homecategories">
         <!--Section 1-->
           <div class="col-sm-4 about" id="content1">
-              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content1') ) : ?>
-              <?php endif; ?>
+              <div class="homeinnercontent">
+                <i class="fa <?php echo $brew_options['b3-c1-icon'] ?> fa-3x"></i>
+                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content1') ) : ?>
+                <?php endif; ?>
+              </div>
           </div>
           
         <!--Section 2-->
           <div class="col-sm-4 about content2">
-             <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content2') ) : ?>
-              <?php endif; ?>
+             <div class="homeinnercontent">
+                <i class="fa <?php echo $brew_options['b3-c2-icon'] ?> fa-3x"></i>
+                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content2') ) : ?>
+                <?php endif; ?>
+              </div>
           </div>
     
         <!--Section 3-->
           <div class="col-sm-4 about content3">
-            
             <div class="homeinnercontent">
-             <?php global $brew_options ?>
-             <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
-              
+              <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content3') ) : ?>
-
               <?php endif; ?>
-              </div>
+            </div>
           </div>
           
       </div> <!--end row-->
@@ -99,20 +102,29 @@ Template Name: Home Page Template
       <div class="row homecategories">
         <!--Section 1-->
           <div class="col-sm-4 about content4">
+              <div class="homeinnercontent">
+              <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content4') ) : ?>
               <?php endif; ?>
+              </div>
           </div>
     
         <!--Section 2-->
           <div class="col-sm-4 about content5">
+          <div class="homeinnercontent">
+              <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content5') ) : ?>
               <?php endif; ?>
+              </div>
           </div>
     
         <!--Section 3-->
           <div class="col-sm-4 about content6">
+          <div class="homeinnercontent">
+              <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content6') ) : ?>
               <?php endif; ?>
+              </div>
           </div>
     
       </div> <!--end row-->

@@ -81,14 +81,14 @@ Features on this page:
 										<!-- 02. AUTHOR DISPLAY CONDITIONAL BY CATEGORY 
 
 										UNCOMMENT THIS SECTION AND COMMENT OUT LINES 73-77 TO RESTORE AUTHOR FUNCTIONALITY TO ALL PAGES --> 
-										by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> 
+										by <span class="author"><em><?php echo bones_get_the_author_posts_link()?> </em></span> 
 										<!--CONTROLS AND LIMITS THE DISPLAY OF THE AUTHOR TO ONLY TWO CATEGORIES (Editor's Choice & the DHNow Blog-->
-										<?php if (in_category(array(66, 87))) {
-										echo 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
-										} else {
-										echo 'by <span class="author"><em>the Editors</em></span> -'; 
-										} ?>
-										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+										<?php //if (in_category(array(66, 87))) {
+										//echo// 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
+										//} else {
+										//echo 'by <span class="author"><em>the Editors</em></span> -'; 
+										//} ?>
+										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo  get_the_time(get_option('date_format')) ?></time>
 										<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 									</p>
 								</div>

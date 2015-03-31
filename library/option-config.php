@@ -259,6 +259,17 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 						'validate' => 'js',
 						'desc' => 'Validate that it\'s javascript!',
 					),
+					array (
+					    'id'       => 'opt-media',
+					    'type'     => 'media', 
+					    'url'      => true,
+					    'title'    => __('Media w/ URL', 'brew-framework'),
+					    'desc'     => __('Basic media uploader with disabled URL input field.', 'brew-framework'),
+					    'subtitle' => __('Upload any media using the WordPress native uploader', 'brew-framework'),
+					    'default'  => array(
+					        'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
+					    )
+					),
 
 				),
 			);
@@ -556,40 +567,11 @@ $this->sections[] = array(
     	),
 	);
 $this->sections[] = array(
-		'icon' => 'fa fa-home',
-        'title' => __('Block 2 Settings', 'brew-framework'),
-        'heading'	=> 'HomePage Settings',
-        
-        'desc' => '<br /> Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
+        'title' => __('Block 3', 'brew-framework'),
+        'heading'	=> 'Block 3 Settings',
+        'subsection' => true,
+        'desc' => 'Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
         'fields' => array (
-         array (
-            'id'       => 'b2-c1-icon',
-            'type'     => 'text',
-            'title'    => __('Block 2 Column 1 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Block 2 Content Area 1', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-             array (
-            'id'       => 'b2-c2-icon',
-            'type'     => 'text',
-            'title'    => __('Block 2 Column 2 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-             array (
-            'id'       => 'b2-c3-icon',
-            'type'     => 'text',
-            'title'    => __('Block 2 Column 3 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Block 2 Content Area 3', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-            array (
-            'id'       => 'b2-c4-icon',
-            'type'     => 'text',
-            'title'    => __('Block 2 Column 4 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Block 2 Content Area 4', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
             array (
             'id'       => 'b3-c1-icon',
             'type'     => 'text',
@@ -597,6 +579,20 @@ $this->sections[] = array(
             'subtitle' => __('Icon for Content Area 1', 'brew-framework'),
             'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
             ),
+             array (
+            'id'       => 'b3-c1-title',
+            'type'     => 'text',
+            'title'    => __('Content Area 1 Title', 'brew-framework'),
+            'subtitle' => __('Title for Content Area 1', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            	'id'       => 'b3-c1-category',
+			    'type'     => 'select',
+			    'title'    => __('Slider Categories', 'brew-framework'), 
+			    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+			    'data' => 'categories'
+            	),
             array (
             'id'       => 'b3-c2-icon',
             'type'     => 'text',

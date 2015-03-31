@@ -44,9 +44,7 @@
     <header class="header">
 
       <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
-       <?php global $brew_options ;
-				$themelogo = $brew_options['logo_uploader']['url'];
-				$banner = $brew_options['banner_uploader']['url']; ?>
+       <?php global $brew_options ?>
         
           <div class="container">
             <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
@@ -54,7 +52,7 @@
              
 				<div class="logo-nav">
 							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-							<img  src="<?php echo $themelogo ;?> " alt ="logo" /></a>
+							<img  src="<?php echo $brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
 						</div>
               <!-- <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php // bloginfo( 'name' ) ?>" rel="homepage"><?php //bloginfo('name'); ?></a> -->
             
@@ -86,7 +84,7 @@
 				<div class="col-md-12 topbar">
 						<div class="logo">
 							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-							<img  src="<?php echo $themelogo ;?> " alt ="logo" /></a>
+							<img  src="<?php echo $brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
 						</div>
 					<div class="menu-container">
 						<div class="nav-container">

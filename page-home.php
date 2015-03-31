@@ -88,8 +88,18 @@ Template Name: Home Page Template
           <div class="col-sm-4 about" id="content1">
               <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c1-icon'] ?> fa-3x"></i>
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content1') ) : ?>
-                <?php endif; ?>
+                <div class="homeinnercontent">
+                <h1><?php echo $brew_options['b3-c1-title'] ?></h1>
+                <ul>
+                <?php $b3c1cat = 'cat=' . $brew_options['b3-c1-category'] . '&posts_per_page=3' ?>
+                <?php query_posts($b3c1cat); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
+                <?php endwhile; endif; ?>
+                <?php wp_reset_query(); ?>
+                </ul>
+                </div>
+                
               </div>
           </div>
           

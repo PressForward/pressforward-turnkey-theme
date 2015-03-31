@@ -134,6 +134,14 @@ The category section is the third block on the homepage.  This block is designed
 The icons for each category will appear once content is placed in the widget from the Wordpress dashboard.  The function creating each widget and controlling the icons can be found in functions.php.  For more information on icon markup see the fontawesome website. http://fortawesome.github.io
 ********************************/
 
+.widget > ul {
+	list-style-type: disc !important;
+	list-style-position: inside;
+	li:first {
+		list-style-type: none;
+
+	}
+}
 .categorieshome {
 	background-color: @dhnow-darkblue;
 	padding: 50px 0 50px 0;
@@ -150,9 +158,16 @@ The icons for each category will appear once content is placed in the widget fro
 	a {
 		color: @dhnow-blue;
 	}
+	.homeinnerwrapper {
+		background-color: @dhnow-gray;
+		padding: 20px 20px 0px 10px;
+		@media (min-width: @screen-md) {
+			height: 395px; 
+		}
+	}
 	.homeinnercontent {
 		background-color: @dhnow-gray;
-		padding: 25px 20px 15px 10px;
+		padding: 0px 20px 15px 10px;
 		font-size: large;
 	}
 	h1 {
@@ -160,9 +175,7 @@ The icons for each category will appear once content is placed in the widget fro
 	}
 }
 .homeinnercontent {
-		@media (min-width: @screen-md) {
-			height: 395px; }
-		}	
+		}
 		li {
 			padding-bottom: 5px;
 		}

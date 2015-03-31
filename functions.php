@@ -196,11 +196,13 @@ function child_bones_excerpt_more($more) {
 add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 
 add_image_size( 'brew-child-thumbnail', 200, 200, true );  
-   
+
   register_sidebar(array(
     'id' => 'content1',
     'name' => __( 'Content Widget 1', 'bonestheme' ),
     'description' => __( 'The first content area widget.', 'bonestheme' ),
+        'before_widget' => '<div class="homeinnercontent">',
+    'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -209,6 +211,8 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content2',
     'name' => __( 'Content Widget 2', 'bonestheme' ),
     'description' => __( 'The second content area widget.', 'bonestheme' ),
+        'before_widget' => '<div class="homeinnercontent">',
+    'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -217,6 +221,8 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content3',
     'name' => __( 'Content Widget 3', 'bonestheme' ),
     'description' => __( 'The third content area widget.', 'bonestheme' ),
+    'before_widget' => '<div class="homeinnercontent">',
+    'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -225,6 +231,8 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content4',
     'name' => __( 'Content Widget 4', 'bonestheme' ),
     'description' => __( 'The fourth content area widget.', 'bonestheme' ),
+    'before_widget' => '<div class="homeinnercontent">',
+    'after_widget' => '</div>',
      'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -233,6 +241,8 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content5',
     'name' => __( 'Content Widget 5', 'bonestheme' ),
     'description' => __( 'The fifth content area widget.', 'bonestheme' ),
+    'before_widget' => '<div class="homeinnercontent">',
+    'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -241,6 +251,8 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'id' => 'content6',
     'name' => __( 'Content Widget 6', 'bonestheme' ),
     'description' => __( 'The sixth content area widget.', 'bonestheme' ),
+    'before_widget' => '<div class="homeinnercontent">',
+    'after_widget' => '</div>',
     'before_title' => '<h1>',
     'after_title' => '</h1>',
   ));
@@ -261,7 +273,7 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'description' => __( 'The first participate block widget.', 'bonestheme' ),
     'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<i class="fa fa-question-circle fa-3x"></i><h1 class="widgettitle">',
+    'before_title' => '<i class="fa' . $brew_options['b3-c2-icon'] . 'fa-3x"></i><h1 class="widgettitle">',
     'after_title' => '</h1>',
   ));
 

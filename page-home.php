@@ -72,7 +72,7 @@ Template Name: Home Page Template
       <div class="row homecategories">
         <!--Section 1-->
           <div class="col-sm-4 about" id="content1">
-              <div class="homeinnercontent">
+              <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c1-icon'] ?> fa-3x"></i>
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content1') ) : ?>
                 <?php endif; ?>
@@ -81,7 +81,7 @@ Template Name: Home Page Template
           
         <!--Section 2-->
           <div class="col-sm-4 about content2">
-             <div class="homeinnercontent">
+             <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c2-icon'] ?> fa-3x"></i>
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content2') ) : ?>
                 <?php endif; ?>
@@ -90,7 +90,7 @@ Template Name: Home Page Template
     
         <!--Section 3-->
           <div class="col-sm-4 about content3">
-            <div class="homeinnercontent">
+            <div class="homeinnerwrapper">
               <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content3') ) : ?>
               <?php endif; ?>
@@ -102,7 +102,7 @@ Template Name: Home Page Template
       <div class="row homecategories">
         <!--Section 1-->
           <div class="col-sm-4 about content4">
-              <div class="homeinnercontent">
+              <div class="homeinnerwrapper">
               <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content4') ) : ?>
               <?php endif; ?>
@@ -111,7 +111,7 @@ Template Name: Home Page Template
     
         <!--Section 2-->
           <div class="col-sm-4 about content5">
-          <div class="homeinnercontent">
+          <div class="homeinnerwrapper">
               <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content5') ) : ?>
               <?php endif; ?>
@@ -120,7 +120,7 @@ Template Name: Home Page Template
     
         <!--Section 3-->
           <div class="col-sm-4 about content6">
-          <div class="homeinnercontent">
+          <div class="homeinnerwrapper">
               <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content6') ) : ?>
               <?php endif; ?>

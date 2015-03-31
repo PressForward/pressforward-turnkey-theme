@@ -306,7 +306,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				array (
 					'id' => 'block2-start',
 					'type' => 'section',
-					'title' => __('Block 2 Options', 'brew-framework'),
+					'title' => __('Block 2 Column 1 Options', 'brew-framework'),
 					'indent' => true
 					),
 				array (
@@ -333,10 +333,10 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 		            // Must provide key => value pairs for select options
 		            'data' => _('page'),
 					),
-				array(
+				array (
 				    'id'=>'b2-c1-text',
 				    'type' => 'textarea',
-				    'title' => __('Textarea Option - HTML Validated Custom', 'brew-framework'), 
+				    'title' => __('Add text', 'brew-framework'), 
 				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
 				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
 				    'validate' => 'html_custom',
@@ -351,8 +351,174 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				        'strong' => array()
 				    )
 				),
-
-
+				array (
+					'id' => 'block2-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 2 OPTIONS
+				//START BLOCK 2 C2 OPTIONS
+				array (
+					'id' => 'block2-c2-start',
+					'type' => 'section',
+					'title' => __('Block 3 Column 2 Options', 'brew-framework'),
+					'indent' => true
+					),
+				array (
+					'id'       => 'b2-c2-icon',
+	            	'type'     => 'text',
+		            'title'    => __('Block 2 Column 2 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
+		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+					),
+				array (
+					'id'       => 'b2-c2-heading',
+		            'type'     => 'text',
+		            'title'    => __('Block 2 Column 2 Heading', 'brew-framework'),
+		            'subtitle' => __('Heading for Block 2 Content Area 2', 'brew-framework'),
+		            'desc'     => __('Add a heading here.', 'brew-framework'),
+					),
+				array (
+					'id'       => 'b2-c2-pagelink',
+		            'type'     => 'select',
+		            'multi' 	=> false,
+		            'title'    => __('Select Option', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
+		            'desc'     => __('Select a page to link to.', 'brew-framework'),
+		            // Must provide key => value pairs for select options
+		            'data' => _('page'),
+					),
+				array (
+				    'id'=>'b2-c2-text',
+				    'type' => 'textarea',
+				    'title' => __('Add text', 'brew-framework'), 
+				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
+				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'validate' => 'html_custom',
+				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'allowed_html' => array(
+				        'a' => array(
+				            'href' => array(),
+				            'title' => array()
+				        ),
+				        'br' => array(),
+				        'em' => array(),
+				        'strong' => array()
+				    )
+				),
+				array (
+					'id' => 'block2-c2-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK2 C2 OPTIONS
+				
+				//START BLOCK 2 C3 OPTIONS
+				array (
+					'id' => 'block2-c3-start',
+					'type' => 'section',
+					'title' => __('Block 3 Column 3 Options', 'brew-framework'),
+					'indent' => true
+					),
+				array (
+					'id'       => 'b2-c3-icon',
+	            	'type'     => 'text',
+		            'title'    => __('Block 2 Column 3 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Block 2 Content Area 3', 'brew-framework'),
+		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+					),
+				array (
+					'id'       => 'b2-c3-heading',
+		            'type'     => 'text',
+		            'title'    => __('Block 2 Column 3 Heading', 'brew-framework'),
+		            'subtitle' => __('Heading for Block 2 Content Area 3', 'brew-framework'),
+		            'desc'     => __('Add a heading here.', 'brew-framework'),
+					),
+				array (
+					'id'       => 'b2-c3-pagelink',
+		            'type'     => 'select',
+		            'multi' 	=> false,
+		            'title'    => __('Select Option', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
+		            'desc'     => __('Select a page to link to.', 'brew-framework'),
+		            // Must provide key => value pairs for select options
+		            'data' => _('page'),
+					),
+				array (
+				    'id'=>'b2-c3-text',
+				    'type' => 'textarea',
+				    'title' => __('Add text', 'brew-framework'), 
+				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
+				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'validate' => 'html_custom',
+				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'allowed_html' => array(
+				        'a' => array(
+				            'href' => array(),
+				            'title' => array()
+				        ),
+				        'br' => array(),
+				        'em' => array(),
+				        'strong' => array()
+				    )
+				),
+				array (
+					'id' => 'block2-c3-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK2 C3 OPTIONS
+				//START BLOCK 2 C4 OPTIONS
+				array (
+					'id' => 'block2-c4-start',
+					'type' => 'section',
+					'title' => __('Block 3 Column 4 Options', 'brew-framework'),
+					'indent' => true
+					),
+				array (
+					'id'       => 'b2-c4-icon',
+	            	'type'     => 'text',
+		            'title'    => __('Block 2 Column 4 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Block 2 Content Area 4', 'brew-framework'),
+		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+					),
+				array (
+					'id'       => 'b2-c4-heading',
+		            'type'     => 'text',
+		            'title'    => __('Block 2 Column 4 Heading', 'brew-framework'),
+		            'subtitle' => __('Heading for Block 2 Content Area 4', 'brew-framework'),
+		            'desc'     => __('Add a heading here.', 'brew-framework'),
+					),
+				array (
+					'id'       => 'b2-c4-pagelink',
+		            'type'     => 'select',
+		            'multi' 	=> false,
+		            'title'    => __('Select Option', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
+		            'desc'     => __('Select a page to link to.', 'brew-framework'),
+		            // Must provide key => value pairs for select options
+		            'data' => _('page'),
+					),
+				array (
+				    'id'=>'b2-c4-text',
+				    'type' => 'textarea',
+				    'title' => __('Add text', 'brew-framework'), 
+				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
+				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'validate' => 'html_custom',
+				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'allowed_html' => array(
+				        'a' => array(
+				            'href' => array(),
+				            'title' => array()
+				        ),
+				        'br' => array(),
+				        'em' => array(),
+				        'strong' => array()
+				    )
+				),
+				array (
+					'id' => 'block2-c4-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK2 C4 OPTIONS
 
 				),
 				);

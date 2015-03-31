@@ -22,65 +22,48 @@ add_action('wp_enqueue_scripts', 'ls_scripts');
 //REDUX FRAMEWORK
 
 
-
-
 function add_another_section_bl($sections){
     $sections = array();
     $sections[] = array(
-        'title' => __('Theme Colors', 'Redux_Framework_sample_config'),
-        'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'Redux_Framework_sample_config'),
-        // Redux ships with the glyphicons free icon pack, included in the options folder.
-        // Feel free to use them, add your own icons, or leave this blank for the default.
-        // 'icon' => trailingslashit(get_template_directory_uri()) . 'options/img/icons/glyphicons_062_attach.png',
-        'icon' => 'fa fa-bell-o',
-        // Leave this as a blank section, no options just some intro text set above.
+        'icon' => 'fa fa-beer',
+        'title' => __('General Settings', 'brew-framework'),
         'fields' => array (
           array (
-            'id' => 'breadcrumb',
-            'type' => 'switch',
-            'title' => __('Breadcrumbs', 'brew-framework'),
-            'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
-            'default' => 1,
+            'id'=>'tracking-code',
+            'type' => 'textarea',
+            //'required' => array('layout','equals','1'), 
+            'title' => __('Tracking Code', 'brew-framework'), 
+            'subtitle' => __('Paste your Google Analytics (or other) tracking code here. This will be added into the footer template of your theme.', 'brew-framework'),
+            'validate' => 'js',
+            'desc' => 'Validate that it\'s javascript!',
           ),
+        ),
+      );
+      $sections[] = array(
+        'icon' => 'fa fa-beer',
+        'title' => __('Colors', 'brew-framework'),
+        'fields' => array (
           array (
-              'id'=>'icon_select_field',
-              'type' => 'icon_select', 
-              //'required' => array('switch-fold','equals','0'),   
-              'title' => __('Icon Select', 'brew-framework'),
-              'subtitle'  => __('Select an icon.', 'brew-framework'),
-
-              ),
-          array (           
-            'id' => 'author_profile',
-            'type' => 'switch',
-            'title' => __('Author Profiles', 'brew-framework'),
-            'desc' => 'Display an author profile after a post',
-            'default' => 1,
-          ),
-        array (
-             'id'        => 'logo_uploader',
-             'type'      => 'media',
-             'url'       => true,
-            'title'     => __('Logo Uploader'),
-            'compiler'  => 'true',
-            'desc'      => __('Basic media uploader with disabled URL input field.', 'brew-framework'),
-              'subtitle'  => __('Upload any media using the WordPress native uploader', 'brew-framework'),
-             'default'   => array('url' => 'http://s.wordpress.org/style/images/codeispoetry.png'),             ),                   
-                 array (
             'id'        => 'participate-opt-color',
             'type'      => 'color',
             'title'     => __('Participate Background Color', 'brew-framework'),
             'subtitle'  => __('Pick a background color.', 'brew-framework'),
             'output'    => array('background-color' => '.participatehome')
-),
+            ),
                   array (
             'id'        => 'categories-opt-color',
             'type'      => 'color',
             'title'     => __('Categories Background Color', 'brew-framework'),
             'subtitle'  => __('Pick a background color.', 'brew-framework'),
             'output'    => array('background-color' => '.categorieshome')
-),
-            array (
+            ),
+        ),
+      );
+    $sections[] = array(
+        'icon' => 'fa fa-beer',
+        'title' => __('Homepage Icons', 'brew-framework'),
+        'fields' => array (
+         array (
             'id'       => 'b2-c1-icon',
             'type'     => 'text',
             'title'    => __('Block 2 Column 1 Icon', 'brew-framework'),
@@ -150,7 +133,42 @@ function add_another_section_bl($sections){
             'subtitle' => __('Icon for Content Area 6', 'brew-framework'),
             'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
             ),
+        ),
+      );
 
+    $sections[] = array(
+        'title' => __('General Layout Settings', 'Redux_Framework_sample_config'),
+        'desc' => __('<p class="description">This is a section created by adding a filter to the sections array. Can be used by child themes to add/remove sections from the options.</p>', 'Redux_Framework_sample_config'),
+        // Redux ships with the glyphicons free icon pack, included in the options folder.
+        // Feel free to use them, add your own icons, or leave this blank for the default.
+        // 'icon' => trailingslashit(get_template_directory_uri()) . 'options/img/icons/glyphicons_062_attach.png',
+        'icon' => 'fa fa-bell-o',
+        // Leave this as a blank section, no options just some intro text set above.
+        'fields' => array (
+          array (
+            'id' => 'breadcrumb',
+            'type' => 'switch',
+            'title' => __('Breadcrumbs', 'brew-framework'),
+            'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
+            'default' => 1,
+          ),
+          array (           
+            'id' => 'author_profile',
+            'type' => 'switch',
+            'title' => __('Author Profiles', 'brew-framework'),
+            'desc' => 'Display an author profile after a post',
+            'default' => 1,
+          ),
+        array (
+             'id'        => 'logo_uploader',
+             'type'      => 'media',
+             'url'       => true,
+            'title'     => __('Logo Uploader'),
+            'compiler'  => 'true',
+            'desc'      => __('Basic media uploader with disabled URL input field.', 'brew-framework'),
+              'subtitle'  => __('Upload any media using the WordPress native uploader', 'brew-framework'),
+             'default'   => array('url' => 'http://s.wordpress.org/style/images/codeispoetry.png'),             
+             ),                   
         ),
     );
 

@@ -42,21 +42,25 @@ Template Name: Home Page Template
     <div class="container" id="participate">
         <div class="row text-center">
             <div class="col-md-3">
+                <i class="fa <?php echo $brew_options['b2-c1-icon'] ?> fa-3x"></i>
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate1') ) : ?>
                 <?php endif; ?>
             </div>
            
             <div class="col-md-3">
+                <i class="fa <?php echo $brew_options['b2-c2-icon'] ?> fa-3x"></i>
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate2') ) : ?>
                 <?php endif; ?>
             </div>
   
             <div class="col-md-3">
+            <i class="fa <?php echo $brew_options['b2-c3-icon'] ?> fa-3x"></i>
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate3') ) : ?>
                 <?php endif; ?>
             </div>
 
             <div class="col-md-3">
+            <i class="fa <?php echo $brew_options['b2-c4-icon'] ?> fa-3x"></i>
                 <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate4') ) : ?>
                 <?php endif; ?>
             </div>

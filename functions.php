@@ -1,4 +1,4 @@
-<?php
+  <?php
 
 add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
 
@@ -80,6 +80,34 @@ function add_another_section_bl($sections){
             'subtitle'  => __('Pick a background color.', 'brew-framework'),
             'output'    => array('background-color' => '.categorieshome')
 ),
+            array (
+            'id'       => 'b2-c1-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 1 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 1', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+             array (
+            'id'       => 'b2-c2-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 2 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+             array (
+            'id'       => 'b2-c3-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 3 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 3', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            'id'       => 'b2-c4-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 4 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 4', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
             array (
             'id'       => 'b3-c1-icon',
             'type'     => 'text',
@@ -267,13 +295,13 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'after_title' => '</h1>',
   ));
 
-       register_sidebar(array(
+    register_sidebar(array(
     'id' => 'participate1',
     'name' => __( 'Partcipate Block 1 Widget', 'bonestheme' ),
     'description' => __( 'The first participate block widget.', 'bonestheme' ),
     'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<i class="fa' . $brew_options['b3-c2-icon'] . 'fa-3x"></i><h1 class="widgettitle">',
+    'before_title' => '<h1 class="widgettitle">',
     'after_title' => '</h1>',
   ));
 
@@ -283,7 +311,7 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'description' => __( 'The second participate block widget.', 'bonestheme' ),
     'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<i class="fa fa-rss fa-3x"></i><h1 class="widgettitle">',
+    'before_title' => '<h1 class="widgettitle">',
     'after_title' => '</h1>',
   ));
 
@@ -293,7 +321,7 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'description' => __( 'The third participate block widget.', 'bonestheme' ),
     'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<i class="fa fa-user fa-3x"></i><h1 class="widgettitle">',
+    'before_title' => '<h1 class="widgettitle">',
     'after_title' => '</h1>',
   ));
 
@@ -303,7 +331,7 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'description' => __( 'The fourth participate block widget.', 'bonestheme' ),
     'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
     'after_widget' => '</div>',
-    'before_title' => '<i class="fa fa-calendar fa-3x"></i><h1 class="widgettitle">',
+    'before_title' => '<h1 class="widgettitle">',
     'after_title' => '</h1>',
   ));
 

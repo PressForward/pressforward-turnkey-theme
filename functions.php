@@ -63,6 +63,22 @@ function add_another_section_bl($sections){
         'icon' => 'fa fa-beer',
         'title' => __('Homepage Icons', 'brew-framework'),
         'fields' => array (
+           array (
+            'id'       => 'cat1',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 1 Icon', 'brew-framework'),
+            'subtitle' => __('Category 1 id', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+           array (
+            'id'       => 'opt-select',
+            'type'     => 'select',
+            'title'    => __('Select Option', 'redux-framework-demo'), 
+            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
+            'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            // Must provide key => value pairs for select options
+            'data' => _('categories')
+            ),
          array (
             'id'       => 'b2-c1-icon',
             'type'     => 'text',

@@ -23,12 +23,11 @@ Features on this page:
 
 						<!-- 01. CATEGORY FEATURED IMAGES -->
 						<!-- This if statement determines the icon (or featured image) that displays on the individual post page.  -->
-							<?php if ( in_category('77')) {
+							<?php global $brew_options ?>
+							<?php if ( in_category($brew_options['opt-select'])) {
 							//JOBS--BRIEFCASE ICON
-							echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-briefcase fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
+							echo '<div class="col-md-2 featimg text-center">';
+							echo '<i class="fa ' . $brew_options['b2-c1-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
 							} else if (in_category('74')) {
 							//CFPS--LAPTOP ICON	
 								echo '<div class="col-md-2 featimg text-center">

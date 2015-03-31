@@ -297,11 +297,26 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					),
 				),
 			);
+$homepage_info = "The theme homepage is composed of several 'blocks' of content. Each block can be configured here. For more information see our github page.";
 $this->sections[] = array (
 	'icon' => 'fa fa-home',
 	'title' => __('Homepage Settings', 'brew-framework'),
 	'heading' => 'Homepage Settings',
-	'desc' => __('This panel provides options for setting up the homepage. Use the tabs to the left to navigate through the options for each homepage block.  For more information visit the theme documentation and setup guide.'),
+	'desc' => __('<p class="reduxinfo">This panel provides options for setting up the homepage. Use the tabs to the left to navigate through the options for each homepage block.  For more information visit the theme documentation and setup guide.</p>'),
+	'fields' => array(
+		array(
+			'id'=>'raw_info',
+			'type' => 'raw',
+			'content' => $homepage_info,
+			),
+		),
+	);
+$this->sections[] = array (
+	'icon' => 'fa fa-home',
+	'title' => __('Block 2', 'brew-framework'),
+	'subsection' => true,
+	'heading' => 'Block 2 Settings',
+	'desc' => __('This panel provides options for setting up the second block on the homepage. Each section below represents one column within the second block.'),
 	'fields' => array (
 				//START BLOCK 2 OPTIONS
 				array (
@@ -523,10 +538,11 @@ $this->sections[] = array (
 
 				),
 				);
+
 $this->sections[] = array(
 	'icon' => 'fa fa-home',
-    'title' => __('Homepage Settings', 'brew-framework'),
-    'heading'	=> 'HomePage Settings',
+    'title' => __('Slider', 'brew-framework'),
+    'heading'	=> 'Slider (or Block 1) Settings',
     'subsection' => true,
     'fields' => array (
     	$fields = array(
@@ -541,8 +557,9 @@ $this->sections[] = array(
 	);
 $this->sections[] = array(
 		'icon' => 'fa fa-home',
-        'title' => __('Homepage Settings', 'brew-framework'),
+        'title' => __('Block 2 Settings', 'brew-framework'),
         'heading'	=> 'HomePage Settings',
+        
         'desc' => '<br /> Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
         'fields' => array (
          array (

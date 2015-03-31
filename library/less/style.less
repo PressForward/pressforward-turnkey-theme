@@ -1,14 +1,15 @@
-/*
- Theme Name:   Brew Child
- Theme URI:    http://yourwebsite.com/twentyfourteen-child/
- Description:  My first child theme, based on Twenty Fourteen
- Author:       Daniel Pataki
- Author URI:   http://danielpataki.com
- Template:     brew-master
- Version:      1.0.0
- Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready, responsive-layout, infinite-scroll, post-slider, design, food, journal, magazine, news, photography, portfolio, clean, contemporary, dark, elegant, modern, professional, sophisticated
+/******************************************************************
+Site Name: PressForward TurnKey Theme
+Author: Amanda Regan
 
-*/
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. First we are calling the bootstrap
+LESS files.  Then we'll load Font Awesome.  Any customizations 
+should be placed in either custom-variables.less, a new less file,
+or the proper file inside less/brew
+******************************************************************/
+
 
 
 //
@@ -21,70 +22,70 @@
 // Core variables and mixins
 
 @import "custom-variables.less"; // custom variables
-@import "../../../brew-master/library/less/bootstrap/mixins.less";
+@import "bootstrap/mixins.less";
 
 // Reset
-@import "../../../brew-master/library/less/bootstrap/normalize.less";
-@import "../../../brew-master/library/less/bootstrap/print.less";
+@import "bootstrap/normalize.less";
+@import "bootstrap/print.less";
 
 // Core CSS
-@import "../../../brew-master/library/less/bootstrap/scaffolding.less";
-@import "../../../brew-master/library/less/bootstrap/type.less";
-@import "../../../brew-master/library/less/bootstrap/code.less";
-@import "../../../brew-master/library/less/bootstrap/grid.less";
-@import "../../../brew-master/library/less/bootstrap/tables.less";
-@import "../../../brew-master/library/less/bootstrap/forms.less";
-@import "../../../brew-master/library/less/bootstrap/buttons.less";
+@import "bootstrap/scaffolding.less";
+@import "bootstrap/type.less";
+@import "bootstrap/code.less";
+@import "bootstrap/grid.less";
+@import "bootstrap/tables.less";
+@import "bootstrap/forms.less";
+@import "bootstrap/buttons.less";
 
 // Components
-@import "../../../brew-master/library/less/bootstrap/component-animations.less";
-@import "../../../brew-master/library/less/bootstrap/glyphicons.less";
-@import "../../../brew-master/library/less/bootstrap/dropdowns.less";
-@import "../../../brew-master/library/less/bootstrap/button-groups.less";
-@import "../../../brew-master/library/less/bootstrap/input-groups.less";
-@import "../../../brew-master/library/less/bootstrap/navs.less";
-@import "../../../brew-master/library/less/bootstrap/navbar.less";
-@import "../../../brew-master/library/less/bootstrap/breadcrumbs.less";
-@import "../../../brew-master/library/less/bootstrap/pagination.less";
-@import "../../../brew-master/library/less/bootstrap/pager.less";
-@import "../../../brew-master/library/less/bootstrap/labels.less";
-@import "../../../brew-master/library/less/bootstrap/badges.less";
-@import "../../../brew-master/library/less/bootstrap/jumbotron.less";
-@import "../../../brew-master/library/less/bootstrap/thumbnails.less";
-@import "../../../brew-master/library/less/bootstrap/alerts.less";
-@import "../../../brew-master/library/less/bootstrap/progress-bars.less";
-@import "../../../brew-master/library/less/bootstrap/media.less";
-@import "../../../brew-master/library/less/bootstrap/list-group.less";
-@import "../../../brew-master/library/less/bootstrap/panels.less";
-@import "../../../brew-master/library/less/bootstrap/wells.less";
-@import "../../../brew-master/library/less/bootstrap/close.less";
+@import "bootstrap/component-animations.less";
+@import "bootstrap/glyphicons.less";
+@import "bootstrap/dropdowns.less";
+@import "bootstrap/button-groups.less";
+@import "bootstrap/input-groups.less";
+@import "bootstrap/navs.less";
+@import "bootstrap/navbar.less";
+@import "bootstrap/breadcrumbs.less";
+@import "bootstrap/pagination.less";
+@import "bootstrap/pager.less";
+@import "bootstrap/labels.less";
+@import "bootstrap/badges.less";
+@import "bootstrap/jumbotron.less";
+@import "bootstrap/thumbnails.less";
+@import "bootstrap/alerts.less";
+@import "bootstrap/progress-bars.less";
+@import "bootstrap/media.less";
+@import "bootstrap/list-group.less";
+@import "bootstrap/panels.less";
+@import "bootstrap/wells.less";
+@import "bootstrap/close.less";
 
 // Components w/ JavaScript
-@import "../../../brew-master/library/less/bootstrap/modals.less";
-@import "../../../brew-master/library/less/bootstrap/tooltip.less";
-@import "../../../brew-master/library/less/bootstrap/popovers.less";
-@import "../../../brew-master/library/less/bootstrap/carousel.less";
+@import "bootstrap/modals.less";
+@import "bootstrap/tooltip.less";
+@import "bootstrap/popovers.less";
+@import "bootstrap/carousel.less";
 
 // Utility classes
-@import "../../../brew-master/library/less/bootstrap/utilities.less";
-@import "../../../brew-master/library/less/bootstrap/responsive-utilities.less";
+@import "bootstrap/utilities.less";
+@import "bootstrap/responsive-utilities.less";
 
 // Font Awesome
-@import "../../../brew-master/library/less/font-awesome/less/font-awesome.less";
+@import "font-awesome/less/font-awesome.less";
 
 // BREW files
-@import "../../../brew-master/library/less/brew/wp-core.less"; // styles for text formatting, captions, galleries, etc
-@import "../../../brew-master/library/less/brew/global.less"; // BREW global styles
-@import "../../../brew-master/library/less/brew/comments.less"; // styles for comments
-@import "../../../brew-master/library/less/brew/tables.less"; // styles for tables
-@import "../../../brew-master/library/less/brew/form.less"; // styles for forms
-@import "../../../brew-master/library/less/brew/sidebar.less"; // styles for sidebars
-@import "../../../brew-master/library/less/brew/footer.less"; // styles for footer
-@import "../../../brew-master/library/less/brew/content.less"; // styles for wordpress pages/posts etc
-@import "../../../brew-master/library/less/brew/nav.less"; // styles for navigation and header
-@import "../../../brew-master/library/less/brew/body.less"; // target specific body classes
-@import "../../../brew-master/library/less/brew/components.less"; // components built for BREW such as breadcrumbs, next/previous buttons, etc
-@import "../../../brew-master/library/less/brew/brew.less"; // this is for the sample BREW site.  Feel free to delete
+@import "brew/wp-core.less"; // styles for text formatting, captions, galleries, etc
+@import "brew/global.less"; // BREW global styles
+@import "brew/comments.less"; // styles for comments
+@import "brew/tables.less"; // styles for tables
+@import "brew/form.less"; // styles for forms
+@import "brew/sidebar.less"; // styles for sidebars
+@import "brew/footer.less"; // styles for footer
+@import "brew/content.less"; // styles for wordpress pages/posts etc
+@import "brew/nav.less"; // styles for navigation and header
+@import "brew/body.less"; // target specific body classes
+@import "brew/components.less"; // components built for BREW such as breadcrumbs, next/previous buttons, etc
+@import "brew/brew.less"; // this is for the sample BREW site.  Feel free to delete
 
 
 /*
@@ -98,7 +99,7 @@ query for retina AND a certain size if you want. Go Nuts.
        only screen and (min-device-pixel-ratio: 1.5) {
 
 	// styles in 2x.less
-	@import "../../../brew-master/library/less/other/_2x.less";
+	@import "other/_2x.less";
 
 } // end of media query
 

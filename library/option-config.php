@@ -295,16 +295,168 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 							),
 						'default' => '1'
 					),
-					array (
-            'id'        => 'opt-color-demo',
-            'type'      => 'color',
-            'title'     => __('Background Color', 'redux-framework-demo'),
-            'subtitle'  => __('Pick a background color.', 'brew-framework'),
-            'output'    => array('background-color' => '.aboutlarge')
-),
 				),
 			);
+			$this->sections[] = array (
+			'icon' => 'fa fa-home',
+			'title' => __('Homepage Settings', 'brew-framework'),
+			'heading' => 'Homepage Settings',
+			'fields' => array (
+				//START BLOCK 2 OPTIONS
+				array (
+					'id' => 'block2-start',
+					'type' => 'section',
+					'title' => __('Block 2 Options', 'brew-framework'),
+					'indent' => true
+					),
+				array (
+					'id'       => 'b2-c1-icon',
+	            	'type'     => 'text',
+		            'title'    => __('Block 2 Column 1 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Block 2 Content Area 1', 'brew-framework'),
+		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+					),
+				array (
+					'id'       => 'b2-c1-heading',
+		            'type'     => 'text',
+		            'title'    => __('Block 2 Column 1 Heading', 'brew-framework'),
+		            'subtitle' => __('Heading for Block 2 Content Area 1', 'brew-framework'),
+		            'desc'     => __('Add a heading here.', 'brew-framework'),
+					),
+				array (
+					'id'       => 'b2-c1-pagelink',
+		            'type'     => 'select',
+		            'multi' 	=> false,
+		            'title'    => __('Select Option', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
+		            'desc'     => __('Select a page to link to.', 'brew-framework'),
+		            // Must provide key => value pairs for select options
+		            'data' => _('page'),
+					),
+				array(
+				    'id'=>'b2-c1-text',
+				    'type' => 'textarea',
+				    'title' => __('Textarea Option - HTML Validated Custom', 'brew-framework'), 
+				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
+				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'validate' => 'html_custom',
+				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'allowed_html' => array(
+				        'a' => array(
+				            'href' => array(),
+				            'title' => array()
+				        ),
+				        'br' => array(),
+				        'em' => array(),
+				        'strong' => array()
+				    )
+				),
 
+
+
+				),
+				);
+			$this->sections[] = array(
+				'icon' => 'fa fa-home',
+        'title' => __('Homepage Settings', 'brew-framework'),
+        'heading'	=> 'HomePage Settings',
+        'desc' => '<br /> Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
+        'fields' => array (
+           array (
+             'id'       => 'opt-select2',
+            'type'     => 'select',
+            'title'    => __('Select Option', 'redux-framework-demo'), 
+
+            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
+            'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            // Must provide key => value pairs for select options
+            'options' => array(
+            		'info' => 'fa-info',
+            		'bullhorn' => 'bullhorn'
+            	)
+            ),
+           array (
+            'id'       => 'opt-select',
+            'type'     => 'select',
+            'title'    => __('Select Option', 'redux-framework-demo'), 
+            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
+            'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+            // Must provide key => value pairs for select options
+            'data' => _('categories')
+            ),
+         array (
+            'id'       => 'b2-c1-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 1 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 1', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+             array (
+            'id'       => 'b2-c2-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 2 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+             array (
+            'id'       => 'b2-c3-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 3 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 3', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            'id'       => 'b2-c4-icon',
+            'type'     => 'text',
+            'title'    => __('Block 2 Column 4 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Block 2 Content Area 4', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            'id'       => 'b3-c1-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 1 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 1', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            'id'       => 'b3-c2-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 2 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 2', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+            array (
+            'id'       => 'b3-c3-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 3 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 3', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+             array (
+            'id'       => 'b3-c4-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 4 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 4', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+              array (
+            'id'       => 'b3-c5-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 5 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 5', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+               array (
+            'id'       => 'b3-c6-icon',
+            'type'     => 'text',
+            'title'    => __('Content Area 6 Icon', 'brew-framework'),
+            'subtitle' => __('Icon for Content Area 6', 'brew-framework'),
+            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+            ),
+        ),
+
+				);
 			
 					
 					

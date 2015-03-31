@@ -43,8 +43,12 @@ Template Name: Home Page Template
         <div class="row text-center">
             <div class="col-md-3">
                 <i class="fa <?php echo $brew_options['b2-c1-icon'] ?> fa-3x"></i>
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate1') ) : ?>
-                <?php endif; ?>
+              <h1 class="widgettitle"><a href="<?php echo get_page_link($brew_options['b2-c1-pagelink']); ?>"><?php echo $brew_options['b2-c1-heading'] ?></a></h1>
+              <div class="textwidget">
+              <p><?php echo $brew_options['b2-c1-text'] ?></p>
+              </div>
+              <!--   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('participate1') ) : ?>
+                <?php endif; ?> -->
             </div>
            
             <div class="col-md-3">

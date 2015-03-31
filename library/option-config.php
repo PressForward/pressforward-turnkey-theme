@@ -297,11 +297,12 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					),
 				),
 			);
-			$this->sections[] = array (
-			'icon' => 'fa fa-home',
-			'title' => __('Homepage Settings', 'brew-framework'),
-			'heading' => 'Homepage Settings',
-			'fields' => array (
+$this->sections[] = array (
+	'icon' => 'fa fa-home',
+	'title' => __('Homepage Settings', 'brew-framework'),
+	'heading' => 'Homepage Settings',
+	'desc' => __('This panel provides options for setting up the homepage. Use the tabs to the left to navigate through the options for each homepage block.  For more information visit the theme documentation and setup guide.'),
+	'fields' => array (
 				//START BLOCK 2 OPTIONS
 				array (
 					'id' => 'block2-start',
@@ -522,34 +523,28 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 
 				),
 				);
-			$this->sections[] = array(
-				'icon' => 'fa fa-home',
+$this->sections[] = array(
+	'icon' => 'fa fa-home',
+    'title' => __('Homepage Settings', 'brew-framework'),
+    'heading'	=> 'HomePage Settings',
+    'subsection' => true,
+    'fields' => array (
+    	$fields = array(
+			    'id'       => 'slider-categories',
+			    'type'     => 'select',
+			    'multi'    => true,
+			    'title'    => __('Slider Categories', 'brew-framework'), 
+			    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+			    'data' => 'categories'
+			),
+    	),
+	);
+$this->sections[] = array(
+		'icon' => 'fa fa-home',
         'title' => __('Homepage Settings', 'brew-framework'),
         'heading'	=> 'HomePage Settings',
         'desc' => '<br /> Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
         'fields' => array (
-           array (
-             'id'       => 'opt-select2',
-            'type'     => 'select',
-            'title'    => __('Select Option', 'redux-framework-demo'), 
-
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-            // Must provide key => value pairs for select options
-            'options' => array(
-            		'info' => 'fa-info',
-            		'bullhorn' => 'bullhorn'
-            	)
-            ),
-           array (
-            'id'       => 'opt-select',
-            'type'     => 'select',
-            'title'    => __('Select Option', 'redux-framework-demo'), 
-            'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-            'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-            // Must provide key => value pairs for select options
-            'data' => _('categories')
-            ),
          array (
             'id'       => 'b2-c1-icon',
             'type'     => 'text',

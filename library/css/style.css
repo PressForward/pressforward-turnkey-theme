@@ -1,16 +1,16 @@
 @import url(http://fonts.googleapis.com/css?family=Arvo);
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro|Noto+Sans|Droid+Sans|PT+Sans|Open+Sans|Oxygen);
-/*
- Theme Name:   Brew Child
- Theme URI:    http://yourwebsite.com/twentyfourteen-child/
- Description:  My first child theme, based on Twenty Fourteen
- Author:       Daniel Pataki
- Author URI:   http://danielpataki.com
- Template:     brew-master
- Version:      1.0.0
- Tags:         black, green, white, light, dark, two-columns, three-columns, left-sidebar, right-sidebar, fixed-layout, responsive-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, accessibility-ready, responsive-layout, infinite-scroll, post-slider, design, food, journal, magazine, news, photography, portfolio, clean, contemporary, dark, elegant, modern, professional, sophisticated
+/******************************************************************
+Site Name: PressForward TurnKey Theme
+Author: Amanda Regan
 
-*/
+Stylesheet: Main Stylesheet
+
+Here's where the magic happens. First we are calling the bootstrap
+LESS files.  Then we'll load Font Awesome.  Any customizations 
+should be placed in either custom-variables.less, a new less file,
+or the proper file inside less/brew
+******************************************************************/
 /******************************************************************
 Site Name: PressForward Turnkey
 Author: Amanda Regan
@@ -60,6 +60,9 @@ h6 {
 }
 .ec-customfields p {
   margin-bottom: 0px;
+}
+time {
+  padding-left: 5px;
 }
 /******************************************************************
 Site Name: PressForward Turnkey
@@ -311,6 +314,13 @@ The category section is the third block on the homepage.  This block is designed
 
 The icons for each category will appear once content is placed in the widget from the Wordpress dashboard.  The function creating each widget and controlling the icons can be found in functions.php.  For more information on icon markup see the fontawesome website. http://fortawesome.github.io
 ********************************/
+.widget > ul {
+  list-style-type: disc !important;
+  list-style-position: inside;
+}
+.widget > ul li:first {
+  list-style-type: none;
+}
 .categorieshome {
   background-color: #142736;
   padding: 50px 0 50px 0;
@@ -326,19 +336,22 @@ The icons for each category will appear once content is placed in the widget fro
 .about a {
   color: #3887be;
 }
+.about .homeinnerwrapper {
+  background-color: #f8f8f8;
+  padding: 20px 20px 0px 10px;
+}
+@media (min-width: 992px) {
+  .about .homeinnerwrapper {
+    height: 395px;
+  }
+}
 .about .homeinnercontent {
   background-color: #f8f8f8;
-  padding: 25px 20px 15px 10px;
+  padding: 0px 20px 15px 10px;
   font-size: large;
-  overflow-y: scroll;
 }
 .about h1 {
   font-size: 30px;
-}
-@media (min-width: 992px) {
-  .homeinnercontent {
-    height: 395px;
-  }
 }
 li {
   padding-bottom: 5px;
@@ -693,7 +706,7 @@ body {
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 input,
 button,
@@ -734,7 +747,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857143;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -1852,7 +1865,7 @@ th {
   border-top: 2px solid #dddddd;
 }
 .table .table {
-  background-color: #fafafa;
+  background-color: #f8f8f8;
 }
 .table-condensed > thead > tr > th,
 .table-condensed > tbody > tr > th,
@@ -3932,7 +3945,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555555;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
   border: 1px solid #dddddd;
   border-bottom-color: transparent;
   cursor: default;
@@ -3978,7 +3991,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs.nav-justified > .active > a,
   .nav-tabs.nav-justified > .active > a:hover,
   .nav-tabs.nav-justified > .active > a:focus {
-    border-bottom-color: #fafafa;
+    border-bottom-color: #f8f8f8;
   }
 }
 .nav-pills > li {
@@ -4046,7 +4059,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   .nav-tabs-justified > .active > a,
   .nav-tabs-justified > .active > a:hover,
   .nav-tabs-justified > .active > a:focus {
-    border-bottom-color: #fafafa;
+    border-bottom-color: #f8f8f8;
   }
 }
 .tab-content > .tab-pane {
@@ -4824,7 +4837,7 @@ a.list-group-item.active > .badge,
   padding: 4px;
   margin-bottom: 20px;
   line-height: 1.42857143;
-  background-color: #fafafa;
+  background-color: #f8f8f8;
   border: 1px solid #dddddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;

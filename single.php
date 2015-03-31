@@ -24,7 +24,7 @@ Features on this page:
 						<!-- 01. CATEGORY FEATURED IMAGES -->
 						<!-- This if statement determines the icon (or featured image) that displays on the individual post page.  -->
 							<?php global $brew_options ?>
-							<?php if ( in_category($brew_options['opt-select'])) {
+							<?php if ( in_category($brew_options['b3-c1-category'][1])) {
 							//JOBS--BRIEFCASE ICON
 							echo '<div class="col-md-2 featimg text-center">';
 							echo '<i class="fa ' . $brew_options['b2-c1-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';

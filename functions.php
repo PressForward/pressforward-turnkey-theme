@@ -199,7 +199,6 @@ function add_opengraph_markup() {
       $image = $thumbnail_object->guid;
     } else {
       // set default image
-      $image =  $brew_options['logo_uploader']['url'];
     }
     //$description = get_bloginfo('description');
     $description = substr(strip_tags($post->post_content),0,200) . '...';

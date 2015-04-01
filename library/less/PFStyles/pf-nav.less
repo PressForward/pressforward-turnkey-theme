@@ -8,7 +8,18 @@ These are the styles for the navigation bar. Documentation on each section can b
 http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 
 ******************************************************************/
-
+.logo {
+	width: auto;
+	height: 35px;
+	@media (max-width: 1182px) {
+		width: 375px;
+		height: auto;
+	}
+}
+.navbar-brand {
+	margin-top: 25px;
+	
+}
 .search-container {
 	ul {
 		margin-left: 15px;
@@ -16,10 +27,16 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 }
 
 .nav {
-	a {
+	li > a {
 		text-transform: uppercase;
 		font-size: @font-size-small;
 		letter-spacing: .5px;
+		margin-top: 15px;
+		padding: 15px 5px 15px 5px !important;
+	}
+	a:hover {
+		border-top: solid 3px @dhnow-blue;
+		background-color: @dhnow-darkblue !important;
 	}
 	
 }
@@ -49,7 +66,9 @@ nav.navbar.shrink {
   min-height: 55px;
   @media (max-width: 768px){
   	height: auto;
-
+  }
+  a {
+  	margin-top: 0px;
   }
 }
 .nav {
@@ -89,8 +108,8 @@ nav.shrink {
 	.navbar-brand {
 		padding: 5px !important;
 			img {
-				height: 50px;
-				width: auto;
+				height: auto;
+				width: 500px;
 				padding-bottom: 10px;
 			}
 		}
@@ -98,6 +117,10 @@ nav.shrink {
   		padding-top: 10px !important;
   		padding-bottom: 10px !important;
   		font-size: @font-size-small;
+	}
+	a:hover {
+		border-top: solid 3px @dhnow-blue;
+		background-color: @dhnow-darkblue !important;
 	}
 	.navbar-toggle {
   		padding: 4px 5px;

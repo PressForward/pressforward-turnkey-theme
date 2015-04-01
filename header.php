@@ -52,7 +52,8 @@
              
 				<div class="logo-nav">
 							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-							<img  src="<?php echo $brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
+							<img  class="logo" src="<?php echo 
+							$brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
 						</div>
               <!-- <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php // bloginfo( 'name' ) ?>" rel="homepage"><?php //bloginfo('name'); ?></a> -->
             
@@ -84,7 +85,7 @@
 				<div class="col-md-12 topbar">
 						<div class="logo">
 							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-							<img  src="<?php echo $brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
+							<img  class="logo" src="<?php echo $brew_options['opt-media']['url']; ?> "  alt ="logo" /></a>
 						</div>
 					<div class="menu-container">
 						<div class="nav-container">

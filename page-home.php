@@ -105,20 +105,40 @@ Template Name: Home Page Template
           
         <!--Section 2-->
           <div class="col-sm-4 about content2">
-             <div class="homeinnerwrapper">
+                <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c2-icon'] ?> fa-3x"></i>
-                <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content2') ) : ?>
-                <?php endif; ?>
+                <div class="homeinnercontent">
+                <h1><?php echo $brew_options['b3-c2-title'] ?></h1>
+                <ul>
+                <?php $b3c2cat = 'cat=' . $brew_options['b3-c2-category'] . '&posts_per_page=3' ?>
+                <?php query_posts($b3c2cat); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
+                <?php endwhile; endif; ?>
+                <?php wp_reset_query(); ?>
+                </ul>
+                </div>
+                
               </div>
           </div>
     
         <!--Section 3-->
           <div class="col-sm-4 about content3">
-            <div class="homeinnerwrapper">
-              <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
-              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content3') ) : ?>
-              <?php endif; ?>
-            </div>
+             <div class="homeinnerwrapper">
+                <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
+                <div class="homeinnercontent">
+                <h1><?php echo $brew_options['b3-c3-title'] ?></h1>
+                <ul>
+                <?php $b3c3cat = 'cat=' . $brew_options['b3-c3-category'] . '&posts_per_page=3' ?>
+                <?php query_posts($b3c3cat); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
+                <?php endwhile; endif; ?>
+                <?php wp_reset_query(); ?>
+                </ul>
+                </div>
+                
+              </div>
           </div>
           
       </div> <!--end row-->
@@ -127,30 +147,59 @@ Template Name: Home Page Template
         <!--Section 1-->
           <div class="col-sm-4 about content4">
               <div class="homeinnerwrapper">
-              <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
-              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content4') ) : ?>
-              <?php endif; ?>
+                <i class="fa <?php echo $brew_options['b3-c4-icon'] ?> fa-3x"></i>
+                <div class="homeinnercontent">
+                <h1><?php echo $brew_options['b3-c4-title'] ?></h1>
+                <ul>
+                <?php $b3c4cat = 'cat=' . $brew_options['b3-c4-category'] . '&posts_per_page=3' ?>
+                <?php query_posts($b3c4cat); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
+                <?php endwhile; endif; ?>
+                <?php wp_reset_query(); ?>
+                </ul>
+                </div>
+                
               </div>
           </div>
     
         <!--Section 2-->
           <div class="col-sm-4 about content5">
-          <div class="homeinnerwrapper">
-              <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
-              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content5') ) : ?>
-              <?php endif; ?>
+             <div class="homeinnerwrapper">
+                <i class="fa <?php echo $brew_options['b3-c5-icon'] ?> fa-3x"></i>
+                <div class="homeinnercontent">
+                <h1><?php echo $brew_options['b3-c5-title'] ?></h1>
+                <ul>
+                <?php $b3c5cat = 'cat=' . $brew_options['b3-c5-category'] . '&posts_per_page=3' ?>
+                <?php query_posts($b3c5cat); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
+                <?php endwhile; endif; ?>
+                <?php wp_reset_query(); ?>
+                </ul>
+                </div>
+                
               </div>
           </div>
     
         <!--Section 3-->
           <div class="col-sm-4 about content6">
-          <div class="homeinnerwrapper">
-              <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
-              <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('content6') ) : ?>
-              <?php endif; ?>
+             <div class="homeinnerwrapper">
+                <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
+                <div class="homeinnercontent">
+                <h1><?php echo $brew_options['b3-c6-title'] ?></h1>
+                <ul>
+                <?php $b3c6cat = 'cat=' . $brew_options['b3-c6-category'] . '&posts_per_page=3' ?>
+                <?php query_posts($b3c6cat); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
+                <?php endwhile; endif; ?>
+                <?php wp_reset_query(); ?>
+                </ul>
+                </div>
+                
               </div>
           </div>
-    
       </div> <!--end row-->
     </div>
   </div>

@@ -10,7 +10,18 @@ Here's where the magic happens. First we are calling the bootstrap
 LESS files.  Then we'll load Font Awesome.  Any customizations 
 should be placed in either custom-variables.less, a new less file,
 or the proper file inside less/brew
+******************************************************************/
+/******************************************************************
+Site Name: PressForward Turnkey
+Author: Amanda Regan
 
+Stylesheet: General Styles
+
+These are the general styles for the theme. Documentation on each section can be found below. For further information see the github repository for this theme. 
+http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
+
+
+------------ MAP ------------
 ******************************************************************/
 /*******************************
 01. ARCHIVE
@@ -8155,6 +8166,12 @@ cite {
 }
 .gallery dl img {
   border: 2px solid #cfcfcf;
+}
+/* end .gallery */
+.gallery-caption {
+  background: #eee;
+  font-size: 0.85em;
+  text-align: center;
 }
 /******************************************************************
 Site Name: BREW

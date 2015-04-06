@@ -351,9 +351,6 @@ The icons for each category will appear once content is placed in the widget fro
   background-color: #142736;
   padding: 50px 0 50px 0;
 }
-.about i {
-  color: #142736 !important;
-}
 .about ul {
   text-align: left;
   line-height: 1.5;
@@ -371,6 +368,9 @@ The icons for each category will appear once content is placed in the widget fro
     height: 395px;
   }
 }
+.about .homeinnerwrapper i {
+  color: #142736;
+}
 .about .homeinnercontent {
   background-color: #f8f8f8;
   padding: 0px 20px 15px 10px;
@@ -387,9 +387,8 @@ li {
     height: 415px;
   }
 }
-.about:hover i {
-  color: #1b3449 !important;
-  transition: all 0.35s ease;
+.participatehome i {
+  color: #142736;
 }
 /*******************************
 03. PARTICIPATE 
@@ -398,19 +397,12 @@ The participate section is the second block on the home page. This block, much l
 .participatehome {
   padding: 25px 0 25px 0;
 }
-.participatehome i {
-  color: #142736 !important;
-}
 .participatehome p {
   text-align: center;
   font-size: 18px;
 }
 .participatehome h1 {
   font-size: 24px;
-}
-.participatehome:hover i {
-  color: #1b3449 !important;
-  transition: all 0.35s ease;
 }
 /*******************************
 05. BLOG

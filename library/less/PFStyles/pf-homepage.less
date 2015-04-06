@@ -147,9 +147,7 @@ The icons for each category will appear once content is placed in the widget fro
 	padding: 50px 0 50px 0;
 }
 .about {
- 	i {
-	    color: @dhnow-darkblue !important;
-	 }
+ 	
   	ul {
 		text-align: left;
 		line-height: 1.5;
@@ -164,7 +162,11 @@ The icons for each category will appear once content is placed in the widget fro
 		@media (min-width: @screen-md) {
 			height: 395px; 
 		}
+		i {
+			color: @dhnow-darkblue;
+		}
 	}
+
 	.homeinnercontent {
 		background-color: @dhnow-gray;
 		padding: 0px 20px 15px 10px;
@@ -187,9 +189,10 @@ The icons for each category will appear once content is placed in the widget fro
 	}
 	
 
-.about:hover i {
-  color: @dhnow-darkblue-lighter !important;
-  transition: all 0.35s ease;
+.participatehome {
+	i {
+		color: @dhnow-darkblue;
+	}
 }
 
 /*******************************
@@ -198,9 +201,6 @@ The participate section is the second block on the home page. This block, much l
 ********************************/
 .participatehome {
 
-	i {
-	    color: @dhnow-darkblue !important;
-	}
 	p {
 		text-align: center;
 		font-size: @font-size-large;
@@ -209,11 +209,6 @@ The participate section is the second block on the home page. This block, much l
 		font-size: @font-size-h3;
 	}
 	padding: 25px 0 25px 0;
-}
-
-.participatehome:hover i {
-  color: @dhnow-darkblue-lighter !important;
-  transition: all 0.35s ease;
 }
 
 /*******************************

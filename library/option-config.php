@@ -328,9 +328,22 @@ $this->sections[] = array (
 			),
 		),
 	);
-
+$this->sections[] = array(
+    'title' => __('Slider', 'brew-framework'),
+    'heading'	=> 'Slider (or Block 1) Settings',
+    'subsection' => true,
+    'fields' => array (
+    	$fields = array(
+			    'id'       => 'slider-categories',
+			    'type'     => 'select',
+			    'multi'    => true,
+			    'title'    => __('Slider Categories', 'brew-framework'), 
+			    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+			    'data' => 'categories'
+			),
+    	),
+	);
 $this->sections[] = array (
-	'icon' => 'fa fa-home',
 	'title' => __('Block 2', 'brew-framework'),
 	'subsection' => true,
 	'heading' => 'Block 2 Settings',
@@ -559,28 +572,27 @@ $this->sections[] = array (
 
 
 $this->sections[] = array(
-	'icon' => 'fa fa-home',
-    'title' => __('Slider', 'brew-framework'),
-    'heading'	=> 'Slider (or Block 1) Settings',
-    'subsection' => true,
-    'fields' => array (
-    	$fields = array(
-			    'id'       => 'slider-categories',
-			    'type'     => 'select',
-			    'multi'    => true,
-			    'title'    => __('Slider Categories', 'brew-framework'), 
-			    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
-			    'data' => 'categories'
-			),
-    	),
-	);
-
-$this->sections[] = array(
     'title' => __('Block 3', 'brew-framework'),
     'heading'	=> 'Block 3 Settings',
     'subsection' => true,
     'desc' => 'Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
         'fields' => array (
+        	array (
+		    'id'       => 'icon-color',
+		    'type'     => 'color',
+		    'title'    => __('Icon Color', 'brew-framework'), 
+		    'subtitle' => __('Pick a color for the icons in this section (Default is #626c72)', 'brew-framework'),
+		    'output'	=> array ( '' ),
+		    'validate' => 'color',
+			),
+			array (
+		    'id'       => 'icon-color-hover',
+		    'type'     => 'color',
+		    'title'    => __('Icon Color', 'brew-framework'), 
+		    'subtitle' => __('Pick a color for the icons in this section (Default is #626c72)', 'brew-framework'),
+		    'output'	=> array ( '' ),
+		    'validate' => 'color',
+			),
         	array (
 			'id' => 'block3-c1-start',
 			'type' => 'section',

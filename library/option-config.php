@@ -242,7 +242,11 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 			}
 
 
-
+			/**
+			 	GENERAL SETTINGS TAB
+			 		1. Tracking Code for Google Analytics 
+			 		2. Logo Uploader (uploads a logo to the header)
+			 **/
 
 			// ACTUAL DECLARATION OF SECTIONS
 
@@ -309,6 +313,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					),
 				),
 			);
+
 $homepage_info = "The theme homepage is composed of several 'blocks' of content. Each block can be configured here. For more information see our github page.";
 $this->sections[] = array (
 	'icon' => 'fa fa-home',
@@ -323,6 +328,7 @@ $this->sections[] = array (
 			),
 		),
 	);
+
 $this->sections[] = array (
 	'icon' => 'fa fa-home',
 	'title' => __('Block 2', 'brew-framework'),
@@ -551,6 +557,7 @@ $this->sections[] = array (
 				),
 				);
 
+
 $this->sections[] = array(
 	'icon' => 'fa fa-home',
     'title' => __('Slider', 'brew-framework'),
@@ -567,71 +574,225 @@ $this->sections[] = array(
 			),
     	),
 	);
-$this->sections[] = array(
-        'title' => __('Block 3', 'brew-framework'),
-        'heading'	=> 'Block 3 Settings',
-        'subsection' => true,
-        'desc' => 'Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
-        'fields' => array (
-            array (
-            'id'       => 'b3-c1-icon',
-            'type'     => 'text',
-            'title'    => __('Content Area 1 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Content Area 1', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-             array (
-            'id'       => 'b3-c1-title',
-            'type'     => 'text',
-            'title'    => __('Content Area 1 Title', 'brew-framework'),
-            'subtitle' => __('Title for Content Area 1', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-            array (
-            	'id'       => 'b3-c1-category',
-			    'type'     => 'select',
-			    'title'    => __('Slider Categories', 'brew-framework'), 
-			    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
-			    'data' => 'categories'
-            	),
-            array (
-            'id'       => 'b3-c2-icon',
-            'type'     => 'text',
-            'title'    => __('Content Area 2 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Content Area 2', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-            array (
-            'id'       => 'b3-c3-icon',
-            'type'     => 'text',
-            'title'    => __('Content Area 3 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Content Area 3', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-             array (
-            'id'       => 'b3-c4-icon',
-            'type'     => 'text',
-            'title'    => __('Content Area 4 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Content Area 4', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-              array (
-            'id'       => 'b3-c5-icon',
-            'type'     => 'text',
-            'title'    => __('Content Area 5 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Content Area 5', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-               array (
-            'id'       => 'b3-c6-icon',
-            'type'     => 'text',
-            'title'    => __('Content Area 6 Icon', 'brew-framework'),
-            'subtitle' => __('Icon for Content Area 6', 'brew-framework'),
-            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-            ),
-        ),
 
-				);
+$this->sections[] = array(
+    'title' => __('Block 3', 'brew-framework'),
+    'heading'	=> 'Block 3 Settings',
+    'subsection' => true,
+    'desc' => 'Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
+        'fields' => array (
+        	array (
+			'id' => 'block3-c1-start',
+			'type' => 'section',
+			'title' => __('Block 3 Column 1 Options', 'brew-framework'),
+			'indent' => true
+			), //START BLOCK 3 SECTION 1 OPTIONS
+		            array (
+		            'id'       => 'b3-c1-icon',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 1 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Content Area 1', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		             array (
+		            'id'       => 'b3-c1-title',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 1 Title', 'brew-framework'),
+		            'subtitle' => __('Title for Content Area 1', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+		            	'id'       => 'b3-c1-category',
+					    'type'     => 'select',
+					    'title'    => __('Slider Categories', 'brew-framework'), 
+					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+					    'data' => 'categories',
+					    'default' => '1'
+		            	),
+            array (
+			'id' => 'block3-c1-end',
+			'type' => 'section',
+			'indent' => false,
+			), //END BLOCK3 C1 OPTIONS
+            
+            array (
+			'id' => 'block3-c2-start',
+			'type' => 'section',
+			'title' => __('Block 3 Column 2 Options', 'brew-framework'),
+			'indent' => true
+			), //START BLOCK 3 SECTION 1 OPTIONS
+		            array (
+		            'id'       => 'b3-c2-icon',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 2 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Content Area 2', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+		            'id'       => 'b3-c2-title',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 2 Title', 'brew-framework'),
+		            'subtitle' => __('Title for Content Area 2', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+	            	'id'       => 'b3-c2-category',
+				    'type'     => 'select',
+				    'title'    => __('Slider Categories', 'brew-framework'), 
+				    'subtitle' => __('The categories that the second column should pull from.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+            array (
+			'id' => 'block3-c2-end',
+			'type' => 'section',
+			'indent' => false,
+			), //END BLOCK3 C2 OPTIONS
+
+    		array (
+			'id' => 'block3-c3-start',
+			'type' => 'section',
+			'title' => __('Block 3 Column 3 Options', 'brew-framework'),
+			'indent' => true
+			), //START BLOCK 3 SECTION 3 OPTIONS
+			        array (
+			        'id'       => 'b3-c3-icon',
+			        'type'     => 'text',
+			        'title'    => __('Content Area 3 Icon', 'brew-framework'),
+			        'subtitle' => __('Icon for Content Area 3', 'brew-framework'),
+			        'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+			        ),
+			        array (
+		            'id'       => 'b3-c3-title',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 3 Title', 'brew-framework'),
+		            'subtitle' => __('Title for Content Area 3', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+		            	'id'       => 'b3-c3-category',
+					    'type'     => 'select',
+					    'title'    => __('Slider Categories', 'brew-framework'), 
+					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+					    'data' => 'categories',
+		            	'default' => '1'
+		            	),
+            array (
+			'id' => 'block3-c3-end',
+			'type' => 'section',
+			'indent' => false,
+			), //END BLOCK3 C3 OPTIONS
+
+
+
+        	array (
+			'id' => 'block3-c4-start',
+			'type' => 'section',
+			'title' => __('Block 3 Column 4 Options', 'brew-framework'),
+			'indent' => true
+			), //START BLOCK 3 SECTION 1 OPTIONS
+		             array (
+		            'id'       => 'b3-c4-icon',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 4 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Content Area 4', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		             array (
+		            'id'       => 'b3-c4-title',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 4 Title', 'brew-framework'),
+		            'subtitle' => __('Title for Content Area 4', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+	            	'id'       => 'b3-c4-category',
+				    'type'     => 'select',
+				    'title'    => __('Slider Categories', 'brew-framework'), 
+				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+
+            array (
+			'id' => 'block3-c4-end',
+			'type' => 'section',
+			'indent' => false,
+			), //END BLOCK3 C4 OPTIONS
+
+
+     		array (
+			'id' => 'block3-c5-start',
+			'type' => 'section',
+			'title' => __('Block 3 Column 5 Options', 'brew-framework'),
+			'indent' => true
+			), //START BLOCK 3 SECTION 1 OPTIONS
+
+		            array (
+		            'id'       => 'b3-c5-icon',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 5 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Content Area 5', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+		            'id'       => 'b3-c5-title',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 5 Title', 'brew-framework'),
+		            'subtitle' => __('Title for Content Area 1', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+	            	'id'       => 'b3-c5-category',
+				    'type'     => 'select',
+				    'title'    => __('Slider Categories', 'brew-framework'), 
+				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+
+              array (
+			'id' => 'block3-c5-end',
+			'type' => 'section',
+			'indent' => false,
+			), //END BLOCK3 C5 OPTIONS
+
+
+            array (
+			'id' => 'block3-c6-start',
+			'type' => 'section',
+			'title' => __('Block 3 Column 6 Options', 'brew-framework'),
+			'indent' => true
+			), //START BLOCK 3 SECTION 6 OPTIONS
+		            array (
+		            'id'       => 'b3-c6-icon',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 6 Icon', 'brew-framework'),
+		            'subtitle' => __('Icon for Content Area 6', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+		            'id'       => 'b3-c6-title',
+		            'type'     => 'text',
+		            'title'    => __('Content Area 6 Title', 'brew-framework'),
+		            'subtitle' => __('Title for Content Area 6', 'brew-framework'),
+		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            ),
+		            array (
+		            	'id'       => 'b3-c6-category',
+					    'type'     => 'select',
+					    'title'    => __('Slider Categories', 'brew-framework'), 
+					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+					    'data' => 'categories',
+					    'default' => '1'
+		            	),
+           	array (
+			'id' => 'block3-c6-end',
+			'type' => 'section',
+			'indent' => false,
+			) //END BLOCK3 C6 OPTIONS
+        ),
+	);
 			
 					
 					

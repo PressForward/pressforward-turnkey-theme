@@ -24,40 +24,39 @@ Features on this page:
 						<!-- 01. CATEGORY FEATURED IMAGES -->
 						<!-- This if statement determines the icon (or featured image) that displays on the individual post page.  -->
 							<?php global $brew_options ?>
-							<?php if ( in_category($brew_options['b3-c1-category'][1])) {
+							<?php $b3c1cat = $brew_options['b3-c1-category'] ?>
+							<?php $b3c2cat = $brew_options['b3-c2-category'] ?>
+							<?php $b3c3cat = $brew_options['b3-c3-category'] ?>
+							<?php $b3c4cat = $brew_options['b3-c4-category'] ?>
+							<?php $b3c5cat = $brew_options['b3-c5-category'] ?>
+							<?php $b3c6cat = $brew_options['b3-c6-category'] ?>  
+
+							<?php if ( in_category($b3c1cat)) {
 							//JOBS--BRIEFCASE ICON
 							echo '<div class="col-md-2 featimg text-center">';
-							echo '<i class="fa ' . $brew_options['b2-c1-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
-							} else if (in_category('74')) {
+							echo '<i class="fa ' . $brew_options['b3-c1-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+							} else if (in_category($b3c2cat)) {
 							//CFPS--LAPTOP ICON	
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-info fa-5x"></i>
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c2-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div 
 								  </div> <!--close col-md-2 featimg-->
 								  <div class="col-md-10" id="postcontent">';
-								 } else if (in_category('81')) {
+								 } else if (in_category($b3c3cat)) {
 								//ANNOUNCEMENTS--BULLHORN ICON
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-bullhorn fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
-								} else if (in_category('75')) {
+								echo '<div class="col-md-2 featimg text-center">';
+								  echo '<i class="fa ' . $brew_options['b3-c3-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+								} else if (in_category($b3c4cat)) {
 								//RESOURCES--INFO ICON
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-info fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
-								} else if (in_category('79')) {
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c4-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+								} else if (in_category($b3c5cat)) {
 								//FUNDING & OPPS--MONEY ICON
-									echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-money fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
-								} else if (in_category('78')) {
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c5-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+								} else if (in_category($b3c6cat)) {
 								//REPORTS--FLAG ICON
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-flag fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c6-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
 								} else if (in_category('87')) {
 								//BLOG--PENCIL ICON
 								echo '<div class="col-md-2 featimg text-center">

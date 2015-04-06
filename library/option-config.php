@@ -266,6 +266,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					    'title'    => __('Media w/ URL', 'brew-framework'),
 					    'desc'     => __('Basic media uploader with disabled URL input field.', 'brew-framework'),
 					    'subtitle' => __('Upload any media using the WordPress native uploader', 'brew-framework'),
+					    'width' => 550,
 					    'default'  => array(
 					        'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
 					    )

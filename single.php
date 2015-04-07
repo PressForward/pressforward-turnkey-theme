@@ -74,18 +74,15 @@ Features on this page:
 							<header class="article-header">
 								<div class="titlewrap clearfix">
 									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									
-									<p class="byline vcard">
-										<!-- 02. AUTHOR DISPLAY CONDITIONAL BY CATEGORY 
-
-										UNCOMMENT THIS SECTION AND COMMENT OUT LINES 73-77 TO RESTORE AUTHOR FUNCTIONALITY TO ALL PAGES --> 
-										by <span class="author"><em><?php echo bones_get_the_author_posts_link()?> </em></span> 
-										<!--CONTROLS AND LIMITS THE DISPLAY OF THE AUTHOR TO ONLY TWO CATEGORIES (Editor's Choice & the DHNow Blog-->
-										<?php //if (in_category(array(66, 87))) {
-										//echo// 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
-										//} else {
-										//echo 'by <span class="author"><em>the Editors</em></span> -'; 
-										//} ?>
+									<?php $excludedcategories = $brew_options['author-display-excluded-categories']; ?>
+									<p class="byline vcard">										
+										<?php if ( $brew_options['author'] == 1) { ?>
+											by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
+										<?php } elseif ($brew_options['author'] != 1 && in_category($excludedcategories)) { ?>
+											by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
+										<?php } else { ?>
+											by <span class="author"><em></em><?php echo $brew_options['author-display-alttext']; ?> - </em></span>
+										<?php } ?>
 										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo  get_the_time(get_option('date_format')) ?></time>
 										<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 									</p>

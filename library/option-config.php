@@ -298,6 +298,29 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 						'desc' => 'Display an author profile after a post',
 						'default' => 1,
 					),
+					array (						
+						'id' => 'author',
+						'type' => 'switch',
+						'title' => __('Display Author Name and Link', 'brew-framework'),
+						'desc' => 'Display the name of the author.',
+						'default' => '1',
+					),
+					array (
+					    'id'       => 'author-display-excluded-categories',
+					    'type'     => 'select',
+					    'multi'    => true,
+					    'title'    => __('Multi Select Option', 'brew-framework'), 
+					    'subtitle' => __('No validation can be done on this field type', 'brew-framework'),
+					    'desc'     => __('This is the description field, again good for additional info.', 'brew-framework'),
+					    'data'	   => 'categories'
+						),
+					array (
+					'id'       => 'author-display-alttext',
+	            	'type'     => 'text',
+		            'title'    => __('Text to display rather than author', 'brew-framework'),
+		            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
+		            'desc'     => __('Text to display in place of the author when the Author Name and Link option is turned off.', 'brew-framework')
+					),
 					array (
 						'id'=>'featured',
 						'type' => 'select',

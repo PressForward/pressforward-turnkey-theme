@@ -8,6 +8,9 @@ These are the styles for the navigation bar. Documentation on each section can b
 http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 
 ******************************************************************/
+body {
+	padding-top: 0px !important;
+}
 .logo {
 	width: auto;
 	height: 35px;
@@ -16,6 +19,7 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 		height: auto;
 	}
 }
+
 .navbar-brand {
 	margin-top: 25px;
 	
@@ -38,9 +42,14 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 		border-top: solid 3px @dhnow-blue;
 		background-color: @dhnow-darkblue !important;
 	}
-	
+}
+nav {
+	margin-bottom: 0px !important;
 }
 .navbar{
+	background-color: @dhnow-darkblue;
+	border-radius: 0px;
+	margin-bottom: 0px;
 	.navbar-brand {
 	padding: 0 0 0 15px !important;
 	}
@@ -76,32 +85,13 @@ nav.navbar.shrink {
 		display: none;
 	}
 }
-#simple-menu, #sidr {
-	@media(min-width: 768px){
-		display: none;
-	}
+#bs-example-navbar-collapse-1 {
+	float: right;
 }
 
-#sidr {
-	a{
-		padding-top: 10px !important;
-		padding-bottom: 10px !important;
-		color: @dhnow-blue;
-	}
-	li.active, li.hover {
-		a {
-			background-color: #f8f8f8;
-		}
-	}
-	.dropdown-toggle {
-		span{
-			display: none;
-		}
-	}
-	.nav > li {
-		position: inherit;
-	}
-}
+
+
+
 
 
 nav.shrink { 
@@ -148,15 +138,7 @@ nav.shrink {
 	float: left;
 }
 
-.menu-container{
-	float: right;
-	.nav-container {
-		float: left;
-	}
-	.search-container {
-		float: right;
-	}
-}
+
 
 
 

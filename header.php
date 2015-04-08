@@ -42,60 +42,30 @@
 	<body <?php body_class(); ?>
 
     <header class="header">
+    <!-- <div class="container"> -->
+    <nav class="navbar">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <?php global $brew_options ?>
+      	<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
+		<img  class="logo" src="<?php echo $brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
+    </div>
 
-      <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
-       <?php global $brew_options ?>
-        
-          <div class="container">
-            <!-- .navbar-toggle is used as the toggle for collapsed navbar content -->
-            <div class="navbar-header">
-             
-				<div class="logo-nav">
-							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-							<img  class="logo" src="<?php echo 
-							$brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
-						</div>
-              <!-- <a class="navbar-brand" href="<?php bloginfo( 'url' ) ?>/" title="<?php // bloginfo( 'name' ) ?>" rel="homepage"><?php //bloginfo('name'); ?></a> -->
-            
-
-			<a id="simple-menu" href="#sidr">Toggle menu</a>
- 
-						<div id="sidr">
-						  <!-- Your content -->
-						  <?php bones_main_nav(); ?>
-							<div id="search">
-		                	
-		                	<form action="<?php echo home_url( '/' ); ?>" method="get" class="form-inline">
-		    					<fieldset>
-		    						<div class="input-group">
-		      							<input type="text" name="s" id="search" placeholder="Search for ..." value="<?php the_search_query(); ?>" class="form-control" />
-		      							<span class="input-group-btn">
-		        							<button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-		      							</span>
-		    						</div> <!--close input group-->
-		    					</fieldset>
-							</form><!--close nav form-->
-			             </div>
-			             <li><a href="https://pressforward.org"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="20" width="20"/></li></a>    
-						</div>
-
-            </div> <!--close navbar-header -->
-		<div class="navbar-collapse collapse navbar-responsive-collapse">
-			<div class="row">
-				<div class="col-md-12 topbar">
-						<div class="logo">
-							<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-							<img  class="logo" src="<?php echo $brew_options['opt-media']['url']; ?> "  alt ="logo" /></a>
-						</div>
-					<div class="menu-container">
-						<div class="nav-container">
-	              			<?php bones_main_nav(); ?>
-							
-	              		</div><!--close nav container-->
-	              		
-		              	<div class="search-container">
-		              			<ul class="nav navbar-nav navbar-right">
-						        <li class="dropdown" id="menu1">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!-- <ul class="nav navbar-nav"> -->
+         <?php bones_main_nav(); ?>
+      <!-- </ul> -->
+      <ul class="nav navbar-nav">
+         <li><a href="https://pressforward.org"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="20" width="20"/></li></a> 
+         <li class="dropdown" id="menu1">
 							             <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
 							               <i class="fa fa-search"></i>
 							                <b class="caret"></b>
@@ -115,13 +85,9 @@
 								             </div>    
 							             </div> <!--close .dropdown-menu-->
 	           					</li><!-- close .drowpdown-->
-	           					<li><a href="https://pressforward.org"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="20" width="20"/></li></a>
-	           					</ul>
-			            </div> <!--close search-container--> 			
-              		</div><!--menu container-->
-             	</div><!--close topbar-->
-            </div> <!--CLOSE ROW-->
-		</div>
-    </div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
 </nav>
-		</header> <?php // end header ?>
+      <!-- </div> -->
+	</header> <?php // end header ?>

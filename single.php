@@ -23,42 +23,40 @@ Features on this page:
 
 						<!-- 01. CATEGORY FEATURED IMAGES -->
 						<!-- This if statement determines the icon (or featured image) that displays on the individual post page.  -->
-							<?php if ( in_category('77')) {
+							<?php global $brew_options ?>
+							<?php $b3c1cat = $brew_options['b3-c1-category'] ?>
+							<?php $b3c2cat = $brew_options['b3-c2-category'] ?>
+							<?php $b3c3cat = $brew_options['b3-c3-category'] ?>
+							<?php $b3c4cat = $brew_options['b3-c4-category'] ?>
+							<?php $b3c5cat = $brew_options['b3-c5-category'] ?>
+							<?php $b3c6cat = $brew_options['b3-c6-category'] ?>  
+
+							<?php if ( in_category($b3c1cat)) {
 							//JOBS--BRIEFCASE ICON
-							echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-briefcase fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
-							} else if (in_category('74')) {
+							echo '<div class="col-md-2 featimg text-center">';
+							echo '<i class="fa ' . $brew_options['b3-c1-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+							} else if (in_category($b3c2cat)) {
 							//CFPS--LAPTOP ICON	
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-info fa-5x"></i>
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c2-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div 
 								  </div> <!--close col-md-2 featimg-->
 								  <div class="col-md-10" id="postcontent">';
-								 } else if (in_category('81')) {
+								 } else if (in_category($b3c3cat)) {
 								//ANNOUNCEMENTS--BULLHORN ICON
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-bullhorn fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
-								} else if (in_category('75')) {
+								echo '<div class="col-md-2 featimg text-center">';
+								  echo '<i class="fa ' . $brew_options['b3-c3-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+								} else if (in_category($b3c4cat)) {
 								//RESOURCES--INFO ICON
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-info fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
-								} else if (in_category('79')) {
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c4-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+								} else if (in_category($b3c5cat)) {
 								//FUNDING & OPPS--MONEY ICON
-									echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-money fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
-								} else if (in_category('78')) {
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c5-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
+								} else if (in_category($b3c6cat)) {
 								//REPORTS--FLAG ICON
-								echo '<div class="col-md-2 featimg text-center">
-								  <i class="fa fa-flag fa-5x"></i>
-								  </div> <!--close col-md-2 featimg-->
-								  <div class="col-md-10" id="postcontent">';
+								echo '<div class="col-md-2 featimg text-center">';
+								echo '<i class="fa ' . $brew_options['b3-c6-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
 								} else if (in_category('87')) {
 								//BLOG--PENCIL ICON
 								echo '<div class="col-md-2 featimg text-center">
@@ -76,19 +74,16 @@ Features on this page:
 							<header class="article-header">
 								<div class="titlewrap clearfix">
 									<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-									
-									<p class="byline vcard">
-										<!-- 02. AUTHOR DISPLAY CONDITIONAL BY CATEGORY 
-
-										UNCOMMENT THIS SECTION AND COMMENT OUT LINES 73-77 TO RESTORE AUTHOR FUNCTIONALITY TO ALL PAGES --> 
-										by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?></em></span> -  -->
-										<!--CONTROLS AND LIMITS THE DISPLAY OF THE AUTHOR TO ONLY TWO CATEGORIES (Editor's Choice & the DHNow Blog-->
-										<?php if (in_category(array(66, 87))) {
-										echo 'by <span class="author"><em>' . get_the_author() . '</em></span> -'; 
-										} else {
-										echo 'by <span class="author"><em>the Editors</em></span> -'; 
-										} ?>
-										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo get_the_time(get_option('date_format')) ?></time>
+									<?php $excludedcategories = $brew_options['author-display-excluded-categories']; ?>
+									<p class="byline vcard">										
+										<?php if ( $brew_options['author'] == 1) { ?>
+											by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
+										<?php } elseif ($brew_options['author'] != 1 && in_category($excludedcategories)) { ?>
+											by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
+										<?php } else { ?>
+											by <span class="author"><em></em><?php echo $brew_options['author-display-alttext']; ?> - </em></span>
+										<?php } ?>
+										<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo  get_the_time(get_option('date_format')) ?></time>
 										<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 									</p>
 								</div>
@@ -128,9 +123,9 @@ Features on this page:
 								} ?>
 								
 								<!-- </div> -->
-              					<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span> -->
+              					<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span> 
               				
-								<!-- </div>	 -->
+								</div>	 -->
             				</footer> <?php // end article footer ?>
 						</article> <?php // end article ?>
 
@@ -157,10 +152,10 @@ Features on this page:
 					      <?php } // end if ?>
 
 					    </ul>
-					  </div><!-- /#single-post-nav -->
+					  </div><!-- #single-post-nav -->
 					<?php } ?>
 		<!-- 04. COMMENT TEMPLATE -->
-         <!--  <?php comments_template(); ?> -->
+         <?php // comments_template(); ?>
 
 					<?php endwhile; ?>
 
@@ -182,7 +177,7 @@ Features on this page:
 
 				</div> <?php // end #main ?>
 				<!-- 05. SIDEBAR -->
-				<!-- <?php get_sidebar(); ?> -->
+				 <?php //get_sidebar(); ?> 
 
 			</div> <?php // end #content ?>
 

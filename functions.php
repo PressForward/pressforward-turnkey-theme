@@ -1,15 +1,7 @@
 <?php
-
-add_action( 'wp_print_styles', 'my_deregister_styles', 100 );
-
-function my_deregister_styles() {
- 	wp_deregister_style( 'bones-stylesheet' );
-  }
 function ls_scripts() {
 		wp_enqueue_style('brew-child-css', get_stylesheet_directory_uri() . '/library/css/style.css');
 		wp_enqueue_style('ls-css', get_stylesheet_directory_uri() . '/library/css/liquid-slider.css');
-    wp_enqueue_style('sidr-css', get_stylesheet_directory_uri() . '/library/js/sidr/jquery.sidr.light.css');
-    wp_enqueue_script( 'sidr', get_stylesheet_directory_uri() . '/library/js/sidr/jquery.sidr.js');
 		wp_enqueue_script( 'jquery-easing', get_stylesheet_directory_uri() . 
 			'/library/js/jquery.easing.1.3.js', array('jquery'));
 		wp_enqueue_script( 'jquery-touchSwipe', get_stylesheet_directory_uri() . '/library/js/jquery.touchSwipe.min.js', array('jquery-easing'));

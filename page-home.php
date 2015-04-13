@@ -43,6 +43,8 @@ Template Name: Home Page Template
 <main class="participatehome" role="main">
     <div class="container" id="participate">
         <div class="row text-center">
+            <h1>Get Tem Dir: <?php echo get_template_directory_uri(); ?></h1>
+            <h1>Get stylesheet uri: <?php echo get_stylesheet_directory_uri(); ?></h1>
             <div class="col-md-3">
                 <i class="fa <?php echo $brew_options['b2-c1-icon'] ?> fa-3x"></i>
               <h1 class="widgettitle"><a href="<?php echo get_page_link($brew_options['b2-c1-pagelink']); ?>"><?php echo $brew_options['b2-c1-heading'] ?></a></h1>
@@ -235,6 +237,5 @@ Template Name: Home Page Template
   </div>
 </main>
 
-</div>
-</div>
+
 <?php get_footer(); ?>

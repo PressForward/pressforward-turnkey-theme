@@ -47,65 +47,6 @@ add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 
 add_image_size( 'brew-child-thumbnail', 200, 200, true );  
 
-  register_sidebar(array(
-    'id' => 'content1',
-    'name' => __( 'Content Widget 1', 'bonestheme' ),
-    'description' => __( 'The first content area widget.', 'bonestheme' ),
-        'before_widget' => '<div class="homeinnercontent">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ));
-
-   register_sidebar(array(
-    'id' => 'content2',
-    'name' => __( 'Content Widget 2', 'bonestheme' ),
-    'description' => __( 'The second content area widget.', 'bonestheme' ),
-        'before_widget' => '<div class="homeinnercontent">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ));
-
-   register_sidebar(array(
-    'id' => 'content3',
-    'name' => __( 'Content Widget 3', 'bonestheme' ),
-    'description' => __( 'The third content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ));
-
-    register_sidebar(array(
-    'id' => 'content4',
-    'name' => __( 'Content Widget 4', 'bonestheme' ),
-    'description' => __( 'The fourth content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent">',
-    'after_widget' => '</div>',
-     'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ));
-
-     register_sidebar(array(
-    'id' => 'content5',
-    'name' => __( 'Content Widget 5', 'bonestheme' ),
-    'description' => __( 'The fifth content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ));
-
-      register_sidebar(array(
-    'id' => 'content6',
-    'name' => __( 'Content Widget 6', 'bonestheme' ),
-    'description' => __( 'The sixth content area widget.', 'bonestheme' ),
-    'before_widget' => '<div class="homeinnercontent">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1>',
-    'after_title' => '</h1>',
-  ));
 
        register_sidebar(array(
     'id' => 'homepageabout',

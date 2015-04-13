@@ -45,10 +45,15 @@ body {
 }
 nav {
 	margin-bottom: 0px !important;
+
 }
+
 .navbar{
 	background-color: @dhnow-darkblue;
-	border-radius: 0px;
+	border-radius: 0px !important;
+	@media (min-width: 768px) {
+		border-radius: 0px;
+	}
 	margin-bottom: 0px;
 	.navbar-brand {
 	padding: 0 0 0 15px !important;
@@ -58,6 +63,7 @@ nav {
 			.logo-nav {
 				display: none;
 			}
+
 		}
 	}
 	.logo {

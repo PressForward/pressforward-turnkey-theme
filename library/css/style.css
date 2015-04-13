@@ -109,8 +109,13 @@ nav {
 }
 .navbar {
   background-color: #142736;
-  border-radius: 0px;
+  border-radius: 0px !important;
   margin-bottom: 0px;
+}
+@media (min-width: 768px) {
+  .navbar {
+    border-radius: 0px;
+  }
 }
 .navbar .navbar-brand {
   padding: 0 0 0 15px !important;

@@ -264,10 +264,19 @@ These styles will apply to all sliders.
 }
 @media (max-width: 768px) {
   .slider img {
-    width: 400px;
-    margin-top: 25px;
+    display: none;
+  }
+}
+@media (max-width: 1000px) {
+  .slider img {
+    width: 250px;
     height: auto;
-    float: left;
+  }
+}
+@media (min-width: 1001px) {
+  .slider img {
+    width: 350px;
+    height: auto;
   }
 }
 @media (min-width: 992px) {
@@ -339,7 +348,6 @@ The icons for each category will appear once content is placed in the widget fro
 }
 .about .homeinnercontent {
   background-color: #f8f8f8;
-  padding: 0px 20px 15px 10px;
   font-size: large;
 }
 .about h1 {

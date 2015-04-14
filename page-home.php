@@ -85,7 +85,7 @@ Template Name: Home Page Template
     <div class="row text-center">
       <div class="row homecategories">
         <!--Section 1-->
-          <div class="col-sm-4 about" id="content1">
+          <div class="col-md-4 about" id="content1">
               <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c1-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
@@ -104,7 +104,7 @@ Template Name: Home Page Template
           </div>
           
         <!--Section 2-->
-          <div class="col-sm-4 about content2">
+          <div class="col-md-4 about content2">
                 <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c2-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
@@ -123,7 +123,7 @@ Template Name: Home Page Template
           </div>
     
         <!--Section 3-->
-          <div class="col-sm-4 about content3">
+          <div class="col-md-4 about content3">
              <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
@@ -145,7 +145,7 @@ Template Name: Home Page Template
 
       <div class="row homecategories">
         <!--Section 1-->
-          <div class="col-sm-4 about content4">
+          <div class="col-md-4 about content4">
               <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c4-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
@@ -164,7 +164,7 @@ Template Name: Home Page Template
           </div>
     
         <!--Section 2-->
-          <div class="col-sm-4 about content5">
+          <div class="col-md-4 about content5">
              <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c5-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
@@ -183,7 +183,7 @@ Template Name: Home Page Template
           </div>
     
         <!--Section 3-->
-          <div class="col-sm-4 about content6">
+          <div class="col-md-4 about content6">
              <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">

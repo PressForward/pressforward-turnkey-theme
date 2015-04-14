@@ -86,11 +86,17 @@ These styles will apply to all sliders.
 	width: 400px;
 	padding: 40px 24px 0 0;
 
-		@media (max-width: @screen-sm) {
-			width: 400px;
-			margin-top: 25px;
-			height: auto;
-			float: left;	
+		@media (max-width: @screen-sm){
+			display:none;
+		
+		 }
+		 @media (max-width: 1000px){
+		 	width: 250px;
+		 	height: auto;
+		 }
+		 @media (min-width: 1001px) {
+		 	width: 350px;
+		 	height: auto;
 		 }
 	}
 	#slider-content {

@@ -14,6 +14,13 @@ body {
 .logo {
 	width: auto;
 	height: 35px;
+	@media (max-width: 1050px) {
+		height: 25px;
+	}
+	@media (max-width: 500px) {
+		height: 15px;
+		margin-top: 10px;
+	}
 	// @media (max-width: 1182px) {
 	// 	width: 375px;
 	// 	height: auto;
@@ -93,12 +100,23 @@ nav.navbar.shrink {
 }
 #bs-example-navbar-collapse-1 {
 	float: right;
+	@media (max-width: 767px) {
+		float: left;
+		margin-left: 10px;
+	}
 }
 
 
 
 
-
+.navbar-toggle {
+  		padding: 4px 5px;
+  		margin: 8px 15px 8px 0;
+		border: solid 1px white !important;
+		.icon-bar {
+			background-color: white !important;
+		}
+	}
 
 nav.shrink { 
 	.navbar-brand {
@@ -118,10 +136,8 @@ nav.shrink {
 		border-top: solid 3px @dhnow-blue;
 		background-color: @dhnow-darkblue !important;
 	}
-	.navbar-toggle {
-  		padding: 4px 5px;
-  		margin: 8px 15px 8px 0;
-	}
+
+
 }
 
 #search {

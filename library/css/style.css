@@ -81,6 +81,17 @@ body {
   width: auto;
   height: 35px;
 }
+@media (max-width: 1050px) {
+  .logo {
+    height: 25px;
+  }
+}
+@media (max-width: 500px) {
+  .logo {
+    height: 15px;
+    margin-top: 10px;
+  }
+}
 #menu-main {
   margin-right: 15px;
 }
@@ -131,6 +142,20 @@ nav.navbar.shrink a {
 #bs-example-navbar-collapse-1 {
   float: right;
 }
+@media (max-width: 767px) {
+  #bs-example-navbar-collapse-1 {
+    float: left;
+    margin-left: 10px;
+  }
+}
+.navbar-toggle {
+  padding: 4px 5px;
+  margin: 8px 15px 8px 0;
+  border: solid 1px white !important;
+}
+.navbar-toggle .icon-bar {
+  background-color: white !important;
+}
 nav.shrink .navbar-brand {
   padding: 5px !important;
 }
@@ -147,10 +172,6 @@ nav.shrink a {
 nav.shrink a:hover {
   border-top: solid 3px #3887be;
   background-color: #142736 !important;
-}
-nav.shrink .navbar-toggle {
-  padding: 4px 5px;
-  margin: 8px 15px 8px 0;
 }
 #search form .input-group {
   width: 225px;

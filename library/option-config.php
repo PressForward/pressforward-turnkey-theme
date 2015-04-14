@@ -251,7 +251,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 			// ACTUAL DECLARATION OF SECTIONS
 
 			$this->sections[] = array(
-				'icon' => 'fa fa-beer',
+				'icon' => 'fa fa-cog',
 				'title' => __('General Settings', 'brew-framework'),
 				'fields' => array (
 					array (
@@ -354,6 +354,7 @@ $this->sections[] = array (
 $this->sections[] = array(
     'title' => __('Slider', 'brew-framework'),
     'heading'	=> 'Slider (or Block 1) Settings',
+    'icon' => 'fa fa-th',
     'subsection' => true,
     'fields' => array (
     	$fields = array(
@@ -369,6 +370,7 @@ $this->sections[] = array(
 $this->sections[] = array (
 	'title' => __('Block 2', 'brew-framework'),
 	'subsection' => true,
+	'icon' => 'fa fa-th',
 	'heading' => 'Block 2 Settings',
 	'desc' => __('This panel provides options for setting up the second block on the homepage. Each section below represents one column within the second block.'),
 	'fields' => array (
@@ -376,29 +378,28 @@ $this->sections[] = array (
 				array (
 					'id' => 'block2-start',
 					'type' => 'section',
-					'title' => __('Block 2 Column 1 Options', 'brew-framework'),
+					'title' => __('Column 1', 'brew-framework'),
 					'indent' => true
 					),
 				array (
 					'id'       => 'b2-c1-icon',
 	            	'type'     => 'text',
-		            'title'    => __('Block 2 Column 1 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Block 2 Content Area 1', 'brew-framework'),
-		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle' => __('First column icon.', 'brew-framework'),
+		            'desc'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 					),
 				array (
 					'id'       => 'b2-c1-heading',
 		            'type'     => 'text',
-		            'title'    => __('Block 2 Column 1 Heading', 'brew-framework'),
-		            'subtitle' => __('Heading for Block 2 Content Area 1', 'brew-framework'),
-		            'desc'     => __('Add a heading here.', 'brew-framework'),
+		            'title'    => __('Heading', 'brew-framework'),
+		            'subtitle' => __('First column heading.', 'brew-framework'),
 					),
 				array (
 					'id'       => 'b2-c1-pagelink',
 		            'type'     => 'select',
 		            'multi' 	=> false,
-		            'title'    => __('Select Option', 'brew-framework'), 
-		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
+		            'title'    => __('Heading Link', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to from the heading.', 'brew-framework'),
 		            'desc'     => __('Select a page to link to.', 'brew-framework'),
 		            // Must provide key => value pairs for select options
 		            'data' => _('page'),
@@ -407,10 +408,9 @@ $this->sections[] = array (
 				    'id'=>'b2-c1-text',
 				    'type' => 'textarea',
 				    'title' => __('Add text', 'brew-framework'), 
-				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
-				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'subtitle' => __('Text to appear under the icon and heading in the first column. (HTML allowed)', 'brew-framework'),
 				    'validate' => 'html_custom',
-				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'default' => '<p>This is the <strong>first column.</strong></p>',
 				    'allowed_html' => array(
 				        'a' => array(
 				            'href' => array(),
@@ -430,41 +430,37 @@ $this->sections[] = array (
 				array (
 					'id' => 'block2-c2-start',
 					'type' => 'section',
-					'title' => __('Block 3 Column 2 Options', 'brew-framework'),
+					'title' => __('Column 2', 'brew-framework'),
 					'indent' => true
 					),
 				array (
 					'id'       => 'b2-c2-icon',
 	            	'type'     => 'text',
-		            'title'    => __('Block 2 Column 2 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
-		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle' => __('Second column icon', 'brew-framework'),
+		            'desc'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 					),
 				array (
 					'id'       => 'b2-c2-heading',
 		            'type'     => 'text',
-		            'title'    => __('Block 2 Column 2 Heading', 'brew-framework'),
-		            'subtitle' => __('Heading for Block 2 Content Area 2', 'brew-framework'),
-		            'desc'     => __('Add a heading here.', 'brew-framework'),
-					),
+		            'title'    => __('Heading', 'brew-framework'),
+		            'subtitle' => __('Second column heading', 'brew-framework'),
+		  			),
 				array (
 					'id'       => 'b2-c2-pagelink',
 		            'type'     => 'select',
 		            'multi' 	=> false,
-		            'title'    => __('Select Option', 'brew-framework'), 
-		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
-		            'desc'     => __('Select a page to link to.', 'brew-framework'),
-		            // Must provide key => value pairs for select options
+		            'title'    => __('Heading Link', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to from the heading.', 'brew-framework'),
 		            'data' => _('page'),
 					),
 				array (
 				    'id'=>'b2-c2-text',
 				    'type' => 'textarea',
 				    'title' => __('Add text', 'brew-framework'), 
-				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
-				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'subtitle' => __('Text for the second column. (HTML allowed)', 'brew-framework'),
 				    'validate' => 'html_custom',
-				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'default' => '<p>This is the <strong>first column.</strong></p>',
 				    'allowed_html' => array(
 				        'a' => array(
 				            'href' => array(),
@@ -485,41 +481,37 @@ $this->sections[] = array (
 				array (
 					'id' => 'block2-c3-start',
 					'type' => 'section',
-					'title' => __('Block 3 Column 3 Options', 'brew-framework'),
+					'title' => __('Column 3', 'brew-framework'),
 					'indent' => true
 					),
 				array (
 					'id'       => 'b2-c3-icon',
 	            	'type'     => 'text',
-		            'title'    => __('Block 2 Column 3 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Block 2 Content Area 3', 'brew-framework'),
-		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle' => __('Third column icon.', 'brew-framework'),
+		            'desc'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 					),
 				array (
 					'id'       => 'b2-c3-heading',
 		            'type'     => 'text',
-		            'title'    => __('Block 2 Column 3 Heading', 'brew-framework'),
-		            'subtitle' => __('Heading for Block 2 Content Area 3', 'brew-framework'),
-		            'desc'     => __('Add a heading here.', 'brew-framework'),
-					),
+		            'title'    => __('Heading', 'brew-framework'),
+		            'subtitle' => __('Third column heading.', 'brew-framework'),
+		            ),
 				array (
 					'id'       => 'b2-c3-pagelink',
 		            'type'     => 'select',
 		            'multi' 	=> false,
-		            'title'    => __('Select Option', 'brew-framework'), 
-		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
-		            'desc'     => __('Select a page to link to.', 'brew-framework'),
-		            // Must provide key => value pairs for select options
+		            'title'    => __('Heading Link', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to from the heading.', 'brew-framework'),
 		            'data' => _('page'),
 					),
 				array (
 				    'id'=>'b2-c3-text',
 				    'type' => 'textarea',
 				    'title' => __('Add text', 'brew-framework'), 
-				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
-				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'subtitle' => __('Text for the third column. (HTML allowed)', 'brew-framework'),
 				    'validate' => 'html_custom',
-				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'default' => '<p>This is the <strong>first column.</strong></p>',
 				    'allowed_html' => array(
 				        'a' => array(
 				            'href' => array(),
@@ -539,41 +531,37 @@ $this->sections[] = array (
 				array (
 					'id' => 'block2-c4-start',
 					'type' => 'section',
-					'title' => __('Block 3 Column 4 Options', 'brew-framework'),
+					'title' => __('Column 4', 'brew-framework'),
 					'indent' => true
 					),
 				array (
 					'id'       => 'b2-c4-icon',
 	            	'type'     => 'text',
-		            'title'    => __('Block 2 Column 4 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Block 2 Content Area 4', 'brew-framework'),
-		            'desc'     => __('The css style for the FontAwesome icon that should appear above the first column in block 2.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle' => __('Fourth column icon', 'brew-framework'),
+		            'desc'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 					),
 				array (
 					'id'       => 'b2-c4-heading',
 		            'type'     => 'text',
-		            'title'    => __('Block 2 Column 4 Heading', 'brew-framework'),
-		            'subtitle' => __('Heading for Block 2 Content Area 4', 'brew-framework'),
-		            'desc'     => __('Add a heading here.', 'brew-framework'),
+		            'title'    => __('Heading', 'brew-framework'),
+		            'subtitle' => __('Fourth column heading.', 'brew-framework'),
 					),
 				array (
 					'id'       => 'b2-c4-pagelink',
 		            'type'     => 'select',
 		            'multi' 	=> false,
-		            'title'    => __('Select Option', 'brew-framework'), 
-		            'subtitle' => __('Select a page to link to.', 'brew-framework'),
-		            'desc'     => __('Select a page to link to.', 'brew-framework'),
-		            // Must provide key => value pairs for select options
+		            'title'    => __('Heading Link', 'brew-framework'), 
+		            'subtitle' => __('Select a page to link to from the heading.', 'brew-framework'),
 		            'data' => _('page'),
 					),
 				array (
 				    'id'=>'b2-c4-text',
 				    'type' => 'textarea',
 				    'title' => __('Add text', 'brew-framework'), 
-				    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'brew-framework'),
-				    'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+				    'subtitle' => __('Text for the fourth column. (HTML allowed)', 'brew-framework'),
 				    'validate' => 'html_custom',
-				    'default' => '<br />Some HTML is allowed in here.<br />',
+				    'default' => '<p>This is the <strong>fourth column.</strong></p>',
 				    'allowed_html' => array(
 				        'a' => array(
 				            'href' => array(),
@@ -596,50 +584,32 @@ $this->sections[] = array (
 
 $this->sections[] = array(
     'title' => __('Block 3', 'brew-framework'),
-    'heading'	=> 'Block 3 Settings',
+    'icon' => 'fa fa-th',
+    'heading'	=> 'Block 3',
     'subsection' => true,
     'desc' => 'Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
         'fields' => array (
         	array (
-		    'id'       => 'icon-color',
-		    'type'     => 'color',
-		    'title'    => __('Icon Color', 'brew-framework'), 
-		    'subtitle' => __('Pick a color for the icons in this section (Default is #626c72)', 'brew-framework'),
-		    'output'	=> array ( '' ),
-		    'validate' => 'color',
-			),
-			array (
-		    'id'       => 'icon-color-hover',
-		    'type'     => 'color',
-		    'title'    => __('Icon Color', 'brew-framework'), 
-		    'subtitle' => __('Pick a color for the icons in this section (Default is #626c72)', 'brew-framework'),
-		    'output'	=> array ( '' ),
-		    'validate' => 'color',
-			),
-        	array (
 			'id' => 'block3-c1-start',
 			'type' => 'section',
-			'title' => __('Block 3 Column 1 Options', 'brew-framework'),
+			'title' => __('Row 1 Column 1', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		            array (
 		            'id'       => 'b3-c1-icon',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 1 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Content Area 1', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
-		            ),
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
+					),
 		             array (
 		            'id'       => 'b3-c1-title',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 1 Title', 'brew-framework'),
-		            'subtitle' => __('Title for Content Area 1', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Title', 'brew-framework'),
 		            ),
 		            array (
 		            	'id'       => 'b3-c1-category',
 					    'type'     => 'select',
-					    'title'    => __('Slider Categories', 'brew-framework'), 
+					    'title'    => __('Category to Display', 'brew-framework'), 
 					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
 					    'data' => 'categories',
 					    'default' => '1'
@@ -653,27 +623,24 @@ $this->sections[] = array(
             array (
 			'id' => 'block3-c2-start',
 			'type' => 'section',
-			'title' => __('Block 3 Column 2 Options', 'brew-framework'),
+			'title' => __('Row 1 Column 2', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		            array (
 		            'id'       => 'b3-c2-icon',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 2 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Content Area 2', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 		            ),
 		            array (
 		            'id'       => 'b3-c2-title',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 2 Title', 'brew-framework'),
-		            'subtitle' => __('Title for Content Area 2', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Title', 'brew-framework'),
 		            ),
 		            array (
 	            	'id'       => 'b3-c2-category',
 				    'type'     => 'select',
-				    'title'    => __('Slider Categories', 'brew-framework'), 
+				    'title'    => __('Category to Display', 'brew-framework'), 
 				    'subtitle' => __('The categories that the second column should pull from.', 'brew-framework'),
 				    'data' => 'categories',
 				    'default' => '1'
@@ -687,27 +654,24 @@ $this->sections[] = array(
     		array (
 			'id' => 'block3-c3-start',
 			'type' => 'section',
-			'title' => __('Block 3 Column 3 Options', 'brew-framework'),
+			'title' => __('Row 1 Column 3', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 3 OPTIONS
 			        array (
 			        'id'       => 'b3-c3-icon',
 			        'type'     => 'text',
-			        'title'    => __('Content Area 3 Icon', 'brew-framework'),
-			        'subtitle' => __('Icon for Content Area 3', 'brew-framework'),
-			        'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+			        'title'    => __('Icon', 'brew-framework'),
+			        'subtitle'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 			        ),
 			        array (
 		            'id'       => 'b3-c3-title',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 3 Title', 'brew-framework'),
-		            'subtitle' => __('Title for Content Area 3', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Title', 'brew-framework'),
 		            ),
 		            array (
 		            	'id'       => 'b3-c3-category',
 					    'type'     => 'select',
-					    'title'    => __('Slider Categories', 'brew-framework'), 
+					    'title'    => __('Category to Display', 'brew-framework'), 
 					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
 					    'data' => 'categories',
 		            	'default' => '1'
@@ -723,27 +687,24 @@ $this->sections[] = array(
         	array (
 			'id' => 'block3-c4-start',
 			'type' => 'section',
-			'title' => __('Block 3 Column 4 Options', 'brew-framework'),
+			'title' => __('Row 2 Column 1', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		             array (
 		            'id'       => 'b3-c4-icon',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 4 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Content Area 4', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 		            ),
 		             array (
 		            'id'       => 'b3-c4-title',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 4 Title', 'brew-framework'),
-		            'subtitle' => __('Title for Content Area 4', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Title', 'brew-framework'),
 		            ),
 		            array (
 	            	'id'       => 'b3-c4-category',
 				    'type'     => 'select',
-				    'title'    => __('Slider Categories', 'brew-framework'), 
+				    'title'    => __('Category to Display', 'brew-framework'), 
 				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
 				    'data' => 'categories',
 				    'default' => '1'
@@ -759,28 +720,25 @@ $this->sections[] = array(
      		array (
 			'id' => 'block3-c5-start',
 			'type' => 'section',
-			'title' => __('Block 3 Column 5 Options', 'brew-framework'),
+			'title' => __('Row 2 Column 2', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 
 		            array (
 		            'id'       => 'b3-c5-icon',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 5 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Content Area 5', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 		            ),
 		            array (
 		            'id'       => 'b3-c5-title',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 5 Title', 'brew-framework'),
-		            'subtitle' => __('Title for Content Area 1', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Title', 'brew-framework'),
 		            ),
 		            array (
 	            	'id'       => 'b3-c5-category',
 				    'type'     => 'select',
-				    'title'    => __('Slider Categories', 'brew-framework'), 
+				    'title'    => __('Category to Display', 'brew-framework'), 
 				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
 				    'data' => 'categories',
 				    'default' => '1'
@@ -796,27 +754,26 @@ $this->sections[] = array(
             array (
 			'id' => 'block3-c6-start',
 			'type' => 'section',
-			'title' => __('Block 3 Column 6 Options', 'brew-framework'),
+			'title' => __('Row 2 Column 3', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 6 OPTIONS
 		            array (
 		            'id'       => 'b3-c6-icon',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 6 Icon', 'brew-framework'),
-		            'subtitle' => __('Icon for Content Area 6', 'brew-framework'),
-		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
+		            'title'    => __('Icon', 'brew-framework'),
+		            'subtitle'     => __('The css sytle for the <a href="http://www.fontawesome.io" target="__blank">FontAwesome</a> icon. (i.e. fa-cab)')
 		            ),
 		            array (
 		            'id'       => 'b3-c6-title',
 		            'type'     => 'text',
-		            'title'    => __('Content Area 6 Title', 'brew-framework'),
+		            'title'    => __('Title', 'brew-framework'),
 		            'subtitle' => __('Title for Content Area 6', 'brew-framework'),
 		            'desc'     => __('This is the description field, again good for additional info.', 'brew-framework')
 		            ),
 		            array (
 		            	'id'       => 'b3-c6-category',
 					    'type'     => 'select',
-					    'title'    => __('Slider Categories', 'brew-framework'), 
+					    'title'    => __('Category to Display', 'brew-framework'), 
 					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
 					    'data' => 'categories',
 					    'default' => '1'

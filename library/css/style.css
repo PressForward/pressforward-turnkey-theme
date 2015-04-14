@@ -77,6 +77,9 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 body {
   padding-top: 0px !important;
 }
+.header {
+  background-color: #142736;
+}
 .logo {
   width: auto;
   height: 35px;
@@ -106,11 +109,13 @@ body {
   font-size: 12px;
   letter-spacing: .5px;
   margin-top: 15px;
-  padding: 15px 5px 15px 5px !important;
+  padding: 15px 7px 15px 7px !important;
 }
-.nav a:hover {
+.nav #main-menu a:hover {
   border-top: solid 3px #3887be;
-  background-color: #142736 !important;
+}
+.nav .dropdown-menu a:hover {
+  border-top: none;
 }
 nav {
   margin-bottom: 0px !important;
@@ -127,6 +132,15 @@ nav {
 }
 .navbar .navbar-brand {
   padding: 0 0 0 15px !important;
+}
+.navbar-inverse {
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+}
+.navbar-collapse li > a:hover {
+  border-top: 3px solid;
+  border-top-color: #3887be;
 }
 nav.navbar.shrink {
   min-height: 55px;
@@ -155,23 +169,6 @@ nav.navbar.shrink a {
 }
 .navbar-toggle .icon-bar {
   background-color: white !important;
-}
-nav.shrink .navbar-brand {
-  padding: 5px !important;
-}
-nav.shrink .navbar-brand img {
-  height: auto;
-  width: 500px;
-  padding-bottom: 10px;
-}
-nav.shrink a {
-  padding-top: 10px !important;
-  padding-bottom: 10px !important;
-  font-size: 12px;
-}
-nav.shrink a:hover {
-  border-top: solid 3px #3887be;
-  background-color: #142736 !important;
 }
 #search form .input-group {
   width: 225px;

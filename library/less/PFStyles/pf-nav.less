@@ -11,6 +11,9 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 body {
 	padding-top: 0px !important;
 }
+.header {
+	background-color: @dhnow-darkblue;
+}
 .logo {
 	width: auto;
 	height: 35px;
@@ -26,6 +29,7 @@ body {
 	// 	height: auto;
 	// }
 }
+
 #menu-main {
 	margin-right: 15px;
 }
@@ -46,11 +50,19 @@ body {
 		font-size: @font-size-small;
 		letter-spacing: .5px;
 		margin-top: 15px;
-		padding: 15px 5px 15px 5px !important;
+		padding: 15px 7px 15px 7px !important;
 	}
+	#main-menu {
 	a:hover {
 		border-top: solid 3px @dhnow-blue;
-		background-color: @dhnow-darkblue !important;
+		// background-color: @dhnow-darkblue !important;
+		}
+	}
+	.dropdown-menu {
+		a:hover {
+			border-top: none;
+			// background-color: yellow !important;
+		}
 	}
 }
 nav {
@@ -68,21 +80,18 @@ nav {
 	.navbar-brand {
 	padding: 0 0 0 15px !important;
 	}
-	.navbar-header {
-		
+}
 
-		
+.navbar-inverse {
+	border-top: none !important;
+	border-left: none !important;
+	border-right: none !important;
+}
+.navbar-collapse {
+	li > a:hover {
+		border-top: 3px solid;
+		border-top-color: @navbar-link-border-top-color;
 	}
-	// .logo {
-	// 	@media (max-width: 768px){
-	// 		display: none;
-	// 	}
-	// }
-	// .menu-container {
-	// 	@media (max-width: 768px){
-	// 		float: none;
-	// 	}
-	// }
 }
 nav.navbar.shrink {
   min-height: 55px;
@@ -118,27 +127,7 @@ nav.navbar.shrink {
 		}
 	}
 
-nav.shrink { 
-	.navbar-brand {
-		padding: 5px !important;
-			img {
-				height: auto;
-				width: 500px;
-				padding-bottom: 10px;
-			}
-		}
-	a {
-  		padding-top: 10px !important;
-  		padding-bottom: 10px !important;
-  		font-size: @font-size-small;
-	}
-	a:hover {
-		border-top: solid 3px @dhnow-blue;
-		background-color: @dhnow-darkblue !important;
-	}
 
-
-}
 
 #search {
 	form {

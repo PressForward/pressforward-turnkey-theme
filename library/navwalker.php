@@ -1,4 +1,4 @@
- <?php
+<?php
 
 /**
  * Class Name: wp_bootstrap_navwalker

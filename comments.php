@@ -4,16 +4,16 @@ The comments page for Bones
 */
 
 // Do not delete these lines
-	if ( ! empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) )
-		die ('Please do not load this page directly. Thanks!');
+  if ( ! empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) )
+    die ('Please do not load this page directly. Thanks!');
 
-	if ( post_password_required() ) { ?>
-		<div class="alert alert-help">
-			<p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'bonestheme' ); ?></p>
-		</div>
-	<?php
-		return;
-	}
+  if ( post_password_required() ) { ?>
+    <div class="alert alert-help">
+      <p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'bonestheme' ); ?></p>
+    </div>
+  <?php
+    return;
+  }
 ?>
 
 <?php // You can start editing here. ?>
@@ -22,22 +22,22 @@ The comments page for Bones
 
   <div id="comments" class="havecomments">
 
-	<h3><?php comments_number( __( '<span>No</span> Responses', 'bonestheme' ), __( '<span>One</span> Response', 'bonestheme' ), _n( '<span>%</span> Response', '<span>%</span> Responses', get_comments_number(), 'bonestheme' ) );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+  <h3><?php comments_number( __( '<span>No</span> Responses', 'bonestheme' ), __( '<span>One</span> Response', 'bonestheme' ), _n( '<span>%</span> Response', '<span>%</span> Responses', get_comments_number(), 'bonestheme' ) );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 
-	<ol class="commentlist">
-		<?php wp_list_comments( 'type=comment&callback=bones_comments' ); ?>
-	</ol>
+  <ol class="commentlist">
+    <?php wp_list_comments( 'type=comment&callback=bones_comments' ); ?>
+  </ol>
 
-	<?php else : // this is displayed if there are no comments so far ?>
+  <?php else : // this is displayed if there are no comments so far ?>
 
-	<?php if ( comments_open() ) : ?>
-	<?php // If comments are open, but there are no comments. ?>
+  <?php if ( comments_open() ) : ?>
+  <?php // If comments are open, but there are no comments. ?>
   <div id="comments" class="nocomments">
     <h3>No Comments</h3>
     <p>Be the first to start a conversation</p>
-	<?php else : // comments are closed ?>
-	<?php // If comments are closed. ?>
-	<?php endif; ?>
+  <?php else : // comments are closed ?>
+  <?php // If comments are closed. ?>
+  <?php endif; ?>
 
 <?php endif; ?>
 
@@ -133,7 +133,7 @@ The comments page for Bones
 
 <?php endif; // if you delete this the sky will fall on your head ?>
 
-<?php $comments_by_type = &separate_comments($comments); ?>
+<?php $comments_by_type = separate_comments($comments); ?>
   <?php if ( ! empty( $comments_by_type['pings'] ) ) { ?>
   <div id="pings">
     <h3>
@@ -144,5 +144,3 @@ The comments page for Bones
     </ol>
   </div><!-- /#pings -->
   <?php } // end if ?>
-
-

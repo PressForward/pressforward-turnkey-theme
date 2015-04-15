@@ -241,6 +241,23 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				$sampleHTML = $wp_filesystem->get_contents(dirname(__FILE__).'/info-html.html');
 			}
 
+			/**
+			 	ABOUT THIS THEME TAB
+			 		
+			 **/		
+			$this->sections[] = array(
+				'icon' => 'fa fa-info-circle',
+				'title' => __('Getting Started', 'brew-framework'),
+				'desc' => __('<h4>About this theme</h4><p>This theme was designed to compliment and extend the functionality of the PressForward plugin.  While the plugin is not required to use this theme, the functionality, options, and design of this theme were created with the plugin in mind. For more information on PressFoward visit <a href="http://www.pressforward.org" target="__blank">www.pressforward.org</a>.</p>
+					'),
+				'fields' => array(
+					array(
+						'id'=>'raw_new_info',
+						'type' => 'raw',
+						'content' => $item_info,
+						)
+					), 
+				);
 
 			/**
 			 	GENERAL SETTINGS TAB
@@ -251,7 +268,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 			// ACTUAL DECLARATION OF SECTIONS
 
 			$this->sections[] = array(
-				'icon' => 'fa fa-cog',
+				'icon' => 'fa fa-wrench',
 				'title' => __('General Settings', 'brew-framework'),
 				'fields' => array (
 					array (
@@ -279,63 +296,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 				),
 			);
 
-			$this->sections[] = array(
-				'icon' => 'fa fa-folder',
-				'title' => __('Content Settings', 'brew-framework'),
-				'desc' => __('Choose how certain content is displayed'),
-				'fields' => array (
-					array (
-						'id' => 'breadcrumb',
-						'type' => 'switch',
-						'title' => __('Breadcrumbs', 'brew-framework'),
-						'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
-						'default' => 1,
-					),
-					array (						
-						'id' => 'author_profile',
-						'type' => 'switch',
-						'title' => __('Author Profiles', 'brew-framework'),
-						'desc' => 'Display an author profile after a post',
-						'default' => 1,
-					),
-					array (						
-						'id' => 'author',
-						'type' => 'switch',
-						'title' => __('Display Author Name and Link', 'brew-framework'),
-						'desc' => 'Display the name of the author.',
-						'default' => '1',
-					),
-					array (
-					    'id'       => 'author-display-excluded-categories',
-					    'type'     => 'select',
-					    'multi'    => true,
-					    'title'    => __('Multi Select Option', 'brew-framework'), 
-					    'subtitle' => __('No validation can be done on this field type', 'brew-framework'),
-					    'desc'     => __('This is the description field, again good for additional info.', 'brew-framework'),
-					    'data'	   => 'categories'
-						),
-					array (
-					'id'       => 'author-display-alttext',
-	            	'type'     => 'text',
-		            'title'    => __('Text to display rather than author', 'brew-framework'),
-		            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
-		            'desc'     => __('Text to display in place of the author when the Author Name and Link option is turned off.', 'brew-framework')
-					),
-					array (
-						'id'=>'featured',
-						'type' => 'select',
-						'title' => __('Display Featured Images', 'brew-framework'), 
-						'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
-						'options' => array(
-							'1' => 'Never',
-							'2' => 'Always',
-							'3' => 'Index only',
-							'4' => 'Single post only',
-							),
-						'default' => '1'
-					),
-				),
-			);
+
 
 $homepage_info = "The theme homepage is composed of several 'blocks' of content. Each block can be configured here. For more information see our github page.";
 $this->sections[] = array (
@@ -785,7 +746,63 @@ $this->sections[] = array(
 			) //END BLOCK3 C6 OPTIONS
         ),
 	);
-			
+			$this->sections[] = array(
+				'icon' => 'fa fa-folder',
+				'title' => __('Content Settings', 'brew-framework'),
+				'desc' => __('Choose how certain content is displayed'),
+				'fields' => array (
+					array (
+						'id' => 'breadcrumb',
+						'type' => 'switch',
+						'title' => __('Breadcrumbs', 'brew-framework'),
+						'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
+						'default' => 1,
+					),
+					array (						
+						'id' => 'author_profile',
+						'type' => 'switch',
+						'title' => __('Author Profiles', 'brew-framework'),
+						'desc' => 'Display an author profile after a post',
+						'default' => 1,
+					),
+					array (						
+						'id' => 'author',
+						'type' => 'switch',
+						'title' => __('Display Author Name and Link', 'brew-framework'),
+						'desc' => 'Display the name of the author.',
+						'default' => '1',
+					),
+					array (
+					    'id'       => 'author-display-excluded-categories',
+					    'type'     => 'select',
+					    'multi'    => true,
+					    'title'    => __('Multi Select Option', 'brew-framework'), 
+					    'subtitle' => __('No validation can be done on this field type', 'brew-framework'),
+					    'desc'     => __('This is the description field, again good for additional info.', 'brew-framework'),
+					    'data'	   => 'categories'
+						),
+					array (
+					'id'       => 'author-display-alttext',
+	            	'type'     => 'text',
+		            'title'    => __('Text to display rather than author', 'brew-framework'),
+		            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
+		            'desc'     => __('Text to display in place of the author when the Author Name and Link option is turned off.', 'brew-framework')
+					),
+					array (
+						'id'=>'featured',
+						'type' => 'select',
+						'title' => __('Display Featured Images', 'brew-framework'), 
+						'desc' => __('This is the description field, again good for additional info.', 'brew-framework'),
+						'options' => array(
+							'1' => 'Never',
+							'2' => 'Always',
+							'3' => 'Index only',
+							'4' => 'Single post only',
+							),
+						'default' => '1'
+					),
+				),
+			);		
 					
 					
 
@@ -816,30 +833,6 @@ $this->sections[] = array(
 			}//if
 
 
-
-			$this->sections[] = array(
-				'icon' => 'fa fa-info',
-				'title' => __('Getting Started', 'brew-framework'),
-				'desc' => __('<p>This theme was designed to compliment and extend the functionality of the PressForward plugin.  While the plugin is not required to use this theme, some of the functionality, options, and design of this theme was created with the plugin in mind. For more information on PressFoward visit www.pressforward.org</p>
-					<h1>Theme Setup</h1>
-					<p> Please see our GitHub wiki for a full tutorial on setting up this theme.</p>
-					')
-				);
-
-
-
-			$this->sections[] = array(
-				'icon' => 'fa fa-info-circle',
-				'title' => __('Theme Information', 'brew-framework'),
-				'desc' => __('<p class="description">This is the Description. Again HTML is allowed</p>', 'brew-framework'),
-				'fields' => array(
-					array(
-						'id'=>'raw_new_info',
-						'type' => 'raw',
-						'content' => $item_info,
-						)
-					),   
-				);
 
 
 			if(file_exists(trailingslashit(dirname(__FILE__)) . 'README.html')) {

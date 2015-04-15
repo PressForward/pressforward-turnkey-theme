@@ -63,7 +63,7 @@
               						<span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a></span>
             					</footer> <?php // end article footer ?>
 
-								<?php // comments_template(); // uncomment if you want to use them ?>
+								<?php comments_template(); // uncomment if you want to use them ?>
 
 							</article> <?php // end article ?>
 

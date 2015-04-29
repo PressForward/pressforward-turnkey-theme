@@ -110,6 +110,7 @@ Features on this page:
 						<!-- </div> -->
 		              	<span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a>
 						</span> 
+						<?php the_author_posts_link(); ?>
 		              				
 						<!-- </div>	???? --> 
 		            </footer> <?php // end article footer ?>
@@ -139,7 +140,17 @@ Features on this page:
 				<?php } ?>
 		
 		<!-- 04. COMMENT TEMPLATE -->
-        <?php comments_template(); ?>
+          <?php global $brew_options;
+       		 if ( $brew_options['comments-setup-buttons'] == 1) {
+       		 	comments_template();
+       		 } elseif ( $brew_options['comments-setup-buttons'] == 2) {
+       		 	echo '<p></p>';
+       		 } elseif ($brew_options['comments-setup-buttons'] == 3) {
+       		 	if (in_category($brew_options['comments-on-cat'])) {
+       		 		comments_template();
+       		 	} 	
+       		}	
+       	?>
 			<?php endwhile; ?>
 			<?php else : ?>
 				<article id="post-not-found" class="hentry clearfix">

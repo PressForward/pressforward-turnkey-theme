@@ -292,6 +292,27 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					        'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
 					    )
 					),
+					array(
+    					'id'       => 'comments-setup-buttons',
+					    'type'     => 'button_set',
+					    'title'    => __('Display Comments', 'brew-framework'),
+					    //Must provide key => value pairs for options
+					    'options' => array(
+					        '1' => 'Turn all comments ON', 
+					        '2' => 'Turn all comments OFF', 
+					        '3' => 'Turn comments ON, but only for specific categories (select below).'
+					     ), 
+					    'default' => '1'
+					),
+					array (
+	            	'id'       => 'comments-on-cat',
+				    'type'     => 'select',
+				    'multi'	   => true,
+				    'title'    => __('Post Categories with Comments ON', 'brew-framework'), 
+				    'subtitle' => __('If <i>Turn comments ON, but only for specific categories</i> is selected above, use this option to select which categories comments should appear on.'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
 
 				),
 			);

@@ -48,7 +48,7 @@ add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 add_image_size( 'brew-child-thumbnail', 200, 200, true );  
 
 
-       register_sidebar(array(
+    register_sidebar(array(
     'id' => 'homepageabout',
     'name' => __( 'About Section Widget', 'bonestheme' ),
     'description' => __( 'The homepage about widget.', 'bonestheme' ),
@@ -58,45 +58,6 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'after_title' => '</h1>',
   ));
 
-    register_sidebar(array(
-    'id' => 'participate1',
-    'name' => __( 'Partcipate Block 1 Widget', 'bonestheme' ),
-    'description' => __( 'The first participate block widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1 class="widgettitle">',
-    'after_title' => '</h1>',
-  ));
-
-         register_sidebar(array(
-    'id' => 'participate2',
-    'name' => __( 'Partcipate Block 2 Widget', 'bonestheme' ),
-    'description' => __( 'The second participate block widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1 class="widgettitle">',
-    'after_title' => '</h1>',
-  ));
-
-           register_sidebar(array(
-    'id' => 'participate3',
-    'name' => __( 'Partcipate Block 3 Widget', 'bonestheme' ),
-    'description' => __( 'The third participate block widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1 class="widgettitle">',
-    'after_title' => '</h1>',
-  ));
-
-             register_sidebar(array(
-    'id' => 'participate4',
-    'name' => __( 'Partcipate Block 4 Widget', 'bonestheme' ),
-    'description' => __( 'The fourth participate block widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget participatewidget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1 class="widgettitle">',
-    'after_title' => '</h1>',
-  ));
 
              register_sidebar(array(
     'id' => 'blogexcerpt',

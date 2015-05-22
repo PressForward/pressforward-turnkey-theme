@@ -768,6 +768,28 @@ $this->sections[] = array(
         ),
 	);
 			$this->sections[] = array(
+			    'title'   => __('Block 4', 'brew-framework'),
+			    'icon'    => 'fa fa-th',
+			    'subsection' => true,
+			    'heading' => 'Block 4',
+			    'desc'    => __('Use this section to display paragraph text in the fourth block.'),
+			    'fields'  => array(
+			        array (
+						'id'=>'about_text',
+						'type' => 'textarea',
+						'title' => 'Text for the fourth block. (HTML allowed)'
+						//'required' => array('layout','equals','1'),	
+					),
+			    ),
+			);
+			$this->sections[] = array(
+    			'title'   => __('Block 5 & 6', 'brew-framework'),
+			    'icon'    => 'fa fa-th',
+			    'subsection' => true,
+			    'heading' => 'Blocks 5 and 6',
+			    'desc'    => __('Block 5 and 6 are both composed of several widget areas and can be configured in the Widgets panel in the WordPress dashboard. Block 5 includes one row of two widgets. Block 6, the footer, includes three widget areas.'),
+			);
+			$this->sections[] = array(
 				'icon' => 'fa fa-folder',
 				'title' => __('Content Settings', 'brew-framework'),
 				'desc' => __('Choose how certain content is displayed'),

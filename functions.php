@@ -58,8 +58,7 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'after_title' => '</h1>',
   ));
 
-
-             register_sidebar(array(
+    register_sidebar(array(
     'id' => 'blogexcerpt',
     'name' => __( 'Blog Widget 1', 'bonestheme' ),
     'description' => __( 'The blog widget.', 'bonestheme' ),

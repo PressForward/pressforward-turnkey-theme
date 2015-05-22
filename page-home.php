@@ -211,8 +211,7 @@ Template Name: Home Page Template
 <div class="container info">
   <div class="row">
     <div class="col-md-12">
-        <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('homepageabout') ) : ?>
-        <?php endif; ?>
+        <?php echo $brew_options['about_text'] ?>
     </div>
   </div>
 </div>

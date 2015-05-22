@@ -808,29 +808,43 @@ $this->sections[] = array(
 						'desc' => 'Display an author profile after a post',
 						'default' => 1,
 					),
-					array (						
+			array (
+			'id' => 'author-ops',
+			'type' => 'section',
+			'title' => __('Author Display Options', 'brew-framework'),
+			'subtitle' => __('The three options below control how the author field displays on posts.  If the author field is set to on, the theme will display the wordpress author as expected.  If turned off, the theme will display the text in the second option and will only display the wordpress author for the categories excluded in option 3.', 'brew-framework'),
+			'indent' => true
+			), //START BLOCK 3 SECTION 1 OPTIONS
+
+		           array (						
 						'id' => 'author',
 						'type' => 'switch',
-						'title' => __('Display Author Name and Link', 'brew-framework'),
+						'title' => __('1. Display Author Name and Link', 'brew-framework'),
 						'desc' => 'Display the name of the author.',
 						'default' => '1',
+					),
+					
+					array (
+					'id'       => 'author-display-alttext',
+	            	'type'     => 'text',
+		            'title'    => __('2. Text to display rather than author', 'brew-framework'),
+		            'desc'     => __('Text to display in place of the author when the above option is turned off.', 'brew-framework')
 					),
 					array (
 					    'id'       => 'author-display-excluded-categories',
 					    'type'     => 'select',
 					    'multi'    => true,
-					    'title'    => __('Multi Select Option', 'brew-framework'), 
-					    'subtitle' => __('No validation can be done on this field type', 'brew-framework'),
-					    'desc'     => __('This is the description field, again good for additional info.', 'brew-framework'),
+					    'title'    => __('3. Categories to Exclude', 'brew-framework'), 
+					    'desc'     => __('The categories selected here will select the author name even when option #1 is turned off.', 'brew-framework'),
 					    'data'	   => 'categories'
 						),
-					array (
-					'id'       => 'author-display-alttext',
-	            	'type'     => 'text',
-		            'title'    => __('Text to display rather than author', 'brew-framework'),
-		            'subtitle' => __('Icon for Block 2 Content Area 2', 'brew-framework'),
-		            'desc'     => __('Text to display in place of the author when the Author Name and Link option is turned off.', 'brew-framework')
-					),
+
+              array (
+			'id' => 'other-ops-end',
+			'type' => 'section',
+			'indent' => false,
+			), 
+					
 					array (
 						'id'=>'featured',
 						'type' => 'select',

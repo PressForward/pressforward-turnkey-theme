@@ -30,13 +30,13 @@ Template Name: Archive Page
 
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
-    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">Editors Choice</a></li>
-    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab">CFPs</a></li>
-    <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">Resources</a></li>
-    <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab">Jobs</a></li>
-    <li role="presentation"><a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab">Reports</a></li>
-    <li role="presentation"><a href="#tab6" aria-controls="tab6" role="tab" data-toggle="tab">Announcements</a></li>
-     <li role="presentation"><a href="#tab7" aria-controls="tab7" role="tab" data-toggle="tab">Funding and Opportunities</a></li>
+    <li role="presentation" class="active"><a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"><?php echo $brew_options['Category1-Tab Title'] ?></a></li>
+    <li role="presentation"><a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"><?php echo $brew_options['Category2-Tab Title'] ?></a></li>
+    <li role="presentation"><a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"><?php echo $brew_options['Category3-Tab Title'] ?></a></li>
+    <li role="presentation"><a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"><?php echo $brew_options['Category4-Tab Title'] ?></a></li>
+    <li role="presentation"><a href="#tab5" aria-controls="tab5" role="tab" data-toggle="tab"><?php echo $brew_options['Category5-Tab Title'] ?></a></li>
+    <li role="presentation"><a href="#tab6" aria-controls="tab6" role="tab" data-toggle="tab"><?php echo $brew_options['Category6-Tab Title'] ?></a></li>
+     <li role="presentation"><a href="#tab7" aria-controls="tab7" role="tab" data-toggle="tab"><?php echo $brew_options['Category7-Tab Title'] ?></a></li>
   </ul>
 
   <!-- Tab panes -->
@@ -44,7 +44,8 @@ Template Name: Archive Page
     <div role="tabpanel" class="tab-pane active" id="tab1">
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <?php
-          query_posts(array('nopaging' => 1, 'category__and' => array(66) /* we want all posts, so disable paging. Order by date is default */));
+          $tab1category = $brew_options['tab1-category'];
+          query_posts(array('nopaging' => 1, 'category__and' => array($brew_options['tab1-category']) /* we want all posts, so disable paging. Order by date is default */));
           $prev_year = null;
           if ( have_posts() ) {
              while ( have_posts() ) {
@@ -84,7 +85,7 @@ Template Name: Archive Page
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <?php
 
-        query_posts(array('nopaging' => 1, 'category__and' => array(74) /* we want all posts, so disable paging. Order by date is default */));
+        query_posts(array('nopaging' => 1, 'category__and' => array($brew_options['tab2-category']) /* we want all posts, so disable paging. Order by date is default */));
         $prev_year = null;
         if ( have_posts() ) {
            while ( have_posts() ) {
@@ -124,7 +125,7 @@ Template Name: Archive Page
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
           <?php
 
-          query_posts(array('nopaging' => 1, 'category__and' => array(75) /* we want all posts, so disable paging. Order by date is default */));
+          query_posts(array('nopaging' => 1, 'category__and' => array($brew_options['tab3-category']) /* we want all posts, so disable paging. Order by date is default */));
           $prev_year = null;
           if ( have_posts() ) {
              while ( have_posts() ) {
@@ -163,7 +164,7 @@ Template Name: Archive Page
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <?php
 
-        query_posts(array('nopaging' => 1, 'category__and' => array(77) /* we want all posts, so disable paging. Order by date is default */));
+        query_posts(array('nopaging' => 1, 'category__and' => array($brew_options['tab4-category']) /* we want all posts, so disable paging. Order by date is default */));
         $prev_year = null;
         if ( have_posts() ) {
            while ( have_posts() ) {
@@ -203,7 +204,7 @@ Template Name: Archive Page
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <?php
 
-        query_posts(array('nopaging' => 1, 'category__and' => array(78) /* we want all posts, so disable paging. Order by date is default */));
+        query_posts(array('nopaging' => 1, 'category__and' => array($brew_options['tab5-category']) /* we want all posts, so disable paging. Order by date is default */));
         $prev_year = null;
         if ( have_posts() ) {
            while ( have_posts() ) {
@@ -243,7 +244,7 @@ Template Name: Archive Page
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <?php
 
-        query_posts(array('nopaging' => 1, 'category__and' => array(81) /* we want all posts, so disable paging. Order by date is default */));
+        query_posts(array('nopaging' => 1, 'category__and' => array($brew_options['tab6-category']) /* we want all posts, so disable paging. Order by date is default */));
         $prev_year = null;
         if ( have_posts() ) {
            while ( have_posts() ) {
@@ -283,7 +284,7 @@ Template Name: Archive Page
       <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
         <?php
 
-        query_posts(array('nopaging' => 1, 'category__and' => array(79) /* we want all posts, so disable paging. Order by date is default */));
+        query_posts(array('nopaging' => 1, 'category__and' => array($brew_options['tab7-category']) /* we want all posts, so disable paging. Order by date is default */));
         $prev_year = null;
         if ( have_posts() ) {
            while ( have_posts() ) {

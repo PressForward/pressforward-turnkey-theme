@@ -816,13 +816,94 @@ $this->sections[] = array(
 					array(
 				    'id'       => 'Category1-Tab Title',
 				    'type'     => 'text',
-				    'title'    => __('Tab 1 Name', 'brew-framework'),
-				    
-				    'validate' => 'email',
-				    'msg'      => 'custom error message',
-				    'default'  => 'test@test.com'
+				    'title'    => __('Tab 1 Name', 'brew-framework')
 					),
-
+					array(
+	            	'id'       => 'tab1-category',
+				    'type'     => 'select',
+				    'title'    => __('Category to Display', 'brew-framework'), 
+				    'subtitle' => __('Category that should be displayed on the first tab on the index page.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+					array(
+				    'id'       => 'Category2-Tab Title',
+				    'type'     => 'text',
+				    'title'    => __('Tab 2 Name', 'brew-framework')
+					),
+					array(
+	            	'id'       => 'tab2-category',
+				    'type'     => 'select',
+				    'title'    => __('Category to Display', 'brew-framework'), 
+				    'subtitle' => __('Category that should be displayed on the second tab on the index page.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+					array(
+				    'id'       => 'Category3-Tab Title',
+				    'type'     => 'text',
+				    'title'    => __('Tab 3 Name', 'brew-framework')
+					),
+					array(
+	            	'id'       => 'tab3-category',
+				    'type'     => 'select',
+				    'title'    => __('Category to Display', 'brew-framework'), 
+				    'subtitle' => __('Category that should be displayed on the third tab on the index page.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+					array(
+				    'id'       => 'Category4-Tab Title',
+				    'type'     => 'text',
+				    'title'    => __('Tab 4 Name', 'brew-framework')
+					),
+					array(
+	            	'id'       => 'tab4-category',
+				    'type'     => 'select',
+				    'title'    => __('Category to Display', 'brew-framework'), 
+				    'subtitle' => __('Category that should be displayed on the fourth tab on the index page.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+					array(
+				    'id'       => 'Category5-Tab Title',
+				    'type'     => 'text',
+				    'title'    => __('Tab 5 Name', 'brew-framework')
+					),
+					array(
+	            	'id'       => 'tab5-category',
+				    'type'     => 'select',
+				    'title'    => __('Category to Display', 'brew-framework'), 
+				    'subtitle' => __('Category that should be displayed on the fifth tab on the index page.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+					array(
+				    'id'       => 'Category6-Tab Title',
+				    'type'     => 'text',
+				    'title'    => __('Tab 6 Name', 'brew-framework')
+					),
+					array(
+	            	'id'       => 'tab6-category',
+				    'type'     => 'select',
+				    'title'    => __('Category to Display', 'brew-framework'), 
+				    'subtitle' => __('Category that should be displayed on the sixth tab on the index page.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
+					array(
+				    'id'       => 'Category7-Tab Title',
+				    'type'     => 'text',
+				    'title'    => __('Tab 7 Name', 'brew-framework')
+					),
+					array(
+	            	'id'       => 'tab7-category',
+				    'type'     => 'select',
+				    'title'    => __('Category to Display', 'brew-framework'), 
+				    'subtitle' => __('Category that should be displayed on the last tab on the index page.', 'brew-framework'),
+				    'data' => 'categories',
+				    'default' => '1'
+	            	),
 				),
 			);
 

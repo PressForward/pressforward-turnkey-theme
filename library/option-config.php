@@ -789,6 +789,26 @@ $this->sections[] = array(
 			    'heading' => 'Blocks 5 and 6',
 			    'desc'    => __('Block 5 and 6 are both composed of several widget areas and can be configured in the Widgets panel in the WordPress dashboard. Block 5 includes one row of two widgets. Block 6, the footer, includes three widget areas.'),
 			);
+
+			$this->sections[] = array(
+				'icon' => 'fa fa-eyedropper',
+				'title' => __('Homepage Colors', 'brew-framework'),
+				'desc' => __('Change the color of each block on the homepage.'),
+				'fields' => array (
+					array(
+				    'id'       => 'background-block2',
+				    'type'     => 'color',
+				    'title'    => __('Block 2 Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'redux-framework-demo'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.participatehome')
+					),
+					
+
+				),
+			);
+
+
 			$this->sections[] = array(
 				'icon' => 'fa fa-folder',
 				'title' => __('Content Settings', 'brew-framework'),

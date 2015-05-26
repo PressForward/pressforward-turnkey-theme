@@ -19,12 +19,16 @@ Template Name: Home Page Template
               <div id="slider-content">
                   <?php $trim_title = get_post_field('post_title', $id);
                         $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
-                        echo '<div id="slidertitle"><h1 class="title">' . $short_title . '</h1>';
+                        echo '<div id="slidertitle"><h1>' . $short_title . '</h1>';
                         echo '<br><h2>By: ' . get_the_author() . '</h2></div>';  ?>
                   <?php $trimexcerpt = get_post_field('post_content', $id);
                         $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 75, $more = '… ' );
                         echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>';  ?>
                   <a href="<?php echo get_permalink(); ?>" alt="<?php echo get_the_title() ?>" class="btn btn-default">Read More</a>
+                  
+                  <h2 class="title">
+              <span><i class="fa fa-circle filled"></i><i class="fa fa-circle-thin empty"></i></span>
+</h2>
               </div> <!-- Close #slider-content -->
                
               <div id="sliderimg">

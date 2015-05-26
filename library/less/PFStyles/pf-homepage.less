@@ -28,6 +28,9 @@ The slider is defined #slider 1 in the javascript.  To add more sliders to subse
 
 These styles will apply to all sliders.
 ********************************/
+body {
+	letter-spacing: 0.5px;
+}
 .slider {
 	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
 	background-image: -webkit-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Safari 5.1-6, Chrome 10+
@@ -42,7 +45,7 @@ These styles will apply to all sliders.
 		color: @dhnow-darkblue;
 	}
 	#slidertext {
-	margin-top: 40px;
+	margin-top: 25px;
 	float: left;
 	width: 60%;
 		@media (max-width: @screen-sm){
@@ -53,11 +56,13 @@ These styles will apply to all sliders.
 		}
 		a {
 			color: @dhnow-darkblue;
+			margin-top: 10px;
 		}
 	}
 
 	h1 {
 	font-size: @font-size-h2 !important;
+	font-family: 'Didact Gothic';
 	margin: 0px 0 40px 0;
 	color: @dhnow-gray;
 	margin: 0px;
@@ -84,7 +89,7 @@ These styles will apply to all sliders.
 	height: auto;
 	float: right;
 	width: 400px;
-	padding: 40px 24px 0 0;
+	padding: 25px 24px 0 0;
 
 		@media (max-width: @screen-sm){
 			display:none;
@@ -101,8 +106,9 @@ These styles will apply to all sliders.
 	}
 	#slider-content {
 		@media (min-width: @screen-md){
-			height: 500px;
+			height: 425px;
 		}
+		
 	}
 	.homepage {
 		padding: 50px 0 25px 0;
@@ -267,4 +273,7 @@ The blog section is the last block on the homepage. The block is made up of a co
 }
 #sub-floor {
 	background-color: @dhnow-darkblue !important;
+}
+.attribution {
+	font-size: 10px;
 }

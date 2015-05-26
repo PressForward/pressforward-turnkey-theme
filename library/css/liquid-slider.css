@@ -10,7 +10,7 @@
 }
 .ls-nav a {
   width: 24.5%;
-  height: 90px;
+  height: auto;
 }
 .no-js .liquid-slider {
   height:350px;
@@ -85,19 +85,29 @@
   color: #f8f8f8;
   padding: 5px 15px 10px 15px;  
   outline:0;
-  border: solid 2px #f8f8f8;
+  border: none;
 
 }
-.ls-nav a:hover {
-  background: #3887be;
-  color: #333333;
-  text-shadow: none;
-}
+
 .ls-nav .current a {
-  background: #f8f8f8;
-  border: solid 1px #f8f8f8;
-  color: black;
+
 }
+.slider .current a{
+  color: #f8f8f8 !important;
+}
+.current .empty{
+  display: none;
+}
+.current .filled{
+  display: initial !important;
+}
+
+.ls-nav a .filled {
+  display: none;
+}
+
+
+
 .currentCrossLink {
   font-weight: bold;
 }
@@ -105,15 +115,15 @@
   padding:0;
   clear: both;
   display: block;
-  margin: auto;
+  /*margin: auto;*/
   overflow: hidden;
 }
 .ls-nav ul li {
   display: inline;
 }
 .ls-nav ul li a {
-  display: block;
-  float: left;
+  /*display: block;
+  float: left;*/
   text-decoration: none;
 }
 

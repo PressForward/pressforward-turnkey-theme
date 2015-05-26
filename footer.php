@@ -40,7 +40,7 @@
               &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
             </div>
             <div class="col-md-4 col-md-offset-4 attribution">
-              <p>Based on <a href="http://www.getbootstrap.com">Bootstrap</a>, <a href="http://www.html5bones.com/">Bones</a>, and <a href="https://github.com/slightlyoffbeat/brew">Brew by Dan Wild</a>.</p> 
+              
             </div>
           </div> <!-- end .row -->
         </div>

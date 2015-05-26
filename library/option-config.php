@@ -821,7 +821,7 @@ $this->sections[] = array(
 				    'validate' => 'email',
 				    'msg'      => 'custom error message',
 				    'default'  => 'test@test.com'
-					);
+					),
 
 				),
 			);

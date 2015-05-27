@@ -212,6 +212,7 @@ Template Name: Home Page Template
 
 
 <!-- BLOCK 4: ABOUT -->
+<div class="block4" role="main">
 <div class="container info">
   <div class="row">
     <div class="col-md-12" id="infotext">
@@ -219,7 +220,7 @@ Template Name: Home Page Template
     </div>
   </div>
 </div>
-
+</div>
 
 <!-- BLOCK 5: BLOG -->
 <main class="bloghome" role="main">

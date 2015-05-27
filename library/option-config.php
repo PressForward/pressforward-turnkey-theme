@@ -818,8 +818,15 @@ $this->sections[] = array(
 				    'title'    => __('Block 4 Color', 'brew-framework'), 
 				    'subtitle' => __('Pick a background color for the fourth block (default: #142736).', 'brew-framework'),
 				    'validate' => 'color',
-				    'output'    => array('background-color' => '.info')
+				    'output'    => array('background-color' => '.block4')
 					),
+					array(
+				    'id'       => 'background-block5',
+				    'type'     => 'color_gradient',
+				    'title'    => __('Header Gradient Color Option', 'brew-framework'),
+				    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+				    'validate' => 'color'
+				    ),
 						array(
 				    'id'       => 'background-block6',
 				    'type'     => 'color',
@@ -835,10 +842,7 @@ $this->sections[] = array(
 				    'subtitle' => __('Pick a background color for the subfloor. (default: #142736).', 'brew-framework'),
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '#sub-floor')
-					),
-
-
-					
+					),		
 
 				),
 			);

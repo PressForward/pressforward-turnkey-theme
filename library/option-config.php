@@ -955,7 +955,15 @@ $this->sections[] = array(
 					    'type'     => 'select',
 					    'multi'    => true,
 					    'title'    => __('3. Categories to Exclude', 'brew-framework'), 
-					    'desc'     => __('The categories selected here will select the author name even when option #1 is turned off.', 'brew-framework'),
+					    'desc'     => __('The categories selected here will display the author name even when option #1 is turned off.', 'brew-framework'),
+					    'data'	   => 'categories'
+						),
+					array (
+					    'id'       => 'author-display-included-categories',
+					    'type'     => 'select',
+					    'multi'    => true,
+					    'title'    => __('4. Categories to Include', 'brew-framework'), 
+					    'desc'     => __('The categories selected here will display the author name <strong>and</strong> link even when option #1 is turned off.', 'brew-framework'),
 					    'data'	   => 'categories'
 						),
 

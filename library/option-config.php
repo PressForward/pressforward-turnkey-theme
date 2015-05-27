@@ -790,27 +790,74 @@ $this->sections[] = array(
 			    'desc'    => __('Block 5 and 6 are both composed of several widget areas and can be configured in the Widgets panel in the WordPress dashboard. Block 5 includes one row of two widgets. Block 6, the footer, includes three widget areas.'),
 			);
 
-			// $this->sections[] = array(
-			// 	'icon' => 'fa fa-eyedropper',
-			// 	'title' => __('Homepage Colors', 'brew-framework'),
-			// 	'desc' => __('Change the color of each block on the homepage.'),
-			// 	'fields' => array (
-			// 		array(
-			// 	    'id'       => 'background-block2',
-			// 	    'type'     => 'color',
-			// 	    'title'    => __('Block 2 Color', 'brew-framework'), 
-			// 	    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'redux-framework-demo'),
-			// 	    'validate' => 'color',
-			// 	    'output'    => array('background-color' => '.participatehome')
-			// 		),
+			$this->sections[] = array(
+				'icon' => 'fa fa-eyedropper',
+				'title' => __('Homepage Colors', 'brew-framework'),
+				'subsection' => true,
+				'desc' => __('Change the color of each block on the homepage.'),
+				'fields' => array (
+						array(
+				    'id'       => 'background-slider',
+				    'type'     => 'color_gradient',
+				    'title'    => __('Slider Gradient', 'brew-framework'),
+				    'desc'     => __('Choose a start and end color for the slider.', 'brew-framework'),
+				    'validate' => 'color'
+				    ),
+					array(
+				    'id'       => 'background-block2',
+				    'type'     => 'color',
+				    'title'    => __('Block 2 Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.participatehome')
+					),
+					array(
+				    'id'       => 'background-block3',
+				    'type'     => 'color',
+				    'title'    => __('Block 3 Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the third block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.categorieshome')
+					),
+					array(
+				    'id'       => 'background-block4',
+				    'type'     => 'color',
+				    'title'    => __('Block 4 Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the fourth block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.block4')
+					),
+					array(
+				    'id'       => 'background-block5',
+				    'type'     => 'color_gradient',
+				    'title'    => __('Blog Gradient Color', 'brew-framework'),
+				    'desc'     => __('Pick a start and end color for block 5.', 'brew-framework'),
+				    'validate' => 'color'
+				    ),
+						array(
+				    'id'       => 'background-block6',
+				    'type'     => 'color',
+				    'title'    => __('Block 6 Color (Footer)', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the sixth block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '#footer')
+					),
 					
+						array(
+				    'id'       => 'background-copyright',
+				    'type'     => 'color',
+				    'title'    => __('Subfloor Color (Copyright area)', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the subfloor. (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '#sub-floor')
+					),		
 
-			// 	),
-			// );
+				),
+			);
 
 			$this->sections[] = array(
 				'icon' => 'fa fa-eyedropper',
-				'title' => __('Index Page', 'brew-framework'),
+				'title' => __('Posts Index Page', 'brew-framework'),
 				'desc' => __('Index page set up.'),
 				'fields' => array (
 					array(
@@ -926,7 +973,7 @@ $this->sections[] = array(
 						'type' => 'switch',
 						'title' => __('Author Profiles', 'brew-framework'),
 						'desc' => 'Display an author profile after a post',
-						'default' => 1,
+						'default' => 2,
 					),
 			array (
 			'id' => 'author-ops',
@@ -955,7 +1002,15 @@ $this->sections[] = array(
 					    'type'     => 'select',
 					    'multi'    => true,
 					    'title'    => __('3. Categories to Exclude', 'brew-framework'), 
-					    'desc'     => __('The categories selected here will select the author name even when option #1 is turned off.', 'brew-framework'),
+					    'desc'     => __('The categories selected here will display the author name even when option #1 is turned off.', 'brew-framework'),
+					    'data'	   => 'categories'
+						),
+					array (
+					    'id'       => 'author-display-included-categories',
+					    'type'     => 'select',
+					    'multi'    => true,
+					    'title'    => __('4. Categories to Include', 'brew-framework'), 
+					    'desc'     => __('The categories selected here will display the author name <strong>and</strong> link even when option #1 is turned off.', 'brew-framework'),
 					    'data'	   => 'categories'
 						),
 

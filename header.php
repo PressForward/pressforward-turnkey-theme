@@ -38,7 +38,24 @@
 		<?php // end analytics ?>
 
 	</head>
+	<style>
+	
+	<?php global $brew_options ?>
+	<?php echo '.slider {';
+	echo 'background: -webkit-linear-gradient(' . $brew_options['background-slider']['from'] . ',' . $brew_options['background-slider']['to'] . ');'; /* For Safari 5.1 to 6.0 */
+	echo 'background: -o-linear-gradient(' . $brew_options['background-slider']['from'] . ',' . $brew_options['background-slider']['to'] . ');'; /* For Opera 11.1 to 12.0 */
+	echo 'background: -moz-linear-gradient(' . $brew_options['background-slider']['from'] . ',' . $brew_options['background-slider']['to'] . ');'; /* For Firefox 3.6 to 15 */
+	echo 'background: linear-gradient(' . $brew_options['background-slider']['from'] . ',' . $brew_options['background-slider']['to'] . ');'; //* Standard syntax */
+  	echo '}';
+  	echo '.bloghome {';
+  	echo 'background: -webkit-linear-gradient(' . $brew_options['background-block5']['from'] . ',' . $brew_options['background-block5']['to'] . ');'; /* For Safari 5.1 to 6.0 */
+	echo 'background: -o-linear-gradient(' . $brew_options['background-block5']['from'] . ',' . $brew_options['background-block5']['to'] . ');'; /* For Opera 11.1 to 12.0 */
+	echo 'background: -moz-linear-gradient(' . $brew_options['background-block5']['from'] . ',' . $brew_options['background-block5t']['to'] . ');'; /* For Firefox 3.6 to 15 */
+	echo 'background: linear-gradient(' . $brew_options['background-block5']['from'] . ',' . $brew_options['background-block5']['to'] . ');'; //* Standard syntax */
+  	echo '}';
+	?>
 
+	</style>
 	<body <?php body_class(); ?>
 
     <header class="header">

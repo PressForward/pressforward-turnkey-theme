@@ -317,18 +317,16 @@ The about section is the fourth block on the homepage.  It contains one widgetiz
 .aboutlarge {
   background-color: #f8f8f8;
 }
-.info {
+#infotext {
+  padding: 30px 30px 30px 30px;
   font-size: 18px;
 }
-.info .infowidget {
-  padding: 25px 0px 25px 0;
-}
-.info h1 {
-  font-size: 30px;
-  padding-bottom: 30px;
+#infotext h1 {
+  font-size: 30px !important;
+  padding-bottom: 20px;
 }
 @media (min-width: 992px) {
-  .info h1 {
+  #infotext h1 {
     font-size: 50px !important;
   }
 }
@@ -444,11 +442,11 @@ The blog section is the last block on the homepage. The block is made up of a co
 ********************************/
 #footer {
   margin-top: 0px !important;
-  background-color: #f8f8f8 !important;
+  background-color: #f8f8f8;
   border: 0px !important;
 }
 #sub-floor {
-  background-color: #142736 !important;
+  background-color: #142736;
 }
 .attribution {
   font-size: 10px;
@@ -8522,7 +8520,6 @@ Stylesheet: Footer
 ******************************************************************/
 #footer {
   border-top: 5px solid #428bca;
-  background: #3b3b3b;
   padding-top: 30px;
   margin-top: 60px;
   clear: both;
@@ -8550,7 +8547,6 @@ Stylesheet: Footer
 }
 #sub-floor {
   color: #aaa;
-  background: #292929;
   padding: 10px 0;
 }
 .copyright {

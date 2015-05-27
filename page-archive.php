@@ -335,7 +335,7 @@ Template Name: Archive Page
               
               <footer>
         
-                <?php the_tags('<p class="tags"><span class="tags-title">' . __("Tags","bonestheme") . ':</span> ', ', ', '</p>'); ?>
+                
                 
               </footer> <!-- end article footer -->
             

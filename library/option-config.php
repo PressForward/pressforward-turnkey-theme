@@ -796,6 +796,13 @@ $this->sections[] = array(
 				'subsection' => true,
 				'desc' => __('Change the color of each block on the homepage.'),
 				'fields' => array (
+						array(
+				    'id'       => 'background-slider',
+				    'type'     => 'color_gradient',
+				    'title'    => __('Slider Gradient', 'brew-framework'),
+				    'desc'     => __('Choose a start and end color for the slider.', 'brew-framework'),
+				    'validate' => 'color'
+				    ),
 					array(
 				    'id'       => 'background-block2',
 				    'type'     => 'color',
@@ -823,8 +830,8 @@ $this->sections[] = array(
 					array(
 				    'id'       => 'background-block5',
 				    'type'     => 'color_gradient',
-				    'title'    => __('Header Gradient Color Option', 'brew-framework'),
-				    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+				    'title'    => __('Blog Gradient Color', 'brew-framework'),
+				    'desc'     => __('Pick a start and end color for block 5.', 'brew-framework'),
 				    'validate' => 'color'
 				    ),
 						array(
@@ -835,6 +842,7 @@ $this->sections[] = array(
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '#footer')
 					),
+					
 						array(
 				    'id'       => 'background-copyright',
 				    'type'     => 'color',

@@ -926,7 +926,7 @@ $this->sections[] = array(
 						'type' => 'switch',
 						'title' => __('Author Profiles', 'brew-framework'),
 						'desc' => 'Display an author profile after a post',
-						'default' => 1,
+						'default' => 2,
 					),
 			array (
 			'id' => 'author-ops',

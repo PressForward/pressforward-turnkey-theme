@@ -24,6 +24,7 @@ Features on this page:
 							$b3c4cat = $brew_options['b3-c4-category']; 
 							$b3c5cat = $brew_options['b3-c5-category']; 
 							$b3c6cat = $brew_options['b3-c6-category']; 
+							$slidercat = $brew_options['slider-categories'];
 						?>  
 
 						<?php if ( in_category($b3c1cat)) {
@@ -51,7 +52,7 @@ Features on this page:
 								  <i class="fa fa-pencil fa-5x"></i>
 								  </div> <!--close col-md-2 featimg-->
 								  <div class="col-md-10" id="postcontent">';
-						} else if (in_category('66')) {
+						} else if (in_category($slidercat)) {
 							echo '<div class="col-md-3 featimg">' . get_the_post_thumbnail( $post->ID, array(250,250)) . '</div> <!--close col-md-3 featimg-->
 								<div class="col-md-9" id="postcontent">';
 						} ?>
@@ -92,7 +93,7 @@ Features on this page:
 					</div> <!-- close main ???? -->
 			
 					<footer class="article-footer single-footer clearfix">
-						<?php if (in_category('66')) {
+						<?php if (in_category($slidercat)) {
 							echo '<div class="col-md-3 ec-customfields"><span class="tags pull-left">';
 							printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );
 							echo  '</span></div>';
@@ -110,7 +111,7 @@ Features on this page:
 						<!-- </div> -->
 		              	<span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a>
 						</span> 
-						<?php the_author_posts_link(); ?>
+						<?//php the_author_posts_link(); ?>
 		              				
 						<!-- </div>	???? --> 
 		            </footer> <?php // end article footer ?>

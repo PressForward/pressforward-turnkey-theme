@@ -67,7 +67,7 @@ Features on this page:
 								<?php if ( $brew_options['author'] == 1) { ?>
 									by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
 								<?php } elseif ($brew_options['author'] != 1 && in_category($excludedcategories)) { ?>
-									by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
+									by <span class="author"><em><?php echo get_the_author() ?> - </em></span>
 								<?php } else { ?>
 									by <span class="author"><em></em><?php echo $brew_options['author-display-alttext']; ?> - </em></span>
 								<?php } ?>

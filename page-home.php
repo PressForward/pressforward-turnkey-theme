@@ -214,7 +214,7 @@ Template Name: Home Page Template
 <!-- BLOCK 4: ABOUT -->
 <div class="container info">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" id="infotext">
         <?php echo $brew_options['about_text'] ?>
     </div>
   </div>

@@ -317,18 +317,16 @@ The about section is the fourth block on the homepage.  It contains one widgetiz
 .aboutlarge {
   background-color: #f8f8f8;
 }
-.info {
+#infotext {
+  padding: 30px 30px 30px 30px;
   font-size: 18px;
 }
-.info .infowidget {
-  padding: 25px 0px 25px 0;
-}
-.info h1 {
-  font-size: 30px;
-  padding-bottom: 30px;
+#infotext h1 {
+  font-size: 30px !important;
+  padding-bottom: 20px;
 }
 @media (min-width: 992px) {
-  .info h1 {
+  #infotext h1 {
     font-size: 50px !important;
   }
 }

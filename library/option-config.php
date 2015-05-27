@@ -793,16 +793,51 @@ $this->sections[] = array(
 			$this->sections[] = array(
 				'icon' => 'fa fa-eyedropper',
 				'title' => __('Homepage Colors', 'brew-framework'),
+				'subsection' => true,
 				'desc' => __('Change the color of each block on the homepage.'),
 				'fields' => array (
 					array(
 				    'id'       => 'background-block2',
 				    'type'     => 'color',
 				    'title'    => __('Block 2 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'redux-framework-demo'),
+				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'brew-framework'),
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '.participatehome')
 					),
+					array(
+				    'id'       => 'background-block3',
+				    'type'     => 'color',
+				    'title'    => __('Block 3 Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the third block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.categorieshome')
+					),
+					array(
+				    'id'       => 'background-block4',
+				    'type'     => 'color',
+				    'title'    => __('Block 4 Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the fourth block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.info')
+					),
+						array(
+				    'id'       => 'background-block6',
+				    'type'     => 'color',
+				    'title'    => __('Block 6 Color (Footer)', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the sixth block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '#footer')
+					),
+						array(
+				    'id'       => 'background-copyright',
+				    'type'     => 'color',
+				    'title'    => __('Subfloor Color (Copyright area)', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the subfloor. (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '#sub-floor')
+					),
+
+
 					
 
 				),

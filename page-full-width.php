@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page - Full Width
+Template Name: Page -- Full Width
 */
 ?>
 

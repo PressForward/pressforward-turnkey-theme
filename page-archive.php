@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Post Index Page
+Template Name: Page -- Post Index Page
 */
 ?>
 

@@ -975,6 +975,13 @@ $this->sections[] = array(
 						'desc' => 'Display an author profile after a post',
 						'default' => 2,
 					),
+					array (
+						'id' => 'nom-count',
+						'type' => 'switch',
+						'title' => __('Nomination Count', 'brew-framework'),
+						'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
+						'default' => 1,
+					),
 			array (
 			'id' => 'author-ops',
 			'type' => 'section',

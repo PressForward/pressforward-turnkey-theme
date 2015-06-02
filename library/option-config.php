@@ -791,8 +791,8 @@ $this->sections[] = array(
 			);
 
 			$this->sections[] = array(
-				'icon' => 'fa fa-eyedropper',
 				'title' => __('Homepage Colors', 'brew-framework'),
+				'icon' => 'fa fa-th',
 				'subsection' => true,
 				'desc' => __('Change the color of each block on the homepage.'),
 				'fields' => array (
@@ -856,7 +856,7 @@ $this->sections[] = array(
 			);
 
 			$this->sections[] = array(
-				'icon' => 'fa fa-eyedropper',
+				'icon' => 'fa fa-list-alt',
 				'title' => __('Posts Index Page', 'brew-framework'),
 				'desc' => __('Index page set up.'),
 				'fields' => array (

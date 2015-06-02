@@ -574,7 +574,7 @@ $this->sections[] = array(
         	array (
 			'id' => 'block3-c1-start',
 			'type' => 'section',
-			'title' => __('Row 1 Column 1', 'brew-framework'),
+			'title' => __('Row 1 Block 1', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		            array (
@@ -605,7 +605,7 @@ $this->sections[] = array(
             array (
 			'id' => 'block3-c2-start',
 			'type' => 'section',
-			'title' => __('Row 1 Column 2', 'brew-framework'),
+			'title' => __('Row 1 Block 2', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		            array (
@@ -636,7 +636,7 @@ $this->sections[] = array(
     		array (
 			'id' => 'block3-c3-start',
 			'type' => 'section',
-			'title' => __('Row 1 Column 3', 'brew-framework'),
+			'title' => __('Row 1 Block 3', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 3 OPTIONS
 			        array (
@@ -669,7 +669,7 @@ $this->sections[] = array(
         	array (
 			'id' => 'block3-c4-start',
 			'type' => 'section',
-			'title' => __('Row 2 Column 1', 'brew-framework'),
+			'title' => __('Row 2 Block 1', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		             array (
@@ -702,7 +702,7 @@ $this->sections[] = array(
      		array (
 			'id' => 'block3-c5-start',
 			'type' => 'section',
-			'title' => __('Row 2 Column 2', 'brew-framework'),
+			'title' => __('Row 2 Block 2', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 
@@ -736,7 +736,7 @@ $this->sections[] = array(
             array (
 			'id' => 'block3-c6-start',
 			'type' => 'section',
-			'title' => __('Row 2 Column 3', 'brew-framework'),
+			'title' => __('Row 2 Block 3', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 6 OPTIONS
 		            array (

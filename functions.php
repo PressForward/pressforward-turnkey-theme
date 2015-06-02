@@ -290,7 +290,22 @@ function bones_register_sidebars() {
   */
 } // don't remove this bracket!
 
+add_action( 'after_setup_theme', 'acme_remove_default_widgets' );
+/**
+ * When the theme is activated, all of the active widgets are deactived.
+ *
+ * @since    1.0.0
+ */
+function acme_remove_default_widgets() {
 
+  if ( ! get_option( 'acme_cleared_widgets' ) ) {
+
+    update_option( 'sidebars_widgets', array() );
+    update_option( 'acme_cleared_widgets', true );
+
+  }
+
+}
 
 
 

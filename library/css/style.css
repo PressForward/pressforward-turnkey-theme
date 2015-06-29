@@ -457,6 +457,11 @@ The blog section is the last block on the homepage. The block is made up of a co
 .attribution {
   font-size: 10px;
 }
+@media (min-width: 992px) {
+  #footer-logo {
+    width: 85%;
+  }
+}
 /*! normalize.css v3.0.0 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;

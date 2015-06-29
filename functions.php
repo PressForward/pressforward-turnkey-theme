@@ -57,25 +57,25 @@ add_image_size( 'brew-child-thumbnail', 200, 200, true );
     'before_title' => '<h1 class="widgettitle">',
     'after_title' => '</h1>',
   ));
-
-    register_sidebar(array(
-    'id' => 'blogexcerpt',
-    'name' => __( 'Blog Widget 1', 'bonestheme' ),
-    'description' => __( 'The blog widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget blogwidget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1 class="widgettitle">',
-    'after_title' => '</h1>',
-  ));
-             register_sidebar(array(
-    'id' => 'bloglist',
-    'name' => __( 'Blog Widget 2', 'bonestheme' ),
-    'description' => __( 'The blog widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget blogwidget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1 class="widgettitle">',
-    'after_title' => '</h1>',
-  ));
+//THESE SECTIONS ARE HARDCODED FOR THE DHNOW THEME.
+  //   register_sidebar(array(
+  //   'id' => 'blogexcerpt',
+  //   'name' => __( 'Blog Widget 1', 'bonestheme' ),
+  //   'description' => __( 'The blog widget.', 'bonestheme' ),
+  //   'before_widget' => '<div id="%1$s" class="widget blogwidget %2$s">',
+  //   'after_widget' => '</div>',
+  //   'before_title' => '<h1 class="widgettitle">',
+  //   'after_title' => '</h1>',
+  // ));
+  //            register_sidebar(array(
+  //   'id' => 'bloglist',
+  //   'name' => __( 'Blog Widget 2', 'bonestheme' ),
+  //   'description' => __( 'The blog widget.', 'bonestheme' ),
+  //   'before_widget' => '<div id="%1$s" class="widget blogwidget %2$s">',
+  //   'after_widget' => '</div>',
+  //   'before_title' => '<h1 class="widgettitle">',
+  //   'after_title' => '</h1>',
+  // ));
 
 ?>
 <?php

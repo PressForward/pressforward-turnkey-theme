@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Archive Page
+Template Name: Page -- Post Index Page
 */
 ?>
 

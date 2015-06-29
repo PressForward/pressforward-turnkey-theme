@@ -82,7 +82,7 @@ body {
 }
 .logo {
   width: auto;
-  height: 35px;
+  height: 50px;
 }
 @media (max-width: 1050px) {
   .logo {
@@ -106,7 +106,7 @@ body {
 }
 .nav li > a {
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: .5px;
   margin-top: 15px;
   padding: 15px 7px 15px 7px !important;

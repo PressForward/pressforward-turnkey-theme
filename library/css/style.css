@@ -85,7 +85,7 @@ body {
 }
 .logo {
   width: auto;
-  height: 50px;
+  height: 40px;
 }
 @media (max-width: 1050px) {
   .logo {

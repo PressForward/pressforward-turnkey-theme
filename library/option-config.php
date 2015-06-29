@@ -574,7 +574,7 @@ $this->sections[] = array(
         	array (
 			'id' => 'block3-c1-start',
 			'type' => 'section',
-			'title' => __('Row 1 Column 1', 'brew-framework'),
+			'title' => __('Row 1 Block 1', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		            array (
@@ -605,7 +605,7 @@ $this->sections[] = array(
             array (
 			'id' => 'block3-c2-start',
 			'type' => 'section',
-			'title' => __('Row 1 Column 2', 'brew-framework'),
+			'title' => __('Row 1 Block 2', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		            array (
@@ -636,7 +636,7 @@ $this->sections[] = array(
     		array (
 			'id' => 'block3-c3-start',
 			'type' => 'section',
-			'title' => __('Row 1 Column 3', 'brew-framework'),
+			'title' => __('Row 1 Block 3', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 3 OPTIONS
 			        array (
@@ -669,7 +669,7 @@ $this->sections[] = array(
         	array (
 			'id' => 'block3-c4-start',
 			'type' => 'section',
-			'title' => __('Row 2 Column 1', 'brew-framework'),
+			'title' => __('Row 2 Block 1', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 		             array (
@@ -702,7 +702,7 @@ $this->sections[] = array(
      		array (
 			'id' => 'block3-c5-start',
 			'type' => 'section',
-			'title' => __('Row 2 Column 2', 'brew-framework'),
+			'title' => __('Row 2 Block 2', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 1 OPTIONS
 
@@ -736,7 +736,7 @@ $this->sections[] = array(
             array (
 			'id' => 'block3-c6-start',
 			'type' => 'section',
-			'title' => __('Row 2 Column 3', 'brew-framework'),
+			'title' => __('Row 2 Block 3', 'brew-framework'),
 			'indent' => true
 			), //START BLOCK 3 SECTION 6 OPTIONS
 		            array (
@@ -791,8 +791,8 @@ $this->sections[] = array(
 			);
 
 			$this->sections[] = array(
-				'icon' => 'fa fa-eyedropper',
 				'title' => __('Homepage Colors', 'brew-framework'),
+				'icon' => 'fa fa-th',
 				'subsection' => true,
 				'desc' => __('Change the color of each block on the homepage.'),
 				'fields' => array (
@@ -856,7 +856,7 @@ $this->sections[] = array(
 			);
 
 			$this->sections[] = array(
-				'icon' => 'fa fa-eyedropper',
+				'icon' => 'fa fa-list-alt',
 				'title' => __('Posts Index Page', 'brew-framework'),
 				'desc' => __('Index page set up.'),
 				'fields' => array (
@@ -974,6 +974,13 @@ $this->sections[] = array(
 						'title' => __('Author Profiles', 'brew-framework'),
 						'desc' => 'Display an author profile after a post',
 						'default' => 2,
+					),
+					array (
+						'id' => 'nom-count',
+						'type' => 'switch',
+						'title' => __('Nomination Count', 'brew-framework'),
+						'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
+						'default' => 1,
 					),
 			array (
 			'id' => 'author-ops',

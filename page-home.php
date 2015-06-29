@@ -226,14 +226,25 @@ Template Name: Home Page Template
 <main class="bloghome" role="main">
   <div class="container" id="blog">
     <div class="row">
-        <div class="col-md-7">
-          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blogexcerpt') ) : ?>
-          <?php endif; ?>
+     <h2>Blog</h2>
+        <div class="col-md-7" id="blog-excerpt">
+         <?php $blogcat = 'cat=' . $brew_options['blog-category'] . '&posts_per_page=1' ?>
+                <?php query_posts($blogcat); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <h3><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></h3>
+                    <p><?php the_excerpt(); ?></p>
+                <?php endwhile; endif; ?>
+              
         </div>
 
         <div class="col-md-5" id="bloglist">
-          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('bloglist') ) : ?>
-          <?php endif; ?>
+        <?php $blogcat2 = 'cat=' . $brew_options['blog-category'] . '&posts_per_page=5' ?>
+                <ul>
+                <?php query_posts($blogcat2); ?>
+                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
+                <?php endwhile; endif; ?>
+                </ul>
         </div>
     </div>
   </div>

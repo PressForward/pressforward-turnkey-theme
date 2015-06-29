@@ -788,6 +788,16 @@ $this->sections[] = array(
 			    'subsection' => true,
 			    'heading' => 'Blocks 5 and 6',
 			    'desc'    => __('Block 5 and 6 are both composed of several widget areas and can be configured in the Widgets panel in the WordPress dashboard. Block 5 includes one row of two widgets. Block 6, the footer, includes three widget areas.'),
+			    'fields' => array(
+			    array (
+		            	'id'       => 'blog-category',
+					    'type'     => 'select',
+					    'title'    => __('Category to Display', 'brew-framework'), 
+					    'subtitle' => __('The categories that the blog should pull from to display the most recent posts.', 'brew-framework'),
+					    'data' => 'categories',
+					    'default' => '1'
+		            	),
+			    ),
 			);
 
 			$this->sections[] = array(

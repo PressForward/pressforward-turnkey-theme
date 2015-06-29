@@ -30,6 +30,9 @@ Styling for the Bootstrap tabs used on the archive page.  Adds padding between t
 .tab-content {
   padding-top: 10px;
 }
+#blog-excerpt > p > a.excerpt-read-more.btn.btn-primary {
+  display: none;
+}
 /*******************************
 02. GENERAL
 ********************************/
@@ -434,8 +437,11 @@ The blog section is the last block on the homepage. The block is made up of a co
   }
 }
 .bloghome #bloglist {
-  margin: 100px 0 0 0px;
+  margin: 20px 0 0 0px;
   padding-left: 35px;
+}
+.bloghome #blog-excerpt {
+  padding-left: 0px;
 }
 /*******************************
 06. FOOTER

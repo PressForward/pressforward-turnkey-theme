@@ -16,7 +16,7 @@
               <?php endif; ?>
             </div> <!-- end widget1 -->
 
-            <div class="col-sm-6 col-md-9">
+            <div class="col-sm-6 col-md-3">
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-3') ) : ?>
               <?php endif; ?>
             </div> <!-- end widget1 -->

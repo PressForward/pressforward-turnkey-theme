@@ -113,7 +113,7 @@ Features on this page:
 						} ?>
 										
 						<!-- </div> -->
-		              	<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number(// '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a> -->
+		              	<span class="commentnum pull-right">
 		              	<?php if ($brew_options['nom-count'] == 1) {
 									echo '<img src="' . get_stylesheet_directory_uri() . '/library/images/pfpublication.png" height="15px" />' . $nomcount;
 								} ?>

@@ -372,6 +372,11 @@ The icons for each category will appear once content is placed in the widget fro
     height: 475px;
   }
 }
+@media (max-width: 768px) {
+  .about .homeinnerwrapper {
+    padding-bottom: 20px;
+  }
+}
 .about .homeinnerwrapper i {
   color: #142736;
 }

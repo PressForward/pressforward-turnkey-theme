@@ -113,14 +113,11 @@ Features on this page:
 						} ?>
 										
 						<!-- </div> -->
-		              	<span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a>
+		              	<!-- <span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number(// '<i class="fa fa-comment"></i> 0', '<i class="fa fa-comment"></i> 1', '<i class="fa fa-comment"></i> %' ); ?></a> -->
 		              	<?php if ($brew_options['nom-count'] == 1) {
 									echo '<img src="' . get_stylesheet_directory_uri() . '/library/images/pfpublication.png" height="15px" />' . $nomcount;
 								} ?>
 						</span> 
-						<?//php the_author_posts_link(); ?>
-		              				
-						<!-- </div>	???? --> 
 		            </footer> <?php // end article footer ?>
 				</article> <?php // end article ?>
 

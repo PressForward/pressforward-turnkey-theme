@@ -6,25 +6,25 @@
         <div id="footer-wrapper">
 
           <div class="row">
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-3">
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-1') ) : ?>
               <?php endif; ?>
             </div> <!-- end widget1 -->
 
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-3">
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-2') ) : ?>
               <?php endif; ?>
             </div> <!-- end widget1 -->
 
-            <div class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-9">
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-3') ) : ?>
               <?php endif; ?>
             </div> <!-- end widget1 -->
 
-            <!-- <div class="col-sm-6 col-md-3">
+            <div class="col-sm-6 col-md-3">
               <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('footer-4') ) : ?>
               <?php endif; ?>
-            </div>  end widget1 -->
+            </div> 
 
           </div> <!-- end .row -->
 

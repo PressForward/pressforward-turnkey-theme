@@ -32,8 +32,18 @@ function active_feeds_function($atts) {
 wp_reset_query();
 return $return_string;      
 }
+
+function nomcount_shortcode() {
+  $nomcount = get_post_meta($post->ID, 'nomination_count', true);
+  $html = '<p id="nomcount">' . $nomcount . '</p>';
+  return $html;
+}
+
+
+
 function register_shortcodes() {
   add_shortcode('feeds', 'active_feeds_function');
+  add_shortcode('nomcount', 'nomcount_shortcode');
 }
 add_action('init', 'register_shortcodes');
 

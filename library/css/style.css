@@ -382,9 +382,7 @@ The icons for each category will appear once content is placed in the widget fro
 .about h1 {
   font-size: 30px;
 }
-.content3,
-.content2,
-#content1 {
+.about {
   margin-bottom: 15px;
 }
 li {

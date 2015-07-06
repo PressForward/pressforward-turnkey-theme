@@ -171,7 +171,10 @@ The icons for each category will appear once content is placed in the widget fro
 		background-color: @dhnow-gray;
 		padding: 20px 20px 0px 10px;
 		@media (min-width: @screen-md) {
-			height: 395px; 
+			height: 405px; 
+		}
+		@media (min-width: 1200px) {
+			height: 475px;
 		}
 		i {
 			color: @dhnow-darkblue;
@@ -280,7 +283,7 @@ The blog section is the last block on the homepage. The block is made up of a co
 	font-size: 10px;
 }
 #footer-logo {
-	@media (min-width: @screen-md){
+	@media (max-width: @screen-md){
 		width: 85%;
 		height: auto;
 	}

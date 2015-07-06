@@ -364,7 +364,12 @@ The icons for each category will appear once content is placed in the widget fro
 }
 @media (min-width: 992px) {
   .about .homeinnerwrapper {
-    height: 395px;
+    height: 405px;
+  }
+}
+@media (min-width: 1200px) {
+  .about .homeinnerwrapper {
+    height: 475px;
   }
 }
 .about .homeinnerwrapper i {
@@ -457,7 +462,7 @@ The blog section is the last block on the homepage. The block is made up of a co
 .attribution {
   font-size: 10px;
 }
-@media (min-width: 992px) {
+@media (max-width: 992px) {
   #footer-logo {
     width: 85%;
     height: auto;

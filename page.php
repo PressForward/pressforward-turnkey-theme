@@ -10,7 +10,7 @@ Template Name: Page -- Right Sidebar
 
         <div id="content" class="clearfix row">
         
-          <div id="main" class="col-md-8 clearfix" role="main">
+          <div id="main" class="col-md-9 clearfix" role="main">
 
           <?php get_template_part( 'breadcrumb' ); ?>
 

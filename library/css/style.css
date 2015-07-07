@@ -358,6 +358,11 @@ The about section is the fourth block on the homepage.  It contains one widgetiz
     font-size: 50px !important;
   }
 }
+@media (max-width: 992px) {
+  #infotext {
+    padding: 30px 25px 30px 25px;
+  }
+}
 /*******************************
 03. CATEGORIES 
 The category section is the third block on the homepage.  This block is designed to contain several widgets (two rows of three) that contain a list of recent posts in several categories using a recent post widget in each block.  The number of widget areas can be adjusted by changing the grid.  The block, by default, is composed of a container with two rows of columns each containing 3 sets of col-sm-4.  
@@ -482,6 +487,21 @@ The blog section is the last block on the homepage. The block is made up of a co
 }
 .bloghome #blog-excerpt {
   padding-left: 0px;
+}
+@media (max-width: 992px) {
+  #blog {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
+@media (max-width: 992px) {
+  #bloglist {
+    padding-left: 0px !important;
+  }
+  #bloglist ul {
+    padding-left: 25px;
+    padding-top: 25px;
+  }
 }
 /*******************************
 06. FOOTER

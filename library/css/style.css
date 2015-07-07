@@ -37,6 +37,11 @@ Styling for the Bootstrap tabs used on the archive page.  Adds padding between t
 #blog-excerpt > p > a.excerpt-read-more.btn.btn-primary {
   display: none;
 }
+@media (max-width: 1200px) {
+  .nav-tabs > li > a {
+    margin-top: 7px !important;
+  }
+}
 /*******************************
 02. GENERAL
 ********************************/

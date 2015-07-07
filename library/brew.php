@@ -118,54 +118,47 @@ function emm_paginate_loop($start, $max, $page = 0) {
 // http://mkoerner.de/breadcrumbs-for-wordpress-themes-with-bootstrap-3/
 
 function custom_breadcrumb() {
-  if(!is_home()) {
-    echo '<ol class="breadcrumb">';
-    echo '<li><a href="'.get_option('home').'">Home</a></li>';
-    if (is_single()) {
-      echo '<li>';
-      the_category(', ');
-      echo '</li>';
-      if (is_single()) {
-        echo '<li>';
-        the_title();
-        echo '</li>';
-      }
-    } elseif (is_category()) {
-      echo '<li>';
-      single_cat_title();
-      echo '</li>';
-    } elseif (is_page()) {
-      echo '<li>';
-      the_title();
-      echo '</li>';
-    } elseif (is_tag()) {
-      echo '<li>Tag: ';
-      single_tag_title();
-      echo '</li>';
-    } elseif (is_day()) {
-      echo'<li>Archive for ';
-      the_time('F jS, Y');
-      echo'</li>';
-    } elseif (is_month()) {
-      echo'<li>Archive for ';
-      the_time('F, Y');
-      echo'</li>';
-    } elseif (is_year()) {
-      echo'<li>Archive for ';
-      the_time('Y');
-      echo'</li>';
-    } elseif (is_author()) {
-      echo'<li>Author Archives';
-      echo'</li>';
-    } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {
-      echo '<li>Blog Archives';
-      echo'</li>';
-    } elseif (is_search()) {
-      echo'<li>Search Results';
-      echo'</li>';
-    }
-    echo '</ol>';
-  }
+    global $post;
+ 
+        if (!is_home()) {
+ 
+            if (is_category() || is_single()) {
+ 
+                
+                $cats = get_the_category( $post->ID );
+ 
+                foreach ( $cats as $cat ){
+                    echo $cat->cat_name;
+                    echo " > ";
+                }
+                if (is_single()) {
+                    the_title();
+                }
+            } elseif (is_page()) {
+ 
+                if($post->post_parent){
+                    $anc = get_post_ancestors( $post->ID );
+                    $anc_link = get_page_link( $post->post_parent );
+ 
+                    foreach ( $anc as $ancestor ) {
+                        $output = " <a href=".$anc_link.">".get_the_title($ancestor)."</a> > ";
+                    }
+ 
+                    echo $output;
+                    the_title();
+ 
+                } else {
+                    echo the_title();
+                }
+            }
+        }
+    elseif (is_tag()) {single_tag_title();}
+    elseif (is_day()) {echo"Archive: "; the_time('F jS, Y'); echo'</li>';}
+    elseif (is_month()) {echo"Archive: "; the_time('F, Y'); echo'</li>';}
+    elseif (is_year()) {echo"Archive: "; the_time('Y'); echo'</li>';}
+    elseif (is_author()) {echo"Author's archive: "; echo'</li>';}
+    elseif (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "Blogarchive: "; echo'';}
+    elseif (is_search()) {echo"Search results: "; }
 }
 
 // Custom Metaboxes

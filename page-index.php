@@ -9,7 +9,7 @@ Template Name: Page -- Post Index Page
 
         <div id="content" class="clearfix row">
         
-          <div id="main" class="col-md-offset-1 col-md-10 col-md-offset-1 clearfix" role="main">
+          <div id="main" class="col-md-12 clearfix" role="main">
 
             
             <?php if ( function_exists('custom_breadcrumb') ) { custom_breadcrumb(); } ?> 

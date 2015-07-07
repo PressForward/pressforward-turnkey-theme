@@ -123,6 +123,11 @@ body {
 nav {
   margin-bottom: 0px !important;
 }
+nav .dropdown-menu > li > a {
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  margin-top: 3px !important;
+}
 .navbar {
   background-color: #142736;
   border-radius: 0px !important;
@@ -144,6 +149,10 @@ nav {
 .navbar-collapse li > a:hover {
   border-top: 3px solid;
   border-top-color: #3887be;
+}
+.navbar-collapse li > a {
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
 }
 nav.navbar.shrink {
   min-height: 55px;

@@ -68,7 +68,11 @@ body {
 }
 nav {
 	margin-bottom: 0px !important;
-
+	.dropdown-menu > li > a {
+	padding-top: 4px !important;
+	padding-bottom: 4px !important;
+	margin-top: 3px !important;
+}
 }
 
 .navbar{
@@ -92,6 +96,10 @@ nav {
 	li > a:hover {
 		border-top: 3px solid;
 		border-top-color: @navbar-link-border-top-color;
+	}
+	li >a {
+		padding-top: 5px !important;
+		padding-bottom: 5px !important;
 	}
 }
 nav.navbar.shrink {

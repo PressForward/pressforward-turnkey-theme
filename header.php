@@ -80,7 +80,7 @@
       <!-- <ul class="nav navbar-nav"> -->
          <?php bones_main_nav(); ?>
       <!-- </ul> -->
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav pfmenu">
          <li class="dropdown" id="menu1">
 							             <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
 							               <i class="fa fa-search"></i>

@@ -156,6 +156,11 @@ nav .dropdown-menu > li > a {
     padding-bottom: 5px !important;
   }
 }
+@media (max-width: 768px) {
+  .pfmenu {
+    display: none;
+  }
+}
 nav.navbar.shrink {
   min-height: 55px;
 }

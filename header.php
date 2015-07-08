@@ -101,7 +101,7 @@
 								             </div>    
 							             </div> <!--close .dropdown-menu-->
 	           					</li><!-- close .drowpdown-->
-	           	<li><a href="https://pressforward.org"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="20" width="20"/></li></a> 
+	           	<li><a href="http://pressforward.org"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="20" width="20"/></li></a> 
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

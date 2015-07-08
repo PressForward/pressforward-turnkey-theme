@@ -5,7 +5,7 @@
 
       <div id="content" class="row clearfix">
 
-            <div id="main" class="col-md-8 clearfix" role="main">
+            <div id="main" class="col-md-offset-1 col-md-10 col-md-offset-1 clearfix" role="main">
 
               <h1 class="page-title"><span><?php _e("Search Results for","bonestheme"); ?>:</span> <?php echo esc_attr(get_search_query()); ?></h1>
 

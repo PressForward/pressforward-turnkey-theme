@@ -56,18 +56,18 @@ function child_bones_excerpt_more($more) {
 add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 
 add_image_size( 'brew-child-thumbnail', 200, 200, true );  
-
-
-    register_sidebar(array(
-    'id' => 'homepageabout',
-    'name' => __( 'About Section Widget', 'bonestheme' ),
-    'description' => __( 'The homepage about widget.', 'bonestheme' ),
-    'before_widget' => '<div id="%1$s" class="widget infowidget %2$s">',
-    'after_widget' => '</div>',
-    'before_title' => '<h1 class="widgettitle">',
-    'after_title' => '</h1>',
-  ));
 //THESE SECTIONS ARE HARDCODED FOR THE DHNOW THEME.
+
+  //   register_sidebar(array(
+  //   'id' => 'homepageabout',
+  //   'name' => __( 'About Section Widget', 'bonestheme' ),
+  //   'description' => __( 'The homepage about widget.', 'bonestheme' ),
+  //   'before_widget' => '<div id="%1$s" class="widget infowidget %2$s">',
+  //   'after_widget' => '</div>',
+  //   'before_title' => '<h1 class="widgettitle">',
+  //   'after_title' => '</h1>',
+  // ));
+
   //   register_sidebar(array(
   //   'id' => 'blogexcerpt',
   //   'name' => __( 'Blog Widget 1', 'bonestheme' ),

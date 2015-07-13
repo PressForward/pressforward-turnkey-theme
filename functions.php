@@ -10,6 +10,16 @@ function ls_scripts() {
 }
 add_action('wp_enqueue_scripts', 'ls_scripts');
 
+add_action( 'wp_enqueue_scripts', 'prefix_enqueue_awesome' );
+/**
+ * Register and load font awesome CSS files using a CDN.
+ *
+ * @link   http://www.bootstrapcdn.com/#fontawesome
+ * @author FAT Media
+ */
+function prefix_enqueue_awesome() {
+  wp_enqueue_style( 'prefix-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0' );
+}
 
 // <!-- SHORTCODES -->
 

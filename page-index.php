@@ -23,9 +23,10 @@ Template Name: Page -- Post Index Page
               </header> <!-- end article header -->
             
               <section class="page-content entry-content clearfix" itemprop="articleBody">
-
-
-
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<p><?php the_content(); ?></p>
+  <?php endwhile; ?> 
+    <?php endif; ?>
 <div role="tabpanel">
 
   <!-- Nav tabs -->

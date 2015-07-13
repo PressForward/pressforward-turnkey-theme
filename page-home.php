@@ -93,7 +93,8 @@ Template Name: Home Page Template
               <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c1-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c1-title'] ?></h1>
+                <?php $b3_c1_link = get_category_link( $brew_options['b3-c1-category'] ); ?>
+                 <?php echo '<a href="' . $b3_c1_link . '"><h1>' . $brew_options['b3-c1-title'] . '</h1>'; ?>
                 <ul>
                 <?php $b3c1cat = 'cat=' . $brew_options['b3-c1-category'] . '&posts_per_page=3' ?>
                 <?php query_posts($b3c1cat); ?>
@@ -112,7 +113,8 @@ Template Name: Home Page Template
                 <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c2-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c2-title'] ?></h1>
+                <?php $b3_c2_link = get_category_link( $brew_options['b3-c2-category'] ); ?>
+                 <?php echo '<a href="' . $b3_c2_link . '"><h1>' . $brew_options['b3-c2-title'] . '</h1>'; ?>
                 <ul>
                 <?php $b3c2cat = 'cat=' . $brew_options['b3-c2-category'] . '&posts_per_page=3' ?>
                 <?php query_posts($b3c2cat); ?>
@@ -131,7 +133,8 @@ Template Name: Home Page Template
              <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c3-title'] ?></h1>
+                <?php $b3_c3_link = get_category_link( $brew_options['b3-c3-category'] ); ?>
+                 <?php echo '<a href="' . $b3_c3_link . '"><h1>' . $brew_options['b3-c3-title'] . '</h1>'; ?>
                 <ul>
                 <?php $b3c3cat = 'cat=' . $brew_options['b3-c3-category'] . '&posts_per_page=3' ?>
                 <?php query_posts($b3c3cat); ?>
@@ -153,7 +156,8 @@ Template Name: Home Page Template
               <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c4-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c4-title'] ?></h1>
+                <?php $b3_c4_link = get_category_link( $brew_options['b3-c4-category'] ); ?>
+                 <?php echo '<a href="' . $b3_c4_link . '"><h1>' . $brew_options['b3-c4-title'] . '</h1>'; ?>
                 <ul>
                 <?php $b3c4cat = 'cat=' . $brew_options['b3-c4-category'] . '&posts_per_page=3' ?>
                 <?php query_posts($b3c4cat); ?>
@@ -172,7 +176,8 @@ Template Name: Home Page Template
              <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c5-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c5-title'] ?></h1>
+                <?php $b3_c5_link = get_category_link( $brew_options['b3-c5-category'] ); ?>
+                 <?php echo '<a href="' . $b3_c5_link . '"><h1>' . $brew_options['b3-c5-title'] . '</h1>'; ?>
                 <ul>
                 <?php $b3c5cat = 'cat=' . $brew_options['b3-c5-category'] . '&posts_per_page=3' ?>
                 <?php query_posts($b3c5cat); ?>
@@ -191,7 +196,8 @@ Template Name: Home Page Template
              <div class="homeinnerwrapper">
                 <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
                 <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c6-title'] ?></h1>
+                <?php $b3_c6_link = get_category_link( $brew_options['b3-c6-category'] ); ?>
+                 <?php echo '<a href="' . $b3_c6_link . '"><h1>' . $brew_options['b3-c6-title'] . '</h1>'; ?>
                 <ul>
                 <?php $b3c6cat = 'cat=' . $brew_options['b3-c6-category'] . '&posts_per_page=3' ?>
                 <?php query_posts($b3c6cat); ?>

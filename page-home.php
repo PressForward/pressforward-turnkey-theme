@@ -22,7 +22,7 @@ Template Name: Home Page Template
                         echo '<div id="slidertitle"><h1>' . $short_title . '</h1>';
                         echo '<br><h2>By: ' . get_the_author() . '</h2></div>';  ?>
                   <?php $trimexcerpt = get_post_field('post_content', $id);
-                        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 75, $more = '… ' );
+                        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
                         echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>';  ?>
                   <a href="<?php echo get_permalink(); ?>" alt="<?php echo get_the_title() ?>" class="btn btn-default">Read More</a>
                   

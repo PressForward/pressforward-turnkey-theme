@@ -332,7 +332,7 @@ body {
 }
 @media (min-width: 992px) {
   .slider #slider-content {
-    height: 425px;
+    height: 400px;
   }
 }
 .slider .homepage {

@@ -11,7 +11,7 @@ This repository contains a Turnkey Wordpress theme optimized for use with the [P
 This standalone wordpress theme is based on [Brew](https://github.com/slightlyoffbeat/brew), a Bootstrap and HTML5 Wordpress theme by Dan Wild. 
 
 ## Installation
-This theme is not avaialable in the WordPress Directory but it is functional and can be installed by downloading or cloning this repository into the Themes directory of your WordPress install. Setup can be completed by using the PressForward Options Panel in the WordPress dashboard.  [See the setup guide]() for more information on how to setup the theme. 
+This theme is not avaialable in the WordPress Directory but it is functional and can be installed by downloading or cloning this repository into the Themes directory of your WordPress install. Setup can be completed by using the PressForward Options Panel in the WordPress dashboard.  [See the setup guide](https://github.com/PressForward/PressForward-TurnKey-Theme/wiki) for more information on how to setup the theme. 
 
 ## Support
 Setup instructions and details on the theme's functionality can be found on our wiki. For more information about this theme contact the PressForward team at info@pressforward.org or submit an issue to this repository.  

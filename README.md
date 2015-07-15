@@ -18,7 +18,7 @@ This theme is not avaialable in the WordPress Directory but it is functional and
 
 
 ## Support
-Setup instructions and details on the theme's functionality can be found on our wiki. For more information about this theme contact the PressForward team at info@pressforward.org or submit an issue to this repository.  
+Setup instructions and details on the theme's functionality can be found on our [wiki](https://github.com/PressForward/PressForward-TurnKey-Theme/wiki). For more information about this theme contact the PressForward team at info@pressforward.org or submit an issue to this repository.  
  
 Links to Documentation for Libraries Used and References: 
 + [FontAwesome](http://fortawesome.github.io/Font-Awesome/)

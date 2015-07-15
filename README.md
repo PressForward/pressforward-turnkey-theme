@@ -1,7 +1,6 @@
 # Digital Humanities Now Theme
 This repository contains fork of the PressForward Turnkey Wordpress theme optimized for use with the [PressForward Plugin](http://www.pressforward.org). 
-
-If you are planning to use the PressForward theme on your site, please download it from the [PressForward TurnKey Theme](https://github.com/PressForward/PressForward-TurnKey-Theme) repository rather than this repository. 
+_**If you are planning to use the PressForward theme on your site, please download it from the [PressForward TurnKey Theme](https://github.com/PressForward/PressForward-TurnKey-Theme) repository rather than this repository.**_ 
 
 ## Features
 + A responsive slider

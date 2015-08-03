@@ -49,7 +49,17 @@
     </footer> <!-- end footer -->
 
     <!-- all js scripts are loaded in library/bones.php -->
-    <?php wp_footer(); ?>
+    <?php wp_footer(); 
+
+    if ( is_page_template( 'page-schedule.php' ) ) {
+      //echo '<script src="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>';
+      echo '<script src="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>';
+      echo '<script src="' .  get_template_directory_uri() . '/library/js/tabletop.js"></script>';
+      echo '<script src="' .  get_template_directory_uri() . '/library/js/simple.js"></script>';
+     
+
+        }    ?>
+
     <!-- Hello? Doctor? Name? Continue? Yesterday? Tomorrow?  -->
 
   </body>

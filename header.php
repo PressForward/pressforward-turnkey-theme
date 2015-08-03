@@ -29,13 +29,19 @@
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
+		<!-- load schedule js files -->
+		<?php
+		if ( is_page_template( 'page-schedule.php' ) ) {
+		echo '<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css">';
+		}
+		?>
 		<?php // wordpress head functions ?>
 		<?php wp_head(); ?>
 		<?php // end of wordpress head ?>
 
 		<?php // drop Google Analytics Here ?>
 		<?php // end analytics ?>
+
 
 	</head>
 	<style>

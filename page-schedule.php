@@ -26,7 +26,7 @@ Template Name: Schedule Template
               </header> <!-- end article header -->
             
               <section class="page-content entry-content clearfix" itemprop="articleBody">
-
+                  <?php the_content(); ?>
                     <p id="food"></p>
                
    </section> <!-- end article section -->

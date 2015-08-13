@@ -277,7 +277,7 @@
                 );
 
                 if ( ! function_exists( 'get_plugin_data' ) ) {
-                    require_once( ABSPATH . 'wp-admin/includes/admin.php' );
+                    require_once ABSPATH . 'wp-admin/includes/admin.php';
                 }
 
                 $plugins = array();
@@ -361,9 +361,11 @@
                 }
                 $software['full']    = $_SERVER['SERVER_SOFTWARE'];
                 $data['environment'] = $software;
-                if ( function_exists( 'mysql_get_server_info' ) ) {
-                    $data['environment']['mysql'] = mysql_get_server_info();
-                }
+                //if ( function_exists( 'mysql_get_server_info' ) ) {
+                //    $data['environment']['mysql'] = mysql_get_server_info();
+                //}
+                $data['environment']['mysql'] = $wpdb->db_version();
+                        
                 if ( empty( $data['developer'] ) ) {
                     unset( $data['developer'] );
                 }

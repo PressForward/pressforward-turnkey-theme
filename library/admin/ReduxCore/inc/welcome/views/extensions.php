@@ -19,7 +19,7 @@
     tracking =>
     * */
     $iconMap = array(
-        'repeater'        => 'asl',
+        'repeater'        => 'tags',
         'social-profiles' => 'group',
         'js-button'       => 'hand-down',
         'multi-media'     => 'picture',
@@ -99,7 +99,7 @@
                         set_transient( 'redux-extensions-fetch', $data, 24 * HOUR_IN_SECONDS );
                     }
                 }
-                function shuffle_assoc( $list ) {
+                function rdx_shuffle_assoc( $list ) {
                     if ( ! is_array( $list ) ) {
                         return $list;
                     }
@@ -114,7 +114,7 @@
                     return $random;
                 }
 
-                $data = shuffle_assoc( $data );
+                $data = rdx_shuffle_assoc( $data );
 
                 foreach ( $data as $key => $extension ) :
 

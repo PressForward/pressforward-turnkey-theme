@@ -47,7 +47,7 @@
       </div>
 
     </footer> <!-- end footer -->
-
+    <?php echo $brew_options['tracking-code']; ?>
     <!-- all js scripts are loaded in library/bones.php -->
     <?php wp_footer(); ?>
     <!-- Hello? Doctor? Name? Continue? Yesterday? Tomorrow?  -->

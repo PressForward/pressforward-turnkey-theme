@@ -46,6 +46,7 @@
             public static function load() {
                 add_action( 'after_setup_theme', array( 'Redux', 'createRedux' ) );
                 add_action( 'init', array( 'Redux', 'createRedux' ) );
+                add_action( 'switch_theme', array( 'Redux', 'createRedux' ) );
             }
 
             public static function init( $opt_name = "" ) {
@@ -62,7 +63,7 @@
                             // In case you wanted override your override, hah.
                             $extension['path'] = apply_filters( 'redux/extension/' . $ReduxFramework->args['opt_name'] . '/' . $name, $extension['path'] );
                             if ( file_exists( $extension['path'] ) ) {
-                                require_once( $extension['path'] );
+                                require_once $extension['path'];
                             }
                         }
                         if ( ! isset( $ReduxFramework->extensions[ $name ] ) ) {
@@ -156,7 +157,7 @@
                     $section['fields'] = self::constructFields( $opt_name, $section_id );
                     $p                 = $section['priority'];
                     while ( isset( $sections[ $p ] ) ) {
-                        echo $p ++;
+                        $p++;
                     }
                     $sections[ $p ] = $section;
                 }
@@ -205,10 +206,66 @@
                 }
             }
 
+            public static function getSections( $opt_name = '' ) {
+                self::check_opt_name( $opt_name );
+                if ( ! empty( self::$sections[ $opt_name ] ) ) {
+                    return self::$sections[ $opt_name ];
+                }
+
+                return array();
+            }
+
+            public static function removeSection( $opt_name = '', $id = "", $fields = false ) {
+                if ( ! empty( $opt_name ) && ! empty( $id ) ) {
+                    if ( isset( self::$sections[ $opt_name ][ $id ] ) ) {
+                        $priority = '';
+
+                        foreach ( self::$sections[ $opt_name ] as $key => $section ) {
+                            if ( $key == $id ) {
+                                $priority = $section['priority'];
+                                self::$priority[ $opt_name ]['sections'] --;
+                                unset( self::$sections[ $opt_name ][ $id ] );
+                                continue;
+                            }
+                            if ( $priority != "" ) {
+                                $newPriority                         = $section['priority'];
+                                $section['priority']                 = $priority;
+                                self::$sections[ $opt_name ][ $key ] = $section;
+                                $priority                            = $newPriority;
+                            }
+                        }
+
+                        if ( isset( self::$fields[ $opt_name ] ) && ! empty( self::$fields[ $opt_name ] ) && $fields == true ) {
+                            foreach ( self::$fields[ $opt_name ] as $key => $field ) {
+                                if ( $field['section_id'] == $id ) {
+                                    unset( self::$fields[ $opt_name ][ $key ] );
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             public static function setSection( $opt_name = '', $section = array() ) {
                 self::check_opt_name( $opt_name );
+                if ( empty( $section ) ) {
+                    return;
+                }
                 if ( ! isset( $section['id'] ) ) {
-                    $section['id'] = strtolower( sanitize_html_class( $section['title'] ) );
+                    if ( isset( $section['type'] ) && $section['type'] == "divide" ) {
+                        $section['id'] = time();
+                    } else {
+                        if ( isset( $section['title'] ) ) {
+                            $section['id'] = strtolower( sanitize_html_class( $section['title'] ) );
+                        } else {
+                            $section['id'] = time();
+                        }
+                    }
+                    if ( ! isset( $section['id'] ) ) {
+                        print_r( $section );
+                        echo "DOVY";
+                    }
+
                     if ( isset( self::$sections[ $opt_name ][ $section['id'] ] ) ) {
                         $orig = $section['id'];
                         $i    = 0;
@@ -241,6 +298,16 @@
                 }
             }
 
+            public static function hideSection( $opt_name = '', $id = '', $hide = true ) {
+                self::check_opt_name( $opt_name );
+
+                if ( ! empty( $opt_name ) && ! empty( $id ) ) {
+                    if ( isset ( self::$sections[ $opt_name ][ $id ] ) ) {
+                        self::$sections[ $opt_name ][ $id ]['hidden'] = $hide;
+                    }
+                }
+            }
+
             public static function processFieldsArray( $opt_name = "", $section_id = "", $fields = array() ) {
                 if ( ! empty( $opt_name ) && ! empty( $section_id ) && is_array( $fields ) && ! empty( $fields ) ) {
                     foreach ( $fields as $field ) {
@@ -262,6 +329,20 @@
                 return false;
             }
 
+            public static function hideField( $opt_name = '', $id = '', $hide = true ) {
+                self::check_opt_name( $opt_name );
+
+                if ( ! empty( $opt_name ) && ! empty( $id ) ) {
+                    if ( isset ( self::$fields[ $opt_name ][ $id ] ) ) {
+                        if ( ! $hide ) {
+                            self::$fields[ $opt_name ][ $id ]['class'] = str_replace( 'hidden', '', self::$fields[ $opt_name ][ $id ]['class'] );
+                        } else {
+                            self::$fields[ $opt_name ][ $id ]['class'] .= 'hidden';
+                        }
+                    }
+                }
+            }
+
             public static function setField( $opt_name = '', $field = array() ) {
                 self::check_opt_name( $opt_name );
 
@@ -270,8 +351,35 @@
                     if ( ! isset( $field['priority'] ) ) {
                         $field['priority'] = self::getPriority( $opt_name, 'fields' );
                     }
-                    self::$fields[ $opt_name ][ $field['id'] ] = $field;
+                    if ( isset( $field['id'] ) ) {
+                        self::$fields[ $opt_name ][ $field['id'] ] = $field;
+                    }
                 }
+            }
+
+            public static function removeField( $opt_name = '', $id = '' ) {
+                self::check_opt_name( $opt_name );
+
+                if ( ! empty( $opt_name ) && ! empty( $id ) ) {
+                    if ( isset( self::$fields[ $opt_name ][ $id ] ) ) {
+                        foreach ( self::$fields[ $opt_name ] as $key => $field ) {
+                            if ( $key == $id ) {
+                                $priority = $field['priority'];
+                                self::$priority[ $opt_name ]['fields'] --;
+                                unset( self::$fields[ $opt_name ][ $id ] );
+                                continue;
+                            }
+                            if ( isset( $priority ) && $priority != "" ) {
+                                $newPriority                       = $field['priority'];
+                                $field['priority']                 = $priority;
+                                self::$fields[ $opt_name ][ $key ] = $field;
+                                $priority                          = $newPriority;
+                            }
+                        }
+                    }
+                }
+
+                return false;
             }
 
             public static function setHelpTab( $opt_name = "", $tab = array() ) {
@@ -300,6 +408,9 @@
             public static function setArgs( $opt_name = "", $args = array() ) {
                 self::check_opt_name( $opt_name );
                 if ( ! empty( $opt_name ) && ! empty( $args ) && is_array( $args ) ) {
+                    if ( isset( self::$args[ $opt_name ] ) && isset( self::$args[ $opt_name ]['clearArgs'] ) ) {
+                        self::$args[ $opt_name ] = array();
+                    }
                     self::$args[ $opt_name ] = wp_parse_args( $args, self::$args[ $opt_name ] );
                 }
             }
@@ -331,13 +442,13 @@
                 if ( empty( $opt_name ) || is_array( $opt_name ) ) {
                     return;
                 }
-                if ( ! isset( self::$args[ $opt_name ] ) ) {
-                    self::$args[ $opt_name ]             = array();
-                    self::$priority[ $opt_name ]['args'] = 1;
-                }
                 if ( ! isset( self::$sections[ $opt_name ] ) ) {
                     self::$sections[ $opt_name ]             = array();
                     self::$priority[ $opt_name ]['sections'] = 1;
+                }
+                if ( ! isset( self::$args[ $opt_name ] ) ) {
+                    self::$args[ $opt_name ]             = array();
+                    self::$priority[ $opt_name ]['args'] = 1;
                 }
                 if ( ! isset( self::$fields[ $opt_name ] ) ) {
                     self::$fields[ $opt_name ]             = array();
@@ -364,36 +475,26 @@
              *
              * @return string
              */
-            public static function getFileVersion( $file, $size = 8192 ) {
-                // We don't need to write to the file, so just open for reading.
-                $fp = fopen( $file, 'r' );
+            public static function getFileVersion( $file ) {
+                $data = get_file_data( $file, array( 'version' ), 'plugin' );
 
-                // Pull only the first 8kiB of the file in.
-                $file_data = fread( $fp, $size );
-
-                // PHP will close file handle, but we are good citizens.
-                fclose( $fp );
-
-                // Make sure we catch CR-only line endings.
-                $file_data = str_replace( "\r", "\n", $file_data );
-                $version   = '';
-
-                if ( preg_match( '/^[ \t\/*#@]*' . preg_quote( '@version', '/' ) . '(.*)$/mi', $file_data, $match ) && $match[1] ) {
-                    $version = _cleanup_header_comment( $match[1] );
-                }
-
-                return $version;
+                return $data[0];
             }
 
-            public static function checkExtensionClassFile( $opt_name, $name = "", $class_file = "" ) {
+            public static function checkExtensionClassFile( $opt_name, $name = "", $class_file = "", $instance = "" ) {
                 if ( file_exists( $class_file ) ) {
                     self::$uses_extensions[ $opt_name ] = isset( self::$uses_extensions[ $opt_name ] ) ? self::$uses_extensions[ $opt_name ] : array();
                     if ( ! in_array( $name, self::$uses_extensions[ $opt_name ] ) ) {
                         self::$uses_extensions[ $opt_name ][] = $name;
                     }
 
-                    self::$extensions[ $name ]             = isset( self::$extensions[ $name ] ) ? self::$extensions[ $name ] : array();
-                    $version                               = self::getFileVersion( $class_file );
+                    self::$extensions[ $name ] = isset( self::$extensions[ $name ] ) ? self::$extensions[ $name ] : array();
+                    $version                   = Redux_Helpers::get_template_version( $class_file );
+                    if ( empty( $version ) && ! empty( $instance ) ) {
+                        if ( isset( $instance->version ) ) {
+                            $version = $instance->version;
+                        }
+                    }
                     self::$extensions[ $name ][ $version ] = isset( self::$extensions[ $name ][ $version ] ) ? self::$extensions[ $name ][ $version ] : $class_file;
                 }
             }
@@ -427,16 +528,61 @@
                 }
             }
 
+            public static function getAllExtensions() {
+                $redux = ReduxFrameworkInstances::get_all_instances();
+                foreach ( $redux as $instance ) {
+                    if ( ! empty( self::$uses_extensions[ $instance['args']['opt_name'] ] ) ) {
+                        continue;
+                    }
+                    if ( ! empty( $instance['extensions'] ) ) {
+
+                        Redux::getInstanceExtensions( $instance['args']['opt_name'], $instance );
+                    }
+                }
+            }
+
+            public static function getInstanceExtensions( $opt_name, $instance = array() ) {
+                if ( ! empty( self::$uses_extensions[ $opt_name ] ) ) {
+                    return;
+                }
+                if ( empty( $instance ) ) {
+                    $instance = ReduxFrameworkInstances::get_instance( $opt_name );
+                }
+                if ( empty( $instance ) || empty( $instance->extensions ) ) {
+                    return;
+                }
+                foreach ( $instance->extensions as $name => $extension ) {
+                    if ( $name == "widget_areas" ) {
+                        $new = new Redux_Widget_Areas( $instance );
+                    }
+                    if ( isset( self::$uses_extensions[ $opt_name ][ $name ] ) ) {
+                        continue;
+                    }
+                    if ( isset( $extension->extension_dir ) ) {
+                        Redux::setExtensions( $opt_name, str_replace( $name, '', $extension->extension_dir ) );
+
+                    } else if ( isset( $extension->_extension_dir ) ) {
+                        Redux::setExtensions( $opt_name, str_replace( $name, '', $extension->_extension_dir ) );
+                    }
+                }
+            }
+
             public static function getExtensions( $opt_name = "", $key = "" ) {
+
                 if ( empty( $opt_name ) ) {
+                    Redux::getAllExtensions();
                     if ( empty( $key ) ) {
-                        return self::$extension_paths[ $key ];
+                        return self::$extension_paths;
                     } else {
                         if ( isset( self::$extension_paths[ $key ] ) ) {
                             return self::$extension_paths[ $key ];
                         }
                     }
                 } else {
+                    if ( empty( self::$uses_extensions[ $opt_name ] ) ) {
+                        Redux::getInstanceExtensions( $opt_name );
+                    }
+
                     if ( empty( self::$uses_extensions[ $opt_name ] ) ) {
                         return false;
                     }
@@ -446,8 +592,9 @@
                         $name                             = str_replace( '.php', '', basename( $extension ) );
                         $extension_class                  = 'ReduxFramework_Extension_' . $name;
                         $instanceExtensions[ $extension ] = array(
-                            'path'  => $class_file,
-                            'class' => $extension_class
+                            'path'    => $class_file,
+                            'class'   => $extension_class,
+                            'version' => Redux_Helpers::get_template_version( $class_file )
                         );
                     }
 

@@ -1,10 +1,10 @@
 === Redux Framework ===
-Contributors: dovyp, kprovance, section214
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N5AD7TSH8YA5U
+Contributors: dovyp, kprovance
+Donate link: http://ideas.reduxframework.com
 Tags: admin, admin interface, options, theme options, plugin options, options framework, settings, web fonts, google fonts
 Requires at least: 3.5.1
-Tested up to: 4.2
-Stable tag: 3.5.0.1
+Tested up to: 4.3
+Stable tag: 3.5.6.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -12,7 +12,7 @@ Redux is a simple, truly extensible and fully responsive options framework for W
 
 == Description ==
 
-Redux is a simple, truly extensible and fully responsive options framework for WordPress themes and plugins. Built on the WordPress Settings API, Redux supports a multitude of field types as well as custom error handling, custom field & validation types, and import/export functionality.
+Redux is a simple, truly extensible and fully responsive options framework for WordPress themes and plugins. Built on the WordPress Settings API, Redux supports a multitude of field types as well as: custom error handling, custom fields & validation types, and import/export functionality.
 
 But what does Redux actually DO? We don't believe that theme and plugin
 developers should have to reinvent the wheel every time they start work on a
@@ -24,22 +24,22 @@ it would take to build from the ground up!
 
 = Online Demo =
 Don't take our word for it, check out our online demo and try Redux without installing a thing!
-[**http://demo.reduxframework.com/wp-admin/**](http://demo.reduxframework.com/wp-admin/)
+[**http://demo.redux.io/**](http://demo.redux.io/)
 
-= Use Our Custom Generator to Get Started =
-Want to use Redux, but not sure what to do? Use our [generator](http://generate.reduxframework.com/)! It will allow you to make
+= Use the Redux Builder to Get Started =
+Want to use Redux, but not sure what to do? Use our [builder](http://build.reduxframework.com/)! It will allow you to make
 a custom theme based on [_s](http://underscores.me), [TGM](http://tgmpluginactivation.com), and [Redux](http://reduxframework.com), and any Redux arguments you want to set.
 Don't want to make your own theme? Then output a custom admin folder that you can place
 in a theme or plugin. Oh and did we mention it's free? Try it today at:
-[**http://generate.reduxframework.com/**](http://generate.reduxframework.com/)
+[**http://build.reduxframework.com/**](http://build.reduxframework.com/)
 
 
 = Docs & Support =
-We have extremely extensive docs. Please visit [http://docs.reduxframework.com/](http://docs.reduxframework.com/) If that doesn’t solve your concern, you should search [the issue tracker on Github](https://github.com/ReduxFramework/ReduxFramework/issues). If you can't locate any topics that pertain to your particular issue, [post a new issue](https://github.com/ReduxFramework/ReduxFramework/issues/new) for it. Before you submit an issue, please read [our contributing requirements](https://github.com/redux-framework/redux-framework/blob/master/CONTRIBUTING.md). We build off of the dev version and push to WordPress.org when all is confirmed stable and ready for release.
+We have extremely extensive docs. Please visit [http://docs.reduxframework.com/](http://docs.reduxframework.com/) If that doesn’t solve your concern, you should search [the issue tracker on Github](https://github.com/reduxframework/redux-framework/issues). If you can't locate any topics that pertain to your particular issue, [post a new issue](https://github.com/reduxframework/redux-framework/issues/new) for it. Before you submit an issue, please read [our contributing requirements](https://github.com/redux-framework/redux-framework/blob/master/CONTRIBUTING.md). We build off of the dev version and push to WordPress.org when all is confirmed stable and ready for release.
 
 
 = Redux Framework Needs Your Support =
-It is hard to continue development and support for this free plugin without contributions from users like you. If you enjoy using Redux Framework, and find it useful, please consider [making a donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N5AD7TSH8YA5U). Your donation will help encourage and support the plugin's continued development and better user support.
+It is hard to continue development and support for this free plugin without contributions from users like you. If you enjoy using Redux Framework, and find it useful, please consider [making a donation](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MMFMHWUPKHKPW). Your donation will help encourage and support the plugin's continued development and better user support.
 
 = Fields Types =
 
@@ -83,7 +83,7 @@ It is hard to continue development and support for this free plugin without cont
 
 * Field Validation
 * MANY translations. (See below)
-* Full value escaping
+* Full value escaping.
 * Required - Link visibility from parent fields. Set this to affect the visibility of the field on the parent's value. Fully nested with multiple required parents possible.
 * Output CSS Automatically - Redux generates CSS and the appropriate Google Fonts stylesheets for you on select fields. You need only specify the CSS selector to apply the CSS to (limited to certain fields).
 * Compiler integration! A custom hook runs when any fields with the argument `compile => true` are changed.
@@ -95,7 +95,7 @@ We need your help to translate Redux into your language! Redux is part of the WP
 
 = Get Involved =
 Redux is an ever-changing, living system. Want to stay up to date or
-contribute? Subscribe to one of our mailing lists or join us on [Twitter](https://twitter.com/reduxframework) or [Github](https://github.com/ReduxFramework/ReduxFramework)!
+contribute? Subscribe to one of our mailing lists or join us on [Facebook](https://facebook.com/reduxframework) or [Twitter](https://twitter.com/reduxframework) or [Github](https://github.com/ReduxFramework/ReduxFramework)!
 
 NOTE: Redux is not intended to be used on its own. It requires a config file
 provided by a third-party theme or plugin developer to actual do anything
@@ -125,7 +125,153 @@ That's because the real FAQ section is on our site! Please visit [http://docs.re
 
 == Changelog ==
 
-= 3.5.0.1 =
+## 3.5.6.1
+* Fixed:     Index error regarding icon argument.
+
+## 3.5.6
+* Fixed     Customizer WP 4.3 final fixes.
+* Fixed     #2500 - Conflict with outdated select2 in JW Player plugin.
+* Modified: icon_type no longer needed for section icons. Now detects if URLs are provided for images.
+* Fixed:    Various customizer fixes. HTML in the customizer title.
+* Modified: Media URL now is 95% wide.
+* Modified: Select2 now 100% width instead of just resolve (that doesn't always work).
+* Modified: Field enqueue method to allow for more flexibility.
+* Added:    Support for Airplane Mode plugin (https://github.com/norcross/airplane-mode) by @norcross. Thanks @chriscct7  #2463
+* Fixed:    Undefined index in theme-check enhancements. Thanks @winwinwebdesign!
+* Removed:  SASS compiler & code. Note needed.
+* Fixed:    Color transparency live-update for Customizer for color, background,
+            and color gradient fields.
+* Fixed:    Undefined index when removing a section.
+* Fixed:    Typography bug onload always saying settings have changed.
+* Modified: Added minified customizer JS.
+* Fixed:    Redux CUSTOMIZER! YEA!
+* Fixed:    Small echo in Redux API
+
+= 3.5.5.1 =
+* Fixed:    Sigh, PHP 5.2 issues.
+
+= 3.5.5 =
+* Fixed:    Date-time fixes with CSS overloading and positioning.
+* Added:    Lite support for https://wordpress.org/plugins/plugin-dependencies/
+* Modified: CDN to be a more bulletproof solution (http://jsdelivr.net).
+* Modified: CDN alerts to be more clear, and have proper links.
+* Fixed:    Bad code in raw field hosing up the entire panel.
+* Modified: #2436 - Validation check for any validation type ending in 'not_empty' now recognized.
+* Fixed:    Undefined index for undeclared variable in Theme-Check checks.
+* Fixed:    Annoying Redux Theme-Check notices.
+* Fixed:    How some functions were called.
+* Fixed:    Theme-Check baby! Everything working as it should with extra theme-check hints to prepare
+            your theme for submission!
+* Fixed:    Better .org hinting for theme submission.
+* Modified: `forced_dev_mode_off` argument that will ensure dev_mode is ALWAYS off.
+            PLEASE do not ship with this enabled. We will NOT provide any support for any instance that
+            has this argument enabled. Disable and test prior to posting on our issue tracker.
+* Added:    `customizer_only` as a global arg that disables all of Redux except for the customizer, in
+            preparation for our customizer integration.
+* Modified: Dissmissable Redux Admin notices now use the WP 4.2 dismiss JS and Ajax. Pretty.
+* Modified: Admin notice code is now it's own isolated class inside core.
+* Modified: Use DB for admin notice, not flat-files. Boo.
+* Modified: Sample configs not to cause errors if multiple users use the same function name.
+* Fixed:    CDN internationalization class.
+* Modified: Parsedown so as not to throw a shortcode error that didn't actually exist.
+* Fixed:    #2446 - Non google font choice not saving in certain instances.
+* Fixed:    Added additional check in redux.js to stop errors with panels containing multiple raw fields.
+* Fixed:    Hopefully, the issue of settings not saving on first install when using the Redux API.
+* Fixed:    Set use_cdn argument to true, by default.
+* Fixed     #2437 - undefined value set to blank line height.
+* Fixed:    #2429 - Required evaluator 'contains' not working properly with multi_check
+* Fixed:    #2426 - Section field not indenting.
+* Fixed:    Divider field not rendering properly.
+* Added:    `fieldset_class` argument for fields.  Thanks @Enchiridion.
+* Added:    Option to set checkbox label.  Thanks @Enchiridion.
+* Added:    javascript .trigger('change') to switch, spinner, and image_select.  Thanks @Enchiridion.
+* Modified: Ajax change output of error and notice via hooks.
+* Fixed:    #2414 - Bad ajax save due to mis-initialized variable.
+* Fixed:    CSS in metabox fields all wanky.
+* Added:    'reload_on_change' arg for fields, to force page reload after setting change.
+* Fixed:    #2377 - Replaced mysql_gets_server_info with $wpdb.
+* Modified: Templates to properly excape values.
+* Fixed:    Import/Export to properly be full-width and use lazy-load JS.
+* Modified: CSS for sections to bound to the section, not all of Redux.
+* Fixed:    #2368 - Options panel layout offset.
+* Fixed:    #2369 - validate_callback not working for color, color_gradient, and date.
+* Fixed:    #2355 - Space missing in switch class arg.
+* Fixed:    Fixed all fields without leading space in class arg.
+* Modified: Restrict table modification to redux-container.
+* Fixed:    Container overflow for pre's.
+* Modified: Redux API to include removeSection and removeField.
+* Added:    Added before and after hooks to any panel template file.
+* Fixed:    #2351 - WP_Error check added to admin blast remote get.
+* Modified: Moved styling for the divide field into it's own CSS file.
+* Modified: All WP Color Pickers to properly save the value before save.
+* Added:    CSS Styles for the customizer.  ;)
+* Modified: Panel is MUCH more responsive now.
+* Fixed:    Small stylings for a few fields.
+* Fixed:    Added extra qTip class.
+* Modified: Ajax save animation. Added fallback for pre 4.2 CSS.
+* Fixed:    Small issue with Redux info boxes and spacing.
+* Fixed:    Small bug with the Redux API where divide sections were causing errors.
+* Fixed:    Small admin blast fix.
+* Modified: Qtip and Spectrum vendor libraries restored to local.
+* Fixed:    Admin notice loading on front end.
+* Modified: Callback actions run with do_action_ref_array now.
+* Added:    show_options_object argument to enable or disable option object.
+* Added:    Error suppressing to filesystem class to avoid notice errors when site goes down.
+* Fixed:    Panels not rendering, again
+* Added:    Vendor support plugin link to CDN fallback message.
+* Modified: Moved vendor libraries ACE, select2, qtip, and spectrum to CDN.
+* Removed:  Local installs of above libraries.
+* Fixed:    Option panel not rendering due to experimental code.
+* Fixed:    How sorter works with data
+* Modified: How the data arg is stored in Redux.
+* Removed:  sysinfo.php.  No longer needed in lieu of our support URL feature.
+* Removed:  debug.php.  Moved to options_object extension.
+* Modified: #2274 - PHP Unit test compatibility.  Thanks @daithi-coombes.
+* Modified: #2144 - Optional class argument per image.  Thanks @paulthecoder.
+* Fixed:    #2278 - More W3 Total Cache hacks.
+
+= 3.5.4.3 =
+* Fixed: #2258 - welcome redirect error with embedding plugin scenarios.
+* Fixed: Redux plugin load order when activating plugins.
+* Fixed: #2271 - stuck redirect on godaddy (seriously, get a real host, people) servers.
+* Fixed: #2216 - Reset section not always working within FF.
+
+= 3.5.4 =
+* Modified: update_notice arg only truly shows up if dev_mode is on.
+* Added:    Tooltip to developer mode badge, for informational purposes.
+* Modified: Added css_layout ext to default value filter, to avoid errors.
+* Fixed:    #2239 - Various extensions didn't support default values for default arg.  Filtered out offending extensions.
+
+= 3.5.3.1 =
+* Fixed: WP.org ONLY SVN mixup.
+
+= 3.5.3 =
+* Fixed:   #2228 - Submenu items still visible if permissions not allowed.
+* Fixed:   Import/Export showing up in customizer.
+* Modified: Admin-fresh theme to match new WordPress 4.2
+* Modified: Redux widget now has a proper ID. Thanks @corradomatt!
+* Modified: Added text-shadow to submenu items to give a stronger "pop"
+* Modified: Page_slug now dynamically generated if not specified.
+* Modified: Admin blast message pinging server on each load after three day expiration.  Possible slow down of the overall panel loading time.
+* Fixed:   #2221 - Background field media not enqueueing when used with no other media based fields.
+* Fixed:   #2214: Bad path for import/export enqueue.
+* Release: Wp.org release.
+* Fixed:    #2214 - Import/export field contained bad enqueue path.
+* Modified: If running localhost or WP_DEBUG is set to true, Redux dev_mode is forced to true.
+* Modified: Page_slug now dynamically generated if not specified.
+
+= 3.5.1 =
+* Modified: Redux News dashboard widget appears only when dev_mode is true or in a local host environment.
+* Fixed     #2127 - Elusive icons not working in footer as before.
+* Fixed     Issue where Status tab not showing extension versions properly.
+* Fixed     Issue in support URL not passing data correctly.
+* Fixed     Support URLs now work even if max_input_vars is way low in PHP 5.3+
+* Fixed     #2197 - Import/export not loading proper for those who have opted to install Wordpress in ways it was never intended.
+* Fixed:    'Generate Support URL' feature kicking back error.
+* Fixed     Sortable checkbox labels not displaying properly.
+* Fixed     Sortable textbox not displaying default value as placeholder.
+* Updated:  sample-config with accurate example for both sortable modes.
+* Fixed     #2181 - Fixed issue with Ajax Save when PHP 5.3 Magic Quotes were disabled.
 * Fixed:    #2181 - Lingering issue with Ajax Save and PHP Magic Quotes.
 
 = 3.5.0 =

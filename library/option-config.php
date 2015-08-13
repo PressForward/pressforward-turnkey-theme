@@ -832,7 +832,7 @@ $this->sections[] = array(
 				    'type'     => 'color_gradient',
 				    'title'    => __('Blog Gradient Color', 'brew-framework'),
 				    'desc'     => __('Pick a start and end color for block 5.', 'brew-framework'),
-				    'validate' => 'color'
+				    'validate' => 'color',
 				    ),
 						array(
 				    'id'       => 'background-block6',
@@ -1007,6 +1007,7 @@ $this->sections[] = array(
 					array (
 					    'id'       => 'author-display-excluded-categories',
 					    'type'     => 'select',
+					    'default'  => '1',
 					    'multi'    => true,
 					    'title'    => __('3. Categories to Exclude', 'brew-framework'), 
 					    'desc'     => __('The categories selected here will display the author name even when option #1 is turned off.', 'brew-framework'),
@@ -1015,6 +1016,7 @@ $this->sections[] = array(
 					array (
 					    'id'       => 'author-display-included-categories',
 					    'type'     => 'select',
+					    'default'  => '1',
 					    'multi'    => true,
 					    'title'    => __('4. Categories to Include', 'brew-framework'), 
 					    'desc'     => __('The categories selected here will display the author name <strong>and</strong> link even when option #1 is turned off.', 'brew-framework'),

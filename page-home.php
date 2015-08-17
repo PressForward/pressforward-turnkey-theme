@@ -146,134 +146,220 @@ Template Name: Home Page Template
 ?>
 
 <!-- BLOCK 3: CATEGORIES -->
-<?php global $brew_options ?>
-<main class="categorieshome" role="main">
-  <div class="container" id="categories">
-    <div class="row text-center">
-      <div class="row homecategories">
-        <!--Section 1-->
-          <div class="col-md-4 about" id="content1">
-              <div class="homeinnerwrapper">
-                <i class="fa <?php echo $brew_options['b3-c1-icon'] ?> fa-3x"></i>
-                <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c1-title'] ?></h1>
-                <ul>
-                <?php $b3c1cat = 'cat=' . $brew_options['b3-c1-category'] . '&posts_per_page=3' ?>
-                <?php query_posts($b3c1cat); ?>
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
-                <?php endwhile; endif; ?>
-                <?php wp_reset_query(); ?>
-                </ul>
+<?php if($brew_options['block3-switch'] != 2 && $brew_options['block3-row-number'] == 2 ){
+      global $brew_options;
+      echo '<main class="categorieshome" role="main">
+        <div class="container" id="categories">
+          <div class="row text-center">
+            <div class="row homecategories">
+              <!--Section 1-->
+                <div class="col-md-4 about" id="content1">
+                    <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c1-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c1-title'] . '</h1>
+                      <ul>';
+                      $b3c1cat = 'cat=' . $brew_options['b3-c1-category'] . '&posts_per_page=3';
+                      query_posts($b3c1cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                        echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
                 </div>
                 
-              </div>
-          </div>
+              <!--Section 2-->
+                <div class="col-md-4 about content2">
+                      <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c2-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c2-title'] . '</h1>
+                      <ul>';
+                      $b3c2cat = 'cat=' . $brew_options['b3-c2-category'] . '&posts_per_page=3';
+                      query_posts($b3c2cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                        echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
+                </div>
           
-        <!--Section 2-->
-          <div class="col-md-4 about content2">
-                <div class="homeinnerwrapper">
-                <i class="fa <?php echo $brew_options['b3-c2-icon'] ?> fa-3x"></i>
-                <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c2-title'] ?></h1>
-                <ul>
-                <?php $b3c2cat = 'cat=' . $brew_options['b3-c2-category'] . '&posts_per_page=3' ?>
-                <?php query_posts($b3c2cat); ?>
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
-                <?php endwhile; endif; ?>
-                <?php wp_reset_query(); ?>
-                </ul>
+              <!--Section 3-->
+                <div class="col-md-4 about content3">
+                   <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c3-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c3-title'] . '</h1>
+                      <ul>';
+                      $b3c3cat = 'cat=' . $brew_options['b3-c3-category'] . '&posts_per_page=3';
+                      query_posts($b3c3cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                       echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
                 </div>
                 
-              </div>
-          </div>
-    
-        <!--Section 3-->
-          <div class="col-md-4 about content3">
-             <div class="homeinnerwrapper">
-                <i class="fa <?php echo $brew_options['b3-c3-icon'] ?> fa-3x"></i>
-                <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c3-title'] ?></h1>
-                <ul>
-                <?php $b3c3cat = 'cat=' . $brew_options['b3-c3-category'] . '&posts_per_page=3' ?>
-                <?php query_posts($b3c3cat); ?>
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
-                <?php endwhile; endif; ?>
-                <?php wp_reset_query(); ?>
-                </ul>
+            </div> <!--end row-->
+
+            <div class="row homecategories">
+              <!--Section 1-->
+                <div class="col-md-4 about content4">
+                    <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c4-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c4-title'] . '</h1>
+                      <ul>';
+                      $b3c4cat = 'cat=' . $brew_options['b3-c4-category'] . '&posts_per_page=3';
+                      query_posts($b3c4cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                         echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
                 </div>
-                
-              </div>
-          </div>
           
-      </div> <!--end row-->
+              <!--Section 2-->
+                <div class="col-md-4 about content5">
+                   <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c5-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c5-title'] . '</h1>
+                      <ul>';
+                      $b3c5cat = 'cat=' . $brew_options['b3-c5-category'] . '&posts_per_page=3';
+                      query_posts($b3c5cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                         echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
+                </div>
+          
+              <!--Section 3-->
+                <div class="col-md-4 about content6">
+                   <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c6-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c6-title'] . '</h1>
+                      <ul>';
+                      $b3c6cat = 'cat=' . $brew_options['b3-c6-category'] . '&posts_per_page=3';
+                      query_posts($b3c6cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post(); 
+                          echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif; 
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
+                </div>
+            </div> <!--end row-->
+          </div>
+        </div>
+      </main>';
 
-      <div class="row homecategories">
-        <!--Section 1-->
-          <div class="col-md-4 about content4">
-              <div class="homeinnerwrapper">
-                <i class="fa <?php echo $brew_options['b3-c4-icon'] ?> fa-3x"></i>
-                <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c4-title'] ?></h1>
-                <ul>
-                <?php $b3c4cat = 'cat=' . $brew_options['b3-c4-category'] . '&posts_per_page=3' ?>
-                <?php query_posts($b3c4cat); ?>
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
-                <?php endwhile; endif; ?>
-                <?php wp_reset_query(); ?>
-                </ul>
+} elseif ($brew_options['block3-switch'] != 2 && $brew_options['block3-row-number'] == 1) {
+   global $brew_options;
+      echo '<main class="categorieshome" role="main">
+        <div class="container" id="categories">
+          <div class="row text-center">
+            <div class="row homecategories">
+              <!--Section 1-->
+                <div class="col-md-4 about" id="content1">
+                    <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c1-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c1-title'] . '</h1>
+                      <ul>';
+                      $b3c1cat = 'cat=' . $brew_options['b3-c1-category'] . '&posts_per_page=3';
+                      query_posts($b3c1cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                        echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
                 </div>
                 
-              </div>
-          </div>
-    
-        <!--Section 2-->
-          <div class="col-md-4 about content5">
-             <div class="homeinnerwrapper">
-                <i class="fa <?php echo $brew_options['b3-c5-icon'] ?> fa-3x"></i>
-                <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c5-title'] ?></h1>
-                <ul>
-                <?php $b3c5cat = 'cat=' . $brew_options['b3-c5-category'] . '&posts_per_page=3' ?>
-                <?php query_posts($b3c5cat); ?>
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
-                <?php endwhile; endif; ?>
-                <?php wp_reset_query(); ?>
-                </ul>
+              <!--Section 2-->
+                <div class="col-md-4 about content2">
+                      <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c2-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c2-title'] . '</h1>
+                      <ul>';
+                      $b3c2cat = 'cat=' . $brew_options['b3-c2-category'] . '&posts_per_page=3';
+                      query_posts($b3c2cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                        echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
+                </div>
+          
+              <!--Section 3-->
+                <div class="col-md-4 about content3">
+                   <div class="homeinnerwrapper">
+                      <i class="fa' . $brew_options['b3-c3-icon'] . 'fa-3x"></i>
+                      <div class="homeinnercontent">
+                      <h1>' . $brew_options['b3-c3-title'] . '</h1>
+                      <ul>';
+                      $b3c3cat = 'cat=' . $brew_options['b3-c3-category'] . '&posts_per_page=3';
+                      query_posts($b3c3cat);
+                      if ( have_posts() ) : while ( have_posts() ) : the_post();
+                       echo '<li><a href="';
+                        echo the_permalink() . '">';
+                        echo  the_title() . '</a></li>';
+                      endwhile; endif;
+                      wp_reset_query();
+                      echo '</ul>
+                      </div>
+                      
+                    </div>
                 </div>
                 
-              </div>
-          </div>
-    
-        <!--Section 3-->
-          <div class="col-md-4 about content6">
-             <div class="homeinnerwrapper">
-                <i class="fa <?php echo $brew_options['b3-c6-icon'] ?> fa-3x"></i>
-                <div class="homeinnercontent">
-                <h1><?php echo $brew_options['b3-c6-title'] ?></h1>
-                <ul>
-                <?php $b3c6cat = 'cat=' . $brew_options['b3-c6-category'] . '&posts_per_page=3' ?>
-                <?php query_posts($b3c6cat); ?>
-                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-                    <li><a href="<?php the_permalink(); ?>"> <?php the_title(); ?></a></li>
-                <?php endwhile; endif; ?>
-                <?php wp_reset_query(); ?>
-                </ul>
-                </div>
-                
-              </div>
-          </div>
-      </div> <!--end row-->
-    </div>
-  </div>
-</main>
-
-
-
+            </div> <!--end row-->
+                      </div>
+        </div>
+      </main>';
+}
+?>
 <!-- BLOCK 4: ABOUT -->
 <div class="block4" role="main">
 <div class="container info">

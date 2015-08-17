@@ -862,6 +862,48 @@ $this->sections[] = array(
 			    'subsection' => true,
 			    'heading' => 'Blocks 5 and 6',
 			    'desc'    => __('Block 5 and 6 are both composed of several widget areas and can be configured in the Widgets panel in the WordPress dashboard. Block 5 includes one row of two widgets. Block 6, the footer, includes three widget areas.'),
+			'fields'  => array(
+			    	$fields = array(
+				    'id'       => 'block5-switch',
+				    'type'     => 'button_set',
+				    'title'    => __('Block 5', 'brew-framework'),
+				    'subtitle' => __('Turn block 5 on or off.', 'brew-framework'),
+				    'description' => __('Block 5 contains two widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF', 
+				     ), 
+				    'default' => '1'
+					),
+					array(
+				    'id'       => 'block6-switch',
+				    'type'     => 'button_set',
+				    'title'    => __('Block 6', 'brew-framework'),
+				    'subtitle' => __('Turn block 6 on or off.', 'brew-framework'),
+				    'description' => __('Block 6 contains three widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF', 
+				     ), 
+				    'default' => '1'
+					),
+					array(
+					'id'       => 'block6-col-number',
+				    'type'     => 'button_set',
+				    'title'    => __('Number of Block 6 columns', 'brew-framework'),
+				    'subtitle' => __('Choose how many columns you would like to appear in block 2.', 'brew-framework'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'Two Columns', 
+				        '2' => 'Three Columns',
+				        '3' => 'Four Columns'
+				     ), 
+				    'default' => '3'
+					),
+			        
+			    ),
 			);
 
 			$this->sections[] = array(

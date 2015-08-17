@@ -372,22 +372,25 @@ Template Name: Home Page Template
     }
 ?>
 
-<!-- BLOCK 5: BLOG -->
-<main class="bloghome" role="main">
-  <div class="container" id="blog">
-    <div class="row">
-        <div class="col-md-7">
-          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blogexcerpt') ) : ?>
-          <?php endif; ?>
-        </div>
+<!-- BLOCK 5: Widget Areas -->
+<?php if($brew_options['block5-switch'] != 2) {
+      echo '<main class="bloghome" role="main">
+        <div class="container" id="blog">
+          <div class="row">
+              <div class="col-md-7">';
+                if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blogexcerpt') ) : 
+                endif; 
+              echo '</div>
 
-        <div class="col-md-5" id="bloglist">
-          <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('bloglist') ) : ?>
-          <?php endif; ?>
+              <div class="col-md-5" id="bloglist">';
+                if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('bloglist') ) :
+                endif;
+              echo '</div>
+          </div>
         </div>
-    </div>
-  </div>
-</main>
+      </main>';
+    }
+    ?>
 
 
 <?php get_footer(); ?>

@@ -749,7 +749,7 @@ $this->sections[] = array(
 	            	'id'       => 'b3-c4-category',
 				    'type'     => 'select',
 				    'title'    => __('Category to Display', 'brew-framework'), 
-				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+				    'subtitle' => __('The categories that the first column in row 2 should pull from to display the most recent posts.', 'brew-framework'),
 				    'data' => 'categories',
 				    'default' => '1'
 	            	),
@@ -783,7 +783,7 @@ $this->sections[] = array(
 	            	'id'       => 'b3-c5-category',
 				    'type'     => 'select',
 				    'title'    => __('Category to Display', 'brew-framework'), 
-				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+				    'subtitle' => __('The categories that the second column in row 2 should pull from to display the most recent posts.', 'brew-framework'),
 				    'data' => 'categories',
 				    'default' => '1'
 	            	),
@@ -818,7 +818,7 @@ $this->sections[] = array(
 		            	'id'       => 'b3-c6-category',
 					    'type'     => 'select',
 					    'title'    => __('Category to Display', 'brew-framework'), 
-					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+					    'subtitle' => __('The categories that the last column in row 2 should pull from to display the most recent posts.', 'brew-framework'),
 					    'data' => 'categories',
 					    'default' => '1'
 		            	),

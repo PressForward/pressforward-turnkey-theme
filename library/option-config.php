@@ -716,7 +716,7 @@ $this->sections[] = array(
 		            	'id'       => 'b3-c3-category',
 					    'type'     => 'select',
 					    'title'    => __('Category to Display', 'brew-framework'), 
-					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+					    'subtitle' => __('The categories that the third column should pull from to display the most recent posts.', 'brew-framework'),
 					    'data' => 'categories',
 		            	'default' => '1'
 		            	),

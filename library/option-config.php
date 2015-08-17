@@ -360,6 +360,19 @@ $this->sections[] = array(
 			    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
 			    'data' => 'categories'
 			),
+			array(
+			    'id'       => 'slider-post-quantity',
+			    'type'     => 'button_set',
+			    'title'    => __('Number of Posts to Display in Slider', 'brew-framework'),
+			    //Must provide key => value pairs for options
+			    'options' => array(
+			        '4' => 'Four Posts (Default)', 
+			        '5' => 'Five Posts',
+			        '6' => 'Six Posts', 
+
+			     ), 
+			    'default' => '4'
+			),
     	),
 	);
 $this->sections[] = array (

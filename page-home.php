@@ -13,9 +13,8 @@ Template Name: Home Page Template
           <div  class="container homepage">
           <div class="sl-test">';
     
-    $postcats = 'category=' . $brew_options['slider-categories'][0] . '&posts_per_page=4';
+    $postcats = 'category=' . $brew_options['slider-categories'][0] . '&posts_per_page='. $brew_options['slider-post-quantity'];
     $feat_posts = get_posts($postcats);
-    
     echo '<div class="liquid-slider" id ="slider2">';
     
         foreach($feat_posts as $post) {
@@ -28,7 +27,7 @@ Template Name: Home Page Template
               echo '<br><h2>By: ' . get_the_author() . '</h2></div>';  
                         
               $trimexcerpt = get_post_field('post_content', $id);
-              $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 75, $more = '… ' );
+              $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
                         
               echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>
                 <a href="' . get_permalink() .'" alt="' . get_the_title() . '" class="btn btn-default">Read More</a>    

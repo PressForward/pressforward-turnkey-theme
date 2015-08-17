@@ -370,6 +370,31 @@ $this->sections[] = array (
 	'desc' => __('This panel provides options for setting up the second block on the homepage. Each section below represents one column within the second block.'),
 	'fields' => array (
 				//START BLOCK 2 OPTIONS
+		$fields = array(
+	    'id'       => 'block2-switch',
+	    'type'     => 'button_set',
+	    'title'    => __('Block 2', 'brew-framework'),
+	    'subtitle' => __('Turn block 2 on or off.', 'brew-framework'),
+	    //Must provide key => value pairs for options
+	    'options' => array(
+	        '1' => 'ON', 
+	        '2' => 'OFF', 
+	     ), 
+	    'default' => '1'
+		),
+		$fields = array(
+	    'id'       => 'block2-col-number',
+	    'type'     => 'button_set',
+	    'title'    => __('Number of Block 2 columns', 'brew-framework'),
+	    'subtitle' => __('Choose how many columns you would like to appear in block 2.', 'brew-framework'),
+	    //Must provide key => value pairs for options
+	    'options' => array(
+	        '1' => 'Two Columns', 
+	        '2' => 'Three Columns',
+	        '3' => 'Four Columns'
+	     ), 
+	    'default' => '3'
+		),
 				array (
 					'id' => 'block2-start',
 					'type' => 'section',

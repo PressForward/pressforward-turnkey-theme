@@ -50,7 +50,7 @@ Template Name: Home Page Template
 ?> <!--End Block 1-Slider-->
 
 <!-- BLOCK 2 -->
-<?php if ($brew_options['block2-switch'] != 2) {
+<?php if ($brew_options['block2-switch'] != 2 && $brew_options['block2-col-number'] == 3) {
     echo '<main class="participatehome" role="main">
             <div class="container" id="participate">
               <div class="row text-center">
@@ -88,7 +88,61 @@ Template Name: Home Page Template
             </div>
         </div>
     </main>';
-  }
+  } elseif ($brew_options['block2-switch'] != 2 && $brew_options['block2-col-number'] == 2) {
+      echo '<main class="participatehome" role="main">
+            <div class="container" id="participate">
+              <div class="row text-center">
+      <div class="row text-center">
+                  <div class="col-md-4">
+                      <i class="fa' . $brew_options['b2-c1-icon'] . 'fa-3x"></i>
+                      <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c1-pagelink']) . '">' . $brew_options['b2-c1-heading'] . '</a></h1>
+                    <div class="textwidget">
+                      <p>' . $brew_options['b2-c1-text'] . '</p>
+                    </div>
+                </div>
+               
+                <div class="col-md-4">
+                    <i class="fa' . $brew_options['b2-c2-icon'] . 'fa-3x"></i>
+                    <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c2-pagelink']) . '">' . $brew_options['b2-c2-heading'] . '</a></h1>
+                  <div class="textwidget">
+                  <p>' . $brew_options['b2-c2-text'] .'</p>
+                  </div>
+                </div>
+      
+                <div class="col-md-4">
+                <i class="fa' . $brew_options['b2-c3-icon'] . 'fa-3x"></i>
+                     <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c3-pagelink']) . '">' . $brew_options['b2-c3-heading'] . '</a></h1>
+                  <div class="textwidget">
+                  <p>' . $brew_options['b2-c3-text'] .'</p>
+                  </div>
+                </div>
+                 </div>
+        </div>
+    </main>';
+    } elseif ($brew_options['block2-switch'] != 2 && $brew_options['block2-col-number'] == 1) {
+      echo '<main class="participatehome" role="main">
+            <div class="container" id="participate">
+              <div class="row text-center">
+      <div class="row text-center">
+                  <div class="col-md-6">
+                      <i class="fa' . $brew_options['b2-c1-icon'] . 'fa-3x"></i>
+                      <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c1-pagelink']) . '">' . $brew_options['b2-c1-heading'] . '</a></h1>
+                    <div class="textwidget">
+                      <p>' . $brew_options['b2-c1-text'] . '</p>
+                    </div>
+                </div>
+               
+                <div class="col-md-6">
+                    <i class="fa' . $brew_options['b2-c2-icon'] . 'fa-3x"></i>
+                    <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c2-pagelink']) . '">' . $brew_options['b2-c2-heading'] . '</a></h1>
+                  <div class="textwidget">
+                  <p>' . $brew_options['b2-c2-text'] .'</p>
+                  </div>
+                </div>
+                 </div>
+        </div>
+    </main>';
+    }
 ?>
 
 <!-- BLOCK 3: CATEGORIES -->

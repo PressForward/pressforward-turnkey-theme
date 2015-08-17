@@ -8,39 +8,46 @@ Template Name: Home Page Template
 
 <!-- BLOCK 1: SLIDER -->
 
-<div class="slider">
- <div  class="container homepage">
-    <div class="sl-test">
-          <?php 
-          $postcats = 'category=' . $brew_options['slider-categories'][0] . '&posts_per_page=4';
-          $feat_posts = get_posts($postcats); ?>
-        <div class="liquid-slider" id ="slider2">
-          <?php foreach($feat_posts as $post) { ?>
-              <div id="slider-content">
-                  <?php $trim_title = get_post_field('post_title', $id);
-                        $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
-                        echo '<div id="slidertitle"><h1>' . $short_title . '</h1>';
-                        echo '<br><h2>By: ' . get_the_author() . '</h2></div>';  ?>
-                  <?php $trimexcerpt = get_post_field('post_content', $id);
-                        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 75, $more = '… ' );
-                        echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>';  ?>
-                  <a href="<?php echo get_permalink(); ?>" alt="<?php echo get_the_title() ?>" class="btn btn-default">Read More</a>
-                  
-                  <h2 class="title">
-              <span><i class="fa fa-circle filled"></i><i class="fa fa-circle-thin empty"></i></span>
-</h2>
-              </div> <!-- Close #slider-content -->
-               
-              <div id="sliderimg">
-                 <?php echo get_the_post_thumbnail( $post->ID, 'large') ?>
-              </div> <!-- close #sliderimg -->
-
-        </div> <!-- close .liquid-slider #slider2 -->
-        <?php } ?> <!--closes for each loop -->
-    </div> 
- </div> <!-- close .sl-test -->
-</div> <!-- close .container .homepage --> 
-</div> <!-- end .slider -->
+  <?php if ($brew_options['block1-switch'] != 2) {
+    echo '<div class="slider">
+          <div  class="container homepage">
+          <div class="sl-test">';
+    
+    $postcats = 'category=' . $brew_options['slider-categories'][0] . '&posts_per_page=4';
+    $feat_posts = get_posts($postcats);
+    
+    echo '<div class="liquid-slider" id ="slider2">';
+    
+        foreach($feat_posts as $post) {
+              echo '<div id="slider-content">';
+              
+              $trim_title = get_post_field('post_title', $id); 
+              $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
+              
+              echo '<div id="slidertitle"><h1>' . $short_title . '</h1>';
+              echo '<br><h2>By: ' . get_the_author() . '</h2></div>';  
+                        
+              $trimexcerpt = get_post_field('post_content', $id);
+              $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 75, $more = '… ' );
+                        
+              echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>
+                <a href="' . get_permalink() .'" alt="' . get_the_title() . '" class="btn btn-default">Read More</a>    
+                <h2 class="title">
+                  <span><i class="fa fa-circle filled"></i><i class="fa fa-circle-thin empty"></i></span>
+                </h2>
+                </div> <!-- Close #slider-content -->
+                     
+                <div id="sliderimg">';
+                    echo get_the_post_thumbnail( $post->ID, 'large');
+                    echo '</div> <!-- close #sliderimg -->
+                </div> <!-- close .liquid-slider #slider2 -->';
+        } //<!--closes for each loop -->
+    echo '</div> 
+    </div> <!-- close .sl-test -->
+    </div> <!-- close .container .homepage --> 
+    </div> <!-- end .slider -->';
+  };
+?> <!--End Block 1-Slider-->
 
 <!-- BLOCK 2-PARTICIPATE -->
 

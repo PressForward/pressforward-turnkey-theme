@@ -339,7 +339,20 @@ $this->sections[] = array(
     'icon' => 'fa fa-th',
     'subsection' => true,
     'fields' => array (
-    	$fields = array(
+    	$fields = 
+    		$fields = array(
+			    'id'       => 'block1-switch',
+			    'type'     => 'button_set',
+			    'title'    => __('Slider (Block 1)', 'brew-framework'),
+			    'subtitle' => __('Turn the slider on or off.', 'brew-framework'),
+			    //Must provide key => value pairs for options
+			    'options' => array(
+			        '1' => 'ON', 
+			        '2' => 'OFF', 
+			     ), 
+			    'default' => '1'
+			),
+    		array(
 			    'id'       => 'slider-categories',
 			    'type'     => 'select',
 			    'multi'    => true,

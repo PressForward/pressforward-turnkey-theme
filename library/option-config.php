@@ -609,7 +609,7 @@ $this->sections[] = array(
     'subsection' => true,
     'desc' => 'Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
         'fields' => array (
-		        	$fields = array(
+		        $fields = array(
 			    'id'       => 'block3-switch',
 			    'type'     => 'button_set',
 			    'title'    => __('Block 3', 'brew-framework'),
@@ -836,6 +836,18 @@ $this->sections[] = array(
 			    'heading' => 'Block 4',
 			    'desc'    => __('Use this section to display paragraph text in the fourth block.'),
 			    'fields'  => array(
+			    	$fields = array(
+				    'id'       => 'block4-switch',
+				    'type'     => 'button_set',
+				    'title'    => __('Block 4', 'brew-framework'),
+				    'subtitle' => __('Turn block 4 on or off.', 'brew-framework'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF', 
+				     ), 
+				    'default' => '1'
+					),
 			        array (
 						'id'=>'about_text',
 						'type' => 'textarea',

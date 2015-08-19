@@ -71,8 +71,13 @@
         <span class="icon-bar"></span>
       </button>
       <?php global $brew_options ?>
-      	<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-		<img  class="logo" src="<?php echo $brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
+      	
+      	<?php if($brew_options['use-logo'] != 2) {
+
+		echo '<a class="navbar-brand" href="' . bloginfo('url') . '" title="' .bloginfo('name') . '"rel="homepage"><img  class="logo" src="' . $brew_options['opt-media']['url'] . '" alt ="logo" /></a>';
+		} else {
+		echo '<a class="navbar-brand" style="margin-top: 0px !important; href="' . bloginfo('url') . '" title="' .bloginfo('name') . '"rel="homepage"><h1 style="font-size:45px">' . $brew_options['logo-text'] . '</h1>';
+			}?> </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

@@ -293,6 +293,22 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					    )
 					),
 					array(
+				    'id'       => 'use-logo',
+				    'type'     => 'button_set',
+				    'title'    => __('Use an uploaded image for logo', 'brew-framework'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF'
+				     ), 
+				    'default' => '1'
+					),
+					array(
+				    'id'       => 'logo-text',
+				    'type'     => 'text',
+				    'title'    => __('Custom Text to Display Rather than Logo', 'brew-framework')
+					),
+					array(
     					'id'       => 'comments-setup-buttons',
 					    'type'     => 'button_set',
 					    'title'    => __('Display Comments', 'brew-framework'),

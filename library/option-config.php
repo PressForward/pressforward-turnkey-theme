@@ -1131,7 +1131,7 @@ $this->sections[] = array(
 					'id'       => 'author-display-alttext',
 	            	'type'     => 'text',
 		            'title'    => __('2. Text to display rather than author', 'brew-framework'),
-		            'desc'     => __('Text to display in place of the author when the above option is turned off.', 'brew-framework')
+		            'desc'     => __('Text to display in place of the author when the above option is turned off. <i>ex: <strong>By: the Editors</strong></i> OR <i><strong>By: the PressForward Team<strong></i>', 'brew-framework')
 					),
 					array (
 					    'id'       => 'author-display-excluded-categories',
@@ -1139,7 +1139,7 @@ $this->sections[] = array(
 					    'default'  => '1',
 					    'multi'    => true,
 					    'title'    => __('3. Categories to Exclude', 'brew-framework'), 
-					    'desc'     => __('The categories selected here will display the author name even when option #1 is turned off.', 'brew-framework'),
+					    'desc'     => __('The categories selected here will display the author name even when option #1 is turned off. The author name <i><strong>will not be linked to the author archives.</strong></i> This is useful if you plan to display the original post author from the PressForward item rather than the wordpress author. ', 'brew-framework'),
 					    'data'	   => 'categories'
 						),
 					array (
@@ -1148,7 +1148,7 @@ $this->sections[] = array(
 					    'default'  => '1',
 					    'multi'    => true,
 					    'title'    => __('4. Categories to Include', 'brew-framework'), 
-					    'desc'     => __('The categories selected here will display the author name <strong>and</strong> link even when option #1 is turned off.', 'brew-framework'),
+					    'desc'     => __('The categories selected here will display the author name <i><strong>AND</strong></i> link even when option #1 is turned off.', 'brew-framework'),
 					    'data'	   => 'categories'
 						),
 

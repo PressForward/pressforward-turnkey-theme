@@ -289,7 +289,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					    'subtitle' => __('Upload any media using the WordPress native uploader', 'brew-framework'),
 					    'width' => 550,
 					    'default'  => array(
-					        'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
+					        'url'=>'http://chnmdev.gmu.edu/fellows/regan/PressFwd/wp-content/uploads/2014/10/PFLogo_transparent.png'
 					    )
 					),
 					array(

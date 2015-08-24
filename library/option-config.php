@@ -350,6 +350,55 @@ $this->sections[] = array (
 		),
 	);
 $this->sections[] = array(
+				'title' => __('Navigation Bar', 'brew-framework'),
+				'icon' => 'fa fa-th',
+				'subsection' => true,
+				'fields' => array (
+					array(
+				    'id'       => 'nav-bar-background',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Background', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'background-color' => '.navbar-inverse, .navbar-inverse .navbar-nav > .active > a')
+					),
+					array(
+				    'id'       => 'nav-bar-hover',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Hover Background', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'background-color' => '.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover')
+					),
+					array(
+				    'id'       => 'nav-bar-hover-border',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Item Hover Border', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'border-top-color' => '.nav > li > a:hover')
+					),
+					array(
+				    'id'       => 'nav-bar-border-color',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Item Hover Border', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'border-bottom-color' => '.navbar-inverse')
+					),
+					array(
+				    'id'       => 'nav-bar-text',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'color' => '.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a, .navbar-brand > h1')
+					),
+					
+				),
+			);
+
+$this->sections[] = array(
     'title' => __('Slider', 'brew-framework'),
     'heading'	=> 'Slider (or Block 1) Settings',
     'icon' => 'fa fa-th',
@@ -368,6 +417,13 @@ $this->sections[] = array(
 			     ), 
 			    'default' => '1'
 			),
+			array(
+				    'id'       => 'background-slider',
+				    'type'     => 'color_gradient',
+				    'title'    => __('Slider Gradient', 'brew-framework'),
+				    'desc'     => __('Choose a start and end color for the slider.', 'brew-framework'),
+				    'validate' => 'color'
+				    ),
     		array(
 			    'id'       => 'slider-categories',
 			    'type'     => 'select',
@@ -424,6 +480,14 @@ $this->sections[] = array (
 	     ), 
 	    'default' => '3'
 		),
+				array(
+				    'id'       => 'background-block2',
+				    'type'     => 'color',
+				    'title'    => __('Background Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.participatehome')
+					),
 				array (
 					'id' => 'block2-start',
 					'type' => 'section',
@@ -662,6 +726,14 @@ $this->sections[] = array(
 			     ), 
 			    'default' => '2'
 				),
+				array(
+				    'id'       => 'background-block3',
+				    'type'     => 'color',
+				    'title'    => __('Background Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the third block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.categorieshome')
+					),
         	array (
 			'id' => 'block3-c1-start',
 			'type' => 'section',
@@ -877,6 +949,14 @@ $this->sections[] = array(
 				     ), 
 				    'default' => '1'
 					),
+					array(
+				    'id'       => 'background-block4',
+				    'type'     => 'color',
+				    'title'    => __('Block 4 Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a background color for the fourth block (default: #142736).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.block4')
+					),
 			        array (
 						'id'=>'about_text',
 						'type' => 'textarea',
@@ -904,7 +984,14 @@ $this->sections[] = array(
 				        '2' => 'OFF', 
 				     ), 
 				    'default' => '1'
-					),
+					),array(
+				    'id'       => 'background-block5',
+				    'type'     => 'color_gradient',
+				    'title'    => __('Blog Gradient Color', 'brew-framework'),
+				    'desc'     => __('Pick a start and end color for block 5.', 'brew-framework'),
+				    'validate' => 'color',
+				    ),
+						
 					array(
 				    'id'       => 'block6-switch',
 				    'type'     => 'button_set',
@@ -931,81 +1018,7 @@ $this->sections[] = array(
 				     ), 
 				    'default' => '3'
 					),
-			        
-			    ),
-			);
-
-			$this->sections[] = array(
-				'title' => __('Homepage Colors', 'brew-framework'),
-				'icon' => 'fa fa-th',
-				'subsection' => true,
-				'desc' => __('Change the color of each block on the homepage.'),
-				'fields' => array (
-						array(
-				    'id'       => 'nav-bar-background',
-				    'type'     => 'color',
-				    'title'    => __('Navigation Bar Background', 'brew-framework'), 
-				    'validate' => 'color',
-				    'output'    => array(
-				    	'background-color' => '.navbar-inverse, .navbar-inverse .navbar-nav > .active > a')
-					),
 					array(
-				    'id'       => 'nav-bar-hover',
-				    'type'     => 'color',
-				    'title'    => __('Navigation Bar Hover Background', 'brew-framework'), 
-				    'validate' => 'color',
-				    'output'    => array(
-				    	'background-color' => '.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover')
-					),
-					array(
-				    'id'       => 'nav-bar-text',
-				    'type'     => 'color',
-				    'title'    => __('Navigation Bar Text Color', 'brew-framework'), 
-				    'validate' => 'color',
-				    'output'    => array(
-				    	'color' => '.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a, .navbar-brand > h1')
-					),
-
-
-						array(
-				    'id'       => 'background-slider',
-				    'type'     => 'color_gradient',
-				    'title'    => __('Slider Gradient', 'brew-framework'),
-				    'desc'     => __('Choose a start and end color for the slider.', 'brew-framework'),
-				    'validate' => 'color'
-				    ),
-					array(
-				    'id'       => 'background-block2',
-				    'type'     => 'color',
-				    'title'    => __('Block 2 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'brew-framework'),
-				    'validate' => 'color',
-				    'output'    => array('background-color' => '.participatehome')
-					),
-					array(
-				    'id'       => 'background-block3',
-				    'type'     => 'color',
-				    'title'    => __('Block 3 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the third block (default: #142736).', 'brew-framework'),
-				    'validate' => 'color',
-				    'output'    => array('background-color' => '.categorieshome')
-					),
-					array(
-				    'id'       => 'background-block4',
-				    'type'     => 'color',
-				    'title'    => __('Block 4 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the fourth block (default: #142736).', 'brew-framework'),
-				    'validate' => 'color',
-				    'output'    => array('background-color' => '.block4')
-					),
-					array(
-				    'id'       => 'background-block5',
-				    'type'     => 'color_gradient',
-				    'title'    => __('Blog Gradient Color', 'brew-framework'),
-				    'desc'     => __('Pick a start and end color for block 5.', 'brew-framework'),
-				    'validate' => 'color',
-				    ),
-						array(
 				    'id'       => 'background-block6',
 				    'type'     => 'color',
 				    'title'    => __('Block 6 Color (Footer)', 'brew-framework'), 
@@ -1013,7 +1026,15 @@ $this->sections[] = array(
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '#footer')
 					),
-					
+			        
+			    ),
+			);
+
+			$this->sections[] = array(
+				'title' => __('Footer', 'brew-framework'),
+				'icon' => 'fa fa-th',
+				'subsection' => true,
+				'fields' => array (
 						array(
 				    'id'       => 'background-copyright',
 				    'type'     => 'color',

@@ -942,6 +942,32 @@ $this->sections[] = array(
 				'desc' => __('Change the color of each block on the homepage.'),
 				'fields' => array (
 						array(
+				    'id'       => 'nav-bar-background',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Background', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'background-color' => '.navbar-inverse, .navbar-inverse .navbar-nav > .active > a')
+					),
+					array(
+				    'id'       => 'nav-bar-hover',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Hover Background', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'background-color' => '.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover')
+					),
+					array(
+				    'id'       => 'nav-bar-text',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'color' => '.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a, .navbar-brand > h1')
+					),
+
+
+						array(
 				    'id'       => 'background-slider',
 				    'type'     => 'color_gradient',
 				    'title'    => __('Slider Gradient', 'brew-framework'),

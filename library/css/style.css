@@ -202,7 +202,7 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 01. SLIDER
 02. ABOUT
 03. CATEGORIES
-04. PARTICIPATE
+04. BLOCK-2
 05. BLOG
 06. FOOTER
 ******************************************************************/
@@ -343,7 +343,7 @@ The icons for each category will appear once content is placed in the widget fro
 .widget > ul li:first {
   list-style-type: none;
 }
-.categorieshome {
+.block-3 {
   background-color: #142736;
   padding: 50px 0 50px 0;
 }
@@ -389,14 +389,14 @@ li {
 03. PARTICIPATE 
 The participate section is the second block on the home page. This block, much like the categories block, is composed of four widgetized areas.  These sections are contained in page-home.php in a container made up of four col-sm-3 sections.  
 ********************************/
-.participatehome {
+.block-2 {
   padding: 25px 0 25px 0;
 }
-.participatehome p {
+.block-2 p {
   text-align: center;
   font-size: 18px;
 }
-.participatehome h1 {
+.block-2 h1 {
   font-size: 24px;
 }
 /*******************************

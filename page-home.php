@@ -50,7 +50,7 @@ Template Name: Home Page Template
 
 <!-- BLOCK 2 -->
 <?php if ($brew_options['block2-switch'] != 2 && $brew_options['block2-col-number'] == 3) {
-    echo '<main class="participatehome" role="main">
+    echo '<main class="block-2" role="main">
             <div class="container" id="participate">
               <div class="row text-center">
                   <div class="col-md-3">
@@ -147,7 +147,7 @@ Template Name: Home Page Template
 <!-- BLOCK 3: CATEGORIES -->
 <?php if($brew_options['block3-switch'] != 2 && $brew_options['block3-row-number'] == 2 ){
       global $brew_options;
-      echo '<main class="categorieshome" role="main">
+      echo '<main class="block-3" role="main">
         <div class="container" id="categories">
           <div class="row text-center">
             <div class="row homecategories">

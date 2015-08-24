@@ -480,14 +480,40 @@ $this->sections[] = array (
 	     ), 
 	    'default' => '3'
 		),
+		array (
+					'id' => 'block2-colors-start',
+					'type' => 'section',
+					'title' => __('Custom Styling', 'brew-framework'),
+					'indent' => true
+					),		
 				array(
 				    'id'       => 'background-block2',
 				    'type'     => 'color',
 				    'title'    => __('Background Color', 'brew-framework'), 
 				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'brew-framework'),
 				    'validate' => 'color',
-				    'output'    => array('background-color' => '.participatehome')
+				    'output'    => array('background-color' => '.block-2')
 					),
+				array(
+				    'id'       => 'block-2-text',
+				    'type'     => 'color',
+				    'title'    => __('Text Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a color for the text in the second block (default: #333333).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('color' => '.block-2 p')
+					),
+				array(
+				    'id'       => 'block-2-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
+				   	'output'    => array('.block-2 a')
+					),
+				array (
+					'id' => 'block2-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 2 Styling OPTIONS
 				array (
 					'id' => 'block2-start',
 					'type' => 'section',
@@ -726,6 +752,12 @@ $this->sections[] = array(
 			     ), 
 			    'default' => '2'
 				),
+				array (
+					'id' => 'block3-colors-start',
+					'type' => 'section',
+					'title' => __('Custom Styling', 'brew-framework'),
+					'indent' => true
+					),		
 				array(
 				    'id'       => 'background-block3',
 				    'type'     => 'color',
@@ -734,6 +766,27 @@ $this->sections[] = array(
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '.categorieshome')
 					),
+				array(
+				    'id'       => 'block-3-text',
+				    'type'     => 'color',
+				    'title'    => __('Text Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a color for the text in the second block (default: #333333).', 'brew-framework'),
+				    'validate' => 'color',
+				    'output'    => array('color' => '.block-2 p')
+					),
+				array(
+				    'id'       => 'block-3-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
+				   	'output'    => array('.block-2 a')
+					),
+				array (
+					'id' => 'block3-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 3 Styling OPTIONS
+				
         	array (
 			'id' => 'block3-c1-start',
 			'type' => 'section',

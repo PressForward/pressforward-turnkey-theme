@@ -767,19 +767,11 @@ $this->sections[] = array(
 				    'output'    => array('background-color' => '.categorieshome')
 					),
 				array(
-				    'id'       => 'block-3-text',
-				    'type'     => 'color',
-				    'title'    => __('Text Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a color for the text in the second block (default: #333333).', 'brew-framework'),
-				    'validate' => 'color',
-				    'output'    => array('color' => '.block-2 p')
-					),
-				array(
 				    'id'       => 'block-3-links',
 				    'type'     => 'link_color',
 				    'title'    => __('Link Color', 'brew-framework'), 
 				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
-				   	'output'    => array('.block-2 a')
+				   	'output'    => array('.homeinnercontent a')
 					),
 				array (
 					'id' => 'block3-colors-end',

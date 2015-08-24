@@ -71,13 +71,14 @@
         <span class="icon-bar"></span>
       </button>
       <?php global $brew_options ?>
-      	
-      	<?php if($brew_options['use-logo'] != 2) {
-
-		echo '<a class="navbar-brand" href="' . bloginfo('url') . '" title="' .bloginfo('name') . '"rel="homepage"><img  class="logo" src="' . $brew_options['opt-media']['url'] . '" alt ="logo" /></a>';
-		} else {
-		echo '<a class="navbar-brand" style="margin-top: 0px !important; href="' . bloginfo('url') . '" title="' .bloginfo('name') . '"rel="homepage"><h1 style="font-size:45px">' . $brew_options['logo-text'] . '</h1>';
-			}?> </a>
+      <?php
+      //1 = logo image on 2=off
+      if ($brew_options['use-logo'] == 1) {
+      	echo '<a class="navbar-brand" href="' . get_bloginfo('url') . '"><img class="logo" src="' . $brew_options['opt-media']['url'] . '" alt="' . get_bloginfo('title') . '"></a>';
+      } elseif ($brew_options['use-logo'] == 2) {
+      	echo '<a  style="margin-top: 0px !important; class="navbar-brand" href="' . get_bloginfo('url') . '"><h1 style="font-size: 45px;">' . $brew_options['logo-text'] . '</h1></a>';
+      }
+      ?>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

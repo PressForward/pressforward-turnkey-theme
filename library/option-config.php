@@ -1013,7 +1013,7 @@ $this->sections[] = array(
 				    'type'     => 'color',
 				    'title'    => __('Block 4 Text Color', 'brew-framework'), 
 				    'validate' => 'color',
-				    'output'    => array('color' => '.block4 > p, #infotext > p, block4 > h1,h2,h3,h4,h5,h6')
+				    'output'    => array('color' => '.block4 > p, #infotext > p, block4 > h1,block4 > h2,block4 > h3,block4 > h4,block4 > h5,block4 > h6')
 					),
 				array(
 				    'id'       => 'block-4-links',
@@ -1055,13 +1055,40 @@ $this->sections[] = array(
 				        '2' => 'OFF', 
 				     ), 
 				    'default' => '1'
-					),array(
+					),
+				array (
+					'id' => 'block3-colors-start',
+					'type' => 'section',
+					'title' => __('Custom Styling', 'brew-framework'),
+					'indent' => true
+					),		
+				array(
 				    'id'       => 'background-block5',
 				    'type'     => 'color_gradient',
 				    'title'    => __('Blog Gradient Color', 'brew-framework'),
 				    'desc'     => __('Pick a start and end color for block 5.', 'brew-framework'),
 				    'validate' => 'color',
 				    ),
+				array(
+				    'id'       => 'block-5-textcolor',
+				    'type'     => 'color',
+				    'title'    => __('Block 5 Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('color' => '.block-5 > p, .block-5  h1, .block-5 h2,.block-5 h3,.block-5 h4,.block-5 h5,.block-5 h6, #block-5 > p')
+					),
+				array(
+				    'id'       => 'block-5-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
+				   	'output'    => array('.block-5 a')
+					),
+				array (
+					'id' => 'block3-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 3 Styling OPTIONS
+
 						
 					array(
 				    'id'       => 'block6-switch',

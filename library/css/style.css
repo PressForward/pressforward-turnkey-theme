@@ -403,7 +403,7 @@ The participate section is the second block on the home page. This block, much l
 05. BLOG
 The blog section is the last block on the homepage. The block is made up of a contain with two col-md-6 widgetized sections.  The section was originally intended to house a brief excerpt and link to the most recent post as well as a list of the most recent posts using two seperate widgets.  This section can contain any widget and the styles below can be adjusted as necessary.
 ********************************/
-.bloghome {
+.block-5 {
   background-image: -webkit-linear-gradient(top, #3887be 0%, 50%, #2f719e 100%);
   background-image: linear-gradient(to bottom, #3887be 0%, 50%, #2f719e 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3887be', endColorstr='#ff2f719e', GradientType=0);
@@ -415,25 +415,25 @@ The blog section is the last block on the homepage. The block is made up of a co
   padding: 25px 0px 25px 0;
   font-size: 18px;
 }
-.bloghome a {
+.block-5 a {
   color: #f8f8f8;
 }
-.bloghome a:hover {
+.block-5 a:hover {
   color: #e2e2e2;
 }
-.bloghome .rpwe-summary {
+.block-5 .rpwe-summary {
   padding-top: 15px;
 }
-.bloghome h1 {
+.block-5 h1 {
   font-size: 30px;
   padding-bottom: 30px;
 }
 @media (min-width: 992px) {
-  .bloghome h1 {
+  .block-5 h1 {
     font-size: 41px !important;
   }
 }
-.bloghome #bloglist {
+.block-5 #bloglist {
   margin: 100px 0 0 0px;
   padding-left: 35px;
 }

@@ -382,8 +382,8 @@ Template Name: Home Page Template
 
 <!-- BLOCK 5: Widget Areas -->
 <?php if($brew_options['block5-switch'] != 2) {
-      echo '<main class="bloghome" role="main">
-        <div class="container" id="blog">
+      echo '<main class="block-5" role="main">
+        <div class="container" id="block-5">
           <div class="row">
               <div class="col-md-7">';
                 if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar('blogexcerpt') ) : 

@@ -994,7 +994,13 @@ $this->sections[] = array(
 				     ), 
 				    'default' => '1'
 					),
-					array(
+					array (
+					'id' => 'block3-colors-start',
+					'type' => 'section',
+					'title' => __('Custom Styling', 'brew-framework'),
+					'indent' => true
+					),		
+				array(
 				    'id'       => 'background-block4',
 				    'type'     => 'color',
 				    'title'    => __('Block 4 Color', 'brew-framework'), 
@@ -1002,6 +1008,26 @@ $this->sections[] = array(
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '.block4')
 					),
+				array(
+				    'id'       => 'block-4-textcolor',
+				    'type'     => 'color',
+				    'title'    => __('Block 4 Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('color' => '.block4 > p, #infotext > p, block4 > h1,h2,h3,h4,h5,h6')
+					),
+				array(
+				    'id'       => 'block-4-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color', 'brew-framework'), 
+				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
+				   	'output'    => array('.block4 a')
+					),
+				array (
+					'id' => 'block3-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 3 Styling OPTIONS
+					
 			        array (
 						'id'=>'about_text',
 						'type' => 'textarea',

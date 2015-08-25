@@ -292,7 +292,7 @@ Template Name: Home Page Template
 
 } elseif ($brew_options['block3-switch'] != 2 && $brew_options['block3-row-number'] == 1) {
    global $brew_options;
-      echo '<main class="categorieshome" role="main">
+      echo '<main class="block-3" role="main">
         <div class="container" id="categories">
           <div class="row text-center">
             <div class="row homecategories">

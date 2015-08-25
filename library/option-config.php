@@ -447,6 +447,9 @@ $this->sections[] = array(
 			),
     	),
 	);
+/**
+BLOCK 2 SETTINGS
+**/
 $this->sections[] = array (
 	'title' => __('Block 2', 'brew-framework'),
 	'subsection' => true,
@@ -480,6 +483,9 @@ $this->sections[] = array (
 	     ), 
 	    'default' => '3'
 		),
+		/**
+		BLOCK 2 CUSTOM STYLING
+		**/
 		array (
 					'id' => 'block2-colors-start',
 					'type' => 'section',
@@ -490,7 +496,6 @@ $this->sections[] = array (
 				    'id'       => 'background-block2',
 				    'type'     => 'color',
 				    'title'    => __('Background Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'brew-framework'),
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '.block-2')
 					),
@@ -498,7 +503,6 @@ $this->sections[] = array (
 				    'id'       => 'block-2-text',
 				    'type'     => 'color',
 				    'title'    => __('Text Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a color for the text in the second block (default: #333333).', 'brew-framework'),
 				    'validate' => 'color',
 				    'output'    => array('color' => '.block-2 p')
 					),
@@ -506,7 +510,6 @@ $this->sections[] = array (
 				    'id'       => 'block-2-links',
 				    'type'     => 'link_color',
 				    'title'    => __('Link Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
 				   	'output'    => array('.block-2 a')
 					),
 				array (
@@ -720,7 +723,9 @@ $this->sections[] = array (
 				),
 				);
 
-
+/**
+BLOCK 3 OPTIONS
+**/
 $this->sections[] = array(
     'title' => __('Block 3', 'brew-framework'),
     'icon' => 'fa fa-th',
@@ -752,6 +757,9 @@ $this->sections[] = array(
 			     ), 
 			    'default' => '2'
 				),
+				/**
+				CUSTOM STYLING BLOCK 3
+				**/
 				array (
 					'id' => 'block3-colors-start',
 					'type' => 'section',
@@ -762,15 +770,13 @@ $this->sections[] = array(
 				    'id'       => 'background-block3',
 				    'type'     => 'color',
 				    'title'    => __('Background Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the third block (default: #142736).', 'brew-framework'),
 				    'validate' => 'color',
-				    'output'    => array('background-color' => '.categorieshome')
+				    'output'    => array('background-color' => '.block-3')
 					),
 				array(
 				    'id'       => 'block-3-links',
 				    'type'     => 'link_color',
 				    'title'    => __('Link Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
 				   	'output'    => array('.homeinnercontent a')
 					),
 				array (
@@ -995,7 +1001,13 @@ $this->sections[] = array(
 				    'default' => '1'
 					),
 					array (
-					'id' => 'block3-colors-start',
+						'id'=>'about_text',
+						'type' => 'textarea',
+						'title' => 'Text for the fourth block. (HTML allowed)'
+						//'required' => array('layout','equals','1'),	
+					),
+					array (
+					'id' => 'block4-colors-start',
 					'type' => 'section',
 					'title' => __('Custom Styling', 'brew-framework'),
 					'indent' => true
@@ -1004,7 +1016,6 @@ $this->sections[] = array(
 				    'id'       => 'background-block4',
 				    'type'     => 'color',
 				    'title'    => __('Block 4 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the fourth block (default: #142736).', 'brew-framework'),
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '.block4')
 					),
@@ -1023,45 +1034,34 @@ $this->sections[] = array(
 				   	'output'    => array('.block4 a')
 					),
 				array (
-					'id' => 'block3-colors-end',
+					'id' => 'block4-colors-end',
 					'type' => 'section',
 					'indent' => false,
 					), //END BLOCK 3 Styling OPTIONS
 					
-			        array (
-						'id'=>'about_text',
-						'type' => 'textarea',
-						'title' => 'Text for the fourth block. (HTML allowed)'
-						//'required' => array('layout','equals','1'),	
-					),
+			        
 			    ),
 			);
 			$this->sections[] = array(
-    			'title'   => __('Block 5 & 6', 'brew-framework'),
+    			'title'   => __('Block 5', 'brew-framework'),
 			    'icon'    => 'fa fa-th',
 			    'subsection' => true,
-			    'heading' => 'Blocks 5 and 6',
-			    'desc'    => __('Block 5 and 6 are both composed of several widget areas and can be configured in the Widgets panel in the WordPress dashboard. Block 5 includes one row of two widgets. Block 6, the footer, includes three widget areas.'),
+			    'heading' => 'Block 5 ',
+			    'desc'    => __('Block 5 is composed of two widget areas that can be configured in the Wordpress Widgets panel. '),
 			'fields'  => array(
 			    	$fields = array(
 				    'id'       => 'block5-switch',
 				    'type'     => 'button_set',
 				    'title'    => __('Block 5', 'brew-framework'),
 				    'subtitle' => __('Turn block 5 on or off.', 'brew-framework'),
-				    'description' => __('Block 5 contains two widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.'),
+				    'description' => __('Block 5 contains two widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.)'),
 				    //Must provide key => value pairs for options
 				    'options' => array(
 				        '1' => 'ON', 
 				        '2' => 'OFF', 
 				     ), 
 				    'default' => '1'
-					),
-				array (
-					'id' => 'block3-colors-start',
-					'type' => 'section',
-					'title' => __('Custom Styling', 'brew-framework'),
-					'indent' => true
-					),		
+					),  
 				array(
 				    'id'       => 'background-block5',
 				    'type'     => 'color_gradient',
@@ -1084,18 +1084,25 @@ $this->sections[] = array(
 				   	'output'    => array('.block-5 a')
 					),
 				array (
-					'id' => 'block3-colors-end',
+					'id' => 'block5-colors-end',
 					'type' => 'section',
 					'indent' => false,
 					), //END BLOCK 3 Styling OPTIONS
-
-						
-					array(
+			        
+			    ),
+			);
+			$this->sections[] = array(
+				'title' => __('Block 6', 'brew-framework'),
+				'icon' => 'fa fa-th',
+				'desc' => 'Block 6 is composed of four widget areas that can be configured in the Wordpress Widgets panel.',
+				'subsection' => true,
+				'fields' => array (
+						array(
 				    'id'       => 'block6-switch',
 				    'type'     => 'button_set',
 				    'title'    => __('Block 6', 'brew-framework'),
 				    'subtitle' => __('Turn block 6 on or off.', 'brew-framework'),
-				    'description' => __('Block 6 contains three widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.'),
+				    'description' => __('Block 6 contains four widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.'),
 				    //Must provide key => value pairs for options
 				    'options' => array(
 				        '1' => 'ON', 
@@ -1124,10 +1131,8 @@ $this->sections[] = array(
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '#footer')
 					),
-			        
-			    ),
-			);
-
+					),
+				);
 			$this->sections[] = array(
 				'title' => __('Footer', 'brew-framework'),
 				'icon' => 'fa fa-th',

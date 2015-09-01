@@ -3,7 +3,7 @@ var jqueryNoConflict = jQuery;
 // begin main function
 jqueryNoConflict(document).ready(function(){
 
-    initializeTabletopObject("https://docs.google.com/spreadsheets/d/12rj9cindXkqbvVvFBPAj4u1A44QjRJeDBTtmzHKJGhs/pubhtml");
+    initializeTabletopObject("https://docs.google.com/spreadsheets/d/1iq_6GhN_EwwlY5gLNOC6IhqIjUNTVNgtVEuJThckzMs/pubhtml");
 
 });
 
@@ -29,21 +29,21 @@ function createTableColumns(){
         {"mDataProp": "Name", "sTitle": "Name", "sClass": "left"},
         {"mDataProp": "Twitter Handle", "sTitle": "Twitter Handle", "sClass": "left"},
         {"mDataProp": "Institutional Affiliation", "sTitle": "Institutional Affliation", "sClass": "left"},
-        {"mDataProp": "May 16 - May 22", "sTitle": "May 16 - May 22", "sClass": "left"},
-        {"mDataProp": "May 23 - May 29", "sTitle": "May 23 - May 29", "sClass": "left"},
-        {"mDataProp": "May 30 - June 5", "sTitle": "May 30 - June 5", "sClass": "left"},
-        {"mDataProp": "June 6 - June 12", "sTitle": "June 6 - June 12", "sClass": "left"},
-        {"mDataProp": "June 13 - June 19", "sTitle": "June 13 - June 19", "sClass": "left"},
-        {"mDataProp": "June 20 - June 26", "sTitle": "June 20 - June 26", "sClass": "left"},
-        {"mDataProp": "June 27 - July 3", "sTitle": "June 27 - July 3", "sClass": "left"},
-        {"mDataProp": "July 4 - July 10", "sTitle": "July 4 - July 10", "sClass": "left"},
-        {"mDataProp": "July 11 - July 17", "sTitle": "July 11 - July 17", "sClass": "left"},
-        {"mDataProp": "July 18 - July 24", "sTitle": "July 18 - July 24", "sClass": "left"},
-        {"mDataProp": "July 25 - July 31", "sTitle": "July 25 - July 31", "sClass": "left"},
-        {"mDataProp": "August 1 - August 7", "sTitle": "August 1 - 7", "sClass": "left"},
-        {"mDataProp": "August 8 - August 14", "sTitle": "August 8 - August 14", "sClass": "left"},
-        {"mDataProp": "August 15 - August 21", "sTitle": "August 15 - August 21", "sClass": "left"},
-        {"mDataProp": "August 22 - August 28", "sTitle": "August 22 - August 28", "sClass": "left"},
+        {"mDataProp": "September 5 - September 11", "sTitle": "September 5 - September 11", "sClass": "left"},
+        {"mDataProp": "September 12 - September 18", "sTitle": "September 12 - September 18", "sClass": "left"},
+        {"mDataProp": "September 19 - September 25", "sTitle": "September 19 - September 25", "sClass": "left"},
+        {"mDataProp": "September 26 - October 2", "sTitle": "September 26 - October 2", "sClass": "left"},
+        {"mDataProp": "October 3 - October 9", "sTitle": "October 3 - October 9", "sClass": "left"},
+        {"mDataProp": "October 10 - October 16", "sTitle": "October 10 - October 16", "sClass": "left"},
+        {"mDataProp": "October 17 - October 23", "sTitle": "October 17 - October 23", "sClass": "left"},
+        {"mDataProp": "October 24 - October 30", "sTitle": "October 24 - October 30", "sClass": "left"},
+        {"mDataProp": "October 31 - November 6", "sTitle": "October 31 - November 6", "sClass": "left"},
+        {"mDataProp": "November 7 - November 13", "sTitle": "November 7 - November 13", "sClass": "left"},
+        {"mDataProp": "November 14 - November 20", "sTitle": "November 14 - November 20", "sClass": "left"},
+        {"mDataProp": "November 21 - November 27", "sTitle": "November 21 - November 27", "sClass": "left"},
+        {"mDataProp": "November 28 - December 4", "sTitle": "November 28 - December 4", "sClass": "left"},
+        {"mDataProp": "December 5 - December 11", "sTitle": "December 5 - December 11", "sClass": "left"},
+        {"mDataProp": "December 12 - December 18", "sTitle": "December 12 - December 18", "sClass": "left"},
 
   ];
     return tableColumns;

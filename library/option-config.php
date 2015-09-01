@@ -294,7 +294,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					),
 					array(
 				    'id'       => 'use-logo',
-				    'type'     => 'button_set',
+				    'desc'	   => __('Logo files should be long rather than tall due to height restrictions in the navigation bar area.')
 				    'title'    => __('Use an uploaded image for logo', 'brew-framework'),
 				    //Must provide key => value pairs for options
 				    'options' => array(
@@ -427,6 +427,13 @@ $this->sections[] = array(
 				    'desc'     => __('Choose a start and end color for the slider.', 'brew-framework'),
 				    'validate' => 'color'
 				    ),
+			array(
+				    'id'       => 'slider-text',
+				    'type'     => 'color',
+				    'title'    => __('Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('color' => '#slidertitle h1, #slidertitle h2, #slidertitle h3, .slider p')
+					),
     		array(
 			    'id'       => 'slider-categories',
 			    'type'     => 'select',
@@ -1049,7 +1056,7 @@ $this->sections[] = array(
 			    'icon'    => 'fa fa-th',
 			    'subsection' => true,
 			    'heading' => 'Block 5 ',
-			    'desc'    => __('Block 5 is composed of two widget areas that can be configured in the Wordpress Widgets panel. '),
+			    'desc'    => __('<h4><strong>Block 5 is composed of two widget areas that can be configured in the Wordpress Widgets panel.</strong></h4>'),
 			'fields'  => array(
 			    	$fields = array(
 				    'id'       => 'block5-switch',

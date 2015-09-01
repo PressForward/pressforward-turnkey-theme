@@ -368,7 +368,10 @@ $this->sections[] = array(
 				    'title'    => __('Navigation Bar Hover Background', 'brew-framework'), 
 				    'validate' => 'color',
 				    'output'    => array(
-				    	'background-color' => '.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover')
+				    	'background-color' => '.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, 
+				    	.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus,
+				    	.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus
+				    	')
 					),
 					array(
 				    'id'       => 'nav-bar-hover-border',
@@ -376,12 +379,12 @@ $this->sections[] = array(
 				    'title'    => __('Navigation Bar Item Hover Border', 'brew-framework'), 
 				    'validate' => 'color',
 				    'output'    => array(
-				    	'border-top-color' => '.nav > li > a:hover')
+				    	'border-top-color' => '.nav > li > a:hover, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus')
 					),
 					array(
 				    'id'       => 'nav-bar-border-color',
 				    'type'     => 'color',
-				    'title'    => __('Navigation Bar Item Hover Border', 'brew-framework'), 
+				    'title'    => __('Navigation Bar Bottom Border Color', 'brew-framework'), 
 				    'validate' => 'color',
 				    'output'    => array(
 				    	'border-bottom-color' => '.navbar-inverse')
@@ -509,7 +512,7 @@ $this->sections[] = array (
 				array(
 				    'id'       => 'block-2-links',
 				    'type'     => 'link_color',
-				    'title'    => __('Link Color', 'brew-framework'), 
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
 				   	'output'    => array('.block-2 a')
 					),
 				array (
@@ -776,7 +779,7 @@ $this->sections[] = array(
 				array(
 				    'id'       => 'block-3-links',
 				    'type'     => 'link_color',
-				    'title'    => __('Link Color', 'brew-framework'), 
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
 				   	'output'    => array('.homeinnercontent a')
 					),
 				array (
@@ -1029,8 +1032,7 @@ $this->sections[] = array(
 				array(
 				    'id'       => 'block-4-links',
 				    'type'     => 'link_color',
-				    'title'    => __('Link Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
 				   	'output'    => array('.block4 a')
 					),
 				array (
@@ -1079,8 +1081,7 @@ $this->sections[] = array(
 				array(
 				    'id'       => 'block-5-links',
 				    'type'     => 'link_color',
-				    'title'    => __('Link Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a color for active links in the second block.', 'brew-framework'),
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
 				   	'output'    => array('.block-5 a')
 					),
 				array (

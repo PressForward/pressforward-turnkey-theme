@@ -88,7 +88,7 @@ Template Name: Home Page Template
         </div>
     </main>';
   } elseif ($brew_options['block2-switch'] != 2 && $brew_options['block2-col-number'] == 2) {
-      echo '<main class="participatehome" role="main">
+      echo '<main class="block-2" role="main">
             <div class="container" id="participate">
               <div class="row text-center">
       <div class="row text-center">
@@ -119,7 +119,7 @@ Template Name: Home Page Template
         </div>
     </main>';
     } elseif ($brew_options['block2-switch'] != 2 && $brew_options['block2-col-number'] == 1) {
-      echo '<main class="participatehome" role="main">
+      echo '<main class="block-2" role="main">
             <div class="container" id="participate">
               <div class="row text-center">
       <div class="row text-center">

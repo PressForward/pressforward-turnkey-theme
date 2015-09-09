@@ -47,7 +47,7 @@
 	echo 'background: -moz-linear-gradient(' . $brew_options['background-slider']['from'] . ',' . $brew_options['background-slider']['to'] . ');'; /* For Firefox 3.6 to 15 */
 	echo 'background: linear-gradient(' . $brew_options['background-slider']['from'] . ',' . $brew_options['background-slider']['to'] . ');'; //* Standard syntax */
   	echo '}';
-  	echo '.bloghome {';
+  	echo '.block-5 {';
   	echo 'background: -webkit-linear-gradient(' . $brew_options['background-block5']['from'] . ',' . $brew_options['background-block5']['to'] . ');'; /* For Safari 5.1 to 6.0 */
 	echo 'background: -o-linear-gradient(' . $brew_options['background-block5']['from'] . ',' . $brew_options['background-block5']['to'] . ');'; /* For Opera 11.1 to 12.0 */
 	echo 'background: -moz-linear-gradient(' . $brew_options['background-block5']['from'] . ',' . $brew_options['background-block5t']['to'] . ');'; /* For Firefox 3.6 to 15 */
@@ -71,8 +71,14 @@
         <span class="icon-bar"></span>
       </button>
       <?php global $brew_options ?>
-      	<a class="navbar-brand" href="<?php bloginfo ('url');?>" title="<?php bloginfo('name')?>" rel="homepage">
-		<img  class="logo" src="<?php echo $brew_options['opt-media']['url']; ?> " alt ="logo" /></a>
+      <?php
+      //1 = logo image on 2=off
+      if ($brew_options['use-logo'] == 1) {
+      	echo '<a class="navbar-brand" href="' . get_bloginfo('url') . '"><img class="logo" src="' . $brew_options['opt-media']['url'] . '" alt="' . get_bloginfo('title') . '"></a>';
+      } elseif ($brew_options['use-logo'] == 2) {
+      	echo '<a  style="margin-top: 0px !important; class="navbar-brand" href="' . get_bloginfo('url') . '"><h1 style="font-size: 45px;">' . $brew_options['logo-text'] . '</h1></a>';
+      }
+      ?>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

@@ -13,7 +13,7 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 01. SLIDER
 02. ABOUT
 03. CATEGORIES
-04. PARTICIPATE
+04. BLOCK-2
 05. BLOG
 06. FOOTER
 ******************************************************************/
@@ -68,7 +68,7 @@ body {
 	color: @dhnow-gray;
 	margin: 0px;
 	font-size: 50px;
-	letter-spacing:1px;
+	letter-spacing:0.5px;
 	@media (min-width: @screen-md) {
 		font-size: @font-size-h1-home !important;
 		}
@@ -76,7 +76,7 @@ body {
 	h2 {
 	margin: 5px 0 0 0;
 	color: @dhnow-gray;
-	letter-spacing:1px;
+	letter-spacing:0.5px;
 	font-size: 20px !important;
 		@media (min-width: @screen-md) {
 			font-size: 24px !important;
@@ -107,12 +107,12 @@ body {
 	}
 	#slider-content {
 		@media (min-width: @screen-md){
-			height: 425px;
+			height: 400px;
 		}
 		
 	}
 	.homepage {
-		padding: 50px 0 25px 0;
+		padding: 30px 0 25px 0;
 	}
 
 }
@@ -153,7 +153,7 @@ The icons for each category will appear once content is placed in the widget fro
 
 	}
 }
-.categorieshome {
+.block-3 {
 	background-color: @dhnow-darkblue;
 	padding: 50px 0 50px 0;
 }
@@ -209,7 +209,7 @@ The icons for each category will appear once content is placed in the widget fro
 03. PARTICIPATE 
 The participate section is the second block on the home page. This block, much like the categories block, is composed of four widgetized areas.  These sections are contained in page-home.php in a container made up of four col-sm-3 sections.  
 ********************************/
-.participatehome {
+.block-2 {
 
 	p {
 		text-align: center;
@@ -225,7 +225,7 @@ The participate section is the second block on the home page. This block, much l
 05. BLOG
 The blog section is the last block on the homepage. The block is made up of a contain with two col-md-6 widgetized sections.  The section was originally intended to house a brief excerpt and link to the most recent post as well as a list of the most recent posts using two seperate widgets.  This section can contain any widget and the styles below can be adjusted as necessary.
 ********************************/
-.bloghome {
+.block-5 {
 	#gradient.vertical(@dhnow-blue; @dhnow-blue-darkened; 0%, 50%);
 	background-image: -webkit-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Safari 5.1-6, Chrome 10+
     background-image: -o-linear-gradient(top, @dhnow-blue 0%, @dhnow-blue-darkened 50%);  // Opera 12

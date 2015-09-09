@@ -15,7 +15,16 @@ _**Please note:**_ There have been reports of a known issue with uploading the t
 
 This theme is not avaialable in the WordPress Directory but it is functional and can be installed by downloading or cloning this repository into the Themes directory of your WordPress install. Setup can be completed by using the PressForward Options Panel in the WordPress dashboard.  [See the setup guide](https://github.com/PressForward/PressForward-TurnKey-Theme/wiki) for more information on how to setup the theme. 
 
-
+##Changelog
+###Version 1.0
+* Resolves error where the tracking code was not inserted into the footer of the site. 
+* Adds ability to turn on and off homepage blocks from the PressForward Options panel. 
+* Adds options to change the background color of individual blocks and the color of text and links on the homepage. 
+* Adds option to control the number of columns on several blocks as well as the number of recent posts on the slider. 
+* Fixes bug where "by" showed up regardless of what option was selected for the display of the author. 
+* Adds ability to use text rather than a logo image file. 
+* Implements various styling changes to the slider to prevent long titles from pushing the readmore button off the screen.
+* Generalizes css classes on the homepage.
 
 ## Support
 Setup instructions and details on the theme's functionality can be found on our [wiki](https://github.com/PressForward/PressForward-TurnKey-Theme/wiki). For more information about this theme contact the PressForward team at info@pressforward.org or submit an issue to this repository.  

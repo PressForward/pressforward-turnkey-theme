@@ -289,8 +289,24 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					    'subtitle' => __('Upload any media using the WordPress native uploader', 'brew-framework'),
 					    'width' => 550,
 					    'default'  => array(
-					        'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
+					        'url'=>'http://chnmdev.gmu.edu/fellows/regan/PressFwd/wp-content/uploads/2014/10/PFLogo_transparent.png'
 					    )
+					),
+					array(
+				    'id'       => 'use-logo',
+				    'desc'	   => __('Logo files should be long rather than tall due to height restrictions in the navigation bar area.'),
+				    'title'    => __('Use an uploaded image for logo', 'brew-framework'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF'
+				     ), 
+				    'default' => '1'
+					),
+					array(
+				    'id'       => 'logo-text',
+				    'type'     => 'text',
+				    'title'    => __('Custom Text to Display Rather than Logo', 'brew-framework')
 					),
 					array(
     					'id'       => 'comments-setup-buttons',
@@ -334,12 +350,91 @@ $this->sections[] = array (
 		),
 	);
 $this->sections[] = array(
+				'title' => __('Navigation Bar', 'brew-framework'),
+				'icon' => 'fa fa-th',
+				'subsection' => true,
+				'fields' => array (
+					array(
+				    'id'       => 'nav-bar-background',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Background', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'background-color' => '.navbar-inverse, .navbar-inverse .navbar-nav > .active > a')
+					),
+					array(
+				    'id'       => 'nav-bar-hover',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Hover Background', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'background-color' => '.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, 
+				    	.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus,
+				    	.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus
+				    	')
+					),
+					array(
+				    'id'       => 'nav-bar-hover-border',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Item Hover Border', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'border-top-color' => '.nav > li > a:hover, .nav .open > a, .nav .open > a:hover, .nav .open > a:focus')
+					),
+					array(
+				    'id'       => 'nav-bar-border-color',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Bottom Border Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'border-bottom-color' => '.navbar-inverse')
+					),
+					array(
+				    'id'       => 'nav-bar-text',
+				    'type'     => 'color',
+				    'title'    => __('Navigation Bar Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'color' => '.navbar-inverse .navbar-nav > li > a, .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a, .navbar-brand > h1')
+					),
+					
+				),
+			);
+
+$this->sections[] = array(
     'title' => __('Slider', 'brew-framework'),
     'heading'	=> 'Slider (or Block 1) Settings',
     'icon' => 'fa fa-th',
     'subsection' => true,
     'fields' => array (
-    	$fields = array(
+    	$fields = 
+    		$fields = array(
+			    'id'       => 'block1-switch',
+			    'type'     => 'button_set',
+			    'title'    => __('Slider (Block 1)', 'brew-framework'),
+			    'subtitle' => __('Turn the slider on or off.', 'brew-framework'),
+			    //Must provide key => value pairs for options
+			    'options' => array(
+			        '1' => 'ON', 
+			        '2' => 'OFF', 
+			     ), 
+			    'default' => '1'
+			),
+			array(
+				    'id'       => 'background-slider',
+				    'type'     => 'color_gradient',
+				    'title'    => __('Slider Gradient', 'brew-framework'),
+				    'desc'     => __('Choose a start and end color for the slider.', 'brew-framework'),
+				    'validate' => 'color'
+				    ),
+			array(
+				    'id'       => 'slider-text',
+				    'type'     => 'color',
+				    'title'    => __('Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('color' => '#slidertitle h1, #slidertitle h2, #slidertitle h3, .slider p')
+					),
+    		array(
 			    'id'       => 'slider-categories',
 			    'type'     => 'select',
 			    'multi'    => true,
@@ -347,8 +442,24 @@ $this->sections[] = array(
 			    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
 			    'data' => 'categories'
 			),
+			array(
+			    'id'       => 'slider-post-quantity',
+			    'type'     => 'button_set',
+			    'title'    => __('Number of Posts to Display in Slider', 'brew-framework'),
+			    //Must provide key => value pairs for options
+			    'options' => array(
+			        '4' => 'Four Posts (Default)', 
+			        '5' => 'Five Posts',
+			        '6' => 'Six Posts', 
+
+			     ), 
+			    'default' => '4'
+			),
     	),
 	);
+/**
+BLOCK 2 SETTINGS
+**/
 $this->sections[] = array (
 	'title' => __('Block 2', 'brew-framework'),
 	'subsection' => true,
@@ -357,6 +468,65 @@ $this->sections[] = array (
 	'desc' => __('This panel provides options for setting up the second block on the homepage. Each section below represents one column within the second block.'),
 	'fields' => array (
 				//START BLOCK 2 OPTIONS
+		$fields = array(
+	    'id'       => 'block2-switch',
+	    'type'     => 'button_set',
+	    'title'    => __('Block 2', 'brew-framework'),
+	    'subtitle' => __('Turn block 2 on or off.', 'brew-framework'),
+	    //Must provide key => value pairs for options
+	    'options' => array(
+	        '1' => 'ON', 
+	        '2' => 'OFF', 
+	     ), 
+	    'default' => '1'
+		),
+		$fields = array(
+	    'id'       => 'block2-col-number',
+	    'type'     => 'button_set',
+	    'title'    => __('Number of Block 2 columns', 'brew-framework'),
+	    'subtitle' => __('Choose how many columns you would like to appear in block 2.', 'brew-framework'),
+	    //Must provide key => value pairs for options
+	    'options' => array(
+	        '1' => 'Two Columns', 
+	        '2' => 'Three Columns',
+	        '3' => 'Four Columns'
+	     ), 
+	    'default' => '3'
+		),
+		/**
+		BLOCK 2 CUSTOM STYLING
+		**/
+		array (
+					'id' => 'block2-colors-start',
+					'type' => 'section',
+					'title' => __('Custom Styling', 'brew-framework'),
+					'indent' => true
+					),		
+				array(
+				    'id'       => 'background-block2',
+				    'type'     => 'color',
+				    'title'    => __('Background Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.block-2')
+					),
+				array(
+				    'id'       => 'block-2-text',
+				    'type'     => 'color',
+				    'title'    => __('Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('color' => '.block-2 p')
+					),
+				array(
+				    'id'       => 'block-2-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
+				   	'output'    => array('.block-2 a')
+					),
+				array (
+					'id' => 'block2-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 2 Styling OPTIONS
 				array (
 					'id' => 'block2-start',
 					'type' => 'section',
@@ -563,7 +733,9 @@ $this->sections[] = array (
 				),
 				);
 
-
+/**
+BLOCK 3 OPTIONS
+**/
 $this->sections[] = array(
     'title' => __('Block 3', 'brew-framework'),
     'icon' => 'fa fa-th',
@@ -571,6 +743,58 @@ $this->sections[] = array(
     'subsection' => true,
     'desc' => 'Use this section to set up categories that appear in each block on the homepage as well as to select which icons appear with each category.',
         'fields' => array (
+		        $fields = array(
+			    'id'       => 'block3-switch',
+			    'type'     => 'button_set',
+			    'title'    => __('Block 3', 'brew-framework'),
+			    'subtitle' => __('Turn block 3 on or off.', 'brew-framework'),
+			    //Must provide key => value pairs for options
+			    'options' => array(
+			        '1' => 'ON', 
+			        '2' => 'OFF', 
+			     ), 
+			    'default' => '1'
+				),
+				$fields = array(
+			    'id'       => 'block3-row-number',
+			    'type'     => 'button_set',
+			    'title'    => __('Number of Rows in Block 3', 'brew-framework'),
+			    'subtitle' => __('Choose how many rows you would like to appear in block 3.', 'brew-framework'),
+			    //Must provide key => value pairs for options
+			    'options' => array(
+			        '1' => 'One Row', 
+			        '2' => 'Two Rows'
+			     ), 
+			    'default' => '2'
+				),
+				/**
+				CUSTOM STYLING BLOCK 3
+				**/
+				array (
+					'id' => 'block3-colors-start',
+					'type' => 'section',
+					'title' => __('Custom Styling', 'brew-framework'),
+					'indent' => true
+					),		
+				array(
+				    'id'       => 'background-block3',
+				    'type'     => 'color',
+				    'title'    => __('Background Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('background-color' => '.block-3')
+					),
+				array(
+				    'id'       => 'block-3-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
+				   	'output'    => array('.homeinnercontent a')
+					),
+				array (
+					'id' => 'block3-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 3 Styling OPTIONS
+				
         	array (
 			'id' => 'block3-c1-start',
 			'type' => 'section',
@@ -654,7 +878,7 @@ $this->sections[] = array(
 		            	'id'       => 'b3-c3-category',
 					    'type'     => 'select',
 					    'title'    => __('Category to Display', 'brew-framework'), 
-					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+					    'subtitle' => __('The categories that the third column should pull from to display the most recent posts.', 'brew-framework'),
 					    'data' => 'categories',
 		            	'default' => '1'
 		            	),
@@ -687,7 +911,7 @@ $this->sections[] = array(
 	            	'id'       => 'b3-c4-category',
 				    'type'     => 'select',
 				    'title'    => __('Category to Display', 'brew-framework'), 
-				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+				    'subtitle' => __('The categories that the first column in row 2 should pull from to display the most recent posts.', 'brew-framework'),
 				    'data' => 'categories',
 				    'default' => '1'
 	            	),
@@ -721,7 +945,7 @@ $this->sections[] = array(
 	            	'id'       => 'b3-c5-category',
 				    'type'     => 'select',
 				    'title'    => __('Category to Display', 'brew-framework'), 
-				    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+				    'subtitle' => __('The categories that the second column in row 2 should pull from to display the most recent posts.', 'brew-framework'),
 				    'data' => 'categories',
 				    'default' => '1'
 	            	),
@@ -756,7 +980,7 @@ $this->sections[] = array(
 		            	'id'       => 'b3-c6-category',
 					    'type'     => 'select',
 					    'title'    => __('Category to Display', 'brew-framework'), 
-					    'subtitle' => __('The categories that the slider should pull from to display the most recent posts.', 'brew-framework'),
+					    'subtitle' => __('The categories that the last column in row 2 should pull from to display the most recent posts.', 'brew-framework'),
 					    'data' => 'categories',
 					    'default' => '1'
 		            	),
@@ -774,67 +998,140 @@ $this->sections[] = array(
 			    'heading' => 'Block 4',
 			    'desc'    => __('Use this section to display paragraph text in the fourth block.'),
 			    'fields'  => array(
-			        array (
+			    	$fields = array(
+				    'id'       => 'block4-switch',
+				    'type'     => 'button_set',
+				    'title'    => __('Block 4', 'brew-framework'),
+				    'subtitle' => __('Turn block 4 on or off.', 'brew-framework'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF', 
+				     ), 
+				    'default' => '1'
+					),
+					array (
 						'id'=>'about_text',
 						'type' => 'textarea',
 						'title' => 'Text for the fourth block. (HTML allowed)'
 						//'required' => array('layout','equals','1'),	
 					),
-			    ),
-			);
-			$this->sections[] = array(
-    			'title'   => __('Block 5 & 6', 'brew-framework'),
-			    'icon'    => 'fa fa-th',
-			    'subsection' => true,
-			    'heading' => 'Blocks 5 and 6',
-			    'desc'    => __('Block 5 and 6 are both composed of several widget areas and can be configured in the Widgets panel in the WordPress dashboard. Block 5 includes one row of two widgets. Block 6, the footer, includes three widget areas.'),
-			);
-
-			$this->sections[] = array(
-				'title' => __('Homepage Colors', 'brew-framework'),
-				'icon' => 'fa fa-th',
-				'subsection' => true,
-				'desc' => __('Change the color of each block on the homepage.'),
-				'fields' => array (
-						array(
-				    'id'       => 'background-slider',
-				    'type'     => 'color_gradient',
-				    'title'    => __('Slider Gradient', 'brew-framework'),
-				    'desc'     => __('Choose a start and end color for the slider.', 'brew-framework'),
-				    'validate' => 'color'
-				    ),
-					array(
-				    'id'       => 'background-block2',
-				    'type'     => 'color',
-				    'title'    => __('Block 2 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the second block (default: #f8f8f8).', 'brew-framework'),
-				    'validate' => 'color',
-				    'output'    => array('background-color' => '.participatehome')
-					),
-					array(
-				    'id'       => 'background-block3',
-				    'type'     => 'color',
-				    'title'    => __('Block 3 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the third block (default: #142736).', 'brew-framework'),
-				    'validate' => 'color',
-				    'output'    => array('background-color' => '.categorieshome')
-					),
-					array(
+					array (
+					'id' => 'block4-colors-start',
+					'type' => 'section',
+					'title' => __('Custom Styling', 'brew-framework'),
+					'indent' => true
+					),		
+				array(
 				    'id'       => 'background-block4',
 				    'type'     => 'color',
 				    'title'    => __('Block 4 Color', 'brew-framework'), 
-				    'subtitle' => __('Pick a background color for the fourth block (default: #142736).', 'brew-framework'),
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '.block4')
 					),
-					array(
+				array(
+				    'id'       => 'block-4-textcolor',
+				    'type'     => 'color',
+				    'title'    => __('Block 4 Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('color' => '.block4 > p, #infotext > p, block4 > h1,block4 > h2,block4 > h3,block4 > h4,block4 > h5,block4 > h6')
+					),
+				array(
+				    'id'       => 'block-4-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
+				   	'output'    => array('.block4 a')
+					),
+				array (
+					'id' => 'block4-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 3 Styling OPTIONS
+					
+			        
+			    ),
+			);
+			$this->sections[] = array(
+    			'title'   => __('Block 5', 'brew-framework'),
+			    'icon'    => 'fa fa-th',
+			    'subsection' => true,
+			    'heading' => 'Block 5 ',
+			    'desc'    => __('<h4><strong>Block 5 is composed of two widget areas that can be configured in the Wordpress Widgets panel.</strong></h4>'),
+			'fields'  => array(
+			    	$fields = array(
+				    'id'       => 'block5-switch',
+				    'type'     => 'button_set',
+				    'title'    => __('Block 5', 'brew-framework'),
+				    'subtitle' => __('Turn block 5 on or off.', 'brew-framework'),
+				    'description' => __('Block 5 contains two widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.)'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF', 
+				     ), 
+				    'default' => '1'
+					),  
+				array(
 				    'id'       => 'background-block5',
 				    'type'     => 'color_gradient',
 				    'title'    => __('Blog Gradient Color', 'brew-framework'),
 				    'desc'     => __('Pick a start and end color for block 5.', 'brew-framework'),
 				    'validate' => 'color',
 				    ),
+				array(
+				    'id'       => 'block-5-textcolor',
+				    'type'     => 'color',
+				    'title'    => __('Block 5 Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array('color' => '.block-5 > p, .block-5  h1, .block-5 h2,.block-5 h3,.block-5 h4,.block-5 h5,.block-5 h6, #block-5 > p')
+					),
+				array(
+				    'id'       => 'block-5-links',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
+				   	'output'    => array('.block-5 a')
+					),
+				array (
+					'id' => 'block5-colors-end',
+					'type' => 'section',
+					'indent' => false,
+					), //END BLOCK 3 Styling OPTIONS
+			        
+			    ),
+			);
+			$this->sections[] = array(
+				'title' => __('Block 6', 'brew-framework'),
+				'icon' => 'fa fa-th',
+				'desc' => 'Block 6 is composed of four widget areas that can be configured in the Wordpress Widgets panel.',
+				'subsection' => true,
+				'fields' => array (
 						array(
+				    'id'       => 'block6-switch',
+				    'type'     => 'button_set',
+				    'title'    => __('Block 6', 'brew-framework'),
+				    'subtitle' => __('Turn block 6 on or off.', 'brew-framework'),
+				    'description' => __('Block 6 contains four widgets. If this option is set to ON, the widgets can be setup in the widgets menu (under Appearances on the Wordpress Dashboard Menu.'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'ON', 
+				        '2' => 'OFF', 
+				     ), 
+				    'default' => '1'
+					),
+					array(
+					'id'       => 'block6-col-number',
+				    'type'     => 'button_set',
+				    'title'    => __('Number of Block 6 columns', 'brew-framework'),
+				    'subtitle' => __('Choose how many columns you would like to appear in block 2.', 'brew-framework'),
+				    //Must provide key => value pairs for options
+				    'options' => array(
+				        '1' => 'Two Columns', 
+				        '2' => 'Three Columns',
+				        '3' => 'Four Columns'
+				     ), 
+				    'default' => '3'
+					),
+					array(
 				    'id'       => 'background-block6',
 				    'type'     => 'color',
 				    'title'    => __('Block 6 Color (Footer)', 'brew-framework'), 
@@ -842,7 +1139,13 @@ $this->sections[] = array(
 				    'validate' => 'color',
 				    'output'    => array('background-color' => '#footer')
 					),
-					
+					),
+				);
+			$this->sections[] = array(
+				'title' => __('Footer', 'brew-framework'),
+				'icon' => 'fa fa-th',
+				'subsection' => true,
+				'fields' => array (
 						array(
 				    'id'       => 'background-copyright',
 				    'type'     => 'color',
@@ -982,6 +1285,29 @@ $this->sections[] = array(
 						'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
 						'default' => 1,
 					),
+					array(
+				    'id'       => 'general-link-color',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
+				   	'output'    => array('a')
+					),
+					array(
+				    'id'       => 'general-text-color',
+				    'type'     => 'color',
+				    'title'    => __('Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'color' => 'p')
+					),
+					array(
+				    'id'       => 'general-headings-color',
+				    'type'     => 'color',
+				    'title'    => __('Heading Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'color' => 'h1.single-title.entry-title > a, h1,h1, h2, h3, h4, h5, h6')
+					),
+
 			array (
 			'id' => 'author-ops',
 			'type' => 'section',
@@ -1002,7 +1328,7 @@ $this->sections[] = array(
 					'id'       => 'author-display-alttext',
 	            	'type'     => 'text',
 		            'title'    => __('2. Text to display rather than author', 'brew-framework'),
-		            'desc'     => __('Text to display in place of the author when the above option is turned off.', 'brew-framework')
+		            'desc'     => __('Text to display in place of the author when the above option is turned off. <i>ex: <strong>By: the Editors</strong></i> OR <i><strong>By: the PressForward Team<strong></i>', 'brew-framework')
 					),
 					array (
 					    'id'       => 'author-display-excluded-categories',
@@ -1010,7 +1336,7 @@ $this->sections[] = array(
 					    'default'  => '1',
 					    'multi'    => true,
 					    'title'    => __('3. Categories to Exclude', 'brew-framework'), 
-					    'desc'     => __('The categories selected here will display the author name even when option #1 is turned off.', 'brew-framework'),
+					    'desc'     => __('The categories selected here will display the author name even when option #1 is turned off. The author name <i><strong>will not be linked to the author archives.</strong></i> This is useful if you plan to display the original post author from the PressForward item rather than the wordpress author. ', 'brew-framework'),
 					    'data'	   => 'categories'
 						),
 					array (
@@ -1019,7 +1345,7 @@ $this->sections[] = array(
 					    'default'  => '1',
 					    'multi'    => true,
 					    'title'    => __('4. Categories to Include', 'brew-framework'), 
-					    'desc'     => __('The categories selected here will display the author name <strong>and</strong> link even when option #1 is turned off.', 'brew-framework'),
+					    'desc'     => __('The categories selected here will display the author name <i><strong>AND</strong></i> link even when option #1 is turned off.', 'brew-framework'),
 					    'data'	   => 'categories'
 						),
 

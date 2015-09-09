@@ -62,15 +62,9 @@ Features on this page:
 					<header class="article-header">
 						<div class="titlewrap clearfix">
 							<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
-
-							<?php if ( $brew_options['author'] == 2) {
-
-							$excludedcategories = $brew_options['author-display-excluded-categories'];
-							$includedcategories = $brew_options['author-display-included-categories'];
-
-							}
-							?>
-
+							
+							<?php $excludedcategories = $brew_options['author-display-excluded-categories']; ?>
+							<?php $includedcategories = $brew_options['author-display-included-categories']; ?>
 							<p class="byline vcard">										
 								<?php if ( $brew_options['author'] == 1) { ?>
 									by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
@@ -79,8 +73,9 @@ Features on this page:
 								<?php } elseif ($brew_options['author'] != 1 && in_category($includedcategories)) { ?>
 									by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
 								<?php } else { ?>
-									by <span class="author"><em></em><?php echo $brew_options['author-display-alttext']; ?> - </em></span>
+									<span class="author"><em></em><?php echo $brew_options['author-display-alttext']; ?> - </em></span>
 								<?php } ?>
+
 								
 								<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo  get_the_time(get_option('date_format')) ?></time>
 								<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
@@ -103,22 +98,11 @@ Features on this page:
 					</div> <!-- close main ???? -->
 			
 					<footer class="article-footer single-footer clearfix">
-						<?php if (in_category($slidercat)) {
-							echo '<div class="col-md-3 ec-customfields"><span class="tags pull-left">';
-							printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );
-							echo  '</span></div>';
-							$chief = get_post_meta($post->ID, 'editor-in-chief', true);
-							$large = get_post_meta($post->ID, 'editors-at-large', true);	
-						
-							
-							echo '<div class=" col-md-9 editors">
-									<p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief <a href="'. get_author_posts_url( get_the_author_meta( 'ID' ) ) .'">' . $chief . '</a> based on nominations by Editors-at-Large' . $large . '</p>';	
-							echo '</div>';
-						} else {
+						<?php
 							echo '<span class="tags pull-left">';
 							printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '  ' );
 							echo '</span>  ';
-						} ?>
+						?>
 								
 						<!-- </div> -->
 		              	<span class="commentnum pull-right"><a href="<?php comments_link(); ?>"><?php comments_number( '<i class="fa fa-comment"></i> 0  ', '<i class="fa fa-comment"></i> 1  ', '<i class="fa fa-comment"></i> %  ' ); ?></a>

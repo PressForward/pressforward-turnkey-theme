@@ -1285,6 +1285,29 @@ $this->sections[] = array(
 						'desc' => __('Turn breadcrumbs on or off (site-wide)', 'brew-framework'),
 						'default' => 1,
 					),
+					array(
+				    'id'       => 'general-link-color',
+				    'type'     => 'link_color',
+				    'title'    => __('Link Color  <a href="http://www.w3schools.com/css/css_link.asp" target="__blank"><i class="fa fa-question-circle"></i></a>', 'brew-framework'), 
+				   	'output'    => array('a')
+					),
+					array(
+				    'id'       => 'general-text-color',
+				    'type'     => 'color',
+				    'title'    => __('Text Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'color' => 'p')
+					),
+					array(
+				    'id'       => 'general-headings-color',
+				    'type'     => 'color',
+				    'title'    => __('Heading Color', 'brew-framework'), 
+				    'validate' => 'color',
+				    'output'    => array(
+				    	'color' => 'h1.single-title.entry-title > a, h1,h1, h2, h3, h4, h5, h6')
+					),
+
 			array (
 			'id' => 'author-ops',
 			'type' => 'section',

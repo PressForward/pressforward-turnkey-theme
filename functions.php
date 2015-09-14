@@ -9,9 +9,14 @@ function ls_scripts() {
    
 }
 add_action('wp_enqueue_scripts', 'ls_scripts');
+add_action( 'admin_menu', 'custom_remove_menu_pages' );
 
-
-
+function custom_remove_menu_pages() {
+  $user = wp_get_current_user();
+  if ( in_array('contributor', $user->roles) ) {
+    remove_menu_page('tools.php');  
+  }
+}
 // <!-- SHORTCODES -->
 
 function active_feeds_function($atts) {

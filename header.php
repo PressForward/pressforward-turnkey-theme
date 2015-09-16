@@ -87,6 +87,8 @@
          <?php bones_main_nav(); ?>
       <!-- </ul> -->
       <ul class="nav navbar-nav pfmenu">
+      	 	<li><a href="http://www.twitter.com/dhnow"><i class="fa fa-twitter"></i></a></li>
+	           	<li><a href="http://www.digitalhumanitiesnow.org/feed"><i class="fa fa-rss"></i></a></li>
          <li class="dropdown" id="menu1">
 							             <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
 							               <i class="fa fa-search"></i>
@@ -107,6 +109,7 @@
 								             </div>    
 							             </div> <!--close .dropdown-menu-->
 	           					</li><!-- close .drowpdown-->
+
 	           	<li><a href="http://pressforward.org"><img src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/pfpublication.png" height="20" width="20"/></li></a> 
       </ul>
     </div><!-- /.navbar-collapse -->

@@ -294,6 +294,7 @@ if ( !class_exists( "Redux_Framework_sample_config" ) ) {
 					),
 					array(
 				    'id'       => 'use-logo',
+				    'type'		=> 'button_set',
 				    'desc'	   => __('Logo files should be long rather than tall due to height restrictions in the navigation bar area.'),
 				    'title'    => __('Use an uploaded image for logo', 'brew-framework'),
 				    //Must provide key => value pairs for options

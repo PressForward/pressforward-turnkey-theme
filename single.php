@@ -61,7 +61,7 @@ Features on this page:
 							
 					<header class="article-header">
 						<div class="titlewrap clearfix">
-							<h1 class="single-title entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h1>
+							<h1 class="single-title entry-title"><?php the_title(); ?></h1>
 							<?php $excludedcategories = $brew_options['author-display-excluded-categories']; ?>
 							<?php $includedcategories = $brew_options['author-display-included-categories']; ?>
 							<p class="byline vcard">										

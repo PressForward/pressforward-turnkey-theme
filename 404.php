@@ -12,7 +12,7 @@
 
                 <h1>404. Whelp...This is embarrassing...</h1>
                 <img src="<?php bloginfo('template_directory'); ?>/library/images/hal.jpg" />
-                <p>Look, I can see you're really upset about this. I honestly think you ought to sit down calmly, take a stress pill, and think things over. </p>
+                <p>We can't seem to find the page you are looking for.</p>
 
               </header> <?php // end article header ?>
 

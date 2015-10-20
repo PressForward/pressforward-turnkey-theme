@@ -378,3 +378,43 @@ function list_pings( $comment, $args, $depth ) {
   </li>
 <?php } // end list_pings
 ?>
+
+<?php
+
+function get_current_editors() {
+  global $wpdb;
+    // WP_User_Query arguments. Search the database for the values from the pie checkbox.
+    //dhnow this value is pie_checkbox_6, imac test site 10, laptop 3.
+    $args = array (
+      'meta_query'     => array(
+        array(
+          'key'       => $GLOBALS['dbfield'],
+          
+        ),
+      ),
+    );
+
+  $popover;
+  $current_week = date("W");
+  $user_query = new WP_User_Query( $args );
+  global $userdetails;
+  if ( ! empty($user_query->results)) {
+    foreach ($user_query->results as $user) {
+        $allmeta = get_user_meta( $user->ID );
+        $checkbox = get_user_meta($user->ID, 'pie_checkbox_10', true);
+          if (in_array($current_week, $checkbox)){
+            $userinfo = get_userdata($user->ID);
+            $username = $userinfo->user_login;
+            $popcontent = '<strong>Institution:</strong> x <br>
+            <strong>Bio: </strong>' . $userinfo->description . '<br>';
+            $popover = '<a tabindex="0" data-toggle="popover" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>';
+          }
+    } //end foreach
+
+  } //end if
+  echo 'This content was selected for <i>Digital Humanities Now</i> by Editor-in-Chief based on nomination by this weeks Editors-at-Large: ' . $popover;
+} //end func
+
+
+
+?>

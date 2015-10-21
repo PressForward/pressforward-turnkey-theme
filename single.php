@@ -105,12 +105,9 @@ Features on this page:
 							$currentpostdate = get_the_date('Y/m/d');
 							$currentdate = new DateTime($currentpostdate);
 							$weekno = $currentdate->format("W");
-							echo get_current_editors($weekno);	
+								
 							$nomcount = get_post_meta($post->ID, 'nomination_count', true);
-
-							echo '<div class=" col-md-9 editors">
-									<p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief <a href="'. get_author_posts_url( get_the_author_meta( 'ID' ) ) .'">' . $chief . '</a> based on nominations by Editors-at-Large ' . $large . '</p>';	
-							echo '</div>';
+							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . 'based on nominations by Editors-at-Large: ' . get_current_editors($weekno) . '</p></div>';
 						} else {
 							echo '<span class="tags pull-left">';
 							printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );

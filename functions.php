@@ -394,7 +394,7 @@ function get_current_editors($postdate) {
     );
 
   //create a popover variable  
-  $popover;
+  $popover = '';
 
   //get the current week
   $current_week = date("W");
@@ -430,7 +430,7 @@ function get_current_editors($postdate) {
 
   } //end if
   //output the popover content and the el/ec content. 
-  echo 'This content was selected for <i>Digital Humanities Now</i> by Editor-in-Chief based on nomination by this weeks Editors-at-Large: ' . $popover;
+ return $popover;
 } //end func
 
 

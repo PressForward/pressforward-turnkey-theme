@@ -380,11 +380,10 @@ function list_pings( $comment, $args, $depth ) {
 ?>
 
 <?php
-
-function get_current_editors() {
+// Query the database and get the editors for the current week. Takes 1 argument--the date generated and passed in in single.php.
+function get_current_editors($postdate) {
   global $wpdb;
-    // WP_User_Query arguments. Search the database for the values from the pie checkbox.
-    //dhnow this value is pie_checkbox_6, imac test site 10, laptop 3.
+    //setup the query arguments
     $args = array (
       'meta_query'     => array(
         array(
@@ -394,24 +393,43 @@ function get_current_editors() {
       ),
     );
 
+  //create a popover variable  
   $popover;
+
+  //get the current week
   $current_week = date("W");
+  
+  //initiate the user query and call the $args
   $user_query = new WP_User_Query( $args );
+  
   global $userdetails;
+
+  //if the userquery finds results
   if ( ! empty($user_query->results)) {
+    //then setup variables for each user
     foreach ($user_query->results as $user) {
+        //gets all the user meta based on the user id      
         $allmeta = get_user_meta( $user->ID );
+        //gets the serialized list of dates the user is signed up for from the db
         $checkbox = get_user_meta($user->ID, 'pie_checkbox_10', true);
-          if (in_array($current_week, $checkbox)){
+      //if the user is signed up for the week the post was published. 
+      //pulls in week number generated based on the post date in single.php
+      if (in_array($postdate, $checkbox)){
+            //get user data, pull username        
             $userinfo = get_userdata($user->ID);
             $username = $userinfo->user_login;
+            
+            //generate popover content
             $popcontent = '<strong>Institution:</strong> x <br>
-            <strong>Bio: </strong>' . $userinfo->description . '<br>';
-            $popover = '<a tabindex="0" data-toggle="popover" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>';
+            <strong>Bio: </strong>' . $userinfo->description . '<br>' . $postdate;
+            
+            //create the popover html and insert the popover content. 
+            $popover .= '<a tabindex="0" data-toggle="popover" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a> ';
           }
     } //end foreach
 
   } //end if
+  //output the popover content and the el/ec content. 
   echo 'This content was selected for <i>Digital Humanities Now</i> by Editor-in-Chief based on nomination by this weeks Editors-at-Large: ' . $popover;
 } //end func
 

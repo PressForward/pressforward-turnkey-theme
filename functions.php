@@ -418,13 +418,22 @@ function get_current_editors($postdate) {
             //get user data, pull username        
             $userinfo = get_userdata($user->ID);
             $username = $userinfo->user_login;
-            
+            //get institution data
+            if (empty(get_user_meta($user->ID, 'pie_text_4', true)) == TRUE) {
+              $popcontent = '<strong>Institution:</strong> Not provided. Please login to edit your profile.<br>';
+            } else {
             //generate popover content
-            $popcontent = '<strong>Institution:</strong> x <br>
-            <strong>Bio: </strong>' . $userinfo->description . '<br>' . $postdate;
-            
+            $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_4', true) . '<br>';
+            }
+            if (empty($userinfo->description) == TRUE) { 
+              $popcontent .= '<strong>Bio:</strong> Not provided. Please login to edit your profile.<br>';
+            } else {
+              $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
+            }
+
+              
             //create the popover html and insert the popover content. 
-            $popover .= '<a tabindex="0" data-toggle="popover" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';
+            $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';
           }
     } //end foreach
 

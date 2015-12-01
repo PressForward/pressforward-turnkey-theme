@@ -411,10 +411,10 @@ function get_current_editors($postdate) {
         //gets all the user meta based on the user id      
         $allmeta = get_user_meta( $user->ID );
         //gets the serialized list of dates the user is signed up for from the db
-        $checkbox = get_user_meta($user->ID, 'pie_checkbox_10', true);
+        $checkbox = get_user_meta($user->ID, 'pie_checkbox_6', true);
       //if the user is signed up for the week the post was published. 
       //pulls in week number generated based on the post date in single.php
-      if (in_array($postdate, get_user_meta($user->ID, 'pie_checkbox_10', true), false)){
+      if (in_array($postdate, get_user_meta($user->ID, 'pie_checkbox_6', true), false)){
             //get user data, pull username        
             $userinfo = get_userdata($user->ID);
             $username = $userinfo->user_login;

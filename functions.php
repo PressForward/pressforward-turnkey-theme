@@ -430,7 +430,7 @@ function get_current_editors($postdate) {
               $popcontent = '<strong>Institution:</strong> Not provided. Please login to edit your profile.<br>';
             } else {
             //generate popover content
-            $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_4', true) . '<br>';
+            $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_8', true) . '<br>';
             }
             if (empty($userinfo->description) == TRUE) { 
               $popcontent .= '<strong>Bio:</strong> Not provided. Please login to edit your profile.<br>';

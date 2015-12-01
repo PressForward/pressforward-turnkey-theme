@@ -82,7 +82,7 @@ Template Name: Home Page Template
               <?php if (is_user_logged_in() ) {
                 echo '<a class="btn btn-default" href="' .get_dashboard_url() . '/admin.php?page=pf-menu" role="button">Nominate Content</a>';
               } else {
-
+                echo '<a class="btn btn-default" href="#" role="button">Log In</a>';
               } ?>
               </div>
             </div>

@@ -109,9 +109,9 @@ jQuery(document).ready(function($) {
 
 
 
-jQuery(function($) {
-  $('.editors').popover();
- });
+// jQuery(function($) {
+//   $('.editors').popover();
+//  });
 
 jQuery(function($) {
     $('[data-toggle="popover"]').popover(); 

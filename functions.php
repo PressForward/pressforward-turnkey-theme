@@ -419,6 +419,11 @@ function get_current_editors($postdate) {
             $userinfo = get_userdata($user->ID);
             $username = $userinfo->user_login;
             //get institution data
+            if (empty(get_user_meta($user->ID, 'pie_text_4', true)) ==TRUE &&
+              empty($userinfo->description) == TRUE) {
+              $popcontent = '<strong>This user has not edited their profile. Please login to your account and edit your user profile.</strong>';
+      }else {
+
             if (empty(get_user_meta($user->ID, 'pie_text_4', true)) == TRUE) {
               $popcontent = '<strong>Institution:</strong> Not provided. Please login to edit your profile.<br>';
             } else {
@@ -430,7 +435,7 @@ function get_current_editors($postdate) {
             } else {
               $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
             }
-
+      }
               
             //create the popover html and insert the popover content. 
             $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';

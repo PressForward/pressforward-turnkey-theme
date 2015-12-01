@@ -424,7 +424,7 @@ function get_current_editors($postdate) {
               $popcontent = '<strong>This user has not edited their profile. Please login to your account and edit your user profile.</strong>';
       }else {
 
-            if (empty(get_user_meta($user->ID, 'pie_text_4', true)) == TRUE) {
+            if (empty(get_user_meta($user->ID, 'pie_text_8', true)) == TRUE) {
               $popcontent = '<strong>Institution:</strong> Not provided. Please login to edit your profile.<br>';
             } else {
             //generate popover content

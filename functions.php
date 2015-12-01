@@ -425,17 +425,17 @@ function get_current_editors($postdate) {
             //$meta2check = empty(get_user_meta( $user->ID, 'pie_text_8', true));
 
             if (empty($description) == TRUE && empty($institutionalaffil) == TRUE) {
-              $popcontent = '<strong>This user has not edited their profile. Please login to your account and edit your user profile.</strong>';
+              $popcontent = '<strong>This user has not edited their profile. If this is your profile, please login to your account and edit your user profile.</strong>';
       }else {
 
             if (empty($institutionalaffil) == TRUE) {
-              $popcontent = '<strong>Institution:</strong> Not provided. Please login to edit your profile.<br>';
+              $popcontent = '<strong>Institution:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
             } else {
             //generate popover content
             $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_8', true) . '<br>';
             }
             if (empty($description) == TRUE) { 
-              $popcontent .= '<strong>Bio:</strong> Not provided. Please login to edit your profile.<br>';
+              $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
             } else {
               $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
             }

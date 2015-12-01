@@ -79,7 +79,11 @@ Template Name: Home Page Template
             <i class="fa <?php echo $brew_options['b2-c3-icon'] ?> fa-3x"></i>
                  <h1 class="widgettitle"><a href="<?php echo get_page_link($brew_options['b2-c3-pagelink']); ?>"><?php echo $brew_options['b2-c3-heading'] ?></a></h1>
               <div class="textwidget">
-              <p><?php echo $brew_options['b2-c3-text'] ?></p>
+              <?php if (is_user_logged_in() ) {
+                echo '<a class="btn btn-default" href="' .get_dashboard_url() . '/admin.php?page=pf-menu" role="button">Nominate Content</a>';
+              } else {
+
+              } ?>
               </div>
             </div>
 
@@ -87,7 +91,11 @@ Template Name: Home Page Template
             <i class="fa <?php echo $brew_options['b2-c4-icon'] ?> fa-3x"></i>
                  <h1 class="widgettitle"><a href="<?php echo get_page_link($brew_options['b2-c4-pagelink']); ?>"><?php echo $brew_options['b2-c4-heading'] ?></a></h1>
               <div class="textwidget">
-              <p><?php echo $brew_options['b2-c4-text'] ?></p>
+              <?php if (is_user_logged_in() ) {
+                echo '<a class="btn btn-default" href="' . get_edit_profile_url() . '" role="button">Manage Volunteer Dates</a> ';
+              } else {
+                 echo '<p>' . $brew_options['b2-c4-text'] . '</p>';
+              } ?>
               </div>
             </div>
         </div>

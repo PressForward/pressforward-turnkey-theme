@@ -419,8 +419,7 @@ function get_current_editors($postdate) {
             $userinfo = get_userdata($user->ID);
             $username = $userinfo->user_login;
             //get institution data
-            if (empty(get_user_meta($user->ID, 'pie_text_8', true)) ==TRUE &&
-              empty($userinfo->description) == TRUE) {
+            if ( empty(get_user_meta($user->ID, 'pie_text_8', true)) == TRUE) {
               $popcontent = '<strong>This user has not edited their profile. Please login to your account and edit your user profile.</strong>';
       }else {
 

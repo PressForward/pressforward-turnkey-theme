@@ -42,6 +42,18 @@ Template Name: Home Page Template
 </div> <!-- close .container .homepage --> 
 </div> <!-- end .slider -->
 
+<main class="um-notice" role="main">
+<div class="container" id="um-notice" >
+  <div class="row text-center">
+    <div class="col-md-12">
+      <p><i class="fa fa-asterisk"></i> Heads up! Our Editor-at-Large sign up and user registration process is changing next year. <a href="http://dhnow.org/1Tov478"> Read about the forthcoming changes here. </a></p>
+    </div>
+  </div> <!-- close row -->
+</div>
+
+</main>
+
+
 <!-- BLOCK 2-PARTICIPATE -->
 
 <main class="participatehome" role="main">

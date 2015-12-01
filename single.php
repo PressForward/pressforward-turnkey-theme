@@ -122,7 +122,6 @@ Features on this page:
 						</span> 
 		            </footer> <?php // end article footer ?>
 				</article> <?php // end article ?>
-
 						
 				<!-- 03. AUTHOR INFO  -->
 				<?php get_template_part( 'author-info' ); ?> 

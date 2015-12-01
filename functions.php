@@ -424,7 +424,7 @@ function get_current_editors($postdate) {
             <strong>Bio: </strong>' . $userinfo->description . '<br>' . $postdate;
             
             //create the popover html and insert the popover content. 
-            $popover .= '<a tabindex="0" data-toggle="popover" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a> ';
+            $popover .= '<a tabindex="0" data-toggle="popover" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';
           }
     } //end foreach
 

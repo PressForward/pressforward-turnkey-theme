@@ -106,3 +106,13 @@ jQuery(document).ready(function($) {
 	w.addEventListener( "orientationchange", restoreZoom, false );
 	w.addEventListener( "devicemotion", checkTilt, false );
 })( this );
+
+
+
+jQuery(function($) {
+  $('.editors').popover();
+ });
+
+jQuery(function($) {
+    $('[data-toggle="popover"]').popover(); 
+});

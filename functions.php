@@ -422,7 +422,7 @@ function get_current_editors($postdate) {
             $meta1check = empty($userinfo->description);
             $meta2check = empty(get_user_meta( $user->ID, 'pie_text_8', true));
 
-            if ( $meta1check && $meta2check == TRUE) {
+            if ($meta1check == true && $meta2check == true) {
               $popcontent = '<strong>This user has not edited their profile. Please login to your account and edit your user profile.</strong>';
       }else {
 

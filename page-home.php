@@ -54,7 +54,7 @@ Template Name: Home Page Template
             <div class="container" id="participate">
               <div class="row text-center">
                   <div class="col-md-3">
-                      <i class="fa' . $brew_options['b2-c1-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b2-c1-icon'] . ' fa-3x"></i>
                       <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c1-pagelink']) . '">' . $brew_options['b2-c1-heading'] . '</a></h1>
                     <div class="textwidget">
                       <p>' . $brew_options['b2-c1-text'] . '</p>
@@ -62,7 +62,7 @@ Template Name: Home Page Template
                 </div>
                
                 <div class="col-md-3">
-                    <i class="fa' . $brew_options['b2-c2-icon'] . 'fa-3x"></i>
+                    <i class="fa ' . $brew_options['b2-c2-icon'] . ' fa-3x"></i>
                     <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c2-pagelink']) . '">' . $brew_options['b2-c2-heading'] . '</a></h1>
                   <div class="textwidget">
                   <p>' . $brew_options['b2-c2-text'] .'</p>
@@ -70,7 +70,7 @@ Template Name: Home Page Template
                 </div>
       
                 <div class="col-md-3">
-                <i class="fa' . $brew_options['b2-c3-icon'] . 'fa-3x"></i>
+                <i class="fa ' . $brew_options['b2-c3-icon'] . ' fa-3x"></i>
                      <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c3-pagelink']) . '">' . $brew_options['b2-c3-heading'] . '</a></h1>
                   <div class="textwidget">
                   <p>' . $brew_options['b2-c3-text'] .'</p>
@@ -78,7 +78,7 @@ Template Name: Home Page Template
                 </div>
 
                 <div class="col-md-3">
-                <i class="fa' . $brew_options['b2-c4-icon'] . 'fa-3x"></i>
+                <i class="fa ' . $brew_options['b2-c4-icon'] . ' fa-3x"></i>
                      <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c4-pagelink']) . '">' . $brew_options['b2-c4-heading'] . '</a></h1>
                   <div class="textwidget">
                   <p>' . $brew_options['b2-c4-text'] . '</p>
@@ -93,7 +93,7 @@ Template Name: Home Page Template
               <div class="row text-center">
       <div class="row text-center">
                   <div class="col-md-4">
-                      <i class="fa' . $brew_options['b2-c1-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b2-c1-icon'] . ' fa-3x"></i>
                       <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c1-pagelink']) . '">' . $brew_options['b2-c1-heading'] . '</a></h1>
                     <div class="textwidget">
                       <p>' . $brew_options['b2-c1-text'] . '</p>
@@ -101,7 +101,7 @@ Template Name: Home Page Template
                 </div>
                
                 <div class="col-md-4">
-                    <i class="fa' . $brew_options['b2-c2-icon'] . 'fa-3x"></i>
+                    <i class="fa ' . $brew_options['b2-c2-icon'] . ' fa-3x"></i>
                     <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c2-pagelink']) . '">' . $brew_options['b2-c2-heading'] . '</a></h1>
                   <div class="textwidget">
                   <p>' . $brew_options['b2-c2-text'] .'</p>
@@ -109,7 +109,7 @@ Template Name: Home Page Template
                 </div>
       
                 <div class="col-md-4">
-                <i class="fa' . $brew_options['b2-c3-icon'] . 'fa-3x"></i>
+                <i class="fa ' . $brew_options['b2-c3-icon'] . ' fa-3x"></i>
                      <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c3-pagelink']) . '">' . $brew_options['b2-c3-heading'] . '</a></h1>
                   <div class="textwidget">
                   <p>' . $brew_options['b2-c3-text'] .'</p>
@@ -124,7 +124,7 @@ Template Name: Home Page Template
               <div class="row text-center">
       <div class="row text-center">
                   <div class="col-md-6">
-                      <i class="fa' . $brew_options['b2-c1-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b2-c1-icon'] . ' fa-3x"></i>
                       <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c1-pagelink']) . '">' . $brew_options['b2-c1-heading'] . '</a></h1>
                     <div class="textwidget">
                       <p>' . $brew_options['b2-c1-text'] . '</p>
@@ -132,7 +132,7 @@ Template Name: Home Page Template
                 </div>
                
                 <div class="col-md-6">
-                    <i class="fa' . $brew_options['b2-c2-icon'] . 'fa-3x"></i>
+                    <i class="fa ' . $brew_options['b2-c2-icon'] . ' fa-3x"></i>
                     <h1 class="widgettitle"><a href="' . get_page_link($brew_options['b2-c2-pagelink']) . '">' . $brew_options['b2-c2-heading'] . '</a></h1>
                   <div class="textwidget">
                   <p>' . $brew_options['b2-c2-text'] .'</p>
@@ -154,7 +154,7 @@ Template Name: Home Page Template
               <!--Section 1-->
                 <div class="col-md-4 about" id="content1">
                     <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c1-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c1-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c1_link = get_category_link($brew_options['b3-c1-category']);
                       echo '<a href="' . $b3_c1_link . '"><h1>' . $brew_options['b3-c1-title'] . '</a></h1>
@@ -176,7 +176,7 @@ Template Name: Home Page Template
               <!--Section 2-->
                 <div class="col-md-4 about content2">
                       <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c2-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c2-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c2_link = get_category_link($brew_options['b3-c2-category']);
                       echo '<a href="' . $b3_c2_link . '"><h1>' . $brew_options['b3-c2-title'] . '</a></h1>
@@ -198,7 +198,7 @@ Template Name: Home Page Template
               <!--Section 3-->
                 <div class="col-md-4 about content3">
                    <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c3-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c3-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c3_link = get_category_link($brew_options['b3-c3-category']);
                       echo '<a href="' . $b3_c3_link . '"><h1>' . $brew_options['b3-c3-title'] . '</a></h1>
@@ -223,7 +223,7 @@ Template Name: Home Page Template
               <!--Section 1-->
                 <div class="col-md-4 about content4">
                     <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c4-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c4-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c4_link = get_category_link($brew_options['b3-c4-category']);
                       echo '<a href="' . $b3_c4_link . '"><h1>' . $brew_options['b3-c4-title'] . '</a></h1>
@@ -245,7 +245,7 @@ Template Name: Home Page Template
               <!--Section 2-->
                 <div class="col-md-4 about content5">
                    <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c5-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c5-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c5_link = get_category_link($brew_options['b3-c5-category']);
                       echo '<a href="' . $b3_c5_link . '"><h1>' . $brew_options['b3-c5-title'] . '</a></h1>
@@ -267,7 +267,7 @@ Template Name: Home Page Template
               <!--Section 3-->
                 <div class="col-md-4 about content6">
                    <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c6-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c6-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c6_link = get_category_link($brew_options['b3-c6-category']);
                       echo '<a href="' . $b3_c6_link . '"><h1>' . $brew_options['b3-c6-title'] . '</a></h1>
@@ -299,7 +299,7 @@ Template Name: Home Page Template
               <!--Section 1-->
                 <div class="col-md-4 about" id="content1">
                     <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c1-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c1-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c1_link = get_category_link($brew_options['b3-c1-category']);
                       echo '<a href="' . $b3_c1_link . '"><h1>' . $brew_options['b3-c1-title'] . '</a></h1>
@@ -321,7 +321,7 @@ Template Name: Home Page Template
               <!--Section 2-->
                 <div class="col-md-4 about content2">
                       <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c2-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c2-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c2_link = get_category_link($brew_options['b3-c2-category']);
                       echo '<a href="' . $b3_c2_link . '"><h1>' . $brew_options['b3-c2-title'] . '</a></h1>
@@ -343,7 +343,7 @@ Template Name: Home Page Template
               <!--Section 3-->
                 <div class="col-md-4 about content3">
                    <div class="homeinnerwrapper">
-                      <i class="fa' . $brew_options['b3-c3-icon'] . 'fa-3x"></i>
+                      <i class="fa ' . $brew_options['b3-c3-icon'] . ' fa-3x"></i>
                       <div class="homeinnercontent">';
                       $b3_c3_link = get_category_link($brew_options['b3-c3-category']);
                       echo '<a href="' . $b3_c3_link . '"><h1>' . $brew_options['b3-c3-title'] . '</a></h1>

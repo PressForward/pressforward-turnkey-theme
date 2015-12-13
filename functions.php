@@ -18,7 +18,7 @@ add_action( 'wp_enqueue_scripts', 'prefix_enqueue_awesome' );
  * @author FAT Media
  */
 function prefix_enqueue_awesome() {
-  wp_enqueue_style( 'prefix-font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', array(), '4.3.0' );
+  wp_enqueue_style( 'prefix-font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css', array(), '4.5.0' );
 }
 
 // <!-- SHORTCODES -->

@@ -1,146 +1,61 @@
 <?php
-/*
-The comments page for Bones
-*/
-
-// Do not delete these lines
-  if ( ! empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) )
-    die ('Please do not load this page directly. Thanks!');
-
-  if ( post_password_required() ) { ?>
-    <div class="alert alert-help">
-      <p class="nocomments"><?php _e('This post is password protected. Enter the password to view comments.', 'bonestheme' ); ?></p>
-    </div>
-  <?php
-    return;
-  }
+	if ( post_password_required() ) {
+		return;
+	}
 ?>
 
-<?php // You can start editing here. ?>
+<div id="comments" class="comments-area">
 
-<?php if ( have_comments() ) : ?>
+	<?php // You can start editing here ?>
 
-  <div id="comments" class="havecomments">
+	<?php if ( have_comments() ) : ?>
+		<h2 class="comments-title">
+			<?php
+				printf( // WPCS: XSS OK.
+					esc_html( _nx( 'One comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'jointswp' ) ),
+					number_format_i18n( get_comments_number() ),
+					'<span>' . get_the_title() . '</span>'
+				);
+			?>
+		</h2>
 
-  <h3><?php comments_number( __( '<span>No</span> Responses', 'bonestheme' ), __( '<span>One</span> Response', 'bonestheme' ), _n( '<span>%</span> Response', '<span>%</span> Responses', get_comments_number(), 'bonestheme' ) );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'jointswp' ); ?></h2>
+			<div class="nav-links">
 
-  <ol class="commentlist">
-    <?php wp_list_comments( 'type=comment&callback=bones_comments' ); ?>
-  </ol>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'jointswp' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'jointswp' ) ); ?></div>
 
-  <?php else : // this is displayed if there are no comments so far ?>
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-above -->
+		<?php endif; // Check for comment navigation. ?>
 
-  <?php if ( comments_open() ) : ?>
-  <?php // If comments are open, but there are no comments. ?>
-  <div id="comments" class="nocomments">
-    <h3>No Comments</h3>
-    <p>Be the first to start a conversation</p>
-  <?php else : // comments are closed ?>
-  <?php // If comments are closed. ?>
-  <?php endif; ?>
+		<ol class="commentlist">
+			<?php wp_list_comments('type=comment&callback=joints_comments'); ?>
+		</ol>
 
-<?php endif; ?>
+		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
+		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
+			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'jointswp' ); ?></h2>
+			<div class="nav-links">
 
-<?php if ( comments_open() ) : ?>
+				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'jointswp' ) ); ?></div>
+				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'jointswp' ) ); ?></div>
 
-  <?php if(page_has_comments_nav()) : ?>
+			</div><!-- .nav-links -->
+		</nav><!-- #comment-nav-below -->
+		<?php endif; // Check for comment navigation. ?>
 
-    <nav class="comment-nav clearfix">
-      <div class="comment-prev">
-        <?php previous_comments_link(__( '<i class="fa fa-chevron-left"></i>', 'bones' ) . '  Previous Comments') ?>
-      </div>
-      <div class="comment-next">
-        <?php next_comments_link(__( 'Next Comments  ', 'bones' ) . '<i class="fa fa-chevron-right"></i>') ?>
-      </div>
-    </nav>
-  <?php endif; ?>
+	<?php endif; // Check for have_comments(). ?>
 
-</div> <!-- END #COMMENTS --> 
+	<?php
+		// If comments are closed and there are comments, let's leave a little note, shall we?
+		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	?>
+		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'jointswp' ); ?></p>
+	<?php endif; ?>
 
-<div id="respond" class="respond-form">
+	<?php comment_form(array('class_submit'=>'button')); ?>
 
-  <h3 id="comment-form-title"><?php comment_form_title( __( 'Leave a Reply', 'bonestheme' ), __( 'Leave a Reply to %s', 'bonestheme' )); ?></h3>
-
-  <div id="cancel-comment-reply">
-    <p class="small"><?php cancel_comment_reply_link(); ?></p>
-  </div>
-
-  <?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
-    <div class="alert alert-help">
-      <p><?php printf( __( 'You must be %1$slogged in%2$s to post a comment.', 'bonestheme' ), '<a href="<?php echo wp_login_url( get_permalink() ); ?>">', '</a>' ); ?></p>
-    </div>
-  <?php else : ?>
-
-  <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-
-  <?php if ( is_user_logged_in() ) : ?>
-
-  <p class="comments-logged-in-as"><?php _e( 'Logged in as', 'bonestheme' ); ?> <a href="<?php echo get_option( 'siteurl' ); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url( get_permalink() ); ?>" title="<?php _e( 'Log out of this account', 'bonestheme' ); ?>"><?php _e( 'Log out', 'bonestheme' ); ?> <?php _e( '&raquo;', 'bonestheme' ); ?></a></p>
-
-  <?php else : ?>
-
-  <ul id="comment-form-elements" class="clearfix">
-
-    <li>
-      <label for="author"><?php _e( 'Name', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
-      <input type="text" name="author" id="author" value="<?php echo esc_attr($comment_author); ?>" placeholder="<?php _e( 'Your Name*', 'bonestheme' ); ?>" tabindex="1" <?php if ($req) echo "aria-required='true'"; ?> />
-    </li>
-
-    <li>
-      <label for="email"><?php _e( 'Mail', 'bonestheme' ); ?> <?php if ($req) _e( '(required)'); ?></label>
-      <input type="email" name="email" id="email" value="<?php echo esc_attr($comment_author_email); ?>" placeholder="<?php _e( 'Your E-Mail*', 'bonestheme' ); ?>" tabindex="2" <?php if ($req) echo "aria-required='true'"; ?> />
-      <small><?php _e("(will not be published)", 'bonestheme' ); ?></small>
-    </li>
-
-    <li>
-      <label for="url"><?php _e( 'Website', 'bonestheme' ); ?></label>
-      <input type="url" name="url" id="url" value="<?php echo esc_attr($comment_author_url); ?>" placeholder="<?php _e( 'Got a website?', 'bonestheme' ); ?>" tabindex="3" />
-    </li>
-
-  </ul>
-
-  <?php endif; ?>
-
-  <p><textarea name="comment" id="comment" placeholder="<?php _e( 'Your Comment here...', 'bonestheme' ); ?>" tabindex="4"></textarea></p>
-
-  <p>
-    <input name="submit" type="submit" id="submit" class="btn btn-primary" tabindex="5" value="<?php _e( 'Submit', 'bonestheme' ); ?>" />
-    <?php comment_id_fields(); ?>
-  </p>
-
-
-  <?php do_action( 'comment_form', $post->ID ); ?>
-
-  </form>
-
-  <?php endif; // If registration required and not logged in ?>
-
-</div> <!-- END #respond -->
-
-
-<?php else : ?>
-
-  <?php if ( have_comments() ) : ?>
-
-  </div> <!-- END #COMMENTS (have comments, comments now closed) -->
-
-  <div class="closed">
-    <h3>comments are closed</h3>
-  </div>
-
-  <?php endif; ?>
-
-
-<?php endif; // if you delete this the sky will fall on your head ?>
-
-<?php $comments_by_type = separate_comments($comments); ?>
-  <?php if ( ! empty( $comments_by_type['pings'] ) ) { ?>
-  <div id="pings">
-    <h3>
-      <?php _e( 'Trackbacks and Pingbacks:', 'bones' ); ?>
-    </h3>
-    <ol class="pinglist">
-      <?php wp_list_comments( 'type=pings&callback=list_pings' ); ?>
-    </ol>
-  </div><!-- /#pings -->
-  <?php } // end if ?>
+</div><!-- #comments -->

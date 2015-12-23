@@ -136,7 +136,7 @@ body {
   padding: 15px 7px 15px 7px !important;
 }
 .nav #main-menu a:hover {
-  border-top: solid 3px #FFFF00;
+  border-top: solid 3px #3887be;
 }
 .nav .dropdown-menu a:hover {
   border-top: none;
@@ -169,7 +169,7 @@ nav .dropdown-menu > li > a {
 }
 .navbar-collapse li > a:hover {
   border-top: 3px solid;
-  border-top-color: #FFFF00;
+  border-top-color: #3887be;
 }
 @media (max-width: 768px) {
   .navbar-collapse li > a {
@@ -258,7 +258,7 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
   color: white;
 }
 .um-notice a:hover {
-  color: #FFFF00;
+  color: #3887be;
 }
 /*******************************
 01. LIQUID SLIDER
@@ -273,12 +273,12 @@ body {
   letter-spacing: 0.5px;
 }
 .slider {
-  background-image: -webkit-linear-gradient(top, #FFFF00 0%, 50%, #2f719e 100%);
-  background-image: linear-gradient(to bottom, #FFFF00 0%, 50%, #2f719e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff00', endColorstr='#ff2f719e', GradientType=0);
-  background-image: -webkit-linear-gradient(top, #FFFF00 0%, #2f719e 50%);
-  background-image: -o-linear-gradient(top, #FFFF00 0%, #2f719e 50%);
-  background-image: linear-gradient(to bottom, #FFFF00 0%, #2f719e 50%);
+  background-image: -webkit-linear-gradient(top, #3887be 0%, 50%, #2f719e 100%);
+  background-image: linear-gradient(to bottom, #3887be 0%, 50%, #2f719e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3887be', endColorstr='#ff2f719e', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #3887be 0%, #2f719e 50%);
+  background-image: -o-linear-gradient(top, #3887be 0%, #2f719e 50%);
+  background-image: linear-gradient(to bottom, #3887be 0%, #2f719e 50%);
   background-repeat: repeat-x;
 }
 .slider a:hover {
@@ -412,7 +412,7 @@ The icons for each category will appear once content is placed in the widget fro
   font-size: 17px;
 }
 .about a {
-  color: #FFFF00;
+  color: #3887be;
 }
 .about .homeinnerwrapper {
   background-color: #f8f8f8;
@@ -478,12 +478,12 @@ The participate section is the second block on the home page. This block, much l
 The blog section is the last block on the homepage. The block is made up of a contain with two col-md-6 widgetized sections.  The section was originally intended to house a brief excerpt and link to the most recent post as well as a list of the most recent posts using two seperate widgets.  This section can contain any widget and the styles below can be adjusted as necessary.
 ********************************/
 .bloghome {
-  background-image: -webkit-linear-gradient(top, #FFFF00 0%, 50%, #2f719e 100%);
-  background-image: linear-gradient(to bottom, #FFFF00 0%, 50%, #2f719e 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff00', endColorstr='#ff2f719e', GradientType=0);
-  background-image: -webkit-linear-gradient(top, #FFFF00 0%, #2f719e 50%);
-  background-image: -o-linear-gradient(top, #FFFF00 0%, #2f719e 50%);
-  background-image: linear-gradient(to bottom, #FFFF00 0%, #2f719e 50%);
+  background-image: -webkit-linear-gradient(top, #3887be 0%, 50%, #2f719e 100%);
+  background-image: linear-gradient(to bottom, #3887be 0%, 50%, #2f719e 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3887be', endColorstr='#ff2f719e', GradientType=0);
+  background-image: -webkit-linear-gradient(top, #3887be 0%, #2f719e 50%);
+  background-image: -o-linear-gradient(top, #3887be 0%, #2f719e 50%);
+  background-image: linear-gradient(to bottom, #3887be 0%, #2f719e 50%);
   background-repeat: repeat-x;
   color: #f8f8f8;
   padding: 25px 0px 25px 0;
@@ -4569,7 +4569,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse {
   background-color: #142736;
-  border-color: #ffff33;
+  border-color: #5a9fcf;
 }
 .navbar-inverse .navbar-brand {
   color: #fafafa;
@@ -4607,7 +4607,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-inverse .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus {
-  background-color: #FFFF00;
+  background-color: #3887be;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
   background-color: #fff;
@@ -4624,10 +4624,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu > .dropdown-header {
-    border-color: #ffff33;
+    border-color: #5a9fcf;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
-    background-color: #ffff33;
+    background-color: #5a9fcf;
   }
   .navbar-inverse .navbar-nav .open .dropdown-menu > li > a {
     color: #fafafa;

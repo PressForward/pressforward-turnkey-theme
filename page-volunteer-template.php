@@ -63,11 +63,12 @@ Template Name: Page -- Volunteer (DHNow Specific)
         <div class="col-md-offset-1 col-md-10 col-md-offset-1 clearfix">
         <div class="row" id="reg-row">
         <div class="col-md-6 text-center" id="login-col">
-        <h2>Nominate Content</h2>
-
+        <h3>Nominate Content</h3>
+        <?php echo '<a class="btn btn-primary" href="' .get_dashboard_url() . '/admin.php?page=pf-menu" role="button">Nominate Content</a>'; ?>
         </div>
         <div class="col-md-6 text-center">
-        <h2>Manage Volunteer Dates and Profile</h2>
+        <h3>Manage Volunteer Dates & Profile</h3>
+        <?php echo '<a class="btn btn-primary" href="' . get_edit_profile_url() . '" role="button">Manage Volunteer Dates</a> '; ?>
         </div>
         </div>
         </div>
@@ -77,11 +78,12 @@ Template Name: Page -- Volunteer (DHNow Specific)
         <div class="col-md-offset-1 col-md-10 col-md-offset-1 clearfix">
         <div class="row" id="reg-row">
         <div class="col-md-6 text-center" id="login-col">
-        <h2>Editor-at-Large Login</h2>
+        <h3>Editor-at-Large Login</h3>
         <?php echo '<a class="btn btn-primary" href="' . get_site_url() . '/login" role="button">Log In</a>'; ?>
         </div>
         <div class="col-md-6 text-center">
-        <h2>Volunteer</h2>
+        <h3>Volunteer</h3>
+        <?php echo '<a class="btn btn-primary" href="' . get_site_url() . '/registration" role="button">Register</a>'; ?>
         </div>
         </div>
         </div>

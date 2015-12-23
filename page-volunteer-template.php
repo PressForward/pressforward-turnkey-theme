@@ -64,6 +64,7 @@ Template Name: Page -- Volunteer (DHNow Specific)
         <div class="row" id="reg-row">
         <div class="col-md-6 text-center" id="login-col">
         <h2>Nominate Content</h2>
+
         </div>
         <div class="col-md-6 text-center">
         <h2>Manage Volunteer Dates and Profile</h2>
@@ -77,6 +78,7 @@ Template Name: Page -- Volunteer (DHNow Specific)
         <div class="row" id="reg-row">
         <div class="col-md-6 text-center" id="login-col">
         <h2>Editor-at-Large Login</h2>
+        <?php echo '<a class="btn btn-primary" href="' . get_site_url() . '/login" role="button">Log In</a>'; ?>
         </div>
         <div class="col-md-6 text-center">
         <h2>Volunteer</h2>

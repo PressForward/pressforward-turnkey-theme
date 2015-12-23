@@ -380,6 +380,19 @@ function list_pings( $comment, $args, $depth ) {
 ?>
 
 <?php
+function get_past_editors() {
+  $blogusers = get_users( 'orderby=nicename&role=contributor' );
+  // Array of WP_User objects.
+  foreach ( $blogusers as $user ) {
+    $userdirectory .= '<div class="panel panel-default">
+      <div class="panel-body">' . esc_html( $user->display_name) .
+        
+      '</div>
+  </div>';
+  }
+  return $userdirectory;
+}
+
 // Query the database and get the editors for the current week. Takes 1 argument--the date generated and passed in in single.php.
 function get_current_editors($postdate) {
   global $wpdb;

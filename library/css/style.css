@@ -78,6 +78,15 @@ h6 {
   font-size: 110%;
   margin: 5px 0 5px 0;
 }
+.userdir h5 {
+  font-size: 16px;
+}
+.userdir p {
+  font-size: 13px !important;
+}
+.userdir .panel-body {
+  padding: 10px;
+}
 /*******************************
 03. POSTS
 ********************************/

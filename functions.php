@@ -384,10 +384,10 @@ function get_past_editors() {
   $blogusers = get_users( 'orderby=nicename&role=contributor' );
   // Array of WP_User objects.
   foreach ( $blogusers as $user ) {
-    $userdirectory .= '<div class="panel panel-default">
-      <div class="panel-body">' . esc_html( $user->display_name) .
+    $userdirectory .= '<div class="userdir panel panel-default">
+      <div class="panel-body"><h5>' . $user->display_name . '</h5><p>' . $user->description .
         
-      '</div>
+      '</p></div>
   </div>';
   }
   return $userdirectory;

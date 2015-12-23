@@ -88,6 +88,11 @@ h6 {
   color: #333333 !important;
   font-size: 18px !important;
 }
+#pie_register textarea {
+  font-family: 'Lato', arial !important;
+  color: #333333 !important;
+  font-size: 18px !important;
+}
 /*******************************
 03. POSTS
 ********************************/

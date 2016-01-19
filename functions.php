@@ -466,9 +466,7 @@ function get_current_editors($postdate) {
   //output the popover content and the el/ec content. 
  return $popover;
 } //end func
-//$currentpostdate = get_the_date('Y/m/d');
-//$currentdate = new DateTime($currentpostdate);
-//$weekno = $currentdate->format("W");
+
 function EL_info($postID) {
 global $_POST;
 $postdate = get_the_date('Y/m/d', $postID);

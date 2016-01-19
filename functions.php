@@ -437,10 +437,12 @@ function get_current_editors($postdate) {
             //get institution data
             $description = $userinfo->description;
             $institutionalaffil = get_user_meta($user->ID, 'pie_text_8', true);
+            $optout = 'true';
             //$meta1check = empty($userinfo->description);
             //$meta2check = empty(get_user_meta( $user->ID, 'pie_text_8', true));
-
-            if (empty($description) == TRUE && empty($institutionalaffil) == TRUE) {
+            if (in_array($optout, get_user_meta($user->ID, 'pie_checkbox_11', true))){
+              $popcontent = '<strong>This user has opted out.</strong>';
+            } elseif (empty($description) == TRUE && empty($institutionalaffil) == TRUE) {
               $popcontent = '<strong>This user has not edited their profile. If this is your profile, please login to your account and edit your user profile.</strong>';
       }else {
 

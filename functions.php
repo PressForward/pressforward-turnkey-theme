@@ -395,12 +395,15 @@ function get_past_editors() {
 
 // Query the database and get the editors for the current week. Takes 1 argument--the date generated and passed in in single.php.
 function get_current_editors($postdate) {
+
+  $options = get_option('dhnsm_settings'); 
+  $db_pie_field = $options['dhnsm_text_field_0'];
   global $wpdb;
     //setup the query arguments
     $args = array (
       'meta_query'     => array(
         array(
-          'key'       => $GLOBALS['dbfield'],
+          'key'       => $db_pie_field,
           
         ),
       ),
@@ -424,10 +427,10 @@ function get_current_editors($postdate) {
         //gets all the user meta based on the user id      
         $allmeta = get_user_meta( $user->ID );
         //gets the serialized list of dates the user is signed up for from the db
-        $checkbox = get_user_meta($user->ID, 'pie_checkbox_6', true);
+        $checkbox = get_user_meta($user->ID, $db_pie_field, true);
       //if the user is signed up for the week the post was published. 
       //pulls in week number generated based on the post date in single.php
-      if (in_array($postdate, get_user_meta($user->ID, 'pie_checkbox_6', true), false)){
+      if (in_array($postdate, get_user_meta($user->ID, $db_pie_field, true), false)){
             //get user data, pull username        
             $userinfo = get_userdata($user->ID);
             $username = $userinfo->user_login;
@@ -463,7 +466,20 @@ function get_current_editors($postdate) {
   //output the popover content and the el/ec content. 
  return $popover;
 } //end func
+//$currentpostdate = get_the_date('Y/m/d');
+//$currentdate = new DateTime($currentpostdate);
+//$weekno = $currentdate->format("W");
+function EL_info($postID) {
+global $_POST;
+$postdate = get_the_date('Y/m/d', $postID);
+$currentpostdate = new DateTime($postdate);
+$weekno = $currentpostdate->format("W");
 
+$els = get_current_editors($weekno);
+add_post_meta($postID, 'editors-at-large-statement', $els, true);
+
+}
+add_action('publish_post', 'EL_info');
 
 
 ?>

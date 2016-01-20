@@ -468,7 +468,6 @@ function get_current_editors($postdate) {
 
   } //end if
   //output the popover content and the el/ec content. 
- $popover = rtrim($popover,',');
  return $popover;
 } //end func
 
@@ -479,6 +478,7 @@ $currentpostdate = new DateTime($postdate);
 $weekno = $currentpostdate->format("W");
 
 $els = get_current_editors($weekno);
+$els = rtrim($els, ',');
 add_post_meta($postID, 'editors-at-large-statement', $els, true);
 
 }

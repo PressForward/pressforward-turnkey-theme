@@ -440,7 +440,7 @@ function get_current_editors($postdate) {
             $optout = 'true';
             //$meta1check = empty($userinfo->description);
             //$meta2check = empty(get_user_meta( $user->ID, 'pie_text_8', true));
-            $outoutcheckbox = get_user_meta($user->ID, 'pie_checkbox_11', true)
+            $outoutcheckbox = get_user_meta($user->ID, 'pie_checkbox_11', true);
             if (is_array($optoutcheckbox) && in_array($optout,$optoutcheckbox)){
               $popcontent = '<strong>This user has opted out.</strong>';
             } elseif (empty($description) == TRUE && empty($institutionalaffil) == TRUE) {

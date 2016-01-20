@@ -462,11 +462,13 @@ function get_current_editors($postdate) {
               
             //create the popover html and insert the popover content. 
             $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';
+            
           }
     } //end foreach
 
   } //end if
   //output the popover content and the el/ec content. 
+ $popover = rtrim($popover,',');
  return $popover;
 } //end func
 

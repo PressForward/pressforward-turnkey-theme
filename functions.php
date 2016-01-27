@@ -392,84 +392,97 @@ function get_past_editors() {
   }
   return $userdirectory;
 }
-
-// Query the database and get the editors for the current week. Takes 1 argument--the date generated and passed in in single.php.
-function get_current_editors($postdate) {
-
-  $options = get_option('dhnsm_settings'); 
-  $db_pie_field = $options['dhnsm_text_field_0'];
-  global $wpdb;
-    //setup the query arguments
-    $args = array (
-      'meta_query'     => array(
-        array(
-          'key'       => $db_pie_field,
+function get_current_editors_test($postdate) {
+    $options = get_option('dhnsm_settings'); 
+        $db_pie_field = $options['dhnsm_text_field_0'];
+        global $wpdb;
+    
+        //setup the query arguments
+        $args = array (
+                'meta_query' => array(
+                array( 'key' => $db_pie_field, 'count_total' => true ),),); 
+        $current_week = date("W");
+  
+        //initiate the user query and call the $args
+        $user_query = new WP_User_Query( $args );
+        
+        global $userdetails;
+        if ( ! empty($user_query->results)) {
+          //then setup variables for each user
           
-        ),
-      ),
-    );
+          foreach ($user_query->results as $user) {
+              $checkbox = get_user_meta($user->ID, $db_pie_field, true);
+              if (is_array($checkbox) && in_array($postdate, get_user_meta($user->ID, $db_pie_field, true), false)) {
+                $current_el_id[] = $user->ID;
+              } //end if
+          } //end foreach
+        } //endif 
+        return $current_el_id;
+} //end get_current_editors
 
-  //create a popover variable  
-  $popover = '';
-
-  //get the current week
-  $current_week = date("W");
-  
-  //initiate the user query and call the $args
-  $user_query = new WP_User_Query( $args );
-  
-  global $userdetails;
-
-  //if the userquery finds results
-  if ( ! empty($user_query->results)) {
-    //then setup variables for each user
-    foreach ($user_query->results as $user) {
-        //gets all the user meta based on the user id      
-        $allmeta = get_user_meta( $user->ID );
-        //gets the serialized list of dates the user is signed up for from the db
-        $checkbox = get_user_meta($user->ID, $db_pie_field, true);
-      //if the user is signed up for the week the post was published. 
-      //pulls in week number generated based on the post date in single.php
-      if (in_array($postdate, get_user_meta($user->ID, $db_pie_field, true), false)){
-            //get user data, pull username        
-            $userinfo = get_userdata($user->ID);
-            $username = $userinfo->user_login;
-            //get institution data
-            $description = $userinfo->description;
-            $institutionalaffil = get_user_meta($user->ID, 'pie_text_8', true);
-            $optout = 'true';
-            //$meta1check = empty($userinfo->description);
-            //$meta2check = empty(get_user_meta( $user->ID, 'pie_text_8', true));
-            $outoutcheckbox = get_user_meta($user->ID, 'pie_checkbox_11', true);
-            if (is_array($optoutcheckbox) && in_array($optout,$optoutcheckbox)){
-              $popcontent = '<strong>This user has opted out.</strong>';
-            } elseif (empty($description) == TRUE && empty($institutionalaffil) == TRUE) {
-              $popcontent = '<strong>This user has not edited their profile. If this is your profile, please login to your account and edit your user profile.</strong>';
-      }else {
-
-            if (empty($institutionalaffil) == TRUE) {
-              $popcontent = '<strong>Institution:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
-            } else {
-            //generate popover content
-            $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_8', true) . '<br>';
-            }
-            if (empty($description) == TRUE) { 
-              $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
-            } else {
-              $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
-            }
+function construct_el_info($weekno) {
+    $options = get_option('dhnsm_settings'); 
+        $db_pie_field = $options['dhnsm_text_field_0'];
+        global $wpdb;
+        $popover = '';
+        $current_eds = get_current_editors_test($weekno);
+        $count = count($current_eds);
+        $x = 0;
+        foreach ($current_eds as $current_ed) {
+          $x++;
+          $userinfo = get_userdata($current_ed);
+          $username = $userinfo->user_login;
+          $description = $userinfo->description;
+      $institutionalaffil = get_user_meta($current_ed, 'pie_text_8', true);
+      $optout = 'true';
+      $optoutcheckbox = get_user_meta($current_ed, 'pie_checkbox_11', true);
+      if ($x < $count) {
+        if (is_array($optoutcheckbox) && in_array($optout,$optoutcheckbox)) {
+          $popcontent = '<strong>This user has opted out.';
+        } elseif (empty($description) == TRUE && empty($institutionalaffil) == TRUE) {
+          $popcontent = '<strong>This user has not edited their profile. If this is your profile, please login to your account and edit your user profile.</strong>';
+        }
+        else {
+          if (empty($institutionalaffil) == TRUE) {
+                            $popcontent = '<strong>Institution:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
+                        } else {
+                        //generate popover content
+                            $popcontent = '<strong>Institution:</strong>' . get_user_meta($current_ed, 'pie_text_8', true) . '<br>';
+                        }
+                        if (empty($description) == TRUE) { 
+                            $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
+                        } else {
+                            $popcontent .= '<strong>Bio: </strong>' . $description . '<br>';
+                        }
+        }
+      //create popover
+      $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';  
       }
-              
-            //create the popover html and insert the popover content. 
-            $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';
-            
-          }
-    } //end foreach
+      elseif ($x == $count) {
+            if (is_array($optoutcheckbox) && in_array($optout,$optoutcheckbox)) {
+          $popcontent = '<strong>This user has opted out.';
+        } elseif (empty($description) == TRUE && empty($institutionalaffil) == TRUE) {
+          $popcontent = '<strong>This user has not edited their profile. If this is your profile, please login to your account and edit your user profile.</strong>';
+        }
+        else {
+          if (empty($institutionalaffil) == TRUE) {
+                            $popcontent = '<strong>Institution:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
+                        } else {
+                        //generate popover content
+                            $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_8', true) . '<br>';
+                        }
+                        if (empty($description) == TRUE) { 
+                            $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
+                        } else {
+                            $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
+                        }
+        }
+        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>';  
+      }
 
-  } //end if
-  //output the popover content and the el/ec content. 
- return $popover;
-} //end func
+        }
+        return $popover;
+}
 
 function EL_info($postID) {
 global $_POST;
@@ -477,8 +490,7 @@ $postdate = get_the_date('Y/m/d', $postID);
 $currentpostdate = new DateTime($postdate);
 $weekno = $currentpostdate->format("W");
 
-$els = get_current_editors($weekno);
-$els = rtrim($els, ',');
+$els = construct_el_info($weekno);
 add_post_meta($postID, 'editors-at-large-statement', $els, true);
 
 }

@@ -108,12 +108,14 @@ Features on this page:
 							// $weekno = $currentdate->format("W");
 								
 							$nomcount = get_post_meta($post->ID, 'nomination_count', true);
-							if (in_category($slidercat) && $currentpostdate < '2016/01/18') {
-							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . 'based on nominations by Editors-at-Large: ' . get_current_editors($weekno) . '</p></div>';
+						if (in_category($slidercat) && $currentpostdate < '2016/01/18') {
+							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . 'based on nominations by Editors-at-Large: ' . $large . '</p></div>';
+						
 						} elseif (in_category( $slidercat) && $currentpostdate > '2016/01/18') {
 							$chief = get_post_meta($post->ID, 'editor-in-chief', true);
 							$El_statement = get_post_meta($post->ID, 'editors-at-large-statement');
-							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . 'based on nominations by Editors-at-Large: ' . get_post_meta($post->ID, 'editors-at-large-statement', true) . '</p></div>';
+							
+							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . 'based on nominations by Editors-at-Large: ' . implode($El_statement) . '</p></div>';
 						} else {
 							echo '<span class="tags pull-left">';
 							printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );

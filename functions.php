@@ -477,7 +477,7 @@ function construct_el_info($weekno) {
                             $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
                         }
         }
-        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>';  
+        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';  
       }
 
         }
@@ -485,16 +485,16 @@ function construct_el_info($weekno) {
 }
 
 function EL_info($postID) {
-global $_POST;
-$postdate = get_the_date('Y/m/d', $postID);
-$currentpostdate = new DateTime($postdate);
-$weekno = $currentpostdate->format("W");
+  global $_POST;
+  $postdate = get_the_date('Y/m/d', $postID);
+  $currentpostdate = new DateTime($postdate);
+  $weekno = $currentpostdate->format("W");
 
-$els = construct_el_info($weekno);
-add_post_meta($postID, 'editors-at-large-statement', $els, true);
+  $els = construct_el_info($weekno);
+  add_post_meta($postID, 'editors-at-large-statement', $els, true);
 
-}
-add_action('publish_post', 'EL_info');
+  }
+  add_action('publish_post', 'EL_info');
 
 
 ?>

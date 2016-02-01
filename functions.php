@@ -495,6 +495,27 @@ function EL_info($postID) {
 
   }
   add_action('publish_post', 'EL_info');
+//populat the our editors page
+function get_all_editors() {
+  //query arguments
+  $args = array(
+    'role' => 'Contributor'
+    );
+  $eds = "<table style='width:100%'><tr><th>Name</th><th>Institutional Affiliation</th><th>Twitter Handle</th></tr>";
+  //the query
+  $user_query = new WP_User_Query( $args );
 
+  // User loop
+  if (! empty($user_query->results) ) {
+    foreach ($user_query->results as $user) {
+      $institutionalaffil = get_user_meta($user->ID, 'pie_text_4', true);
+      $twitterhandle = get_user_meta($user->ID, 'pie_text_9', true);
+      $eds .= '<tr><td>' . $user->display_name . '</td><td>' . $institutionalaffil . '</td><td>' . $twitterhandle .'</td></tr>'; }
+  } else { 
+    echo 'No users found'; 
+  }
+$eds .= '</table>';
+return $eds;
 
+}
 ?>

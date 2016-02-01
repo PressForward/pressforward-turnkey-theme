@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page -- User Directory (DHNow Specific)
+Template Name: Page -- Editors Corner Homepage (DHNow Specific)
 */
 ?>
 
@@ -26,8 +26,7 @@ Template Name: Page -- User Directory (DHNow Specific)
               </header> <!-- end article header -->
             
               <section class="page-content entry-content clearfix" itemprop="articleBody">
-                <?php echo get_past_editors(); ?>
-            
+                
               </section> <!-- end article section -->
               
               <footer>

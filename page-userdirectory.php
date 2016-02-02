@@ -27,6 +27,7 @@ Template Name: Page -- Directory
             
               <section class="page-content entry-content clearfix" itemprop="articleBody">
                 <?php the_content(); ?>
+                <h2>Past Editors</h2>
                 <?php echo get_all_editors(); ?> 
               </section> <!-- end article section -->
               

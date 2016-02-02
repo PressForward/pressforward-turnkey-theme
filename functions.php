@@ -501,7 +501,7 @@ function get_all_editors() {
   $args = array(
     'role' => 'Contributor'
     );
-  $eds = "<table style='width:100%'><tr><th>Name</th><th>Institutional Affiliation</th><th>Twitter Handle</th></tr>";
+  $eds = "<table class='table-striped'><tr><th>Name</th><th>Institutional Affiliation</th><th>Twitter Handle</th></tr>";
   //the query
   $user_query = new WP_User_Query( $args );
 

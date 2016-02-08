@@ -484,7 +484,7 @@ function construct_el_info($weekno) {
         return $popover;
 }
 
-function EL_info($postID) {
+function EL_info($postID,  $post) {
   global $_POST;
   $postdate = get_the_date('Y/m/d', $postID);
   $currentpostdate = new DateTime($postdate);
@@ -492,9 +492,9 @@ function EL_info($postID) {
 
   $els = construct_el_info($weekno);
   add_post_meta($postID, 'editors-at-large-statement', $els, true);
-
+  return $postID;
   }
-  add_action('publish_post', 'EL_info');
+  add_action('publish_post', 'EL_info', 10, 2);
 //populat the our editors page
 function get_all_editors() {
   //query arguments

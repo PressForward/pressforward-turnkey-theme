@@ -2,11 +2,11 @@
 function ls_scripts() {
 		wp_enqueue_style('brew-child-css', get_stylesheet_directory_uri() . '/library/css/style.css');
 		wp_enqueue_style('ls-css', get_stylesheet_directory_uri() . '/library/css/liquid-slider.css');
-		wp_enqueue_script( 'jquery-easing', get_stylesheet_directory_uri() . 
+		wp_enqueue_script( 'jquery-easing', get_stylesheet_directory_uri() .
 			'/library/js/jquery.easing.1.3.js', array('jquery'));
 		wp_enqueue_script( 'jquery-touchSwipe', get_stylesheet_directory_uri() . '/library/js/jquery.touchSwipe.min.js', array('jquery-easing'));
 		wp_enqueue_script( 'jquery-ls', get_stylesheet_directory_uri() . '/library/js/jquery.liquid-slider.min.js', array('jquery-touchSwipe'));
-   
+
 }
 add_action('wp_enqueue_scripts', 'ls_scripts');
 add_action( 'admin_menu', 'custom_remove_menu_pages' );
@@ -14,7 +14,7 @@ add_action( 'admin_menu', 'custom_remove_menu_pages' );
 function custom_remove_menu_pages() {
   $user = wp_get_current_user();
   if ( in_array('contributor', $user->roles) ) {
-    remove_menu_page('tools.php');  
+    remove_menu_page('tools.php');
   }
 }
 // <!-- SHORTCODES -->
@@ -26,17 +26,17 @@ function active_feeds_function($atts) {
 
 
   $return_string = '<ul class="feedlist">';
-  query_posts(array('post_type' => pressforward()->pf_feeds->post_type, 'post_status' => 
+  query_posts(array('post_type' => pressforward()->pf_feeds->post_type, 'post_status' =>
     $status, 'nopaging' => true, 'orderby' => 'title', 'order' => 'ASC'));
 
   if (have_posts()) :
     while (have_posts())  : the_post();
-      $return_string .= '<li class="feeditem"><a href="'.get_post_meta(get_the_ID(), 'feedUrl', true).'"target="_blank">'.get_the_title().'</a></li>'; 
+      $return_string .= '<li class="feeditem"><a href="'.get_post_meta(get_the_ID(), 'feedUrl', true).'"target="_blank">'.get_the_title().'</a></li>';
     endwhile;
   endif;
   $return_string .= '</ul>';
 wp_reset_query();
-return $return_string;      
+return $return_string;
 }
 
 function nomcount_shortcode() {
@@ -61,7 +61,7 @@ function child_bones_excerpt_more($more) {
 }
 add_filter( 'excerpt_more', 'child_bones_excerpt_more');
 
-add_image_size( 'brew-child-thumbnail', 200, 200, true );  
+add_image_size( 'brew-child-thumbnail', 200, 200, true );
 //THESE SECTIONS ARE HARDCODED FOR THE DHNOW THEME.
 
   //   register_sidebar(array(
@@ -117,7 +117,7 @@ function add_opengraph_markup() {
 <meta property="og:url" content="<?php the_permalink(); ?>" />
 <meta property="og:description" content="<?=$description?>" />
 <meta property="og:site_name" content="<?=get_bloginfo('name')?>" />
- 
+
 <?php
   }
 }
@@ -386,42 +386,42 @@ function get_past_editors() {
   foreach ( $blogusers as $user ) {
     $userdirectory .= '<div class="userdir panel panel-default">
       <div class="panel-body"><h5>' . $user->display_name . '</h5><p>' . $user->description .
-        
+
       '</p></div>
   </div>';
   }
   return $userdirectory;
 }
 function get_current_editors_test($postdate) {
-    $options = get_option('dhnsm_settings'); 
+    $options = get_option('dhnsm_settings');
         $db_pie_field = $options['dhnsm_text_field_0'];
         global $wpdb;
-    
+
         //setup the query arguments
         $args = array (
                 'meta_query' => array(
-                array( 'key' => $db_pie_field, 'count_total' => true ),),); 
+                array( 'key' => $db_pie_field, 'count_total' => true ),),);
         $current_week = date("W");
-  
+
         //initiate the user query and call the $args
         $user_query = new WP_User_Query( $args );
-        
+
         global $userdetails;
         if ( ! empty($user_query->results)) {
           //then setup variables for each user
-          
+
           foreach ($user_query->results as $user) {
               $checkbox = get_user_meta($user->ID, $db_pie_field, true);
               if (is_array($checkbox) && in_array($postdate, get_user_meta($user->ID, $db_pie_field, true), false)) {
                 $current_el_id[] = $user->ID;
               } //end if
           } //end foreach
-        } //endif 
+        } //endif
         return $current_el_id;
 } //end get_current_editors
 
 function construct_el_info($weekno) {
-    $options = get_option('dhnsm_settings'); 
+    $options = get_option('dhnsm_settings');
         $db_pie_field = $options['dhnsm_text_field_0'];
         global $wpdb;
         $popover = '';
@@ -449,14 +449,14 @@ function construct_el_info($weekno) {
                         //generate popover content
                             $popcontent = '<strong>Institution:</strong>' . get_user_meta($current_ed, 'pie_text_8', true) . '<br>';
                         }
-                        if (empty($description) == TRUE) { 
+                        if (empty($description) == TRUE) {
                             $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
                         } else {
                             $popcontent .= '<strong>Bio: </strong>' . $description . '<br>';
                         }
         }
       //create popover
-      $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';  
+      $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';
       }
       elseif ($x == $count) {
             if (is_array($optoutcheckbox) && in_array($optout,$optoutcheckbox)) {
@@ -471,13 +471,13 @@ function construct_el_info($weekno) {
                         //generate popover content
                             $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_8', true) . '<br>';
                         }
-                        if (empty($description) == TRUE) { 
+                        if (empty($description) == TRUE) {
                             $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
                         } else {
                             $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
                         }
         }
-        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';  
+        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';
       }
 
         }
@@ -491,6 +491,9 @@ function EL_info($postID,  $post) {
   $weekno = $currentpostdate->format("W");
 
   $els = construct_el_info($weekno);
+	remove_action('publish_post', 'EL_info', 10, 2);
+	update_post_meta($postID, 'editors-at-large-statement', $els);
+	add_action('publish_post', 'EL_info', 10, 2);
   add_post_meta($postID, 'editors-at-large-statement', $els, true);
   return $postID;
   }
@@ -511,8 +514,8 @@ function get_all_editors() {
       $institutionalaffil = get_user_meta($user->ID, 'pie_text_4', true);
       $twitterhandle = get_user_meta($user->ID, 'pie_text_9', true);
       $eds .= '<tr><td>' . $user->display_name . '</td><td>' . $institutionalaffil . '</td><td>' . $twitterhandle .'</td></tr>'; }
-  } else { 
-    echo 'No users found'; 
+  } else {
+    echo 'No users found';
   }
 $eds .= '</table>';
 return $eds;

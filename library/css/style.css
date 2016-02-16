@@ -255,7 +255,7 @@ Author: Amanda Regan
 
 Stylesheet: Homepage Styles
 
-These are the styles for the homepage. Documentation on each section can be found below. For further information see the github repository for this theme. 
+These are the styles for the homepage. Documentation on each section can be found below. For further information see the github repository for this theme.
 http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 
 
@@ -281,6 +281,16 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 }
 .um-notice a:hover {
   color: #3887be;
+}
+/***
+Form Changes
+***/
+.radio_wrap {
+  width: 35% !important;
+}
+.radio_wrap label {
+  clear: left;
+  margin-right: 10px !important;
 }
 /*******************************
 01. LIQUID SLIDER
@@ -388,7 +398,7 @@ body {
 }
 /*******************************
 02. ABOUT
-The about section is the fourth block on the homepage.  It contains one widgetized area in a full width (12 column) container. 
+The about section is the fourth block on the homepage.  It contains one widgetized area in a full width (12 column) container.
 ********************************/
 .aboutlarge {
   background-color: #f8f8f8;
@@ -412,8 +422,8 @@ The about section is the fourth block on the homepage.  It contains one widgetiz
   }
 }
 /*******************************
-03. CATEGORIES 
-The category section is the third block on the homepage.  This block is designed to contain several widgets (two rows of three) that contain a list of recent posts in several categories using a recent post widget in each block.  The number of widget areas can be adjusted by changing the grid.  The block, by default, is composed of a container with two rows of columns each containing 3 sets of col-sm-4.  
+03. CATEGORIES
+The category section is the third block on the homepage.  This block is designed to contain several widgets (two rows of three) that contain a list of recent posts in several categories using a recent post widget in each block.  The number of widget areas can be adjusted by changing the grid.  The block, by default, is composed of a container with two rows of columns each containing 3 sets of col-sm-4.
 
 The icons for each category will appear once content is placed in the widget from the Wordpress dashboard.  The function creating each widget and controlling the icons can be found in functions.php.  For more information on icon markup see the fontawesome website. http://fortawesome.github.io
 ********************************/
@@ -482,8 +492,8 @@ li {
   color: #142736;
 }
 /*******************************
-03. PARTICIPATE 
-The participate section is the second block on the home page. This block, much like the categories block, is composed of four widgetized areas.  These sections are contained in page-home.php in a container made up of four col-sm-3 sections.  
+03. PARTICIPATE
+The participate section is the second block on the home page. This block, much like the categories block, is composed of four widgetized areas.  These sections are contained in page-home.php in a container made up of four col-sm-3 sections.
 ********************************/
 .participatehome {
   padding: 25px 0 25px 0;

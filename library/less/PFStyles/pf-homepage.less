@@ -4,7 +4,7 @@ Author: Amanda Regan
 
 Stylesheet: Homepage Styles
 
-These are the styles for the homepage. Documentation on each section can be found below. For further information see the github repository for this theme. 
+These are the styles for the homepage. Documentation on each section can be found below. For further information see the github repository for this theme.
 http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 
 
@@ -19,13 +19,13 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 ******************************************************************/
 // Homepage UM-Changes Alert
 .um-notice {
-	background-color: @dhnow-darkblue; 
+	background-color: @dhnow-darkblue;
 	padding: 15px 0px 7px 0px;
 	p {
-		font-size: @font-size-large; 
+		font-size: @font-size-large;
 		color: white;
 	}
-	a { 
+	a {
 		color: white;
 	}
 	a:hover {
@@ -33,6 +33,16 @@ http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 	}
 }
 
+/***
+Form Changes
+***/
+.radio_wrap {
+	width: 35% !important;
+		label {
+			clear: left;
+			margin-right: 10px !important;
+		}
+}
 /*******************************
 01. LIQUID SLIDER
 The slider is adjusted to fit bootstrap and this theme here.  The default slider css is located in library/css/liquid-slider.css
@@ -108,7 +118,7 @@ body {
 
 		@media (max-width: @screen-sm){
 			display:none;
-		
+
 		 }
 		 @media (max-width: 1000px){
 		 	width: 250px;
@@ -123,7 +133,7 @@ body {
 		@media (min-width: @screen-md){
 			height: 400px;
 		}
-		
+
 	}
 	.homepage {
 		padding: 30px 0 25px 0;
@@ -133,7 +143,7 @@ body {
 
 /*******************************
 02. ABOUT
-The about section is the fourth block on the homepage.  It contains one widgetized area in a full width (12 column) container. 
+The about section is the fourth block on the homepage.  It contains one widgetized area in a full width (12 column) container.
 ********************************/
 .aboutlarge {
 	background-color: @dhnow-gray;
@@ -156,8 +166,8 @@ The about section is the fourth block on the homepage.  It contains one widgetiz
 	}
 }
 /*******************************
-03. CATEGORIES 
-The category section is the third block on the homepage.  This block is designed to contain several widgets (two rows of three) that contain a list of recent posts in several categories using a recent post widget in each block.  The number of widget areas can be adjusted by changing the grid.  The block, by default, is composed of a container with two rows of columns each containing 3 sets of col-sm-4.  
+03. CATEGORIES
+The category section is the third block on the homepage.  This block is designed to contain several widgets (two rows of three) that contain a list of recent posts in several categories using a recent post widget in each block.  The number of widget areas can be adjusted by changing the grid.  The block, by default, is composed of a container with two rows of columns each containing 3 sets of col-sm-4.
 
 The icons for each category will appear once content is placed in the widget from the Wordpress dashboard.  The function creating each widget and controlling the icons can be found in functions.php.  For more information on icon markup see the fontawesome website. http://fortawesome.github.io
 ********************************/
@@ -175,12 +185,12 @@ The icons for each category will appear once content is placed in the widget fro
 	padding: 50px 0 50px 0;
 }
 .about {
- 	
+
   	ul {
 		text-align: left;
 		line-height: 1.5;
 		font-size: 17px;
-	} 
+	}
 	a {
 		color: @dhnow-blue;
 	}
@@ -188,7 +198,7 @@ The icons for each category will appear once content is placed in the widget fro
 		background-color: @dhnow-gray;
 		padding: 20px 20px 0px 10px;
 		@media (min-width: @screen-md) {
-			height: 410px; 
+			height: 410px;
 		}
 		@media (min-width: 992px) and (max-width: 1200px) {
 			height: 475px;
@@ -225,7 +235,7 @@ The icons for each category will appear once content is placed in the widget fro
 			height: 415px;
 		}
 	}
-	
+
 
 .participatehome {
 	i {
@@ -234,8 +244,8 @@ The icons for each category will appear once content is placed in the widget fro
 }
 
 /*******************************
-03. PARTICIPATE 
-The participate section is the second block on the home page. This block, much like the categories block, is composed of four widgetized areas.  These sections are contained in page-home.php in a container made up of four col-sm-3 sections.  
+03. PARTICIPATE
+The participate section is the second block on the home page. This block, much like the categories block, is composed of four widgetized areas.  These sections are contained in page-home.php in a container made up of four col-sm-3 sections.
 ********************************/
 .participatehome {
 
@@ -271,7 +281,7 @@ The blog section is the last block on the homepage. The block is made up of a co
 	.rpwe-summary {
 		padding-top: 15px;
 	}
-	
+
 	h1 {
 		font-size: @font-size-h2;
 		padding-bottom: 30px;
@@ -286,7 +296,7 @@ The blog section is the last block on the homepage. The block is made up of a co
 	#blog-excerpt {
 		padding-left: 0px;
 	}
-	
+
 }
 #blog {
 	@media (max-width: @screen-md) {
@@ -300,7 +310,7 @@ The blog section is the last block on the homepage. The block is made up of a co
 		ul {
 			padding-left: 25px;
 			padding-top: 25px;
-			
+
 		}
 	}
 

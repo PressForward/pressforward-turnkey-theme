@@ -377,9 +377,6 @@ function list_pings( $comment, $args, $depth ) {
     </span>
   </li>
 <?php } // end list_pings
-?>
-
-<?php
 function get_past_editors() {
   $blogusers = get_users( 'orderby=nicename&role=contributor' );
   // Array of WP_User objects.

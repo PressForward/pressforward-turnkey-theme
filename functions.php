@@ -417,6 +417,12 @@ function get_current_editors_test($postdate) {
         return $current_el_id;
 } //end get_current_editors
 
+define('CHARSET', 'UTF-8');
+define('REPLACE_FLAGS', ENT_QUOTES);
+function html($string) {
+    return htmlspecialchars($string, REPLACE_FLAGS, CHARSET);
+}
+
 function construct_el_info($weekno) {
     $options = get_option('dhnsm_settings');
         $db_pie_field = $options['dhnsm_text_field_0'];
@@ -474,8 +480,9 @@ function construct_el_info($weekno) {
                             $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
                         }
         }
-        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. htmlspecialchars($popcontent) . '" data-html="true" title="<p>' . $userinfo->user_login . '</p>" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';
-      }
+        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent) . '" data-html="true" title="<p>' . $userinfo->user_login . '</p>" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';
+				$popover = html($popover);
+			}
 
         }
         return $popover;

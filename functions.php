@@ -474,7 +474,7 @@ function construct_el_info($weekno) {
                             $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
                         }
         }
-        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';
+        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. htmlspecialchars($popcontent) . '" data-html="true" title="<p>' . $userinfo->user_login . '</p>" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';
       }
 
         }

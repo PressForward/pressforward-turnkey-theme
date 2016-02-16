@@ -418,7 +418,7 @@ function get_current_editors_test($postdate) {
 } //end get_current_editors
 
 define('CHARSET', 'UTF-8');
-define('REPLACE_FLAGS', ENT_QUOTES);
+define('REPLACE_FLAGS', ENT_COMPAT);
 function html($string) {
     return htmlspecialchars($string, REPLACE_FLAGS, CHARSET);
 }
@@ -455,7 +455,7 @@ function construct_el_info($weekno) {
                         if (empty($description) == TRUE) {
                             $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
                         } else {
-                            $popcontent .= '<strong>Bio: </strong>' . html($description) . '<br>';
+                            $popcontent .= '<strong>Bio: </strong>' . htmlspecialchars($description) . '<br>';
                         }
         }
       //create popover

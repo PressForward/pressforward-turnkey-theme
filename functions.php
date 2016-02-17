@@ -477,7 +477,7 @@ function construct_el_info($weekno) {
                         if (empty($description) == TRUE) {
                             $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
                         } else {
-                            $popcontent .= '<strong>Bio: </strong>' . $userinfo->description . '<br>';
+                            $popcontent .= '<strong>Bio: </strong>' . htmlspecialchars($userinfo->description) . '<br>';
                         }
         }
         $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="<p>' . $userinfo->user_login . '</p>" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';

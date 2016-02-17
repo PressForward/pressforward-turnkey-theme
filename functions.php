@@ -143,15 +143,15 @@ if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/library/optio
   require_once( dirname( __FILE__ ) . '/library/option-config.php' );
 }
 
-
+//Removed this on 2/17/2015 to avoid confusion on live site.
 // Custom metaboxes and fields
 // https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
-add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
-function be_initialize_cmb_meta_boxes() {
-  if ( !class_exists( 'cmb_Meta_Box' ) ) {
-    require_once( 'library/metabox/init.php' );
-  }
-}
+// add_action( 'init', 'be_initialize_cmb_meta_boxes', 9999 );
+// function be_initialize_cmb_meta_boxes() {
+//   if ( !class_exists( 'cmb_Meta_Box' ) ) {
+//     require_once( 'library/metabox/init.php' );
+//   }
+// }
 
 
 /* library/bones.php (functions specific to BREW)

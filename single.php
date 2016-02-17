@@ -1,38 +1,38 @@
-<!-- 
-Features on this page: 
-01. Category Featured Images 
+<!--
+Features on this page:
+01. Category Featured Images
 02. Author Display Conditional by Category
 03. Author Info (off by default)
 04. Comment Template (off by default)
-05. Sidebar (off by default) 
+05. Sidebar (off by default)
 -->
 
 <?php get_header(); ?>
-<div class="container">  
+<div class="container">
 	<div id="content" class="clearfix row">
 		<div id="main" class="col-md-12" role="main">
        		<?php get_template_part( 'breadcrumb' ); ?>
-			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>			
+			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 					<!-- 01. CATEGORY FEATURED IMAGES -->
 					<!-- This if statement determines the icon (or featured image) that displays on the individual post page.  -->
 						<?php global $brew_options ?>
-						<?php 	
-							$b3c1cat = $brew_options['b3-c1-category']; 
+						<?php
+							$b3c1cat = $brew_options['b3-c1-category'];
 							$b3c2cat = $brew_options['b3-c2-category'];
 							$b3c3cat = $brew_options['b3-c3-category'];
-							$b3c4cat = $brew_options['b3-c4-category']; 
-							$b3c5cat = $brew_options['b3-c5-category']; 
-							$b3c6cat = $brew_options['b3-c6-category']; 
+							$b3c4cat = $brew_options['b3-c4-category'];
+							$b3c5cat = $brew_options['b3-c5-category'];
+							$b3c6cat = $brew_options['b3-c6-category'];
 							$slidercat = $brew_options['slider-categories'];
-						?>  
+						?>
 
 						<?php if ( in_category($b3c1cat)) {
 							echo '<div class="col-md-2 featimg text-center">';
 							echo '<i class="fa ' . $brew_options['b3-c1-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div class="col-md-10" id="postcontent">';
 						} else if (in_category($b3c2cat)) {
 							echo '<div class="col-md-2 featimg text-center">';
-							echo '<i class="fa ' . $brew_options['b3-c2-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div 
+							echo '<i class="fa ' . $brew_options['b3-c2-icon'] .' fa-5x"></i></div> <!--close col-md-2 featimg--><div
 								</div> <!--close col-md-2 featimg-->
 								<div class="col-md-10" id="postcontent">';
 						} else if (in_category($b3c3cat)) {
@@ -56,15 +56,15 @@ Features on this page:
 							echo '<div class="col-md-3 featimg">' . get_the_post_thumbnail( $post->ID, array(250,250)) . '</div> <!--close col-md-3 featimg-->
 								<div class="col-md-9" id="postcontent">';
 						} ?>
-							
 
-							
+
+
 					<header class="article-header">
 						<div class="titlewrap clearfix">
 							<h1 class="single-title entry-title"><?php the_title(); ?></h1>
 							<?php $excludedcategories = $brew_options['author-display-excluded-categories']; ?>
 							<?php $includedcategories = $brew_options['author-display-included-categories']; ?>
-							<p class="byline vcard">										
+							<p class="byline vcard">
 								<?php if ( $brew_options['author'] == 1) { ?>
 									by <span class="author"><em><?php echo bones_get_the_author_posts_link() ?> - </em></span>
 								<?php } elseif ($brew_options['author'] != 1 && in_category($excludedcategories)) { ?>
@@ -74,65 +74,65 @@ Features on this page:
 								<?php } else { ?>
 									by <span class="author"><em></em><?php echo $brew_options['author-display-alttext']; ?> - </em></span>
 								<?php } ?>
-								
+
 								<time class="updated" datetime="<?php get_the_time('Y-m-j') ?>"><?php echo  get_the_time(get_option('date_format')) ?></time>
 								<span class="sticky-ind pull-right"><i class="fa fa-star"></i></span>
 							</p>
 						</div> <!-- close titlewrap -->
-									
+
 					</header> <?php // end article header ?>
-								
-							
+
+
 
 					<section class="entry-content single-content clearfix" itemprop="articleBody">
 						<?php the_content(); ?>
-									
+
 						<?php wp_link_pages(
 	                        array(
 	                        'before' => '<div class="page-link"><span>' . __( 'Pages:', 'brew' ) . '</span>',
-	                        'after' => '</div>' ) 
+	                        'after' => '</div>' )
 	                    ); ?>
 					</section> <?php // end article section ?>
 					</div> <!-- close main ???? -->
-			
+
 					<footer class="article-footer single-footer clearfix">
 						<?php $currentpostdate = get_the_date('Y/m/d');
-						 
+
 							echo '<div class="col-md-3 ec-customfields"><span class="tags pull-left">';
 							printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );
 							echo  '</span></div>';
 							$chief = get_post_meta($post->ID, 'editor-in-chief', true);
 							$large = get_post_meta($post->ID, 'editors-at-large', true);
-							
+
 							// $currentdate = new DateTime($currentpostdate);
 							// $weekno = $currentdate->format("W");
-								
+
 							$nomcount = get_post_meta($post->ID, 'nomination_count', true);
 						if (in_category($slidercat) && $currentpostdate < '2016/01/18') {
-							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . 'based on nominations by Editors-at-Large: ' . $large . '</p></div>';
-						
+							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . ' based on nominations by Editors-at-Large: ' . $large . '</p></div>';
+
 						} elseif (in_category( $slidercat) && $currentpostdate > '2016/01/18') {
 							$chief = get_post_meta($post->ID, 'editor-in-chief', true);
 							$El_statement = get_post_meta($post->ID, 'editors-at-large-statement');
-							
-							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . 'based on nominations by Editors-at-Large: ' . implode($El_statement) . '</p></div>';
+
+							echo '<div class="col-md-9 editor"><p>This content was selected for <em>Digital Humanities Now</em> by Editor-in-Chief' . $chief . ' based on nominations by Editors-at-Large: ' . implode($El_statement) . '</p></div>';
 						} else {
 							echo '<span class="tags pull-left">';
 							printf( '<span class="">' . __( 'in %1$s&nbsp;&nbsp;', 'bonestheme' ) . '</span>', get_the_category_list(', ') ); ?> <?php the_tags( '<span class="tags-title">' . __( '<i class="fa fa-tags"></i>', 'bonestheme' ) . '</span> ', ', ', '' );
 							echo '</span>';
 						} ?>
-										
+
 						<!-- </div> -->
 		              	<span class="commentnum pull-right">
 		              	<?php if ($brew_options['nom-count'] == 1) {
 									echo '<img src="' . get_stylesheet_directory_uri() . '/library/images/pfpublication.png" height="15px" />' . $nomcount;
 								} ?>
-						</span> 
+						</span>
 		            </footer> <?php // end article footer ?>
 				</article> <?php // end article ?>
-						
+
 				<!-- 03. AUTHOR INFO  -->
-				<?php get_template_part( 'author-info' ); ?> 
+				<?php get_template_part( 'author-info' ); ?>
 
 				<?php if ( is_single() ) {?>
 					  <div id="single-post-nav">
@@ -155,7 +155,7 @@ Features on this page:
 					    </ul>
 					  </div><!-- /#single-post-nav -->
 					<?php } ?>
-		
+
 		<!-- 04. COMMENT TEMPLATE -->
           <?php global $brew_options;
        		 if ( $brew_options['comments-setup-buttons'] == 1) {
@@ -165,8 +165,8 @@ Features on this page:
        		 } elseif ($brew_options['comments-setup-buttons'] == 3) {
        		 	if (in_category($brew_options['comments-on-cat'])) {
        		 		comments_template();
-       		 	} 	
-       		}	
+       		 	}
+       		}
        	?>
 			<?php endwhile; ?>
 			<?php else : ?>
@@ -183,9 +183,9 @@ Features on this page:
 				</article>
 			<?php endif; ?>
 
-			</div> <!-- End main -->				
+			</div> <!-- End main -->
 				<!-- 05. SIDEBAR -->
-		<?php //get_sidebar(); ?> 
+		<?php //get_sidebar(); ?>
 
 			</div> <?php // end #content ?>
 

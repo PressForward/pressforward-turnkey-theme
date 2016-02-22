@@ -515,7 +515,7 @@ function get_all_editors() {
   if (! empty($user_query->results) ) {
     foreach ($user_query->results as $user) {
       $institutionalaffil = get_user_meta($user->ID, 'pie_text_4', true);
-      $twitterhandle = get_user_meta($user->ID, 'pie_text_9', true);
+      $twitterhandle = get_user_meta($user->ID, 'pie_text_5', true);
       $eds .= '<tr><td>' . $user->display_name . '</td><td>' . $institutionalaffil . '</td><td>' . $twitterhandle .'</td></tr>'; }
   } else {
     echo 'No users found';

@@ -437,7 +437,7 @@ function construct_el_info($weekno) {
           $userinfo = get_userdata($current_ed);
           $username = $userinfo->user_login;
           $description = $userinfo->description;
-      $institutionalaffil = get_user_meta($current_ed, 'pie_text_8', true);
+      $institutionalaffil = get_user_meta($current_ed, 'pie_text_4', true);
       $optout = 'true';
       $optoutcheckbox = get_user_meta($current_ed, 'pie_radio_7', true);
       if ($x < $count) {

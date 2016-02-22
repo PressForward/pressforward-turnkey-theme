@@ -15,7 +15,7 @@ Author: Amanda Regan
 
 Stylesheet: General Styles
 
-These are the general styles for the theme. Documentation on each section can be found below. For further information see the github repository for this theme. 
+These are the general styles for the theme. Documentation on each section can be found below. For further information see the github repository for this theme.
 http://www.github.com/DigitalHumanitiesNow/BrewChildTheme
 
 
@@ -63,7 +63,7 @@ h6 {
   list-style-type: none;
 }
 #reg-row {
-  margin: 0 0 20px 0;
+  margin: 30px 0 0 0;
   background-color: #fff !important;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   border: 1px solid #ddd;

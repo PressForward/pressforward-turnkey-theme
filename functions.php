@@ -439,7 +439,7 @@ function construct_el_info($weekno) {
           $description = $userinfo->description;
       $institutionalaffil = get_user_meta($current_ed, 'pie_text_8', true);
       $optout = 'true';
-      $optoutcheckbox = get_user_meta($current_ed, 'pie_checkbox_11', true);
+      $optoutcheckbox = get_user_meta($current_ed, 'pie_radio_7', true);
       if ($x < $count) {
         if (is_array($optoutcheckbox) && in_array($optout,$optoutcheckbox)) {
           $popcontent = '<strong>This user has opted out.';

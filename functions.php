@@ -451,7 +451,7 @@ function construct_el_info($weekno) {
                             $popcontent = '<strong>Institution:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
                         } else {
                         //generate popover content
-                            $popcontent = '<strong>Institution:</strong>' . get_user_meta($current_ed, 'pie_text_4', true) . '<br>';
+                            $popcontent = '<strong>Institution:</strong>' . $institutionalaffil . '<br>';
                         }
                         if (empty($description) == TRUE) {
                             $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
@@ -473,7 +473,7 @@ function construct_el_info($weekno) {
                             $popcontent = '<strong>Institution:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';
                         } else {
                         //generate popover content
-                            $popcontent = '<strong>Institution:</strong>' . get_user_meta($user->ID, 'pie_text_4', true) . '<br>';
+                            $popcontent = '<strong>Institution:</strong>' . $institutionalaffil . '<br>';
                         }
                         if (empty($description) == TRUE) {
                             $popcontent .= '<strong>Bio:</strong> Not provided. If this is your profile, please login to edit your profile.<br>';

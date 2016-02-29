@@ -41,3 +41,6 @@ require_once(get_template_directory().'/assets/translation/translation.php');
 
 //Include Kirki framework
 include_once( dirname(__FILE__) . '/vendor/kirki/kirki.php' );
+require_once(get_template_directory().'/assets/functions/theme_opts.php');
+
+?>

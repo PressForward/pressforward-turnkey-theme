@@ -10,12 +10,11 @@ Template Name: Home Page Template
 
 		<div id="inner-content" class="row">
 
-		    <main id="main" class="large-12 medium-12 columns" role="main">
+		    <div class="large-12 medium-12 columns">
 				<?php
 				$postcats = 'category=80&posts_per_page=4';
-    $feat_posts = get_posts($postcats);
-    echo '<div class="liquid-slider" id ="slider2">';
-
+    		$feat_posts = get_posts($postcats);
+    		echo '<div class="liquid-slider" id ="slider2">';
 
         foreach($feat_posts as $post) {
               echo '<div id="slider-content">';
@@ -48,17 +47,11 @@ Template Name: Home Page Template
 
 ?> <!--End Block 1-Slider-->
 
-			</main> <!-- end #main -->
+<!--
+Block 2
+-->
 
-		    <?php get_sidebar(); ?>
-
-		</div> <!-- end #inner-content -->
-
-	</div> <!-- end #content -->
-	<div  id="content">
-	<div id="inner-content">
-		<main id="main block2" class="" role="main">
-	            <div class="" id="participate">
+      <div class="block-2" id="block-2">
 	              <div class="row">
 	                  <div class="large-3 medium-3 columns">
 	                      <i class="fa fa-taxi fa-3x"></i>
@@ -90,17 +83,13 @@ Template Name: Home Page Template
 	                      <p>Text goes here</p>
 	                    </div>
 	                </div>
-	            </div>
-	        </div>
-	    </main>
-		</main>
-	</div> <!-- end #innercontent -->
-	</div> <!-- end #content -->
-<!-- BLOCK 3 -->
+	            </div> <!-- close .row -->
+	      </div> <!-- close .block-2 -->
 
-      <main class="block-3" role="main">
-        <div  id="categories">
-          <div class="row text-center">
+<!--
+Block 3
+-->
+						<div class="block-3">
             <div class="row homecategories">
               <!--Section 1-->
                 <div class="large-4 medium-4 columns about" id="content1">
@@ -120,8 +109,8 @@ Template Name: Home Page Template
                       </ul>
                       </div>
 
-                    </div>
-                </div>
+                    </div> <!-- close homeinnerwrapper -->
+                </div> <!-- close #content1 -->
 
               <!--Section 2-->
 							<div class="large-4 medium-4 columns about" id="content2">
@@ -227,10 +216,32 @@ Template Name: Home Page Template
 								</div>
 
 						</div> <!--end row-->
-          </div>
-        </div>
-      </main>
+          </div> <!--end .block-3 -->
 
-			<!-- Block 4 -->
+<!--
+Block 4
+-->
+			<div class="block-4">
+							<div class="row">
+									<div class="large-12 medium-12 columns" id="infotext">
+										<h2>About Block #4</h2>
+									</div>
+							</div>
+			</div>
+			
+<!--
+Block 5
+-->
+				<div class="block-5">
+					<div class="row">
+							<div class="medium-7 large-7 columns">
+								most recent post
+							</div>
+							<div class="medium-5 large-5 columns" id="bloglist">
+								bloglist
+							</div>
+					</div>
+				</div>
+
 
 <?php get_footer(); ?>

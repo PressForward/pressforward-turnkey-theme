@@ -6,7 +6,7 @@ Template Name: Home Page Template
 
 <?php get_header(); ?>
 
-	<div id="content">
+	<div id="content" class=".sliderrow">
 
 		<div id="inner-content" class="row">
 
@@ -228,7 +228,7 @@ Block 4
 									</div>
 							</div>
 			</div>
-			
+
 <!--
 Block 5
 -->

@@ -40,6 +40,8 @@
 //  35. Top Bar
 
 @import '../../vendor/foundation-sites/scss/util/util';
+@import url(http://fonts.googleapis.com/css?family=Arvo);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900|Cabin:400,500,600,700|Oxygen:400,300,700);
 
 // 1. Global
 // ---------
@@ -52,14 +54,27 @@ $secondary-color: #777;
 $success-color: #3adb76;
 $warning-color: #ffae00;
 $alert-color: #ec5840;
-$light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #8a8a8a;
+$dhnow-blue: #3887be;
+$dhnow-blue-darkened: darken(#3887be, 8%);
+$dhnow-darkblue: #142736;
+$dhnow-darkblue-lighter: 	lighten(#142736, 5%);
+$dhnow-gray: 	#f8f8f8;
+$dhnow-white: #fafafa;
+
+$gray-darker:            darken(#f8f8f8, 8.5%); // #222
+$gray-dark:              lighten(#000, 20%);   // #333
+$dark-gray:              lighten(#000, 20%);   // #333
+$medium-gray:              lighten(#000, 20%);   // #333
+$gray:                   lighten(#000, 33.5%); // #555
+$gray-light:             lighten(#000, 60%);   // #999
+$light-gray:             lighten(#000, 60%);   // #999
+$gray-lighter:           lighten(#000, 93.5%); // #eee
+
 $black: #0a0a0a;
 $white: #fefefe;
-$body-background: $white;
-$body-font-color: $black;
-$body-font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$body-background: $dhnow-gray;
+$body-font-color: $gray-dark;
+$body-font-family: 'Lato', Helvetica, Roboto, Arial, sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -95,7 +110,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: 'Arvo', "Times New Roman", Times, serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -544,4 +559,3 @@ $topbar-padding: 0.5rem;
 $topbar-background: $light-gray;
 $topbar-link-color: $primary-color;
 $topbar-input-width: 200px;
-

@@ -1,121 +1,64 @@
 <?php
 include_once( get_template_directory() . '/assets/functions/theme_opts.php' );
 
-Kirki::add_config( 'mk', array(
-    'capability'    => 'edit_theme_options',
-    'option_type'   => 'theme_mod',
-    'option_name'   => 'mk',
-) );
-Kirki::add_panel( 'header', array(
-    'priority'    => 160,
-    'title'       => __( 'Header', 'theme_slug' ),
-    'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
-) );
+/*********************
+**********************
+    Homepage Options
+**********************
+*********************/
+//create panel for homepage options
+  Kirki::add_panel( 'homepage', array(
+      'priority'    => 10,
+      'title'       => __( 'Home Page', 'theme_slug' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
+  ) );
+/*********************
+Homepage -- Slider -- Options
+*********************/
+//create slider section
+  Kirki::add_section( 'slider', array(
+      'title'          => __( 'Slider Options' ),
+      'description'    => __( 'Add an image to be shown as header advertisement.' ),
+      'panel'          => 'homepage', // Not typically needed.
+      'priority'       => 160,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
 
-Kirki::add_section( 'header_advertisement', array(
-    'title'          => __( 'Header advertisement' ),
-    'description'    => __( 'Add an image to be shown as header advertisement.' ),
-    'panel'          => 'header', // Not typically needed.
-    'priority'       => 160,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '', // Rarely needed.
-) );
-Kirki::add_section( 'header_sect', array(
-    'title'          => __( 'Header sect' ),
-    'description'    => __( 'Add an image to be shown as header advertisement.' ),
-    'panel'          => 'header', // Not typically needed.
-    'priority'       => 160,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '', // Rarely needed.
-) );
-Kirki::add_section( 'header_advertisement2', array(
-    'title'          => __( 'Header advertisement2' ),
-    'description'    => __( 'Add an image to be shown as header advertisement2.' ),
-    'panel'          => 'header', // Not typically needed.
-    'priority'       => 160,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '', // Rarely needed.
-) );
-
-Kirki::add_field( 'mk', array(
-    'settings' => 'header_advertisement_setting',
-    'label'    => __( 'Setting for the header advertisement', 'theme_slug' ),
-    'section'  => 'header_advertisement',
-    'type'     => 'image',
-    'priority' => 10,
-    'default'  => '',
-) );
-Kirki::add_field( 'mk', array(
-    'type'        => 'text',
-    'settings'    => 'text_demo',
-    'label'       => __( 'Column 1 Icon', 'kirki-demo' ),
-    'help'        => __( 'i.e. fa-taxi', 'kirki-demo' ),
-    'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
-    'section'     => 'header_advertisement',
-    'default'     => '',
-    'priority'    => 10,
-) );
-Kirki::add_field( '', array(
-    'type'        => 'switch',
-    'settings'    => 'switch_demo',
-    'label'       => __( 'My Control', 'kirki-demo' ),
-    'section'     => 'header_advertisement',
-    'default'     => '1',
-    'priority'    => 10,
-    'choices'     => array(
-        'on'  => __( 'On', 'kirki' ),
-        'off' => __( 'Off', 'kirki' ),
-    ),
-) );
-
-
-Kirki::add_panel( 'homepage', array(
-    'priority'    => 10,
-    'title'       => __( 'Home Page', 'theme_slug' ),
-    'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
-) );
-Kirki::add_section( 'slider', array(
-    'title'          => __( 'Slider Options' ),
-    'description'    => __( 'Add an image to be shown as header advertisement.' ),
-    'panel'          => 'homepage', // Not typically needed.
-    'priority'       => 160,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '', // Rarely needed.
-) );
-
-Kirki::add_field( '', array(
-    'type'        => 'toggle',
-    'settings'    => 'toggle_slider',
-    'label'       => __( 'Slider On', 'kirki' ),
-    'section'     => 'slider',
-    'default'     => '1',
-    'priority'    => 10,
-) );
-Kirki::add_field( '', array(
-    'type'        => 'slider',
-    'settings'    => 'slider_numposts',
-    'label'       => __( 'Number of Posts', 'kirki' ),
-    'description' => __( 'How many posts should appear in the slider.', 'kirki' ),
-    'section'     => 'slider',
-    'default'     => 4,
-    'priority'    => 10,
-    'choices'     => array(
-        'min'  => 1,
-        'max'  => 10,
-        'step' => 1
-    ),
-) );
-Kirki::add_field( '', array(
-    'type'        => 'select',
-    'settings'    => 'select_demo',
-    'label'       => __( 'This is the label', 'kirki' ),
-    'description' => __( 'This is the control description', 'kirki' ),
-    'help'        => __( 'This is some extra help text.', 'kirki' ),
-    'section'     => 'slider',
-    'default'     => 'option-1',
-    'priority'    => 10,
-    'choices'     => Kirki_Helper::get_terms( 'category' ),
-) );
+//add fields
+  Kirki::add_field( '', array(
+      'type'        => 'toggle',
+      'settings'    => 'toggle_slider',
+      'label'       => __( 'Slider On', 'kirki' ),
+      'section'     => 'slider',
+      'default'     => '1',
+      'priority'    => 10,
+  ) );
+  Kirki::add_field( '', array(
+      'type'        => 'slider',
+      'settings'    => 'slider_numposts',
+      'label'       => __( 'Number of Posts', 'kirki' ),
+      'description' => __( 'How many posts should appear in the slider.', 'kirki' ),
+      'section'     => 'slider',
+      'default'     => 4,
+      'priority'    => 10,
+      'choices'     => array(
+          'min'  => 1,
+          'max'  => 10,
+          'step' => 1
+      ),
+  ) );
+  Kirki::add_field( '', array(
+      'type'        => 'select',
+      'settings'    => 'select_demo',
+      'label'       => __( 'This is the label', 'kirki' ),
+      'description' => __( 'This is the control description', 'kirki' ),
+      'help'        => __( 'This is some extra help text.', 'kirki' ),
+      'section'     => 'slider',
+      'default'     => 'option-1',
+      'priority'    => 10,
+      'choices'     => Kirki_Helper::get_terms( 'category' ),
+  ) );
 /*********************
 Homepage -- Block 2 -- Options
 *********************/

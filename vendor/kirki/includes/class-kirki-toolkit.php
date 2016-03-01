@@ -5,7 +5,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -21,7 +21,7 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 		/** @var Kirki The only instance of this class */
 		public static $instance = null;
 
-		public static $version = '2.1.0.1';
+		public static $version = '2.2.0.beta.1';
 
 		public $font_registry = null;
 		public $scripts       = null;
@@ -34,7 +34,7 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 		 */
 		public static function get_instance() {
 			if ( null == self::$instance ) {
-				self::$instance = new Kirki_Toolkit();
+				self::$instance = new self();
 			}
 			return self::$instance;
 		}
@@ -92,21 +92,45 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 				'serif'                 => _x( 'Serif', 'font style', 'kirki' ),
 				'sans-serif'            => _x( 'Sans Serif', 'font style', 'kirki' ),
 				'monospace'             => _x( 'Monospace', 'font style', 'kirki' ),
-				'font-family'           => esc_attr__( 'Font Family', 'Kirki' ),
-				'font-size'             => esc_attr__( 'Font Size', 'Kirki' ),
-				'font-weight'           => esc_attr__( 'Font Weight', 'Kirki' ),
-				'line-height'           => esc_attr__( 'Line Height', 'Kirki' ),
-				'letter-spacing'        => esc_attr__( 'Letter Spacing', 'Kirki' ),
+				'font-family'           => esc_attr__( 'Font Family', 'kirki' ),
+				'font-size'             => esc_attr__( 'Font Size', 'kirki' ),
+				'font-weight'           => esc_attr__( 'Font Weight', 'kirki' ),
+				'line-height'           => esc_attr__( 'Line Height', 'kirki' ),
+				'font-style'            => esc_attr__( 'Font Style', 'kirki' ),
+				'letter-spacing'        => esc_attr__( 'Letter Spacing', 'kirki' ),
 				'top'                   => esc_attr__( 'Top', 'kirki' ),
 				'bottom'                => esc_attr__( 'Bottom', 'kirki' ),
 				'left'                  => esc_attr__( 'Left', 'kirki' ),
 				'right'                 => esc_attr__( 'Right', 'kirki' ),
 				'color'                 => esc_attr__( 'Color', 'kirki' ),
-				'add-image'             => esc_attr__( 'Add Image' , 'kirki' ),
-				'change-image'          => esc_attr__( 'Change Image' , 'kirki' ),
-				'remove'                => esc_attr__( 'Remove' , 'kirki' ),
+				'add-image'             => esc_attr__( 'Add Image', 'kirki' ),
+				'change-image'          => esc_attr__( 'Change Image', 'kirki' ),
+				'remove'                => esc_attr__( 'Remove', 'kirki' ),
 				'no-image-selected'     => esc_attr__( 'No Image Selected', 'kirki' ),
-			);
+				'select-font-family'    => esc_attr__( 'Select a font-family', 'kirki' ),
+				'variant'               => esc_attr__( 'Variant', 'kirki' ),
+				'subsets'               => esc_attr__( 'Subset', 'kirki' ),
+				'size'                  => esc_attr__( 'Size', 'kirki' ),
+				'height'                => esc_attr__( 'Height', 'kirki' ),
+				'spacing'               => esc_attr__( 'Spacing', 'kirki' ),
+				'regular'               => esc_attr__( 'Normal 400', 'kirki' ),
+				'italic'                => esc_attr__( 'Normal 400 Italic', 'kirki' ),
+				'100'                   => esc_attr__( 'Ultra-Light 100', 'kirki' ),
+				'200'                   => esc_attr__( 'Light 200', 'kirki' ),
+				'300'                   => esc_attr__( 'Book 300', 'kirki' ),
+				'500'                   => esc_attr__( 'Medium 500', 'kirki' ),
+				'600'                   => esc_attr__( 'Semi-Bold 600', 'kirki' ),
+				'700'                   => esc_attr__( 'Bold 700', 'kirki' ),
+				'700italic'             => esc_attr__( 'Bold 700 Italic', 'kirki' ),
+				'900'                   => esc_attr__( 'Normal 400', 'kirki' ),
+				'900italic'             => esc_attr__( 'Ultra-Bold 900 Italic', 'kirki' ),
+				'100italic'             => esc_attr__( 'Ultra-Light 100 Italic', 'kirki' ),
+				'300italic'             => esc_attr__( 'Book 300 Italic', 'kirki' ),
+				'500italic'             => esc_attr__( 'Medium 500 Italic', 'kirki' ),
+				'800'                   => esc_attr__( 'Extra-Bold 800', 'kirki' ),
+				'800italic'             => esc_attr__( 'Extra-Bold 800 Italic', 'kirki' ),
+				'600italic'             => esc_attr__( 'Semi-Bold 600 Italic', 'kirki' ),
+				'200italic'             => esc_attr__( 'Light 200 Italic', 'kirki' ),			);
 
 			$config = apply_filters( 'kirki/config', array() );
 
@@ -119,16 +143,16 @@ if ( ! class_exists( 'Kirki_Toolkit' ) ) {
 		}
 
 		/**
-		 * Shortcut method to get the font registry.
-		 */
-		public static function fonts() {
-			return self::get_instance()->font_registry;
-		}
-
-		/**
 		 * Constructor is private, should only be called by get_instance()
 		 */
 		private function __construct() {
+			$this->api     = new Kirki();
+			$this->scripts = new Kirki_Scripts_Registry();
+			$this->styles  = array(
+				'back'  => new Kirki_Styles_Customizer(),
+				'front' => new Kirki_Styles_Frontend(),
+			);
+			new Kirki_Selective_Refresh();
 		}
 
 		/**

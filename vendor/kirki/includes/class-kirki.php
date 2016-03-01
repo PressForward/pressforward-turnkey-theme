@@ -7,7 +7,7 @@
  * @package     Kirki
  * @category    Core
  * @author      Aristeides Stathopoulos
- * @copyright   Copyright (c) 2015, Aristeides Stathopoulos
+ * @copyright   Copyright (c) 2016, Aristeides Stathopoulos
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0
  */
@@ -84,6 +84,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 			$args['panel']       = ( isset( $args['panel'] ) ) ? esc_attr( $args['panel'] ) : '';
 			$args['description'] = ( isset( $args['description'] ) ) ? esc_textarea( $args['description'] ) : '';
 			$args['priority']    = ( isset( $args['priority'] ) ) ? esc_attr( $args['priority'] ) : 10;
+			$args['type']        = ( isset( $args['type'] ) ) ? $args['type'] : 'default';
 			if ( ! isset( $args['active_callback'] ) ) {
 				$args['active_callback'] = ( isset( $args['required'] ) ) ? array( 'Kirki_Active_Callback', 'evaluate' ) : '__return_true';
 			}
@@ -99,14 +100,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 		 * @var		array		the field arguments
 		 */
 		public static function add_field( $config_id, $args ) {
-			Kirki_Field::add_field( $config_id, $args );
-		}
-
-		/**
-		 * Find the config ID based on the field options
-		 */
-		public static function get_config_id( $field ) {
-			return Kirki_Field::get_config_id( $field );
+			new Kirki_Field( $config_id, $args );
 		}
 
 	}

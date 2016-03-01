@@ -3910,10 +3910,17 @@ GENERAL STYLES
 
 .block-3 {
   background-color: #142736;
-  text-align: center; }
+  text-align: center;
+  padding: 50px 0 50px 0; }
 
-.innerwrapper {
-  background-color: #fafafa; }
+.homeinnerwrapper {
+  background-color: #f8f8f8;
+  padding: 20px 20px 0px 10px; }
+  .homeinnerwrapper i {
+    color: #142736; }
+
+.homeinnercontent li {
+  padding-bottom: 5px; }
 
 /*********************
 LINK STYLES

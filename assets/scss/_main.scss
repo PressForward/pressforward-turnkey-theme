@@ -64,9 +64,19 @@ GENERAL STYLES
 .block-3 {
 	background-color: $dhnow-darkblue;
 	text-align: center;
+	padding: 50px 0 50px 0;
 }
-.innerwrapper {
-	background-color: $dhnow-white;
+.homeinnerwrapper {
+	background-color: $dhnow-gray;
+	padding: 20px 20px 0px 10px;
+	i {
+		color: $dhnow-darkblue;
+	}
+}
+.homeinnercontent {
+	li {
+		padding-bottom: 5px;
+	}
 }
 /*********************
 LINK STYLES

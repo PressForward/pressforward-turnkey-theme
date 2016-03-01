@@ -8,7 +8,7 @@ Stylesheet: Main Stylesheet
 GENERAL STYLES
 *********************/
 
-#content {
+.sliderrow {
 	background-image: linear-gradient($dhnow-blue, $dhnow-blue-darkened);
 	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
 		color: $dhnow-white;

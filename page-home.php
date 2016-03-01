@@ -6,7 +6,7 @@ Template Name: Home Page Template
 
 <?php get_header(); ?>
 
-	<div id="content" class=".sliderrow">
+	<div id="content" class="sliderrow">
 
 		<div id="inner-content" class="row">
 

@@ -3796,7 +3796,7 @@ table.hover tr:nth-of-type(even):hover {
     clear: both; }
   .top-bar,
   .top-bar ul {
-    background-color: #999999; }
+    background-color: #142736; }
   .top-bar input {
     width: 200px;
     margin-right: 1rem; }
@@ -3853,9 +3853,9 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
-#content {
+.sliderrow {
   background-image: linear-gradient(#3887be, #2f719e); }
-  #content h1, #content .h1, #content h2, #content .h2, #content h3, #content .h3, #content h4, #content .h4, #content h5, #content .h5 {
+  .sliderrow h1, .sliderrow .h1, .sliderrow h2, .sliderrow .h2, .sliderrow h3, .sliderrow .h3, .sliderrow h4, .sliderrow .h4, .sliderrow h5, .sliderrow .h5 {
     color: #fafafa; }
 
 /*********************

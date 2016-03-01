@@ -3858,11 +3858,38 @@ GENERAL STYLES
   .sliderrow h1, .sliderrow .h1, .sliderrow h2, .sliderrow .h2, .sliderrow h3, .sliderrow .h3, .sliderrow h4, .sliderrow .h4, .sliderrow h5, .sliderrow .h5 {
     color: #fafafa; }
 
+.pf-tk-button {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  vertical-align: middle;
+  border: 1px solid transparent;
+  border-radius: 0;
+  padding: 0.85em 1em;
+  margin: 0 0 1rem 0;
+  font-size: 0.9rem;
+  background-color: #fafafa;
+  color: #fff;
+  border: solid 1px #fafafa; }
+  [data-whatinput='mouse'] .pf-tk-button {
+    outline: 0; }
+  .pf-tk-button:hover, .pf-tk-button:focus {
+    background-color: #1583cc;
+    color: #fff; }
+  .pf-tk-button, .pf-tk-button:hover, .pf-tk-button:focus {
+    background-color: transparent; }
+
 /*********************
 LINK STYLES
 *********************/
 a:link, a:visited:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
+
+.top-bar a {
+  color: #fafafa; }
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES

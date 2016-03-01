@@ -29,7 +29,7 @@ Template Name: Home Page Template
               $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
 
               echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>
-                <a href="' . get_permalink() .'" alt="' . get_the_title() . '" class="btn btn-default">Read More</a>
+                <a href="' . get_permalink() .'" alt="' . get_the_title() . '" class="pf-tk-button">Read More</a>
                 <h2 class="title">
                   <span><i class="fa fa-circle filled"></i><i class="fa fa-circle-thin empty"></i></span>
                 </h2>

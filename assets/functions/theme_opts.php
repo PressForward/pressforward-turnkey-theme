@@ -6,15 +6,18 @@ include_once( get_template_directory() . '/assets/functions/theme_opts.php' );
     Homepage Options
 **********************
 *********************/
+
 //create panel for homepage options
   Kirki::add_panel( 'homepage', array(
       'priority'    => 10,
       'title'       => __( 'Home Page', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
+
 /*********************
 Homepage -- Slider -- Options
 *********************/
+
 //create slider section
   Kirki::add_section( 'slider', array(
       'title'          => __( 'Slider Options' ),
@@ -59,9 +62,12 @@ Homepage -- Slider -- Options
       'priority'    => 10,
       'choices'     => Kirki_Helper::get_terms( 'category' ),
   ) );
+
+
 /*********************
 Homepage -- Block 2 -- Options
 *********************/
+
 //Create panel
 Kirki::add_section( 'Block2', array(
     'title'          => __( 'Block 2 Options' ),

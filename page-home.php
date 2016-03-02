@@ -17,13 +17,15 @@ Template Name: Home Page Template
 			//get slider category ids from customizer option
 			$pftk_opts = '';
 			$slider_category = '';
-			$slider_numposts = '';
-			$slider_categories_option = Kirki::get_option( $pftk_opts, $slider_category);
+
+			$slider_categories_option = Kirki::get_option( 'pftk_opts', 'slider_category');
+
 			//get number of posts from customizer option
-			$slider_numposts_option = Kirki::get_option( $pftk_opts, $slider_numposts );
+			$slider_numposts_option = Kirki::get_option( 'pftk_opts', 'slider_numposts' );
 
 			$postcats = 'category='. $slider_categories_option . '&posts_per_page=' . $slider_numposts_option;
 			$feat_posts = get_posts($postcats);
+			$bullets = 1;
 			foreach($feat_posts as $post) {
         $trim_title = get_post_field('post_title', $id);
         $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
@@ -40,15 +42,22 @@ Template Name: Home Page Template
 						echo '<div class="medium-5 columns"><img src="' . $thumb[0] . '" class="thumbnail"></div>';
 						echo '</div>';
 						echo '</li>';
-
+						$bullets++;
 			}
 ?>
 </ul>
 <nav class="orbit-bullets">
-    <button data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+		<?php
+		$counter = 0;
+		while($counter < $bullets - 1) {
+			if ($counter == 0) {
+			echo '<button data-slide="'. $counter . '"><span class="show-for-sr">slide details.</span><span class="show-for-sr">Current Slide</span></button>';
+			$counter++;
+		} elseif ($counter < $bullets - 1) {
+			echo '<button data-slide="'. $counter . '"><span class="show-for-sr">slide details.</span></button>';
+			$counter++;
+		}
+		} ?>
   </nav>
 	</div> <!-- close .orbit -->
 </div>

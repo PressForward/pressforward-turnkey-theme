@@ -8,7 +8,7 @@ Template Name: Home Page Template
 <div id="content" class="slider-container">
 <div class="row">
 <div class="medium-12 large-12 columns">
-	<div class="orbit" role="region" data-options="auto-play:false; timer-delay:100000;" aria-label="Editor's Choice" data-orbit>
+	<div class="orbit" role="region" data-options="autoPlay:false;" aria-label="Editor's Choice" data-orbit>
   	<ul class="orbit-container">
     	<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
     	<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>

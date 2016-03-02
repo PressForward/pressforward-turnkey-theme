@@ -43,4 +43,12 @@ require_once(get_template_directory().'/assets/translation/translation.php');
 include_once( dirname(__FILE__) . '/vendor/kirki/kirki.php' );
 require_once(get_template_directory().'/assets/functions/theme_opts.php');
 
+//include font Awesome
+add_action( 'wp_enqueue_scripts', 'prefix_enqueue_awesome' );
+function prefix_enqueue_awesome() {
+    wp_enqueue_style('prefix-font-awesome', '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css', array(), '4.0.3' );
+}
+
+
+
 ?>

@@ -1,11 +1,21 @@
 <?php
 include_once( get_template_directory() . '/assets/functions/theme_opts.php' );
+//see http://www.infismash.com/extending-the-wordpress-customizer-using-kirki/ for tutorial
+
 
 /*********************
 **********************
-    Homepage Options
+  Add Configuration
 **********************
 *********************/
+Kirki::add_config( 'pftk_opts', array(
+    'capability'    => 'edit_theme_options',
+    'option_type'   => 'option',
+    'option_name'   => 'pftk_opts',
+) );
+
+
+
 
 //create panel for homepage options
   Kirki::add_panel( 'homepage', array(
@@ -37,7 +47,7 @@ Homepage -- Slider -- Options
       'default'     => '1',
       'priority'    => 10,
   ) );
-  Kirki::add_field( '', array(
+  Kirki::add_field( 'slider_numposts', array(
       'type'        => 'slider',
       'settings'    => 'slider_numposts',
       'label'       => __( 'Number of Posts', 'kirki' ),
@@ -51,14 +61,14 @@ Homepage -- Slider -- Options
           'step' => 1
       ),
   ) );
-  Kirki::add_field( '', array(
+  Kirki::add_field( 'slider_category', array(
       'type'        => 'select',
-      'settings'    => 'select_demo',
+      'settings'    => 'slider_category',
       'label'       => __( 'This is the label', 'kirki' ),
       'description' => __( 'This is the control description', 'kirki' ),
       'help'        => __( 'This is some extra help text.', 'kirki' ),
       'section'     => 'slider',
-      'default'     => 'option-1',
+      'default'     => '1',
       'priority'    => 10,
       'choices'     => Kirki_Helper::get_terms( 'category' ),
   ) );

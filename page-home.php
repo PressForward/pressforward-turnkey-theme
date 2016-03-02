@@ -12,7 +12,9 @@ Template Name: Home Page Template
 
 		    <div class="large-12 medium-12 columns">
 				<?php
-				$postcats = 'category=80&posts_per_page=4';
+				$categoriesopt = Kirki::get_option('pftk_opts', 'slider_category');
+				echo $categoriesopt;
+				$postcats = 'category=' . $categoriesopt . '&posts_per_page=4';
     		$feat_posts = get_posts($postcats);
     		echo '<div class="liquid-slider" id ="slider2">';
 

@@ -5,49 +5,46 @@ Template Name: Home Page Template
 ?>
 
 <?php get_header(); ?>
+<div id="content" class="slider-container">
+<div class="row">
+<div class="medium-12 large-12 columns">
+	<div class="orbit" role="region" data-options="auto-play:false; timer-delay:100000;" aria-label="Editor's Choice" data-orbit>
+  	<ul class="orbit-container">
+    	<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+    	<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+			<?php $postcats = 'category=80&posts_per_page=4';
+			$feat_posts = get_posts($postcats);
+			foreach($feat_posts as $post) {
+        $trim_title = get_post_field('post_title', $id);
+        $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
+				$trimexcerpt = get_post_field('post_content', $id);
+        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
+						echo '<li class="orbit-slide">';
+						echo '<div class="row">';
+						echo '<div id="medium-12 columns"><h1>' . $short_title . '</h1></div>';
+						echo '<div class="row">';
+						echo '<div class="medium-7 columns">';
+						echo '<h2 class="slider-byline">By: ' . get_the_author() . '</h2></br><p class="info-title">' . $shortexcerpt . '</p> <a href="' . get_permalink() . '
+						" alt="' . get_the_title() . '" class="pf-tk-button">Read More</a></div>';
+						$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+						echo '<div class="medium-5 columns"><img src="' . $thumb[0] . '" class="thumbnail"></div>';
+						echo '</div>';
+						echo '</li>';
 
-	<div id="content" class="sliderrow">
-
-		<div id="inner-content" class="row">
-
-		    <div class="large-12 medium-12 columns">
-				<?php
-				$slider_category_setting = Kirki::get_option('pftk_opts', 'slider_category');
-				$slider_numposts_setting = Kirki::get_option('pftk_opts', 'slider_numposts');
-				$postcats = 'category=' . $slider_category_setting . '&posts_per_page=' . $slider_numposts_setting;
-    		$feat_posts = get_posts($postcats);
-    		echo '<div class="liquid-slider" id ="slider2">';
-
-        foreach($feat_posts as $post) {
-              echo '<div id="slider-content">';
-
-              $trim_title = get_post_field('post_title', $id);
-              $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
-
-              echo '<div id="slidertitle"><h1>' . $short_title . '</h1>';
-              echo '<br><h2>By: ' . get_the_author() . '</h2></div>';
-
-              $trimexcerpt = get_post_field('post_content', $id);
-              $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
-
-              echo '<div id="slidertext"><p class="info-title">' .  $shortexcerpt . '</p>
-                <a href="' . get_permalink() .'" alt="' . get_the_title() . '" class="pf-tk-button">Read More</a>
-                <h2 class="title">
-                  <span><i class="fa fa-circle filled"></i><i class="fa fa-circle-thin empty"></i></span>
-                </h2>
-                </div> <!-- Close #slider-content -->
-
-                <div id="sliderimg">';
-                    echo get_the_post_thumbnail( $post->ID, 'medium');
-                    echo '</div> <!-- close #sliderimg -->
-                </div> <!-- close .liquid-slider #slider2 -->';
-        } //<!--closes for each loop -->
-    echo '</div>
-    </div> <!-- close .sl-test -->
-    </div> <!-- close .container .homepage -->
-    </div> <!-- end .slider -->';
-
-?> <!--End Block 1-Slider-->
+			}
+?>
+</ul>
+<nav class="orbit-bullets">
+    <button data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+  </nav>
+	</div> <!-- close .orbit -->
+</div>
+</div><!--  close .row #slider -->
+</div>
+<!-- </div> end content -->
 
 <!--
 Block 2

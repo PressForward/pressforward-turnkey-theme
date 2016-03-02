@@ -7,8 +7,7 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
-
-.sliderrow {
+.slider-container {
 	background-image: linear-gradient($dhnow-blue, $dhnow-blue-darkened);
 	padding: 30px 0 25px 0;
 	h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
@@ -22,23 +21,19 @@ GENERAL STYLES
 	h2 {
 		font-size: 18px;
 	}
-	#slidertext {
+	.orbit-slide {
+		margin-left: 70px;
+		margin-right: 70px;
+	}
+	.slidertext {
 		margin-top: 25px;
-		float: left;
+		// float: left;
 		width: 60%;
 	}
-	img {
-		height: auto;
-		float: right;
-		//width: 400px;
-		padding: 25px 24px 0 0;
-		// @include breakpoint(large down) {
-		// 	width: auto;
-		// }
-		// @include breakpoint(medium down) {
-		// 	width: auto;
-		// }
+	.slider-byline {
+		margin-top: 20px;
 	}
+	
 	p {
 		color: $dhnow-white;
 	}

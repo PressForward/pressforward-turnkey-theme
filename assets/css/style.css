@@ -3875,6 +3875,15 @@ GENERAL STYLES
   .slider-container p {
     color: #fafafa; }
 
+.b3-wrapper {
+  background-color: #fafafa;
+  padding: 10px 15px; }
+  .b3-wrapper ul {
+    text-align: left; }
+
+.homeinnercontent ul {
+  text-align: left; }
+
 .pf-tk-button {
   display: inline-block;
   text-align: center;

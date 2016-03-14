@@ -127,148 +127,181 @@ Block 2
 	            </div> <!-- close .row -->
 	      </div> <!-- close .block-2 -->
 			<?php endif;	?>
-<!--
-Block 3
--->
+
+<!--block3 test layout-->
 <?php $toggle_b3 = Kirki::get_option( 'pftk_opts', 'toggle-b3');
 	if ($toggle_b3 == true): ?>
-						<div class="block-3">
-            <div class="row homecategories">
-              <!--Section 1-->
-                <div class="large-4 medium-4 columns about" id="content1">
-                    <div class="homeinnerwrapper">
-											<?php $b3r1c1_icon = Kirki::get_option('pftk_opts', 'b3r1c1-icon');
-                      echo '<i class="fa ' . $b3r1c1_icon . ' fa-3x"></i>'; ?>
-                      <div class="homeinnercontent">
-											<?php $b3r1c1_link = Kirki::get_option('pftk_opts', 'b3r1c1-link');
-											$b3r1c1_title = Kirki::get_option('pftk_opts', 'b3r1c1-title');
-                      echo '<h1><a href="' . get_permalink($b3r1c1_link) .'">' . $b3r1c1_title .'</a></h1>'; ?>
-                      <ul>
+	<div class="block-3">
+		<div class="row small-up-1  large-up-3" data-equalizer data-equalize-by-row="true">
+				<!--B3 R1 C1 -->
+				<div class="column" data-equalizer-watch>
+						<div class="b3-wrapper">
+								<?php $b3r1c1_icon = Kirki::get_option('pftk_opts', 'b3r1c1-icon');
+								echo '<i class="fa ' . $b3r1c1_icon . ' fa-3x"></i>';
 
-                      <?php $b3r1c1_category = Kirki::get_option( 'pftk_opts', 'slider_category');
-											$b3c1cat = 'cat=' . $b3r1c1_category . '&posts_per_page=3';
-                      query_posts($b3c1cat);
-                      if ( have_posts() ) : while ( have_posts() ) : the_post();
-                        echo '<li><a href="';
-                        echo the_permalink() . '">';
-                        echo  the_title() . '</a></li>';
-                      endwhile; endif;
-                      wp_reset_query(); ?>
-                      </ul>
-                      </div>
+								$b3r1c1_link = Kirki::get_option('pftk_opts', 'b3r1c1-link');
+								$b3r1c1_title = Kirki::get_option('pftk_opts', 'b3r1c1-title');
 
-                    </div> <!-- close homeinnerwrapper -->
-                </div> <!-- close #content1 -->
+								echo '<h1><a href="' . get_permalink($b3r1c1_link) .'">' . $b3r1c1_title .'</a></h1>'; ?>
 
-              <!--Section 2-->
-							<div class="large-4 medium-4 columns about" id="content2">
-									<div class="homeinnerwrapper">
-										<i class="fa-taxi"></i>
-										<div class="homeinnercontent">
-										<h1><a href="#">Category Link</a></h1>
-										<ul>
-										<?php $b3c2cat = 'cat=2&posts_per_page=3';
-										query_posts($b3c2cat);
-										if ( have_posts() ) : while ( have_posts() ) : the_post();
-											echo '<li><a href="';
-											echo the_permalink() . '">';
-											echo  the_title() . '</a></li>';
-										endwhile; endif;
-										wp_reset_query(); ?>
-										</ul>
-										</div>
-									</div>
-								</div>
+								<ul>
+									<?php $b3r1c1_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+									$b3c1cat = 'cat=' . $b3r1c1_category . '&posts_per_page=3';
+									query_posts($b3c1cat);
 
-              <!--Section 3-->
-							<div class="large-4 medium-4 columns about" id="content3">
-									<div class="homeinnerwrapper">
-										<i class="fa-taxi fa-3x"></i>
-										<div class="homeinnercontent">
-										<h1><a href="#">Category Link</a></h1>
-										<ul>
-										<?php $b3c3cat = 'cat=2&posts_per_page=3';
-										query_posts($b3c3cat);
-										if ( have_posts() ) : while ( have_posts() ) : the_post();
-											echo '<li><a href="';
-											echo the_permalink() . '">';
-											echo  the_title() . '</a></li>';
-										endwhile; endif;
-										wp_reset_query(); ?>
-										</ul>
-										</div>
-									</div>
-								</div>
+									if ( have_posts() ) : while ( have_posts() ) : the_post();
+										echo '<li><a href="';
+										echo the_permalink() . '">';
+										echo  the_title() . '</a></li>';
+									endwhile; endif;
 
-            </div> <!--end row-->
+									wp_reset_query(); ?>
+								</ul>
 
-						<?php $b3_numrows = Kirki::get_option( 'pftk_opts', 'b3-numrows' );
-						if ($b3_numrows == 'Two'): ?>
-						<div class="row homecategories">
-							<!--Section 1-->
-								<div class="large-4 medium-4 columns about" id="content1">
-										<div class="homeinnerwrapper">
-											<i class="fa ' . $brew_options['b3-c1-icon'] . ' fa-3x"></i>
-											<div class="homeinnercontent">
-											<h1><a href="#">Category Link</a></h1>
-											<ul>
-											<?php $b3c1cat = 'cat=2&posts_per_page=3';
-											query_posts($b3c1cat);
-											if ( have_posts() ) : while ( have_posts() ) : the_post();
-												echo '<li><a href="';
-												echo the_permalink() . '">';
-												echo  the_title() . '</a></li>';
-											endwhile; endif;
-											wp_reset_query(); ?>
-											</ul>
-											</div>
+						</div> <!--END B3-WRAPPER-->
+					</div> <!--END COLUMN -->
 
-										</div>
-								</div>
+					<div class="column" data-equalizer-watch>
+					    <div class="b3-wrapper">
+					        <?php $b3r1c2_icon = Kirki::get_option('pftk_opts', 'b3r1c2-icon');
+					        echo '<i class="fa ' . $b3r1c2_icon . ' fa-3x"></i>';
 
-							<!--Section 2-->
-							<div class="large-4 medium-4 columns about" id="content2">
-									<div class="homeinnerwrapper">
-										<i class="fa-taxi"></i>
-										<div class="homeinnercontent">
-										<h1><a href="#">Category Link</a></h1>
-										<ul>
-										<?php $b3c2cat = 'cat=2&posts_per_page=3';
-										query_posts($b3c2cat);
-										if ( have_posts() ) : while ( have_posts() ) : the_post();
-											echo '<li><a href="';
-											echo the_permalink() . '">';
-											echo  the_title() . '</a></li>';
-										endwhile; endif;
-										wp_reset_query(); ?>
-										</ul>
-										</div>
-									</div>
-								</div>
+					        $b3r1c2_link = Kirki::get_option('pftk_opts', 'b3r1c2-link');
+					        $b3r1c2_title = Kirki::get_option('pftk_opts', 'b3r1c2-title');
 
-							<!--Section 3-->
-							<div class="large-4 medium-4 columns about" id="content3">
-									<div class="homeinnerwrapper">
-										<i class="fa-taxi fa-3x"></i>
-										<div class="homeinnercontent">
-										<h1><a href="#">Category Link</a></h1>
-										<ul>
-										<?php $b3c3cat = 'cat=2&posts_per_page=3';
-										query_posts($b3c3cat);
-										if ( have_posts() ) : while ( have_posts() ) : the_post();
-											echo '<li><a href="';
-											echo the_permalink() . '">';
-											echo  the_title() . '</a></li>';
-										endwhile; endif;
-										wp_reset_query(); ?>
-										</ul>
-										</div>
-									</div>
-								</div>
+					        echo '<h1><a href="' . get_permalink($b3r1c2_link) .'">' . $b3r1c2_title .'</a></h1>'; ?>
 
-						</div> <!--end row-->
-					<?php endif; ?>
-          </div> <!--end .block-3 -->
+					        <ul>
+					          <?php $b3r1c2_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+					          $b3c1cat = 'cat=' . $b3r1c2_category . '&posts_per_page=3';
+					          query_posts($b3c1cat);
+
+					          if ( have_posts() ) : while ( have_posts() ) : the_post();
+					            echo '<li><a href="';
+					            echo the_permalink() . '">';
+					            echo  the_title() . '</a></li>';
+					          endwhile; endif;
+
+					          wp_reset_query(); ?>
+					        </ul>
+
+					    </div> <!--END B3-WRAPPER-->
+					  </div> <!--END COLUMN -->
+
+						<div class="column" data-equalizer-watch>
+						    <div class="b3-wrapper">
+						        <?php $b3r1c3_icon = Kirki::get_option('pftk_opts', 'b3r1c3-icon');
+						        echo '<i class="fa ' . $b3r1c3_icon . ' fa-3x"></i>';
+
+						        $b3r1c3_link = Kirki::get_option('pftk_opts', 'b3r1c3-link');
+						        $b3r1c3_title = Kirki::get_option('pftk_opts', 'b3r1c3-title');
+
+						        echo '<h1><a href="' . get_permalink($b3r1c3_link) .'">' . $b3r1c3_title .'</a></h1>'; ?>
+
+						        <ul>
+						          <?php $b3r1c3_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+						          $b3c1cat = 'cat=' . $b3r1c3_category . '&posts_per_page=3';
+						          query_posts($b3c1cat);
+
+						          if ( have_posts() ) : while ( have_posts() ) : the_post();
+						            echo '<li><a href="';
+						            echo the_permalink() . '">';
+						            echo  the_title() . '</a></li>';
+						          endwhile; endif;
+
+						          wp_reset_query(); ?>
+						        </ul>
+
+						    </div> <!--END B3-WRAPPER-->
+						  </div> <!--END COLUMN -->
+
+	</div> <!--END ROW-->
+	<?php $b3_numrows = Kirki::get_option( 'pftk_opts', 'b3-numrows' );
+	if ($b3_numrows == 'Two'): ?>
+	<div class="row small-up-1  large-up-3" style="margin-top:15px;" data-equalizer data-equalize-by-row="true">
+		<div class="column" data-equalizer-watch>
+				<div class="b3-wrapper">
+						<?php $b3r2c1_icon = Kirki::get_option('pftk_opts', 'b3r2c1-icon');
+						echo '<i class="fa ' . $b3r2c1_icon . ' fa-3x"></i>';
+
+						$b3r2c1_link = Kirki::get_option('pftk_opts', 'b3r2c1-link');
+						$b3r2c1_title = Kirki::get_option('pftk_opts', 'b3r2c1-title');
+
+						echo '<h1><a href="' . get_permalink($b3r2c1_link) .'">' . $b3r2c1_title .'</a></h1>'; ?>
+
+						<ul>
+							<?php $b3r2c1_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+							$b3c1cat = 'cat=' . $b3r2c1_category . '&posts_per_page=3';
+							query_posts($b3c1cat);
+
+							if ( have_posts() ) : while ( have_posts() ) : the_post();
+								echo '<li><a href="';
+								echo the_permalink() . '">';
+								echo  the_title() . '</a></li>';
+							endwhile; endif;
+
+							wp_reset_query(); ?>
+						</ul>
+
+				</div> <!--END B3-WRAPPER-->
+			</div> <!--END COLUMN -->
+
+			<div class="column" data-equalizer-watch>
+			    <div class="b3-wrapper">
+			        <?php $b3r2c2_icon = Kirki::get_option('pftk_opts', 'b3r2c2-icon');
+			        echo '<i class="fa ' . $b3r2c2_icon . ' fa-3x"></i>';
+
+			        $b3r2c2_link = Kirki::get_option('pftk_opts', 'b3r2c2-link');
+			        $b3r2c2_title = Kirki::get_option('pftk_opts', 'b3r2c2-title');
+
+			        echo '<h1><a href="' . get_permalink($b3r2c2_link) .'">' . $b3r2c2_title .'</a></h1>'; ?>
+
+			        <ul>
+			          <?php $b3r2c2_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+			          $b3c1cat = 'cat=' . $b3r2c2_category . '&posts_per_page=3';
+			          query_posts($b3c1cat);
+
+			          if ( have_posts() ) : while ( have_posts() ) : the_post();
+			            echo '<li><a href="';
+			            echo the_permalink() . '">';
+			            echo  the_title() . '</a></li>';
+			          endwhile; endif;
+
+			          wp_reset_query(); ?>
+			        </ul>
+
+			    </div> <!--END B3-WRAPPER-->
+			  </div> <!--END COLUMN -->
+
+				<div class="column" data-equalizer-watch>
+				    <div class="b3-wrapper">
+				        <?php $b3r2c3_icon = Kirki::get_option('pftk_opts', 'b3r2c3-icon');
+				        echo '<i class="fa ' . $b3r2c3_icon . ' fa-3x"></i>';
+
+				        $b3r2c3_link = Kirki::get_option('pftk_opts', 'b3r2c3-link');
+				        $b3r2c3_title = Kirki::get_option('pftk_opts', 'b3r2c3-title');
+
+				        echo '<h1><a href="' . get_permalink($b3r2c3_link) .'">' . $b3r2c3_title .'</a></h1>'; ?>
+
+				        <ul>
+				          <?php $b3r2c3_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+				          $b3c1cat = 'cat=' . $b3r2c3_category . '&posts_per_page=3';
+				          query_posts($b3c1cat);
+
+				          if ( have_posts() ) : while ( have_posts() ) : the_post();
+				            echo '<li><a href="';
+				            echo the_permalink() . '">';
+				            echo  the_title() . '</a></li>';
+				          endwhile; endif;
+
+				          wp_reset_query(); ?>
+				        </ul>
+
+				    </div> <!--END B3-WRAPPER-->
+				  </div> <!--END COLUMN -->
+				<?php endif; ?>
+	</div>
+</div><!--end .BLOCK-3-->
 <?php endif; ?>
 
 <!--

@@ -33,9 +33,22 @@ GENERAL STYLES
 	.slider-byline {
 		margin-top: 20px;
 	}
-	
+
 	p {
 		color: $dhnow-white;
+	}
+}
+.b3-wrapper {
+	background-color: $dhnow-white;
+	padding: 10px 15px;
+	ul {
+		text-align: left;
+	}
+}
+
+.homeinnercontent {
+	ul {
+	text-align: left;
 	}
 }
 //custom button

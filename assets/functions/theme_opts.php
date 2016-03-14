@@ -350,7 +350,226 @@ Homepage -- Block 3 -- Options
         'priority'    => 10,
         'choices'     => Kirki_Helper::get_terms( 'category' ),
     ) );
+    /*********************
+    Homepage -- Block 3 Row 1 Column 2 -- Options
+    *********************/
 
+    Kirki::add_field( 'b3r1c2-icon', array(
+        'type'        => 'text',
+        'settings'    => 'b3r1c2-icon',
+        'label'       => __( 'First Row Second Column Icon', 'kirki-demo' ),
+        'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'fa-book',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r1c2-title', array(
+        'type'        => 'text',
+        'settings'    => 'b3r1c2-title',
+        'label'       => __( 'First Row Second Column Title', 'kirki-demo' ),
+        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'B3-R1-C2 Title',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r1c2-link', array(
+      'type'        => 'dropdown-pages',
+      'settings'    => 'b3r1c2-link',
+      'label'       => __( 'First Row Second Column Link', 'kirki-demo' ),
+      'section'     => 'block3',
+      'default'     => '#',
+      'priority'    => 10,
+      'multiple'    => 1,
+    ) );
+    Kirki::add_field( 'b3r1c2-category', array(
+        'type'        => 'select',
+        'settings'    => 'b3r1c2-category',
+        'label'       => __( 'This is the label', 'kirki' ),
+        'description' => __( 'This is the control description', 'kirki' ),
+        'help'        => __( 'This is some extra help text.', 'kirki' ),
+        'section'     => 'block3',
+        'default'     => '1',
+        'priority'    => 10,
+        'choices'     => Kirki_Helper::get_terms( 'category' ),
+    ) );
+    /*********************
+    Homepage -- Block 3 Row 1 Column 3 -- Options
+    *********************/
 
+    Kirki::add_field( 'b3r1c3-icon', array(
+        'type'        => 'text',
+        'settings'    => 'b3r1c3-icon',
+        'label'       => __( 'First Row Third Column Icon', 'kirki-demo' ),
+        'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'fa-book',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r1c3-title', array(
+        'type'        => 'text',
+        'settings'    => 'b3r1c3-title',
+        'label'       => __( 'First Row Third Column Title', 'kirki-demo' ),
+        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'B3-R1-C3 Title',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r1c3-link', array(
+      'type'        => 'dropdown-pages',
+      'settings'    => 'b3r1c3-link',
+      'label'       => __( 'First Row Third Column Link', 'kirki-demo' ),
+      'section'     => 'block3',
+      'default'     => '#',
+      'priority'    => 10,
+      'multiple'    => 1,
+    ) );
+    Kirki::add_field( 'b3r1c3-category', array(
+        'type'        => 'select',
+        'settings'    => 'b3r1c3-category',
+        'label'       => __( 'This is the label', 'kirki' ),
+        'description' => __( 'This is the control description', 'kirki' ),
+        'help'        => __( 'This is some extra help text.', 'kirki' ),
+        'section'     => 'block3',
+        'default'     => '1',
+        'priority'    => 10,
+        'choices'     => Kirki_Helper::get_terms( 'category' ),
+    ) );
 
+    /*********************
+    Homepage -- Block 3 Row 2 Column 1 -- Options
+    *********************/
+
+    Kirki::add_field( 'b3r2c1-icon', array(
+        'type'        => 'text',
+        'settings'    => 'b3r2c1-icon',
+        'label'       => __( 'Second Row First Column Icon', 'kirki-demo' ),
+        'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'fa-book',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r2c1-title', array(
+        'type'        => 'text',
+        'settings'    => 'b3r2c1-title',
+        'label'       => __( 'Second Row First Column Title', 'kirki-demo' ),
+        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'B3-R1-C3 Title',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r2c1-link', array(
+      'type'        => 'dropdown-pages',
+      'settings'    => 'b3r2c1-link',
+      'label'       => __( 'Second Row First Column Link', 'kirki-demo' ),
+      'section'     => 'block3',
+      'default'     => '#',
+      'priority'    => 10,
+      'multiple'    => 1,
+    ) );
+    Kirki::add_field( 'b3r2c1-category', array(
+        'type'        => 'select',
+        'settings'    => 'b3r2c1-category',
+        'label'       => __( 'This is the label', 'kirki' ),
+        'description' => __( 'This is the control description', 'kirki' ),
+        'help'        => __( 'This is some extra help text.', 'kirki' ),
+        'section'     => 'block3',
+        'default'     => '1',
+        'priority'    => 10,
+        'choices'     => Kirki_Helper::get_terms( 'category' ),
+    ) );
+
+    /*********************
+    Homepage -- Block 3 Row 1 Column 3 -- Options
+    *********************/
+
+    Kirki::add_field( 'b3r2c2-icon', array(
+        'type'        => 'text',
+        'settings'    => 'b3r2c2-icon',
+        'label'       => __( 'Second Row Second Column Icon', 'kirki-demo' ),
+        'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'fa-book',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r2c2-title', array(
+        'type'        => 'text',
+        'settings'    => 'b3r2c2-title',
+        'label'       => __( 'Second Row Second Column Title', 'kirki-demo' ),
+        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'B3-R1-C3 Title',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r2c2-link', array(
+      'type'        => 'dropdown-pages',
+      'settings'    => 'b3r2c2-link',
+      'label'       => __( 'Second Row Second Column Link', 'kirki-demo' ),
+      'section'     => 'block3',
+      'default'     => '#',
+      'priority'    => 10,
+      'multiple'    => 1,
+    ) );
+    Kirki::add_field( 'b3r2c2-category', array(
+        'type'        => 'select',
+        'settings'    => 'b3r2c2-category',
+        'label'       => __( 'This is the label', 'kirki' ),
+        'description' => __( 'This is the control description', 'kirki' ),
+        'help'        => __( 'This is some extra help text.', 'kirki' ),
+        'section'     => 'block3',
+        'default'     => '1',
+        'priority'    => 10,
+        'choices'     => Kirki_Helper::get_terms( 'category' ),
+    ) );
+    /*********************
+    Homepage -- Block 3 Row 1 Column 3 -- Options
+    *********************/
+
+    Kirki::add_field( 'b3r2c3-icon', array(
+        'type'        => 'text',
+        'settings'    => 'b3r2c3-icon',
+        'label'       => __( 'Second Row Third Column Icon', 'kirki-demo' ),
+        'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'fa-book',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r2c3-title', array(
+        'type'        => 'text',
+        'settings'    => 'b3r2c3-title',
+        'label'       => __( 'Second Row Third Column Title', 'kirki-demo' ),
+        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'B3-R1-C3 Title',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r2c3-link', array(
+      'type'        => 'dropdown-pages',
+      'settings'    => 'b3r2c3-link',
+      'label'       => __( 'Second Row Third Column Link', 'kirki-demo' ),
+      'section'     => 'block3',
+      'default'     => '#',
+      'priority'    => 10,
+      'multiple'    => 1,
+    ) );
+    Kirki::add_field( 'b3r2c3-category', array(
+        'type'        => 'select',
+        'settings'    => 'b3r2c3-category',
+        'label'       => __( 'This is the label', 'kirki' ),
+        'description' => __( 'This is the control description', 'kirki' ),
+        'help'        => __( 'This is some extra help text.', 'kirki' ),
+        'section'     => 'block3',
+        'default'     => '1',
+        'priority'    => 10,
+        'choices'     => Kirki_Helper::get_terms( 'category' ),
+    ) );
 ?>

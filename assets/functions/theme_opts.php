@@ -10,7 +10,7 @@ include_once( get_template_directory() . '/assets/functions/theme_opts.php' );
 *********************/
 Kirki::add_config( 'pftk_opts', array(
     'capability'    => 'edit_theme_options',
-    'option_type'   => 'option',
+    'option_type'   => 'theme_mod',
     'option_name'   => 'pftk_opts',
 ) );
 

@@ -121,7 +121,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'B2-C1 Title',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(
@@ -131,7 +131,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "textarea" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'Nam pretium magna non enim finibus dignissim. Suspendisse felis ipsum, finibus ac eros ut, rhoncus consequat nisl.',
       'priority'    => 10,
   ) );
 
@@ -143,7 +143,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(
@@ -153,7 +153,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'B2-C2 Title',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(
@@ -163,7 +163,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "textarea" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'Curabitur porta dui at diam iaculis dapibus. Vivamus efficitur interdum mi vel sagittis. Vivamus sagittis aliquet pretium. Nulla ultrices in tortor sed facilisis.',
       'priority'    => 10,
   ) );
 
@@ -175,7 +175,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(
@@ -185,7 +185,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'B2-C3 Title',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(
@@ -195,7 +195,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "textarea" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sit amet efficitur elit.',
       'priority'    => 10,
   ) );
 
@@ -207,7 +207,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(
@@ -217,7 +217,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'B2-C4 Title',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(
@@ -227,7 +227,7 @@ Kirki::add_field( '', array(
       'help'        => __( 'This is a tooltip', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "textarea" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'Curabitur porta dui at diam iaculis dapibus. Vivamus efficitur interdum mi vel sagittis.',
       'priority'    => 10,
   ) );
 

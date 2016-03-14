@@ -80,7 +80,8 @@ Block 2
 												<?php $b2c1_icon = Kirki::get_option( 'pftk_opts', 'b2c1-icon' );
 												echo '<i class="fa ' . $b2c1_icon . ' fa-3x"></i>';
 												$b2c1_title = Kirki::get_option( 'pftk_opts', 'b2c1-title');
-												echo '<h1 class="widgettitle"><a href="#">' . $b2c1_title . '</a></h1>'; ?>
+												$b2c1_link = Kirki::get_option('pftk_opts', 'b2c1-link');
+												echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c1_link) . '">' . $b2c1_title . '</a></h1>'; ?>
 	                    <div class="textwidget">
 												<?php $b2c1_text = Kirki::get_option( 'pftk_opts', 'b2c1-text');
 											  echo '<p>' . $b2c1_text . '</p>' ?>
@@ -91,7 +92,8 @@ Block 2
 											 <?php $b2c2_icon = Kirki::get_option( 'pftk_opts', 'b2c2-icon' );
 											 echo '<i class="fa ' . $b2c2_icon . ' fa-3x"></i>';
 											 $b2c2_title = Kirki::get_option( 'pftk_opts', 'b2c2-title');
-											 echo '<h1 class="widgettitle"><a href="#">' . $b2c2_title . '</a></h1>'; ?>
+											 $b2c2_link = Kirki::get_option('pftk_opts', 'b2c2-link');
+											 echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c2_link) . '">' . $b2c2_title . '</a></h1>'; ?>
 										 <div class="textwidget">
 											 <?php $b2c2_text = Kirki::get_option( 'pftk_opts', 'b2c2-text');
 											 echo '<p>' . $b2c2_text . '</p>' ?>
@@ -102,7 +104,8 @@ Block 2
 											 <?php $b2c3_icon = Kirki::get_option( 'pftk_opts', 'b2c3-icon' );
 											 echo '<i class="fa ' . $b2c1_icon . ' fa-3x"></i>';
 											 $b2c3_title = Kirki::get_option( 'pftk_opts', 'b2c3-title');
-											 echo '<h1 class="widgettitle"><a href="#">' . $b2c3_title . '</a></h1>'; ?>
+											 $b2c3_link = Kirki::get_option('pftk_opts', 'b2c3-link');
+											 echo '<h1 class="widgettitle"><a href="'. get_permalink($b2c3_link) . '">' . $b2c3_title . '</a></h1>'; ?>
 										 <div class="textwidget">
 											 <?php $b2c3_text = Kirki::get_option( 'pftk_opts', 'b2c3-text');
 											 echo '<p>' . $b2c3_text . '</p>' ?>
@@ -113,7 +116,8 @@ Block 2
  											<?php $b2c4_icon = Kirki::get_option( 'pftk_opts', 'b2c4-icon' );
  											echo '<i class="fa ' . $b2c4_icon . ' fa-3x"></i>';
  											$b2c4_title = Kirki::get_option( 'pftk_opts', 'b2c4-title');
- 											echo '<h1 class="widgettitle"><a href="#">' . $b2c4_title . '</a></h1>'; ?>
+											$b2c4_link = Kirki::get_option('pftk_opts', 'b2c4-link');
+ 											echo '<h1 class="widgettitle"><a href="'. get_permalink($b2c4_link) . '">' . $b2c4_title . '</a></h1>'; ?>
  										<div class="textwidget">
  											<?php $b2c4_text = Kirki::get_option( 'pftk_opts', 'b2c4-text');
  											echo '<p>' . $b2c4_text . '</p>' ?>

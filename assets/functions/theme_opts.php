@@ -126,6 +126,15 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'B2-C1 Title',
       'priority'    => 10,
   ) );
+  Kirki::add_field( 'b2c1-link', array(
+    'type'        => 'dropdown-pages',
+    'settings'    => 'b2c1-link',
+    'label'       => __( 'First Column Title Link', 'kirki-demo' ),
+    'section'     => 'block2',
+    'default'     => '',
+    'priority'    => 10,
+    'multiple'    => 1,
+  ) );
   Kirki::add_field( 'kirki_demo', array(
       'type'        => 'textarea',
       'settings'    => 'b2c1-text',
@@ -157,6 +166,15 @@ Kirki::add_field( 'toggle-b2', array(
       'section'     => 'block2',
       'default'     => 'B2-C2 Title',
       'priority'    => 10,
+  ) );
+  Kirki::add_field( 'b2c2-link', array(
+    'type'        => 'dropdown-pages',
+    'settings'    => 'b2c2-link',
+    'label'       => __( 'Second Column Title Link', 'kirki-demo' ),
+    'section'     => 'block2',
+    'default'     => '',
+    'priority'    => 10,
+    'multiple'    => 1,
   ) );
   Kirki::add_field( 'kirki_demo', array(
       'type'        => 'textarea',
@@ -190,6 +208,15 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'B2-C3 Title',
       'priority'    => 10,
   ) );
+  Kirki::add_field( 'b2c3-link', array(
+    'type'        => 'dropdown-pages',
+    'settings'    => 'b2c3-link',
+    'label'       => __( 'Third Column Title Link', 'kirki-demo' ),
+    'section'     => 'block2',
+    'default'     => '',
+    'priority'    => 10,
+    'multiple'    => 1,
+  ) );
   Kirki::add_field( 'kirki_demo', array(
       'type'        => 'textarea',
       'settings'    => 'b2c3-text',
@@ -222,6 +249,15 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'B2-C4 Title',
       'priority'    => 10,
   ) );
+  Kirki::add_field( 'b2c4-link', array(
+    'type'        => 'dropdown-pages',
+    'settings'    => 'b2c4-link',
+    'label'       => __( 'Fourth Column Title Link', 'kirki-demo' ),
+    'section'     => 'block2',
+    'default'     => '',
+    'priority'    => 10,
+    'multiple'    => 1,
+  ) );
   Kirki::add_field( 'kirki_demo', array(
       'type'        => 'textarea',
       'settings'    => 'b2c4-text',
@@ -233,7 +269,30 @@ Kirki::add_field( 'toggle-b2', array(
       'priority'    => 10,
   ) );
 
+  /*********************
+  Homepage -- Block 3 -- Options
+  *********************/
 
+  //Create panel
+  Kirki::add_section( 'Block3', array(
+      'title'          => __( 'Block 3 Options' ),
+      'description'
+         => __( 'Edit the content and appearance of the third block on the homepage.' ),
+      'panel'          => 'homepage', // Not typically needed.
+      'priority'       => 160,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+  //Create on/off switch for block 2.
+  Kirki::add_field( 'toggle-b3', array(
+      'type'        => 'switch',
+      'settings'    => 'toggle-b3',
+      'label'       => __( 'Block 3', 'my_textdomain' ),
+      'section'     => 'block3',
+      'default'     => '1',
+      'priority'    => 10,
+
+  ) );
 
 
 

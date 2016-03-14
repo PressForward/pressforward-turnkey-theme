@@ -39,7 +39,7 @@ Homepage -- Slider -- Options
   ) );
 
 //add fields
-  Kirki::add_field( '', array(
+  Kirki::add_field( 'SliderOnOffToggle', array(
       'type'        => 'toggle',
       'settings'    => 'toggle_slider',
       'label'       => __( 'Slider On', 'kirki' ),
@@ -104,14 +104,14 @@ Kirki::add_field( '', array(
 ////////////////////////////////////////////
 
 //column1 -- Block2
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c1-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c1-icon',
       'label'       => __( 'First Column Icon', 'kirki-demo' ),
       'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
-      'default'     => '',
+      'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
   Kirki::add_field( 'kirki_demo', array(

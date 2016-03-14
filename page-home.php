@@ -72,7 +72,8 @@ Block 2
       <div class="block-2" id="block-2">
 	              <div class="row">
 	                  <div class="large-3 medium-3 columns">
-	                      <i class="fa fa-taxi fa-3x"></i>
+											<?php $b2c1_icon = Kirki::get_option( 'pftk_opts', 'b2c1-icon' );
+												echo '<i class="fa ' . $b2c1_icon . ' fa-3x"></i>'; ?>
 	                      <h1 class="widgettitle"><a href="#">Title Goes Here</a></h1>
 	                    <div class="textwidget">
 	                      <p>Text goes here</p>

@@ -5,7 +5,10 @@ Template Name: Home Page Template
 ?>
 
 <?php get_header(); ?>
+<?php $slider_switch = Kirki::get_option( 'pftk_opts', 'slider-switch'); ?>
+<?php if ($slider_switch == true): ?>
 <div id="content" class="slider-container">
+
 <div class="row">
 <div class="medium-12 large-12 columns">
 	<div class="orbit" role="region" data-options="autoPlay:false;" aria-label="Editor's Choice" data-orbit>
@@ -63,12 +66,14 @@ Template Name: Home Page Template
 </div>
 </div><!--  close .row #slider -->
 </div>
+<?php endif; ?>
 <!-- </div> end content -->
 
 <!--
 Block 2
 -->
-
+<?php $toggle_b2 = Kirki::get_option( 'pftk_opts', 'toggle-b2'); ?>
+		<?php if ($toggle_b2 == true): ?>
       <div class="block-2" id="block-2">
 	              <div class="row">
 	                  <div class="large-3 medium-3 columns">
@@ -117,7 +122,7 @@ Block 2
 
 	            </div> <!-- close .row -->
 	      </div> <!-- close .block-2 -->
-
+			<?php endif;	?>
 <!--
 Block 3
 -->

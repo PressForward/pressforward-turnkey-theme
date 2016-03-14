@@ -39,14 +39,15 @@ Homepage -- Slider -- Options
   ) );
 
 //add fields
-  Kirki::add_field( 'SliderOnOffToggle', array(
-      'type'        => 'toggle',
-      'settings'    => 'toggle_slider',
-      'label'       => __( 'Slider On', 'kirki' ),
-      'section'     => 'slider',
-      'default'     => '1',
-      'priority'    => 10,
-  ) );
+Kirki::add_field( 'slider-switch', array(
+    'type'        => 'switch',
+    'settings'    => 'slider-switch',
+    'label'       => __( 'Slider (Block 1)', 'my_textdomain' ),
+    'section'     => 'slider',
+    'default'     => '1',
+    'priority'    => 10,
+
+) );
   Kirki::add_field( 'slider_numposts', array(
       'type'        => 'slider',
       'settings'    => 'slider_numposts',
@@ -88,14 +89,15 @@ Kirki::add_section( 'Block2', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-//Create on/off toggle for block 2.
-Kirki::add_field( '', array(
-    'type'        => 'toggle',
-    'settings'    => 'toggle_slider',
-    'label'       => __( 'Block 2 On', 'kirki' ),
+//Create on/off switch for block 2.
+Kirki::add_field( 'toggle-b2', array(
+    'type'        => 'switch',
+    'settings'    => 'toggle-b2',
+    'label'       => __( 'Block 2', 'my_textdomain' ),
     'section'     => 'block2',
     'default'     => '1',
     'priority'    => 10,
+
 ) );
 
 

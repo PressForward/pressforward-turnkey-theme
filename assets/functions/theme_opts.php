@@ -116,7 +116,7 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c1-title', array(
       'type'        => 'text',
       'settings'    => 'b2c1-title',
       'label'       => __( 'First Column Title', 'kirki-demo' ),
@@ -135,7 +135,7 @@ Kirki::add_field( 'toggle-b2', array(
     'priority'    => 10,
     'multiple'    => 1,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c1-text', array(
       'type'        => 'textarea',
       'settings'    => 'b2c1-text',
       'label'       => __( 'First Column Text', 'kirki-demo' ),
@@ -147,7 +147,7 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //column 2 -- Block2
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c2-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c2-icon',
       'label'       => __( 'Second Column Icon', 'kirki-demo' ),
@@ -157,7 +157,7 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c2-title', array(
       'type'        => 'text',
       'settings'    => 'b2c2-title',
       'label'       => __( 'Second Column Title', 'kirki-demo' ),
@@ -188,7 +188,7 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //Column 3 -- Block2
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c3-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c3-icon',
       'label'       => __( 'Third Column Icon', 'kirki-demo' ),
@@ -198,7 +198,7 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c3-title', array(
       'type'        => 'text',
       'settings'    => 'b2c3-title',
       'label'       => __( 'Third Column Title', 'kirki-demo' ),
@@ -217,7 +217,7 @@ Kirki::add_field( 'toggle-b2', array(
     'priority'    => 10,
     'multiple'    => 1,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c3-text', array(
       'type'        => 'textarea',
       'settings'    => 'b2c3-text',
       'label'       => __( 'Third Column Text', 'kirki-demo' ),
@@ -229,7 +229,7 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //Column 4 -- Block2
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c4-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c4-icon',
       'label'       => __( 'Fourth Column Icon', 'kirki-demo' ),
@@ -239,7 +239,7 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'fa-taxi',
       'priority'    => 10,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c4-title', array(
       'type'        => 'text',
       'settings'    => 'b2c4-title',
       'label'       => __( 'Fourth Column Title', 'kirki-demo' ),
@@ -258,7 +258,7 @@ Kirki::add_field( 'toggle-b2', array(
     'priority'    => 10,
     'multiple'    => 1,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'b2c4-text', array(
       'type'        => 'textarea',
       'settings'    => 'b2c4-text',
       'label'       => __( 'Fourth Column Text', 'kirki-demo' ),
@@ -268,10 +268,9 @@ Kirki::add_field( 'toggle-b2', array(
       'default'     => 'Curabitur porta dui at diam iaculis dapibus. Vivamus efficitur interdum mi vel sagittis.',
       'priority'    => 10,
   ) );
-
-  /*********************
-  Homepage -- Block 3 -- Options
-  *********************/
+/*********************
+Homepage -- Block 3 -- Options
+*********************/
 
   //Create panel
   Kirki::add_section( 'Block3', array(
@@ -283,7 +282,7 @@ Kirki::add_field( 'toggle-b2', array(
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
   ) );
-  //Create on/off switch for block 2.
+  //Create on/off switch for block 3.
   Kirki::add_field( 'toggle-b3', array(
       'type'        => 'switch',
       'settings'    => 'toggle-b3',
@@ -294,7 +293,63 @@ Kirki::add_field( 'toggle-b2', array(
 
   ) );
 
+  //add control for number of rows in block 3
+  Kirki::add_field( 'b3-numrows', array(
+    'type'        => 'radio-buttonset',
+    'settings'    => 'b3-numrows',
+    'label'       => __( 'Number of Rows Block 3', 'kirki-demo' ),
+    'section'     => 'block3',
+    'default'     => 'Two',
+    'priority'    => 10,
+    'choices'     => array(
+        'One'   => esc_attr__( 'One', 'kirki-demo' ),
+        'Two' => esc_attr__( 'Two', 'kirki-demo' ),
+    ),
+) );
+    /*********************
+    Homepage -- Block 3 Row 1 Column 1 -- Options
+    *********************/
 
+    Kirki::add_field( 'b3r1c1-icon', array(
+        'type'        => 'text',
+        'settings'    => 'b3r1c1-icon',
+        'label'       => __( 'First Row First Column Icon', 'kirki-demo' ),
+        'help'        => __( 'Enter the Font Awesome icon name. i.e. fa-camera-retro', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'fa-book',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r1c1-title', array(
+        'type'        => 'text',
+        'settings'    => 'b3r1c1-title',
+        'label'       => __( 'First Row First Column Title', 'kirki-demo' ),
+        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block3',
+        'default'     => 'B3-R1-C1 Title',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b3r1c1-link', array(
+      'type'        => 'dropdown-pages',
+      'settings'    => 'b3r1c1-link',
+      'label'       => __( 'First Row First Column Link', 'kirki-demo' ),
+      'section'     => 'block3',
+      'default'     => '#',
+      'priority'    => 10,
+      'multiple'    => 1,
+    ) );
+    Kirki::add_field( 'b3r1c1-category', array(
+        'type'        => 'select',
+        'settings'    => 'b3r1c1-category',
+        'label'       => __( 'This is the label', 'kirki' ),
+        'description' => __( 'This is the control description', 'kirki' ),
+        'help'        => __( 'This is some extra help text.', 'kirki' ),
+        'section'     => 'block3',
+        'default'     => '1',
+        'priority'    => 10,
+        'choices'     => Kirki_Helper::get_terms( 'category' ),
+    ) );
 
 
 

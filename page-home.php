@@ -130,16 +130,23 @@ Block 2
 <!--
 Block 3
 -->
+<?php $toggle_b3 = Kirki::get_option( 'pftk_opts', 'toggle-b3');
+	if ($toggle_b3 == true): ?>
 						<div class="block-3">
             <div class="row homecategories">
               <!--Section 1-->
                 <div class="large-4 medium-4 columns about" id="content1">
                     <div class="homeinnerwrapper">
-                      <i class="fa ' . $brew_options['b3-c1-icon'] . ' fa-3x"></i>
+											<?php $b3r1c1_icon = Kirki::get_option('pftk_opts', 'b3r1c1-icon');
+                      echo '<i class="fa ' . $b3r1c1_icon . ' fa-3x"></i>'; ?>
                       <div class="homeinnercontent">
-                      <h1><a href="#">Category Link</a></h1>
+											<?php $b3r1c1_link = Kirki::get_option('pftk_opts', 'b3r1c1-link');
+											$b3r1c1_title = Kirki::get_option('pftk_opts', 'b3r1c1-title');
+                      echo '<h1><a href="' . get_permalink($b3r1c1_link) .'">' . $b3r1c1_title .'</a></h1>'; ?>
                       <ul>
-                      <?php $b3c1cat = 'cat=2&posts_per_page=3';
+
+                      <?php $b3r1c1_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+											$b3c1cat = 'cat=' . $b3r1c1_category . '&posts_per_page=3';
                       query_posts($b3c1cat);
                       if ( have_posts() ) : while ( have_posts() ) : the_post();
                         echo '<li><a href="';
@@ -194,6 +201,9 @@ Block 3
 								</div>
 
             </div> <!--end row-->
+
+						<?php $b3_numrows = Kirki::get_option( 'pftk_opts', 'b3-numrows' );
+						if ($b3_numrows == 'Two'): ?>
 						<div class="row homecategories">
 							<!--Section 1-->
 								<div class="large-4 medium-4 columns about" id="content1">
@@ -257,7 +267,9 @@ Block 3
 								</div>
 
 						</div> <!--end row-->
+					<?php endif; ?>
           </div> <!--end .block-3 -->
+<?php endif; ?>
 
 <!--
 Block 4

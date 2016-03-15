@@ -307,27 +307,69 @@ Block 2
 <!--
 Block 4
 -->
+		<?php $toggle_b4 = Kirki::get_option( 'pftk_opts', 'toggle-b4');
+
+		if ($toggle_b4 == true): ?>
+
 			<div class="block-4">
 							<div class="row">
 									<div class="large-12 medium-12 columns" id="infotext">
-										<h2>About Block #4</h2>
+										<?php $block4_text = Kirki::get_option('pftk_opts', 'b4-text');
+										 $block4_title = Kirki::get_option('pftk_opts', 'b4-title');
+										echo '<h2>' . $block4_title . '</h2>';
+										echo '<p>' . $block4_text . '</p>';
+										?>
 									</div>
 							</div>
 			</div>
-
+		<?php endif ?>
 <!--
 Block 5
 -->
+		<?php $toggle_b5 = Kirki::get_option( 'pftk_opts', 'toggle-b5');
+
+		if ($toggle_b5 == true): ?>
 				<div class="block-5">
 					<div class="row">
 							<div class="medium-7 large-7 columns">
-								most recent post
+								<?php
+									$args = array (
+									'numberposts' => 1,
+									'cat' => 16,
+									'posts_per_page' => 1,
+									'post_status' => 'publish'
+								);
+								$query = new WP_Query($args);
+								if ($query->have_posts()) {
+									while ($query->have_posts() ) {
+										$query->the_post();
+										echo '<h3><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+										echo '<p>' . get_the_excerpt() . '</p>';
+									}
+									wp_reset_postdata();
+								}
+								?>
 							</div>
 							<div class="medium-5 large-5 columns" id="bloglist">
-								bloglist
+							<?php
+								$args = array (
+								'numberposts' => 5,
+								'cat' => 16,
+								'posts_per_page' => 5,
+								'post_status' => 'publish'
+							);
+							$query = new WP_Query($args);
+							if ($query->have_posts()) {
+								while ($query->have_posts() ) {
+									$query->the_post();
+									echo '<li><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></li>';
+								}
+								wp_reset_postdata();
+							}
+							?>
 							</div>
 					</div>
 				</div>
-
+		<?php endif ?>
 
 <?php get_footer(); ?>

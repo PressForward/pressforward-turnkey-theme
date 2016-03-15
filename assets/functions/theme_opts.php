@@ -572,4 +572,74 @@ Homepage -- Block 3 -- Options
         'priority'    => 10,
         'choices'     => Kirki_Helper::get_terms( 'category' ),
     ) );
+
+/*********************
+**********************
+Homepage -- Block 4
+**********************
+*********************/
+  //Create panel
+  Kirki::add_section( 'Block4', array(
+      'title'          => __( 'Block 4 Options' ),
+      'description'
+         => __( 'Edit the content and appearance of the fourth block on the homepage.' ),
+      'panel'          => 'homepage', // Not typically needed.
+      'priority'       => 160,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+  //Create on/off switch for block 3.
+  Kirki::add_field( 'toggle-b4', array(
+      'type'        => 'switch',
+      'settings'    => 'toggle-b4',
+      'label'       => __( 'Block 4', 'my_textdomain' ),
+      'section'     => 'block4',
+      'default'     => '1',
+      'priority'    => 10,
+  ) );
+  Kirki::add_field( 'b4-title', array(
+      'type'        => 'text',
+      'settings'    => 'b4-title',
+      'label'       => __( 'Block 4 Title', 'kirki-demo' ),
+      'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+      'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+      'section'     => 'block4',
+      'default'     => 'Block 4 Title',
+      'priority'    => 10,
+  ) );
+  Kirki::add_field( 'b4-text', array(
+      'type'        => 'textarea',
+      'settings'    => 'b4-text',
+      'label'       => __( 'Block 4 Text', 'kirki-demo' ),
+      'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+      'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+      'section'     => 'block4',
+      'default'     => 'B3-R1-C3 Title',
+      'priority'    => 10,
+  ) );
+
+/*********************
+**********************
+Homepage -- Block 5
+**********************
+*********************/
+    //Create panel
+    Kirki::add_section( 'Block5', array(
+        'title'          => __( 'Block 5 Options' ),
+        'description'
+           => __( 'Edit the content and appearance of the fourth block on the homepage.' ),
+        'panel'          => 'homepage', // Not typically needed.
+        'priority'       => 160,
+        'capability'     => 'edit_theme_options',
+        'theme_supports' => '', // Rarely needed.
+    ) );
+    //Create on/off switch for block 3.
+    Kirki::add_field( 'toggle-b5', array(
+        'type'        => 'switch',
+        'settings'    => 'toggle-b5',
+        'label'       => __( 'Block 5', 'my_textdomain' ),
+        'section'     => 'block5',
+        'default'     => '1',
+        'priority'    => 10,
+    ) );
 ?>

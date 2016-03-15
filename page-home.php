@@ -134,8 +134,8 @@ Block 2
 	<div class="block-3">
 		<div class="row small-up-1  large-up-3" data-equalizer data-equalize-by-row="true">
 				<!--B3 R1 C1 -->
-				<div class="column" data-equalizer-watch>
-						<div class="b3-wrapper">
+				<div class="column" >
+						<div class="b3-wrapper" data-equalizer-watch>
 								<?php $b3r1c1_icon = Kirki::get_option('pftk_opts', 'b3r1c1-icon');
 								echo '<i class="fa ' . $b3r1c1_icon . ' fa-3x"></i>';
 
@@ -161,8 +161,8 @@ Block 2
 						</div> <!--END B3-WRAPPER-->
 					</div> <!--END COLUMN -->
 
-					<div class="column" data-equalizer-watch>
-					    <div class="b3-wrapper">
+					<div class="column" >
+					    <div class="b3-wrapper" data-equalizer-watch>
 					        <?php $b3r1c2_icon = Kirki::get_option('pftk_opts', 'b3r1c2-icon');
 					        echo '<i class="fa ' . $b3r1c2_icon . ' fa-3x"></i>';
 
@@ -188,8 +188,8 @@ Block 2
 					    </div> <!--END B3-WRAPPER-->
 					  </div> <!--END COLUMN -->
 
-						<div class="column" data-equalizer-watch>
-						    <div class="b3-wrapper">
+						<div class="column" >
+						    <div class="b3-wrapper" data-equalizer-watch>
 						        <?php $b3r1c3_icon = Kirki::get_option('pftk_opts', 'b3r1c3-icon');
 						        echo '<i class="fa ' . $b3r1c3_icon . ' fa-3x"></i>';
 
@@ -219,8 +219,8 @@ Block 2
 	<?php $b3_numrows = Kirki::get_option( 'pftk_opts', 'b3-numrows' );
 	if ($b3_numrows == 'Two'): ?>
 	<div class="row small-up-1  large-up-3" style="margin-top:15px;" data-equalizer data-equalize-by-row="true">
-		<div class="column" data-equalizer-watch>
-				<div class="b3-wrapper">
+		<div class="column">
+				<div class="b3-wrapper" data-equalizer-watch>
 						<?php $b3r2c1_icon = Kirki::get_option('pftk_opts', 'b3r2c1-icon');
 						echo '<i class="fa ' . $b3r2c1_icon . ' fa-3x"></i>';
 
@@ -246,8 +246,8 @@ Block 2
 				</div> <!--END B3-WRAPPER-->
 			</div> <!--END COLUMN -->
 
-			<div class="column" data-equalizer-watch>
-			    <div class="b3-wrapper">
+			<div class="column">
+			    <div class="b3-wrapper" data-equalizer-watch>
 			        <?php $b3r2c2_icon = Kirki::get_option('pftk_opts', 'b3r2c2-icon');
 			        echo '<i class="fa ' . $b3r2c2_icon . ' fa-3x"></i>';
 
@@ -273,8 +273,8 @@ Block 2
 			    </div> <!--END B3-WRAPPER-->
 			  </div> <!--END COLUMN -->
 
-				<div class="column" data-equalizer-watch>
-				    <div class="b3-wrapper">
+				<div class="column">
+				    <div class="b3-wrapper" data-equalizer-watch>
 				        <?php $b3r2c3_icon = Kirki::get_option('pftk_opts', 'b3r2c3-icon');
 				        echo '<i class="fa ' . $b3r2c3_icon . ' fa-3x"></i>';
 

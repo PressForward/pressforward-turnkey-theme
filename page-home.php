@@ -316,8 +316,15 @@ Block 4
 									<div class="large-12 medium-12 columns" id="infotext">
 										<?php $block4_text = Kirki::get_option('pftk_opts', 'b4-text');
 										 $block4_title = Kirki::get_option('pftk_opts', 'b4-title');
-										echo '<h2>' . $block4_title . '</h2>';
-										echo '<p>' . $block4_text . '</p>';
+										 $block4_title_link = Kirki::get_option('pftk_opts','b4-title-link');
+
+									if (empty($block4_title_link) == FALSE):
+										echo '<h1 class="widgettitle"><a href="' . get_the_permalink($block4_title_link) . '">' . $block4_title . '</a></h1>';
+									else:
+										echo '<h1 class="widgettitle">' . $block4_title . '</h1>';
+
+									endif;
+									echo '<p>' . $block4_text . '</p>';
 										?>
 									</div>
 							</div>
@@ -331,6 +338,20 @@ Block 5
 		if ($toggle_b5 == true): ?>
 				<div class="block-5">
 					<div class="row">
+						<div class="large-12 medium-12 columns">
+								<?php
+								$block5_title_link = Kirki::get_option( 'pftk_opts', 'b5-title-link');
+								$block5_title = Kirki::get_option('pftk_opts', 'b5-title');
+								if (empty($block5_title_link) == FALSE):
+									echo '<h1 class="widgettitle"><a href="' . get_the_permalink($block5_title_link) . '">' . $block5_title . '</a></h1>';
+								else:
+									echo '<h1 class="widgettitle">' . $block5_title . '</h1>';
+								endif; ?>
+
+						</div>
+					</div>
+					<div class="row">
+						<h2 class="widgettitle"></h2>
 							<div class="medium-7 large-7 columns">
 								<?php
 									$args = array (
@@ -343,7 +364,7 @@ Block 5
 								if ($query->have_posts()) {
 									while ($query->have_posts() ) {
 										$query->the_post();
-										echo '<h3><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h3>';
+										echo '<h4><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h4>';
 										echo '<p>' . get_the_excerpt() . '</p>';
 									}
 									wp_reset_postdata();

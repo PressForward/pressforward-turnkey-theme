@@ -607,6 +607,15 @@ Homepage -- Block 4
       'default'     => 'Block 4 Title',
       'priority'    => 10,
   ) );
+  Kirki::add_field( 'b4-title-link', array(
+    'type'        => 'dropdown-pages',
+    'settings'    => 'b4-title-link',
+    'label'       => __( 'Block 4 Title Link', 'kirki-demo' ),
+    'section'     => 'block4',
+    'default'     => '',
+    'priority'    => 10,
+    'multiple'    => 1,
+  ) );
   Kirki::add_field( 'b4-text', array(
       'type'        => 'textarea',
       'settings'    => 'b4-text',
@@ -641,5 +650,24 @@ Homepage -- Block 5
         'section'     => 'block5',
         'default'     => '1',
         'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b5-title', array(
+        'type'        => 'text',
+        'settings'    => 'b5-title',
+        'label'       => __( 'Block 5 Title', 'kirki-demo' ),
+        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
+        'section'     => 'block5',
+        'default'     => 'Block 5 Title',
+        'priority'    => 10,
+    ) );
+    Kirki::add_field( 'b5-title-link', array(
+      'type'        => 'dropdown-pages',
+      'settings'    => 'b5-title-link',
+      'label'       => __( 'Block 5 Title Link', 'kirki-demo' ),
+      'section'     => 'block5',
+      'default'     => '',
+      'priority'    => 10,
+      'multiple'    => 1,
     ) );
 ?>

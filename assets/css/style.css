@@ -3922,6 +3922,22 @@ GENERAL STYLES
   text-align: center;
   padding: 50px 0 50px 0; }
 
+.block-4, .block-5 {
+  padding: 25px 0 25px 0; }
+  .block-4 h1, .block-5 h1 {
+    padding-bottom: 0;
+    margin-bottom: 10px; }
+  .block-4 h2, .block-5 h2 {
+    font-size: 1.375rem; }
+
+.block-5 {
+  background-image: linear-gradient(#3887be, #2f719e);
+  padding: 30px 0 25px 0; }
+  .block-5 h1, .block-5 .h1, .block-5 h2, .block-5 .h2, .block-5 h3, .block-5 .h3, .block-5 h4, .block-5 .h4, .block-5 h5, .block-5 .h5, .block-5 a, .block-5 p {
+    color: #fafafa; }
+  .block-5 a:hover {
+    color: #c7c7c7; }
+
 .homeinnerwrapper {
   background-color: #f8f8f8;
   padding: 20px 20px 0px 10px; }

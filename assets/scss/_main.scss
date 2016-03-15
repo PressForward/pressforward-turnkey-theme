@@ -74,6 +74,26 @@ GENERAL STYLES
 	text-align: center;
 	padding: 50px 0 50px 0;
 }
+.block-4, .block-5 {
+	padding: 25px 0 25px 0;
+	h1 {
+		padding-bottom: 0;
+		margin-bottom: 10px;
+	}
+	h2 {
+		font-size: rem-calc(22);
+	}
+}
+.block-5 {
+		background-image: linear-gradient($dhnow-blue, $dhnow-blue-darkened);
+		padding: 30px 0 25px 0;
+		h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, a, p {
+			color: $dhnow-white;
+		}
+		a:hover {
+			color: darken($dhnow-white, 20%)
+		}
+}
 .homeinnerwrapper {
 	background-color: $dhnow-gray;
 	padding: 20px 20px 0px 10px;

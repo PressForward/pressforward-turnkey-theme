@@ -11,7 +11,8 @@ Template Name: Home Page Template
 
 <div class="row">
 <div class="medium-12 large-12 columns">
-	<div class="orbit" role="region" data-options="autoPlay:false;" aria-label="Editor's Choice" data-orbit>
+	<?php $slider_autoplay = Kirki::get_option('pftk_opts', 'slider-autoplay');
+	echo '<div class="orbit" role="region" data-options="' . $slider_autoplay . '" aria-label="Editor\'s Choice" data-orbit>'; ?>
   	<ul class="orbit-container">
     	<button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
     	<button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
@@ -36,7 +37,7 @@ Template Name: Home Page Template
         $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
 						echo '<li class="orbit-slide">';
 						echo '<div class="row">';
-						echo '<div id="medium-12 columns"><h1>' . $short_title . '</h1></div>';
+						echo '<div class="medium-11 large-11 columns"><h1>' . $short_title . '</h1></div></div>';
 						echo '<div class="row">';
 						echo '<div class="medium-7 columns">';
 						echo '<h2 class="slider-byline">By: ' . get_the_author() . '</h2></br><p class="info-title">' . $shortexcerpt . '</p> <a href="' . get_permalink() . '
@@ -128,7 +129,9 @@ Block 2
 	      </div> <!-- close .block-2 -->
 			<?php endif;	?>
 
-<!--block3 test layout-->
+<!--
+Block 3
+-->
 <?php $toggle_b3 = Kirki::get_option( 'pftk_opts', 'toggle-b3');
 	if ($toggle_b3 == true): ?>
 	<div class="block-3">
@@ -343,9 +346,9 @@ Block 5
 								$block5_title_link = Kirki::get_option( 'pftk_opts', 'b5-title-link');
 								$block5_title = Kirki::get_option('pftk_opts', 'b5-title');
 								if (empty($block5_title_link) == FALSE):
-									echo '<h1 class="widgettitle"><a href="' . get_the_permalink($block5_title_link) . '">' . $block5_title . '</a></h1>';
+									echo '<h1><a href="' . get_the_permalink($block5_title_link) . '">' . $block5_title . '</a></h1>';
 								else:
-									echo '<h1 class="widgettitle">' . $block5_title . '</h1>';
+									echo '<h1>' . $block5_title . '</h1>';
 								endif; ?>
 
 						</div>
@@ -364,7 +367,7 @@ Block 5
 								if ($query->have_posts()) {
 									while ($query->have_posts() ) {
 										$query->the_post();
-										echo '<h4><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h4>';
+										echo '<h2><a href="' . get_the_permalink() . '">' . get_the_title() . '</a></h2>';
 										echo '<p>' . get_the_excerpt() . '</p>';
 									}
 									wp_reset_postdata();

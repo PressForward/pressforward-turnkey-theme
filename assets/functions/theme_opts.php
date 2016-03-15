@@ -73,6 +73,18 @@ Kirki::add_field( 'slider-switch', array(
       'priority'    => 10,
       'choices'     => Kirki_Helper::get_terms( 'category' ),
   ) );
+  Kirki::add_field( 'slider-autoplay', array(
+	'type'        => 'radio-buttonset',
+	'settings'    => 'slider-autoplay',
+	'label'       => __( 'Slider Autoplay', 'my_textdomain' ),
+	'section'     => 'slider',
+	'default'     => 'autoPlay:false;',
+	'priority'    => 10,
+	'choices'     => array(
+		'autoPlay:true;' => esc_attr__( 'On', 'my_textdomain' ),
+    'autoPlay:false;'   => esc_attr__( 'Off', 'my_textdomain' )
+	),
+) );
 
 
 /*********************

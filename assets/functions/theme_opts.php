@@ -670,4 +670,43 @@ Homepage -- Block 5
       'priority'    => 10,
       'multiple'    => 1,
     ) );
+
+
+/*********************
+**********************
+Homepage -- Footer
+**********************
+*********************/
+//Create panel
+Kirki::add_section( 'Footer', array(
+    'title'          => __( 'Footer' ),
+    'description'
+       => __( 'Edit the content and appearance of the fourth block on the homepage.' ),
+    'panel'          => 'homepage', // Not typically needed.
+    'priority'       => 160,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+Kirki::add_field( 'footer-c1-code', array(
+	'type'        => 'code',
+	'settings'    => 'footer-c1-code',
+	'label'       => __( 'Code Control', 'my_textdomain' ),
+	'section'     => 'footer',
+	'default'     => '',
+	'priority'    => 10,
+	'choices'     => array(
+		'language' => 'html',
+		'theme'    => 'monokai',
+		'height'   => 200,
+	),
+) );
+
+
+
+
+
+
+
+
+
 ?>

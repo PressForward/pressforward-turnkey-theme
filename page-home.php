@@ -145,7 +145,7 @@ Block 2
 								echo '<h1><a href="' . get_permalink($b3r1c1_link) .'">' . $b3r1c1_title .'</a></h1>'; ?>
 
 								<ul>
-									<?php $b3r1c1_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+									<?php $b3r1c1_category = Kirki::get_option( 'pftk_opts', 'b3r1c1-category');
 									$b3c1cat = 'cat=' . $b3r1c1_category . '&posts_per_page=3';
 									query_posts($b3c1cat);
 
@@ -172,7 +172,7 @@ Block 2
 					        echo '<h1><a href="' . get_permalink($b3r1c2_link) .'">' . $b3r1c2_title .'</a></h1>'; ?>
 
 					        <ul>
-					          <?php $b3r1c2_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+					          <?php $b3r1c2_category = Kirki::get_option( 'pftk_opts', 'b3r1c2-category');
 					          $b3c1cat = 'cat=' . $b3r1c2_category . '&posts_per_page=3';
 					          query_posts($b3c1cat);
 
@@ -199,7 +199,7 @@ Block 2
 						        echo '<h1><a href="' . get_permalink($b3r1c3_link) .'">' . $b3r1c3_title .'</a></h1>'; ?>
 
 						        <ul>
-						          <?php $b3r1c3_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+						          <?php $b3r1c3_category = Kirki::get_option( 'pftk_opts', 'b3r1c3-category');
 						          $b3c1cat = 'cat=' . $b3r1c3_category . '&posts_per_page=3';
 						          query_posts($b3c1cat);
 
@@ -230,7 +230,7 @@ Block 2
 						echo '<h1><a href="' . get_permalink($b3r2c1_link) .'">' . $b3r2c1_title .'</a></h1>'; ?>
 
 						<ul>
-							<?php $b3r2c1_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+							<?php $b3r2c1_category = Kirki::get_option( 'pftk_opts', 'b3r2c1-category');
 							$b3c1cat = 'cat=' . $b3r2c1_category . '&posts_per_page=3';
 							query_posts($b3c1cat);
 
@@ -257,7 +257,7 @@ Block 2
 			        echo '<h1><a href="' . get_permalink($b3r2c2_link) .'">' . $b3r2c2_title .'</a></h1>'; ?>
 
 			        <ul>
-			          <?php $b3r2c2_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+			          <?php $b3r2c2_category = Kirki::get_option( 'pftk_opts', 'b3r2c2-category');
 			          $b3c1cat = 'cat=' . $b3r2c2_category . '&posts_per_page=3';
 			          query_posts($b3c1cat);
 
@@ -284,7 +284,7 @@ Block 2
 				        echo '<h1><a href="' . get_permalink($b3r2c3_link) .'">' . $b3r2c3_title .'</a></h1>'; ?>
 
 				        <ul>
-				          <?php $b3r2c3_category = Kirki::get_option( 'pftk_opts', 'slider_category');
+				          <?php $b3r2c3_category = Kirki::get_option( 'pftk_opts', 'b3r2c3-category');
 				          $b3c1cat = 'cat=' . $b3r2c3_category . '&posts_per_page=3';
 				          query_posts($b3c1cat);
 

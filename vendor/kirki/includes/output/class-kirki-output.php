@@ -2,20 +2,44 @@
 
 class Kirki_Output {
 
+	/**
+	 * @access protected
+	 * @var string
+	 */
 	protected $config_id = 'global';
-	protected $output    = array();
-	protected $styles    = array();
+
+	/**
+	 * @access protected
+	 * @var array
+	 */
+	protected $output = array();
+
+	/**
+	 * @access protected
+	 * @var array
+	 */
+	protected $styles = array();
+
+	/**
+	 * @access protected
+	 * @var string|array
+	 */
 	protected $value;
 
 	/**
 	 * The class constructor
+	 *
+	 * @access public
+	 * @param $config_id    string
+	 * @param $output       array
+	 * @param $value        string|array
 	 */
 	public function __construct( $config_id, $output, $value ) {
+
 		$this->config_id = $config_id;
 		$this->value     = $value;
 		$this->output    = $output;
 
-		$this->sanitize_elements();
 		$this->parse_output();
 	}
 
@@ -40,30 +64,10 @@ class Kirki_Output {
 	}
 
 	/**
-	 * Convert element arrays to strings
-	 * and finally escapes them using the esc_js function.
-	 */
-	protected function sanitize_elements() {
-		foreach ( $this->output as $key => $output ) {
-			if ( is_array( $output['element'] ) ) {
-				// Make sure our values are unique
-				$output['element'] = array_unique( $output['element'] );
-				// Sort elements alphabetically.
-				// This way all duplicate items will be merged in the final CSS array.
-				sort( $output['element'] );
-				// Implode items to build the string
-				$output['element'] = implode( ',', $output['element'] );
-			}
-			// escape the element
-			$output['element'] = esc_js( $output['element'] );
-
-			$this->output[ $key ]['element'] = $output['element'];
-		}
-	}
-
-	/**
 	 * Parses the output arguments
 	 * Calls the process_output method for each of them.
+	 *
+	 * @access protected
 	 */
 	protected function parse_output() {
 		foreach ( $this->output as $output ) {
@@ -71,7 +75,7 @@ class Kirki_Output {
 			// Apply any sanitization callbacks defined
 			$value = $this->apply_sanitize_callback( $output, $this->value );
 			// No need to proceed this if the current value is the same as in the "exclude" value.
-			if ( false !== $output['exclude'] && is_array( $output['exclude'] ) ) {
+			if ( isset( $output['exclude'] ) && false !== $output['exclude'] && is_array( $output['exclude'] ) ) {
 				foreach ( $output['exclude'] as $exclude ) {
 					if ( $skip ) {
 						continue;
@@ -85,6 +89,12 @@ class Kirki_Output {
 				continue;
 			}
 
+			if ( isset( $output['element'] ) && is_array( $output['element'] ) ) {
+				$output['element'] = array_unique( $output['element'] );
+				sort( $output['element'] );
+				$output['element'] = implode( ',', $output['element'] );
+			}
+
 			$value = $this->process_value( $value, $output );
 			$this->process_output( $output, $value );
 		}
@@ -93,12 +103,21 @@ class Kirki_Output {
 	/**
 	 * Parses an output and creates the styles array for it
 	 *
+	 * @access protected
 	 * @param $output array
 	 * @param $value  string
 	 *
 	 * @return void
 	 */
 	protected function process_output( $output, $value ) {
+		if ( ! isset( $output['element'] ) || ! isset( $output['property'] ) ) {
+			return;
+		}
+		$output['media_query'] = ( isset( $output['media_query'] ) ) ? $output['media_query'] : 'global';
+		$output['prefix']      = ( isset( $output['prefix'] ) )      ? $output['prefix']      : '';
+		$output['units']       = ( isset( $output['units'] ) )       ? $output['units']       : '';
+		$output['suffix']      = ( isset( $output['suffix'] ) )      ? $output['suffix']      : '';
+
 		$this->styles[ $output['media_query'] ][ $output['element'] ][ $output['property'] ] = $output['prefix'] . $value . $output['units'] . $output['suffix'];
 	}
 
@@ -106,8 +125,11 @@ class Kirki_Output {
 	 * Some CSS properties are unique.
 	 * We need to tweak the value to make everything works as expected.
 	 *
+	 * @access protected
 	 * @param $property  string  the CSS property
 	 * @param $value     string  the value
+	 *
+	 * @return array
 	 */
 	protected function process_property_value( $property, $value ) {
 		$properties = apply_filters( 'kirki/' . $this->config_id . '/output/property-classnames', array(
@@ -126,6 +148,7 @@ class Kirki_Output {
 	/**
 	 * Returns the value
 	 *
+	 * @access protected
 	 * @param string|array
 	 *
 	 * @return string|array
@@ -140,6 +163,7 @@ class Kirki_Output {
 	/**
 	 * Exploses the private $styles property to the world
 	 *
+	 * @access protected
 	 * @return array
 	 */
 	public function get_styles() {

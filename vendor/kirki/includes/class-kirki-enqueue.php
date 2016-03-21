@@ -27,8 +27,6 @@ if ( ! class_exists( 'Kirki_Enqueue' ) ) {
 
 		public function customize_controls_enqueue_scripts() {
 
-			$l10n = Kirki_Toolkit::i18n();
-
 			wp_enqueue_script( 'kirki-tooltip', trailingslashit( Kirki::$url ) . 'assets/js/kirki-tooltip.js', array( 'jquery', 'customize-controls' ) );
 			wp_enqueue_script( 'serialize-js', trailingslashit( Kirki::$url ) . 'assets/js/vendor/serialize.js' );
 			wp_enqueue_script( 'jquery-ui-core' );
@@ -37,12 +35,7 @@ if ( ! class_exists( 'Kirki_Enqueue' ) ) {
 			wp_enqueue_script( 'wp-color-picker-alpha', trailingslashit( Kirki::$url ) . 'assets/js/vendor/wp-color-picker-alpha.js', array( 'wp-color-picker' ), '1.2' );
 			wp_enqueue_style( 'wp-color-picker' );
 
-			if ( ! Kirki_Toolkit::kirki_debug() ) {
-				$suffix = '.min';
-				if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
-					$suffix = '';
-				}
-			}
+			$suffix = ( ! Kirki_Toolkit::is_debug() ) ? '.min' : '';
 
 			Kirki_Styles_Customizer::enqueue_customizer_control_script( 'codemirror', 'vendor/codemirror/lib/codemirror', array( 'jquery' ) );
 			Kirki_Styles_Customizer::enqueue_customizer_control_script( 'selectize', 'vendor/selectize', array( 'jquery' ) );
@@ -61,26 +54,38 @@ if ( ! class_exists( 'Kirki_Enqueue' ) ) {
 				'selectize',
 			);
 
-			wp_enqueue_script( 'kirki-customizer-js', trailingslashit( Kirki::$url ) . 'assets/js/customizer' . $suffix . '.js', $deps, Kirki_Toolkit::$version );
+			wp_enqueue_script( 'kirki-customizer-js', trailingslashit( Kirki::$url ) . 'assets/js/customizer' . $suffix . '.js', $deps, Kirki_Toolkit::get_version() );
 
 			$google_fonts   = Kirki_Fonts::get_google_fonts();
 			$standard_fonts = Kirki_Fonts::get_standard_fonts();
 			$all_variants   = Kirki_Fonts::get_all_variants();
-			$all_subsets    = Kirki_Fonts::get_all_subsets();
+			$all_subsets    = Kirki_Fonts::get_google_font_subsets();
 
 			$standard_fonts_final = array();
 			foreach ( $standard_fonts as $key => $value ) {
 				$standard_fonts_final[] = array(
-					'family'       => $value['stack'],
-					'label'        => $value['label'],
-					'variants'     => array(
-						array( 'id' => 'regular',   'label' => $all_variants['regular'] ),
-						array( 'id' => 'italic',    'label' => $all_variants['italic'] ),
-						array( 'id' => '700',       'label' => $all_variants['700'] ),
-						array( 'id' => '700italic', 'label' => $all_variants['700italic'] ),
+					'family'      => $value['stack'],
+					'label'       => $value['label'],
+					'subsets'     => array(),
+					'is_standard' => true,
+					'variants'    => array(
+						array(
+							'id'    => 'regular',
+							'label' => $all_variants['regular']
+						),
+						array(
+							'id'    => 'italic',
+							'label' => $all_variants['italic']
+						),
+						array(
+							'id'    => '700',
+							'label' => $all_variants['700']
+						),
+						array(
+							'id'    => '700italic',
+							'label' => $all_variants['700italic']
+						),
 					),
-					'subsets'      => array(),
-					'is_standard'  => true,
 				);
 			}
 
@@ -88,7 +93,7 @@ if ( ! class_exists( 'Kirki_Enqueue' ) ) {
 			foreach ( $google_fonts as $family => $args ) {
 				$label    = ( isset( $args['label'] ) ) ? $args['label'] : $family;
 				$variants = ( isset( $args['variants'] ) ) ? $args['variants'] : array( 'regular', '700' );
-				$subsets  = ( isset( $args['subsets'] ) ) ? $args['subsets'] : array( 'all' );
+				$subsets  = ( isset( $args['subsets'] ) ) ? $args['subsets'] : array();
 
 				$available_variants = array();
 				foreach ( $variants as $variant ) {

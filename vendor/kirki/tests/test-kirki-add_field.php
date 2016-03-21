@@ -41,7 +41,6 @@ class Test_Kirki_Add_Field extends WP_UnitTestCase {
 			'priority' => 10,
 			'default'  => 'some-default-value',
 		) );
-
 		$this->assertEquals(
 			array(
 				'settings'          => 'my_setting_global',
@@ -59,13 +58,21 @@ class Test_Kirki_Add_Field extends WP_UnitTestCase {
 				'active_callback'   => '__return_true',
 				'choices'           => array(),
 				'output'            => array(),
-				'variables'         => null,
+				'variables'         => array(),
 				'id'                => 'my_setting_global',
+				'transport'         => 'refresh',
 				'sanitize_callback' => 'wp_kses_post',
 				'choices'           => array(
 					'element' => 'input',
 					'type'    => 'text',
 				),
+				'js_vars'           => array(),
+				'help'              => '',
+				'mode'              => '',
+				'required'          => array(),
+				'multiple'          => 1,
+				'description'       => '',
+				'fields'            => array(),
 			),
 			Kirki::$fields['my_setting_global']
 		);
@@ -87,13 +94,21 @@ class Test_Kirki_Add_Field extends WP_UnitTestCase {
 				'active_callback'   => '__return_true',
 				'choices'           => array(),
 				'output'            => array(),
-				'variables'         => null,
+				'variables'         => array(),
 				'id'                => 'my_option_name-my_setting_test',
 				'sanitize_callback' => 'wp_kses_post',
+				'transport'         => 'refresh',
 				'choices'           => array(
 					'element' => 'input',
 					'type'    => 'text',
 				),
+				'js_vars'           => array(),
+				'help'              => '',
+				'mode'              => '',
+				'required'          => array(),
+				'multiple'          => 1,
+				'description'       => '',
+				'fields'            => array(),
 
 			),
 			Kirki::$fields['my_option_name[my_setting_test]']
@@ -129,13 +144,21 @@ class Test_Kirki_Add_Field extends WP_UnitTestCase {
 				'active_callback'   => '__return_true',
 				'choices'           => array(),
 				'output'            => array(),
-				'variables'         => null,
+				'variables'         => array(),
 				'id'                => 'my_setting_global',
 				'sanitize_callback' => 'wp_kses_post',
+				'transport'         => 'refresh',
 				'choices'           => array(
 					'element' => 'textarea',
 					'rows'    => '5',
 				),
+				'js_vars'           => array(),
+				'help'              => '',
+				'mode'              => '',
+				'required'          => array(),
+				'multiple'          => 1,
+				'description'       => '',
+				'fields'            => array(),
 			),
 			Kirki::$fields['my_setting_global']
 		);

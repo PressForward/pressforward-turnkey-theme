@@ -21,8 +21,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 	class Kirki_Styles_Customizer {
 
-		public $color_back;
-		public $color_font;
+		public $color_back = false;
+		public $color_font = false;
 		public $color_accent;
 		public $border_color;
 		public $buttons_color;
@@ -41,7 +41,7 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 		 * Enqueue the stylesheets required.
 		 */
 		public function customizer_styles() {
-			wp_enqueue_style( 'kirki-customizer-css', trailingslashit( Kirki::$url ) . 'assets/css/customizer.css', null, Kirki_Toolkit::$version );
+			wp_enqueue_style( 'kirki-customizer-css', trailingslashit( Kirki::$url ) . 'assets/css/customizer.css', null, Kirki_Toolkit::get_version() );
 			wp_add_inline_style( 'kirki-customizer-css', $this->custom_css() );
 		}
 
@@ -53,12 +53,12 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 		 *
 		 * These files are only enqueued when debugging Kirki
 		 *
-		 * @param string $handle
-		 * @param string $file
-		 * @param array  $deps
+		 * @param string       $handle
+		 * @param string|null  $file
+		 * @param array        $deps
 		 */
 		public static function enqueue_customizer_control_script( $handle, $file = null, $deps = array(), $in_footer = false ) {
-			if ( ( false !== strpos( $file, 'controls/' ) && Kirki_Toolkit::kirki_debug() ) || false === strpos( $file, 'controls/' ) ) {
+			if ( ( false !== strpos( $file, 'controls/' ) && Kirki_Toolkit::is_debug() ) || false === strpos( $file, 'controls/' ) ) {
 				$file = trailingslashit( Kirki::$url ) . 'assets/js/' . $file . '.js';
 				foreach ( $deps as $dep ) {
 					wp_enqueue_script( $dep );
@@ -84,19 +84,19 @@ if ( ! class_exists( 'Kirki_Styles_Customizer' ) ) {
 			}
 
 			// Calculate the background & font colors
-			$this->color_back = false;
-			$this->color_font = false;
 			if ( isset( $config['color_back'] ) ) {
 				$this->color_back = Kirki_Color::sanitize_hex( $config['color_back'] );
 				$this->color_font = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? '#f2f2f2' : '#222';
 			}
 
-			$this->border_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? 'rgba(255,255,255,.2)' : 'rgba(0,0,0,.2)';
-			$this->buttons_color            = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 80 ) : Kirki_Color::adjust_brightness( $this->color_back, -80 );
+			if ( $this->color_back ) {
+				$this->buttons_color = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 80 ) : Kirki_Color::adjust_brightness( $this->color_back, -80 );
+				$this->border_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? 'rgba(255,255,255,.2)' : 'rgba(0,0,0,.2)';
+				$this->arrows_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 120 ) : Kirki_Color::adjust_brightness( $this->color_back, -120 );
+				$this->section_background_color = Kirki_Color::mix_colors( $this->color_back, '#ffffff', 10 );
+			}
 			$this->controls_color           = ( ( 170 > Kirki_Color::get_brightness( $this->color_accent ) ) ) ? '#ffffff;' : '#333333';
-			$this->arrows_color             = ( 170 > Kirki_Color::get_brightness( $this->color_back ) ) ? Kirki_Color::adjust_brightness( $this->color_back, 120 ) : Kirki_Color::adjust_brightness( $this->color_back, -120 );
 			$this->color_accent_text        = ( 170 > Kirki_Color::get_brightness( $this->color_accent ) ) ? Kirki_Color::adjust_brightness( $this->color_accent, 120 ) : Kirki_Color::adjust_brightness( $this->color_accent, -120 );
-			$this->section_background_color = Kirki_Color::mix_colors( $this->color_back, '#ffffff', 10 );
 
 		}
 

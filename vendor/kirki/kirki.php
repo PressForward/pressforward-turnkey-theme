@@ -5,7 +5,7 @@
  * Description:   The ultimate WordPress Customizer Toolkit
  * Author:        Aristeides Stathopoulos
  * Author URI:    http://aristeides.com
- * Version:       2.2.0.beta.1
+ * Version:       2.2.4
  * Text Domain:   kirki
  *
  * GitHub Plugin URI: aristath/kirki
@@ -28,26 +28,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 // Include the autoloader
 include_once( dirname( __FILE__ ) . DIRECTORY_SEPARATOR . 'autoloader.php' );
 
+// Gets an instance of the main Kirki object.
 if ( ! function_exists( 'Kirki' ) ) {
-	/**
-	 * Returns the Kirki object
-	 */
 	function Kirki() {
-		// Make sure the class is instanciated
 		$kirki = Kirki_Toolkit::get_instance();
-		// The path of the current Kirki instance
-		Kirki::$path = dirname( __FILE__ );
-
 		return $kirki;
 	}
-
 }
+// Start Kirki
 global $kirki;
 $kirki = Kirki();
+// Make sure the path is properly set
+Kirki::$path = wp_normalize_path( dirname( __FILE__ ) );
+// Instantiate 2ndary classes
+new Kirki_l10n();
+new Kirki_Scripts_Registry();
+new Kirki_Styles_Customizer();
+new Kirki_Styles_Frontend();
+new Kirki_Selective_Refresh();
+new Kirki();
 
-/**
- * Apply the filters to the Kirki::$url
- */
+// apply the kirki/config filter to the URL
 if ( ! function_exists( 'kirki_filtered_url' ) ) {
 	function kirki_filtered_url() {
 		$config = apply_filters( 'kirki/config', array() );
@@ -55,40 +56,12 @@ if ( ! function_exists( 'kirki_filtered_url' ) ) {
 			Kirki::$url = esc_url_raw( $config['url_path'] );
 		}
 	}
+}
+if ( ! Kirki_Toolkit::is_plugin() ) {
 	add_action( 'after_setup_theme', 'kirki_filtered_url' );
 }
-
+// Include deprectaed functions & methods
 include_once( Kirki::$path . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'deprecated.php' );
-// Include the API class
-include_once( Kirki::$path . DIRECTORY_SEPARATOR . 'includes' . DIRECTORY_SEPARATOR . 'class-kirki.php' );
-
-if ( ! function_exists( 'kirki_load_textdomain' ) ) {
-	/**
-	 * Load plugin textdomain.
-	 *
-	 * @since 0.8.0
-	 */
-	function kirki_load_textdomain() {
-		$textdomain = 'kirki';
-
-		// Look for WP_LANG_DIR/{$domain}-{$locale}.mo
-		if ( file_exists( WP_LANG_DIR . '/' . $textdomain . '-' . get_locale() . '.mo' ) ) {
-			$file = WP_LANG_DIR . '/' . $textdomain . '-' . get_locale() . '.mo';
-		}
-		// Look for Kirki::$path/languages/{$domain}-{$locale}.mo
-		if ( ! isset( $file ) && file_exists( Kirki::$path . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR . $textdomain . '-' . get_locale() . '.mo' ) ) {
-			$file = Kirki::$path . DIRECTORY_SEPARATOR . 'languages' . DIRECTORY_SEPARATOR . $textdomain . '-' . get_locale() . '.mo';
-		}
-
-		if ( isset( $file ) ) {
-			load_textdomain( $textdomain, $file );
-		}
-
-		load_plugin_textdomain( $textdomain, false, Kirki::$path . DIRECTORY_SEPARATOR . 'languages' );
-	}
-	add_action( 'plugins_loaded', 'kirki_load_textdomain' );
-}
-
 // Include the ariColor library
 include_once( wp_normalize_path( Kirki::$path . '/includes/lib/class-aricolor.php' ) );
 

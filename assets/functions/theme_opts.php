@@ -23,6 +23,11 @@ Kirki::add_config( 'pftk_opts', array(
       'title'       => __( 'Home Page', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
+  Kirki::add_panel( 'typography', array(
+      'priority'    => 10,
+      'title'       => __( 'Typography', 'theme_slug' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
+  ) );
 
 /*********************
 Homepage -- Slider -- Options
@@ -65,7 +70,7 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider_category', array(
       'type'        => 'select',
       'settings'    => 'slider_category',
-      'label'       => __( 'This is the label', 'kirki' ),
+      'label'       => __( 'Slider Post Category', 'kirki' ),
       'description' => __( 'This is the control description', 'kirki' ),
       'help'        => __( 'This is some extra help text.', 'kirki' ),
       'section'     => 'slider',
@@ -713,11 +718,65 @@ Kirki::add_field( 'footer-c1-code', array(
 	),
 ) );
 
+/*********************
+**********************
+Sitewide -- Typography
+**********************
+*********************/
+//Create Section for Typography controls
+
+  //Create panel
+  Kirki::add_section( 'fontcontrol', array(
+      'title'          => __( 'font control' ),
+      'description'
+         => __( 'description goes here.' ),
+      'panel'          => 'typography', // Not typically needed.
+      'priority'       => 160,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
 
 
+  Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'typography',
+	'settings'    => 'body-font',
+	'label'       => esc_attr__( 'Control Label', 'kirki' ),
+	'section'     => 'fontcontrol',
+	'default'     => array(
+		'font-family'    => 'Roboto',
+		'variant'        => '400',
+		'font-size'      => '14px',
+		'line-height'    => '1.5',
+		'letter-spacing' => '0',
+		'color'          => '#333333',
+	),
+	'priority'    => 10,
+	'output'      => array(
+		array(
+			'element' => 'body',
+		),
+	),
+) );
 
-
-
+Kirki::add_field( 'pftk_opts', array(
+'type'        => 'typography',
+'settings'    => 'header-font',
+'label'       => esc_attr__( 'Control Label', 'kirki' ),
+'section'     => 'fontcontrol',
+'default'     => array(
+  'font-family'    => 'Lato',
+  'variant'        => '300',
+  'line-height'    => '1.5',
+  'letter-spacing' => '2',
+  'color'          => '#333333',
+),
+'priority'    => 10,
+'output'      => array(
+  array(
+    'element' => 'h1, h2, h3, h4, h5, h6',
+  ),
+),
+) );
 
 
 

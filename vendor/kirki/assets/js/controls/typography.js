@@ -4,11 +4,9 @@
 wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 	ready: function() {
 		var control = this;
-
-		var fontFamilySelector = '#kirki-typography-font-family-' + control.id;
-		var variantSelector    = '#kirki-typography-variant-' + control.id;
-		var subsetSelector     = '#kirki-typography-subset-' + control.id;
-
+		var fontFamilySelector = control.selector + ' .font-family select';
+		var variantSelector    = control.selector + ' .variant select';
+		var subsetSelector     = control.selector + ' .subset select';
 		// Get initial values
 		var value = {};
 		value['font-family']    = ( undefined !== control.setting._value['font-family'] ) ? control.setting._value['font-family'] : '';
@@ -24,7 +22,9 @@ wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 			var is_standard = false;
 			var subList = {}
 			// destroy
-			jQuery( subSelector ).selectize()[0].selectize.destroy();
+			if ( undefined !== jQuery( subSelector ).selectize()[0] ) {
+				jQuery( subSelector ).selectize()[0].selectize.destroy();
+			}
 			// Get all items in the sub-list for the active font-family
 			for ( var i = 0, len = kirkiAllFonts.length; i < len; i++ ) {
 				if ( fontFamily === kirkiAllFonts[ i ]['family'] ) {
@@ -53,9 +53,11 @@ wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 					} else if ( 'subset' == sub ) { // The context here is subsets
 						var subsetValues = {};
 						for ( var i = 0, len = subList.length; i < len; i++ ) {
-							for ( var s = 0, len = value['subset'].length; s < len; s++ ) {
-								if ( undefined !== subList[ i ] && value['subset'][ s ] == subList[ i ]['id'] ) {
-									subsetValues[ value['subset'][ s ] ] = value['subset'][ s ];
+							if ( null !== value['subset'] ) {
+								for ( var s = 0, len = value['subset'].length; s < len; s++ ) {
+									if ( undefined !== subList[ i ] && value['subset'][ s ] == subList[ i ]['id'] ) {
+										subsetValues[ value['subset'][ s ] ] = value['subset'][ s ];
+									}
 								}
 							}
 						}
@@ -91,6 +93,22 @@ wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 						option: function( item, escape ) { return '<div>' + escape( item.label ) + '</div>'; }
 					},
 				}).data( 'selectize' );
+			}
+
+
+			// If only 1 option is available then there's no reason to show this.
+			if ( 'variant' == sub ) {
+				if ( 1 === subList.length || 0 === subList.length ) {
+					control.container.find( '.kirki-variant-wrapper' ).css( 'display', 'none' );
+				} else {
+					control.container.find( '.kirki-variant-wrapper' ).css( 'display', 'block' );
+				}
+			} else if ( 'subset' == sub ) {
+				if ( 0 === subList.length ) {
+					control.container.find( '.kirki-subset-wrapper' ).css( 'display', 'none' );
+				} else {
+					control.container.find( '.kirki-subset-wrapper' ).css( 'display', 'block' );
+				}
 			}
 
 			if ( true === is_standard ) {
@@ -153,7 +171,7 @@ wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 			wp.customize.previewer.refresh();
 		});
 
-		this.container.on( 'change', '.font-size input', function() {
+		this.container.on( 'change keyup paste', '.font-size input', function() {
 			// add the value to the array and set the setting's value
 			value['font-size'] = jQuery( this ).val();
 			control.setting.set( value );
@@ -161,7 +179,7 @@ wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 			wp.customize.previewer.refresh();
 		});
 
-		this.container.on( 'change', '.line-height input', function() {
+		this.container.on( 'change keyup paste', '.line-height input', function() {
 			// add the value to the array and set the setting's value
 			value['line-height'] = jQuery( this ).val();
 			control.setting.set( value );
@@ -169,7 +187,7 @@ wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 			wp.customize.previewer.refresh();
 		});
 
-		this.container.on( 'change', '.letter-spacing input', function() {
+		this.container.on( 'change keyup paste', '.letter-spacing input', function() {
 			// add the value to the array and set the setting's value
 			value['letter-spacing'] = jQuery( this ).val();
 			control.setting.set( value );
@@ -182,8 +200,8 @@ wp.customize.controlConstructor['typography'] = wp.customize.Control.extend( {
 			change: function() {
 				setTimeout ( function() {
 					// add the value to the array and set the setting's value
-					compiled_value[ 'color' ] = picker.val ();
-					control.setting.set ( compiled_value );
+					value[ 'color' ] = picker.val ();
+					control.setting.set ( value );
 					// refresh the preview
 					wp.customize.previewer.refresh ();
 				}, 100 );

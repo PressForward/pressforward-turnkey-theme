@@ -49,7 +49,9 @@ if ( ! class_exists( 'Kirki' ) ) {
 		 * @param string $config_id
 		 */
 		public static function add_config( $config_id, $args = array() ) {
-			new Kirki_Config( $config_id, $args );
+			$config = Kirki_Config::get_instance( $config_id, $args );
+			$config_args = $config->get_config();
+			self::$config[ $config_args['id'] ] = $config_args;
 		}
 
 		/**
@@ -63,6 +65,7 @@ if ( ! class_exists( 'Kirki' ) ) {
 			$args['id']          = esc_attr( $id );
 			$args['description'] = ( isset( $args['description'] ) ) ? esc_textarea( $args['description'] ) : '';
 			$args['priority']    = ( isset( $args['priority'] ) ) ? esc_attr( $args['priority'] ) : 10;
+			$args['type']        = ( isset( $args['type'] ) ) ? $args['type'] : 'default';
 			if ( ! isset( $args['active_callback'] ) ) {
 				$args['active_callback'] = ( isset( $args['required'] ) ) ? array( 'Kirki_Active_Callback', 'evaluate' ) : '__return_true';
 			}

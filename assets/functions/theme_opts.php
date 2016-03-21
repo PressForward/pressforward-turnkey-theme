@@ -20,12 +20,12 @@ Kirki::add_config( 'pftk_opts', array(
 //create panel for homepage options
   Kirki::add_panel( 'homepage', array(
       'priority'    => 10,
-      'title'       => __( 'Home Page', 'theme_slug' ),
+      'title'       => __( 'Home Page Layout', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
-  Kirki::add_panel( 'typography', array(
+  Kirki::add_panel( 'styling', array(
       'priority'    => 10,
-      'title'       => __( 'Typography', 'theme_slug' ),
+      'title'       => __( 'Styling', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
 
@@ -727,10 +727,10 @@ Sitewide -- Typography
 
   //Create panel
   Kirki::add_section( 'fontcontrol', array(
-      'title'          => __( 'font control' ),
+      'title'          => __( 'Fonts' ),
       'description'
          => __( 'description goes here.' ),
-      'panel'          => 'typography', // Not typically needed.
+      'panel'          => 'styling', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
@@ -777,7 +777,36 @@ Kirki::add_field( 'pftk_opts', array(
   ),
 ),
 ) );
-
+//Create panel
+Kirki::add_section( 'colors', array(
+    'title'          => __( 'Colors' ),
+    'description'
+       => __( 'description goes here.' ),
+    'panel'          => 'styling', // Not typically needed.
+    'priority'       => 10,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+Kirki::add_field( 'preset-colors', array(
+	'type'        => 'palette',
+	'settings'    => 'preset-colors',
+	'label'       => __( 'Palette Control', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => 'light',
+	'priority'    => 10,
+	'choices'     => array(
+		'light' => array(
+			'#ECEFF1',
+			'#333333',
+			'#4DD0E1',
+		),
+		'dark' => array(
+			'#37474F',
+			'#FFFFFF',
+			'#F9A825',
+		),
+	),
+) );
 
 
 ?>

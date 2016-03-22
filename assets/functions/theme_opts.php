@@ -812,7 +812,73 @@ Kirki::add_field( 'pftk_opts', array(
 	'alpha'       => true,
   'output' => array(
 		array(
-			'element'  => '.top-bar a, .top-bar p, a::after',
+			'element'  => '.top-bar a, .top-bar p',
+			'property' => 'color',
+		),
+	),
+) );
+//icon color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'icon-color',
+	'label'       => __( 'Icon Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => 'i',
+			'property' => 'color',
+		),
+	),
+) );
+// slider bg color
+//slider txt color
+// b2 bg color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b2-bg-color',
+	'label'       => __( 'Block 2 Background Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-2',
+			'property' => 'background-color',
+		),
+	),
+) );
+//b2 link color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b2-link-color',
+	'label'       => __( 'Block 2 Link Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-2 a',
+			'property' => 'color',
+		),
+	),
+) );
+//b2 text color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b2-text-color',
+	'label'       => __( 'Block 2 Text Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-2 p',
 			'property' => 'color',
 		),
 	),

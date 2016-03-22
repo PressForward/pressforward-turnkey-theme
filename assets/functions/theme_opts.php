@@ -23,9 +23,9 @@ Kirki::add_config( 'pftk_opts', array(
       'title'       => __( 'Home Page Layout', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
-  Kirki::add_panel( 'styling', array(
+  Kirki::add_panel( 'designelements', array(
       'priority'    => 10,
-      'title'       => __( 'Styling', 'theme_slug' ),
+      'title'       => __( 'Design Elements', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
 
@@ -730,7 +730,7 @@ Sitewide -- Typography
       'title'          => __( 'Fonts' ),
       'description'
          => __( 'description goes here.' ),
-      'panel'          => 'styling', // Not typically needed.
+      'panel'          => 'designelements', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
@@ -782,28 +782,38 @@ Kirki::add_section( 'colors', array(
     'title'          => __( 'Colors' ),
     'description'
        => __( 'description goes here.' ),
-    'panel'          => 'styling', // Not typically needed.
+    'panel'          => 'designelements', // Not typically needed.
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-Kirki::add_field( 'preset-colors', array(
-	'type'        => 'palette',
-	'settings'    => 'preset-colors',
-	'label'       => __( 'Palette Control', 'my_textdomain' ),
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'topbar',
+	'label'       => __( 'Top Bar Background Color', 'my_textdomain' ),
 	'section'     => 'colors',
-	'default'     => 'light',
+	'default'     => '',
 	'priority'    => 10,
-	'choices'     => array(
-		'light' => array(
-			'#ECEFF1',
-			'#333333',
-			'#4DD0E1',
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.top-bar, .menu-text, .menu-item',
+			'property' => 'background-color',
 		),
-		'dark' => array(
-			'#37474F',
-			'#FFFFFF',
-			'#F9A825',
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'topbar-text',
+	'label'       => __( 'Top Bar Text Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.top-bar a, .top-bar p, a::after',
+			'property' => 'color',
 		),
 	),
 ) );

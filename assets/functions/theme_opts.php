@@ -853,6 +853,24 @@ Kirki::add_field( 'pftk_opts', array(
 	),
 ) );
 // slider bg color
+Kirki::add_field( 'slider-color-1', array(
+	'type'        => 'color',
+	'settings'    => 'slider-color-1',
+	'label'       => __( 'Slider Gradient (Color #1)', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '#0088CC',
+	'priority'    => 10,
+	'alpha'       => true,
+) );
+Kirki::add_field( 'slider-color-2', array(
+	'type'        => 'color',
+	'settings'    => 'slider-color-2',
+	'label'       => __( 'Slider Gradient (Color #2)', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '#0088CC',
+	'priority'    => 10,
+	'alpha'       => true,
+) );
 //slider txt color
 // b2 bg color
 Kirki::add_field( 'pftk_opts', array(

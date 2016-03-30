@@ -32,7 +32,11 @@
     //block4 gradient
     $b4_color_1 = get_theme_mod( 'b4-color-1', '#000' );
     $b4_color_2 = get_theme_mod( 'b4-color-2', '#000' );
-    echo '<style>.block-4{' . construct_gradient($color_1, $color_2) . '}</style>';
+    $slider_color_1 = get_theme_mod( 'slider-color-1', '#000' );
+    $slider_color_2 = get_theme_mod( 'slider-color-2', '#000' );
+    echo '<style>.block-5{' . construct_gradient($b4_color_1, $b4_color_2) . '}';
+    echo '.slider-container {' . construct_gradient($slider_color_1, $slider_color_2) . '}';
+    echo '</style>';
     ?>
 		<!-- Drop Google Analytics here -->
 		<!-- end analytics -->

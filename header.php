@@ -28,7 +28,12 @@
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 		<?php wp_head(); ?>
-
+    <?php
+    //block4 gradient
+    $b4_color_1 = get_theme_mod( 'b4-color-1', '#000' );
+    $b4_color_2 = get_theme_mod( 'b4-color-2', '#000' );
+    echo '<style>.block-4{' . construct_gradient($color_1, $color_2) . '}</style>';
+    ?>
 		<!-- Drop Google Analytics here -->
 		<!-- end analytics -->
 

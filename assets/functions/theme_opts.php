@@ -1023,61 +1023,24 @@ Kirki::add_field( 'pftk_opts', array(
 		),
 	),
 ) );
-//setup gradients
-/**
- * Build a background-gradient style for CSS
- *
- * @param $color_1      hex color value
- * @param $color_2      hex color value
- *
- * @return string       CSS definition
- */
-function kirki_build_gradients( $color_1, $color_2 ) {
 
-    $styles  = 'background:'.$color_1;
-    $styles  .= 'background: -webkit-linear-gradient(' . $color_1 . ',' . $color_2 . ')'; /* For Safari 5.1 to 6.0 */
-    $styles  .= 'background: -o-linear-gradient(' . $color_1 . ',' . $color_2 . ')'; /* For Opera 11.1 to 12.0 */
-    $styles  .=  'background: -moz-linear-gradient(' . $color_1 . ',' . $color_2 . ')';  /* For Firefox 3.6 to 15 */
-    $styles  .=  'background: linear-gradient(' . $color_1 . ',' . $color_2 .')';  /* Standard syntax */
-    return $styles;
 
-}
-
-/**
- * Build & enqueue the complete CSS for headers.
- *
- * @return void
- */
-function kirki_enqueue_header_gradients() {
-  wp_enqueue_style(
-		'styles',
-		get_template_directory_uri() . '/css/style.css'
-	);
-    $color_1 = Kirki::get_option( 'pftk_opts', 'color_1');
-    $color_2 = Kirki::get_option( 'pftk_opts', 'color_2');
-
-    $css = '.block-2 {'.kirki_build_gradients( $color_1, $color_2 ).'}';
-    wp_add_inline_style( 'styles', $css );
-
-}
-add_action( 'wp_enqueue_scripts', 'kirki_enqueue_header_gradients', 999 );
-Kirki::add_field( 'pftk_opts', array(
+Kirki::add_field( 'b4-color-1', array(
 	'type'        => 'color',
-	'settings'    => 'color_1',
-	'label'       => __( 'Test Color 1', 'my_textdomain' ),
+	'settings'    => 'b4-color-1',
+	'label'       => __( 'Block 4 Gradient (Color #1)', 'my_textdomain' ),
 	'section'     => 'colors',
-	'default'     => '',
+	'default'     => '#0088CC',
 	'priority'    => 10,
-	'alpha'       => true
+	'alpha'       => true,
 ) );
-Kirki::add_field( 'pftk_opts', array(
+Kirki::add_field( 'b4-color-2', array(
 	'type'        => 'color',
-	'settings'    => 'color_2',
-	'label'       => __( 'Test Color 2', 'my_textdomain' ),
+	'settings'    => 'b4-color-2',
+	'label'       => __( 'Block 4 Gradient (Color #2) ', 'my_textdomain' ),
 	'section'     => 'colors',
-	'default'     => '',
+	'default'     => '#0088CC',
 	'priority'    => 10,
-	'alpha'       => true
+	'alpha'       => true,
 ) );
-
 ?>

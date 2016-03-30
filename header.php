@@ -30,11 +30,11 @@
 		<?php wp_head(); ?>
     <?php
     //block4 gradient
-    $b4_color_1 = get_theme_mod( 'b4-color-1', '#000' );
-    $b4_color_2 = get_theme_mod( 'b4-color-2', '#000' );
-    $slider_color_1 = get_theme_mod( 'slider-color-1', '#000' );
-    $slider_color_2 = get_theme_mod( 'slider-color-2', '#000' );
-    echo '<style>.block-5{' . construct_gradient($b4_color_1, $b4_color_2) . '}';
+    $b5_color_1 = get_theme_mod( 'b5-color-1', '' );
+    $b5_color_2 = get_theme_mod( 'b5-color-2', '' );
+    $slider_color_1 = get_theme_mod( 'slider-color-1', '' );
+    $slider_color_2 = get_theme_mod( 'slider-color-2', '' );
+    echo '<style>.block-5{' . construct_gradient($b5_color_1, $b5_color_2) . '}';
     echo '.slider-container {' . construct_gradient($slider_color_1, $slider_color_2) . '}';
     echo '</style>';
     ?>

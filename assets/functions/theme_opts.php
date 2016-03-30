@@ -714,8 +714,16 @@ Kirki::add_field( 'toggle-footer', array(
 ) );
 Kirki::add_field( 'toggle-copyright', array(
     'type'        => 'switch',
-    'settings'    => 'toggle-footer',
+    'settings'    => 'toggle-copyright',
     'label'       => __( 'Display Copyright and Sitename', 'my_textdomain' ),
+    'section'     => 'footer',
+    'default'     => '1',
+    'priority'    => 10,
+) );
+Kirki::add_field( 'toggle-footer-text', array(
+    'type'        => 'switch',
+    'settings'    => 'toggle-footer-text',
+    'label'       => __( 'Toggle Footer Text', 'my_textdomain' ),
     'section'     => 'footer',
     'default'     => '1',
     'priority'    => 10,

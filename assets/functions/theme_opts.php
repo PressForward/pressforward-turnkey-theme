@@ -1043,19 +1043,19 @@ Kirki::add_field( 'pftk_opts', array(
 ) );
 
 
-Kirki::add_field( 'b4-color-1', array(
+Kirki::add_field( 'b5-color-1', array(
 	'type'        => 'color',
-	'settings'    => 'b4-color-1',
-	'label'       => __( 'Block 4 Gradient (Color #1)', 'my_textdomain' ),
+	'settings'    => 'b5-color-1',
+	'label'       => __( 'Block 5 Gradient (Color #1)', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '#0088CC',
 	'priority'    => 10,
 	'alpha'       => true,
 ) );
-Kirki::add_field( 'b4-color-2', array(
+Kirki::add_field( 'b5-color-2', array(
 	'type'        => 'color',
-	'settings'    => 'b4-color-2',
-	'label'       => __( 'Block 4 Gradient (Color #2) ', 'my_textdomain' ),
+	'settings'    => 'b5-color-2',
+	'label'       => __( 'Block 5 Gradient (Color #2) ', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '#0088CC',
 	'priority'    => 10,

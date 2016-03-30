@@ -704,18 +704,29 @@ Kirki::add_section( 'Footer', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-Kirki::add_field( 'footer-c1-code', array(
-	'type'        => 'code',
-	'settings'    => 'footer-c1-code',
-	'label'       => __( 'Code Control', 'my_textdomain' ),
-	'section'     => 'footer',
-	'default'     => '',
-	'priority'    => 10,
-	'choices'     => array(
-		'language' => 'html',
-		'theme'    => 'monokai',
-		'height'   => 200,
-	),
+Kirki::add_field( 'toggle-footer', array(
+    'type'        => 'switch',
+    'settings'    => 'toggle-footer',
+    'label'       => __( 'Footer', 'my_textdomain' ),
+    'section'     => 'footer',
+    'default'     => '1',
+    'priority'    => 10,
+) );
+Kirki::add_field( 'toggle-copyright', array(
+    'type'        => 'switch',
+    'settings'    => 'toggle-footer',
+    'label'       => __( 'Display Copyright and Sitename', 'my_textdomain' ),
+    'section'     => 'footer',
+    'default'     => '1',
+    'priority'    => 10,
+) );
+Kirki::add_field( 'footer-text', array(
+	'type'     => 'textarea',
+	'settings' => 'footer-text',
+	'label'    => __( 'Footer Text', 'my_textdomain' ),
+	'section'  => 'Footer',
+	'default'  => esc_attr__( 'This is a defualt value', 'my_textdomain' ),
+	'priority' => 10,
 ) );
 
 /*********************
@@ -797,7 +808,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'alpha'       => true,
   'output' => array(
 		array(
-			'element'  => '.top-bar, .menu-text, .menu-item',
+			'element'  => '.top-bar, .menu-text, .menu-item, .top-bar ul',
 			'property' => 'background-color',
 		),
 	),
@@ -883,6 +894,182 @@ Kirki::add_field( 'pftk_opts', array(
 		),
 	),
 ) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b3-bg-color',
+	'label'       => __( 'Block 3 Background Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-3',
+			'property' => 'background-color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b3-link-color',
+	'label'       => __( 'Block 3 Link Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => 'a, ul, li',
+			'property' => 'color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b4-bg-color',
+	'label'       => __( 'Block 4 Background Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-4',
+			'property' => 'background-color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b4-text-color',
+	'label'       => __( 'Block 4 Text Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-4 p',
+			'property' => 'color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b4-link-color',
+	'label'       => __( 'Block 4 Link Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-4 a',
+			'property' => 'color',
+		),
+	),
+) );
 
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b5-bg-color',
+	'label'       => __( 'Block 5 Background Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-5',
+			'property' => 'background-color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b5-text-color',
+	'label'       => __( 'Block 5 Text Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-5 p',
+			'property' => 'color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b5-link-color',
+	'label'       => __( 'Block 5 Link Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-5 a',
+			'property' => 'color',
+		),
+	),
+) );
+//setup gradients
+/**
+ * Build a background-gradient style for CSS
+ *
+ * @param $color_1      hex color value
+ * @param $color_2      hex color value
+ *
+ * @return string       CSS definition
+ */
+function kirki_build_gradients( $color_1, $color_2 ) {
+
+    $styles  = 'background:'.$color_1;
+    $styles  .= 'background: -webkit-linear-gradient(' . $color_1 . ',' . $color_2 . ')'; /* For Safari 5.1 to 6.0 */
+    $styles  .= 'background: -o-linear-gradient(' . $color_1 . ',' . $color_2 . ')'; /* For Opera 11.1 to 12.0 */
+    $styles  .=  'background: -moz-linear-gradient(' . $color_1 . ',' . $color_2 . ')';  /* For Firefox 3.6 to 15 */
+    $styles  .=  'background: linear-gradient(' . $color_1 . ',' . $color_2 .')';  /* Standard syntax */
+    return $styles;
+
+}
+
+/**
+ * Build & enqueue the complete CSS for headers.
+ *
+ * @return void
+ */
+function kirki_enqueue_header_gradients() {
+  wp_enqueue_style(
+		'styles',
+		get_template_directory_uri() . '/css/style.css'
+	);
+    $color_1 = Kirki::get_option( 'pftk_opts', 'color_1');
+    $color_2 = Kirki::get_option( 'pftk_opts', 'color_2');
+
+    $css = '.block-2 {'.kirki_build_gradients( $color_1, $color_2 ).'}';
+    wp_add_inline_style( 'styles', $css );
+
+}
+add_action( 'wp_enqueue_scripts', 'kirki_enqueue_header_gradients', 999 );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'color_1',
+	'label'       => __( 'Test Color 1', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'color_2',
+	'label'       => __( 'Test Color 2', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true
+) );
 
 ?>

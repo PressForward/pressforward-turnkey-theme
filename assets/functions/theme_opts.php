@@ -664,6 +664,7 @@ Homepage -- Block 5
         'type'        => 'switch',
         'settings'    => 'toggle-b5',
         'label'       => __( 'Block 5', 'my_textdomain' ),
+        'tooltip'     => 'turn block5 on or off',
         'section'     => 'block5',
         'default'     => '1',
         'priority'    => 10,

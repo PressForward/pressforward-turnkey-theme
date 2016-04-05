@@ -28,6 +28,11 @@ Kirki::add_config( 'pftk_opts', array(
       'title'       => __( 'Design Elements', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
+  Kirki::add_panel( 'contentsettings', array(
+      'priority'    => 10,
+      'title'       => __( 'Content Settings', 'theme_slug' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
+  ) );
 
 /*********************
 Homepage -- Slider -- Options
@@ -1061,4 +1066,27 @@ Kirki::add_field( 'b5-color-2', array(
 	'priority'    => 10,
 	'alpha'       => true,
 ) );
+
+
+////// CONTENT SETTINGS SECTION //////
+Kirki::add_section( 'content-settings', array(
+    'title'          => __( 'ContentOptions' ),
+    'description'    => __( 'Add an image to be shown as header advertisement.' ),
+    'priority'       => 160,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+Kirki::add_field( 'breadcrumbs', array(
+	'type'        => 'switch',
+	'settings'    => 'Breadcrumbs',
+	'label'       => __( 'Breadcrumbs', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '1',
+	'priority'    => 10,
+	'choices'     => array(
+		'on'  => esc_attr__( 'On', 'my_textdomain' ),
+		'off' => esc_attr__( 'Off', 'my_textdomain' ),
+	),
+) );
+
 ?>

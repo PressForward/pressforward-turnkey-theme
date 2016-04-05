@@ -1078,15 +1078,11 @@ Kirki::add_section( 'content-settings', array(
 ) );
 Kirki::add_field( 'breadcrumbs', array(
 	'type'        => 'switch',
-	'settings'    => 'Breadcrumbs',
+	'settings'    => 'breadcrumbs',
 	'label'       => __( 'Breadcrumbs', 'my_textdomain' ),
 	'section'     => 'content-settings',
 	'default'     => '1',
 	'priority'    => 10,
-	'choices'     => array(
-		'on'  => esc_attr__( 'On', 'my_textdomain' ),
-		'off' => esc_attr__( 'Off', 'my_textdomain' ),
-	),
 ) );
 
 ?>

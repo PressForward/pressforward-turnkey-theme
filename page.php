@@ -3,7 +3,10 @@
 	<div id="content">
 
 		<div id="inner-content" class="row">
-				<?php if ( function_exists('custom_breadcrumb') ) { custom_breadcrumb(); } ?>
+			<?php $breadcrumb_nav = Kirki::get_option( 'pftk_opts', 'breadcrumbs');
+			 if ($breadcrumb_nav == true):
+					echo custom_breadcrumb();
+				endif; ?>
 
 		    <main id="main" class="large-8 medium-8 columns" role="main">
 

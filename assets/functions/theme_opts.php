@@ -877,6 +877,21 @@ Kirki::add_field( 'slider-color-2', array(
 	'alpha'       => true,
 ) );
 //slider txt color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'orbit-bullets',
+	'label'       => __( 'Slider Bullets', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.orbit-bullets button',
+			'property' => 'color',
+		),
+	),
+) );
 // b2 bg color
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',

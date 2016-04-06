@@ -38,6 +38,7 @@ Kirki::add_config( 'pftk_opts', array(
 Homepage -- Slider -- Options
 *********************/
 
+
 //create slider section
   Kirki::add_section( 'slider', array(
       'title'          => __( 'Slider Options' ),
@@ -1084,6 +1085,9 @@ Kirki::add_field( 'b5-color-2', array(
 
 
 ////// CONTENT SETTINGS SECTION //////
+
+
+
 Kirki::add_section( 'content-settings', array(
     'title'          => __( 'ContentOptions' ),
     'description'    => __( 'Add an image to be shown as header advertisement.' ),
@@ -1091,6 +1095,19 @@ Kirki::add_section( 'content-settings', array(
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
+
+//logo upload
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'upload',
+	'settings'    => 'image_demo',
+	'label'       => __( 'Logo', 'my_textdomain' ),
+	'description' => __( 'This is the control description', 'my_textdomain' ),
+	'help'        => __( 'This is some extra help text.', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '',
+	'priority'    => 10,
+) );
+
 Kirki::add_field( 'breadcrumbs', array(
 	'type'        => 'switch',
 	'settings'    => 'breadcrumbs',

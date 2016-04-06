@@ -50,7 +50,7 @@ Template Name: Home Page Template
 			}
 ?>
 </ul>
-<nav class="orbit-bullets">
+<nav class="orbit-bullets" id="slider-nav">
 		<?php
 		$counter = 0;
 		while($counter < $bullets - 1) {

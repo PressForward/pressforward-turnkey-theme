@@ -887,8 +887,8 @@ Kirki::add_field( 'pftk_opts', array(
 	'alpha'       => true,
   'output' => array(
 		array(
-			'element'  => '.orbit-bullets button',
-			'property' => 'color',
+			'element'  => '#slider-nav button',
+			'property' => 'background-color',
 		),
 	),
 ) );

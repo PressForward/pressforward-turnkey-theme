@@ -1097,17 +1097,32 @@ Kirki::add_section( 'content-settings', array(
 ) );
 
 //logo upload
-Kirki::add_field( 'pftk_opts', array(
-	'type'        => 'upload',
+Kirki::add_field( 'image_demo', array(
+	'type'        => 'image',
 	'settings'    => 'image_demo',
-	'label'       => __( 'Logo', 'my_textdomain' ),
+	'label'       => __( 'This is the label', 'my_textdomain' ),
 	'description' => __( 'This is the control description', 'my_textdomain' ),
 	'help'        => __( 'This is some extra help text.', 'my_textdomain' ),
 	'section'     => 'content-settings',
 	'default'     => '',
 	'priority'    => 10,
 ) );
-
+Kirki::add_field( 'img_height', array(
+	'type'        => 'dimension',
+	'settings'    => 'img_height',
+	'label'       => __( 'Logo Height', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '50px',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'img_width', array(
+	'type'        => 'dimension',
+	'settings'    => 'img_width',
+	'label'       => __( 'Logo Width', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '50px',
+	'priority'    => 10,
+) );
 Kirki::add_field( 'breadcrumbs', array(
 	'type'        => 'switch',
 	'settings'    => 'breadcrumbs',

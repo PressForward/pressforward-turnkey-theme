@@ -10,6 +10,15 @@ GENERAL STYLES
 // .orbit-bullets > button{
 // 	background-color: yellow;
 // }
+.top-bar {
+	position: relative;
+}
+.top-bar-right .menu {
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	right: 0;
+}
 #main {
 	background-color: #fff;
 	border: 1px solid #ddd;

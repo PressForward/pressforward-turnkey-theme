@@ -22,16 +22,13 @@
     <div id="responsive-menu">
 
         <div class="top-bar-right">
-            <ul class="menu">
+						<?php joints_top_nav(); ?>
+						<!-- <ul class="menu">
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a data-open="searchform">Search</a></li>
-            </ul>
+            </ul> -->
         </div>
 
-        <div class="top-bar-right">
-            <?php joints_top_nav(); ?>
-        </div>
 
     </div>
 
-</div>
 </div>

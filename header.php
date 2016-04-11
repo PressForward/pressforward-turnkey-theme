@@ -47,18 +47,23 @@
 
 	<body <?php body_class(); ?>>
 
-		<div class="off-canvas-wrapper">
 
-			<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
 
-				<?php get_template_part( 'parts/content', 'offcanvas' ); ?>
+  <header class="header" role="banner">
 
-				<div class="off-canvas-content" data-off-canvas-content>
+      <!-- This navs will be applied to the topbar, above all content
+      To see additional nav styles, visit the /parts directory -->
+      <?php get_template_part( 'parts/nav', 'topbar' ); ?>
 
-					<header class="header" role="banner">
+      <div class="reveal" id="searchform" data-reveal>
+        <?php get_search_form(); ?>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+          <span aria-hidden="true">&times;</span>
+        </button>
 
-						 <!-- This navs will be applied to the topbar, above all content
-							  To see additional nav styles, visit the /parts directory -->
-						 <?php get_template_part( 'parts/nav', 'offcanvas-topbar' ); ?>
-
-					</header> <!-- end .header -->
+      </div>
+  </header> <!-- end .header -->

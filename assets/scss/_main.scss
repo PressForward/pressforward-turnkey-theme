@@ -7,6 +7,13 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
+// .orbit-bullets > button{
+// 	background-color: yellow;
+// }
+#main {
+	background-color: #fff;
+	border: 1px solid #ddd;
+}
 .slider-container {
 	background-image: linear-gradient($dhnow-blue, $dhnow-blue-darkened);
 	padding: 30px 0 25px 0;

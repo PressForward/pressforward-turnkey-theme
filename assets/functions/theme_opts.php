@@ -28,10 +28,16 @@ Kirki::add_config( 'pftk_opts', array(
       'title'       => __( 'Design Elements', 'theme_slug' ),
       'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
   ) );
+  Kirki::add_panel( 'contentsettings', array(
+      'priority'    => 10,
+      'title'       => __( 'Content Settings', 'theme_slug' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
+  ) );
 
 /*********************
 Homepage -- Slider -- Options
 *********************/
+
 
 //create slider section
   Kirki::add_section( 'slider', array(
@@ -873,6 +879,21 @@ Kirki::add_field( 'slider-color-2', array(
 	'alpha'       => true,
 ) );
 //slider txt color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'orbit-bullets',
+	'label'       => __( 'Slider Bullets', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '#slider-nav button',
+			'property' => 'background-color',
+		),
+	),
+) );
 // b2 bg color
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
@@ -1062,4 +1083,54 @@ Kirki::add_field( 'b5-color-2', array(
 	'priority'    => 10,
 	'alpha'       => true,
 ) );
+
+
+////// CONTENT SETTINGS SECTION //////
+
+
+
+Kirki::add_section( 'content-settings', array(
+    'title'          => __( 'ContentOptions' ),
+    'description'    => __( 'Add an image to be shown as header advertisement.' ),
+    'priority'       => 160,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+
+//logo upload
+Kirki::add_field( 'image_demo', array(
+	'type'        => 'image',
+	'settings'    => 'image_demo',
+	'label'       => __( 'This is the label', 'my_textdomain' ),
+	'description' => __( 'This is the control description', 'my_textdomain' ),
+	'help'        => __( 'This is some extra help text.', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'img_height', array(
+	'type'        => 'dimension',
+	'settings'    => 'img_height',
+	'label'       => __( 'Logo Height', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '50px',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'img_width', array(
+	'type'        => 'dimension',
+	'settings'    => 'img_width',
+	'label'       => __( 'Logo Width', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '50px',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'breadcrumbs', array(
+	'type'        => 'switch',
+	'settings'    => 'breadcrumbs',
+	'label'       => __( 'Breadcrumbs', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '1',
+	'priority'    => 10,
+) );
+
 ?>

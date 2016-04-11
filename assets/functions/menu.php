@@ -18,7 +18,7 @@ function joints_top_nav() {
         'fallback_cb' => false,                         // Fallback function (see below)
         'walker' => new Topbar_Menu_Walker()
     ));
-} /* End Top Menu */
+}  /* End Top Menu */
 
 // The Off Canvas Menu
 function joints_off_canvas_nav() {

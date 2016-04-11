@@ -661,7 +661,7 @@ Homepage -- Block 5
     Kirki::add_section( 'Block5', array(
         'title'          => __( 'Block 5 Options' ),
         'description'
-           => __( 'Edit the content and appearance of the fourth block on the homepage.' ),
+           => __( 'Edit the content and appearance of the fifth block on the homepage.' ),
         'panel'          => 'homepage', // Not typically needed.
         'priority'       => 160,
         'capability'     => 'edit_theme_options',
@@ -672,7 +672,7 @@ Homepage -- Block 5
         'type'        => 'switch',
         'settings'    => 'toggle-b5',
         'label'       => __( 'Block 5', 'my_textdomain' ),
-        'tooltip'     => 'turn block5 on or off',
+        'tooltip'     => 'This switch turns Block 5 on or off',
         'section'     => 'block5',
         'default'     => '1',
         'priority'    => 10,
@@ -681,7 +681,7 @@ Homepage -- Block 5
         'type'        => 'text',
         'settings'    => 'b5-title',
         'label'       => __( 'Block 5 Title', 'kirki-demo' ),
-        'help'        => __( 'This is a tooltip', 'kirki-demo' ),
+        'tooltip'        => __( 'Enter a title for Block 5', 'kirki-demo' ),
         'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
         'section'     => 'block5',
         'default'     => 'Block 5 Title',
@@ -692,6 +692,7 @@ Homepage -- Block 5
       'settings'    => 'b5-title-link',
       'label'       => __( 'Block 5 Title Link', 'kirki-demo' ),
       'section'     => 'block5',
+      'tooltip'     => 'Select a title link for Block 5',
       'default'     => '',
       'priority'    => 10,
       'multiple'    => 1,

@@ -3857,6 +3857,15 @@ GENERAL STYLES
   background-color: #fff;
   border: 1px solid #ddd; }
 
+.menu li > a {
+  margin-left: 0; }
+
+.menu .top-bar {
+  padding-left: 0; }
+
+.menu > ul > li > a {
+  padding-left: 0 !important; }
+
 .slider-container {
   background-image: linear-gradient(#3887be, #2f719e);
   padding: 30px 0 25px 0; }

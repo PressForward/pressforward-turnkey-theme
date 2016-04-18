@@ -1,5 +1,5 @@
 <div class="row" id="navrow">
-<div class="large-12 columns">
+
 <div class="top-bar" id="main-menu">
 
     <div class="top-bar-title">
@@ -14,7 +14,7 @@
 					<?php if (empty($logo) == true): ?>
 							<li><a class="site-title" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
 					<?php else: ?>
-						<li><a href="<?php echo home_url(); ?>"><img src="<?php echo $logo; ?> " height=<?php echo $height; ?> width=<?php echo $width; ?>></a></li>
+						<li><a class="site-logo" href="<?php echo home_url(); ?>"><img src="<?php echo $logo; ?> " height=<?php echo $height; ?> width=<?php echo $width; ?>></a></li>
 					<?php endif; ?>
 
 					</ul>
@@ -28,10 +28,7 @@
                     <li class="menu-item menu-item-type-post_type menu-item-object-page"><a data-open="searchform">Search</a></li>
             </ul> -->
         </div>
-
-
     </div>
 
-</div>
 </div>
 </div>

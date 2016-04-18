@@ -765,7 +765,7 @@ Sitewide -- Typography
   Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'typography',
 	'settings'    => 'body-font',
-	'label'       => esc_attr__( 'Control Label', 'kirki' ),
+	'label'       => esc_attr__( 'Body Font', 'kirki' ),
 	'section'     => 'fontcontrol',
 	'default'     => array(
 		'font-family'    => 'Roboto',
@@ -778,7 +778,7 @@ Sitewide -- Typography
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element' => 'body',
+			'element' => 'p',
 		),
 	),
 ) );
@@ -786,7 +786,7 @@ Sitewide -- Typography
 Kirki::add_field( 'pftk_opts', array(
 'type'        => 'typography',
 'settings'    => 'header-font',
-'label'       => esc_attr__( 'Control Label', 'kirki' ),
+'label'       => esc_attr__( 'Header Font', 'kirki' ),
 'section'     => 'fontcontrol',
 'default'     => array(
   'font-family'    => 'Lato',

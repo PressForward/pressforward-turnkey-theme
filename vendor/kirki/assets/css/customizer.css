@@ -102,22 +102,6 @@ customize-control-upload .current .container {
   font-weight: 300;
   font-size: .9em; }
 
-.customize-control-color-alpha .wp-picker-container {
-  width: 100%; }
-  .customize-control-color-alpha .wp-picker-container a.wp-color-result {
-    width: auto;
-    display: block;
-    border: none;
-    padding-left: 40px; }
-    .customize-control-color-alpha .wp-picker-container a.wp-color-result:after {
-      background: rgba(0, 0, 0, 0.25);
-      color: #fff;
-      border: none;
-      -webkit-box-shadow: none;
-      box-shadow: none; }
-    .customize-control-color-alpha .wp-picker-container a.wp-color-result:focus:after, .customize-control-color-alpha .wp-picker-container a.wp-color-result:hover:after {
-      color: #fff; }
-
 input {
   font-size: 16px; }
 
@@ -139,6 +123,38 @@ input[type="text"] {
   background-image: url("../images/kirki-bottom.png");
   background-repeat: no-repeat;
   background-position: center center; }
+
+.kirki-reset-section {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #BDBDBD;
+  opacity: .5;
+  color: #fff;
+  font-size: .8rem;
+  border-radius: 3px;
+  padding: 0 5px;
+  -webkit-transition: all .2s ease-in-out;
+  -moz-transition: all .2s ease-in-out;
+  -ms-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  font-weight: bold; }
+  .kirki-reset-section .dashicons {
+    font-size: .8rem;
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    vertical-align: baseline; }
+  .kirki-reset-section:hover, .kirki-reset-section:active {
+    background: #F44336;
+    color: #fff;
+    font-weight: bold;
+    opacity: 1; }
+  .kirki-reset-section:focus {
+    opacity: 1;
+    -webkit-box-shadow: 0 0 0 1px #F44336, 0 0 2px 1px rgba(200, 50, 30, 0.8);
+    box-shadow: 0 0 0 1px #F44336, 0 0 2px 1px rgba(200, 50, 30, 0.8); }
 
 #customize-theme-controls .control-panel.control-panel-kirki-expanded > ul.control-panel-content {
   position: relative;
@@ -606,6 +622,127 @@ div.CodeMirror-dragcursors {
 span.CodeMirror-selectedtext {
   background: none; }
 
+.customize-control-color-alpha .wp-picker-container {
+  width: 100%; }
+  .customize-control-color-alpha .wp-picker-container a.wp-color-result {
+    width: auto;
+    display: block;
+    border: none;
+    padding-left: 40px; }
+    .customize-control-color-alpha .wp-picker-container a.wp-color-result:after {
+      background: rgba(0, 0, 0, 0.25);
+      color: #fff;
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
+    .customize-control-color-alpha .wp-picker-container a.wp-color-result:focus:after, .customize-control-color-alpha .wp-picker-container a.wp-color-result:hover:after {
+      color: #fff; }
+
+.customize-control-multicolor .multicolor-group-wrapper {
+  display: flex; }
+  .customize-control-multicolor .multicolor-group-wrapper .multicolor-single-color-wrapper {
+    width: 100%; }
+    .customize-control-multicolor .multicolor-group-wrapper .multicolor-single-color-wrapper label {
+      display: block;
+      text-align: center;
+      padding: 3px; }
+  .customize-control-multicolor .multicolor-group-wrapper .wp-picker-container {
+    width: 100%; }
+    .customize-control-multicolor .multicolor-group-wrapper .wp-picker-container a.wp-color-result {
+      width: 100%;
+      height: 30px;
+      padding-left: 0;
+      border-radius: 0;
+      border: none;
+      margin-right: 0; }
+      .customize-control-multicolor .multicolor-group-wrapper .wp-picker-container a.wp-color-result > span {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important; }
+      .customize-control-multicolor .multicolor-group-wrapper .wp-picker-container a.wp-color-result:after {
+        display: none; }
+
+.customize-control-color-palette label {
+  position: relative;
+  display: inline-block;
+  padding: 2px 0; }
+.customize-control-color-palette .color-palette-color {
+  color: transparent;
+  display: block;
+  width: 42px;
+  height: 42px;
+  overflow: hidden;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 3px 3px 13px 2px rgba(0, 0, 0, 0.22);
+  box-shadow: inset 3px 3px 13px 2px rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+.customize-control-color-palette .colors-wrapper {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 10px; }
+  .customize-control-color-palette .colors-wrapper input {
+    display: none; }
+    .customize-control-color-palette .colors-wrapper input:checked + label .color-palette-color {
+      -webkit-box-shadow: 1px 1px 10px 1px #333333;
+      box-shadow: 1px 1px 10px 1px #333333;
+      border: 1px solid rgba(0, 0, 0, 0.3); }
+
+.wp-customizer div.ui-datepicker {
+  z-index: 500001 !important;
+  width: 255px;
+  background: #fff;
+  border: 1px solid #dedede; }
+  .wp-customizer div.ui-datepicker .ui-datepicker-header {
+    padding: 10px;
+    background: #e5e5e5;
+    border-bottom: 1px solid #fff; }
+    .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev,
+    .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+      display: block;
+      position: absolute;
+      width: 1em;
+      overflow: hidden; }
+      .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:before, .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:after,
+      .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next:before,
+      .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next:after {
+        font-family: dashicons; }
+        .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:before:hover, .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:after:hover,
+        .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next:before:hover,
+        .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next:after:hover {
+          cursor: pointer; }
+      .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev .ui-icon,
+      .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next .ui-icon {
+        display: none; }
+    .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev {
+      left: 10px; }
+      .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-prev:before {
+        content: "\f341"; }
+    .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next {
+      right: 10px; }
+      .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-next:after {
+        content: "\f345"; }
+    .wp-customizer div.ui-datepicker .ui-datepicker-header .ui-datepicker-title {
+      text-align: center; }
+  .wp-customizer div.ui-datepicker .ui-datepicker-calendar {
+    border-collapse: collapse;
+    width: 100%; }
+    .wp-customizer div.ui-datepicker .ui-datepicker-calendar thead {
+      background: #e5e5e5;
+      padding: 5px; }
+    .wp-customizer div.ui-datepicker .ui-datepicker-calendar tr td {
+      text-align: center; }
+      .wp-customizer div.ui-datepicker .ui-datepicker-calendar tr td a {
+        display: block;
+        padding: 5px;
+        color: #333;
+        text-decoration: none; }
+        .wp-customizer div.ui-datepicker .ui-datepicker-calendar tr td a.ui-state-active, .wp-customizer div.ui-datepicker .ui-datepicker-calendar tr td a:hover {
+          color: #fff;
+          background-color: #0073aa; }
+      .wp-customizer div.ui-datepicker .ui-datepicker-calendar tr td.ui-state-disabled a, .wp-customizer div.ui-datepicker .ui-datepicker-calendar tr td.ui-state-disabled .ui-state-default a {
+        color: #999; }
+
 .customize-control-dashicons label {
   position: relative;
   display: inline-block; }
@@ -764,15 +901,22 @@ span.CodeMirror-selectedtext {
     height: 100%; }
 
 .customize-control-repeater .repeater-fields .repeater-row {
-  padding: .5rem;
   border: 1px solid #999;
   margin-top: .5rem;
   background: #eee;
-  position: relative;
-  padding-top: 48px; }
+  position: relative; }
+  .customize-control-repeater .repeater-fields .repeater-row.minimized {
+    border: 1px solid #dfdfdf;
+    padding: 0; }
+    .customize-control-repeater .repeater-fields .repeater-row.minimized:hover {
+      border: 1px solid #999; }
+    .customize-control-repeater .repeater-fields .repeater-row.minimized .repeater-row-content {
+      display: none; }
   .customize-control-repeater .repeater-fields .repeater-row label {
     margin-bottom: 12px;
     clear: both; }
+  .customize-control-repeater .repeater-fields .repeater-row .repeater-field.repeater-field- {
+    display: none; }
   .customize-control-repeater .repeater-fields .repeater-row .repeater-field.repeater-field-radio-image input {
     display: none; }
     .customize-control-repeater .repeater-fields .repeater-row .repeater-field.repeater-field-radio-image input img {
@@ -781,17 +925,29 @@ span.CodeMirror-selectedtext {
       -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
       box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.25);
       border: 1px solid #3498DB; }
+  .customize-control-repeater .repeater-fields .repeater-row .repeater-field:last-child {
+    border-bottom: none;
+    padding-bottom: 0; }
 .customize-control-repeater button.repeater-add {
   margin-top: 1rem; }
+.customize-control-repeater .repeater-row-content {
+  padding: 10px 15px; }
 .customize-control-repeater .repeater-field {
   margin-bottom: 12px;
   width: 100%;
   clear: both;
   padding-bottom: 12px;
   border-bottom: 1px dotted #CCC; }
-.customize-control-repeater .repeater-row .repeater-field:last-child {
-  border-bottom: none;
-  padding-bottom: 0; }
+  .customize-control-repeater .repeater-field .customize-control-title {
+    font-size: 13px;
+    line-height: initial; }
+  .customize-control-repeater .repeater-field .customize-control-description {
+    font-size: 13px;
+    line-height: initial; }
+  .customize-control-repeater .repeater-field.repeater-field-hidden {
+    margin: 0;
+    padding: 0;
+    border: 0; }
 .customize-control-repeater .repeater-field-select select {
   margin-left: 0; }
 .customize-control-repeater .repeater-field-checkbox label {
@@ -804,53 +960,56 @@ span.CodeMirror-selectedtext {
   resize: vertical; }
 .customize-control-repeater .repeater-row-header {
   background: white;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 36px;
-  color: #555;
-  border-bottom: 1px solid #999;
-  line-height: 36px;
-  font-size: 15px; }
-.customize-control-repeater .repeater-row-number {
-  border-right: 1px solid #ddd;
-  display: inline-block;
-  width: 35px;
-  text-align: center; }
-.customize-control-repeater .repeater-row-remove,
-.customize-control-repeater .repeater-row-move,
-.customize-control-repeater .repeater-row-minimize {
-  display: inline-block;
-  float: right;
-  border-left: 1px solid #ddd;
-  width: 35px;
-  height: 36px;
-  text-align: center; }
-  .customize-control-repeater .repeater-row-remove:hover,
-  .customize-control-repeater .repeater-row-move:hover,
-  .customize-control-repeater .repeater-row-minimize:hover {
-    background: #ddd;
-    cursor: pointer; }
-.customize-control-repeater .repeater-row-move:hover {
-  cursor: move; }
-.customize-control-repeater .repeater-remove,
-.customize-control-repeater .repeater-move,
+  border: 1px solid #dfdfdf;
+  position: relative;
+  padding: 10px 15px;
+  height: auto;
+  min-height: 20px;
+  line-height: 30px;
+  overflow: hidden;
+  word-wrap: break-word; }
+  .customize-control-repeater .repeater-row-header:hover {
+    cursor: move; }
+  .customize-control-repeater .repeater-row-header .dashicons {
+    font-size: 18px;
+    position: absolute;
+    right: 12px;
+    top: 2px;
+    color: #a0a5aa; }
+.customize-control-repeater .repeater-row-label {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 20px;
+  display: block;
+  text-transform: capitalize;
+  width: 90%;
+  overflow: hidden;
+  height: 18px; }
+.customize-control-repeater .repeater-row-remove {
+  color: #a00; }
+  .customize-control-repeater .repeater-row-remove:hover {
+    color: #f00; }
 .customize-control-repeater .repeater-minimize {
   line-height: 36px; }
-.customize-control-repeater .repeater-row.minimized {
-  padding: 0;
-  height: 36px;
-  overflow: hidden; }
 .customize-control-repeater .remove-button, .customize-control-repeater .upload-button {
   width: 48%; }
 
 .kirki-image-attachment {
   margin: 0;
   text-align: center;
-  margin-bottom: 25px; }
+  margin-bottom: 10px; }
   .kirki-image-attachment img {
     display: inline-block; }
+
+.kirki-file-attachment {
+  margin: 0;
+  text-align: center;
+  margin-bottom: 10px; }
+  .kirki-file-attachment .file {
+    display: block;
+    padding: 10px 5px;
+    border: 1px dotted #c3c3c3;
+    background: #f9f9f9; }
 
 .limit {
   padding: 3px;
@@ -1248,10 +1407,10 @@ span.CodeMirror-selectedtext {
     display: block;
     margin-bottom: 1rem;
     position: relative;
-    text-indent: 100%;
     transition: left 0.15s ease-out;
     height: 2rem;
-    width: 4rem; }
+    width: 4rem;
+    font-family: Monaco, "Lucida Sans Typewriter", "Lucida Typewriter", "Courier New", Courier, monospace; }
     .customize-control-switch .switch label:after {
       background: #FFFFFF;
       content: "";
@@ -1261,15 +1420,11 @@ span.CodeMirror-selectedtext {
       position: absolute;
       top: .25rem;
       width: 1.5rem;
-      -webkit-transition: left 0.15s ease-out;
-      -moz-transition: left 0.15s ease-out;
-      -o-transition: translate3d(0, 0, 0);
-      transition: left 0.15s ease-out;
-      -webkit-transform: translate3d(0, 0, 0);
-      -moz-transform: translate3d(0, 0, 0);
-      -ms-transform: translate3d(0, 0, 0);
-      -o-transform: translate3d(0, 0, 0);
-      transform: translate3d(0, 0, 0); }
+      -webkit-transition: all .25s ease-in-out;
+      -moz-transition: all .25s ease-in-out;
+      -ms-transition: all .25s ease-in-out;
+      -o-transition: all .25s ease-in-out;
+      transition: all .25s ease-in-out; }
   .customize-control-switch .switch input {
     left: 10px;
     opacity: 0;
@@ -1290,20 +1445,17 @@ span.CodeMirror-selectedtext {
       border-radius: 2rem; }
       .customize-control-switch .switch.round label:after {
         border-radius: 2rem; }
-.customize-control-switch .switch-on {
-  position: absolute;
-  left: -55px;
-  top: 8px;
-  color: white;
-  font-weight: bold;
-  font-size: 9px; }
+.customize-control-switch .switch-on,
 .customize-control-switch .switch-off {
-  position: absolute;
-  left: -25px;
-  top: 8px;
-  color: white;
+  line-height: 32px;
   font-weight: bold;
-  font-size: 9px; }
+  padding: 0 10px; }
+.customize-control-switch .switch-on {
+  color: #fff;
+  padding-right: 5px; }
+.customize-control-switch .switch-off {
+  color: #777;
+  padding-left: 5px; }
 
 .customize-control-kirki-generic textarea {
   width: 100%;
@@ -1377,6 +1529,7 @@ span.CodeMirror-selectedtext {
   .customize-control-typography .wrapper .font-size,
   .customize-control-typography .wrapper .line-height,
   .customize-control-typography .wrapper .letter-spacing,
+  .customize-control-typography .wrapper .text-transform,
   .customize-control-typography .wrapper .color {
     width: 100%;
     float: none;
@@ -1387,12 +1540,28 @@ span.CodeMirror-selectedtext {
     .customize-control-typography .wrapper .font-size h5,
     .customize-control-typography .wrapper .line-height h5,
     .customize-control-typography .wrapper .letter-spacing h5,
+    .customize-control-typography .wrapper .text-transform h5,
     .customize-control-typography .wrapper .color h5 {
       margin: .67em 0 0; }
   .customize-control-typography .wrapper .font-size,
   .customize-control-typography .wrapper .line-height,
   .customize-control-typography .wrapper .letter-spacing {
     width: 50%; }
+  .customize-control-typography .wrapper .text-align {
+    width: 100%; }
+  .customize-control-typography .wrapper .text-align .dashicons {
+    padding: 3px;
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid transparent; }
+  .customize-control-typography .wrapper .text-align input {
+    display: none; }
+    .customize-control-typography .wrapper .text-align input:checked + label .dashicons {
+      border: 1px solid #3498DB;
+      color: #000; }
+  .customize-control-typography .wrapper .text-transform {
+    padding-top: 10px; }
   .customize-control-typography .wrapper .color {
     width: auto; }
 

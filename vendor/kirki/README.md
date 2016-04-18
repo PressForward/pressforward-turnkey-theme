@@ -4,7 +4,7 @@
 **Donate link:** http://kirki.org/  
 **Requires at least:** 4.4  
 **Tested up to:** 4.5  
-**Stable tag:** 2.2.4  
+**Stable tag:** 2.3.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -36,6 +36,108 @@ Simply install as a normal WordPress plugin and activate.
 If you want to integrate Kirki in your theme or plugin, please read the instructions on [our ducumentation site](https://kirki.org/docs/advanced/integration.html).
 
 ## Changelog ##
+
+### 2.3.1 ###
+
+* FIX: Spacing control JS dependencies.
+* FIX: Output property ignored in multicolor field.
+* FIX: Image sub-controls in repeaters were causing a JS error.
+* FIX: Text Domain Compliance with Themecheck.
+* FIX: postMessage scripts when using more than 1 elements for the output.
+* FIX: default values for swithes, toggles & checkboxes.
+
+### 2.3.0 ###
+
+April 10, 2016, dev time: 21 hours.
+
+Kirki is now 100% WordPress Coding Standards compliant.
+
+* FIX: Escaping google-font URLs when possible.
+* FIX: Only enqueue the tooltips script if needed.
+* FIX: WordPress Coding Standards.
+* FIX: undefined sub-controls were still being saved in typography fields
+* FIX: Javascript Console Errors: "wp.customize" object undefined when Kirki fields were added in `customize_register`
+* FIX: markup in editor fields - props @manuelmoreale.
+* FIX: multiple styles in head when using js_vars
+* FIX: Sanitization for rem units
+* FIX: CSS output for multicolor controls
+* NEW: Repeater labels are now dynamic - props @guillaumemolter.
+* NEW: The entire header on repeaters is now draggable - props @guillaumemolter.
+* TWEAK: More efficient JS code for the typography control
+
+### 2.2.10 ###
+
+* FIX: Issue with URLs when using Kirki embedded in a theme and not installed as a plugin.
+
+### 2.2.9 ###
+
+* FIX: Repeater controls were not working on 2.2.8 due to a typo - props @guillaumemolter
+* NEW: Repeater fields now allow more control types (email/tel/url/hidden) - props @guillaumemolter
+
+### 2.2.8 ###
+
+April 6, 2016, dev time: 5 hours.
+
+* FIX: Enqueued assets missing when useg WP_DEBUG & WP_DEBUG_SCRIPT
+* FIX: Checkboxes were not properly displaying their values
+* FIX: Javascript errors when `number` controls were used without `min`, `max` or `step`.
+* FIX: Multiselect controls issue with the `sanitize_callback` used.
+* NEW: Make attributes in `cropped_image` sub-controls inside repeaters dynamic (props @guillaumemolter).
+
+### 2.2.7 ###
+
+April 5, 2016, dev time: 23 hours.
+
+* FIX: Properly parsing `postMessage` scripts when `transport` is set to `auto`.
+* FIX: Background image was outputing CSS even if it was empty.
+* FIX: Default value for checkboxes.
+* FIX: Issue with plugin URLs in the customizer, when the plugin was embedded in a theme.
+* FIX: Descriptions were now shown in `sortable` fields.
+* FIX: Reset not working for textarea fields.
+* FIX: In some cases only the first element in `output` arguments was being processed.
+* FIX: edge-case bugfix for select controls when data saved if the db was somehow mis-formatted.
+* FIX: Repeater controls now use image IDs instead of image URLs. Props @guillaumemolter
+* NEW: Added `text-align` ability in `typography` fields.
+* NEW: Added `text-transform` ability in `typography` fields.
+* NEW: Introduce `value_pattern` argument for `output` & `js_vars`.
+* NEW: Started refactoring the `Kirki_Field` class. Now each field can have its own sub-class extending the main Kirki_Field object.
+* NEW: `multicolor` control.
+* NEW: Added `cropped_image` support in `repeater`. Props @guillaumemolter
+* TWEAK: Renamed `Kirki_Customizer_Scripts_Loading` to `Kirki_Scripts_Loading`.
+* TWEAK: Renamed `Kirki_Customizer_Scripts_Tooltips` to `Kirki_Scripts_Tooltips`.
+* TWEAK: Renamed `Kirki_Customizer_Scripts_Icons` to `Kirki_Scripts_Icons`.
+* TWEAK: More inline comments, docs & coding-standards improvements.
+* DEPRECATED: Removed the `Kirki_Colourlovers` class.
+
+### 2.2.6 ###
+
+March 26, 2016, dev time: 10 hours
+
+* FIX: Invalid variants for google fonts were getting enqueued due to a mischeck.
+* FIX: Repeater rows are now minimized by default.
+* FIX: Styling for the `dropdown-pages` control.
+* FIX: `switch` controls now properly resize based on the label used in the `choices` argument.
+* FIX: It is now possible to use `calc()` in CSS value controls.
+* FIX: Styles were being applied to the customizer even if they were not defined in the `kirki/config` filter.
+* FIX: Removed unnecessary class inheritances & other code cleanups.
+* NEW: Allow resetting options per-section.
+* NEW: Added new `color-palette` control.
+* NEW: Added `'transport' => 'auto'` to auto-calculate postMessage scripts from the `output` argument when possible.
+* NEW: Added Material design palettes in the `Kirki_Helper` class.
+* NEW: Allow changing the "Add Row" text on repeater fields.
+* NEW: Allow setting a limit for repeater rows.
+
+### 2.2.5 ###
+
+March 23, 2016, dev time: 7 hours
+
+* FIX: Google fonts now loaded via a PHP array instead of a JSON file.
+* FIX: CSS issue due to escaped quotes on standard fonts.
+* FIX: Issue when using `units` on `js_vars` combined with the `style` method.
+* FIX: Missing textdomain on a string.
+* NEW: Refactored postMessage scripts.
+* NEW: Allow passing options to iris using the `choices` argument on color controls.
+* NEW: Allow disabling the custom loader using the `disable_loader` argument in the `kirki/config` filter.
 
 ### 2.2.4 ###
 

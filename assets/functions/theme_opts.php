@@ -822,7 +822,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'alpha'       => true,
   'output' => array(
 		array(
-			'element'  => '.top-bar, .menu-text, .menu-item, .top-bar ul',
+			'element'  => '.top-bar, .menu-text, .menu-item, .top-bar ul, #navrow, .header',
 			'property' => 'background-color',
 		),
 	),

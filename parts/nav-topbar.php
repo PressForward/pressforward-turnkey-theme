@@ -1,4 +1,5 @@
-
+<div class="row" id="navrow">
+<div class="large-12 columns">
 <div class="top-bar" id="main-menu">
 
     <div class="top-bar-title">
@@ -31,4 +32,6 @@
 
     </div>
 
+</div>
+</div>
 </div>

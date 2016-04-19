@@ -1178,7 +1178,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'site-link-color',
-	'label'       => __( 'Site Link Color', 'my_textdomain' ),
+	'label'       => __( 'Sitewide Link Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'choices'     => array(

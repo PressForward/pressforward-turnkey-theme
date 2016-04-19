@@ -921,6 +921,11 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
+      'default'     => array(
+             'link'    => '',
+             'hover'   => '',
+             'active'  => '',
+         ),
   'output'    => array(
          array(
            'choice'   => 'link',
@@ -939,23 +944,7 @@ Kirki::add_field( 'pftk_opts', array(
          ),
        )
 ) );
-// Kirki::add_field( 'pftk_opts', array(
-//     'type'        => 'multicolor',
-//     'settings'    => 'b2-link-color',
-//     'label'       => esc_attr__( 'Block 2 Link Color', 'my_textdomain' ),
-//     'section'     => 'colors',
-//     'priority'    => 10,
-//     'choices'     => array(
-//         'link'    => esc_attr__( 'Color', 'my_textdomain' ),
-//         'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
-//         'active'  => esc_attr__( 'Active', 'my_textdomain' ),
-//     ),
-//     'default'     => array(
-//         'link'    => '#FFFF00',
-//         'hover'   => '#FFFF00',
-//         'active'  => '#FFFF00',
-//     ),
-// ) );
+
 //b2 text color
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
@@ -998,6 +987,11 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
+      'default'     => array(
+             'link'    => '',
+             'hover'   => '',
+             'active'  => '',
+         ),
   'output'    => array(
          array(
            'choice'   => 'link',
@@ -1057,6 +1051,11 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
+      'default'     => array(
+             'link'    => '',
+             'hover'   => '',
+             'active'  => '',
+         ),
   'output'    => array(
          array(
            'choice'   => 'link',
@@ -1103,6 +1102,11 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
+      'default'     => array(
+             'link'    => '',
+             'hover'   => '',
+             'active'  => '',
+         ),
   'output'    => array(
          array(
            'choice'   => 'link',

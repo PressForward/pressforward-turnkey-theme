@@ -1,18 +1,30 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
-						
-	<header class="article-header">	
+
+	<header class="article-header large-12 columns">
 		<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
 		<?php get_template_part( 'parts/content', 'byline' ); ?>
     </header> <!-- end article header -->
-					
-    <section class="entry-content" itemprop="articleBody">
+
+    <section class="entry-content large-12 columns" itemprop="articleBody">
+		<?php
+		$slidercat = Kirki::get_option('pftk_opts', 'slider_category');
+		if (in_category($slidercat)) { ?>
+		<div class="large-3 columns">
 		<?php the_post_thumbnail('full'); ?>
+	</div>
+	<div class="large-9 columns">
 		<?php the_content(); ?>
+	</div>
+	<?php } else { ?>
+		<div class="large-12 columns">
+			<?php the_content(); ?>
+		</div>
+		<?php } ?>
 	</section> <!-- end article section -->
-						
-	<footer class="article-footer">
+
+	<footer class="article-footer large-12 columns">
 		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
-									
-	<?php comments_template(); ?>	
-													
+
+	<?php comments_template(); ?>
+
 </article> <!-- end article -->

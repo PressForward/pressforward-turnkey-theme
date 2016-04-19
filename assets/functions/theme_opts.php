@@ -1126,7 +1126,6 @@ Kirki::add_field( 'pftk_opts', array(
        )
 ) );
 
-
 Kirki::add_field( 'b5-color-1', array(
 	'type'        => 'color',
 	'settings'    => 'b5-color-1',

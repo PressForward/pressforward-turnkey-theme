@@ -1193,5 +1193,39 @@ Kirki::add_field( 'breadcrumbs', array(
 	'default'     => '1',
 	'priority'    => 10,
 ) );
+Kirki::add_field( 'author-name-switch', array(
+    'type'        => 'switch',
+    'settings'    => 'author-name-switch',
+    'label'       => __( 'Display Author Name and Link', 'my_textdomain' ),
+    'section'     => 'content-settings',
+    'default'     => '1',
+    'priority'    => 10,
 
+) );
+Kirki::add_field( 'alt-author-text', array(
+	'type'     => 'text',
+	'settings' => 'alt-author-text',
+	'label'    => __( 'Text to Display Rather than Author Name', 'my_textdomain' ),
+	'section'  => 'content-settings',
+	'priority' => 10,
+) );
+
+Kirki::add_field( 'author-exclude-cats', array(
+	'type'        => 'select',
+	'settings'    => 'author-exclude-cats',
+	'label'       => __( 'Author Exclude Categories', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'priority'    => 10,
+	'multiple'    => 999,
+  'choices'     => Kirki_Helper::get_terms( 'category' ),
+) );
+Kirki::add_field( 'author-include-cats', array(
+	'type'        => 'select',
+	'settings'    => 'author-include-cats',
+	'label'       => __( 'Author Include Categories', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'priority'    => 10,
+	'multiple'    => 999,
+  'choices'     => Kirki_Helper::get_terms( 'category' ),
+) );
 ?>

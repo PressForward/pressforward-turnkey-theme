@@ -38,6 +38,8 @@
     echo '.slider-container {' . construct_gradient($slider_color_1, $slider_color_2) . '}';
     echo '</style>';
     ?>
+
+
 		<!-- Drop Google Analytics here -->
 		<!-- end analytics -->
 

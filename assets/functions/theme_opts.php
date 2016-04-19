@@ -921,11 +921,6 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
-      'default'     => array(
-             'link'    => '#FFFF00',
-             'hover'   => '#FFFF00',
-             'active'  => '#FFFF00',
-         ),
   'output'    => array(
          array(
            'choice'   => 'link',
@@ -1003,11 +998,6 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
-      'default'     => array(
-             'link'    => '#FFFF00',
-             'hover'   => '#FFFF00',
-             'active'  => '#FFFF00',
-         ),
   'output'    => array(
          array(
            'choice'   => 'link',
@@ -1067,11 +1057,6 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
-      'default'     => array(
-             'link'    => '#FFFF00',
-             'hover'   => '#FFFF00',
-             'active'  => '#FFFF00',
-         ),
   'output'    => array(
          array(
            'choice'   => 'link',
@@ -1118,11 +1103,6 @@ Kirki::add_field( 'pftk_opts', array(
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
           'active'  => esc_attr__( 'Active', 'my_textdomain' ),
       ),
-      'default'     => array(
-             'link'    => '#FFFF00',
-             'hover'   => '#FFFF00',
-             'active'  => '#FFFF00',
-         ),
   'output'    => array(
          array(
            'choice'   => 'link',

@@ -1144,8 +1144,71 @@ Kirki::add_field( 'b5-color-2', array(
 	'priority'    => 10,
 	'alpha'       => true,
 ) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'body-bg-color',
+	'label'       => __( 'Site Background Color ', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '#content',
+			'property' => 'background-color',
+		),
+	),
+) );
 
-
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'post-bg-color',
+	'label'       => __( 'Post Background Color ', 'my_textdomain' ),
+	'section'     => 'colors',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => 'main, #main',
+			'property' => 'background-color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'multicolor',
+	'settings'    => 'site-link-color',
+	'label'       => __( 'Site Link Color', 'my_textdomain' ),
+	'section'     => 'colors',
+	'priority'    => 10,
+  'choices'     => array(
+          'link'    => esc_attr__( 'Color', 'my_textdomain' ),
+          'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
+          'active'  => esc_attr__( 'Active', 'my_textdomain' ),
+      ),
+      'default'     => array(
+             'link'    => '',
+             'hover'   => '',
+             'active'  => '',
+         ),
+  'output'    => array(
+         array(
+           'choice'   => 'link',
+           'element'  => 'a',
+           'property' => 'color',
+         ),
+         array(
+           'choice'   => 'hover',
+           'element'  => 'a:hover',
+           'property' => 'color',
+         ),
+         array(
+           'choice'   => 'active',
+           'element'  => 'a:active',
+           'property' => 'color',
+         ),
+       )
+) );
 ////// CONTENT SETTINGS SECTION //////
 
 

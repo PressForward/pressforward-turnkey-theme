@@ -4,7 +4,7 @@
 	}
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area large-12 columns">
 
 	<?php // You can start editing here ?>
 

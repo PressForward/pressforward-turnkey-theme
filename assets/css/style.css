@@ -3858,7 +3858,8 @@ GENERAL STYLES
 
 #main {
   background-color: #fff;
-  border: 1px solid #ddd; }
+  border: 1px solid #ddd;
+  padding: 15px 25px 15px 25px; }
 
 .menu li > a {
   margin-left: 0; }

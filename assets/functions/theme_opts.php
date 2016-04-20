@@ -376,8 +376,8 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c1-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c1-category',
-        'label'       => __( 'Category', 'kirki' ),
-        'description' => __( 'This is the control description', 'kirki' ),
+        'label'       => __( 'First Row First Column Category', 'kirki' ),
+        'description' => __( 'Select a category', 'kirki' ),
         'tooltip'        => __( 'Select a category for the first row of the first column.', 'kirki' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -421,8 +421,8 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c2-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c2-category',
-        'label'       => __( 'Category', 'kirki' ),
-        'description' => __( 'This is the control description', 'kirki' ),
+        'label'       => __( 'First Row Second Column Category', 'kirki' ),
+        'description' => __( 'Select a category', 'kirki' ),
         'tooltip'        => __( 'Select a category for the first row of the second column.', 'kirki' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -466,8 +466,8 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c3-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c3-category',
-        'label'       => __( 'Category', 'kirki' ),
-        'description' => __( 'This is the control description', 'kirki' ),
+        'label'       => __( 'First Row Third Column Category', 'kirki' ),
+        'description' => __( 'Select a category', 'kirki' ),
         'tooltip'     => __( 'Select a category for the first row of column 3.', 'kirki' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -496,7 +496,7 @@ Homepage -- Block 3 -- Options
         'tooltip'     => __( 'Enter a title for the second row of the first column', 'kirki-demo' ),
         'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
         'section'     => 'block3',
-        'default'     => 'B3-R1-C3 Title',
+        'default'     => 'B3-R2-C1 Title',
         'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r2c1-link', array(
@@ -512,8 +512,8 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c1-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c1-category',
-        'label'       => __( 'Category', 'kirki' ),
-        'description' => __( 'This is the control description', 'kirki' ),
+        'label'       => __( 'Second Row First Column Category', 'kirki' ),
+        'description' => __( 'Select a category', 'kirki' ),
         'tooltip'        => __( 'Select a category for the second row of the first column', 'kirki' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -542,7 +542,7 @@ Homepage -- Block 3 -- Options
         'tooltip'        => __( 'Enter a title for the second row of the second column', 'kirki-demo' ),
         'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
         'section'     => 'block3',
-        'default'     => 'B3-R1-C3 Title',
+        'default'     => 'B3-R2-C2 Title',
         'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r2c2-link', array(
@@ -558,8 +558,8 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c2-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c2-category',
-        'label'       => __( 'Category', 'kirki' ),
-        'description' => __( 'This is the control description', 'kirki' ),
+        'label'       => __( 'Second Row Second Column Category', 'kirki' ),
+        'description' => __( 'Select a category', 'kirki' ),
         'tooltip'     => __( 'Select a category for the second row of the second column', 'kirki' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -587,7 +587,7 @@ Homepage -- Block 3 -- Options
         'tooltip'     => __( 'Enter a title for the second row of the third column', 'kirki-demo' ),
         'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
         'section'     => 'block3',
-        'default'     => 'B3-R1-C3 Title',
+        'default'     => 'B3-R2-C3 Title',
         'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r2c3-link', array(
@@ -603,8 +603,8 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c3-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c3-category',
-        'label'       => __( 'Category', 'kirki' ),
-        'description' => __( 'This is the control description', 'kirki' ),
+        'label'       => __( 'Second Row Third Column Category', 'kirki' ),
+        'description' => __( 'Select a category', 'kirki' ),
         'tooltip'     => __( 'Select a category for the second row of the third column', 'kirki' ),
         'section'     => 'block3',
         'default'     => '1',

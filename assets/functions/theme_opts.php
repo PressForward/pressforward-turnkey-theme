@@ -1298,7 +1298,7 @@ Kirki::add_field( 'alt-author-text', array(
 	'settings' => 'alt-author-text',
 	'label'    => __( 'Text to Display Rather than Author Name', 'my_textdomain' ),
 	'section'  => 'content-settings',
-  'tooltip'  => 'If you do not wish to display the name of the author you can enter alternet text here',
+  'tooltip'  => 'Text to display in place of the author when the above option is turned off',
 	'priority' => 10,
 ) );
 
@@ -1307,7 +1307,7 @@ Kirki::add_field( 'author-exclude-cats', array(
 	'settings'    => 'author-exclude-cats',
 	'label'       => __( 'Author Exclude Categories', 'my_textdomain' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'Enter the categories that will exclude the author',
+  'tooltip'     => 'The categories selected here will display the author name even when the author/link swith is turned off',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
@@ -1317,7 +1317,7 @@ Kirki::add_field( 'author-include-cats', array(
 	'settings'    => 'author-include-cats',
 	'label'       => __( 'Author Include Categories', 'my_textdomain' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'Enter the categories that will includ the author',
+  'tooltip'     => 'The categories selected here will display the author name andlink even if the display author/link switch is turned off',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),

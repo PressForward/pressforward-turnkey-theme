@@ -24,7 +24,22 @@
 
 	<footer class="article-footer large-12 columns">
 		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
+	<?php
+	$comment_option = Kirki::get_option('pftk_opts', 'comment-control');
+	$comment_include_categories = Kirki::get_option('pftk_opts', 'comment-include-cats');
+	if ($comment_option == 1){
+		comments_template();
+		echo '</article>';
 
-	<?php comments_template(); ?>
+ 	} elseif ($comment_option == 2){
+		echo '</article>';
 
-</article> <!-- end article -->
+	} elseif(in_category($comment_include_categories) && $comment_option == 3) {
+	comments_template();
+		echo '</article>';
+
+	} else {
+		echo '</article>';
+	}
+
+?>

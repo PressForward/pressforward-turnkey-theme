@@ -1339,4 +1339,36 @@ Kirki::add_field( 'author-include-cats', array(
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
 ) );
+Kirki::add_field( 'comment-control', array(
+	'type'        => 'radio',
+	'settings'    => 'comment-control',
+	'label'       => __( 'Comment Form Display', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'default'     => '1',
+	'priority'    => 10,
+	'choices'     => array(
+		'1'   => array(
+			esc_attr__( 'Turn All Comments ON', 'my_textdomain' ),
+			esc_attr__( 'The comment form will display on all posts.', 'my_textdomain' ),
+		),
+		'2' => array(
+			esc_attr__( 'Turn all comments OFF.', 'kirki' ),
+			esc_attr__( 'The comment form will not be displayed on any posts.', 'my_textdomain' ),
+		),
+		'3'  => array(
+			esc_attr__( 'Turn comments ON but only for specific categories.', 'kirki' ),
+			esc_attr__( 'The comment form will only be displayed on posts from the categories selected in the option below.', 'my_textdomain' ),
+		),
+	),
+) );
+Kirki::add_field( 'comment-include-cats', array(
+	'type'        => 'select',
+	'settings'    => 'comment-include-cats',
+	'label'       => __( 'Comments on for Specific Categories', 'my_textdomain' ),
+	'section'     => 'content-settings',
+	'priority'    => 10,
+	'multiple'    => 999,
+  'choices'     => Kirki_Helper::get_terms( 'category' ),
+) );
+
 ?>

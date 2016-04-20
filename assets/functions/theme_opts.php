@@ -1249,9 +1249,9 @@ Kirki::add_section( 'content-settings', array(
 Kirki::add_field( 'image_demo', array(
 	'type'        => 'image',
 	'settings'    => 'image_demo',
-	'label'       => __( 'This is the label', 'my_textdomain' ),
-	'description' => __( 'This is the control description', 'my_textdomain' ),
-	'help'        => __( 'This is some extra help text.', 'my_textdomain' ),
+	'label'       => __( 'Logo', 'my_textdomain' ),
+	'description' => __( 'Upload a Logo to Display', 'my_textdomain' ),
+	'tooltip'     => __( 'Select a logo image to upload', 'my_textdomain' ),
 	'section'     => 'content-settings',
 	'default'     => '',
 	'priority'    => 10,
@@ -1261,6 +1261,7 @@ Kirki::add_field( 'img_height', array(
 	'settings'    => 'img_height',
 	'label'       => __( 'Logo Height', 'my_textdomain' ),
 	'section'     => 'content-settings',
+  'tooltip'     => 'Enter the logo height in pixels (px)',
 	'default'     => '50px',
 	'priority'    => 10,
 ) );
@@ -1269,6 +1270,7 @@ Kirki::add_field( 'img_width', array(
 	'settings'    => 'img_width',
 	'label'       => __( 'Logo Width', 'my_textdomain' ),
 	'section'     => 'content-settings',
+  'tooltip'     => 'Enter the logo width in pixels (px)',
 	'default'     => '50px',
 	'priority'    => 10,
 ) );
@@ -1277,6 +1279,7 @@ Kirki::add_field( 'breadcrumbs', array(
 	'settings'    => 'breadcrumbs',
 	'label'       => __( 'Breadcrumbs', 'my_textdomain' ),
 	'section'     => 'content-settings',
+  'tooltip'     => 'This switch turns breadcrumbs on or off',
 	'default'     => '1',
 	'priority'    => 10,
 ) );
@@ -1285,6 +1288,7 @@ Kirki::add_field( 'author-name-switch', array(
     'settings'    => 'author-name-switch',
     'label'       => __( 'Display Author Name and Link', 'my_textdomain' ),
     'section'     => 'content-settings',
+    'tooltip'     => 'This switch turns the author name and link on or off',
     'default'     => '1',
     'priority'    => 10,
 
@@ -1294,6 +1298,7 @@ Kirki::add_field( 'alt-author-text', array(
 	'settings' => 'alt-author-text',
 	'label'    => __( 'Text to Display Rather than Author Name', 'my_textdomain' ),
 	'section'  => 'content-settings',
+  'tooltip'  => 'If you do not wish to display the name of the author you can enter alternet text here',
 	'priority' => 10,
 ) );
 
@@ -1302,6 +1307,7 @@ Kirki::add_field( 'author-exclude-cats', array(
 	'settings'    => 'author-exclude-cats',
 	'label'       => __( 'Author Exclude Categories', 'my_textdomain' ),
 	'section'     => 'content-settings',
+  'tooltip'     => 'Enter the categories that will exclude the author',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
@@ -1311,6 +1317,7 @@ Kirki::add_field( 'author-include-cats', array(
 	'settings'    => 'author-include-cats',
 	'label'       => __( 'Author Include Categories', 'my_textdomain' ),
 	'section'     => 'content-settings',
+  'tooltip'     => 'Enter the categories that will includ the author',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),

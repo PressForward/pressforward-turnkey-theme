@@ -664,7 +664,7 @@ Homepage -- Block 4
       'tooltip'        => __( 'Enter the text that you want to appear in Block 4', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block4',
-      'default'     => 'B3-R1-C3 Title',
+      'default'     => 'Default text for block 4.',
       'priority'    => 10,
   ) );
 

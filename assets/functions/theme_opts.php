@@ -1261,7 +1261,7 @@ Kirki::add_field( 'img_height', array(
 	'settings'    => 'img_height',
 	'label'       => __( 'Logo Height', 'my_textdomain' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'Enter the logo height in pixels (px)',
+  'tooltip'     => 'Enter the logo height using a valid CSS unit: px, em, %, vh, etc. ',
 	'default'     => '50px',
 	'priority'    => 10,
 ) );
@@ -1270,7 +1270,7 @@ Kirki::add_field( 'img_width', array(
 	'settings'    => 'img_width',
 	'label'       => __( 'Logo Width', 'my_textdomain' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'Enter the logo width in pixels (px)',
+  'tooltip'     => 'Enter the logo width using a valid CSS unit: px, em, %, vh, etc.',
 	'default'     => '50px',
 	'priority'    => 10,
 ) );

@@ -724,7 +724,7 @@ Homepage -- Footer
 Kirki::add_section( 'Footer', array(
     'title'          => __( 'Footer' ),
     'description'
-       => __( 'Edit the content and appearance of the fourth block on the homepage.' ),
+       => __( 'Edit the content and appearance of the footer on the homepage.' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
@@ -735,6 +735,7 @@ Kirki::add_field( 'toggle-footer', array(
     'settings'    => 'toggle-footer',
     'label'       => __( 'Footer', 'my_textdomain' ),
     'section'     => 'footer',
+    'tooltip'     => 'This switch turns the footer on or off',
     'default'     => '1',
     'priority'    => 10,
 ) );
@@ -743,6 +744,7 @@ Kirki::add_field( 'toggle-copyright', array(
     'settings'    => 'toggle-copyright',
     'label'       => __( 'Display Copyright and Sitename', 'my_textdomain' ),
     'section'     => 'footer',
+    'tooltip'     => 'This switch turns the copyright and sitename information on or off',
     'default'     => '1',
     'priority'    => 10,
 ) );
@@ -751,6 +753,7 @@ Kirki::add_field( 'toggle-footer-text', array(
     'settings'    => 'toggle-footer-text',
     'label'       => __( 'Toggle Footer Text', 'my_textdomain' ),
     'section'     => 'footer',
+    'tooltip'     => 'This switch turns the footer text on or off',
     'default'     => '1',
     'priority'    => 10,
 ) );
@@ -759,6 +762,7 @@ Kirki::add_field( 'footer-text', array(
 	'settings' => 'footer-text',
 	'label'    => __( 'Footer Text', 'my_textdomain' ),
 	'section'  => 'Footer',
+  'tooltip'  => 'Enter the text that will appear in the footer',
 	'default'  => esc_attr__( 'This is a defualt value', 'my_textdomain' ),
 	'priority' => 10,
 ) );

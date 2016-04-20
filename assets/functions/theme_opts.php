@@ -129,6 +129,13 @@ Kirki::add_field( 'toggle-b2', array(
 ////////////////////////////////////////////
 
 //column1 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c1-text',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'my_textdomain' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c1-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c1-icon',
@@ -170,6 +177,13 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //column 2 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c2-div',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'my_textdomain' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c2-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c2-icon',
@@ -199,7 +213,7 @@ Kirki::add_field( 'toggle-b2', array(
     'priority'    => 10,
     'multiple'    => 1,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'pftk_opts', array(
       'type'        => 'textarea',
       'settings'    => 'b2c2-text',
       'label'       => __( 'Second Column Text', 'kirki-demo' ),
@@ -211,6 +225,13 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //Column 3 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c3-div',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'my_textdomain' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c3-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c3-icon',
@@ -252,6 +273,13 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //Column 4 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c4-div',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'my_textdomain' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c4-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c4-icon',
@@ -1266,6 +1294,14 @@ Kirki::add_field( 'breadcrumbs', array(
 	'label'       => __( 'Breadcrumbs', 'my_textdomain' ),
 	'section'     => 'content-settings',
 	'default'     => '1',
+	'priority'    => 10,
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'author-display-div',
+  'label'       => '<h2>Author Display Options</h2>',
+	'section'     => 'content-settings',
+	'default'     => '<div><hr><p>' . esc_html__( 'Description for author display options goes here.', 'my_textdomain' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'author-name-switch', array(

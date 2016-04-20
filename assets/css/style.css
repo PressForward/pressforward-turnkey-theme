@@ -3853,6 +3853,9 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
+#feat_img_col {
+  padding-left: 0px; }
+
 #main {
   background-color: #fff;
   border: 1px solid #ddd; }

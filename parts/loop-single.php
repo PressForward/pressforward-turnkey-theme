@@ -9,7 +9,7 @@
 		<?php
 		$slidercat = Kirki::get_option('pftk_opts', 'slider_category');
 		if (in_category($slidercat)) { ?>
-		<div class="large-3 columns">
+		<div class="large-3 columns" id="feat_img_col">
 		<?php the_post_thumbnail('full'); ?>
 	</div>
 	<div class="large-9 columns">

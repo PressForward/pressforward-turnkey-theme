@@ -9,7 +9,7 @@ $author_include_cats = Kirki::get_option('pftk_opts', 'author_include_cats');
 	if ( $author_name_switch == 1) { ?>
 	Posted on <?php the_time('F j, Y') ?> by <?php the_author_posts_link(); ?>  - <?php the_category(', ') ?>
 <?php } elseif ($author_name_switch != 1 && in_category($author_exclude_cats)) { ?>
-	Posted on <?php the_time('F j, Y') ?> by <?php get_the_author() ?>  - <?php the_category(', ') ?>
+	Posted on <?php the_time('F j, Y') ?> by <?php the_author(); ?>  - <?php the_category(', ') ?>
 <?php } elseif ($author_name_switch != 1 && in_category($author_include_cats)) { ?>
 	Posted on <?php the_time('F j, Y') ?> by <?php the_author_posts_link(); ?>  - <?php the_category(', ') ?>
 <?php } else { ?>

@@ -1279,7 +1279,7 @@ Kirki::add_field( 'breadcrumbs', array(
 	'settings'    => 'breadcrumbs',
 	'label'       => __( 'Breadcrumbs', 'my_textdomain' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'This switch turns breadcrumbs on or off',
+  'tooltip'     => 'This switch turns breadcrumb navigation on or off. Breadcrumbs allow users to track their location in the website.',
 	'default'     => '1',
 	'priority'    => 10,
 ) );

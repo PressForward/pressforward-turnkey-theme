@@ -73,6 +73,34 @@ Kirki::add_field( 'slider-switch', array(
           'step' => 1
       ),
   ) );
+  Kirki::add_field( 'slider-title-numwords', array(
+      'type'        => 'slider',
+      'settings'    => 'slider-title-numwords',
+      'label'       => __( 'Number of Words in Slider Post Title', 'kirki' ),
+      'description' => __( 'How many posts should appear in the slider.', 'kirki' ),
+      'section'     => 'slider',
+      'default'     => 14,
+      'priority'    => 10,
+      'choices'     => array(
+          'min'  => 1,
+          'max'  => 100,
+          'step' => 1
+      ),
+  ) );
+  Kirki::add_field( 'slider-excerpt-numwords', array(
+      'type'        => 'slider',
+      'settings'    => 'slider-excerpt-numwords',
+      'label'       => __( 'Number of Words in Slider Excerpt', 'kirki' ),
+      'description' => __( 'How many posts should appear in the slider.', 'kirki' ),
+      'section'     => 'slider',
+      'default'     => 55,
+      'priority'    => 10,
+      'choices'     => array(
+          'min'  => 1,
+          'max'  => 500,
+          'step' => 1
+      ),
+  ) );
   Kirki::add_field( 'slider_category', array(
       'type'        => 'select',
       'settings'    => 'slider_category',

@@ -26,15 +26,17 @@ Template Name: Home Page Template
 
 			//get number of posts from customizer option
 			$slider_numposts_option = Kirki::get_option( 'pftk_opts', 'slider_numposts' );
-
+			$slider_title_num_words = Kirki::get_option('pftk_opts', 'slider-title-numwords');
+			$slider_excerpt_num_words = Kirki::get_option('pftk_opts', 'slider-excerpt-numwords');
 			$postcats = 'category='. $slider_categories_option . '&posts_per_page=' . $slider_numposts_option;
 			$feat_posts = get_posts($postcats);
 			$bullets = 1;
 			foreach($feat_posts as $post) {
+
         $trim_title = get_post_field('post_title', $id);
-        $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
+        $short_title = wp_trim_words( $trim_title, $num_words = $slider_title_num_words, $more = '… ' );
 				$trimexcerpt = get_post_field('post_content', $id);
-        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
+        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = $slider_excerpt_num_words, $more = '… ' );
 						echo '<li class="orbit-slide">';
 						echo '<div class="row">';
 						echo '<div class="medium-11 large-11 columns"><h1>' . $short_title . '</h1></div></div>';

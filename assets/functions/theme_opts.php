@@ -842,6 +842,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Top Bar Background Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '',
+  'tooltip'     => 'Select a background color for the bar that appears on the top of the page.',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
@@ -856,6 +857,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'topbar-text',
 	'label'       => __( 'Top Bar Text Color', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a text color for the bar that appears at the top of the page',
 	'default'     => '',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -872,6 +874,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'icon-color',
 	'label'       => __( 'Icon Color', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a color for the icons in block 2',
 	'default'     => '',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -888,6 +891,7 @@ Kirki::add_field( 'slider-color-1', array(
 	'settings'    => 'slider-color-1',
 	'label'       => __( 'Slider Gradient (Color #1)', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a gradient color for the top of the slider. This will blend with the second gradient color.',
 	'default'     => '#0088CC',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -897,6 +901,7 @@ Kirki::add_field( 'slider-color-2', array(
 	'settings'    => 'slider-color-2',
 	'label'       => __( 'Slider Gradient (Color #2)', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a gradient color for the bottom of the slider. This will blend with the first gradient color.',
 	'default'     => '#0088CC',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -907,6 +912,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'orbit-bullets',
 	'label'       => __( 'Slider Bullets', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a color for the slider bullets.',
 	'default'     => '',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -923,6 +929,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'b2-bg-color',
 	'label'       => __( 'Block 2 Background Color', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a background color for block 2',
 	'default'     => '',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -940,6 +947,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 2 Link Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'priority'    => 10,
+  'tooltip'     => 'Select a link color, a hover color, an active link color for block 2.',
   'choices'     => array(
           'link'    => esc_attr__( 'Color', 'my_textdomain' ),
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
@@ -976,6 +984,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 2 Text Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '',
+  'tooltip'     => 'Select a text color for block 2.',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
@@ -991,6 +1000,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 3 Background Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '',
+  'tooltip'     => 'Select a background color for block 3.',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
@@ -1006,6 +1016,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 3 Link Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'priority'    => 10,
+  'tooltip'     => 'Select a link color, a hover color, an active link color for block 3.',
   'choices'     => array(
           'link'    => esc_attr__( 'Color', 'my_textdomain' ),
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
@@ -1040,6 +1051,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 4 Background Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '',
+  'tooltip'     => 'Select a background color for block 4.',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
@@ -1055,6 +1067,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 4 Text Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '',
+  'tooltip'     => 'Select a text color for block 4.',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
@@ -1070,6 +1083,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 4 Link Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'priority'    => 10,
+  'tooltip'   => 'Select a link color, a hover color, an active link color for block 4',
   'choices'     => array(
           'link'    => esc_attr__( 'Color', 'my_textdomain' ),
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
@@ -1105,6 +1119,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 5 Text Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '',
+  'tooltip'     => 'Select a text color for block 5.',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
@@ -1121,6 +1136,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 5 Link Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'priority'    => 10,
+  'tooltip'   => 'Select a link color, a hover color, an active link color for block 5',
   'choices'     => array(
           'link'    => esc_attr__( 'Color', 'my_textdomain' ),
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
@@ -1155,6 +1171,7 @@ Kirki::add_field( 'b5-color-1', array(
 	'settings'    => 'b5-color-1',
 	'label'       => __( 'Block 5 Gradient (Color #1)', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a gradient color for the top of block 5. This will blend with the second gradient color.',
 	'default'     => '#0088CC',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -1164,6 +1181,7 @@ Kirki::add_field( 'b5-color-2', array(
 	'settings'    => 'b5-color-2',
 	'label'       => __( 'Block 5 Gradient (Color #2) ', 'my_textdomain' ),
 	'section'     => 'colors',
+  'tooltip'     => 'Select a gradient color for the bottom of block 5. This will blend with the first gradient color.',
 	'default'     => '#0088CC',
 	'priority'    => 10,
 	'alpha'       => true,
@@ -1174,6 +1192,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Site Background Color ', 'my_textdomain' ),
 	'section'     => 'colors',
 	'default'     => '',
+  'tooltip'     => 'Select a background color for th entire site.',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
@@ -1205,6 +1224,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Sitewide Link Color', 'my_textdomain' ),
 	'section'     => 'colors',
 	'priority'    => 10,
+  'tooltip'     => 'Select a link color, a hover color, an active link color for the entire site.',
   'choices'     => array(
           'link'    => esc_attr__( 'Color', 'my_textdomain' ),
           'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),

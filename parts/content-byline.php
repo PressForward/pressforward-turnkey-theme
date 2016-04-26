@@ -1,8 +1,8 @@
 <?php
 $author_name_switch = Kirki::get_option('pftk_opts', 'author-name-switch');
 $alt_author_text = Kirki::get_option('pftk_opts', 'alt-author-text');
-$author_exclude_cats = Kirki::get_option('pftk_opts', 'author_exclude_cats');
-$author_include_cats = Kirki::get_option('pftk_opts', 'author_include_cats');
+$author_exclude_cats = Kirki::get_option('pftk_opts', 'author-exclude-cats');
+$author_include_cats = Kirki::get_option('pftk_opts', 'author-include-cats');
 ?>
 <p class="byline">
 	<?php

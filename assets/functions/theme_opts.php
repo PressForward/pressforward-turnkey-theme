@@ -1341,6 +1341,7 @@ Kirki::add_field( 'author-name-switch', array(
     'priority'    => 10,
 
 ) );
+
 Kirki::add_field( 'alt-author-text', array(
 	'type'     => 'text',
 	'settings' => 'alt-author-text',

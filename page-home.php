@@ -37,6 +37,12 @@ Template Name: Home Page Template
         $short_title = wp_trim_words( $trim_title, $num_words = $slider_title_num_words, $more = '… ' );
 				$trimexcerpt = get_post_field('post_content', $id);
 				$authorid = $post->post_author;
+
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+				if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
+  			//plugin is activated
+				$itemauth = get_post_meta($post->ID, 'item_author', true);
+				}
         $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = $slider_excerpt_num_words, $more = '… ' );
 						echo '<li class="orbit-slide">';
 						echo '<div class="row">';
@@ -44,11 +50,20 @@ Template Name: Home Page Template
 						echo '<div class="row">';
 						echo '<div class="medium-7 columns">';
 						echo '<h2 class="slider-byline">By: ';
+						if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
+						echo $itemauth;
+					} else {
 						echo the_author_meta('user_nicename', $authorid);
+					}
 						echo '</h2></br><p class="info-title">' . $shortexcerpt . '</p> <a href="' . get_permalink() . '
 						" alt="' . get_the_title() . '" class="pf-tk-button">Read More</a></div>';
 						$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-						echo '<div class="medium-5 columns"><img src="' . $thumb[0] . '" class="thumbnail"></div>';
+						echo '<div class="medium-5 columns">';
+						if(empty($thumb)) {
+							echo '';
+						} else {
+							echo '<img src="' . $thumb[0] . '" class="thumbnail"></div>';
+						}
 						echo '</div>';
 						echo '</li>';
 						$bullets++;

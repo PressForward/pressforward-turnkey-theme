@@ -4,7 +4,7 @@
 						<div id="inner-footer" class="row">
 							<div class="large-12 medium-12 columns">
 								<nav role="navigation">
-		    						<?php joints_footer_links(); ?>
+		    						<?php pressforward_tk_theme_footer_links(); ?>
 		    					</nav>
 		    				</div>
 							<?php $toggle_copyright = Kirki::get_option('pftk_opts', 'toggle-copyright');

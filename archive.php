@@ -21,7 +21,7 @@
 
 				<?php endwhile; ?>
 
-					<?php joints_page_navi(); ?>
+					<?php pressforward_tk_theme_page_navi(); ?>
 
 				<?php else : ?>
 

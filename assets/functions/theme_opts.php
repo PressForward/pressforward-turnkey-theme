@@ -159,13 +159,12 @@ Kirki::add_field( 'toggle-b2', array(
 ////////////////////////////////////////////
 //Title,link and text for column1 block 2.//
 ////////////////////////////////////////////
-
 //column1 -- Block2
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c1-text',
 	'section'     => 'block2',
-	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><h2>First Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c1-icon', array(
@@ -214,7 +213,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c2-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Second Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c2-icon', array(
@@ -263,7 +262,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c3-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>First Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c3-icon', array(
@@ -312,7 +311,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c4-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>First Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c4-icon', array(
@@ -398,7 +397,13 @@ Homepage -- Block 3 -- Options
     /*********************
     Homepage -- Block 3 Row 1 Column 1 -- Options
     *********************/
-
+    Kirki::add_field( 'pftk_opts', array(
+    	'type'        => 'custom',
+    	'settings'    => 'b3r1c1-div',
+    	'section'     => 'block3',
+    	'default'     => '<div><h2>First Row First Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'priority'    => 10,
+    ) );
     Kirki::add_field( 'b3r1c1-icon', array(
         'type'        => 'text',
         'settings'    => 'b3r1c1-icon',
@@ -443,7 +448,13 @@ Homepage -- Block 3 -- Options
     /*********************
     Homepage -- Block 3 Row 1 Column 2 -- Options
     *********************/
-
+    Kirki::add_field( 'pftk_opts', array(
+      'type'        => 'custom',
+      'settings'    => 'b3r1c2-div',
+      'section'     => 'block3',
+      'default'     => '<div><h2>First Row Second Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+      'priority'    => 10,
+    ) );
     Kirki::add_field( 'b3r1c2-icon', array(
         'type'        => 'text',
         'settings'    => 'b3r1c2-icon',
@@ -491,7 +502,13 @@ Homepage -- Block 3 -- Options
     /*********************
     Homepage -- Block 3 Row 1 Column 3 -- Options
     *********************/
-
+    Kirki::add_field( 'pftk_opts', array(
+      'type'        => 'custom',
+      'settings'    => 'b3r1c3-div',
+      'section'     => 'block3',
+      'default'     => '<div><h2>First Row Third Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+      'priority'    => 10,
+    ) );
     Kirki::add_field( 'b3r1c3-icon', array(
         'type'        => 'text',
         'settings'    => 'b3r1c3-icon',
@@ -540,7 +557,13 @@ Homepage -- Block 3 -- Options
     /*********************
     Homepage -- Block 3 Row 2 Column 1 -- Options
     *********************/
-
+    Kirki::add_field( 'pftk_opts', array(
+    	'type'        => 'custom',
+    	'settings'    => 'b3r2c1-div',
+    	'section'     => 'block3',
+    	'default'     => '<div><h2>Second Row First Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'priority'    => 10,
+    ) );
     Kirki::add_field( 'b3r2c1-icon', array(
         'type'        => 'text',
         'settings'    => 'b3r2c1-icon',
@@ -586,7 +609,13 @@ Homepage -- Block 3 -- Options
     /*********************
     Homepage -- Block 3 Row 1 Column 3 -- Options
     *********************/
-
+    Kirki::add_field( 'pftk_opts', array(
+    	'type'        => 'custom',
+    	'settings'    => 'b3r2c2-div',
+    	'section'     => 'block3',
+    	'default'     => '<div><h2>Second Row Second Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'priority'    => 10,
+    ) );
     Kirki::add_field( 'b3r2c2-icon', array(
         'type'        => 'text',
         'settings'    => 'b3r2c2-icon',
@@ -631,7 +660,13 @@ Homepage -- Block 3 -- Options
     /*********************
     Homepage -- Block 3 Row 1 Column 3 -- Options
     *********************/
-
+    Kirki::add_field( 'pftk_opts', array(
+    	'type'        => 'custom',
+    	'settings'    => 'b3r2c3-div',
+    	'section'     => 'block3',
+    	'default'     => '<div><h2>Second Row Third Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'priority'    => 10,
+    ) );
     Kirki::add_field( 'b3r2c3-icon', array(
         'type'        => 'text',
         'settings'    => 'b3r2c3-icon',
@@ -901,6 +936,13 @@ Kirki::add_section( 'colors', array(
     'theme_supports' => '', // Rarely needed.
 ) );
 Kirki::add_field( 'pftk_opts', array(
+  'type'        => 'custom',
+  'settings'    => 'topbar-div',
+  'section'     => 'colors',
+  'default'     => '<div><h2>Top Bar Styling</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'priority'    => 10,
+) );
+Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'topbar',
 	'label'       => __( 'Top Bar Background Color', 'pressforward_tk_theme' ),
@@ -934,6 +976,13 @@ Kirki::add_field( 'pftk_opts', array(
 ) );
 
 // slider bg color
+Kirki::add_field( 'pftk_opts', array(
+  'type'        => 'custom',
+  'settings'    => 'slider-div',
+  'section'     => 'colors',
+  'default'     => '<div><h2>Slider</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'priority'    => 10,
+) );
 Kirki::add_field( 'slider-color-1', array(
 	'type'        => 'color',
 	'settings'    => 'slider-color-1',
@@ -970,6 +1019,13 @@ Kirki::add_field( 'pftk_opts', array(
 			'property' => 'background-color',
 		),
 	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+  'type'        => 'custom',
+  'settings'    => 'b2-div',
+  'section'     => 'colors',
+  'default'     => '<div><h2>Block 2</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'priority'    => 10,
 ) );
 // b2 bg color
 Kirki::add_field( 'pftk_opts', array(
@@ -1060,6 +1116,13 @@ Kirki::add_field( 'pftk_opts', array(
 	),
 ) );
 Kirki::add_field( 'pftk_opts', array(
+  'type'        => 'custom',
+  'settings'    => 'b3-div',
+  'section'     => 'colors',
+  'default'     => '<div><h2>Block 3</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'priority'    => 10,
+) );
+Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b3-bg-color',
 	'label'       => __( 'Block 3 Background Color', 'pressforward_tk_theme' ),
@@ -1128,6 +1191,13 @@ Kirki::add_field( 'pftk_opts', array(
        )
 ) );
 Kirki::add_field( 'pftk_opts', array(
+  'type'        => 'custom',
+  'settings'    => 'b4-div',
+  'section'     => 'colors',
+  'default'     => '<div><h2>Block 4</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'priority'    => 10,
+) );
+Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b4-bg-color',
 	'label'       => __( 'Block 4 Background Color', 'pressforward_tk_theme' ),
@@ -1194,7 +1264,13 @@ Kirki::add_field( 'pftk_opts', array(
          ),
        )
 ) );
-
+Kirki::add_field( 'pftk_opts', array(
+  'type'        => 'custom',
+  'settings'    => 'b5-div',
+  'section'     => 'colors',
+  'default'     => '<div><h2>Block 5</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'priority'    => 10,
+) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b5-text-color',
@@ -1267,6 +1343,13 @@ Kirki::add_field( 'b5-color-2', array(
 	'default'     => '#0088CC',
 	'priority'    => 10,
 	'alpha'       => true,
+) );
+Kirki::add_field( 'pftk_opts', array(
+  'type'        => 'custom',
+  'settings'    => 'sw-div',
+  'section'     => 'colors',
+  'default'     => '<div><h2>Site Wide</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'priority'    => 10,
 ) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',

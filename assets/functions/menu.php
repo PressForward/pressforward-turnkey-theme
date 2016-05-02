@@ -8,7 +8,7 @@ register_nav_menus(
 );
 
 // The Top Menu
-function joints_top_nav() {
+function pressforward_tk_theme_top_nav() {
 	 wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'dropdown menu',       // Adding custom nav class
@@ -21,7 +21,7 @@ function joints_top_nav() {
 } /* End Top Menu */
 
 // The Off Canvas Menu
-function joints_off_canvas_nav() {
+function pressforward_tk_theme_off_canvas_nav() {
 	 wp_nav_menu(array(
         'container' => false,                           // Remove nav container
         'menu_class' => 'vertical menu',       // Adding custom nav class
@@ -34,7 +34,7 @@ function joints_off_canvas_nav() {
 } /* End Off Canvas Menu */
 
 // The Footer Menu
-function joints_footer_links() {
+function pressforward_tk_theme_footer_links() {
     wp_nav_menu(array(
     	'container' => 'false',                              // Remove nav container
     	'menu' => __( 'Footer Links', 'jointswp' ),   	// Nav name
@@ -46,7 +46,7 @@ function joints_footer_links() {
 } /* End Footer Menu */
 
 // Header Fallback Menu
-function joints_main_nav_fallback() {
+function pressforward_tk_theme_main_nav_fallback() {
 	wp_page_menu( array(
 		'show_home' => true,
     	'menu_class' => '',      // Adding custom nav class
@@ -59,6 +59,6 @@ function joints_main_nav_fallback() {
 }
 
 // Footer Fallback Menu
-function joints_footer_links_fallback() {
+function pressforward_tk_theme_footer_links_fallback() {
 	/* You can put a default here if you like */
 }

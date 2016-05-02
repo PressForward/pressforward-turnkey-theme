@@ -53,8 +53,12 @@ Homepage -- Slider -- Options
 Kirki::add_field( 'slider-switch', array(
     'type'        => 'switch',
     'settings'    => 'slider-switch',
+<<<<<<< HEAD
     'label'       => __( 'Slider (Block 1)', 'my_textdomain' ),
     'tooltip'     => 'This switch turns the slider on or off',
+=======
+    'label'       => __( 'Slider (Block 1)', 'pressforward_tk_theme' ),
+>>>>>>> v2.0
     'section'     => 'slider',
     'default'     => '1',
     'priority'    => 10,
@@ -63,8 +67,8 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider_numposts', array(
       'type'        => 'slider',
       'settings'    => 'slider_numposts',
-      'label'       => __( 'Number of Posts', 'kirki' ),
-      'description' => __( 'How many posts should appear in the slider.', 'kirki' ),
+      'label'       => __( 'Number of Posts', 'pressforward_tk_theme' ),
+      'description' => __( 'How many posts should appear in the slider.', 'pressforward_tk_theme' ),
       'section'     => 'slider',
       'tooltip'     => 'Select the number of posts that will appear in the slider',
       'default'     => 4,
@@ -75,12 +79,40 @@ Kirki::add_field( 'slider-switch', array(
           'step' => 1
       ),
   ) );
+  Kirki::add_field( 'slider-title-numwords', array(
+      'type'        => 'slider',
+      'settings'    => 'slider-title-numwords',
+      'label'       => __( 'Number of Words in Slider Post Title', 'pressforward_tk_theme' ),
+      'description' => __( 'How many posts should appear in the slider.', 'pressforward_tk_theme' ),
+      'section'     => 'slider',
+      'default'     => 14,
+      'priority'    => 10,
+      'choices'     => array(
+          'min'  => 1,
+          'max'  => 100,
+          'step' => 1
+      ),
+  ) );
+  Kirki::add_field( 'slider-excerpt-numwords', array(
+      'type'        => 'slider',
+      'settings'    => 'slider-excerpt-numwords',
+      'label'       => __( 'Number of Words in Slider Excerpt', 'pressforward_tk_theme' ),
+      'description' => __( 'How many posts should appear in the slider.', 'pressforward_tk_theme' ),
+      'section'     => 'slider',
+      'default'     => 55,
+      'priority'    => 10,
+      'choices'     => array(
+          'min'  => 1,
+          'max'  => 500,
+          'step' => 1
+      ),
+  ) );
   Kirki::add_field( 'slider_category', array(
       'type'        => 'select',
       'settings'    => 'slider_category',
-      'label'       => __( 'Slider Post Category', 'kirki' ),
-      'description' => __( 'Select a post category for the slider.', 'kirki' ),
-      'tooltip'     => __( 'Select the post category that you want to appear in the slider.', 'kirki' ),
+      'label'       => __( 'Slider Post Category', 'pressforward_tk_theme' ),
+      'description' => __( 'Select a post category for the slider.', 'pressforward_tk_theme' ),
+      'tooltip'     => __( 'Select the post category that you want to appear in the slider.', 'pressforward_tk_theme' ),
       'section'     => 'slider',
       'default'     => '1',
       'priority'    => 10,
@@ -89,14 +121,14 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider-autoplay', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'slider-autoplay',
-	'label'       => __( 'Slider Autoplay', 'my_textdomain' ),
+	'label'       => __( 'Slider Autoplay', 'pressforward_tk_theme' ),
 	'section'     => 'slider',
   'tooltip'     => 'This switch turns the autoplay feature of the slider on or off',
 	'default'     => 'autoPlay:false;',
 	'priority'    => 10,
 	'choices'     => array(
-		'autoPlay:true;' => esc_attr__( 'On', 'my_textdomain' ),
-    'autoPlay:false;'   => esc_attr__( 'Off', 'my_textdomain' )
+		'autoPlay:true;' => esc_attr__( 'On', 'pressforward_tk_theme' ),
+    'autoPlay:false;'   => esc_attr__( 'Off', 'pressforward_tk_theme' )
 	),
 ) );
 
@@ -119,7 +151,7 @@ Kirki::add_section( 'Block2', array(
 Kirki::add_field( 'toggle-b2', array(
     'type'        => 'switch',
     'settings'    => 'toggle-b2',
-    'label'       => __( 'Block 2', 'my_textdomain' ),
+    'label'       => __( 'Block 2', 'pressforward_tk_theme' ),
     'section'     => 'block2',
     'tooltip'     => 'This switch turns Block 2 on or off',
     'default'     => '1',
@@ -133,6 +165,13 @@ Kirki::add_field( 'toggle-b2', array(
 ////////////////////////////////////////////
 
 //column1 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c1-text',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c1-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c1-icon',
@@ -175,6 +214,13 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //column 2 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c2-div',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c2-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c2-icon',
@@ -205,7 +251,7 @@ Kirki::add_field( 'toggle-b2', array(
     'priority'    => 10,
     'multiple'    => 1,
   ) );
-  Kirki::add_field( 'kirki_demo', array(
+  Kirki::add_field( 'pftk_opts', array(
       'type'        => 'textarea',
       'settings'    => 'b2c2-text',
       'label'       => __( 'Second Column Text', 'kirki-demo' ),
@@ -217,6 +263,13 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //Column 3 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c3-div',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c3-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c3-icon',
@@ -259,6 +312,13 @@ Kirki::add_field( 'toggle-b2', array(
   ) );
 
 //Column 4 -- Block2
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'b2c4-div',
+	'section'     => 'block2',
+	'default'     => '<div><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'priority'    => 10,
+) );
   Kirki::add_field( 'b2c4-icon', array(
       'type'        => 'text',
       'settings'    => 'b2c4-icon',
@@ -317,7 +377,7 @@ Homepage -- Block 3 -- Options
   Kirki::add_field( 'toggle-b3', array(
       'type'        => 'switch',
       'settings'    => 'toggle-b3',
-      'label'       => __( 'Block 3', 'my_textdomain' ),
+      'label'       => __( 'Block 3', 'pressforward_tk_theme' ),
       'section'     => 'block3',
       'tooltip'     => 'This switch turns Block 3 on or off',
       'default'     => '1',
@@ -376,8 +436,8 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c1-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c1-category',
-        'label'       => __( 'First Row First Column Category', 'kirki' ),
-        'description' => __( 'Select a category', 'kirki' ),
+        'label'       => __( 'First Row First Column Category', 'pressforward_tk_theme' ),
+        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
         'tooltip'        => __( 'Select a category for the first row of the first column.', 'kirki' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -421,9 +481,12 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c2-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c2-category',
-        'label'       => __( 'First Row Second Column Category', 'kirki' ),
+        'label'       => __( 'First Row Second Column Category', 'pressforward_tk_theme' ),
         'description' => __( 'Select a category', 'kirki' ),
-        'tooltip'        => __( 'Select a category for the first row of the second column.', 'kirki' ),
+        'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward_tk_theme' ),
+        'label'       => __( 'Category', 'pressforward_tk_theme' ),
+        'description' => __( 'This is the control description', 'pressforward_tk_theme' ),
+        'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -466,9 +529,12 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c3-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c3-category',
-        'label'       => __( 'First Row Third Column Category', 'kirki' ),
-        'description' => __( 'Select a category', 'kirki' ),
-        'tooltip'     => __( 'Select a category for the first row of column 3.', 'kirki' ),
+        'label'       => __( 'First Row Third Column Category', 'pressforward_tk_theme' ),
+        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
+        'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward_tk_theme' ),
+        'label'       => __( 'Category', 'pressforward_tk_theme' ),
+        'description' => __( 'This is the control description', 'pressforward_tk_theme' ),
+        'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -512,9 +578,9 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c1-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c1-category',
-        'label'       => __( 'Second Row First Column Category', 'kirki' ),
-        'description' => __( 'Select a category', 'kirki' ),
-        'tooltip'        => __( 'Select a category for the second row of the first column', 'kirki' ),
+        'label'       => __( 'Second Row First Column Category', 'pressforward_tk_theme' ),
+        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
+        'tooltip'        => __( 'Select a category for the second row of the first column', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -558,9 +624,9 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c2-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c2-category',
-        'label'       => __( 'Second Row Second Column Category', 'kirki' ),
+        'label'       => __( 'Second Row Second Column Category', 'pressforward_tk_theme' ),
         'description' => __( 'Select a category', 'kirki' ),
-        'tooltip'     => __( 'Select a category for the second row of the second column', 'kirki' ),
+        'tooltip'     => __( 'Select a category for the second row of the second column', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -603,9 +669,9 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c3-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c3-category',
-        'label'       => __( 'Second Row Third Column Category', 'kirki' ),
+        'label'       => __( 'Second Row Third Column Category', 'pressforward_tk_theme' ),
         'description' => __( 'Select a category', 'kirki' ),
-        'tooltip'     => __( 'Select a category for the second row of the third column', 'kirki' ),
+        'tooltip'     => __( 'Select a category for the second row of the third column', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -631,7 +697,7 @@ Homepage -- Block 4
   Kirki::add_field( 'toggle-b4', array(
       'type'        => 'switch',
       'settings'    => 'toggle-b4',
-      'label'       => __( 'Block 4', 'my_textdomain' ),
+      'label'       => __( 'Block 4', 'pressforward_tk_theme' ),
       'section'     => 'block4',
       'tooltip'     => 'This switch turns Block 4 on or off',
       'default'     => '1',
@@ -687,7 +753,7 @@ Homepage -- Block 5
     Kirki::add_field( 'toggle-b5', array(
         'type'        => 'switch',
         'settings'    => 'toggle-b5',
-        'label'       => __( 'Block 5', 'my_textdomain' ),
+        'label'       => __( 'Block 5', 'pressforward_tk_theme' ),
         'tooltip'     => 'This switch turns Block 5 on or off',
         'section'     => 'block5',
         'default'     => '1',
@@ -733,7 +799,7 @@ Kirki::add_section( 'Footer', array(
 Kirki::add_field( 'toggle-footer', array(
     'type'        => 'switch',
     'settings'    => 'toggle-footer',
-    'label'       => __( 'Footer', 'my_textdomain' ),
+    'label'       => __( 'Footer', 'pressforward_tk_theme' ),
     'section'     => 'footer',
     'tooltip'     => 'This switch turns the footer on or off.',
     'default'     => '1',
@@ -742,7 +808,7 @@ Kirki::add_field( 'toggle-footer', array(
 Kirki::add_field( 'toggle-copyright', array(
     'type'        => 'switch',
     'settings'    => 'toggle-copyright',
-    'label'       => __( 'Display Copyright and Sitename', 'my_textdomain' ),
+    'label'       => __( 'Display Copyright and Sitename', 'pressforward_tk_theme' ),
     'section'     => 'footer',
     'tooltip'     => 'This switch turns the copyright and sitename information on or off.',
     'default'     => '1',
@@ -751,7 +817,7 @@ Kirki::add_field( 'toggle-copyright', array(
 Kirki::add_field( 'toggle-footer-text', array(
     'type'        => 'switch',
     'settings'    => 'toggle-footer-text',
-    'label'       => __( 'Toggle Footer Text', 'my_textdomain' ),
+    'label'       => __( 'Toggle Footer Text', 'pressforward_tk_theme' ),
     'section'     => 'footer',
     'tooltip'     => 'This switch turns the footer text on or off.',
     'default'     => '1',
@@ -760,10 +826,10 @@ Kirki::add_field( 'toggle-footer-text', array(
 Kirki::add_field( 'footer-text', array(
 	'type'     => 'textarea',
 	'settings' => 'footer-text',
-	'label'    => __( 'Footer Text', 'my_textdomain' ),
+	'label'    => __( 'Footer Text', 'pressforward_tk_theme' ),
 	'section'  => 'Footer',
   'tooltip'  => 'Enter the text that will appear in the footer.',
-	'default'  => esc_attr__( 'This is a defualt value', 'my_textdomain' ),
+	'default'  => esc_attr__( 'This is a defualt value', 'pressforward_tk_theme' ),
 	'priority' => 10,
 ) );
 
@@ -789,7 +855,7 @@ Sitewide -- Typography
   Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'typography',
 	'settings'    => 'body-font',
-	'label'       => esc_attr__( 'Body Font', 'kirki' ),
+	'label'       => esc_attr__( 'Body Font', 'pressforward_tk_theme' ),
 	'section'     => 'fontcontrol',
   'tooltip'  => 'This section controls the appearance of the body text.',
 	'default'     => array(
@@ -811,7 +877,7 @@ Sitewide -- Typography
 Kirki::add_field( 'pftk_opts', array(
 'type'        => 'typography',
 'settings'    => 'header-font',
-'label'       => esc_attr__( 'Header Font', 'kirki' ),
+'label'       => esc_attr__( 'Header Font', 'pressforward_tk_theme' ),
 'section'     => 'fontcontrol',
 'tooltip'  => 'This section controls the appearance of the body text.',
 'default'     => array(
@@ -841,7 +907,7 @@ Kirki::add_section( 'colors', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'topbar',
-	'label'       => __( 'Top Bar Background Color', 'my_textdomain' ),
+	'label'       => __( 'Top Bar Background Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for the bar that appears on the top of the page.',
@@ -857,7 +923,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'topbar-text',
-	'label'       => __( 'Top Bar Text Color', 'my_textdomain' ),
+	'label'       => __( 'Top Bar Text Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a text color for the bar that appears at the top of the page.',
 	'default'     => '',
@@ -874,7 +940,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'icon-color',
-	'label'       => __( 'Icon Color', 'my_textdomain' ),
+	'label'       => __( 'Icon Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a color for the icons in block 2.',
 	'default'     => '',
@@ -891,7 +957,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'slider-color-1', array(
 	'type'        => 'color',
 	'settings'    => 'slider-color-1',
-	'label'       => __( 'Slider Gradient (Color #1)', 'my_textdomain' ),
+	'label'       => __( 'Slider Gradient (Color #1)', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the top of the slider. This will blend with the second gradient color.',
 	'default'     => '#0088CC',
@@ -901,7 +967,7 @@ Kirki::add_field( 'slider-color-1', array(
 Kirki::add_field( 'slider-color-2', array(
 	'type'        => 'color',
 	'settings'    => 'slider-color-2',
-	'label'       => __( 'Slider Gradient (Color #2)', 'my_textdomain' ),
+	'label'       => __( 'Slider Gradient (Color #2)', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the bottom of the slider. This will blend with the first gradient color.',
 	'default'     => '#0088CC',
@@ -912,7 +978,7 @@ Kirki::add_field( 'slider-color-2', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'orbit-bullets',
-	'label'       => __( 'Slider Bullets', 'my_textdomain' ),
+	'label'       => __( 'Slider Bullets', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a color for the slider bullets.',
 	'default'     => '',
@@ -929,7 +995,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b2-bg-color',
-	'label'       => __( 'Block 2 Background Color', 'my_textdomain' ),
+	'label'       => __( 'Block 2 Background Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a background color for block 2.',
 	'default'     => '',
@@ -946,14 +1012,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b2-link-color',
-	'label'       => __( 'Block 2 Link Color', 'my_textdomain' ),
+	'label'       => __( 'Block 2 Link Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'     => 'Select a link color, a hover color, an active link color for block 2.',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'my_textdomain' ),
-          'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
-          'active'  => esc_attr__( 'Active', 'my_textdomain' ),
+          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -983,7 +1049,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b2-text-color',
-	'label'       => __( 'Block 2 Text Color', 'my_textdomain' ),
+	'label'       => __( 'Block 2 Text Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a text color for block 2.',
@@ -999,7 +1065,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b3-bg-color',
-	'label'       => __( 'Block 3 Background Color', 'my_textdomain' ),
+	'label'       => __( 'Block 3 Background Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for block 3.',
@@ -1015,14 +1081,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b3-link-color',
-	'label'       => __( 'Block 3 Link Color', 'my_textdomain' ),
+	'label'       => __( 'Block 3 Link Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'     => 'Select a link color, a hover color, an active link color for block 3.',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'my_textdomain' ),
-          'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
-          'active'  => esc_attr__( 'Active', 'my_textdomain' ),
+          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1050,7 +1116,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b4-bg-color',
-	'label'       => __( 'Block 4 Background Color', 'my_textdomain' ),
+	'label'       => __( 'Block 4 Background Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for block 4.',
@@ -1066,7 +1132,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b4-text-color',
-	'label'       => __( 'Block 4 Text Color', 'my_textdomain' ),
+	'label'       => __( 'Block 4 Text Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a text color for block 4.',
@@ -1082,14 +1148,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b4-link-color',
-	'label'       => __( 'Block 4 Link Color', 'my_textdomain' ),
+	'label'       => __( 'Block 4 Link Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'   => 'Select a link color, a hover color, an active link color for block 4',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'my_textdomain' ),
-          'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
-          'active'  => esc_attr__( 'Active', 'my_textdomain' ),
+          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1118,7 +1184,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b5-text-color',
-	'label'       => __( 'Block 5 Text Color', 'my_textdomain' ),
+	'label'       => __( 'Block 5 Text Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a text color for block 5.',
@@ -1135,14 +1201,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b5-link-color',
-	'label'       => __( 'Block 5 Link Color', 'my_textdomain' ),
+	'label'       => __( 'Block 5 Link Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'   => 'Select a link color, a hover color, an active link color for block 5',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'my_textdomain' ),
-          'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
-          'active'  => esc_attr__( 'Active', 'my_textdomain' ),
+          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1171,7 +1237,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'b5-color-1', array(
 	'type'        => 'color',
 	'settings'    => 'b5-color-1',
-	'label'       => __( 'Block 5 Gradient (Color #1)', 'my_textdomain' ),
+	'label'       => __( 'Block 5 Gradient (Color #1)', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the top of block 5. This will blend with the second gradient color.',
 	'default'     => '#0088CC',
@@ -1181,7 +1247,7 @@ Kirki::add_field( 'b5-color-1', array(
 Kirki::add_field( 'b5-color-2', array(
 	'type'        => 'color',
 	'settings'    => 'b5-color-2',
-	'label'       => __( 'Block 5 Gradient (Color #2) ', 'my_textdomain' ),
+	'label'       => __( 'Block 5 Gradient (Color #2) ', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the bottom of block 5. This will blend with the first gradient color.',
 	'default'     => '#0088CC',
@@ -1191,7 +1257,7 @@ Kirki::add_field( 'b5-color-2', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'body-bg-color',
-	'label'       => __( 'Site Background Color ', 'my_textdomain' ),
+	'label'       => __( 'Site Background Color ', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for th entire site.',
@@ -1208,7 +1274,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'post-bg-color',
-	'label'       => __( 'Post Background Color ', 'my_textdomain' ),
+	'label'       => __( 'Post Background Color ', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'default'     => '',
 	'priority'    => 10,
@@ -1223,14 +1289,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'site-link-color',
-	'label'       => __( 'Sitewide Link Color', 'my_textdomain' ),
+	'label'       => __( 'Sitewide Link Color', 'pressforward_tk_theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'     => 'Select a link color, a hover color, an active link color for the entire site.',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'my_textdomain' ),
-          'hover'   => esc_attr__( 'Hover', 'my_textdomain' ),
-          'active'  => esc_attr__( 'Active', 'my_textdomain' ),
+          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1271,9 +1337,9 @@ Kirki::add_section( 'content-settings', array(
 Kirki::add_field( 'image_demo', array(
 	'type'        => 'image',
 	'settings'    => 'image_demo',
-	'label'       => __( 'Logo', 'my_textdomain' ),
-	'description' => __( 'Upload a Logo to Display', 'my_textdomain' ),
-	'tooltip'     => __( 'Select a logo image to upload.', 'my_textdomain' ),
+	'label'       => __( 'Logo', 'pressforward_tk_theme' ),
+	'description' => __( 'Upload a Logo to Display', 'pressforward_tk_theme' ),
+	'tooltip'     => __( 'Select a logo image to upload.', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
 	'default'     => '',
 	'priority'    => 10,
@@ -1281,7 +1347,7 @@ Kirki::add_field( 'image_demo', array(
 Kirki::add_field( 'img_height', array(
 	'type'        => 'dimension',
 	'settings'    => 'img_height',
-	'label'       => __( 'Logo Height', 'my_textdomain' ),
+	'label'       => __( 'Logo Height', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'Enter the logo height using a valid CSS unit: px, em, %, vh, etc. ',
 	'default'     => '50px',
@@ -1290,7 +1356,7 @@ Kirki::add_field( 'img_height', array(
 Kirki::add_field( 'img_width', array(
 	'type'        => 'dimension',
 	'settings'    => 'img_width',
-	'label'       => __( 'Logo Width', 'my_textdomain' ),
+	'label'       => __( 'Logo Width', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'Enter the logo width using a valid CSS unit: px, em, %, vh, etc.',
 	'default'     => '50px',
@@ -1299,26 +1365,35 @@ Kirki::add_field( 'img_width', array(
 Kirki::add_field( 'breadcrumbs', array(
 	'type'        => 'switch',
 	'settings'    => 'breadcrumbs',
-	'label'       => __( 'Breadcrumbs', 'my_textdomain' ),
+	'label'       => __( 'Breadcrumbs', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'This switch turns breadcrumb navigation on or off. Breadcrumbs allow users to track their location in the website.',
 	'default'     => '1',
 	'priority'    => 10,
 ) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'author-display-div',
+  'label'       => '<h2>Author Display Options</h2>',
+	'section'     => 'content-settings',
+	'default'     => '<div><hr><p>' . esc_html__( 'Description for author display options goes here.', 'pressforward_tk_theme' ) . '</div>',
+	'priority'    => 10,
+) );
 Kirki::add_field( 'author-name-switch', array(
     'type'        => 'switch',
     'settings'    => 'author-name-switch',
-    'label'       => __( 'Display Author Name and Link', 'my_textdomain' ),
+    'label'       => __( 'Display Author Name and Link', 'pressforward_tk_theme' ),
     'section'     => 'content-settings',
     'tooltip'     => 'This switch turns the author name and link on or off.',
     'default'     => '1',
     'priority'    => 10,
 
 ) );
+
 Kirki::add_field( 'alt-author-text', array(
 	'type'     => 'text',
 	'settings' => 'alt-author-text',
-	'label'    => __( 'Text to Display Rather than Author Name', 'my_textdomain' ),
+	'label'    => __( 'Text to Display Rather than Author Name', 'pressforward_tk_theme' ),
 	'section'  => 'content-settings',
   'tooltip'  => 'Text to display in place of the author when the above option is turned off.',
 	'priority' => 10,
@@ -1327,7 +1402,7 @@ Kirki::add_field( 'alt-author-text', array(
 Kirki::add_field( 'author-exclude-cats', array(
 	'type'        => 'select',
 	'settings'    => 'author-exclude-cats',
-	'label'       => __( 'Author Exclude Categories', 'my_textdomain' ),
+	'label'       => __( 'Author Exclude Categories', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'The categories selected here will display the author name even when the author/link swith is turned off.',
 	'priority'    => 10,
@@ -1337,11 +1412,43 @@ Kirki::add_field( 'author-exclude-cats', array(
 Kirki::add_field( 'author-include-cats', array(
 	'type'        => 'select',
 	'settings'    => 'author-include-cats',
-	'label'       => __( 'Author Include Categories', 'my_textdomain' ),
+	'label'       => __( 'Author Include Categories', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'The categories selected here will display the author name andlink even if the display author/link switch is turned off.',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
 ) );
+Kirki::add_field( 'comment-control', array(
+	'type'        => 'radio',
+	'settings'    => 'comment-control',
+	'label'       => __( 'Comment Form Display', 'pressforward_tk_theme' ),
+	'section'     => 'content-settings',
+	'default'     => '1',
+	'priority'    => 10,
+	'choices'     => array(
+		'1'   => array(
+			esc_attr__( 'Turn All Comments ON', 'pressforward_tk_theme' ),
+			esc_attr__( 'The comment form will display on all posts.', 'pressforward_tk_theme' ),
+		),
+		'2' => array(
+			esc_attr__( 'Turn all comments OFF.', 'pressforward_tk_theme' ),
+			esc_attr__( 'The comment form will not be displayed on any posts.', 'pressforward_tk_theme' ),
+		),
+		'3'  => array(
+			esc_attr__( 'Turn comments ON but only for specific categories.', 'pressforward_tk_theme' ),
+			esc_attr__( 'The comment form will only be displayed on posts from the categories selected in the option below.', 'pressforward_tk_theme' ),
+		),
+	),
+) );
+Kirki::add_field( 'comment-include-cats', array(
+	'type'        => 'select',
+	'settings'    => 'comment-include-cats',
+	'label'       => __( 'Comments on for Specific Categories', 'pressforward_tk_theme' ),
+	'section'     => 'content-settings',
+	'priority'    => 10,
+	'multiple'    => 999,
+  'choices'     => Kirki_Helper::get_terms( 'category' ),
+) );
+
 ?>

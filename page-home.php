@@ -26,24 +26,44 @@ Template Name: Home Page Template
 
 			//get number of posts from customizer option
 			$slider_numposts_option = Kirki::get_option( 'pftk_opts', 'slider_numposts' );
-
+			$slider_title_num_words = Kirki::get_option('pftk_opts', 'slider-title-numwords');
+			$slider_excerpt_num_words = Kirki::get_option('pftk_opts', 'slider-excerpt-numwords');
 			$postcats = 'category='. $slider_categories_option . '&posts_per_page=' . $slider_numposts_option;
 			$feat_posts = get_posts($postcats);
 			$bullets = 1;
 			foreach($feat_posts as $post) {
+
         $trim_title = get_post_field('post_title', $id);
-        $short_title = wp_trim_words( $trim_title, $num_words = 14, $more = '… ' );
+        $short_title = wp_trim_words( $trim_title, $num_words = $slider_title_num_words, $more = '… ' );
 				$trimexcerpt = get_post_field('post_content', $id);
-        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 55, $more = '… ' );
+				$authorid = $post->post_author;
+
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+				if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
+  			//plugin is activated
+				$itemauth = get_post_meta($post->ID, 'item_author', true);
+				}
+        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = $slider_excerpt_num_words, $more = '… ' );
 						echo '<li class="orbit-slide">';
 						echo '<div class="row">';
 						echo '<div class="medium-11 large-11 columns"><h1>' . $short_title . '</h1></div></div>';
 						echo '<div class="row">';
 						echo '<div class="medium-7 columns">';
-						echo '<h2 class="slider-byline">By: ' . get_the_author() . '</h2></br><p class="info-title">' . $shortexcerpt . '</p> <a href="' . get_permalink() . '
+						echo '<h2 class="slider-byline">By: ';
+						if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
+						echo $itemauth;
+					} else {
+						echo the_author_meta('user_nicename', $authorid);
+					}
+						echo '</h2></br><p class="info-title">' . $shortexcerpt . '</p> <a href="' . get_permalink() . '
 						" alt="' . get_the_title() . '" class="pf-tk-button">Read More</a></div>';
 						$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-						echo '<div class="medium-5 columns"><img src="' . $thumb[0] . '" class="thumbnail"></div>';
+						echo '<div class="medium-5 columns">';
+						if(empty($thumb)) {
+							echo '';
+						} else {
+							echo '<img src="' . $thumb[0] . '" class="thumbnail"></div>';
+						}
 						echo '</div>';
 						echo '</li>';
 						$bullets++;

@@ -1,6 +1,6 @@
 <?php
-// Related Posts Function, matches posts by tags - call using joints_related_posts(); )
-function joints_related_posts() {
+// Related Posts Function, matches posts by tags - call using pressforward_tk_theme_related_posts(); )
+function pressforward_tk_theme_related_posts() {
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {

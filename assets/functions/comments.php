@@ -1,6 +1,6 @@
 <?php
 // Comment Layout
-function joints_comments($comment, $args, $depth) {
+function pressforward_tk_theme_comments($comment, $args, $depth) {
    $GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class('panel'); ?>>
 		<div class="media-object">

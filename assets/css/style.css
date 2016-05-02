@@ -1769,13 +1769,14 @@ h6,
 pre,
 form,
 p,
+.bypostauthor,
 blockquote,
 th,
 td {
   margin: 0;
   padding: 0; }
 
-p {
+p, .bypostauthor {
   font-size: inherit;
   line-height: 1.6;
   margin-bottom: 1rem;
@@ -1901,7 +1902,7 @@ blockquote {
   margin: 0 0 1rem;
   padding: 0.5625rem 1.25rem 0 1.1875rem;
   border-left: 1px solid #333333; }
-  blockquote, blockquote p {
+  blockquote, blockquote p, blockquote .bypostauthor {
     line-height: 1.6;
     color: #333333; }
 
@@ -1946,7 +1947,7 @@ kbd {
 .stat {
   font-size: 2.5rem;
   line-height: 1; }
-  p + .stat {
+  p + .stat, .bypostauthor + .stat {
     margin-top: -1rem; }
 
 .no-bullet {
@@ -2034,7 +2035,7 @@ kbd {
     max-width: 100% !important; }
   @page {
     margin: 0.5cm; }
-  p,
+  p, .bypostauthor,
   h2,
   h3 {
     orphans: 3;
@@ -3853,6 +3854,42 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
+.header {
+  background-color: #142736; }
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden; }
+
+.gallery-caption {
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  padding: 5px 3px 10px;
+  text-align: center; }
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */ }
+
 #feat_img_col {
   padding-left: 0px; }
 
@@ -3889,7 +3926,7 @@ GENERAL STYLES
     width: 60%; }
   .slider-container .slider-byline {
     margin-top: 20px; }
-  .slider-container p {
+  .slider-container p, .slider-container .bypostauthor {
     color: #fafafa; }
 
 .b3-wrapper {
@@ -3950,7 +3987,7 @@ GENERAL STYLES
 .block-5 {
   background-image: linear-gradient(#3887be, #2f719e);
   padding: 30px 0 25px 0; }
-  .block-5 h1, .block-5 .h1, .block-5 h2, .block-5 .h2, .block-5 h3, .block-5 .h3, .block-5 h4, .block-5 .h4, .block-5 h5, .block-5 .h5, .block-5 a, .block-5 p {
+  .block-5 h1, .block-5 .h1, .block-5 h2, .block-5 .h2, .block-5 h3, .block-5 .h3, .block-5 h4, .block-5 .h4, .block-5 h5, .block-5 .h5, .block-5 a, .block-5 p, .block-5 .bypostauthor {
     color: #fafafa; }
   .block-5 a:hover {
     color: #c7c7c7; }
@@ -4048,7 +4085,7 @@ POSTS & CONTENT STYLES
     max-width: 100%;
     margin-bottom: 0;
     width: 100%; }
-  .wp-caption p.wp-caption-text {
+  .wp-caption p.wp-caption-text, .wp-caption .wp-caption-text.bypostauthor {
     font-size: 0.85em;
     margin: 4px 0 7px;
     text-align: center; }
@@ -4135,7 +4172,7 @@ COMMENT STYLES
     border: 1px solid #cecece;
     background: #fff; }
 
-.commentlist .comment_content p {
+.commentlist .comment_content p, .commentlist .comment_content .bypostauthor {
   margin: 0.7335em 0 1.5em;
   font-size: 1em;
   line-height: 1.5em; }
@@ -4274,7 +4311,7 @@ to display none.
     max-width: 100% !important; }
   @page {
     margin: 0.5cm; }
-  p, h2, h3 {
+  p, .bypostauthor, h2, h3 {
     orphans: 3;
     widows: 3; }
   h2,

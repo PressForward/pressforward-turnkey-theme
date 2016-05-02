@@ -932,23 +932,7 @@ Kirki::add_field( 'pftk_opts', array(
 		),
 	),
 ) );
-//icon color
-Kirki::add_field( 'pftk_opts', array(
-	'type'        => 'color',
-	'settings'    => 'icon-color',
-	'label'       => __( 'Icon Color', 'pressforward_tk_theme' ),
-	'section'     => 'colors',
-  'tooltip'     => 'Select a color for the icons in block 2.',
-	'default'     => '',
-	'priority'    => 10,
-	'alpha'       => true,
-  'output' => array(
-		array(
-			'element'  => 'i',
-			'property' => 'color',
-		),
-	),
-) );
+
 // slider bg color
 Kirki::add_field( 'slider-color-1', array(
 	'type'        => 'color',
@@ -1001,6 +985,23 @@ Kirki::add_field( 'pftk_opts', array(
 		array(
 			'element'  => '.block-2',
 			'property' => 'background-color',
+		),
+	),
+) );
+//icon color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b2-icon-color',
+	'label'       => __( 'Block 2 Icon Color', 'pressforward_tk_theme' ),
+	'section'     => 'colors',
+  'tooltip'     => 'Select a color for the icons in block 2.',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-2 i',
+			'property' => 'color',
 		),
 	),
 ) );
@@ -1071,6 +1072,23 @@ Kirki::add_field( 'pftk_opts', array(
 		array(
 			'element'  => '.block-3',
 			'property' => 'background-color',
+		),
+	),
+) );
+//icon color
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b3-icon-color',
+	'label'       => __( 'Block 3 Icon Color', 'pressforward_tk_theme' ),
+	'section'     => 'colors',
+  'tooltip'     => 'Select a color for the icons in block 3.',
+	'default'     => '',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-3 i',
+			'property' => 'color',
 		),
 	),
 ) );

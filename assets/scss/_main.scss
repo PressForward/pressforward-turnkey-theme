@@ -19,6 +19,10 @@ GENERAL STYLES
 // 	top: 50%;
 // 	right: 0;
 // }
+
+.header {
+	background-color: $dhnow-darkblue;
+}
 .screen-reader-text{
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;

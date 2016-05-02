@@ -791,6 +791,7 @@ Sitewide -- Typography
 	'settings'    => 'body-font',
 	'label'       => esc_attr__( 'Body Font', 'kirki' ),
 	'section'     => 'fontcontrol',
+  'tooltip'  => 'This section controls the appearance of the body text.',
 	'default'     => array(
 		'font-family'    => 'Roboto',
 		'variant'        => '400',
@@ -812,6 +813,7 @@ Kirki::add_field( 'pftk_opts', array(
 'settings'    => 'header-font',
 'label'       => esc_attr__( 'Header Font', 'kirki' ),
 'section'     => 'fontcontrol',
+'tooltip'  => 'This section controls the appearance of the body text.',
 'default'     => array(
   'font-family'    => 'Lato',
   'variant'        => '300',

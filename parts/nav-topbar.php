@@ -8,7 +8,7 @@
       <!-- <li><a class="site-title" href="<?php // echo home_url(); ?>">Site Title</a></li> -->
 
 
-				 <?php $logo = Kirki::get_option( 'pftk_opts', 'image_demo');
+				 <?php $logo = Kirki::get_option( 'pftk_opts', 'image_demo'); ?>
 					<?php if (empty($logo) == true): ?>
 							<li><a class="site-title" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
 					<?php else: ?>

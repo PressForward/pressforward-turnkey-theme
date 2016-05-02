@@ -1340,13 +1340,20 @@ Kirki::add_field( 'pftk_opts', array(
 
 
 Kirki::add_section( 'content-settings', array(
-    'title'          => __( 'ContentOptions' ),
+    'title'          => __( 'Content Options' ),
     'description'    => __( 'Add an image to be shown as header advertisement.' ),
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
 ) );
-
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'logo-display-div',
+  'label'       => '<h2>Logo Display Options</h2>',
+	'section'     => 'content-settings',
+	'default'     => '<div><hr></div>',
+	'priority'    => 10,
+) );
 //logo upload
 Kirki::add_field( 'image_demo', array(
 	'type'        => 'image',
@@ -1432,6 +1439,14 @@ Kirki::add_field( 'author-include-cats', array(
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'custom',
+	'settings'    => 'comment-display-div',
+  'label'       => '<h2>Comment Form Display Options</h2>',
+	'section'     => 'content-settings',
+	'default'     => '<div><hr></div>',
+	'priority'    => 10,
 ) );
 Kirki::add_field( 'comment-control', array(
 	'type'        => 'radio',

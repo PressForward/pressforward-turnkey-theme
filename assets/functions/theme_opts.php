@@ -1535,6 +1535,16 @@ Kirki::add_field( 'author-include-cats', array(
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
 ) );
+Kirki::add_field( 'nom-count-switch', array(
+    'type'        => 'switch',
+    'settings'    => 'author-name-switch',
+    'label'       => __( 'Display Nomination Count on Featured Posts', 'pressforward_tk_theme' ),
+    'section'     => 'content-settings',
+    'tooltip'     => 'This switch turns the nomination count display on or off on individual posts.',
+    'default'     => '1',
+    'priority'    => 10,
+
+) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'comment-display-div',

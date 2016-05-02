@@ -53,12 +53,8 @@ Homepage -- Slider -- Options
 Kirki::add_field( 'slider-switch', array(
     'type'        => 'switch',
     'settings'    => 'slider-switch',
-<<<<<<< HEAD
-    'label'       => __( 'Slider (Block 1)', 'my_textdomain' ),
-    'tooltip'     => 'This switch turns the slider on or off',
-=======
     'label'       => __( 'Slider (Block 1)', 'pressforward_tk_theme' ),
->>>>>>> v2.0
+    'tooltip'     => 'This switch turns the slider on or off',
     'section'     => 'slider',
     'default'     => '1',
     'priority'    => 10,

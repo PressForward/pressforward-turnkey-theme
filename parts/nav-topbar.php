@@ -9,8 +9,6 @@
 
 
 				 <?php $logo = Kirki::get_option( 'pftk_opts', 'image_demo');
-					$width = Kirki::get_option( 'pftk_opts', 'img_width');
-					$height = Kirki::get_option( 'pftk_opts', 'img_height'); ?>
 					<?php if (empty($logo) == true): ?>
 							<li><a class="site-title" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
 					<?php else: ?>

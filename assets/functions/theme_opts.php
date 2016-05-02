@@ -1420,6 +1420,7 @@ Kirki::add_field( 'comment-control', array(
 	'settings'    => 'comment-control',
 	'label'       => __( 'Comment Form Display', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
+  'tooltip'     => 'Select whether to turn comments on or off. There is also an option to turn on comments for specific categories.',
 	'default'     => '1',
 	'priority'    => 10,
 	'choices'     => array(
@@ -1442,6 +1443,7 @@ Kirki::add_field( 'comment-include-cats', array(
 	'settings'    => 'comment-include-cats',
 	'label'       => __( 'Comments on for Specific Categories', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
+  'tooltip'     => 'Select specific categories to allow comments.',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),

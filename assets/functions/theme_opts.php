@@ -1448,7 +1448,7 @@ Kirki::add_field( 'image_demo', array(
 	'default'     => '',
 	'priority'    => 10,
 ) );
-Kirki::add_field( 'img_height', array(
+Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'dimension',
 	'settings'    => 'img_height',
 	'label'       => __( 'Logo Height', 'pressforward_tk_theme' ),
@@ -1456,8 +1456,14 @@ Kirki::add_field( 'img_height', array(
   'tooltip'     => 'Enter the logo height using a valid CSS unit: px, em, %, vh, etc. ',
 	'default'     => '50px',
 	'priority'    => 10,
+  'output' => array(
+		array(
+			'element'  => '.site-logo-img',
+			'property' => 'height',
+		),
+	),
 ) );
-Kirki::add_field( 'img_width', array(
+Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'dimension',
 	'settings'    => 'img_width',
 	'label'       => __( 'Logo Width', 'pressforward_tk_theme' ),
@@ -1465,6 +1471,12 @@ Kirki::add_field( 'img_width', array(
   'tooltip'     => 'Enter the logo width using a valid CSS unit: px, em, %, vh, etc.',
 	'default'     => '50px',
 	'priority'    => 10,
+  'output' => array(
+		array(
+			'element'  => '.site-logo-img',
+			'property' => 'width',
+		),
+	),
 ) );
 Kirki::add_field( 'breadcrumbs', array(
 	'type'        => 'switch',

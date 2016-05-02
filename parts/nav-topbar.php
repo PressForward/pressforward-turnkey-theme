@@ -14,7 +14,7 @@
 					<?php if (empty($logo) == true): ?>
 							<li><a class="site-title" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></li>
 					<?php else: ?>
-						<li><a class="site-logo" href="<?php echo home_url(); ?>"><img src="<?php echo $logo; ?> " height=<?php echo $height; ?> width=<?php echo $width; ?>></a></li>
+						<li><a class="site-logo" href="<?php echo home_url(); ?>"><img class="site-logo-img" src="<?php echo $logo; ?> "></a></li>
 					<?php endif; ?>
 
 					</ul>

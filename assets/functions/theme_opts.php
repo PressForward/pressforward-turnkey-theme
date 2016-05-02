@@ -246,7 +246,7 @@ Kirki::add_field( 'pftk_opts', array(
     'priority'    => 10,
     'multiple'    => 1,
   ) );
-  Kirki::add_field( 'pftk_opts', array(
+  Kirki::add_field( 'b2c2-text', array(
       'type'        => 'textarea',
       'settings'    => 'b2c2-text',
       'label'       => __( 'Second Column Text', 'kirki-demo' ),

@@ -8,7 +8,7 @@ $author_include_cats = Kirki::get_option('pftk_opts', 'author-include-cats');
 <p class="byline">
 	<?php
 	if ( $author_name_switch == 1) { ?>
-	Posted on <?php the_time('F j, Y') ?> by <?php the_author_posts_link(); ?>  - <?php the_category(', ') ?> 
+	Posted on <?php the_time('F j, Y') ?> by <?php the_author_posts_link(); ?>  - <?php the_category(', ') ?>
 <?php } elseif ($author_name_switch != 1 && in_category($author_exclude_cats)) { ?>
 	Posted on <?php the_time('F j, Y') ?> by <?php the_author(); ?>  - <?php the_category(', ') ?>
 <?php } elseif ($author_name_switch != 1 && in_category($author_include_cats)) { ?>
@@ -23,8 +23,8 @@ $nom_count = get_post_meta($post->ID, 'nomination_count', true);
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-if (in_category($slider_cat) && $nom_switch == 1 && is_plugin_active('pressforward/pressforward.php')) {
-	echo $nom_count;
+if (in_category($slider_cat) && is_plugin_active('pressforward/pressforward.php') && $nom_switch == 1) {
+	echo '<br>This post recieved ' . $nom_count . ' nominations in <a href="http://www.PressForward.org">PressForward</a>.';
 }
 
 ?>

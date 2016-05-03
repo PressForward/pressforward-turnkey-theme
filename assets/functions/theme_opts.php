@@ -1594,4 +1594,19 @@ Kirki::add_field( 'comment-include-cats', array(
   'choices'     => Kirki_Helper::get_terms( 'category' ),
 ) );
 
+Kirki::add_section( 'post-index-page-settings', array(
+    'title'          => __( 'Post Index Page Options' ),
+    'description'    => __( 'Add an image to be shown as header advertisement.' ),
+    'priority'       => 160,
+    'capability'     => 'edit_theme_options',
+    'theme_supports' => '', // Rarely needed.
+) );
+Kirki::add_field( 'my_config', array(
+	'type'     => 'text',
+	'settings' => 'PI-Tab1-Title',
+	'label'    => __( 'Text Control', 'my_textdomain' ),
+	'section'  => 'my_section',
+	'default'  => esc_attr__( 'This is a defualt value', 'my_textdomain' ),
+	'priority' => 10,
+) );
 ?>

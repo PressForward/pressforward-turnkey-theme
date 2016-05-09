@@ -51,7 +51,7 @@ function custom_breadcrumb() {
   if(!is_home()) {
     echo '<nav aria-label="You are here:" role="navigation">';
     echo '<ul class="breadcrumbs">';
-    echo '<li><a href="'.get_option('home').'">Home</a></li>';
+    echo '<li><a href="'.home_url().'">Home</a></li>';
     if (is_single()) {
       echo '<li>';
       the_category(', ');

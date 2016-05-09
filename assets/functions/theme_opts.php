@@ -900,7 +900,7 @@ Sitewide -- Typography
 	'priority'    => 10,
 	'output'      => array(
 		array(
-			'element' => 'p',
+			'element' => 'p, body',
 		),
 	),
 ) );

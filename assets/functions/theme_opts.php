@@ -41,8 +41,8 @@ Homepage -- Slider -- Options
 
 //create slider section
   Kirki::add_section( 'slider', array(
-      'title'          => __( 'Slider Options' ),
-      'description'    => __( 'Add an image to be shown as header advertisement.' ),
+      'title'          => __( 'Slider Options', 'pressforward_tk_theme' ),
+      'description'    => __( 'Add an image to be shown as header advertisement.', 'pressforward_tk_theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -819,7 +819,7 @@ Homepage -- Footer
 *********************/
 //Create panel
 Kirki::add_section( 'Footer', array(
-    'title'          => __( 'Footer' ),
+    'title'          => __( 'Footer', 'pressforward_tk_theme' ),
     'description'
        => __( 'Edit the content and appearance of the footer on the homepage.', 'pressforward_tk_theme' ),
     'panel'          => 'homepage', // Not typically needed.
@@ -873,7 +873,7 @@ Sitewide -- Typography
 
   //Create panel
   Kirki::add_section( 'fontcontrol', array(
-      'title'          => __( 'Fonts' ),
+      'title'          => __( 'Fonts', 'pressforward_tk_theme' ),
       'description'
          => __( 'description goes here.' ),
       'panel'          => 'designelements', // Not typically needed.
@@ -1597,7 +1597,7 @@ Kirki::add_field( 'comment-include-cats', array(
 ) );
 
 Kirki::add_section( 'post-index-page-settings', array(
-    'title'          => __( 'Post Index Page Options' ),
+    'title'          => __( 'Post Index Page Options', 'pressforward_tk_theme' ),
     'description'    => __( 'Add an image to be shown as header advertisement.', 'pressforward_tk_theme' ),
     'priority'       => 160,
     'capability'     => 'edit_theme_options',

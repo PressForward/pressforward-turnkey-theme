@@ -821,7 +821,7 @@ Homepage -- Footer
 Kirki::add_section( 'Footer', array(
     'title'          => __( 'Footer' ),
     'description'
-       => __( 'Edit the content and appearance of the footer on the homepage.' ),
+       => __( 'Edit the content and appearance of the footer on the homepage.', 'pressforward_tk_theme' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',

@@ -135,9 +135,9 @@ Homepage -- Block 2 -- Options
 
 //Create panel
 Kirki::add_section( 'Block2', array(
-    'title'          => __( 'Block 2 Options' ),
+    'title'          => __( 'Block 2 Options', 'pressforward_tk_theme' ),
     'description'
-       => __( 'Edit the content and appearance of the second block on the homepage.' ),
+       => __( 'Edit the content and appearance of the second block on the homepage.', 'pressforward_tk_theme' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
@@ -360,9 +360,9 @@ Homepage -- Block 3 -- Options
 
   //Create panel
   Kirki::add_section( 'Block3', array(
-      'title'          => __( 'Block 3 Options' ),
+      'title'          => __( 'Block 3 Options', 'pressforward_tk_theme' ),
       'description'
-         => __( 'Edit the content and appearance of the third block on the homepage.' ),
+         => __( 'Edit the content and appearance of the third block on the homepage.', 'pressforward_tk_theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -716,9 +716,9 @@ Homepage -- Block 4
 *********************/
   //Create panel
   Kirki::add_section( 'Block4', array(
-      'title'          => __( 'Block 4 Options' ),
+      'title'          => __( 'Block 4 Options', 'pressforward_tk_theme' ),
       'description'
-         => __( 'Edit the content and appearance of the fourth block on the homepage.' ),
+         => __( 'Edit the content and appearance of the fourth block on the homepage.', 'pressforward_tk_theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -772,9 +772,9 @@ Homepage -- Block 5
 *********************/
     //Create panel
     Kirki::add_section( 'Block5', array(
-        'title'          => __( 'Block 5 Options' ),
+        'title'          => __( 'Block 5 Options', 'pressforward_tk_theme' ),
         'description'
-           => __( 'Edit the content and appearance of the fifth block on the homepage.' ),
+           => __( 'Edit the content and appearance of the fifth block on the homepage.', 'pressforward_tk_theme' ),
         'panel'          => 'homepage', // Not typically needed.
         'priority'       => 160,
         'capability'     => 'edit_theme_options',
@@ -927,7 +927,7 @@ Kirki::add_field( 'pftk_opts', array(
 ) );
 //Create panel
 Kirki::add_section( 'colors', array(
-    'title'          => __( 'Colors' ),
+    'title'          => __( 'Colors', 'pressforward_tk_theme' ),
     'description'
        => __( 'description goes here.' ),
     'panel'          => 'designelements', // Not typically needed.
@@ -1423,8 +1423,8 @@ Kirki::add_field( 'pftk_opts', array(
 
 
 Kirki::add_section( 'content-settings', array(
-    'title'          => __( 'Content Options' ),
-    'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.' ),
+    'title'          => __( 'Content Options', 'pressforward_tk_theme' ),
+    'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.', 'pressforward_tk_theme' ),
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
@@ -1598,7 +1598,7 @@ Kirki::add_field( 'comment-include-cats', array(
 
 Kirki::add_section( 'post-index-page-settings', array(
     'title'          => __( 'Post Index Page Options' ),
-    'description'    => __( 'Add an image to be shown as header advertisement.' ),
+    'description'    => __( 'Add an image to be shown as header advertisement.', 'pressforward_tk_theme' ),
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.

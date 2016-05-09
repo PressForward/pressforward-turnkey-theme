@@ -875,7 +875,7 @@ Sitewide -- Typography
   Kirki::add_section( 'fontcontrol', array(
       'title'          => __( 'Fonts', 'pressforward_tk_theme' ),
       'description'
-         => __( 'description goes here.' ),
+         => __( 'description goes here.', 'pressforward_tk_theme' ),
       'panel'          => 'designelements', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',

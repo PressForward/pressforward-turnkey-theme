@@ -42,7 +42,8 @@ Homepage -- Slider -- Options
 //create slider section
   Kirki::add_section( 'slider', array(
       'title'          => __( 'Slider Options' ),
-      'description'    => __( 'Add an image to be shown as header advertisement.' ),
+      'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.
+' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -137,7 +138,7 @@ Homepage -- Block 2 -- Options
 Kirki::add_section( 'Block2', array(
     'title'          => __( 'Block 2 Options' ),
     'description'
-       => __( 'Edit the content and appearance of the second block on the homepage.' ),
+       => __( 'The second block of the homepage consists of four “columns”. Each column displays a title which can also link to a page or post within the site. Each column can also include a FontAwesomeicon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below.' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
@@ -362,7 +363,7 @@ Homepage -- Block 3 -- Options
   Kirki::add_section( 'Block3', array(
       'title'          => __( 'Block 3 Options' ),
       'description'
-         => __( 'Edit the content and appearance of the third block on the homepage.' ),
+         => __( 'The third block on the homepage consists of three columns.  There is an option to add a second row for each column. Each of these six sections has a title with the option to make it a link. Each section also has an option to select which category will populate the field. Each section can also display an icon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below. The entire block can be turned on or off.' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -718,7 +719,8 @@ Homepage -- Block 4
   Kirki::add_section( 'Block4', array(
       'title'          => __( 'Block 4 Options' ),
       'description'
-         => __( 'Edit the content and appearance of the fourth block on the homepage.' ),
+         => __( 'The fourth block of the homepage is a single row designed to feature some text or site information.. The row includes a title (with an option to make it a link) and text. The entire block can be turned on or off.
+' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -774,7 +776,7 @@ Homepage -- Block 5
     Kirki::add_section( 'Block5', array(
         'title'          => __( 'Block 5 Options' ),
         'description'
-           => __( 'Edit the content and appearance of the fifth block on the homepage.' ),
+           => __( 'The fifth block of the homepage is a single row. This row includes a title that can also link to a page or post within the site. The entire block can be turned on or off.' ),
         'panel'          => 'homepage', // Not typically needed.
         'priority'       => 160,
         'capability'     => 'edit_theme_options',
@@ -1541,7 +1543,7 @@ Kirki::add_field( 'pftk_opts', array(
   'label'       => '<h2>PressForward Nomination Count</h2>',
 	'section'     => 'content-settings',
   'tooltip'     => 'this option displays the nomination count for only featured items that appear in the slider....',
-	'default'     => '<div><hr></div>',
+	'default'     => '<div><hr><p>' ,
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'nom-count-switch', array(
@@ -1559,7 +1561,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'comment-display-div',
   'label'       => '<h2>Comment Form Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr></div>',
+		'default'     => '<div><hr><p>' . esc_html__( 'The comment display options allow users to turn the comment form on for posts in all categories or only for specific categories. ', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'comment-control', array(

@@ -20,18 +20,18 @@ Kirki::add_config( 'pftk_opts', array(
 //create panel for homepage options
   Kirki::add_panel( 'homepage', array(
       'priority'    => 10,
-      'title'       => __( 'Home Page Layout', 'theme_slug' ),
-      'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
+      'title'       => __( 'Home Page Layout', 'pressforward_tk_theme' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'pressforward_tk_theme' ),
   ) );
   Kirki::add_panel( 'designelements', array(
       'priority'    => 10,
-      'title'       => __( 'Design Elements', 'theme_slug' ),
-      'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
+      'title'       => __( 'Design Elements', 'pressforward_tk_theme' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'pressforward_tk_theme' ),
   ) );
   Kirki::add_panel( 'contentsettings', array(
       'priority'    => 10,
-      'title'       => __( 'Content Settings', 'theme_slug' ),
-      'description' => __( 'This panel will provide all the options of the header.', 'theme_slug' ),
+      'title'       => __( 'Content Settings', 'pressforward_tk_theme' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'pressforward_tk_theme' ),
   ) );
 
 /*********************
@@ -439,7 +439,7 @@ Homepage -- Block 3 -- Options
         'settings'    => 'b3r1c1-category',
         'label'       => __( 'First Row First Column Category', 'pressforward_tk_theme' ),
         'description' => __( 'Select a category', 'pressforward_tk_theme' ),
-        'tooltip'        => __( 'Select a category for the first row of the first column.', 'kirki' ),
+        'tooltip'        => __( 'Select a category for the first row of the first column.', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -650,7 +650,7 @@ Homepage -- Block 3 -- Options
         'type'        => 'select',
         'settings'    => 'b3r2c2-category',
         'label'       => __( 'Second Row Second Column Category', 'pressforward_tk_theme' ),
-        'description' => __( 'Select a category', 'kirki' ),
+        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
         'tooltip'     => __( 'Select a category for the second row of the second column', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -701,7 +701,7 @@ Homepage -- Block 3 -- Options
         'type'        => 'select',
         'settings'    => 'b3r2c3-category',
         'label'       => __( 'Second Row Third Column Category', 'pressforward_tk_theme' ),
-        'description' => __( 'Select a category', 'kirki' ),
+        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
         'tooltip'     => __( 'Select a category for the second row of the third column', 'pressforward_tk_theme' ),
         'section'     => 'block3',
         'default'     => '1',

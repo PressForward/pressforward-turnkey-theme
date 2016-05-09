@@ -182,7 +182,7 @@ Kirki::add_field( 'pftk_opts', array(
       'type'        => 'text',
       'settings'    => 'b2c1-title',
       'label'       => __( 'First Column Title', 'kirki-demo' ),
-      'tooltip'        => __( 'Enter a title for the first column', 'kirki-demo' ),
+      'tooltip'     => __( 'Enter a title for the first column', 'kirki-demo' ),
       'default'     => __( 'This text is entered in the "text" control.', 'kirki-demo' ),
       'section'     => 'block2',
       'default'     => 'B2-C1 Title',
@@ -1323,7 +1323,7 @@ Kirki::add_field( 'pftk_opts', array(
 
 Kirki::add_section( 'content-settings', array(
     'title'          => __( 'ContentOptions' ),
-    'description'    => __( 'Add an image to be shown as header advertisement.' ),
+    'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.' ),
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
@@ -1372,7 +1372,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'author-display-div',
   'label'       => '<h2>Author Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr><p>' . esc_html__( 'Description for author display options goes here.', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The three options below control how the author field displays on posts. If the author field is set to on, the theme will display the wordpress author as expected. If turned off, the theme will display the text in the second option and will only display the wordpress author for the categories excluded in the third option. ', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'author-name-switch', array(

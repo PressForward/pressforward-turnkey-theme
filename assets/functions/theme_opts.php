@@ -263,7 +263,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c3-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr><h2>First Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Third Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c3-icon', array(
@@ -312,7 +312,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c4-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr><h2>First Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Fourth Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c4-icon', array(
@@ -877,7 +877,7 @@ Sitewide -- Typography
   Kirki::add_section( 'fontcontrol', array(
       'title'          => __( 'Fonts' ),
       'description'
-         => __( 'description goes here.' ),
+         => __( 'The options below control the text appearance for the body and header. ' ),
       'panel'          => 'designelements', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -931,7 +931,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_section( 'colors', array(
     'title'          => __( 'Colors' ),
     'description'
-       => __( 'description goes here.' ),
+       => __( 'The options below control the colors for each each block on the home page. At the bottom, there are also options to control the colors for the entire site. ' ),
     'panel'          => 'designelements', // Not typically needed.
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
@@ -1426,7 +1426,7 @@ Kirki::add_field( 'pftk_opts', array(
 
 Kirki::add_section( 'content-settings', array(
     'title'          => __( 'Content Options' ),
-    'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.' ),
+    'description'    => __( '' ),
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
@@ -1436,7 +1436,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'logo-display-div',
   'label'       => '<h2>Logo Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr></div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The options below allow users to upload a logo image that will appear at the top of site. ', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 //logo upload
@@ -1485,7 +1485,7 @@ Kirki::add_field( 'breadcrumbs', array(
 	'settings'    => 'breadcrumbs',
 	'label'       => __( 'Breadcrumbs', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'This switch turns breadcrumb navigation on or off. Breadcrumbs allow users to track their location in the website.',
+  'tooltip'     => 'This switch allows the user to turn Breadcrumbs on or off. Breadcrumbs are a series of links that appear at the top of a post showing the user where they are in the sitemap and providing them links to return to the homepage.',
 	'default'     => '1',
 	'priority'    => 10,
 ) );
@@ -1513,7 +1513,8 @@ Kirki::add_field( 'alt-author-text', array(
 	'settings' => 'alt-author-text',
 	'label'    => __( 'Text to Display Rather than Author Name', 'pressforward_tk_theme' ),
 	'section'  => 'content-settings',
-  'tooltip'  => 'Text to display in place of the author when the above option is turned off.',
+  'tooltip'  => 'If Display Author Name and Link is set to off, this text will appear in place of the author’s name.
+',
 	'priority' => 10,
 ) );
 
@@ -1522,7 +1523,7 @@ Kirki::add_field( 'author-exclude-cats', array(
 	'settings'    => 'author-exclude-cats',
 	'label'       => __( 'Author Exclude Categories', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'The categories selected here will display the author name even when the author/link swith is turned off.',
+  'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories without a link to all of their work on the site.',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
@@ -1532,7 +1533,8 @@ Kirki::add_field( 'author-include-cats', array(
 	'settings'    => 'author-include-cats',
 	'label'       => __( 'Author Include Categories', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'The categories selected here will display the author name andlink even if the display author/link switch is turned off.',
+  'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories with a link to all of their work on the site.
+',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
@@ -1542,8 +1544,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'nomcount-display-div',
   'label'       => '<h2>PressForward Nomination Count</h2>',
 	'section'     => 'content-settings',
-  'tooltip'     => 'this option displays the nomination count for only featured items that appear in the slider....',
-	'default'     => '<div><hr><p>' ,
+  'default'     => '<div><hr><p>' . esc_html__('This option displays the nomination count for only the featured items that appear in the slider.') . '<div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'nom-count-switch', array(
@@ -1551,7 +1552,7 @@ Kirki::add_field( 'nom-count-switch', array(
     'settings'    => 'nom-count-switch',
     'label'       => __( 'Display Nomination Count on Featured Posts', 'pressforward_tk_theme' ),
     'section'     => 'content-settings',
-    'tooltip'     => 'This switch turns the nomination count display on or off on individual posts.',
+    'tooltip'     => 'This switch turns the nomination count display on or off for individual posts.',
     'default'     => '1',
     'priority'    => 10,
 
@@ -1561,7 +1562,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'comment-display-div',
   'label'       => '<h2>Comment Form Display Options</h2>',
 	'section'     => 'content-settings',
-		'default'     => '<div><hr><p>' . esc_html__( 'The comment display options allow users to turn the comment form on for posts in all categories or only for specific categories. ', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The comment display options allow users to turn the comment form on for posts in all categories or only for specific categories. ', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'comment-control', array(

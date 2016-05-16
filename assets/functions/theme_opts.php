@@ -41,8 +41,8 @@ Homepage -- Slider -- Options
 
 //create slider section
   Kirki::add_section( 'slider', array(
-      'title'          => __( 'Slider Options', 'pressforward_tk_theme' ),
-      'description'    => __( 'Add an image to be shown as header advertisement.', 'pressforward_tk_theme' ),
+      'title'          => __( 'Slider Options' ),
+      'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.', 'pressforward_tk_theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -136,8 +136,7 @@ Homepage -- Block 2 -- Options
 //Create panel
 Kirki::add_section( 'Block2', array(
     'title'          => __( 'Block 2 Options', 'pressforward_tk_theme' ),
-    'description'
-       => __( 'Edit the content and appearance of the second block on the homepage.', 'pressforward_tk_theme' ),
+    'description'    => __( 'The second block of the homepage consists of four “columns”. Each column displays a title which can also link to a page or post within the site. Each column can also include a FontAwesomeicon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below.', 'pressforward_tk_theme' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
@@ -262,7 +261,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c3-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr><h2>First Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Third Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c3-icon', array(
@@ -311,7 +310,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c4-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr><h2>First Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Fourth Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c4-icon', array(
@@ -361,8 +360,7 @@ Homepage -- Block 3 -- Options
   //Create panel
   Kirki::add_section( 'Block3', array(
       'title'          => __( 'Block 3 Options', 'pressforward_tk_theme' ),
-      'description'
-         => __( 'Edit the content and appearance of the third block on the homepage.', 'pressforward_tk_theme' ),
+      'description'    => __( 'The third block on the homepage consists of three columns.  There is an option to add a second row for each column. Each of these six sections has a title with the option to make it a link. Each section also has an option to select which category will populate the field. Each section can also display an icon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below. The entire block can be turned on or off.', 'pressforward_tk_theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -717,8 +715,7 @@ Homepage -- Block 4
   //Create panel
   Kirki::add_section( 'Block4', array(
       'title'          => __( 'Block 4 Options', 'pressforward_tk_theme' ),
-      'description'
-         => __( 'Edit the content and appearance of the fourth block on the homepage.', 'pressforward_tk_theme' ),
+      'description'    => __( 'The fourth block of the homepage is a single row designed to feature some text or site information.. The row includes a title (with an option to make it a link) and text. The entire block can be turned on or off.', 'pressforward_tk_theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -773,8 +770,7 @@ Homepage -- Block 5
     //Create panel
     Kirki::add_section( 'Block5', array(
         'title'          => __( 'Block 5 Options', 'pressforward_tk_theme' ),
-        'description'
-           => __( 'Edit the content and appearance of the fifth block on the homepage.', 'pressforward_tk_theme' ),
+        'description'    => __( 'The fifth block of the homepage is a single row. This row includes a title that can also link to a page or post within the site. The entire block can be turned on or off.', 'pressforward_tk_theme' ),
         'panel'          => 'homepage', // Not typically needed.
         'priority'       => 160,
         'capability'     => 'edit_theme_options',
@@ -874,8 +870,7 @@ Sitewide -- Typography
   //Create panel
   Kirki::add_section( 'fontcontrol', array(
       'title'          => __( 'Fonts', 'pressforward_tk_theme' ),
-      'description'
-         => __( 'description goes here.', 'pressforward_tk_theme' ),
+      'description'    => __( 'The options below control the text appearance for the body and header. ', 'pressforward_tk_theme' ),
       'panel'          => 'designelements', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -928,8 +923,7 @@ Kirki::add_field( 'pftk_opts', array(
 //Create panel
 Kirki::add_section( 'colors', array(
     'title'          => __( 'Colors', 'pressforward_tk_theme' ),
-    'description'
-       => __( 'description goes here.' ),
+    'description'    => __( 'The options below control the colors for each each block on the home page. At the bottom, there are also options to control the colors for the entire site. ', 'pressforward_tk_theme' ),
     'panel'          => 'designelements', // Not typically needed.
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
@@ -1434,7 +1428,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'logo-display-div',
   'label'       => '<h2>Logo Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr></div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The options below allow users to upload a logo image that will appear at the top of site. ', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 //logo upload
@@ -1483,7 +1477,7 @@ Kirki::add_field( 'breadcrumbs', array(
 	'settings'    => 'breadcrumbs',
 	'label'       => __( 'Breadcrumbs', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'This switch turns breadcrumb navigation on or off. Breadcrumbs allow users to track their location in the website.',
+  'tooltip'     => 'This switch allows the user to turn Breadcrumbs on or off. Breadcrumbs are a series of links that appear at the top of a post showing the user where they are in the sitemap and providing them links to return to the homepage.',
 	'default'     => '1',
 	'priority'    => 10,
 ) );
@@ -1511,7 +1505,7 @@ Kirki::add_field( 'alt-author-text', array(
 	'settings' => 'alt-author-text',
 	'label'    => __( 'Text to Display Rather than Author Name', 'pressforward_tk_theme' ),
 	'section'  => 'content-settings',
-  'tooltip'  => 'Text to display in place of the author when the above option is turned off.',
+  'tooltip'  => 'If Display Author Name and Link is set to off, this text will appear in place of the author’s name.',
 	'priority' => 10,
 ) );
 
@@ -1520,7 +1514,7 @@ Kirki::add_field( 'author-exclude-cats', array(
 	'settings'    => 'author-exclude-cats',
 	'label'       => __( 'Author Exclude Categories', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'The categories selected here will display the author name even when the author/link swith is turned off.',
+  'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories without a link to all of their work on the site.',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
@@ -1530,7 +1524,7 @@ Kirki::add_field( 'author-include-cats', array(
 	'settings'    => 'author-include-cats',
 	'label'       => __( 'Author Include Categories', 'pressforward_tk_theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'The categories selected here will display the author name andlink even if the display author/link switch is turned off.',
+  'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories with a link to all of their work on the site.',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
@@ -1540,8 +1534,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'nomcount-display-div',
   'label'       => '<h2>PressForward Nomination Count</h2>',
 	'section'     => 'content-settings',
-  'tooltip'     => 'this option displays the nomination count for only featured items that appear in the slider....',
-	'default'     => '<div><hr></div>',
+  'default'     => '<div><hr><p>' . esc_html__('This option displays the nomination count for only the featured items that appear in the slider.') . '<div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'nom-count-switch', array(
@@ -1549,7 +1542,7 @@ Kirki::add_field( 'nom-count-switch', array(
     'settings'    => 'nom-count-switch',
     'label'       => __( 'Display Nomination Count on Featured Posts', 'pressforward_tk_theme' ),
     'section'     => 'content-settings',
-    'tooltip'     => 'This switch turns the nomination count display on or off on individual posts.',
+    'tooltip'     => 'This switch turns the nomination count display on or off for individual posts.',
     'default'     => '1',
     'priority'    => 10,
 
@@ -1559,7 +1552,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'comment-display-div',
   'label'       => '<h2>Comment Form Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr></div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The comment display options allow users to turn the comment form on for posts in all categories or only for specific categories. ', 'pressforward_tk_theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'comment-control', array(

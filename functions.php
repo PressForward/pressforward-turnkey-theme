@@ -460,7 +460,7 @@ function construct_el_info($weekno) {
                         }
         }
       //create popover
-      $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->user_login . '" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>, ';
+      $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="' . $userinfo->display_name . '" data-content"'. $userinfo->display_name . '">' . $userinfo->display_name . '</a>, ';
       }
       elseif ($x == $count) {
             if (is_array($optoutcheckbox) && in_array($optout,$optoutcheckbox)) {
@@ -481,7 +481,7 @@ function construct_el_info($weekno) {
                             $popcontent .= '<strong>Bio: </strong>' . htmlspecialchars($userinfo->description) . '<br>';
                         }
         }
-        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="<p>' . $userinfo->user_login . '</p>" data-content"'. $userinfo->user_login . '">' . $userinfo->user_login . '</a>.';
+        $popover .= '<a tabindex="0" data-toggle="popover" data-placement="auto" data-trigger="focus" data-content="'. $popcontent . '" data-html="true" title="<p>' . $userinfo->display_name . '</p>" data-content"'. $userinfo->display_name . '">' . $userinfo->display_name . '</a>.';
 			}
 
         }

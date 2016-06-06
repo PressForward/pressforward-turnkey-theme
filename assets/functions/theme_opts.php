@@ -135,7 +135,7 @@ Homepage -- Block 2 -- Options
 //Create panel
 Kirki::add_section( 'Block2', array(
     'title'          => __( 'Block 2 Options', 'pressforward-turnkey-theme' ),
-    'description'    => __( 'The second block of the homepage consists of four “columns”. Each column displays a title which can also link to a page or post within the site. Each column can also include a FontAwesomeicon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below.', 'pressforward-turnkey-theme' ),
+    'description'    => __( 'The second block of the homepage consists of four “columns”. Each column displays a title which can also link to a page or post within the site. Each column can also include a Font Awesome icon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below.', 'pressforward-turnkey-theme' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',

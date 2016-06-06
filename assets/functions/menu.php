@@ -2,8 +2,8 @@
 // Register menus
 register_nav_menus(
 	array(
-		'main-nav' => __( 'The Main Menu', 'pressforward_turnkey_theme' ),   // Main nav in header
-		'footer-links' => __( 'Footer Links', 'pressforward_turnkey_theme' ) // Secondary nav in footer
+		'main-nav' => __( 'The Main Menu', 'pressforward-turnkey-theme' ),   // Main nav in header
+		'footer-links' => __( 'Footer Links', 'pressforward-turnkey-theme' ) // Secondary nav in footer
 	)
 );
 
@@ -37,7 +37,7 @@ function pressforward_tk_theme_off_canvas_nav() {
 function pressforward_tk_theme_footer_links() {
     wp_nav_menu(array(
     	'container' => 'false',                              // Remove nav container
-    	'menu' => __( 'Footer Links', 'pressforward_turnkey_theme' ),   	// Nav name
+    	'menu' => __( 'Footer Links', 'pressforward-turnkey-theme' ),   	// Nav name
     	'menu_class' => 'menu',      					// Adding custom nav class
     	'theme_location' => 'footer-links',             // Where it's located in the theme
         'depth' => 0,                                   // Limit the depth of the nav

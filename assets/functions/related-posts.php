@@ -14,7 +14,7 @@ function pressforward_tk_theme_related_posts() {
 		);
 		$related_posts = get_posts( $args );
 		if($related_posts) {
-		echo __( '<h4>Related Posts</h4>', 'pressforward_turnkey_theme' );
+		echo __( '<h4>Related Posts</h4>', 'pressforward-turnkey-theme' );
 		echo '<ul id="joints-related-posts">';
 			foreach ( $related_posts as $post ) : setup_postdata( $post ); ?>
 				<li class="related_post">

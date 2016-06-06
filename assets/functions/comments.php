@@ -14,13 +14,13 @@ function pressforward_tk_theme_comments($comment, $args, $depth) {
 							// create variable
 							$bgauthemail = get_comment_author_email();
 						?>
-						<?php printf(__('%s', 'pressforward_turnkey_theme'), get_comment_author_link()) ?> on
-						<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__(' F jS, Y - g:ia', 'pressforward_turnkey_theme')); ?> </a></time>
-						<?php edit_comment_link(__('(Edit)', 'pressforward_turnkey_theme'),'  ','') ?>
+						<?php printf(__('%s', 'pressforward-turnkey-theme'), get_comment_author_link()) ?> on
+						<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__(' F jS, Y - g:ia', 'pressforward-turnkey-theme')); ?> </a></time>
+						<?php edit_comment_link(__('(Edit)', 'pressforward-turnkey-theme'),'  ','') ?>
 					</header>
 					<?php if ($comment->comment_approved == '0') : ?>
 						<div class="alert alert-info">
-							<p><?php _e('Your comment is awaiting moderation.', 'pressforward_turnkey_theme') ?></p>
+							<p><?php _e('Your comment is awaiting moderation.', 'pressforward-turnkey-theme') ?></p>
 						</div>
 					<?php endif; ?>
 					<section class="comment_content clearfix">

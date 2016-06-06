@@ -9,7 +9,7 @@
 	<!-- This content shows up if there are no widgets defined in the backend. -->
 						
 	<div class="alert help">
-		<p><?php _e( 'Please activate some Widgets.', 'pressforward_turnkey_theme' );  ?></p>
+		<p><?php _e( 'Please activate some Widgets.', 'pressforward-turnkey-theme' );  ?></p>
 	</div>
 
 	<?php endif; ?>

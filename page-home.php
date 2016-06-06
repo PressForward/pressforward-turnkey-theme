@@ -62,7 +62,7 @@ Template Name: Home Page Template
 						if(empty($thumb)) {
 							echo '';
 						} else {
-							echo '<img src="' . $thumb[0] . '" class="thumbnail"></div>';
+							echo '<img src="' . $thumb[0] . '" class="thumbnail home"></div>';
 						}
 						echo '</div>';
 						echo '</li>';

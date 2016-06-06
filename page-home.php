@@ -123,7 +123,7 @@ Block 2
 
 									 <div class="large-3 medium-3 columns">
 											 <?php $b2c3_icon = Kirki::get_option( 'pftk_opts', 'b2c3-icon' );
-											 echo '<i class="fa ' . $b2c1_icon . ' fa-3x"></i>';
+											 echo '<i class="fa ' . $b2c3_icon . ' fa-3x"></i>';
 											 $b2c3_title = Kirki::get_option( 'pftk_opts', 'b2c3-title');
 											 $b2c3_link = Kirki::get_option('pftk_opts', 'b2c3-link');
 											 echo '<h1 class="widgettitle"><a href="'. get_permalink($b2c3_link) . '">' . $b2c3_title . '</a></h1>'; ?>

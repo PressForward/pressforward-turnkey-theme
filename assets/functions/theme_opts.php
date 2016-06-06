@@ -487,7 +487,7 @@ Homepage -- Block 3 -- Options
         'type'        => 'select',
         'settings'    => 'b3r1c2-category',
         'label'       => __( 'First Row Second Column Category', 'pressforward-turnkey-theme' ),
-        'description' => __( 'Select a category', 'kirki' ),
+        'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
         'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward-turnkey-theme' ),
         'label'       => __( 'Category', 'pressforward-turnkey-theme' ),
         'description' => __( 'This is the control description', 'pressforward-turnkey-theme' ),

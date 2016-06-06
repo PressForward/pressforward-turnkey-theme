@@ -20,18 +20,18 @@ Kirki::add_config( 'pftk_opts', array(
 //create panel for homepage options
   Kirki::add_panel( 'homepage', array(
       'priority'    => 10,
-      'title'       => __( 'Home Page Layout', 'pressforward_tk_theme' ),
-      'description' => __( 'This panel will provide all the options of the header.', 'pressforward_tk_theme' ),
+      'title'       => __( 'Home Page Layout', 'pressforward-turnkey-theme' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
   ) );
   Kirki::add_panel( 'designelements', array(
       'priority'    => 10,
-      'title'       => __( 'Design Elements', 'pressforward_tk_theme' ),
-      'description' => __( 'This panel will provide all the options of the header.', 'pressforward_tk_theme' ),
+      'title'       => __( 'Design Elements', 'pressforward-turnkey-theme' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
   ) );
   Kirki::add_panel( 'contentsettings', array(
       'priority'    => 10,
-      'title'       => __( 'Content Settings', 'pressforward_tk_theme' ),
-      'description' => __( 'This panel will provide all the options of the header.', 'pressforward_tk_theme' ),
+      'title'       => __( 'Content Settings', 'pressforward-turnkey-theme' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
   ) );
 
 /*********************
@@ -42,7 +42,7 @@ Homepage -- Slider -- Options
 //create slider section
   Kirki::add_section( 'slider', array(
       'title'          => __( 'Slider Options' ),
-      'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.', 'pressforward_tk_theme' ),
+      'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.', 'pressforward-turnkey-theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -53,7 +53,7 @@ Homepage -- Slider -- Options
 Kirki::add_field( 'slider-switch', array(
     'type'        => 'switch',
     'settings'    => 'slider-switch',
-    'label'       => __( 'Slider (Block 1)', 'pressforward_tk_theme' ),
+    'label'       => __( 'Slider (Block 1)', 'pressforward-turnkey-theme' ),
     'tooltip'     => 'This switch turns the slider on or off',
     'section'     => 'slider',
     'default'     => '1',
@@ -63,8 +63,8 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider_numposts', array(
       'type'        => 'slider',
       'settings'    => 'slider_numposts',
-      'label'       => __( 'Number of Posts', 'pressforward_tk_theme' ),
-      'description' => __( 'How many posts should appear in the slider.', 'pressforward_tk_theme' ),
+      'label'       => __( 'Number of Posts', 'pressforward-turnkey-theme' ),
+      'description' => __( 'How many posts should appear in the slider.', 'pressforward-turnkey-theme' ),
       'section'     => 'slider',
       'tooltip'     => 'Select the number of posts that will appear in the slider',
       'default'     => 4,
@@ -78,8 +78,8 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider-title-numwords', array(
       'type'        => 'slider',
       'settings'    => 'slider-title-numwords',
-      'label'       => __( 'Number of Words in Slider Post Title', 'pressforward_tk_theme' ),
-      'description' => __( 'How many posts should appear in the slider.', 'pressforward_tk_theme' ),
+      'label'       => __( 'Number of Words in Slider Post Title', 'pressforward-turnkey-theme' ),
+      'description' => __( 'How many posts should appear in the slider.', 'pressforward-turnkey-theme' ),
       'section'     => 'slider',
       'default'     => 14,
       'priority'    => 10,
@@ -92,8 +92,8 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider-excerpt-numwords', array(
       'type'        => 'slider',
       'settings'    => 'slider-excerpt-numwords',
-      'label'       => __( 'Number of Words in Slider Excerpt', 'pressforward_tk_theme' ),
-      'description' => __( 'How many posts should appear in the slider.', 'pressforward_tk_theme' ),
+      'label'       => __( 'Number of Words in Slider Excerpt', 'pressforward-turnkey-theme' ),
+      'description' => __( 'How many posts should appear in the slider.', 'pressforward-turnkey-theme' ),
       'section'     => 'slider',
       'default'     => 55,
       'priority'    => 10,
@@ -106,9 +106,9 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider_category', array(
       'type'        => 'select',
       'settings'    => 'slider_category',
-      'label'       => __( 'Slider Post Category', 'pressforward_tk_theme' ),
-      'description' => __( 'Select a post category for the slider.', 'pressforward_tk_theme' ),
-      'tooltip'     => __( 'Select the post category that you want to appear in the slider.', 'pressforward_tk_theme' ),
+      'label'       => __( 'Slider Post Category', 'pressforward-turnkey-theme' ),
+      'description' => __( 'Select a post category for the slider.', 'pressforward-turnkey-theme' ),
+      'tooltip'     => __( 'Select the post category that you want to appear in the slider.', 'pressforward-turnkey-theme' ),
       'section'     => 'slider',
       'default'     => '1',
       'priority'    => 10,
@@ -117,14 +117,14 @@ Kirki::add_field( 'slider-switch', array(
   Kirki::add_field( 'slider-autoplay', array(
 	'type'        => 'radio-buttonset',
 	'settings'    => 'slider-autoplay',
-	'label'       => __( 'Slider Autoplay', 'pressforward_tk_theme' ),
+	'label'       => __( 'Slider Autoplay', 'pressforward-turnkey-theme' ),
 	'section'     => 'slider',
   'tooltip'     => 'This switch turns the autoplay feature of the slider on or off',
 	'default'     => 'autoPlay:false;',
 	'priority'    => 10,
 	'choices'     => array(
-		'autoPlay:true;' => esc_attr__( 'On', 'pressforward_tk_theme' ),
-    'autoPlay:false;'   => esc_attr__( 'Off', 'pressforward_tk_theme' )
+		'autoPlay:true;' => esc_attr__( 'On', 'pressforward-turnkey-theme' ),
+    'autoPlay:false;'   => esc_attr__( 'Off', 'pressforward-turnkey-theme' )
 	),
 ) );
 
@@ -135,8 +135,8 @@ Homepage -- Block 2 -- Options
 
 //Create panel
 Kirki::add_section( 'Block2', array(
-    'title'          => __( 'Block 2 Options', 'pressforward_tk_theme' ),
-    'description'    => __( 'The second block of the homepage consists of four “columns”. Each column displays a title which can also link to a page or post within the site. Each column can also include a FontAwesomeicon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below.', 'pressforward_tk_theme' ),
+    'title'          => __( 'Block 2 Options', 'pressforward-turnkey-theme' ),
+    'description'    => __( 'The second block of the homepage consists of four “columns”. Each column displays a title which can also link to a page or post within the site. Each column can also include a FontAwesomeicon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below.', 'pressforward-turnkey-theme' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
@@ -146,7 +146,7 @@ Kirki::add_section( 'Block2', array(
 Kirki::add_field( 'toggle-b2', array(
     'type'        => 'switch',
     'settings'    => 'toggle-b2',
-    'label'       => __( 'Block 2', 'pressforward_tk_theme' ),
+    'label'       => __( 'Block 2', 'pressforward-turnkey-theme' ),
     'section'     => 'block2',
     'tooltip'     => 'This switch turns Block 2 on or off',
     'default'     => '1',
@@ -163,7 +163,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c1-text',
 	'section'     => 'block2',
-	'default'     => '<div><h2>First Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><h2>First Column</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c1-icon', array(
@@ -212,7 +212,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c2-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr><h2>Second Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Second Column</h2>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c2-icon', array(
@@ -261,7 +261,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c3-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr><h2>Third Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Third Column</h2>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c3-icon', array(
@@ -310,7 +310,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'b2c4-div',
 	'section'     => 'block2',
-	'default'     => '<div><hr><h2>Fourth Column</h2>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><h2>Fourth Column</h2>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
   Kirki::add_field( 'b2c4-icon', array(
@@ -359,8 +359,8 @@ Homepage -- Block 3 -- Options
 
   //Create panel
   Kirki::add_section( 'Block3', array(
-      'title'          => __( 'Block 3 Options', 'pressforward_tk_theme' ),
-      'description'    => __( 'The third block on the homepage consists of three columns.  There is an option to add a second row for each column. Each of these six sections has a title with the option to make it a link. Each section also has an option to select which category will populate the field. Each section can also display an icon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below. The entire block can be turned on or off.', 'pressforward_tk_theme' ),
+      'title'          => __( 'Block 3 Options', 'pressforward-turnkey-theme' ),
+      'description'    => __( 'The third block on the homepage consists of three columns.  There is an option to add a second row for each column. Each of these six sections has a title with the option to make it a link. Each section also has an option to select which category will populate the field. Each section can also display an icon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below. The entire block can be turned on or off.', 'pressforward-turnkey-theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -370,7 +370,7 @@ Homepage -- Block 3 -- Options
   Kirki::add_field( 'toggle-b3', array(
       'type'        => 'switch',
       'settings'    => 'toggle-b3',
-      'label'       => __( 'Block 3', 'pressforward_tk_theme' ),
+      'label'       => __( 'Block 3', 'pressforward-turnkey-theme' ),
       'section'     => 'block3',
       'tooltip'     => 'This switch turns Block 3 on or off',
       'default'     => '1',
@@ -399,7 +399,7 @@ Homepage -- Block 3 -- Options
     	'type'        => 'custom',
     	'settings'    => 'b3r1c1-div',
     	'section'     => 'block3',
-    	'default'     => '<div><h2>First Row First Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'default'     => '<div><h2>First Row First Column</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
     	'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r1c1-icon', array(
@@ -435,9 +435,9 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c1-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c1-category',
-        'label'       => __( 'First Row First Column Category', 'pressforward_tk_theme' ),
-        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
-        'tooltip'        => __( 'Select a category for the first row of the first column.', 'pressforward_tk_theme' ),
+        'label'       => __( 'First Row First Column Category', 'pressforward-turnkey-theme' ),
+        'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
+        'tooltip'        => __( 'Select a category for the first row of the first column.', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -450,7 +450,7 @@ Homepage -- Block 3 -- Options
       'type'        => 'custom',
       'settings'    => 'b3r1c2-div',
       'section'     => 'block3',
-      'default'     => '<div><h2>First Row Second Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+      'default'     => '<div><h2>First Row Second Column</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
       'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r1c2-icon', array(
@@ -486,12 +486,12 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c2-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c2-category',
-        'label'       => __( 'First Row Second Column Category', 'pressforward_tk_theme' ),
+        'label'       => __( 'First Row Second Column Category', 'pressforward-turnkey-theme' ),
         'description' => __( 'Select a category', 'kirki' ),
-        'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward_tk_theme' ),
-        'label'       => __( 'Category', 'pressforward_tk_theme' ),
-        'description' => __( 'This is the control description', 'pressforward_tk_theme' ),
-        'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward_tk_theme' ),
+        'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward-turnkey-theme' ),
+        'label'       => __( 'Category', 'pressforward-turnkey-theme' ),
+        'description' => __( 'This is the control description', 'pressforward-turnkey-theme' ),
+        'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -504,7 +504,7 @@ Homepage -- Block 3 -- Options
       'type'        => 'custom',
       'settings'    => 'b3r1c3-div',
       'section'     => 'block3',
-      'default'     => '<div><h2>First Row Third Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+      'default'     => '<div><h2>First Row Third Column</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
       'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r1c3-icon', array(
@@ -540,12 +540,12 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r1c3-category', array(
         'type'        => 'select',
         'settings'    => 'b3r1c3-category',
-        'label'       => __( 'First Row Third Column Category', 'pressforward_tk_theme' ),
-        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
-        'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward_tk_theme' ),
-        'label'       => __( 'Category', 'pressforward_tk_theme' ),
-        'description' => __( 'This is the control description', 'pressforward_tk_theme' ),
-        'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward_tk_theme' ),
+        'label'       => __( 'First Row Third Column Category', 'pressforward-turnkey-theme' ),
+        'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
+        'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward-turnkey-theme' ),
+        'label'       => __( 'Category', 'pressforward-turnkey-theme' ),
+        'description' => __( 'This is the control description', 'pressforward-turnkey-theme' ),
+        'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -559,7 +559,7 @@ Homepage -- Block 3 -- Options
     	'type'        => 'custom',
     	'settings'    => 'b3r2c1-div',
     	'section'     => 'block3',
-    	'default'     => '<div><h2>Second Row First Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'default'     => '<div><h2>Second Row First Column</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
     	'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r2c1-icon', array(
@@ -595,9 +595,9 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c1-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c1-category',
-        'label'       => __( 'Second Row First Column Category', 'pressforward_tk_theme' ),
-        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
-        'tooltip'        => __( 'Select a category for the second row of the first column', 'pressforward_tk_theme' ),
+        'label'       => __( 'Second Row First Column Category', 'pressforward-turnkey-theme' ),
+        'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
+        'tooltip'        => __( 'Select a category for the second row of the first column', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -611,7 +611,7 @@ Homepage -- Block 3 -- Options
     	'type'        => 'custom',
     	'settings'    => 'b3r2c2-div',
     	'section'     => 'block3',
-    	'default'     => '<div><h2>Second Row Second Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'default'     => '<div><h2>Second Row Second Column</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
     	'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r2c2-icon', array(
@@ -647,9 +647,9 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c2-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c2-category',
-        'label'       => __( 'Second Row Second Column Category', 'pressforward_tk_theme' ),
-        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
-        'tooltip'     => __( 'Select a category for the second row of the second column', 'pressforward_tk_theme' ),
+        'label'       => __( 'Second Row Second Column Category', 'pressforward-turnkey-theme' ),
+        'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
+        'tooltip'     => __( 'Select a category for the second row of the second column', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -662,7 +662,7 @@ Homepage -- Block 3 -- Options
     	'type'        => 'custom',
     	'settings'    => 'b3r2c3-div',
     	'section'     => 'block3',
-    	'default'     => '<div><h2>Second Row Third Column</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+    	'default'     => '<div><h2>Second Row Third Column</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
     	'priority'    => 10,
     ) );
     Kirki::add_field( 'b3r2c3-icon', array(
@@ -698,9 +698,9 @@ Homepage -- Block 3 -- Options
     Kirki::add_field( 'b3r2c3-category', array(
         'type'        => 'select',
         'settings'    => 'b3r2c3-category',
-        'label'       => __( 'Second Row Third Column Category', 'pressforward_tk_theme' ),
-        'description' => __( 'Select a category', 'pressforward_tk_theme' ),
-        'tooltip'     => __( 'Select a category for the second row of the third column', 'pressforward_tk_theme' ),
+        'label'       => __( 'Second Row Third Column Category', 'pressforward-turnkey-theme' ),
+        'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
+        'tooltip'     => __( 'Select a category for the second row of the third column', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
         'priority'    => 10,
@@ -714,8 +714,8 @@ Homepage -- Block 4
 *********************/
   //Create panel
   Kirki::add_section( 'Block4', array(
-      'title'          => __( 'Block 4 Options', 'pressforward_tk_theme' ),
-      'description'    => __( 'The fourth block of the homepage is a single row designed to feature some text or site information.. The row includes a title (with an option to make it a link) and text. The entire block can be turned on or off.', 'pressforward_tk_theme' ),
+      'title'          => __( 'Block 4 Options', 'pressforward-turnkey-theme' ),
+      'description'    => __( 'The fourth block of the homepage is a single row designed to feature some text or site information.. The row includes a title (with an option to make it a link) and text. The entire block can be turned on or off.', 'pressforward-turnkey-theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -725,7 +725,7 @@ Homepage -- Block 4
   Kirki::add_field( 'toggle-b4', array(
       'type'        => 'switch',
       'settings'    => 'toggle-b4',
-      'label'       => __( 'Block 4', 'pressforward_tk_theme' ),
+      'label'       => __( 'Block 4', 'pressforward-turnkey-theme' ),
       'section'     => 'block4',
       'tooltip'     => 'This switch turns Block 4 on or off',
       'default'     => '1',
@@ -769,8 +769,8 @@ Homepage -- Block 5
 *********************/
     //Create panel
     Kirki::add_section( 'Block5', array(
-        'title'          => __( 'Block 5 Options', 'pressforward_tk_theme' ),
-        'description'    => __( 'The fifth block of the homepage is a single row. This row includes a title that can also link to a page or post within the site. The entire block can be turned on or off.', 'pressforward_tk_theme' ),
+        'title'          => __( 'Block 5 Options', 'pressforward-turnkey-theme' ),
+        'description'    => __( 'The fifth block of the homepage is a single row. This row includes a title that can also link to a page or post within the site. The entire block can be turned on or off.', 'pressforward-turnkey-theme' ),
         'panel'          => 'homepage', // Not typically needed.
         'priority'       => 160,
         'capability'     => 'edit_theme_options',
@@ -780,7 +780,7 @@ Homepage -- Block 5
     Kirki::add_field( 'toggle-b5', array(
         'type'        => 'switch',
         'settings'    => 'toggle-b5',
-        'label'       => __( 'Block 5', 'pressforward_tk_theme' ),
+        'label'       => __( 'Block 5', 'pressforward-turnkey-theme' ),
         'tooltip'     => 'This switch turns Block 5 on or off',
         'section'     => 'block5',
         'default'     => '1',
@@ -809,7 +809,7 @@ Homepage -- Block 5
     Kirki::add_field( 'b5-categories', array(
     	'type'        => 'select',
     	'settings'    => 'b5-categories',
-    	'label'       => __( 'Block 5 Categories', 'pressforward_tk_theme' ),
+    	'label'       => __( 'Block 5 Categories', 'pressforward-turnkey-theme' ),
     	'section'     => 'block5',
       'tooltip'     => 'Select a category to display posts from in Block 5.',
     	'priority'    => 10,
@@ -826,9 +826,9 @@ Homepage -- Footer
 *********************/
 //Create panel
 Kirki::add_section( 'Footer', array(
-    'title'          => __( 'Footer', 'pressforward_tk_theme' ),
+    'title'          => __( 'Footer', 'pressforward-turnkey-theme' ),
     'description'
-       => __( 'Edit the content and appearance of the footer on the homepage.', 'pressforward_tk_theme' ),
+       => __( 'Edit the content and appearance of the footer on the homepage.', 'pressforward-turnkey-theme' ),
     'panel'          => 'homepage', // Not typically needed.
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
@@ -837,7 +837,7 @@ Kirki::add_section( 'Footer', array(
 Kirki::add_field( 'toggle-footer', array(
     'type'        => 'switch',
     'settings'    => 'toggle-footer',
-    'label'       => __( 'Footer', 'pressforward_tk_theme' ),
+    'label'       => __( 'Footer', 'pressforward-turnkey-theme' ),
     'section'     => 'footer',
     'tooltip'     => 'This switch turns the footer on or off.',
     'default'     => '1',
@@ -846,7 +846,7 @@ Kirki::add_field( 'toggle-footer', array(
 Kirki::add_field( 'toggle-copyright', array(
     'type'        => 'switch',
     'settings'    => 'toggle-copyright',
-    'label'       => __( 'Display Copyright and Sitename', 'pressforward_tk_theme' ),
+    'label'       => __( 'Display Copyright and Sitename', 'pressforward-turnkey-theme' ),
     'section'     => 'footer',
     'tooltip'     => 'This switch turns the copyright and sitename information on or off.',
     'default'     => '1',
@@ -855,7 +855,7 @@ Kirki::add_field( 'toggle-copyright', array(
 Kirki::add_field( 'toggle-footer-text', array(
     'type'        => 'switch',
     'settings'    => 'toggle-footer-text',
-    'label'       => __( 'Toggle Footer Text', 'pressforward_tk_theme' ),
+    'label'       => __( 'Toggle Footer Text', 'pressforward-turnkey-theme' ),
     'section'     => 'footer',
     'tooltip'     => 'This switch turns the footer text on or off.',
     'default'     => '1',
@@ -864,10 +864,10 @@ Kirki::add_field( 'toggle-footer-text', array(
 Kirki::add_field( 'footer-text', array(
 	'type'     => 'textarea',
 	'settings' => 'footer-text',
-	'label'    => __( 'Footer Text', 'pressforward_tk_theme' ),
+	'label'    => __( 'Footer Text', 'pressforward-turnkey-theme' ),
 	'section'  => 'Footer',
   'tooltip'  => 'Enter the text that will appear in the footer.',
-	'default'  => esc_attr__( 'This is a defualt value', 'pressforward_tk_theme' ),
+	'default'  => esc_attr__( 'This is a defualt value', 'pressforward-turnkey-theme' ),
 	'priority' => 10,
 ) );
 
@@ -880,8 +880,8 @@ Sitewide -- Typography
 
   //Create panel
   Kirki::add_section( 'fontcontrol', array(
-      'title'          => __( 'Fonts', 'pressforward_tk_theme' ),
-      'description'    => __( 'The options below control the text appearance for the body and header. ', 'pressforward_tk_theme' ),
+      'title'          => __( 'Fonts', 'pressforward-turnkey-theme' ),
+      'description'    => __( 'The options below control the text appearance for the body and header. ', 'pressforward-turnkey-theme' ),
       'panel'          => 'designelements', // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
@@ -892,7 +892,7 @@ Sitewide -- Typography
   Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'typography',
 	'settings'    => 'body-font',
-	'label'       => esc_attr__( 'Body Font', 'pressforward_tk_theme' ),
+	'label'       => esc_attr__( 'Body Font', 'pressforward-turnkey-theme' ),
 	'section'     => 'fontcontrol',
   'tooltip'  => 'This section controls the appearance of the body text.',
 	'default'     => array(
@@ -914,7 +914,7 @@ Sitewide -- Typography
 Kirki::add_field( 'pftk_opts', array(
 'type'        => 'typography',
 'settings'    => 'header-font',
-'label'       => esc_attr__( 'Header Font', 'pressforward_tk_theme' ),
+'label'       => esc_attr__( 'Header Font', 'pressforward-turnkey-theme' ),
 'section'     => 'fontcontrol',
 'tooltip'  => 'This section controls the appearance of the body text.',
 'default'     => array(
@@ -933,8 +933,8 @@ Kirki::add_field( 'pftk_opts', array(
 ) );
 //Create panel
 Kirki::add_section( 'colors', array(
-    'title'          => __( 'Colors', 'pressforward_tk_theme' ),
-    'description'    => __( 'The options below control the colors for each each block on the home page. At the bottom, there are also options to control the colors for the entire site. ', 'pressforward_tk_theme' ),
+    'title'          => __( 'Colors', 'pressforward-turnkey-theme' ),
+    'description'    => __( 'The options below control the colors for each each block on the home page. At the bottom, there are also options to control the colors for the entire site. ', 'pressforward-turnkey-theme' ),
     'panel'          => 'designelements', // Not typically needed.
     'priority'       => 10,
     'capability'     => 'edit_theme_options',
@@ -944,13 +944,13 @@ Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'topbar-div',
   'section'     => 'colors',
-  'default'     => '<div><h2>Top Bar Styling</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'default'     => '<div><h2>Top Bar Styling</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
   'priority'    => 10,
 ) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'topbar',
-	'label'       => __( 'Top Bar Background Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Top Bar Background Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for the bar that appears on the top of the page.',
@@ -966,7 +966,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'topbar-text',
-	'label'       => __( 'Top Bar Text Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Top Bar Text Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a text color for the bar that appears at the top of the page.',
 	'default'     => '',
@@ -985,13 +985,13 @@ Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'slider-div',
   'section'     => 'colors',
-  'default'     => '<div><h2>Slider</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'default'     => '<div><h2>Slider</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
   'priority'    => 10,
 ) );
 Kirki::add_field( 'slider-color-1', array(
 	'type'        => 'color',
 	'settings'    => 'slider-color-1',
-	'label'       => __( 'Slider Gradient (Color #1)', 'pressforward_tk_theme' ),
+	'label'       => __( 'Slider Gradient (Color #1)', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the top of the slider. This will blend with the second gradient color.',
 	'default'     => '#0088CC',
@@ -1001,7 +1001,7 @@ Kirki::add_field( 'slider-color-1', array(
 Kirki::add_field( 'slider-color-2', array(
 	'type'        => 'color',
 	'settings'    => 'slider-color-2',
-	'label'       => __( 'Slider Gradient (Color #2)', 'pressforward_tk_theme' ),
+	'label'       => __( 'Slider Gradient (Color #2)', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the bottom of the slider. This will blend with the first gradient color.',
 	'default'     => '#0088CC',
@@ -1012,7 +1012,7 @@ Kirki::add_field( 'slider-color-2', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'orbit-bullets',
-	'label'       => __( 'Slider Bullets', 'pressforward_tk_theme' ),
+	'label'       => __( 'Slider Bullets', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a color for the slider bullets.',
 	'default'     => '',
@@ -1029,14 +1029,14 @@ Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'b2-div',
   'section'     => 'colors',
-  'default'     => '<div><h2>Block 2</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'default'     => '<div><h2>Block 2</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
   'priority'    => 10,
 ) );
 // b2 bg color
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b2-bg-color',
-	'label'       => __( 'Block 2 Background Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 2 Background Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a background color for block 2.',
 	'default'     => '',
@@ -1053,7 +1053,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b2-icon-color',
-	'label'       => __( 'Block 2 Icon Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 2 Icon Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a color for the icons in block 2.',
 	'default'     => '',
@@ -1070,14 +1070,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b2-link-color',
-	'label'       => __( 'Block 2 Link Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 2 Link Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'     => 'Select a link color, a hover color, an active link color for block 2.',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
-          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
-          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
+          'link'    => esc_attr__( 'Color', 'pressforward-turnkey-theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward-turnkey-theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward-turnkey-theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1107,7 +1107,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b2-text-color',
-	'label'       => __( 'Block 2 Text Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 2 Text Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a text color for block 2.',
@@ -1124,13 +1124,13 @@ Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'b3-div',
   'section'     => 'colors',
-  'default'     => '<div><h2>Block 3</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'default'     => '<div><h2>Block 3</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
   'priority'    => 10,
 ) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b3-bg-color',
-	'label'       => __( 'Block 3 Background Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 3 Background Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for block 3.',
@@ -1147,7 +1147,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b3-icon-color',
-	'label'       => __( 'Block 3 Icon Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 3 Icon Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a color for the icons in block 3.',
 	'default'     => '',
@@ -1163,14 +1163,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b3-link-color',
-	'label'       => __( 'Block 3 Link Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 3 Link Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'     => 'Select a link color, a hover color, an active link color for block 3.',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
-          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
-          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
+          'link'    => esc_attr__( 'Color', 'pressforward-turnkey-theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward-turnkey-theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward-turnkey-theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1199,13 +1199,13 @@ Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'b4-div',
   'section'     => 'colors',
-  'default'     => '<div><h2>Block 4</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'default'     => '<div><h2>Block 4</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
   'priority'    => 10,
 ) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b4-bg-color',
-	'label'       => __( 'Block 4 Background Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 4 Background Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for block 4.',
@@ -1221,7 +1221,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b4-text-color',
-	'label'       => __( 'Block 4 Text Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 4 Text Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a text color for block 4.',
@@ -1237,14 +1237,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b4-link-color',
-	'label'       => __( 'Block 4 Link Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 4 Link Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'   => 'Select a link color, a hover color, an active link color for block 4',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
-          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
-          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
+          'link'    => esc_attr__( 'Color', 'pressforward-turnkey-theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward-turnkey-theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward-turnkey-theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1273,13 +1273,13 @@ Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'b5-div',
   'section'     => 'colors',
-  'default'     => '<div><h2>Block 5</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'default'     => '<div><h2>Block 5</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
   'priority'    => 10,
 ) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'b5-text-color',
-	'label'       => __( 'Block 5 Text Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 5 Text Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a text color for block 5.',
@@ -1296,14 +1296,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'b5-link-color',
-	'label'       => __( 'Block 5 Link Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 5 Link Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'   => 'Select a link color, a hover color, an active link color for block 5',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
-          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
-          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
+          'link'    => esc_attr__( 'Color', 'pressforward-turnkey-theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward-turnkey-theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward-turnkey-theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1332,7 +1332,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'b5-color-1', array(
 	'type'        => 'color',
 	'settings'    => 'b5-color-1',
-	'label'       => __( 'Block 5 Gradient (Color #1)', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 5 Gradient (Color #1)', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the top of block 5. This will blend with the second gradient color.',
 	'default'     => '#0088CC',
@@ -1342,7 +1342,7 @@ Kirki::add_field( 'b5-color-1', array(
 Kirki::add_field( 'b5-color-2', array(
 	'type'        => 'color',
 	'settings'    => 'b5-color-2',
-	'label'       => __( 'Block 5 Gradient (Color #2) ', 'pressforward_tk_theme' ),
+	'label'       => __( 'Block 5 Gradient (Color #2) ', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a gradient color for the bottom of block 5. This will blend with the first gradient color.',
 	'default'     => '#0088CC',
@@ -1353,13 +1353,13 @@ Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'sw-div',
   'section'     => 'colors',
-  'default'     => '<div><h2>Site Wide</h2><hr>' . esc_html__( '', 'pressforward_tk_theme' ) . '</div>',
+  'default'     => '<div><h2>Site Wide</h2><hr>' . esc_html__( '', 'pressforward-turnkey-theme' ) . '</div>',
   'priority'    => 10,
 ) );
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'body-bg-color',
-	'label'       => __( 'Site Background Color ', 'pressforward_tk_theme' ),
+	'label'       => __( 'Site Background Color ', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
   'tooltip'     => 'Select a background color for th entire site.',
@@ -1376,7 +1376,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'post-bg-color',
-	'label'       => __( 'Post Background Color ', 'pressforward_tk_theme' ),
+	'label'       => __( 'Post Background Color ', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'default'     => '',
 	'priority'    => 10,
@@ -1391,14 +1391,14 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
 	'settings'    => 'site-link-color',
-	'label'       => __( 'Sitewide Link Color', 'pressforward_tk_theme' ),
+	'label'       => __( 'Sitewide Link Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
   'tooltip'     => 'Select a link color, a hover color, an active link color for the entire site.',
   'choices'     => array(
-          'link'    => esc_attr__( 'Color', 'pressforward_tk_theme' ),
-          'hover'   => esc_attr__( 'Hover', 'pressforward_tk_theme' ),
-          'active'  => esc_attr__( 'Active', 'pressforward_tk_theme' ),
+          'link'    => esc_attr__( 'Color', 'pressforward-turnkey-theme' ),
+          'hover'   => esc_attr__( 'Hover', 'pressforward-turnkey-theme' ),
+          'active'  => esc_attr__( 'Active', 'pressforward-turnkey-theme' ),
       ),
       'default'     => array(
              'link'    => '',
@@ -1428,8 +1428,8 @@ Kirki::add_field( 'pftk_opts', array(
 
 
 Kirki::add_section( 'content-settings', array(
-    'title'          => __( 'Content Options', 'pressforward_tk_theme' ),
-    'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.', 'pressforward_tk_theme' ),
+    'title'          => __( 'Content Options', 'pressforward-turnkey-theme' ),
+    'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.', 'pressforward-turnkey-theme' ),
     'priority'       => 160,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '', // Rarely needed.
@@ -1439,16 +1439,16 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'logo-display-div',
   'label'       => '<h2>Logo Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr><p>' . esc_html__( 'The options below allow users to upload a logo image that will appear at the top of site. ', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The options below allow users to upload a logo image that will appear at the top of site. ', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 //logo upload
 Kirki::add_field( 'image_demo', array(
 	'type'        => 'image',
 	'settings'    => 'image_demo',
-	'label'       => __( 'Logo', 'pressforward_tk_theme' ),
-	'description' => __( 'Upload a Logo to Display', 'pressforward_tk_theme' ),
-	'tooltip'     => __( 'Select a logo image to upload.', 'pressforward_tk_theme' ),
+	'label'       => __( 'Logo', 'pressforward-turnkey-theme' ),
+	'description' => __( 'Upload a Logo to Display', 'pressforward-turnkey-theme' ),
+	'tooltip'     => __( 'Select a logo image to upload.', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
 	'default'     => '',
 	'priority'    => 10,
@@ -1456,7 +1456,7 @@ Kirki::add_field( 'image_demo', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'dimension',
 	'settings'    => 'img_height',
-	'label'       => __( 'Logo Height', 'pressforward_tk_theme' ),
+	'label'       => __( 'Logo Height', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'Enter the logo height using a valid CSS unit: px, em, %, vh, etc. ',
 	'default'     => '50px',
@@ -1471,7 +1471,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'dimension',
 	'settings'    => 'img_width',
-	'label'       => __( 'Logo Width', 'pressforward_tk_theme' ),
+	'label'       => __( 'Logo Width', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'Enter the logo width using a valid CSS unit: px, em, %, vh, etc.',
 	'default'     => '50px',
@@ -1486,7 +1486,7 @@ Kirki::add_field( 'pftk_opts', array(
 Kirki::add_field( 'breadcrumbs', array(
 	'type'        => 'switch',
 	'settings'    => 'breadcrumbs',
-	'label'       => __( 'Breadcrumbs', 'pressforward_tk_theme' ),
+	'label'       => __( 'Breadcrumbs', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'This switch allows the user to turn Breadcrumbs on or off. Breadcrumbs are a series of links that appear at the top of a post showing the user where they are in the sitemap and providing them links to return to the homepage.',
 	'default'     => '1',
@@ -1497,13 +1497,13 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'author-display-div',
   'label'       => '<h2>Author Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr><p>' . esc_html__( 'The three options below control how the author field displays on posts. If the author field is set to on, the theme will display the wordpress author as expected. If turned off, the theme will display the text in the second option and will only display the wordpress author for the categories excluded in the third option. ', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The three options below control how the author field displays on posts. If the author field is set to on, the theme will display the wordpress author as expected. If turned off, the theme will display the text in the second option and will only display the wordpress author for the categories excluded in the third option. ', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'author-name-switch', array(
     'type'        => 'switch',
     'settings'    => 'author-name-switch',
-    'label'       => __( 'Display Author Name and Link', 'pressforward_tk_theme' ),
+    'label'       => __( 'Display Author Name and Link', 'pressforward-turnkey-theme' ),
     'section'     => 'content-settings',
     'tooltip'     => 'This switch turns the author name and link on or off.',
     'default'     => '1',
@@ -1514,7 +1514,7 @@ Kirki::add_field( 'author-name-switch', array(
 Kirki::add_field( 'alt-author-text', array(
 	'type'     => 'text',
 	'settings' => 'alt-author-text',
-	'label'    => __( 'Text to Display Rather than Author Name', 'pressforward_tk_theme' ),
+	'label'    => __( 'Text to Display Rather than Author Name', 'pressforward-turnkey-theme' ),
 	'section'  => 'content-settings',
   'tooltip'  => 'If Display Author Name and Link is set to off, this text will appear in place of the author’s name.',
 	'priority' => 10,
@@ -1523,7 +1523,7 @@ Kirki::add_field( 'alt-author-text', array(
 Kirki::add_field( 'author-exclude-cats', array(
 	'type'        => 'select',
 	'settings'    => 'author-exclude-cats',
-	'label'       => __( 'Author Exclude Categories', 'pressforward_tk_theme' ),
+	'label'       => __( 'Author Exclude Categories', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories without a link to all of their work on the site.',
 	'priority'    => 10,
@@ -1533,7 +1533,7 @@ Kirki::add_field( 'author-exclude-cats', array(
 Kirki::add_field( 'author-include-cats', array(
 	'type'        => 'select',
 	'settings'    => 'author-include-cats',
-	'label'       => __( 'Author Include Categories', 'pressforward_tk_theme' ),
+	'label'       => __( 'Author Include Categories', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories with a link to all of their work on the site.',
 	'priority'    => 10,
@@ -1545,13 +1545,13 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'nomcount-display-div',
   'label'       => '<h2>PressForward Nomination Count</h2>',
 	'section'     => 'content-settings',
-  'default'     => '<div><hr><p>' . esc_html__('This option displays the nomination count for only the featured items that appear in the slider.', 'pressforward_tk_theme') . '<div>',
+  'default'     => '<div><hr><p>' . esc_html__('This option displays the nomination count for only the featured items that appear in the slider.', 'pressforward-turnkey-theme') . '<div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'nom-count-switch', array(
     'type'        => 'switch',
     'settings'    => 'nom-count-switch',
-    'label'       => __( 'Display Nomination Count on Featured Posts', 'pressforward_tk_theme' ),
+    'label'       => __( 'Display Nomination Count on Featured Posts', 'pressforward-turnkey-theme' ),
     'section'     => 'content-settings',
     'tooltip'     => 'This switch turns the nomination count display on or off for individual posts.',
     'default'     => '1',
@@ -1563,36 +1563,36 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'comment-display-div',
   'label'       => '<h2>Comment Form Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr><p>' . esc_html__( 'The comment display options allow users to turn the comment form on for posts in all categories or only for specific categories. ', 'pressforward_tk_theme' ) . '</div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The comment display options allow users to turn the comment form on for posts in all categories or only for specific categories. ', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'comment-control', array(
 	'type'        => 'radio',
 	'settings'    => 'comment-control',
-	'label'       => __( 'Comment Form Display', 'pressforward_tk_theme' ),
+	'label'       => __( 'Comment Form Display', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'Select whether to turn comments on or off. There is also an option to turn on comments for specific categories.',
 	'default'     => '1',
 	'priority'    => 10,
 	'choices'     => array(
 		'1'   => array(
-			esc_attr__( 'Turn All Comments ON', 'pressforward_tk_theme' ),
-			esc_attr__( 'The comment form will display on all posts.', 'pressforward_tk_theme' ),
+			esc_attr__( 'Turn All Comments ON', 'pressforward-turnkey-theme' ),
+			esc_attr__( 'The comment form will display on all posts.', 'pressforward-turnkey-theme' ),
 		),
 		'2' => array(
-			esc_attr__( 'Turn all comments OFF.', 'pressforward_tk_theme' ),
-			esc_attr__( 'The comment form will not be displayed on any posts.', 'pressforward_tk_theme' ),
+			esc_attr__( 'Turn all comments OFF.', 'pressforward-turnkey-theme' ),
+			esc_attr__( 'The comment form will not be displayed on any posts.', 'pressforward-turnkey-theme' ),
 		),
 		'3'  => array(
-			esc_attr__( 'Turn comments ON but only for specific categories.', 'pressforward_tk_theme' ),
-			esc_attr__( 'The comment form will only be displayed on posts from the categories selected in the option below.', 'pressforward_tk_theme' ),
+			esc_attr__( 'Turn comments ON but only for specific categories.', 'pressforward-turnkey-theme' ),
+			esc_attr__( 'The comment form will only be displayed on posts from the categories selected in the option below.', 'pressforward-turnkey-theme' ),
 		),
 	),
 ) );
 Kirki::add_field( 'comment-include-cats', array(
 	'type'        => 'select',
 	'settings'    => 'comment-include-cats',
-	'label'       => __( 'Comments on for Specific Categories', 'pressforward_tk_theme' ),
+	'label'       => __( 'Comments on for Specific Categories', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
   'tooltip'     => 'Select specific categories to allow comments.',
 	'priority'    => 10,

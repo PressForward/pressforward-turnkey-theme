@@ -117,7 +117,7 @@ function pftk_register_required_plugins() {
   ),
 );
 $config = array(
-  'id'           => 'pressforward_tk_theme',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+  'id'           => 'pressforward-turnkey-theme',                 // Unique ID for hashing notices for multiple instances of TGMPA.
   'default_path' => '',                      // Default absolute path to bundled plugins.
   'menu'         => 'tgmpa-install-plugins', // Menu slug.
   'has_notices'  => true,                    // Show admin notices or not.

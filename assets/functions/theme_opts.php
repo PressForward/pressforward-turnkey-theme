@@ -93,7 +93,6 @@ Kirki::add_field( 'slider-switch', array(
       'type'        => 'slider',
       'settings'    => 'slider-excerpt-numwords',
       'label'       => __( 'Number of Words in Slider Excerpt', 'pressforward-turnkey-theme' ),
-      'description' => __( 'How many posts should appear in the slider.', 'pressforward-turnkey-theme' ),
       'section'     => 'slider',
       'default'     => 55,
       'priority'    => 10,

@@ -1,11 +1,12 @@
 /******************************************************************
 Theme Name: PressForward-TurnKey-Theme
 Theme URI: http://www.github.com/pressforward/pressforward-turnkey-theme
-Description: The PressForward-TurnKey-Theme is designed to compliment the PressForward plugin. A homepage with numerous blocks allows users to feature a variety of text heavy content based on category. The homepage blocks can be turned on and off and the content can be manipulated to fit a variety of different publication styles.  The slider pulls in the featured image from a post and the PressForward author (if the PressForward plugin is active).  On individual pages, users can customize the display of the author, comments, and, optionally, display PressForward nomination counts on individual posts. While this theme is designed to compliment the workflow of a PressForward publication it is optimized for use with any site.
 Author: Amanda Regan
 Author URI: http://www.amanda-regan.com
+Description: The PressForward-TurnKey-Theme is designed to work alongside the PressForward plugin and aid in the creation of a PressForward publication. The theme features an optional homepage template with numerous blocks that allow users to feature a variety of text heavy content based on category. The homepage blocks can be turned on and off and the content can be manipulated to fit a variety of different publication styles.  The slider pulls in the featured image from a post and the PressForward author (if the PressForward plugin is active).  On individual pages, users can customize the display of the author, comments, and, optionally, display PressForward nomination counts on individual posts. While this theme is designed to compliment the workflow of a PressForward publication it is optimized for use with any site. The theme is designed using the JointsWP, Foundation, Font Awesome, and Kirki libraries and is responsive and accessibility ready.
 Version: 2.0
-Tags: Sass, one-page, blue, PressForward, responsive, foundation
 License: GNU General Public License & MIT
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: right sidebar, threaded comments, two columns, featured images, custom menu, accessibility ready, full width template, theme options, responsive layout, fluid layout, custom colors
+Text Domain: pressforward-turnkey-theme
 ******************************************************************/

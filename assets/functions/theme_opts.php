@@ -933,7 +933,7 @@ Kirki::add_field( 'pftk_opts', array(
 //Create panel
 Kirki::add_section( 'colors', array(
     'title'          => __( 'Colors', 'pressforward-turnkey-theme' ),
-    'description'    => __( 'The options below control the colors for each each block on the home page. At the bottom, there are also options to control the colors for the entire site. ', 'pressforward-turnkey-theme' ),
+    'description'    => __( 'The options below control the colors for each block on the home page. At the bottom, there are also options to control the colors for the entire site. ', 'pressforward-turnkey-theme' ),
     'panel'          => 'designelements', // Not typically needed.
     'priority'       => 10,
     'capability'     => 'edit_theme_options',

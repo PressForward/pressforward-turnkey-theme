@@ -806,6 +806,17 @@ Homepage -- Block 5
       'priority'    => 10,
       'multiple'    => 1,
     ) );
+    Kirki::add_field( 'b5-categories', array(
+    	'type'        => 'select',
+    	'settings'    => 'b5-categories',
+    	'label'       => __( 'Block 5 Categories', 'pressforward_tk_theme' ),
+    	'section'     => 'block5',
+      'tooltip'     => 'Select a category to display posts from in Block 5.',
+    	'priority'    => 10,
+    	'multiple'    => 999,
+      'choices'     => Kirki_Helper::get_terms( 'category' ),
+    ) );
+
 
 
 /*********************

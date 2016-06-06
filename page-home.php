@@ -377,9 +377,10 @@ Block 5
 						<h2 class="widgettitle"></h2>
 							<div class="medium-7 large-7 columns">
 								<?php
+								$block5_category = Kirki::get_option( 'pftk_opts', 'b5-categories');
 									$args = array (
 									'numberposts' => 1,
-									'cat' => 16,
+									'cat' => $block5_category,
 									'posts_per_page' => 1,
 									'post_status' => 'publish'
 								);
@@ -398,7 +399,7 @@ Block 5
 							<?php
 								$args = array (
 								'numberposts' => 5,
-								'cat' => 16,
+								'cat' => $block5_category,
 								'posts_per_page' => 5,
 								'post_status' => 'publish'
 							);

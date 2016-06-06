@@ -19,19 +19,20 @@ Kirki::add_config( 'pftk_opts', array(
 
 //create panel for homepage options
   Kirki::add_panel( 'homepage', array(
-      'priority'    => 10,
+      'priority'    => 158,
       'title'       => __( 'Home Page Layout', 'pressforward-turnkey-theme' ),
       'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
   ) );
   Kirki::add_panel( 'designelements', array(
-      'priority'    => 10,
+      'priority'    => 160,
       'title'       => __( 'Design Elements', 'pressforward-turnkey-theme' ),
       'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
   ) );
-  Kirki::add_panel( 'contentsettings', array(
-      'priority'    => 10,
-      'title'       => __( 'Content Settings', 'pressforward-turnkey-theme' ),
-      'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
+  Kirki::add_section( 'content-settings', array(
+      'title'          => __( 'Content Options', 'pressforward-turnkey-theme' ),
+      'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.', 'pressforward-turnkey-theme' ),
+      'priority'       => 159,
+      'capability'     => 'edit_theme_options',
   ) );
 
 /*********************
@@ -1426,13 +1427,7 @@ Kirki::add_field( 'pftk_opts', array(
 
 
 
-Kirki::add_section( 'content-settings', array(
-    'title'          => __( 'Content Options', 'pressforward-turnkey-theme' ),
-    'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.', 'pressforward-turnkey-theme' ),
-    'priority'       => 160,
-    'capability'     => 'edit_theme_options',
-    'theme_supports' => '', // Rarely needed.
-) );
+
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'custom',
 	'settings'    => 'logo-display-div',

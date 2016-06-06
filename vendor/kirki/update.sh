@@ -2,7 +2,6 @@
 
 if [ $# -lt 3 ]; then
 	echo "usage: $0 message <old-version> <new-version>"
-	echo "OR: $0 <old-version> <new-version> push (to directly push to both git & svn)"
 	exit 1
 fi
 
@@ -18,7 +17,6 @@ find . -name readme.txt -exec sed -i "s/Stable tag: $2/Stable tag: $3/g" {} \;
 npm install
 grunt
 grunt googlefonts
-grunt makepot
 grunt readme
 
 if [[ '' != $1 ]]; then
@@ -68,7 +66,7 @@ if [[ '' != $1 ]]; then
 		rm tags/$3
 		cp -r trunk tags/$3
 	fi
-	svn rm $( svn status | sed -e '/^!/!d' -e 's/^!//' )
+	# svn rm $( svn status | sed -e '/^!/!d' -e 's/^!//' )
 	svn add * --force
 	svn ci -m "$1"
 	cd ../..

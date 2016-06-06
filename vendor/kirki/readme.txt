@@ -4,7 +4,7 @@ Tags: customizer,options framework, theme, mods, toolkit
 Donate link: http://kirki.org/
 Requires at least: 4.4
 Tested up to: 4.5
-Stable tag: 2.3.1
+Stable tag: 2.3.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ The ultimate toolkit for theme developers using the WordPress Customizer
 
 == Description ==
 
-[![Build Status](https://travis-ci.org/aristath/kirki.svg?branch=master)](https://travis-ci.org/aristath/kirki) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aristath/kirki/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aristath/kirki/?branch=master) [![Code Climate](https://codeclimate.com/github/aristath/kirki/badges/gpa.svg)](https://codeclimate.com/github/aristath/kirki) [![codecov.io](https://codecov.io/github/aristath/kirki/coverage.svg?branch=master)](https://codecov.io/github/aristath/kirki?branch=master) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://raw.githubusercontent.com/aristath/kirki/master/LICENSE) [![Join the chat at https://gitter.im/aristath/kirki](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aristath/kirki?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/aristath/kirki.svg?branch=master)](https://travis-ci.org/aristath/kirki) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/aristath/kirki/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/aristath/kirki/?branch=master) [![Code Climate](https://codeclimate.com/github/aristath/kirki/badges/gpa.svg)](https://codeclimate.com/github/aristath/kirki) [![License](https://img.shields.io/badge/license-GPL--2.0%2B-red.svg)](https://raw.githubusercontent.com/aristath/kirki/master/LICENSE) [![Join the chat at https://gitter.im/aristath/kirki](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/aristath/kirki?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 Kirki is a Toolkit allowing WordPress developers to use the Customizer and take advantage of its advanced features and flexibility by abstracting the code and making it easier for everyone to create beautiful and meaningful user experiences.
 
@@ -37,7 +37,57 @@ If you want to integrate Kirki in your theme or plugin, please read the instruct
 
 == Changelog ==
 
+= 2.3.4 =
+
+June 1, 2016, dev time: 30 minutes.
+
+* FIX: Repeater JS issues due to error in translation strings.
+
+= 2.3.3 =
+
+May 31, 2016, dev time: 17 hours.
+
+* FIX: Editor field covering the content ([#955](https://github.com/aristath/kirki/issues/955)).
+* FIX: Smoother transition for editor switching.
+* FIX: Code field JS error when using "php" mode ([#958](https://github.com/aristath/kirki/issues/958)).
+* FIX: `postMessage` for typography fields ([#528](https://github.com/aristath/kirki/issues/528)).
+* FIX: translation strings ([#960](https://github.com/aristath/kirki/issues/960)).
+* FIX: `postMessage` for `background-image` properties ([#963](https://github.com/aristath/kirki/issues/963)).
+* FIX: Reset Typography Control without font-family default value ([#951](https://github.com/aristath/kirki/issues/951)).
+* FIX: Typography field: font-style missing in CSS output if variant is regular/400 ([#977](https://github.com/aristath/kirki/issues/977)).
+* FIX: Placing two editor controls in the customizer leads to odd behavior ([#140](https://github.com/aristath/kirki/issues/140)).
+* FIX: Typography field: letter-spacing missing in CSS output if its value is 0 ([#978](https://github.com/aristath/kirki/issues/978)).
+* FIX: Allow using HTML in section descriptions ([#976](https://github.com/aristath/kirki/issues/976)).
+* FIX: Bug preventing partial refreshes from working properly ([#991](https://github.com/aristath/kirki/issues/991)).
+* FIX: Better internationalization handling.
+* FIX: Output errors on typography settings ([#975](https://github.com/aristath/kirki/issues/975)).
+* NEW: Added a new `attr` argument to `js_vars` ([#957](https://github.com/aristath/kirki/issues/957)).
+* NEW: Implemented both `AND` and `OR` conditionals in `active_callback` arrays ([#839](https://github.com/aristath/kirki/issues/839)).
+* NEW: Allow defining an array of dashicons to use.
+* NEW: Added a `link` control type.
+
+= 2.3.2 =
+
+May 2, 2016, dev time: 52 hours.
+
+* NEW: Completely refactored `editor` controls.
+* NEW: Completely re-styled `code` controls.
+* NEW: Added a new `kirki/{$config_id}/styles` filter ([#908](https://github.com/aristath/kirki/issues/908)).
+* NEW: Added a `customize-control-kirki` class to all Kirki controls.
+* FIX: Field type number : Cannot read property 'min' of undefined ([#911](https://github.com/aristath/kirki/issues/911)).
+* FIX: All controls are now prefixed ([#918](https://github.com/aristath/kirki/issues/918))
+* FIX: `alpha` argument in color-alpha controls ([#932](https://github.com/aristath/kirki/issues/932)).
+* FIX: Name attribute in repeaters (props @guillaumemolter).
+* FIX: Missing label for checkbox controls inside repeaters (props @guillaumemolter).
+* FIX: Placing 2 editor controls in the customizer leads to odd behaviour ([#140](https://github.com/aristath/kirki/issues/140)).
+* FIX: `active_callback` conbined with the old `required` argument. ([#906](https://github.com/aristath/kirki/issues/906)).
+* FIX: Double prefix and suffix in `js_vars` ([#943](https://github.com/aristath/kirki/issues/943)).
+* FIX: Typography control returns both 'subset' and 'subsets' indexes with the same value ([#948](https://github.com/aristath/kirki/issues/948)).
+* FIX: Use `strict` JS mode in all controls.
+
 = 2.3.1 =
+
+April 19, 2016, dev time: 30 hours.
 
 * FIX: Spacing control JS dependencies.
 * FIX: Output property ignored in multicolor field.

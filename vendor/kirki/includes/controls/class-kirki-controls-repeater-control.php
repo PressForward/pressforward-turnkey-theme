@@ -64,7 +64,7 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 		 */
 		public function __construct( $manager, $id, $args = array() ) {
 
-			$l10n = Kirki_l10n::get_strings();
+			$l10n = Kirki_l10n::get_strings( $this->kirki_config );
 
 			parent::__construct( $manager, $id, $args );
 
@@ -124,6 +124,26 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 
 					// We add it to the list of fields that need some extra filtering/processing.
 					$media_fields_to_filter[ $key ] = true;
+				}
+
+				// If the field is a dropdown-pages field then add it to args.
+				if ( isset( $value['type'] ) && ( 'dropdown-pages' === $value['type'] ) ) {
+
+					$l10n = Kirki_l10n::get_strings( $this->kirki_config );
+					$dropdown = wp_dropdown_pages(
+						array(
+							'name'              => '',
+							'echo'              => 0,
+							'show_option_none'  => esc_attr( $l10n['select-page'] ),
+							'option_none_value' => '0',
+							'selected'          => '',
+						)
+					);
+
+					// Hackily add in the data link parameter.
+					$dropdown = str_replace( '<select', '<select data-field="'.esc_attr( $args['fields'][ $key ]['id'] ).'"' . $this->get_link(), $dropdown );
+
+					$args['fields'][ $key ]['dropdown'] = $dropdown;
 				}
 			}
 
@@ -212,6 +232,13 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 						break;
 					}
 				}
+
+				foreach ( $this->fields as $field ) {
+					if ( isset( $field['type'] ) && 'dropdown-pages' === $field['type'] ) {
+						wp_enqueue_script( 'kirki-dropdown-pages' );
+						break;
+					}
+				}
 			}
 
 			wp_enqueue_script( 'kirki-repeater' );
@@ -225,8 +252,8 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 		 */
 		protected function render_content() {
 			?>
-			<?php $l10n = Kirki_l10n::get_strings(); ?>
-			<?php if ( '' != $this->tooltip ) : ?>
+			<?php $l10n = Kirki_l10n::get_strings( $this->kirki_config ); ?>
+			<?php if ( '' !== $this->tooltip ) : ?>
 				<a href="#" class="tooltip hint--left" data-hint="<?php echo esc_html( $this->tooltip ); ?>"><span class='dashicons dashicons-info'></span></a>
 			<?php endif; ?>
 			<label>
@@ -259,11 +286,10 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 		 * @access public
 		 */
 		public function repeater_js_template() {
-			$l10n = Kirki_l10n::get_strings();
 			?>
 			<script type="text/html" class="customize-control-repeater-content">
 				<# var field; var index = data.index; #>
-
+				<# data.kirki_config = '<?php echo esc_attr( $this->kirki_config ); ?>'; #>
 
 				<li class="repeater-row minimized" data-row="{{{ index }}}">
 
@@ -295,7 +321,7 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 								<# } else if ( 'checkbox' === field.type ) { #>
 
 									<label>
-										<input type="checkbox" value="true" data-field="{{{ field.id }}}" <# if ( field.default ) { #> checked="checked" <# } #> />
+										<input type="checkbox" value="true" data-field="{{{ field.id }}}" <# if ( field.default ) { #> checked="checked" <# } #> /> {{ field.label }}
 										<# if ( field.description ) { #>
 											{{ field.description }}
 										<# } #>
@@ -317,6 +343,18 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 										</select>
 									</label>
 
+								<# } else if ( 'dropdown-pages' === field.type ) { #>
+
+									<label>
+										<# if ( field.label ) { #>
+											<span class="customize-control-title">{{{ data.label }}}</span>
+										<# } #>
+										<# if ( field.description ) { #>
+											<span class="description customize-control-description">{{{ field.description }}}</span>
+										<# } #>
+										<div class="customize-control-content repeater-dropdown-pages">{{{ field.dropdown }}}</div>
+									</label>
+
 								<# } else if ( 'radio' === field.type ) { #>
 
 									<label>
@@ -329,8 +367,8 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 
 										<# _.each( field.choices, function( choice, i ) { #>
 											<label>
-												<input type="radio" name="{{{ field.id }}}" data-field="{{{ field.id }}}" value="{{{ i }}}" <# if ( field.default == i ) { #> checked="checked" <# } #>> {{ choice }} <br/>
-												</label>
+												<input type="radio" name="{{{ field.id }}}{{ index }}" data-field="{{{ field.id }}}" value="{{{ i }}}" <# if ( field.default == i ) { #> checked="checked" <# } #>> {{ choice }} <br/>
+											</label>
 										<# }); #>
 									</label>
 
@@ -371,7 +409,7 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 							            <# if ( field.description ) { #>
 							                <span class="description customize-control-description">{{{ field.description }}}</span>
 							            <# } #>
-							            <input class="color-picker-hex" type="text" maxlength="7" placeholder="<?php esc_attr_e( 'Hex Value' ); ?>"  value="{{{ field.default }}}" data-field="{{{ field.id }}}" {{ defaultValue }} />
+							            <input class="color-picker-hex" type="text" maxlength="7" placeholder="{{ window.kirki.l10n[ data.kirki_config ]['hex-value'] }}"  value="{{{ field.default }}}" data-field="{{{ field.id }}}" {{ defaultValue }} />
 
 							        </label>
 
@@ -396,22 +434,22 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 										<# } #>
 									</label>
 
-									<figure class="kirki-image-attachment" data-placeholder="<?php esc_attr_e( $l10n['no-image-selected'] ); ?>" >
+									<figure class="kirki-image-attachment" data-placeholder="{{ window.kirki.l10n[ data.kirki_config ]['no-image-selected'] }}" >
 										<# if ( field.default ) { #>
 											<# var defaultImageURL = ( field.default.url ) ? field.default.url : field.default; #>
 											<img src="{{{ defaultImageURL }}}">
 										<# } else { #>
-											<?php esc_attr_e( $l10n['no-image-selected'] ); ?>
+											{{ window.kirki.l10n[ data.kirki_config ]['no-image-selected'] }}
 										<# } #>
 									</figure>
 
 									<div class="actions">
-										<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_attr_e( $l10n['remove'] ); ?></button>
-										<button type="button" class="button upload-button" data-label="<?php esc_attr_e( $l10n['add-image'] ); ?>" data-alt-label="<?php esc_attr_e( $l10n['change-image'] ); ?>" >
+										<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>">{{ window.kirki.l10n[ data.kirki_config ].remove }}</button>
+										<button type="button" class="button upload-button" data-label=" {{ window.kirki.l10n[ data.kirki_config ]['add-image'] }}" data-alt-label="{{ window.kirki.l10n[ data.kirki_config ]['change-image'] }}" >
 											<# if ( field.default ) { #>
-												<?php esc_attr_e( $l10n['change-image'] ); ?>
+												{{ window.kirki.l10n[ data.kirki_config ]['change-image'] }}
 											<# } else { #>
-												<?php esc_attr_e( $l10n['add-image'] ); ?>
+												{{ window.kirki.l10n[ data.kirki_config ]['add-image'] }}
 											<# } #>
 										</button>
 										<# if ( field.default.id ) { #>
@@ -432,22 +470,22 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 										<# } #>
 									</label>
 
-									<figure class="kirki-file-attachment" data-placeholder="<?php esc_attr_e( $l10n['no-file-selected'] ); ?>" >
+									<figure class="kirki-file-attachment" data-placeholder="{{ window.kirki.l10n[ data.kirki_config ]['no-file-selected'] }}" >
 										<# if ( field.default ) { #>
 											<# var defaultFilename = ( field.default.filename ) ? field.default.filename : field.default; #>
 											<span class="file"><span class="dashicons dashicons-media-default"></span> {{ defaultFilename }}</span>
 										<# } else { #>
-											<?php esc_attr_e( $l10n['no-file-selected'] ); ?>
+											{{ window.kirki.l10n[ data.kirki_config ]['no-file-selected'] }}
 										<# } #>
 									</figure>
 
 									<div class="actions">
-										<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"><?php esc_attr_e( $l10n['remove'] ); ?></button>
-										<button type="button" class="button upload-button" data-label="<?php esc_attr_e( $l10n['add-file'] ); ?>" data-alt-label="<?php esc_attr_e( $l10n['change-file'] ); ?>" >
+										<button type="button" class="button remove-button<# if ( ! field.default ) { #> hidden<# } #>"></button>
+										<button type="button" class="button upload-button" data-label="{{ window.kirki.l10n[ data.kirki_config ]['add-file'] }}" data-alt-label="{{ window.kirki.l10n[ data.kirki_config ]['change-file'] }}" >
 											<# if ( field.default ) { #>
-												<?php esc_attr_e( $l10n['change-file'] ); ?>
+												{{ window.kirki.l10n[ data.kirki_config ]['change-file'] }}
 											<# } else { #>
-												<?php esc_attr_e( $l10n['add-file'] ); ?>
+												{{ window.kirki.l10n[ data.kirki_config ]['add-file'] }}
 											<# } #>
 										</button>
 										<# if ( field.default.id ) { #>
@@ -457,11 +495,21 @@ if ( ! class_exists( 'Kirki_Controls_Repeater_Control' ) ) {
 										<# } #>
 									</div>
 
+								<# } else if ( 'custom' === field.type ) { #>
+
+									<# if ( field.label ) { #>
+										<span class="customize-control-title">{{ field.label }}</span>
+									<# } #>
+									<# if ( field.description ) { #>
+										<span class="description customize-control-description">{{ field.description }}</span>
+									<# } #>
+									<div data-field="{{{ field.id }}}">{{{ field.default }}}</div>
+									
 								<# } #>
 
 							</div>
 						<# }); #>
-						<button type="button" class="button-link repeater-row-remove"><?php esc_attr_e( $l10n['remove'] ); ?></button>
+						<button type="button" class="button-link repeater-row-remove">{{ window.kirki.l10n[ data.kirki_config ].remove }}</button>
 					</div>
 				</li>
 			</script>

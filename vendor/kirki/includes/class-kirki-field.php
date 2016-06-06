@@ -260,6 +260,14 @@ if ( ! class_exists( 'Kirki_Field' ) ) {
 		protected $row_label = array();
 
 		/**
+		 * Partial Refreshes array.
+		 *
+		 * @access protected
+		 * @var array
+		 */
+		protected $partial_refresh = array();
+
+		/**
 		 * Use only on image, cropped_image, upload controls.
 		 * Limit the Media library to a specific mime type
 		 *
@@ -485,6 +493,26 @@ if ( ! class_exists( 'Kirki_Field' ) ) {
 		}
 
 		/**
+		 * Modifications for partial refreshes.
+		 *
+		 * @access protected
+		 */
+		protected function set_partial_refresh() {
+			if ( ! is_array( $this->partial_refresh ) ) {
+				$this->partial_refresh = array();
+			}
+			foreach ( $this->partial_refresh as $id => $args ) {
+				if ( ! is_array( $args ) || ! isset( $args['selector'] ) || ! isset( $args['render_callback'] ) || ! is_callable( $args['render_callback'] ) ) {
+					unset( $this->partial_refresh[ $id ] );
+					continue;
+				}
+			}
+			if ( ! empty( $this->partial_refresh ) ) {
+				$this->transport = 'postMessage';
+			}
+		}
+
+		/**
 		 * Sets the settings.
 		 * If we're using serialized options it makes sure that settings are properly formatted.
 		 * We'll also be escaping all setting names here for consistency.
@@ -536,6 +564,12 @@ if ( ! class_exists( 'Kirki_Field' ) ) {
 		 * @access protected
 		 */
 		protected function set_active_callback() {
+
+			if ( is_array( $this->active_callback ) && ! is_callable( $this->active_callback ) ) {
+				if ( isset( $this->active_callback[0] ) ) {
+					$this->required = $this->active_callback;
+				}
+			}
 
 			if ( ! empty( $this->required ) ) {
 				$this->active_callback = array( 'Kirki_Active_Callback', 'evaluate' );
@@ -592,9 +626,9 @@ if ( ! class_exists( 'Kirki_Field' ) ) {
 			}
 
 			$default_callbacks = array(
-				'multicheck'       => array( 'Kirki_Sanitize_Values', 'multicheck' ),
-				'sortable'         => array( 'Kirki_Sanitize_Values', 'sortable' ),
-				'typography'       => array( 'Kirki_Sanitize_Values', 'typography' ),
+				'kirki-multicheck'       => array( 'Kirki_Sanitize_Values', 'multicheck' ),
+				'kirki-sortable'         => array( 'Kirki_Sanitize_Values', 'sortable' ),
+				'kirki-typography'       => array( 'Kirki_Sanitize_Values', 'typography' ),
 			);
 
 			if ( array_key_exists( $this->type, $default_callbacks ) ) {
@@ -649,7 +683,7 @@ if ( ! class_exists( 'Kirki_Field' ) ) {
 				if ( ! isset( $output['element'] ) ) {
 					continue;
 				}
-				if ( ! isset( $output['property'] ) && ! in_array( $this->type, array( 'typography', 'background' ), true ) ) {
+				if ( ! isset( $output['property'] ) && ! in_array( $this->type, array( 'kirki-typography', 'background' ), true ) ) {
 					continue;
 				}
 				if ( ! isset( $output['sanitize_callback'] ) && isset( $output['callback'] ) ) {

@@ -27,7 +27,7 @@ if ( ! class_exists( 'Kirki_Controls_Dimension_Control' ) ) {
 		 * @access public
 		 * @var string
 		 */
-		public $type = 'dimension';
+		public $type = 'kirki-dimension';
 
 		/**
 		 * Enqueue control related scripts/styles.
@@ -62,7 +62,7 @@ if ( ! class_exists( 'Kirki_Controls_Dimension_Control' ) ) {
 				<# } #>
 				<div class="input-wrapper">
 					<input type="text" value="{{ data.value }}"/>
-					<span class="invalid-value">{{ data.i18n['invalid-value'] }}</span>
+					<span class="invalid-value">{{ data.l10n['invalid-value'] }}</span>
 				</div>
 			</label>
 			<?php

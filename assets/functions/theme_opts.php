@@ -41,7 +41,7 @@ Homepage -- Slider -- Options
 
 //create slider section
   Kirki::add_section( 'slider', array(
-      'title'          => __( 'Slider Options' ),
+      'title'          => __( 'Slider Options', 'pressforward-turnkey-theme' ),
       'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.', 'pressforward-turnkey-theme' ),
       'panel'          => 'homepage', // Not typically needed.
       'priority'       => 160,

@@ -22,7 +22,7 @@
 	<div class="top-bar-right float-right show-for-small-only">
 		<ul class="menu">
 			<!-- <li><button class="menu-icon" type="button" data-toggle="off-canvas"></button></li> -->
-			<li><a data-toggle="off-canvas"><?php _e( 'Menu', 'jointswp' ); ?></a></li>
+			<li><a data-toggle="off-canvas"><?php _e( 'Menu', 'pressforward_turnkey_theme' ); ?></a></li>
 		</ul>
 	</div>
 </div>

@@ -23,7 +23,7 @@
 	</section> <!-- end article section -->
 
 	<footer class="article-footer large-12 columns">
-		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'jointswp' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
+		<p class="tags"><?php the_tags('<span class="tags-title">' . __( 'Tags:', 'pressforward_turnkey_theme' ) . '</span> ', ', ', ''); ?></p>	</footer> <!-- end article footer -->
 	<?php
 	$comment_option = Kirki::get_option('pftk_opts', 'comment-control');
 	$comment_include_categories = Kirki::get_option('pftk_opts', 'comment-include-cats');

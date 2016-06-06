@@ -6,7 +6,7 @@
 					
 	<section class="entry-content" itemprop="articleBody">
 		<a href="<?php the_permalink() ?>"><?php the_post_thumbnail('full'); ?></a>
-		<?php the_content('<button class="tiny">' . __( 'Read more...', 'jointswp' ) . '</button>'); ?>
+		<?php the_content('<button class="tiny">' . __( 'Read more...', 'pressforward_turnkey_theme' ) . '</button>'); ?>
 	</section> <!-- end article section -->
 						
 	<footer class="article-footer">

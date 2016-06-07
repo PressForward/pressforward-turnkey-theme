@@ -1121,6 +1121,23 @@ Kirki::add_field( 'pftk_opts', array(
 	),
 ) );
 Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b2-heading-color',
+	'label'       => __( 'Block 2 Heading Color', 'pressforward-turnkey-theme' ),
+  'description' => 'Will only apply if the heading is not linked to a page in the Homepage setup.',
+	'section'     => 'colors',
+	'default'     => '',
+  'tooltip'     => 'Select a text color for block 2.',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-2 h1',
+			'property' => 'color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'b3-div',
   'section'     => 'colors',
@@ -1408,7 +1425,7 @@ Kirki::add_field( 'pftk_opts', array(
   'output'    => array(
          array(
            'choice'   => 'link',
-           'element'  => 'a',
+           'element'  => 'a, .breadcrumbs a',
            'property' => 'color',
          ),
          array(

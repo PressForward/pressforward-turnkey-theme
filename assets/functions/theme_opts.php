@@ -1491,7 +1491,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'settings'    => 'author-display-div',
   'label'       => '<h2>Author Display Options</h2>',
 	'section'     => 'content-settings',
-	'default'     => '<div><hr><p>' . esc_html__( 'The three options below control how the author field displays on posts. If the author field is set to on, the theme will display the wordpress author as expected. If turned off, the theme will display the text in the second option and will only display the wordpress author for the categories excluded in the third option. ', 'pressforward-turnkey-theme' ) . '</div>',
+	'default'     => '<div><hr><p>' . esc_html__( 'The options below control how the author name will display on posts. If "Author Name and Link" is set to on, the theme will display the WordPress author as expected. If turned off, the theme will display the text entered in "Text to Display Rather than Author Name." The categories selected in "Display Author for Categories (Exclude Author Link)" will display the authors name without a link to the author\'s archive of posts. Turning the author name and link off however can be overridden for select categories using the "Display Author for Categories (Include Author Link)" option. The categories selected in this option will display the author\'s name and a link to the author\'s archive of posts as normal. ', 'pressforward-turnkey-theme' ) . '</div>',
 	'priority'    => 10,
 ) );
 Kirki::add_field( 'author-name-switch', array(
@@ -1517,9 +1517,9 @@ Kirki::add_field( 'alt-author-text', array(
 Kirki::add_field( 'author-exclude-cats', array(
 	'type'        => 'select',
 	'settings'    => 'author-exclude-cats',
-	'label'       => __( 'Author Exclude Categories', 'pressforward-turnkey-theme' ),
+	'label'       => __( 'Display Author for Categories (Exclude Author Link)', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories without a link to all of their work on the site.',
+  'tooltip'     => ' If Display Author Name and Link is set to off, author names will be displayed in the selected categories without a link to all of their work on the site.',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),
@@ -1527,9 +1527,9 @@ Kirki::add_field( 'author-exclude-cats', array(
 Kirki::add_field( 'author-include-cats', array(
 	'type'        => 'select',
 	'settings'    => 'author-include-cats',
-	'label'       => __( 'Author Include Categories', 'pressforward-turnkey-theme' ),
+	'label'       => __( 'Display Author for Categories (Include Author Link)', 'pressforward-turnkey-theme' ),
 	'section'     => 'content-settings',
-  'tooltip'     => 'If Display Author Name and Link is set to off, author names will be displayed in the selected categories with a link to all of their work on the site.',
+  'tooltip'     => ' If Display Author Name and Link is set to off, author names will be displayed in the selected categories with a link to all of their work on the site.',
 	'priority'    => 10,
 	'multiple'    => 999,
   'choices'     => Kirki_Helper::get_terms( 'category' ),

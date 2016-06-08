@@ -101,8 +101,14 @@ Block 2
 												<?php $b2c1_icon = Kirki::get_option( 'pftk_opts', 'b2c1-icon' );
 												echo '<i class="fa ' . $b2c1_icon . ' fa-3x"></i>';
 												$b2c1_title = Kirki::get_option( 'pftk_opts', 'b2c1-title');
+												$b2c1_titleorlinkfield = Kirki::get_option( 'pftk_opts', 'b2c1-maketitlelinked');
 												$b2c1_link = Kirki::get_option('pftk_opts', 'b2c1-link');
-												echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c1_link) . '">' . $b2c1_title . '</a></h1>'; ?>
+												if ($b2c1_titleorlinkfield == 1){
+												echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c1_link) . '">' . $b2c1_title . '</a></h1>';
+											} else {
+												echo '<h1 class="widgettitle">' . $b2c1_title . '</h1>';
+											}
+												?>
 	                    <div class="textwidget">
 												<?php $b2c1_text = Kirki::get_option( 'pftk_opts', 'b2c1-text');
 											  echo '<p>' . $b2c1_text . '</p>' ?>

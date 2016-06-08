@@ -153,6 +153,14 @@ Kirki::add_field( 'toggle-b2', array(
     'priority'    => 10,
 
 ) );
+Kirki::add_field( 'b2-maketitlelinked', array(
+'type'        => 'checkbox',
+'settings'    => 'b2c1-maketitlelinked',
+'label'       => __( 'Make Column Title a Link', 'my_textdomain' ),
+'section'     => 'block2',
+'default'     => '0',
+'priority'    => 10,
+) );
 
 
 ////////////////////////////////////////////
@@ -186,6 +194,7 @@ Kirki::add_field( 'pftk_opts', array(
       'default'     => 'B2-C1 Title',
       'priority'    => 10,
   ) );
+
   Kirki::add_field( 'b2c1-link', array(
     'type'        => 'dropdown-pages',
     'settings'    => 'b2c1-link',
@@ -195,6 +204,13 @@ Kirki::add_field( 'pftk_opts', array(
     'default'     => '',
     'priority'    => 10,
     'multiple'    => 1,
+    'required'    => array(
+      array(
+        'setting' => 'b2c1-maketitlelinked',
+        'operator' => '==',
+        'value' => 1,
+      )
+    )
   ) );
   Kirki::add_field( 'b2c1-text', array(
       'type'        => 'textarea',
@@ -244,6 +260,13 @@ Kirki::add_field( 'pftk_opts', array(
     'default'     => '',
     'priority'    => 10,
     'multiple'    => 1,
+    'required'    => array(
+      array(
+        'setting' => 'b2c1-maketitlelinked',
+        'operator' => '==',
+        'value' => 1,
+      )
+    )
   ) );
   Kirki::add_field( 'b2c2-text', array(
       'type'        => 'textarea',
@@ -293,6 +316,13 @@ Kirki::add_field( 'pftk_opts', array(
     'default'     => '',
     'priority'    => 10,
     'multiple'    => 1,
+    'required'    => array(
+      array(
+        'setting' => 'b2c1-maketitlelinked',
+        'operator' => '==',
+        'value' => 1,
+      )
+    )
   ) );
   Kirki::add_field( 'b2c3-text', array(
       'type'        => 'textarea',
@@ -342,6 +372,13 @@ Kirki::add_field( 'pftk_opts', array(
     'default'     => '',
     'priority'    => 10,
     'multiple'    => 1,
+    'required'    => array(
+      array(
+        'setting' => 'b2c1-maketitlelinked',
+        'operator' => '==',
+        'value' => 1,
+      )
+    )
   ) );
   Kirki::add_field( 'b2c4-text', array(
       'type'        => 'textarea',

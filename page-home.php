@@ -101,14 +101,13 @@ Block 2
 												<?php $b2c1_icon = Kirki::get_option( 'pftk_opts', 'b2c1-icon' );
 												echo '<i class="fa ' . $b2c1_icon . ' fa-3x"></i>';
 												$b2c1_title = Kirki::get_option( 'pftk_opts', 'b2c1-title');
-												$b2c1_titleorlinkfield = Kirki::get_option( 'pftk_opts', 'b2c1-maketitlelinked');
 												$b2c1_link = Kirki::get_option('pftk_opts', 'b2c1-link');
-												if ($b2c1_titleorlinkfield == 1){
+												$titleorlinkfield = Kirki::get_option( 'pftk_opts', 'b2c1-maketitlelinked');
+												if ($titleorlinkfield == 1){
 												echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c1_link) . '">' . $b2c1_title . '</a></h1>';
 											} else {
 												echo '<h1 class="widgettitle">' . $b2c1_title . '</h1>';
-											}
-												?>
+											} ?>
 	                    <div class="textwidget">
 												<?php $b2c1_text = Kirki::get_option( 'pftk_opts', 'b2c1-text');
 											  echo '<p>' . $b2c1_text . '</p>' ?>
@@ -120,7 +119,11 @@ Block 2
 											 echo '<i class="fa ' . $b2c2_icon . ' fa-3x"></i>';
 											 $b2c2_title = Kirki::get_option( 'pftk_opts', 'b2c2-title');
 											 $b2c2_link = Kirki::get_option('pftk_opts', 'b2c2-link');
-											 echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c2_link) . '">' . $b2c2_title . '</a></h1>'; ?>
+ 											if ($titleorlinkfield == 1){
+ 											echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c2_link) . '">' . $b2c2_title . '</a></h1>';
+ 										} else {
+ 											echo '<h1 class="widgettitle">' . $b2c2_title . '</h1>';
+ 										} ?>
 										 <div class="textwidget">
 											 <?php $b2c2_text = Kirki::get_option( 'pftk_opts', 'b2c2-text');
 											 echo '<p>' . $b2c2_text . '</p>' ?>
@@ -132,7 +135,12 @@ Block 2
 											 echo '<i class="fa ' . $b2c3_icon . ' fa-3x"></i>';
 											 $b2c3_title = Kirki::get_option( 'pftk_opts', 'b2c3-title');
 											 $b2c3_link = Kirki::get_option('pftk_opts', 'b2c3-link');
-											 echo '<h1 class="widgettitle"><a href="'. get_permalink($b2c3_link) . '">' . $b2c3_title . '</a></h1>'; ?>
+											 $b2c1_titleorlinkfield = Kirki::get_option( 'pftk_opts', 'b2c1-maketitlelinked');
+											 if ($titleorlinkfield == 1){
+											 echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c3_link) . '">' . $b2c3_title . '</a></h1>';
+										 } else {
+											 echo '<h1 class="widgettitle">' . $b2c3_title . '</h1>';
+										 } ?>
 										 <div class="textwidget">
 											 <?php $b2c3_text = Kirki::get_option( 'pftk_opts', 'b2c3-text');
 											 echo '<p>' . $b2c3_text . '</p>' ?>
@@ -144,7 +152,12 @@ Block 2
  											echo '<i class="fa ' . $b2c4_icon . ' fa-3x"></i>';
  											$b2c4_title = Kirki::get_option( 'pftk_opts', 'b2c4-title');
 											$b2c4_link = Kirki::get_option('pftk_opts', 'b2c4-link');
- 											echo '<h1 class="widgettitle"><a href="'. get_permalink($b2c4_link) . '">' . $b2c4_title . '</a></h1>'; ?>
+											$b2c1_titleorlinkfield = Kirki::get_option( 'pftk_opts', 'b2c1-maketitlelinked');
+											if ($b2c1_titleorlinkfield == 1){
+											echo '<h1 class="widgettitle"><a href="' . get_permalink($b2c4_link) . '">' . $b2c4_title . '</a></h1>';
+										} else {
+											echo '<h1 class="widgettitle">' . $b2c4_title . '</h1>';
+										} ?>
  										<div class="textwidget">
  											<?php $b2c4_text = Kirki::get_option( 'pftk_opts', 'b2c4-text');
  											echo '<p>' . $b2c4_text . '</p>' ?>

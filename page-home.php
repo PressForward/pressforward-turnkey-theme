@@ -172,6 +172,7 @@ Block 2
 Block 3
 -->
 <?php $toggle_b3 = Kirki::get_option( 'pftk_opts', 'toggle-b3');
+$b3_linkortitle = Kirki::get_option('pftk_opts', 'b3-maketitlelinked');
 	if ($toggle_b3 == true): ?>
 	<div class="block-3">
 		<div class="row small-up-1  large-up-3" data-equalizer data-equalize-by-row="true">
@@ -184,8 +185,12 @@ Block 3
 								$b3r1c1_link = Kirki::get_option('pftk_opts', 'b3r1c1-link');
 								$b3r1c1_title = Kirki::get_option('pftk_opts', 'b3r1c1-title');
 
-								echo '<h1><a href="' . get_permalink($b3r1c1_link) .'">' . $b3r1c1_title .'</a></h1>'; ?>
-
+								//echo '<h1><a href="' . get_permalink($b3r1c1_link) .'">' . $b3r1c1_title .'</a></h1>';
+								if ($b3_linkortitle == 1){
+								echo '<h1><a href="' . get_permalink($b3r1c1_link) .'">' . $b3r1c1_title .'</a></h1>';
+							} else {
+								echo '<h1 class="widgettitle">' . $b3r1c1_title . '</h1>';
+							} ?>
 								<ul>
 									<?php $b3r1c1_category = Kirki::get_option( 'pftk_opts', 'b3r1c1-category');
 									$b3c1cat = 'cat=' . $b3r1c1_category . '&posts_per_page=3';
@@ -211,7 +216,12 @@ Block 3
 					        $b3r1c2_link = Kirki::get_option('pftk_opts', 'b3r1c2-link');
 					        $b3r1c2_title = Kirki::get_option('pftk_opts', 'b3r1c2-title');
 
-					        echo '<h1><a href="' . get_permalink($b3r1c2_link) .'">' . $b3r1c2_title .'</a></h1>'; ?>
+
+									if ($b3_linkortitle == 1){
+									echo '<h1><a href="' . get_permalink($b3r1c2_link) .'">' . $b3r1c2_title .'</a></h1>';
+								} else {
+									echo '<h1 class="widgettitle">' . $b3r1c2_title . '</h1>';
+								} ?>
 
 					        <ul>
 					          <?php $b3r1c2_category = Kirki::get_option( 'pftk_opts', 'b3r1c2-category');
@@ -238,7 +248,11 @@ Block 3
 						        $b3r1c3_link = Kirki::get_option('pftk_opts', 'b3r1c3-link');
 						        $b3r1c3_title = Kirki::get_option('pftk_opts', 'b3r1c3-title');
 
-						        echo '<h1><a href="' . get_permalink($b3r1c3_link) .'">' . $b3r1c3_title .'</a></h1>'; ?>
+										if ($b3_linkortitle == 1){
+										echo '<h1><a href="' . get_permalink($b3r1c3_link) .'">' . $b3r1c3_title .'</a></h1>';
+									} else {
+										echo '<h1 class="widgettitle">' . $b3r1c3_title . '</h1>';
+									} ?>
 
 						        <ul>
 						          <?php $b3r1c3_category = Kirki::get_option( 'pftk_opts', 'b3r1c3-category');
@@ -269,7 +283,11 @@ Block 3
 						$b3r2c1_link = Kirki::get_option('pftk_opts', 'b3r2c1-link');
 						$b3r2c1_title = Kirki::get_option('pftk_opts', 'b3r2c1-title');
 
-						echo '<h1><a href="' . get_permalink($b3r2c1_link) .'">' . $b3r2c1_title .'</a></h1>'; ?>
+						if ($b3_linkortitle == 1){
+						echo '<h1><a href="' . get_permalink($b3r2c1_link) .'">' . $b3r2c1_title .'</a></h1>';
+					} else {
+						echo '<h1 class="widgettitle">' . $b3r2c1_title . '</h1>';
+					} ?>
 
 						<ul>
 							<?php $b3r2c1_category = Kirki::get_option( 'pftk_opts', 'b3r2c1-category');
@@ -296,7 +314,11 @@ Block 3
 			        $b3r2c2_link = Kirki::get_option('pftk_opts', 'b3r2c2-link');
 			        $b3r2c2_title = Kirki::get_option('pftk_opts', 'b3r2c2-title');
 
-			        echo '<h1><a href="' . get_permalink($b3r2c2_link) .'">' . $b3r2c2_title .'</a></h1>'; ?>
+							if ($b3_linkortitle == 1){
+							echo '<h1><a href="' . get_permalink($b3r2c2_link) .'">' . $b3r2c2_title .'</a></h1>';
+						} else {
+							echo '<h1 class="widgettitle">' . $b3r2c2_title . '</h1>';
+						} ?>
 
 			        <ul>
 			          <?php $b3r2c2_category = Kirki::get_option( 'pftk_opts', 'b3r2c2-category');
@@ -323,7 +345,11 @@ Block 3
 				        $b3r2c3_link = Kirki::get_option('pftk_opts', 'b3r2c3-link');
 				        $b3r2c3_title = Kirki::get_option('pftk_opts', 'b3r2c3-title');
 
-				        echo '<h1><a href="' . get_permalink($b3r2c3_link) .'">' . $b3r2c3_title .'</a></h1>'; ?>
+								if ($b3_linkortitle == 1){
+								echo '<h1><a href="' . get_permalink($b3r2c3_link) .'">' . $b3r2c3_title .'</a></h1>';
+							} else {
+								echo '<h1 class="widgettitle">' . $b3r2c3_title . '</h1>';
+							} ?>
 
 				        <ul>
 				          <?php $b3r2c3_category = Kirki::get_option( 'pftk_opts', 'b3r2c3-category');

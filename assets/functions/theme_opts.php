@@ -429,6 +429,15 @@ Homepage -- Block 3 -- Options
         'Two' => esc_attr__( 'Two', 'pressforward-turnkey-theme' ),
     ),
 ) );
+Kirki::add_field( 'b3-maketitlelinked', array(
+'type'        => 'checkbox',
+'settings'    => 'b3-maketitlelinked',
+'label'       => __( 'Make Each Column Title a Link', 'pressforward-turnkey-theme' ),
+'section'     => 'block3',
+'default'     => '0',
+'priority'    => 10,
+) );
+
     /*********************
     Homepage -- Block 3 Row 1 Column 1 -- Options
     *********************/
@@ -468,6 +477,13 @@ Homepage -- Block 3 -- Options
       'default'     => '#',
       'priority'    => 10,
       'multiple'    => 1,
+      'required'    => array(
+        array(
+          'setting' => 'b3-maketitlelinked',
+          'operator' => '==',
+          'value' => 1,
+        )
+      ),
     ) );
     Kirki::add_field( 'b3r1c1-category', array(
         'type'        => 'select',
@@ -519,6 +535,13 @@ Homepage -- Block 3 -- Options
       'default'     => '#',
       'priority'    => 10,
       'multiple'    => 1,
+      'required'    => array(
+        array(
+          'setting' => 'b3-maketitlelinked',
+          'operator' => '==',
+          'value' => 1,
+        )
+      ),
     ) );
     Kirki::add_field( 'b3r1c2-category', array(
         'type'        => 'select',
@@ -527,7 +550,7 @@ Homepage -- Block 3 -- Options
         'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
         'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward-turnkey-theme' ),
         'label'       => __( 'Category', 'pressforward-turnkey-theme' ),
-        'description' => __( 'This is the control description', 'pressforward-turnkey-theme' ),
+        'description' => __( 'Select a category.', 'pressforward-turnkey-theme' ),
         'tooltip'        => __( 'Select a category for the first row of the second column.', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -573,6 +596,13 @@ Homepage -- Block 3 -- Options
       'default'     => '#',
       'priority'    => 10,
       'multiple'    => 1,
+      'required'    => array(
+        array(
+          'setting' => 'b3-maketitlelinked',
+          'operator' => '==',
+          'value' => 1,
+        )
+      ),
     ) );
     Kirki::add_field( 'b3r1c3-category', array(
         'type'        => 'select',
@@ -581,7 +611,7 @@ Homepage -- Block 3 -- Options
         'description' => __( 'Select a category', 'pressforward-turnkey-theme' ),
         'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward-turnkey-theme' ),
         'label'       => __( 'Category', 'pressforward-turnkey-theme' ),
-        'description' => __( 'This is the control description', 'pressforward-turnkey-theme' ),
+        'description' => __( 'Select a category.', 'pressforward-turnkey-theme' ),
         'tooltip'     => __( 'Select a category for the first row of column 3.', 'pressforward-turnkey-theme' ),
         'section'     => 'block3',
         'default'     => '1',
@@ -628,6 +658,13 @@ Homepage -- Block 3 -- Options
       'default'     => '#',
       'priority'    => 10,
       'multiple'    => 1,
+      'required'    => array(
+        array(
+          'setting' => 'b3-maketitlelinked',
+          'operator' => '==',
+          'value' => 1,
+        )
+      ),
     ) );
     Kirki::add_field( 'b3r2c1-category', array(
         'type'        => 'select',
@@ -680,6 +717,13 @@ Homepage -- Block 3 -- Options
       'default'     => '#',
       'priority'    => 10,
       'multiple'    => 1,
+      'required'    => array(
+        array(
+          'setting' => 'b3-maketitlelinked',
+          'operator' => '==',
+          'value' => 1,
+        )
+      ),
     ) );
     Kirki::add_field( 'b3r2c2-category', array(
         'type'        => 'select',
@@ -731,6 +775,13 @@ Homepage -- Block 3 -- Options
       'default'     => '#',
       'priority'    => 10,
       'multiple'    => 1,
+      'required'    => array(
+        array(
+          'setting' => 'b3-maketitlelinked',
+          'operator' => '==',
+          'value' => 1,
+        )
+      ),
     ) );
     Kirki::add_field( 'b3r2c3-category', array(
         'type'        => 'select',
@@ -1107,6 +1158,22 @@ Kirki::add_field( 'pftk_opts', array(
 		),
 	),
 ) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b2-heading-color',
+	'label'       => __( 'Block 2 Heading Color', 'pressforward-turnkey-theme' ),
+	'section'     => 'colors',
+	'default'     => '',
+  'tooltip'     => 'Select a color for titles in block 2. Note that this color will only apply if you have not chosen to make the titles in this block links.',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-2 h1',
+			'property' => 'color',
+		),
+	),
+) );
 //b2 link color
 Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'multicolor',
@@ -1114,7 +1181,7 @@ Kirki::add_field( 'pftk_opts', array(
 	'label'       => __( 'Block 2 Link Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
 	'priority'    => 10,
-  'tooltip'     => 'Select a link color, a hover color, an active link color for block 2.',
+  'tooltip'     => 'Select a link color, a hover color, an active link color for block 2. Note that these colors will only apply if you have chosen to make the titles in this block links.',
   'choices'     => array(
           'link'    => esc_attr__( 'Color', 'pressforward-turnkey-theme' ),
           'hover'   => esc_attr__( 'Hover', 'pressforward-turnkey-theme' ),
@@ -1161,23 +1228,7 @@ Kirki::add_field( 'pftk_opts', array(
 		),
 	),
 ) );
-Kirki::add_field( 'pftk_opts', array(
-	'type'        => 'color',
-	'settings'    => 'b2-heading-color',
-	'label'       => __( 'Block 2 Heading Color', 'pressforward-turnkey-theme' ),
-  'description' => 'Will only apply if the heading is not linked to a page in the Homepage setup.',
-	'section'     => 'colors',
-	'default'     => '',
-  'tooltip'     => 'Select a text color for block 2.',
-	'priority'    => 10,
-	'alpha'       => true,
-  'output' => array(
-		array(
-			'element'  => '.block-2 h1',
-			'property' => 'color',
-		),
-	),
-) );
+
 Kirki::add_field( 'pftk_opts', array(
   'type'        => 'custom',
   'settings'    => 'b3-div',
@@ -1214,6 +1265,22 @@ Kirki::add_field( 'pftk_opts', array(
   'output' => array(
 		array(
 			'element'  => '.block-3 i',
+			'property' => 'color',
+		),
+	),
+) );
+Kirki::add_field( 'pftk_opts', array(
+	'type'        => 'color',
+	'settings'    => 'b3-heading-color',
+	'label'       => __( 'Block 3 Heading Color', 'pressforward-turnkey-theme' ),
+	'section'     => 'colors',
+	'default'     => '',
+  'tooltip'     => 'Select a color for titles in block 3. Note that this color will only apply if you have not chosen to make the titles in this block links.',
+	'priority'    => 10,
+	'alpha'       => true,
+  'output' => array(
+		array(
+			'element'  => '.block-3 h1',
 			'property' => 'color',
 		),
 	),

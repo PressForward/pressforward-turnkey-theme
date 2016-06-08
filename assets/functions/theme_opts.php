@@ -977,6 +977,10 @@ Kirki::add_field( 'pftk_opts', array(
 			'element'  => '.top-bar a, .top-bar p, .title-bar a, .title-bar-title',
 			'property' => 'color',
 		),
+    array(
+      'element' => '.dropdown.menu > li.is-dropdown-submenu-parent > a::after',
+      'property' => 'border-color',
+    )
 	),
 ) );
 

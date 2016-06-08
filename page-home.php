@@ -48,7 +48,7 @@ Template Name: Home Page Template
 						echo '<div class="row">';
 						echo '<div class="medium-11 large-11 columns"><h1>' . $short_title . '</h1></div></div>';
 						echo '<div class="row">';
-						echo '<div class="medium-7 columns">';
+						echo '<div class="medium-6 large-7 columns">';
 						echo '<h2 class="slider-byline">By: ';
 						if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
 						echo $itemauth;
@@ -58,7 +58,7 @@ Template Name: Home Page Template
 						echo '</h2></br><p class="info-title">' . $shortexcerpt . '</p> <a href="' . get_permalink() . '
 						" alt="' . get_the_title() . '" class="pf-tk-button">Read More</a></div>';
 						$thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-						echo '<div class="medium-5 columns">';
+						echo '<div class="large-5 medium-6 columns">';
 						if(empty($thumb)) {
 							echo '';
 						} else {

@@ -34,6 +34,12 @@ GENERAL STYLES
 	border: none;
 	box-shadow: none;
 }
+.thumbnail.home {
+	@include breakpoint(medium down) {
+		width: 65%;
+		margin: 25px 25px;
+	}
+}
 .bypostauthor {
 	@extend p;
 }

@@ -3877,6 +3877,11 @@ GENERAL STYLES
   border: none;
   box-shadow: none; }
 
+@media screen and (max-width: 63.9375em) {
+  .thumbnail.home {
+    width: 65%;
+    margin: 25px 25px; } }
+
 .gallery-caption {
   background: #fff;
   border: 1px solid #f0f0f0;

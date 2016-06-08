@@ -156,7 +156,7 @@ Kirki::add_field( 'toggle-b2', array(
 Kirki::add_field( 'b2-maketitlelinked', array(
 'type'        => 'checkbox',
 'settings'    => 'b2c1-maketitlelinked',
-'label'       => __( 'Make Column Title a Link', 'my_textdomain' ),
+'label'       => __( 'Make Column Title a Link', 'pressforward-turnkey-theme' ),
 'section'     => 'block2',
 'default'     => '0',
 'priority'    => 10,

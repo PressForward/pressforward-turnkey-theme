@@ -23,7 +23,7 @@ $nom_count = get_post_meta($post->ID, 'nomination_count', true);
 
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-if (in_category($slider_cat) && is_plugin_active('pressforward/pressforward.php') && $nom_switch == 1) {
+if (in_category($slider_cat) && is_plugin_active('pressforward/pressforward.php') && !empty($nom_count) && $nom_switch == 1) {
 	echo '<br>This post recieved ' . $nom_count . ' nominations in <a href="http://www.PressForward.org">PressForward</a>.';
 }
 

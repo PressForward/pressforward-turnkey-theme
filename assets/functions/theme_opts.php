@@ -1051,7 +1051,7 @@ Kirki::add_field( 'pftk_opts', array(
 		),
 	),
 ) );
-Kirki::add_field( 'pftk_opts', array(
+Kirki::add_field( 'topbar-text', array(
 	'type'        => 'color',
 	'settings'    => 'topbar-text',
 	'label'       => __( 'Top Bar Text Color', 'pressforward-turnkey-theme' ),
@@ -1065,10 +1065,6 @@ Kirki::add_field( 'pftk_opts', array(
 			'element'  => '.top-bar a, .top-bar p, .title-bar a, .title-bar-title',
 			'property' => 'color',
 		),
-    array(
-      'element' => '.dropdown.menu > li.is-dropdown-submenu-parent > a::after',
-      'property' => 'border-color',
-    )
 	),
 ) );
 

@@ -34,8 +34,12 @@
     $b5_color_2 = get_theme_mod( 'b5-color-2', '' );
     $slider_color_1 = get_theme_mod( 'slider-color-1', '' );
     $slider_color_2 = get_theme_mod( 'slider-color-2', '' );
+    $dropdown_arrow = Kirki::get_option('pftk_opts', 'topbar-text');
     echo '<style>.block-5{' . construct_gradient($b5_color_1, $b5_color_2) . '}';
     echo '.slider-container {' . construct_gradient($slider_color_1, $slider_color_2) . '}';
+    if (!empty($dropdown_arrow)){
+    echo '.dropdown.menu > li.is-dropdown-submenu-parent > a::after { border-color:' . $dropdown_arrow . ' transparent transparent; }';
+    }
     echo '</style>';
     ?>
 

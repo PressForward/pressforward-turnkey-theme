@@ -50,7 +50,7 @@ Template Name: Home Page Template
 						echo '<div class="row">';
 						echo '<div class="medium-6 large-7 columns">';
 						echo '<h2 class="slider-byline">By: ';
-						if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
+						if ( is_plugin_active( 'pressforward/pressforward.php' ) && !empty($itemauth) ) {
 						echo $itemauth;
 					} else {
 						echo the_author_meta('user_nicename', $authorid);

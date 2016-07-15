@@ -3,7 +3,7 @@
 
 /************* DASHBOARD WIDGETS *****************/
 // Disable default dashboard widgets
-function disable_default_dashboard_widgets() {
+function pftk_disable_default_dashboard_widgets() {
 	// Remove_meta_box('dashboard_right_now', 'dashboard', 'core');    // Right Now Widget
 	remove_meta_box('dashboard_recent_comments', 'dashboard', 'core'); // Comments Widget
 	remove_meta_box('dashboard_incoming_links', 'dashboard', 'core');  // Incoming Links Widget
@@ -55,7 +55,7 @@ function pressforward_tk_theme_custom_dashboard_widgets() {
 	*/
 }
 // removing the dashboard widgets
-add_action('admin_menu', 'disable_default_dashboard_widgets');
+add_action('admin_menu', 'pftk_disable_default_dashboard_widgets');
 // adding any custom widgets
 add_action('wp_dashboard_setup', 'pressforward_tk_theme_custom_dashboard_widgets');
 

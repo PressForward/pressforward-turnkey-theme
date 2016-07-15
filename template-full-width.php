@@ -12,7 +12,7 @@ Template Name: Full Width (No Sidebar)
 		<div id="inner-content" class="row">
 			<?php $breadcrumb_nav = Kirki::get_option( 'pftk_opts', 'breadcrumbs');
 			 if ($breadcrumb_nav == true):
-					echo custom_breadcrumb();
+					echo pftk_custom_breadcrumb();
 				endif; ?>
 		    <main id="main" class="large-12 medium-12 columns" role="main">
 

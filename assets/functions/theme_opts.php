@@ -1051,18 +1051,18 @@ Kirki::add_field( 'pftk_opts', array(
 		),
 	),
 ) );
-Kirki::add_field( 'topbar-text', array(
+Kirki::add_field( 'pftk_opts', array(
 	'type'        => 'color',
 	'settings'    => 'topbar-text',
 	'label'       => __( 'Top Bar Text Color', 'pressforward-turnkey-theme' ),
 	'section'     => 'colors',
   'tooltip'     => 'Select a text color for the bar that appears at the top of the page.',
-	'default'     => '',
+	'default'     => '#27f92b',
 	'priority'    => 10,
 	'alpha'       => true,
   'output' => array(
 		array(
-			'element'  => '.top-bar a, .top-bar p, .title-bar a, .title-bar-title',
+			'element'  => '.top-bar a, .top-bar p, .top-bar li, .menu a:link, .menu-item, .title-bar a, .title-bar-title',
 			'property' => 'color',
 		),
 	),

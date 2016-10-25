@@ -1,11 +1,11 @@
 @charset "UTF-8";
 /******************************************************************
-	
+
 Stylesheet: Main Stylesheet
 
 Here's where the magic happens. Here is where you import
 all of your Sass files so they can compile into one
-CSS file. 
+CSS file.
 
 ******************************************************************/
 /******************************************************************
@@ -4024,9 +4024,6 @@ LINK STYLES
 *********************/
 a:link, a:visited:link {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3); }
-
-.top-bar a {
-  color: #fafafa; }
 
 /*********************
 H1, H2, H3, H4, H5 P STYLES

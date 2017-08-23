@@ -48,4 +48,18 @@ Template Name: Home Page Template (Image Focused)
 </div>
 </div> <!-- end 12 columns -->
 </div>  <!-- end row -->
+
+<div class="row">
+  <div class="large-8 columns">
+    <div class="row">
+      <div class="large-5 columns">
+      <img class="orbit-image" src="http://placehold.it/1200x600/666&text=featimg" alt="Space">
+      </div>
+      <div class="large-7 columns">
+        <h1>Title</h1>
+        <p>text goes here</p>
+      </div>
+    </div>
+  </div>
+  <?php get_sidebar(); ?>
 <?php get_footer(); ?>

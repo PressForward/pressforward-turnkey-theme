@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Home Page Template
+Template Name: Home Page Template (Text focused)
 */
 ?>
 

@@ -32,9 +32,10 @@ Template Name: Home Page Template (Image Focused)
 				$itemauth = get_post_meta($post->ID, 'item_author', true);
 				}
         $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 50, $more = '… ' );
+        $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
         echo '<li class="orbit-slide">
         <figure class="orbit-figure">
-          <img class="orbit-image" src="http://placehold.it/1200x600/999?text=Slide-1" alt="Space">
+          <img class="orbit-image" src="' . $thumb[0] . '" alt="Space">
           <figcaption class="orbit-caption">' . $short_title . '</figcaption>
         </figure>
       </li>'; } ?>

@@ -2047,10 +2047,6 @@ input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
   color: #333333; }
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
-  color: #333333; }
-
 input:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
   color: #333333; }
@@ -3863,6 +3859,9 @@ Stylesheet: Main Stylesheet
 /*********************
 GENERAL STYLES
 *********************/
+.orbit-container {
+  height: 350px; }
+
 .header {
   background-color: #142736; }
 
@@ -4332,7 +4331,6 @@ to display none.
     background: transparent !important;
     color: black !important;
     text-shadow: none !important;
-    -webkit-filter: none !important;
     filter: none !important;
     -ms-filter: none !important; }
   a, a:visited {

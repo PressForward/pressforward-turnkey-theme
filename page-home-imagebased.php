@@ -13,30 +13,31 @@ Template Name: Home Page Template (Image Focused)
       <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
     </div>
     <ul class="orbit-container">
-      <li class="is-active orbit-slide">
+      <?php
+      $pftk_opts = '';
+			$slider_category = '';
+      $slider_categories_option = Kirki::get_option( 'pftk_opts', 'slider_category');
+      $postcats = 'category='. $slider_categories_option . '&posts_per_page=4';
+      $feat_posts = get_posts($postcats);
+
+      foreach($feat_posts as $post) {
+        $trim_title = get_post_field('post_title', $id);
+        $short_title = wp_trim_words( $trim_title, $num_words = 15, $more = '… ' );
+				$trimexcerpt = get_post_field('post_content', $id);
+				$authorid = $post->post_author;
+
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+				if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
+  			//plugin is activated
+				$itemauth = get_post_meta($post->ID, 'item_author', true);
+				}
+        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 50, $more = '… ' );
+        echo '<li class="orbit-slide">
         <figure class="orbit-figure">
           <img class="orbit-image" src="http://placehold.it/1200x600/999?text=Slide-1" alt="Space">
-          <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+          <figcaption class="orbit-caption">' . $short_title . '</figcaption>
         </figure>
-      </li>
-      <li class="orbit-slide">
-        <figure class="orbit-figure">
-          <img class="orbit-image" src="http://placehold.it/1200x600/888?text=Slide-2" alt="Space">
-          <figcaption class="orbit-caption">Lets Rocket!</figcaption>
-        </figure>
-      </li>
-      <li class="orbit-slide">
-        <figure class="orbit-figure">
-          <img class="orbit-image" src="http://placehold.it/1200x600/777?text=Slide-3" alt="Space">
-          <figcaption class="orbit-caption">Encapsulating</figcaption>
-        </figure>
-      </li>
-      <li class="orbit-slide">
-        <figure class="orbit-figure">
-          <img class="orbit-image" src="http://placehold.it/1200x600/666&text=Slide-4" alt="Space">
-          <figcaption class="orbit-caption">Outta This World</figcaption>
-        </figure>
-      </li>
+      </li>'; } ?>
     </ul>
   </div>
   <nav class="orbit-bullets">

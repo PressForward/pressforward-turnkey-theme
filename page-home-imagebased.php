@@ -19,7 +19,7 @@ Template Name: Home Page Template (Image Focused)
       $slider_categories_option = Kirki::get_option( 'pftk_opts', 'slider_category');
       $postcats = 'category='. $slider_categories_option . '&posts_per_page=4';
       $feat_posts = get_posts($postcats);
-
+      $bullets = 1;
       foreach($feat_posts as $post) {
         $trim_title = get_post_field('post_title', $id);
         $short_title = wp_trim_words( $trim_title, $num_words = 15, $more = '… ' );
@@ -38,30 +38,53 @@ Template Name: Home Page Template (Image Focused)
           <img class="orbit-image" src="' . $thumb[0] . '" alt="Space">
           <figcaption class="orbit-caption">' . $short_title . '</figcaption>
         </figure>
-      </li>'; } ?>
+      </li>';
+      $bullets++; } ?>
     </ul>
   </div>
   <nav class="orbit-bullets">
-    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
-    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
-    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
-    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+    <?php $counter = 0;
+		while($counter < $bullets - 1) {
+			if ($counter == 0) {
+			echo '<button data-slide="'. $counter . '"><span class="show-for-sr">slide details.</span><span class="show-for-sr">Current Slide</span></button>';
+			$counter++;
+		} elseif ($counter < $bullets - 1) {
+			echo '<button data-slide="'. $counter . '"><span class="show-for-sr">slide details.</span></button>';
+			$counter++;
+		}
+  } ?>
   </nav>
 </div>
 </div> <!-- end 12 columns -->
 </div>  <!-- end row -->
-
+<?php
+if ( have_posts() ) {
+	while ( have_posts() ) {
+		the_post();
+		//
+		// Post Content here
+		//
+	} // end while
+} // end if
+?>
 <div class="row">
   <div class="large-8 columns">
-    <div class="row">
-      <div class="large-5 columns">
-      <img class="orbit-image" src="http://placehold.it/1200x600/666&text=featimg" alt="Space">
-      </div>
-      <div class="large-7 columns">
-        <h1>Title</h1>
-        <p>text goes here</p>
-      </div>
-    </div>
+    <?php
+    if ( have_posts() ) {
+      while ( have_posts() ) {
+        echo '<div class="row">
+        <div class="large-5 columns">
+          <img class="orbit-image" src="http://placehold.it/1200x600/666&text=featimg" alt="Space">
+          </div>
+          <div class="large-7 columns">
+            <h1><a href="' . the_permalink() . '">' . the_title() . '</a></h1>';
+
+            echo '<p>text goes here</p>
+          </div>
+        </div>';
+      }
+    }
+  ?>
   </div>
   <?php get_sidebar(); ?>
 <?php get_footer(); ?>

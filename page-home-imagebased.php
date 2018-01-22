@@ -57,34 +57,21 @@ Template Name: Home Page Template (Image Focused)
 </div>
 </div> <!-- end 12 columns -->
 </div>  <!-- end row -->
-<?php
-if ( have_posts() ) {
-	while ( have_posts() ) {
-		the_post();
-		//
-		// Post Content here
-		//
-	} // end while
-} // end if
-?>
+<!-- <?php
+// if ( have_posts() ) {
+// 	while ( have_posts() ) {
+// 		the_post();
+// 		//
+// 		// Post Content here
+// 		//
+// 	} // end while
+// } // end if
+// ?> -->
 <div class="row">
   <div class="large-8 columns">
     <?php
-    if ( have_posts() ) {
-      while ( have_posts() ) {
-        echo '<div class="row">
-        <div class="large-5 columns">
-          <img class="orbit-image" src="http://placehold.it/1200x600/666&text=featimg" alt="Space">
-          </div>
-          <div class="large-7 columns">
-            <h1><a href="' . the_permalink() . '">' . the_title() . '</a></h1>';
 
-            echo '<p>text goes here</p>
-          </div>
-        </div>';
-      }
-    }
   ?>
   </div>
-  <?php get_sidebar(); ?>
+  
 <?php get_footer(); ?>

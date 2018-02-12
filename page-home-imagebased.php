@@ -18,6 +18,9 @@ Template Name: Home Page Template (Image Focused)
 			$slider_category = '';
       $slider_categories_option = Kirki::get_option( 'pftk_opts', 'slider_category');
       $postcats = 'category='. $slider_categories_option . '&posts_per_page=4';
+      $slider_numposts_option = Kirki::get_option( 'pftk_opts', 'slider_numposts' );
+			$slider_title_num_words = Kirki::get_option('pftk_opts', 'slider-title-numwords');
+			$slider_excerpt_num_words = Kirki::get_option('pftk_opts', 'slider-excerpt-numwords');
       $feat_posts = get_posts($postcats);
       $bullets = 1;
       foreach($feat_posts as $post) {
@@ -30,8 +33,10 @@ Template Name: Home Page Template (Image Focused)
 				if ( is_plugin_active( 'pressforward/pressforward.php' ) ) {
   			//plugin is activated
 				$itemauth = get_post_meta($post->ID, 'item_author', true);
-				}
-        $shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 50, $more = '… ' );
+      } else {
+        $itemauth = $post->post_author;
+      }
+        //$shortexcerpt = wp_trim_words( $trimexcerpt, $num_words = 50, $more = '… ' );
         $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full' );
         echo '<li class="orbit-slide">
         <figure class="orbit-figure">
@@ -57,21 +62,41 @@ Template Name: Home Page Template (Image Focused)
 </div>
 </div> <!-- end 12 columns -->
 </div>  <!-- end row -->
-<!-- <?php
-// if ( have_posts() ) {
-// 	while ( have_posts() ) {
-// 		the_post();
-// 		//
-// 		// Post Content here
-// 		//
-// 	} // end while
-// } // end if
-// ?> -->
-<div class="row">
-  <div class="large-8 columns">
-    <?php
 
-  ?>
+<div class="row">
+  <div class="large-8 columns" style="background-color:yellow;">
+    <p>new row</p>
+
+<!-- LOOP GOES HERE -->
+<?php
+$postcats = 'posts_per_page=3';
+query_posts($postcats);
+
+if ( have_posts() ) : while ( have_posts() ) : the_post();?>
+      <div class="row">
+<!-- POST IMAGE -->
+      <div class="large-3 columns" style="background-color:red;">
+        <img src="http://via.placeholder.com/200x200">
+      </div>
+<!-- POST EXCERPT -->
+      <div class="large-9 columns" style="bacground-color: blue;">
+      <?php  echo '<h2><a href="';
+        echo the_permalink() . '">';
+        echo  the_title() . '</a></h2>';
+        echo the_excerpt(); ?>
+        </div>
+
+    </div>
+  <?php endwhile; endif; ?>
   </div>
-  
+<!-- SIDEBAR -->
+  <div class="large-4 columns">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu neque vel nisl consectetur dictum. Suspendisse ipsum libero, lacinia nec pharetra eget, faucibus pretium dolor. Maecenas pulvinar id nunc ut tempus. Quisque vulputate enim sit amet nibh sodales, ut euismod elit pharetra. Fusce vehicula turpis vel nibh dapibus, sit amet pharetra est venenatis. In pulvinar purus a mi sollicitudin, nec faucibus lacus facilisis. Sed cursus venenatis mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nisi nec felis vestibulum efficitur. Donec in auctor velit, ac tincidunt tortor. Pellentesque luctus varius tincidunt. Maecenas porta lectus et ex aliquam vehicula. Nunc semper nisi nec massa vestibulum egestas. Sed id imperdiet metus. Nulla iaculis sed ligula quis tincidunt. </p>
+  </div>
+</div>
+
+
+
+
+
 <?php get_footer(); ?>

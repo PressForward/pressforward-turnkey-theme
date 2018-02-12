@@ -20,18 +20,23 @@ Kirki::add_config( 'pftk_opts', array(
 //create panel for homepage options
   Kirki::add_panel( 'homepage', array(
       'priority'    => 158,
-      'title'       => __( 'Home Page Layout', 'pressforward-turnkey-theme' ),
+      'title'       => __( 'Text Focused Home Page Options', 'pressforward-turnkey-theme' ),
+      'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
+  ) );
+  Kirki::add_panel( 'image-homepage', array(
+      'priority'    => 159,
+      'title'       => __( 'Image Focused Home Page Options', 'pressforward-turnkey-theme' ),
       'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
   ) );
   Kirki::add_panel( 'designelements', array(
-      'priority'    => 160,
+      'priority'    => 161,
       'title'       => __( 'Design Elements', 'pressforward-turnkey-theme' ),
       'description' => __( 'This panel will provide all the options of the header.', 'pressforward-turnkey-theme' ),
   ) );
   Kirki::add_section( 'content-settings', array(
       'title'          => __( 'Content Options', 'pressforward-turnkey-theme' ),
       'description'    => __( 'The content options panel includes options that are built to compliment the PressForward plugin’s workflow.  Included are category level options to control the display of breadcrumbs,  display of the author, the display of the comment form and the site logo.', 'pressforward-turnkey-theme' ),
-      'priority'       => 159,
+      'priority'       => 160,
       'capability'     => 'edit_theme_options',
   ) );
 
@@ -44,7 +49,15 @@ Homepage -- Slider -- Options
   Kirki::add_section( 'slider', array(
       'title'          => __( 'Slider Options', 'pressforward-turnkey-theme' ),
       'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.', 'pressforward-turnkey-theme' ),
-      'panel'          => 'homepage', // Not typically needed.
+      'panel'          => 'homepage',  // Not typically needed.
+      'priority'       => 160,
+      'capability'     => 'edit_theme_options',
+      'theme_supports' => '', // Rarely needed.
+  ) );
+  Kirki::add_section( 'ift-slider', array(
+      'title'          => __( 'Slider Options', 'pressforward-turnkey-theme' ),
+      'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.', 'pressforward-turnkey-theme' ),
+      'panel'          => 'image-homepage',  // Not typically needed.
       'priority'       => 160,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
@@ -56,7 +69,17 @@ Kirki::add_field( 'slider-switch', array(
     'settings'    => 'slider-switch',
     'label'       => __( 'Slider (Block 1)', 'pressforward-turnkey-theme' ),
     'tooltip'     => 'This switch turns the slider on or off',
-    'section'     => 'slider',
+    'section'     => 'image-homepage',
+    'default'     => '1',
+    'priority'    => 10,
+
+) );
+Kirki::add_field( 'slider-switch', array(
+    'type'        => 'switch',
+    'settings'    => 'slider-switch',
+    'label'       => __( 'Slider (Block 1)', 'pressforward-turnkey-theme' ),
+    'tooltip'     => 'This switch turns the slider on or off',
+    'section'     => 'ifh-slider',
     'default'     => '1',
     'priority'    => 10,
 

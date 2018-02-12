@@ -64,7 +64,7 @@ Template Name: Home Page Template (Image Focused)
 </div>  <!-- end row -->
 
 <div class="row">
-  <div class="large-8 columns" style="background-color:yellow;">
+  <div class="large-8 columns">
     <p>new row</p>
 
 <!-- LOOP GOES HERE -->
@@ -75,11 +75,11 @@ query_posts($postcats);
 if ( have_posts() ) : while ( have_posts() ) : the_post();?>
       <div class="row">
 <!-- POST IMAGE -->
-      <div class="large-3 columns" style="background-color:red;">
+      <div class="large-3 columns">
         <img src="http://via.placeholder.com/200x200">
       </div>
 <!-- POST EXCERPT -->
-      <div class="large-9 columns" style="bacground-color: blue;">
+      <div class="large-9 columns">
       <?php  echo '<h2><a href="';
         echo the_permalink() . '">';
         echo  the_title() . '</a></h2>';

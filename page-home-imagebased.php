@@ -76,22 +76,30 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();?>
       <div class="row">
 <!-- POST IMAGE -->
       <div class="large-3 columns">
-        <img src="http://via.placeholder.com/200x200">
+        <?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+        if(empty($thumb)) {
+          echo '';
+        } else {
+          echo '<img src="' . $thumb[0] . '" class="thumbnail home">';
+          reset($thumb);
+        } ?>
       </div>
 <!-- POST EXCERPT -->
       <div class="large-9 columns">
-      <?php  echo '<h2><a href="';
-        echo the_permalink() . '">';
-        echo  the_title() . '</a></h2>';
-        echo the_excerpt(); ?>
-        </div>
+        <?php
+          echo '<h2><a href="';
+          echo the_permalink() . '">';
+          echo the_title() . '</a></h2>';
+          echo the_excerpt();
+        ?>
+      </div>
 
     </div>
   <?php endwhile; endif; ?>
   </div>
 <!-- SIDEBAR -->
   <div class="large-4 columns">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu neque vel nisl consectetur dictum. Suspendisse ipsum libero, lacinia nec pharetra eget, faucibus pretium dolor. Maecenas pulvinar id nunc ut tempus. Quisque vulputate enim sit amet nibh sodales, ut euismod elit pharetra. Fusce vehicula turpis vel nibh dapibus, sit amet pharetra est venenatis. In pulvinar purus a mi sollicitudin, nec faucibus lacus facilisis. Sed cursus venenatis mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget nisi nec felis vestibulum efficitur. Donec in auctor velit, ac tincidunt tortor. Pellentesque luctus varius tincidunt. Maecenas porta lectus et ex aliquam vehicula. Nunc semper nisi nec massa vestibulum egestas. Sed id imperdiet metus. Nulla iaculis sed ligula quis tincidunt. </p>
+    <?php get_sidebar(); ?>
   </div>
 </div>
 

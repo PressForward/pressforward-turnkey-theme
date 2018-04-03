@@ -4,7 +4,7 @@ Template Name: Home Page Template (Image Focused)
 */
 ?>
 <?php get_header(); ?>
-<div class="row">
+<div class="row" id="slider">
 <div class="large-12 columns">
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
   <div class="orbit-wrapper">

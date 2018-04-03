@@ -54,15 +54,24 @@ Homepage -- Slider -- Options
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
   ) );
-  Kirki::add_section( 'ift-slider', array(
+  Kirki::add_section( 'img-slider', array(
       'title'          => __( 'Slider Options', 'pressforward-turnkey-theme' ),
       'description'    => __( 'The slider consists of a single block that cycles through the most recent posts from a particular “featured” category or categories. Use this panel to set the number of posts that appear in the slider as well as the category or categories from which the slider pulls from. There is an option to turn the autoplay feature on or off. The entire slider block can also be turned on or off.', 'pressforward-turnkey-theme' ),
       'panel'          => 'image-homepage',  // Not typically needed.
-      'priority'       => 160,
+      'priority'       => 161,
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
   ) );
+  Kirki::add_field( 'img-slider-switch', array(
+      'type'        => 'switch',
+      'settings'    => 'img-slider-switch',
+      'label'       => __( 'Slider (Block 1)', 'pressforward-turnkey-theme' ),
+      'tooltip'     => 'This switch turns the slider on or off',
+      'section'     => 'img-slider',
+      'default'     => '1',
+      'priority'    => 10,
 
+  ) );
 //add fields
 Kirki::add_field( 'slider-switch', array(
     'type'        => 'switch',

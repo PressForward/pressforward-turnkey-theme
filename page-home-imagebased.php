@@ -4,6 +4,9 @@ Template Name: Home Page Template (Image Focused)
 */
 ?>
 <?php get_header(); ?>
+<?php $pftk_opts = '';
+$img_slider_switch = Kirki::get_option('pftk_opts', 'img_slider_switch');
+if ($img_slider_switch == true): ?>
 <div class="row" id="slider">
 <div class="large-12 columns">
 <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
@@ -62,7 +65,7 @@ Template Name: Home Page Template (Image Focused)
 </div>
 </div> <!-- end 12 columns -->
 </div>  <!-- end row -->
-
+<?php endif; ?>
 <div class="row">
   <div class="large-8 columns">
     <p>new row</p>

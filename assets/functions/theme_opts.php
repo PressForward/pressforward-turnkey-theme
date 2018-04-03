@@ -62,9 +62,9 @@ Homepage -- Slider -- Options
       'capability'     => 'edit_theme_options',
       'theme_supports' => '', // Rarely needed.
   ) );
-  Kirki::add_field( 'img-slider-switch', array(
+  Kirki::add_field( 'img_slider_switch', array(
       'type'        => 'switch',
-      'settings'    => 'img-slider-switch',
+      'settings'    => 'img_slider_switch',
       'label'       => __( 'Slider (Block 1)', 'pressforward-turnkey-theme' ),
       'tooltip'     => 'This switch turns the slider on or off',
       'section'     => 'img-slider',

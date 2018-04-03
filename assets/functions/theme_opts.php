@@ -72,33 +72,28 @@ Homepage -- Slider -- Options
       'priority'    => 10,
 
   ) );
-//add fields
-Kirki::add_field( 'slider-switch', array(
-    'type'        => 'switch',
-    'settings'    => 'slider-switch',
-    'label'       => __( 'Slider (Block 1)', 'pressforward-turnkey-theme' ),
-    'tooltip'     => 'This switch turns the slider on or off',
-    'section'     => 'image-homepage',
-    'default'     => '1',
-    'priority'    => 10,
 
-) );
-Kirki::add_field( 'slider-switch', array(
-    'type'        => 'switch',
-    'settings'    => 'slider-switch',
-    'label'       => __( 'Slider (Block 1)', 'pressforward-turnkey-theme' ),
-    'tooltip'     => 'This switch turns the slider on or off',
-    'section'     => 'ifh-slider',
-    'default'     => '1',
-    'priority'    => 10,
-
-) );
   Kirki::add_field( 'slider_numposts', array(
       'type'        => 'slider',
       'settings'    => 'slider_numposts',
       'label'       => __( 'Number of Posts', 'pressforward-turnkey-theme' ),
       'description' => __( 'How many posts should appear in the slider.', 'pressforward-turnkey-theme' ),
       'section'     => 'slider',
+      'tooltip'     => 'Select the number of posts that will appear in the slider',
+      'default'     => 4,
+      'priority'    => 10,
+      'choices'     => array(
+          'min'  => 1,
+          'max'  => 10,
+          'step' => 1
+      ),
+  ) );
+  Kirki::add_field( 'img_slider_numposts', array(
+      'type'        => 'slider',
+      'settings'    => 'img_slider_numposts',
+      'label'       => __( 'Number of Posts', 'pressforward-turnkey-theme' ),
+      'description' => __( 'How many posts should appear in the slider.', 'pressforward-turnkey-theme' ),
+      'section'     => 'img-slider',
       'tooltip'     => 'Select the number of posts that will appear in the slider',
       'default'     => 4,
       'priority'    => 10,
@@ -134,6 +129,17 @@ Kirki::add_field( 'slider-switch', array(
           'max'  => 500,
           'step' => 1
       ),
+  ) );
+  Kirki::add_field( 'img_slider_category', array(
+      'type'        => 'select',
+      'settings'    => 'img_slider_category',
+      'label'       => __( 'Slider Post Category', 'pressforward-turnkey-theme' ),
+      'description' => __( 'Select a post category for the slider.', 'pressforward-turnkey-theme' ),
+      'tooltip'     => __( 'Select the post category that you want to appear in the slider.', 'pressforward-turnkey-theme' ),
+      'section'     => 'img-slider',
+      'default'     => '1',
+      'priority'    => 10,
+      'choices'     => Kirki_Helper::get_terms( 'category' ),
   ) );
   Kirki::add_field( 'slider_category', array(
       'type'        => 'select',

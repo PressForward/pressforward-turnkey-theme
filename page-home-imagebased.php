@@ -6,6 +6,17 @@ Template Name: Home Page Template (Image Focused)
 <?php get_header(); ?>
 <?php $pftk_opts = '';
 $img_slider_switch = Kirki::get_option('pftk_opts', 'img_slider_switch');
+$pftk_opts = '';
+$slider_category = '';
+$img_slider_categories_option = Kirki::get_option( 'pftk_opts', 'img_slider_category');
+$img_slider_numposts_option = Kirki::get_option( 'pftk_opts', 'img_slider_numposts' );
+$slider_title_num_words = Kirki::get_option('pftk_opts', 'slider-title-numwords');
+$slider_excerpt_num_words = Kirki::get_option('pftk_opts', 'slider-excerpt-numwords');
+$postcats = 'category='. $img_slider_categories_option . '&posts_per_page=' . $img_slider_numposts_option;
+$feat_posts = get_posts($postcats);
+$bullets = 1;
+
+
 if ($img_slider_switch == true): ?>
 <div class="row" id="slider">
 <div class="large-12 columns">
@@ -17,19 +28,11 @@ if ($img_slider_switch == true): ?>
     </div>
     <ul class="orbit-container">
       <?php
-      $pftk_opts = '';
-			$slider_category = '';
-      $slider_categories_option = Kirki::get_option( 'pftk_opts', 'slider_category');
-      $postcats = 'category='. $slider_categories_option . '&posts_per_page=4';
-      $slider_numposts_option = Kirki::get_option( 'pftk_opts', 'slider_numposts' );
-			$slider_title_num_words = Kirki::get_option('pftk_opts', 'slider-title-numwords');
-			$slider_excerpt_num_words = Kirki::get_option('pftk_opts', 'slider-excerpt-numwords');
-      $feat_posts = get_posts($postcats);
-      $bullets = 1;
+
       foreach($feat_posts as $post) {
         $trim_title = get_post_field('post_title', $id);
         $short_title = wp_trim_words( $trim_title, $num_words = 15, $more = '… ' );
-				$trimexcerpt = get_post_field('post_content', $id);
+				//$trimexcerpt = get_post_field('post_content', $id);
 				$authorid = $post->post_author;
 
 				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );

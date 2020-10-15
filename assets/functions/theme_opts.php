@@ -134,7 +134,7 @@ Homepage -- Block 2 -- Options
 *********************/
 
 //Create panel
-Kirki::add_section( 'Block2', array(
+Kirki::add_section( 'block2', array(
     'title'          => __( 'Block 2 Options', 'pressforward-turnkey-theme' ),
     'description'    => __( 'The second block of the homepage consists of four “columns”. Each column displays a title which can also link to a page or post within the site. Each column can also include a Font Awesome icon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below.', 'pressforward-turnkey-theme' ),
     'panel'          => 'homepage', // Not typically needed.
@@ -395,7 +395,7 @@ Homepage -- Block 3 -- Options
 *********************/
 
   //Create panel
-  Kirki::add_section( 'Block3', array(
+  Kirki::add_section( 'block3', array(
       'title'          => __( 'Block 3 Options', 'pressforward-turnkey-theme' ),
       'description'    => __( 'The third block on the homepage consists of three columns.  There is an option to add a second row for each column. Each of these six sections has a title with the option to make it a link. Each section also has an option to select which category will populate the field. Each section can also display an icon. If you wish include an icon above the title, enter the css class name of the FontAwesome icon in the box(s) below. The entire block can be turned on or off.', 'pressforward-turnkey-theme' ),
       'panel'          => 'homepage', // Not typically needed.
@@ -801,7 +801,7 @@ Homepage -- Block 4
 **********************
 *********************/
   //Create panel
-  Kirki::add_section( 'Block4', array(
+  Kirki::add_section( 'block4', array(
       'title'          => __( 'Block 4 Options', 'pressforward-turnkey-theme' ),
       'description'    => __( 'The fourth block of the homepage is a single row designed to feature some text or site information.. The row includes a title (with an option to make it a link) and text. The entire block can be turned on or off.', 'pressforward-turnkey-theme' ),
       'panel'          => 'homepage', // Not typically needed.
@@ -856,7 +856,7 @@ Homepage -- Block 5
 **********************
 *********************/
     //Create panel
-    Kirki::add_section( 'Block5', array(
+    Kirki::add_section( 'block5', array(
         'title'          => __( 'Block 5 Options', 'pressforward-turnkey-theme' ),
         'description'    => __( 'The fifth block of the homepage is a single row. This row includes a title that can also link to a page or post within the site. The entire block can be turned on or off.', 'pressforward-turnkey-theme' ),
         'panel'          => 'homepage', // Not typically needed.
@@ -913,7 +913,7 @@ Homepage -- Footer
 **********************
 *********************/
 //Create panel
-Kirki::add_section( 'Footer', array(
+Kirki::add_section( 'footer', array(
     'title'          => __( 'Footer', 'pressforward-turnkey-theme' ),
     'description'
        => __( 'Edit the content and appearance of the footer on the homepage.', 'pressforward-turnkey-theme' ),
